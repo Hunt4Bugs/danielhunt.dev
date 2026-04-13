@@ -1,0 +1,37 @@
+---
+// TODO: replace # with your actual profile URLs
+const socials = [
+  { name: 'LinkedIn', href: '#', label: 'LinkedIn profile' },
+  { name: 'X', href: '#', label: 'X (Twitter) profile' },
+  { name: 'YouTube', href: '#', label: 'YouTube channel' },
+];
+const year = new Date().getFullYear();
+---
+<footer class="border-t border-cocoa/15 mt-8">
+  <div class="container-page py-12 flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between">
+    <div>
+      <p class="font-serif text-lg text-espresso">Daniel Hunt</p>
+      <p class="text-sm text-cocoa/70 mt-1">© {year} · Built quietly in Astro.</p>
+    </div>
+    <ul class="flex flex-wrap gap-6 text-sm font-medium">
+      {socials.map((s) => (
+        <li>
+          <a
+            href={s.href}
+            aria-label={s.label}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-cocoa hover:text-rust transition"
+          >
+            {s.name}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a href="mailto:accounts@danielhunt.dev" class="text-cocoa hover:text-rust transition">
+          Email
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>

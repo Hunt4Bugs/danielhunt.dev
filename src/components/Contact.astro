@@ -1,0 +1,72 @@
+---
+// TODO: replace YOUR_ACCESS_KEY with your Web3Forms access key
+// Get one free at https://web3forms.com (no account required, just an email)
+const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY';
+const EMAIL = 'accounts@danielhunt.dev';
+---
+<section id="contact" class="section bg-parchment/40">
+  <div class="container-page grid md:grid-cols-2 gap-16">
+    <div>
+      <p class="eyebrow mb-4">Get in touch</p>
+      <h2 class="font-serif text-4xl sm:text-5xl tracking-tight text-espresso">
+        Let's talk about your project.
+      </h2>
+      <p class="mt-6 text-lg text-cocoa leading-relaxed">
+        Whether it's a quick audit, a months-long build, or just a sanity check
+        on an idea — drop a note and I'll reply within a couple of working days.
+      </p>
+      <a
+        href={`mailto:${EMAIL}`}
+        class="mt-8 inline-flex items-center gap-2 font-serif text-2xl text-rust hover:text-rustDark transition"
+      >
+        {EMAIL}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <form
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      class="bg-cream border border-cocoa/15 rounded-2xl p-8 space-y-5 shadow-sm"
+    >
+      <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+      <input type="hidden" name="subject" value="New enquiry from danielhunt.dev" />
+      <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+
+      <div>
+        <label for="name" class="block text-sm font-medium text-espresso mb-2">Name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          class="w-full rounded-lg border border-cocoa/20 bg-cream px-4 py-3 text-espresso placeholder:text-cocoa/50 focus:border-rust focus:outline-none focus:ring-1 focus:ring-rust"
+        />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-espresso mb-2">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          class="w-full rounded-lg border border-cocoa/20 bg-cream px-4 py-3 text-espresso placeholder:text-cocoa/50 focus:border-rust focus:outline-none focus:ring-1 focus:ring-rust"
+        />
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium text-espresso mb-2">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          class="w-full rounded-lg border border-cocoa/20 bg-cream px-4 py-3 text-espresso placeholder:text-cocoa/50 focus:border-rust focus:outline-none focus:ring-1 focus:ring-rust"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn-primary w-full">Send message</button>
+      <p class="text-xs text-cocoa/70 text-center">
+        Powered by Web3Forms. Your details are only used to reply to you.
+      </p>
+    </form>
+  </div>
+</section>

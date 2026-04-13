@@ -1,0 +1,47 @@
+---
+const services = [
+  {
+    title: 'AI Audit',
+    blurb:
+      'A clear-eyed review of your existing AI usage — accuracy, cost, security, and risk. You leave with a prioritised action list and an honest answer to "is this actually working?"',
+    tag: '01',
+  },
+  {
+    title: 'AI Infrastructure',
+    blurb:
+      'Production-grade foundations: RAG, vector databases, model gateways, evals, observability and CI. The unglamorous pieces that turn a demo into a dependable product.',
+    tag: '02',
+  },
+  {
+    title: 'Agent & Workflow Automation',
+    blurb:
+      'Custom agents and MCP servers that plug into your real tools — Slack, Notion, Linear, internal APIs — and quietly remove hours of repetitive work each week.',
+    tag: '03',
+  },
+  {
+    title: 'Custom App Development',
+    blurb:
+      'Full-stack AI-powered applications built on a modern, boring-by-choice stack (FastAPI, Next.js, Supabase). From first prototype to a product your team actually uses.',
+    tag: '04',
+  },
+];
+---
+<section id="services" class="section">
+  <div class="container-page">
+    <p class="eyebrow mb-4">What I offer</p>
+    <h2 class="text-4xl sm:text-5xl tracking-tight text-espresso max-w-2xl">
+      Four ways I tend to help.
+    </h2>
+    <div class="mt-16 grid gap-px bg-cocoa/15 sm:grid-cols-2 rounded-2xl overflow-hidden border border-cocoa/15">
+      {services.map((s) => (
+        <article class="bg-cream p-8 sm:p-10 hover:bg-parchment transition">
+          <div class="flex items-baseline justify-between mb-4">
+            <h3 class="font-serif text-2xl text-espresso">{s.title}</h3>
+            <span class="font-mono text-xs text-mustard tracking-widest">{s.tag}</span>
+          </div>
+          <p class="text-cocoa leading-relaxed">{s.blurb}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-espresso font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto max-w-5xl px-6;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-rust px-6 py-3 text-cream font-medium tracking-wide transition hover:bg-rustDark focus:outline-none focus:ring-2 focus:ring-rust focus:ring-offset-2 focus:ring-offset-cream;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-cocoa/30 px-6 py-3 text-espresso font-medium tracking-wide transition hover:border-rust hover:text-rust;
+  }
+  .section {
+    @apply py-24 border-t border-cocoa/10;
+  }
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.2em] text-mustard font-semibold;
+  }
+}
