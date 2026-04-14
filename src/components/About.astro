@@ -1,39 +1,78 @@
 ---
+import { SITE } from '../data/site';
+
+const techStack = [
+  { name: 'Python', detail: 'FastAPI, FastMCP' },
+  { name: 'TypeScript', detail: 'Next.js' },
+  { name: 'Supabase', detail: 'Postgres + Auth' },
+  { name: 'AI/ML', detail: 'Anthropic, OpenAI' },
+];
 ---
 <section id="about" class="section" aria-labelledby="about-heading">
-  <div class="container-page grid grid-cols-12 gap-6">
-    <aside class="hidden md:flex md:col-span-2 flex-col gap-3">
-      <span class="marker reveal">III</span>
-    </aside>
+  <div class="container-page">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 id="about-heading" class="display text-fore text-[clamp(2rem,5vw,3.5rem)] reveal">
+        About <em>me</em>
+      </h2>
+    </div>
 
-    <div class="col-span-12 md:col-span-10 grid md:grid-cols-5 gap-12">
-      <div class="md:col-span-2">
-        <span class="marker mb-4 reveal md:hidden">III</span>
-        <h2 id="about-heading" class="display text-fore text-[clamp(2.25rem,5vw,4rem)] reveal">
-          Hello,<br/>I'm <em>Daniel.</em>
-        </h2>
-      </div>
-      <div class="md:col-span-3 space-y-7 text-lg sm:text-xl leading-[1.7] text-sub">
-        <p class="reveal reveal-delay-1">
+    <!-- Bento grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Bio card — spans 2 cols -->
+      <div class="card sm:col-span-2 reveal reveal-delay-1">
+        <p class="text-lg sm:text-xl leading-[1.7] text-sub">
           I'm a software engineer focused on the practical end of AI — the
           part where models meet messy data, real users, and uncomfortable
           deadlines. Most of my work sits between strategy and shipping:
-          helping teams figure out <em class="text-fore not-italic">what</em> to build, then actually
-          building it.
+          helping teams figure out <em class="text-fore not-italic font-medium">what</em> to build,
+          then actually building it.
         </p>
-        <p class="reveal reveal-delay-2">
-          I work primarily in <strong class="text-fore font-medium">Python</strong>
-          (FastAPI, FastMCP) and <strong class="text-fore font-medium">TypeScript</strong>
-          (Next.js), with <strong class="text-fore font-medium">Supabase</strong>
-          for data and auth. For agent work I build autonomous agents,
-          multi-step workflows, and tool integrations that plug into the
-          systems your team already uses.
-        </p>
-        <p class="reveal reveal-delay-3">
+        <p class="mt-6 text-lg sm:text-xl leading-[1.7] text-sub">
           I care about systems that age well: clear interfaces, honest
           evaluations, sensible defaults, and code other people can read on a
           Monday morning.
         </p>
+      </div>
+
+      <!-- Photo placeholder card -->
+      <div class="card flex items-center justify-center aspect-square sm:aspect-auto reveal reveal-delay-2" style="background: rgb(var(--surface) / 0.8);">
+        <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full flex items-center justify-center" style="background: rgb(var(--fore) / 0.05); border: 1px solid rgb(var(--fore) / 0.08);">
+          <span class="font-serif text-4xl sm:text-5xl text-fore/10 select-none"><span class="text-fore/5">{'{'}</span>D<span class="text-fore/5">{'}'}</span></span>
+        </div>
+      </div>
+
+      <!-- Tech stack card -->
+      <div class="card reveal reveal-delay-2">
+        <p class="text-[0.65rem] uppercase tracking-[0.25em] text-mute/60 mb-5">Tech stack</p>
+        <div class="space-y-4">
+          {techStack.map((tech) => (
+            <div>
+              <p class="font-medium text-fore">{tech.name}</p>
+              <p class="text-sm text-sub">{tech.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Approach card — spans 2 cols -->
+      <div class="card sm:col-span-2 reveal reveal-delay-3">
+        <p class="text-[0.65rem] uppercase tracking-[0.25em] text-mute/60 mb-5">Approach</p>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="flex items-start gap-4">
+            <span class="text-accent text-lg mt-0.5" aria-hidden="true">&#10003;</span>
+            <div>
+              <p class="font-medium text-fore">Strategy to shipping</p>
+              <p class="text-sm text-sub mt-1">I help teams figure out what to build, then actually build it. No gap between planning and execution.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="text-accent text-lg mt-0.5" aria-hidden="true">&#10003;</span>
+            <div>
+              <p class="font-medium text-fore">Production-grade</p>
+              <p class="text-sm text-sub mt-1">Everything I build is designed for real workloads — with evals, observability, and sensible error handling.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

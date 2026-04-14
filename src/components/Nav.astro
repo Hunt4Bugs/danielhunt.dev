@@ -1,53 +1,63 @@
 ---
 import { NAV_LINKS } from '../data/site';
 ---
-<header class="sticky top-0 z-40 bg-ground/90 backdrop-blur-md border-b border-fore/5">
-  <div class="container-page py-5 flex items-center justify-between">
+<header class="fixed top-0 inset-x-0 z-40 flex justify-center pt-5 px-6 pointer-events-none">
+  <nav
+    class="pointer-events-auto flex items-center gap-1 sm:gap-2 rounded-full px-2 py-2 sm:px-4 sm:py-2.5 backdrop-blur-xl"
+    style="background: rgb(var(--surface) / 0.7); border: 1px solid rgb(var(--fore) / 0.08); box-shadow: 0 4px 24px rgb(var(--fore) / 0.06);"
+    aria-label="Primary"
+  >
     <a
       href="#top"
-      class="font-serif text-2xl tracking-tight text-fore"
+      class="px-3 sm:px-4 py-1.5 font-serif text-lg text-fore rounded-full transition-colors duration-300 hover:bg-fore/5"
       aria-label="Daniel Hunt — home"
     >
-      <span class="text-fore/30">{'{'}</span><span class="text-fore mx-[0.08em]">D</span><span class="text-fore/30">{'}'}</span>
+      <span class="text-fore/30">{'{'}</span><span class="text-fore mx-[0.05em]">D</span><span class="text-fore/30">{'}'}</span>
     </a>
 
-    <!-- Desktop nav -->
-    <nav aria-label="Primary" class="hidden sm:flex items-center gap-10 text-[0.6rem] uppercase tracking-[0.35em] text-sub/60 font-light">
-      {NAV_LINKS.map((link) => (
-        <a href={link.href} class="link-cinema">{link.label}</a>
-      ))}
-    </nav>
+    <span class="w-px h-4 bg-fore/10 mx-1 hidden sm:block" aria-hidden="true"></span>
 
-    <!-- Mobile menu button -->
-    <button
-      id="mobile-menu-btn"
-      class="sm:hidden flex items-center justify-center w-10 h-10 -mr-2 text-fore"
-      aria-label="Open menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
-        <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/>
-      </svg>
-      <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
-        <path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Mobile drawer -->
-  <nav
-    id="mobile-menu"
-    class="sm:hidden hidden border-t border-fore/5 bg-ground/95 backdrop-blur-md"
-    aria-label="Mobile"
-  >
-    <div class="container-page py-8 flex flex-col gap-6 text-[0.7rem] uppercase tracking-[0.3em] text-sub">
-      {NAV_LINKS.map((link) => (
-        <a href={link.href} class="link-cinema">{link.label}</a>
-      ))}
-    </div>
+    {NAV_LINKS.map((link) => (
+      <a
+        href={link.href}
+        class="px-3 sm:px-4 py-1.5 text-[0.7rem] sm:text-xs text-sub font-light rounded-full transition-colors duration-300 hover:text-fore hover:bg-fore/5"
+      >
+        {link.label}
+      </a>
+    ))}
   </nav>
+
+  <!-- Mobile menu button -->
+  <button
+    id="mobile-menu-btn"
+    class="pointer-events-auto sm:hidden fixed top-5 right-6 flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-xl text-fore"
+    style="background: rgb(var(--surface) / 0.7); border: 1px solid rgb(var(--fore) / 0.08);"
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+  >
+    <svg id="menu-icon-open" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/>
+    </svg>
+    <svg id="menu-icon-close" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/>
+    </svg>
+  </button>
 </header>
+
+<!-- Mobile drawer -->
+<nav
+  id="mobile-menu"
+  class="sm:hidden fixed inset-0 z-30 hidden"
+  aria-label="Mobile"
+>
+  <div class="absolute inset-0 bg-ground/95 backdrop-blur-xl"></div>
+  <div class="relative flex flex-col items-center justify-center h-full gap-8">
+    {NAV_LINKS.map((link) => (
+      <a href={link.href} class="text-2xl font-medium text-fore hover:text-accent transition-colors duration-300">{link.label}</a>
+    ))}
+  </div>
+</nav>
 
 <script>
   const btn = document.getElementById('mobile-menu-btn')!;

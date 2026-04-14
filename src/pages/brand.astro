@@ -3,132 +3,114 @@ import Layout from '../layouts/Layout.astro';
 import { SITE } from '../data/site';
 
 const primaryColors = [
-  { name: 'Ivory', token: 'ivory', hex: '#F5F0EB', usage: 'Background — the dominant surface', light: true },
-  { name: 'Charcoal', token: 'charcoal', hex: '#1A1A1A', usage: 'Primary text, headings, logo' },
-  { name: 'Wine', token: 'wine', hex: '#5C2E35', usage: 'Primary accent — CTAs, emphasis, interactive states' },
-  { name: 'Wine Dark', token: 'wineDark', hex: '#452028', usage: 'Accent hover / pressed' },
+  { name: 'Ivory', token: 'ground', hex: '#F5F0EB', usage: 'Background — the dominant surface', light: true },
+  { name: 'Charcoal', token: 'fore', hex: '#1A1A1A', usage: 'Primary text, headings, logo' },
+  { name: 'Champagne', token: 'accent', hex: '#C4A87C', usage: 'Accent — emphasis, interactive highlights' },
+  { name: 'Wine', token: 'accent-deep', hex: '#5C2E35', usage: 'Deep accent — secondary emphasis' },
 ];
 
 const secondaryColors = [
-  { name: 'Stone', token: 'stone', hex: '#E8E2DA', usage: 'Surface tint, cards, hover backgrounds', light: true },
-  { name: 'Ash', token: 'ash', hex: '#6B6560', usage: 'Body copy, secondary text, icons' },
-];
-
-const accentColors = [
-  { name: 'Olive', token: 'olive', hex: '#6B6A4E', usage: 'Tags, categories, subtle highlights' },
-  { name: 'Sage', token: 'sage', hex: '#8C9583', usage: 'Status indicators, soft accents', light: true },
-  { name: 'Teal', token: 'teal', hex: '#4A6F6D', usage: 'Links in content, differentiators' },
+  { name: 'Stone', token: 'surface', hex: '#E8E2DA', usage: 'Elevated surface, hover backgrounds', light: true },
+  { name: 'Ash', token: 'sub', hex: '#6B6560', usage: 'Body copy, secondary text' },
+  { name: 'Pewter', token: 'mute', hex: '#6B6B6B', usage: 'Tertiary text, captions, tags' },
 ];
 
 const typeScale = [
-  { label: 'Display', class: 'display text-[clamp(2.5rem,6vw,5rem)]', sample: 'Thoughtful AI systems' },
-  { label: 'Display Italic', class: 'display text-[clamp(2.5rem,6vw,5rem)] italic', sample: 'built to last.' },
-  { label: 'Heading 2', class: 'font-serif text-[clamp(2rem,4vw,3.5rem)]', sample: 'Four ways I tend to help.' },
-  { label: 'Heading 3', class: 'font-serif text-2xl sm:text-3xl italic', sample: 'AI Infrastructure' },
-  { label: 'Body Large', class: 'font-sans text-lg sm:text-xl text-ash leading-relaxed', sample: 'I help companies design, ship, and operate AI products that age gracefully in production.' },
-  { label: 'Body', class: 'font-sans text-base text-ash leading-relaxed', sample: 'Production-grade foundations: RAG, vector databases, model gateways, evals, observability and CI.' },
-  { label: 'Caption', class: 'font-sans text-[0.65rem] uppercase tracking-[0.3em] text-ash/60', sample: 'AI Engineer · Consultant' },
+  { label: 'Display', class: 'display text-[clamp(2.5rem,6vw,5rem)]', sample: 'Thoughtful AI systems', note: 'EB Garamond — hero headlines only' },
+  { label: 'Display Italic', class: 'display text-[clamp(2.5rem,6vw,5rem)] italic', sample: 'built to last.', note: 'Italic turns champagne accent' },
+  { label: 'Heading 2', class: 'font-sans font-semibold text-[clamp(2rem,4vw,3.5rem)]', sample: 'Four ways I tend to help.', note: 'Inter semibold — section headings' },
+  { label: 'Heading 3', class: 'font-sans text-2xl sm:text-3xl font-medium', sample: 'AI Infrastructure', note: 'Inter medium — sub-headings' },
+  { label: 'Body Large', class: 'font-sans text-lg sm:text-xl text-sub leading-relaxed', sample: 'I help companies design, ship, and operate AI products that age gracefully in production.', note: 'Inter regular' },
+  { label: 'Body', class: 'font-sans text-base text-sub leading-relaxed', sample: 'Production-grade foundations: RAG, vector databases, model gateways, evals, observability and CI.', note: 'Inter regular' },
+  { label: 'Caption', class: 'font-sans text-[0.65rem] uppercase tracking-[0.3em] text-sub/60', sample: 'AI Engineer · Consultant', note: 'Inter — wide tracking' },
 ];
 ---
 <Layout title="Brand Guidelines — Daniel Hunt" description="Visual identity and brand guidelines for danielhunt.dev">
   <!-- Header -->
   <header class="container-page py-6 flex items-center justify-between">
-    <a href="/" class="font-serif text-2xl tracking-tight text-charcoal" aria-label="Back to home">
-      <span class="text-ash/40">{'{'}</span><span class="text-charcoal mx-[0.08em]">D</span><span class="text-ash/40">{'}'}</span>
+    <a href="/" class="font-serif text-lg text-fore" aria-label="Back to home">
+      <span class="text-fore/30">{'{'}</span><span class="text-fore mx-[0.05em]">D</span><span class="text-fore/30">{'}'}</span>
     </a>
-    <a href="/" class="link-cinema text-[0.65rem] uppercase tracking-[0.3em] text-ash/70 font-light">Back to site</a>
+    <a href="/" class="link-cinema text-[0.65rem] uppercase tracking-[0.3em] text-sub/70 font-light">Back to site</a>
   </header>
 
   <main class="container-page pb-32">
     <!-- Title -->
-    <section class="pt-16 sm:pt-28 pb-20 sm:pb-32 border-b border-charcoal/10">
-      <p class="text-[0.65rem] uppercase tracking-[0.35em] text-ash/60 mb-8">Brand Guidelines</p>
-      <h1 class="display text-charcoal text-[clamp(3rem,8vw,7rem)]">
+    <section class="pt-16 sm:pt-28 pb-20 sm:pb-32 border-b border-fore/10">
+      <p class="text-[0.65rem] uppercase tracking-[0.35em] text-sub/60 mb-8">Brand Guidelines</p>
+      <h1 class="display text-fore text-[clamp(3rem,8vw,7rem)]">
         Visual<br/>Identity.
       </h1>
-      <p class="mt-10 max-w-lg text-lg text-ash leading-relaxed">
+      <p class="mt-10 max-w-lg text-lg text-sub leading-relaxed">
         A reference for maintaining consistency across all touchpoints.
         Minimal by intent — every element earns its place.
       </p>
     </section>
 
     <!-- Logo -->
-    <section class="py-20 sm:py-28 border-b border-charcoal/10">
+    <section class="py-20 sm:py-28 border-b border-fore/10">
       <div class="grid md:grid-cols-12 gap-12">
         <div class="md:col-span-4">
-          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-ash/60 mb-4">01</p>
-          <h2 class="font-serif text-3xl text-charcoal">Logo</h2>
-          <p class="mt-4 text-ash leading-relaxed">
+          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-sub/60 mb-4">01</p>
+          <h2 class="font-semibold text-3xl text-fore">Logo</h2>
+          <p class="mt-4 text-sub leading-relaxed">
             The monogram uses curly braces — a nod to code — framing the
-            initial. Always rendered in the serif typeface. The braces are
-            muted; the letter holds the weight.
+            initial. Rendered in the serif typeface. The braces are muted;
+            the letter holds the weight.
           </p>
         </div>
         <div class="md:col-span-8">
           <div class="grid sm:grid-cols-2 gap-6">
             <!-- Light variant -->
-            <div class="bg-ivory border border-charcoal/10 flex flex-col items-center justify-center py-16 px-8">
-              <span class="font-serif text-6xl tracking-tight text-charcoal">
-                <span class="text-ash/40">{'{'}</span><span class="mx-[0.12em]">D</span><span class="text-ash/40">{'}'}</span>
+            <div class="bg-ground border border-fore/10 flex flex-col items-center justify-center py-16 px-8">
+              <span class="font-serif text-6xl tracking-tight text-fore">
+                <span class="text-sub/40">{'{'}</span><span class="mx-[0.12em]">D</span><span class="text-sub/40">{'}'}</span>
               </span>
-              <p class="mt-6 text-[0.6rem] uppercase tracking-[0.25em] text-ash/50">On light</p>
+              <p class="mt-6 text-[0.6rem] uppercase tracking-[0.25em] text-sub/50">On light</p>
             </div>
             <!-- Dark variant -->
-            <div class="bg-charcoal flex flex-col items-center justify-center py-16 px-8">
-              <span class="font-serif text-6xl tracking-tight text-ivory">
-                <span class="text-ivory/30">{'{'}</span><span class="mx-[0.12em]">D</span><span class="text-ivory/30">{'}'}</span>
+            <div class="bg-fore flex flex-col items-center justify-center py-16 px-8">
+              <span class="font-serif text-6xl tracking-tight text-ground">
+                <span class="text-ground/30">{'{'}</span><span class="mx-[0.12em]">D</span><span class="text-ground/30">{'}'}</span>
               </span>
-              <p class="mt-6 text-[0.6rem] uppercase tracking-[0.25em] text-ivory/40">On dark</p>
+              <p class="mt-6 text-[0.6rem] uppercase tracking-[0.25em] text-ground/40">On dark</p>
             </div>
-          </div>
-          <!-- Clear space -->
-          <div class="mt-6 border border-dashed border-charcoal/15 flex items-center justify-center py-12 px-8">
-            <div class="relative">
-              <span class="font-serif text-5xl tracking-tight text-charcoal">
-                <span class="text-ash/40">{'{'}</span><span class="mx-[0.12em]">D</span><span class="text-ash/40">{'}'}</span>
-              </span>
-              <div class="absolute -inset-6 border border-dashed border-wine/30"></div>
-            </div>
-            <p class="ml-12 text-sm text-ash/60 max-w-xs">
-              Maintain clear space equal to the height of the "D" on all sides. Never crowd the mark.
-            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Colour Palette -->
-    <section class="py-20 sm:py-28 border-b border-charcoal/10">
+    <section class="py-20 sm:py-28 border-b border-fore/10">
       <div class="grid md:grid-cols-12 gap-12">
         <div class="md:col-span-4">
-          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-ash/60 mb-4">02</p>
-          <h2 class="font-serif text-3xl text-charcoal">Colour</h2>
-          <p class="mt-4 text-ash leading-relaxed">
-            Three tiers: primary colours carry the brand, secondary colours
-            support readability, and accent colours add quiet range for
-            categories, tags, and differentiation. Accent colours are never
-            used for backgrounds or large surfaces.
+          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-sub/60 mb-4">02</p>
+          <h2 class="font-semibold text-3xl text-fore">Colour</h2>
+          <p class="mt-4 text-sub leading-relaxed">
+            Two tiers: primary colours carry the brand identity, secondary
+            colours support readability and hierarchy. Champagne accent is
+            used sparingly for emphasis and interactive states.
           </p>
         </div>
         <div class="md:col-span-8 space-y-14">
           <!-- Primary -->
           <div>
-            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-5">Primary</p>
+            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-5">Primary</p>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {primaryColors.map((c) => (
                 <div>
                   <div
-                    class={`aspect-[4/3] border border-charcoal/10 ${c.light ? '' : 'text-ivory'}`}
+                    class={`aspect-[4/3] border border-fore/10 ${c.light ? '' : 'text-ground'}`}
                     style={`background-color: ${c.hex};`}
                   >
                     <div class="p-3 h-full flex flex-col justify-end">
-                      <p class={`text-[0.55rem] uppercase tracking-[0.2em] ${c.light ? 'text-charcoal/40' : 'text-ivory/50'}`}>
+                      <p class={`text-[0.55rem] uppercase tracking-[0.2em] ${c.light ? 'text-fore/40' : 'text-ground/50'}`}>
                         {c.hex}
                       </p>
                     </div>
                   </div>
-                  <p class="mt-3 text-sm font-medium text-charcoal">{c.name}</p>
-                  <p class="text-[0.6rem] text-ash/60 mt-0.5">{c.usage}</p>
+                  <p class="mt-3 text-sm font-medium text-fore">{c.name}</p>
+                  <p class="text-[0.6rem] text-sub/60 mt-0.5">{c.usage}</p>
                 </div>
               ))}
             </div>
@@ -136,45 +118,22 @@ const typeScale = [
 
           <!-- Secondary -->
           <div>
-            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-5">Secondary</p>
-            <div class="grid grid-cols-2 gap-4">
+            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-5">Secondary</p>
+            <div class="grid grid-cols-3 gap-4">
               {secondaryColors.map((c) => (
                 <div>
                   <div
-                    class={`aspect-[5/2] border border-charcoal/10 ${c.light ? '' : 'text-ivory'}`}
+                    class={`aspect-[5/2] border border-fore/10 ${c.light ? '' : 'text-ground'}`}
                     style={`background-color: ${c.hex};`}
                   >
                     <div class="p-3 h-full flex flex-col justify-end">
-                      <p class={`text-[0.55rem] uppercase tracking-[0.2em] ${c.light ? 'text-charcoal/40' : 'text-ivory/50'}`}>
+                      <p class={`text-[0.55rem] uppercase tracking-[0.2em] ${c.light ? 'text-fore/40' : 'text-ground/50'}`}>
                         {c.hex}
                       </p>
                     </div>
                   </div>
-                  <p class="mt-3 text-sm font-medium text-charcoal">{c.name}</p>
-                  <p class="text-[0.6rem] text-ash/60 mt-0.5">{c.usage}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <!-- Accent -->
-          <div>
-            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-5">Accent</p>
-            <div class="grid grid-cols-3 gap-4">
-              {accentColors.map((c) => (
-                <div>
-                  <div
-                    class={`aspect-[4/3] border border-charcoal/10 ${c.light ? '' : 'text-ivory'}`}
-                    style={`background-color: ${c.hex};`}
-                  >
-                    <div class="p-3 h-full flex flex-col justify-end">
-                      <p class={`text-[0.55rem] uppercase tracking-[0.2em] ${c.light ? 'text-charcoal/40' : 'text-ivory/50'}`}>
-                        {c.hex}
-                      </p>
-                    </div>
-                  </div>
-                  <p class="mt-3 text-sm font-medium text-charcoal">{c.name}</p>
-                  <p class="text-[0.6rem] text-ash/60 mt-0.5">{c.usage}</p>
+                  <p class="mt-3 text-sm font-medium text-fore">{c.name}</p>
+                  <p class="text-[0.6rem] text-sub/60 mt-0.5">{c.usage}</p>
                 </div>
               ))}
             </div>
@@ -183,16 +142,14 @@ const typeScale = [
           <!-- Ratio guidance -->
           <div>
             <div class="flex items-center gap-1 h-8">
-              <div class="h-full bg-ivory border border-charcoal/10 flex-[45]"></div>
-              <div class="h-full bg-charcoal flex-[25]"></div>
-              <div class="h-full bg-ash flex-[12]"></div>
-              <div class="h-full flex-[6]" style="background-color: #5C2E35;"></div>
-              <div class="h-full flex-[4]" style="background-color: #6B6A4E;"></div>
-              <div class="h-full flex-[4]" style="background-color: #8C9583;"></div>
-              <div class="h-full flex-[4]" style="background-color: #4A6F6D;"></div>
+              <div class="h-full border border-fore/10 flex-[45]" style="background-color: #F5F0EB;"></div>
+              <div class="h-full flex-[25]" style="background-color: #1A1A1A;"></div>
+              <div class="h-full flex-[12]" style="background-color: #6B6560;"></div>
+              <div class="h-full flex-[10]" style="background-color: #C4A87C;"></div>
+              <div class="h-full flex-[8]" style="background-color: #5C2E35;"></div>
             </div>
-            <p class="mt-3 text-[0.6rem] uppercase tracking-[0.2em] text-ash/50">
-              Approximate usage ratio — ivory dominates, accents whisper
+            <p class="mt-3 text-[0.6rem] uppercase tracking-[0.2em] text-sub/50">
+              Approximate usage ratio — ivory dominates, accent whispers
             </p>
           </div>
         </div>
@@ -200,34 +157,37 @@ const typeScale = [
     </section>
 
     <!-- Typography -->
-    <section class="py-20 sm:py-28 border-b border-charcoal/10">
+    <section class="py-20 sm:py-28 border-b border-fore/10">
       <div class="grid md:grid-cols-12 gap-12">
         <div class="md:col-span-4">
-          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-ash/60 mb-4">03</p>
-          <h2 class="font-serif text-3xl text-charcoal">Typography</h2>
-          <p class="mt-4 text-ash leading-relaxed">
-            Two typefaces. EB Garamond for display and headings — a classic
-            old-style serif with quiet authority. Inter for body copy and
-            interface elements — clean, neutral, invisible.
+          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-sub/60 mb-4">03</p>
+          <h2 class="font-semibold text-3xl text-fore">Typography</h2>
+          <p class="mt-4 text-sub leading-relaxed">
+            Two typefaces in a hybrid system. EB Garamond for display headlines
+            — the luxury moment that sets tone. Inter for everything else —
+            headings, body, interface, labels. Clean, confident, modern.
           </p>
           <div class="mt-8 space-y-6">
             <div>
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-2">Display</p>
-              <p class="font-serif text-2xl text-charcoal">EB Garamond</p>
-              <p class="font-serif text-lg text-ash mt-1 italic">Regular &middot; Italic</p>
+              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-2">Display</p>
+              <p class="font-serif text-2xl text-fore">EB Garamond</p>
+              <p class="font-serif text-lg text-sub mt-1 italic">Hero headlines only</p>
             </div>
             <div>
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-2">Body</p>
-              <p class="font-sans text-lg text-charcoal">Inter</p>
-              <p class="font-sans text-sm text-ash mt-1">Light &middot; Regular &middot; Medium</p>
+              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-2">Everything else</p>
+              <p class="font-sans text-lg text-fore font-medium">Inter</p>
+              <p class="font-sans text-sm text-sub mt-1">Light &middot; Regular &middot; Medium &middot; Semibold</p>
             </div>
           </div>
         </div>
         <div class="md:col-span-8 space-y-10">
           {typeScale.map((t) => (
-            <div class="border-b border-charcoal/5 pb-8">
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-4">{t.label}</p>
-              <p class={`text-charcoal ${t.class}`}>{t.sample}</p>
+            <div class="border-b border-fore/5 pb-8">
+              <div class="flex items-baseline justify-between gap-4 mb-4">
+                <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50">{t.label}</p>
+                <p class="text-[0.55rem] text-mute/50">{t.note}</p>
+              </div>
+              <p class={`text-fore ${t.class}`}>{t.sample}</p>
             </div>
           ))}
         </div>
@@ -235,50 +195,34 @@ const typeScale = [
     </section>
 
     <!-- Spacing & Layout -->
-    <section class="py-20 sm:py-28 border-b border-charcoal/10">
+    <section class="py-20 sm:py-28 border-b border-fore/10">
       <div class="grid md:grid-cols-12 gap-12">
         <div class="md:col-span-4">
-          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-ash/60 mb-4">04</p>
-          <h2 class="font-serif text-3xl text-charcoal">Space</h2>
-          <p class="mt-4 text-ash leading-relaxed">
-            Generous negative space is a core brand value. Sections breathe.
-            Content is constrained to a 72rem (1152px) max-width container
-            with a 12-column grid.
+          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-sub/60 mb-4">04</p>
+          <h2 class="font-semibold text-3xl text-fore">Space</h2>
+          <p class="mt-4 text-sub leading-relaxed">
+            Generous negative space is a core brand value. Sections breathe
+            with dramatic vertical rhythm. Content is constrained to an
+            80rem (1280px) max-width container. Sections are separated by
+            spacing alone — no visible borders.
           </p>
         </div>
         <div class="md:col-span-8">
-          <div class="border border-charcoal/10 p-6">
-            <div class="grid grid-cols-12 gap-2 h-48">
-              {Array.from({ length: 12 }).map((_, i) => (
-                <div class="bg-charcoal/5 flex items-end justify-center pb-2">
-                  <span class="text-[0.55rem] text-ash/40">{i + 1}</span>
-                </div>
-              ))}
-            </div>
-            <div class="mt-4 grid grid-cols-12 gap-2">
-              <div class="col-span-2 bg-wine/10 h-6 flex items-center justify-center">
-                <span class="text-[0.5rem] text-wine/60">Rail</span>
-              </div>
-              <div class="col-span-10 bg-charcoal/5 h-6 flex items-center justify-center">
-                <span class="text-[0.5rem] text-ash/50">Content</span>
-              </div>
-            </div>
-          </div>
           <div class="mt-8 grid grid-cols-3 gap-6">
             <div>
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-2">Section gap</p>
-              <p class="font-serif text-xl text-charcoal">8rem — 10rem</p>
-              <p class="text-sm text-ash/60 mt-1">py-32 to py-40</p>
+              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-2">Section gap</p>
+              <p class="font-semibold text-xl text-fore">5rem — 12rem</p>
+              <p class="text-sm text-sub/60 mt-1">py-20 to py-48</p>
             </div>
             <div>
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-2">Container</p>
-              <p class="font-serif text-xl text-charcoal">72rem</p>
-              <p class="text-sm text-ash/60 mt-1">max-w-6xl</p>
+              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-2">Container</p>
+              <p class="font-semibold text-xl text-fore">80rem</p>
+              <p class="text-sm text-sub/60 mt-1">max-w-7xl</p>
             </div>
             <div>
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-2">Grid</p>
-              <p class="font-serif text-xl text-charcoal">12 columns</p>
-              <p class="text-sm text-ash/60 mt-1">2-col rail + 10-col body</p>
+              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-2">Separation</p>
+              <p class="font-semibold text-xl text-fore">Spacing</p>
+              <p class="text-sm text-sub/60 mt-1">No section borders</p>
             </div>
           </div>
         </div>
@@ -286,12 +230,12 @@ const typeScale = [
     </section>
 
     <!-- Voice & Tone -->
-    <section class="py-20 sm:py-28 border-b border-charcoal/10">
+    <section class="py-20 sm:py-28 border-b border-fore/10">
       <div class="grid md:grid-cols-12 gap-12">
         <div class="md:col-span-4">
-          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-ash/60 mb-4">05</p>
-          <h2 class="font-serif text-3xl text-charcoal">Voice</h2>
-          <p class="mt-4 text-ash leading-relaxed">
+          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-sub/60 mb-4">05</p>
+          <h2 class="font-semibold text-3xl text-fore">Voice</h2>
+          <p class="mt-4 text-sub leading-relaxed">
             Direct, unhurried, precise. The writing matches the design —
             nothing superfluous, nothing loud. Confidence expressed
             through restraint.
@@ -300,44 +244,44 @@ const typeScale = [
         <div class="md:col-span-8">
           <div class="grid sm:grid-cols-2 gap-8">
             <div>
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-4">We are</p>
+              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-4">We are</p>
               <ul class="space-y-3">
                 <li class="flex items-start gap-3">
-                  <span class="text-wine mt-0.5 text-sm">&#10003;</span>
-                  <span class="text-charcoal">Precise over vague</span>
+                  <span class="text-accent mt-0.5 text-sm">&#10003;</span>
+                  <span class="text-fore">Precise over vague</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <span class="text-wine mt-0.5 text-sm">&#10003;</span>
-                  <span class="text-charcoal">Candid over promotional</span>
+                  <span class="text-accent mt-0.5 text-sm">&#10003;</span>
+                  <span class="text-fore">Candid over promotional</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <span class="text-wine mt-0.5 text-sm">&#10003;</span>
-                  <span class="text-charcoal">Calm over urgent</span>
+                  <span class="text-accent mt-0.5 text-sm">&#10003;</span>
+                  <span class="text-fore">Calm over urgent</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <span class="text-wine mt-0.5 text-sm">&#10003;</span>
-                  <span class="text-charcoal">Considered over reactive</span>
+                  <span class="text-accent mt-0.5 text-sm">&#10003;</span>
+                  <span class="text-fore">Considered over reactive</span>
                 </li>
               </ul>
             </div>
             <div>
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-4">We avoid</p>
+              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-4">We avoid</p>
               <ul class="space-y-3">
                 <li class="flex items-start gap-3">
-                  <span class="text-ash/30 mt-0.5 text-sm">&times;</span>
-                  <span class="text-ash">Buzzwords and hype</span>
+                  <span class="text-sub/30 mt-0.5 text-sm">&times;</span>
+                  <span class="text-sub">Buzzwords and hype</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <span class="text-ash/30 mt-0.5 text-sm">&times;</span>
-                  <span class="text-ash">Exclamation marks</span>
+                  <span class="text-sub/30 mt-0.5 text-sm">&times;</span>
+                  <span class="text-sub">Exclamation marks</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <span class="text-ash/30 mt-0.5 text-sm">&times;</span>
-                  <span class="text-ash">Superlatives without evidence</span>
+                  <span class="text-sub/30 mt-0.5 text-sm">&times;</span>
+                  <span class="text-sub">Superlatives without evidence</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <span class="text-ash/30 mt-0.5 text-sm">&times;</span>
-                  <span class="text-ash">Casual abbreviations</span>
+                  <span class="text-sub/30 mt-0.5 text-sm">&times;</span>
+                  <span class="text-sub">Casual abbreviations</span>
                 </li>
               </ul>
             </div>
@@ -350,57 +294,46 @@ const typeScale = [
     <section class="py-20 sm:py-28">
       <div class="grid md:grid-cols-12 gap-12">
         <div class="md:col-span-4">
-          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-ash/60 mb-4">06</p>
-          <h2 class="font-serif text-3xl text-charcoal">Elements</h2>
-          <p class="mt-4 text-ash leading-relaxed">
-            Interactive components follow the same restraint — thin borders,
-            subtle transitions, no filled backgrounds unless absolutely necessary.
+          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-sub/60 mb-4">06</p>
+          <h2 class="font-semibold text-3xl text-fore">Elements</h2>
+          <p class="mt-4 text-sub leading-relaxed">
+            Interactive components follow the same restraint — rounded pill
+            buttons with solid hover fills, subtle text link animations,
+            and clean dividers.
           </p>
         </div>
         <div class="md:col-span-8 space-y-12">
           <!-- Buttons -->
           <div>
-            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-6">Buttons</p>
+            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-6">Buttons</p>
             <div class="flex flex-wrap items-center gap-6">
               <button class="btn-ghost">Ghost button</button>
-              <a href="#" class="link-cinema font-serif text-xl text-charcoal">Text link <span class="text-wine">&rarr;</span></a>
+              <a href="#" class="link-cinema text-lg font-medium text-fore">Text link <span class="text-accent">&rarr;</span></a>
             </div>
           </div>
           <!-- Dividers -->
           <div>
-            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-6">Dividers</p>
+            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-6">Dividers</p>
             <div class="space-y-6">
               <div>
-                <div class="border-t border-charcoal/10"></div>
-                <p class="mt-2 text-[0.55rem] text-ash/40 uppercase tracking-widest">Section — 10% opacity</p>
+                <div class="border-t border-fore/10"></div>
+                <p class="mt-2 text-[0.55rem] text-sub/40 uppercase tracking-widest">Content — 10% opacity</p>
               </div>
               <div>
-                <div class="border-t border-charcoal/20"></div>
-                <p class="mt-2 text-[0.55rem] text-ash/40 uppercase tracking-widest">Emphasis — 20% opacity</p>
+                <div class="border-t border-fore/5"></div>
+                <p class="mt-2 text-[0.55rem] text-sub/40 uppercase tracking-widest">Subtle — 5% opacity</p>
               </div>
             </div>
           </div>
-          <!-- Roman numerals -->
+          <!-- Animation -->
           <div>
-            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-6">Section markers</p>
-            <div class="flex items-center gap-12">
-              {['I', 'II', 'III', 'IV', 'V'].map((n) => (
-                <span class="marker">{n}</span>
-              ))}
+            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-6">Motion</p>
+            <div class="space-y-3 text-sm text-sub">
+              <p><span class="font-medium text-fore">Reveal:</span> Fade + slide-up, 1.8s duration, 32px travel, cubic-bezier(0.16, 1, 0.3, 1)</p>
+              <p><span class="font-medium text-fore">Stagger:</span> 200ms increments between sequential elements</p>
+              <p><span class="font-medium text-fore">Hover:</span> 500ms color transitions, smooth and unhurried</p>
+              <p><span class="font-medium text-fore">Reduced motion:</span> All animation respects prefers-reduced-motion</p>
             </div>
-            <p class="mt-4 text-sm text-ash/60">
-              Roman numerals in the left rail orient the viewer. Quiet wayfinding.
-            </p>
-          </div>
-          <!-- Grain texture -->
-          <div>
-            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-ash/50 mb-6">Texture</p>
-            <div class="relative border border-charcoal/10 h-32 bg-ivory overflow-hidden">
-              <div class="grain" style="position: absolute; opacity: 0.08;"></div>
-            </div>
-            <p class="mt-4 text-sm text-ash/60">
-              A barely perceptible film-grain overlay at 3% opacity. Adds warmth without decoration.
-            </p>
           </div>
         </div>
       </div>
@@ -408,12 +341,12 @@ const typeScale = [
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-charcoal/10">
+  <footer class="border-t border-fore/5">
     <div class="container-page py-12 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-[0.6rem] uppercase tracking-[0.25em] text-ash/50">
+      <p class="text-[0.6rem] uppercase tracking-[0.25em] text-sub/50">
         {SITE.name} &middot; Brand Guidelines &middot; {new Date().getFullYear()}
       </p>
-      <a href="/" class="link-cinema text-[0.6rem] uppercase tracking-[0.25em] text-ash/50">Return to site</a>
+      <a href="/" class="link-cinema text-[0.6rem] uppercase tracking-[0.25em] text-sub/50">Return to site</a>
     </div>
   </footer>
 </Layout>

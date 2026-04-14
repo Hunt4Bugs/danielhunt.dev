@@ -12,7 +12,6 @@
     --mute: 107 107 107;      /* #6B6B6B */
     --accent: 196 168 124;    /* #C4A87C champagne */
     --accent-deep: 92 46 53;  /* #5C2E35 wine */
-    --grain-color: 0 0 0;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -24,7 +23,6 @@
       --mute: 107 107 107;      /* #6B6B6B pewter */
       --accent: 196 168 124;    /* #C4A87C champagne */
       --accent-deep: 196 168 124;
-      --grain-color: 255 255 255;
     }
   }
 
@@ -38,8 +36,8 @@
     font-feature-settings: 'ss01', 'ss02', 'kern', 'liga';
   }
   h1, h2, h3, h4 {
-    @apply font-serif;
-    font-feature-settings: 'kern', 'liga', 'dlig';
+    @apply font-sans font-semibold;
+    font-feature-settings: 'kern', 'liga';
     text-wrap: balance;
   }
   p {
@@ -53,27 +51,38 @@
 
 @layer components {
   .container-page {
-    @apply mx-auto max-w-6xl px-6 sm:px-10;
+    @apply mx-auto max-w-7xl px-6 sm:px-10;
   }
 
+  /* Pill button — primary CTA */
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center px-8 py-3 text-sm font-medium rounded-full transition-all duration-500;
+    background: rgb(var(--fore));
+    color: rgb(var(--ground));
+  }
+  .btn-primary:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+  }
+
+  /* Ghost button — secondary CTA */
   .btn-ghost {
-    @apply relative inline-flex items-center justify-center px-8 py-3 text-[0.7rem] tracking-[0.15em] uppercase transition-all duration-500;
+    @apply relative inline-flex items-center justify-center px-8 py-3 text-sm font-medium rounded-full transition-all duration-500;
     color: rgb(var(--fore));
     border: 1px solid rgb(var(--fore) / 0.2);
   }
   .btn-ghost:hover {
-    color: rgb(var(--accent));
-    border-color: rgb(var(--accent));
-    letter-spacing: 0.2em;
+    color: rgb(var(--ground));
+    background: rgb(var(--fore));
+    border-color: rgb(var(--fore));
   }
 
   .section {
-    @apply py-16 sm:py-32 lg:py-40;
-    border-top: 1px solid rgb(var(--fore) / 0.08);
+    @apply py-20 sm:py-28 lg:py-36;
   }
 
   .marker {
-    @apply font-serif block;
+    @apply block;
     color: rgb(var(--mute) / 0.5);
     font-size: 0.7rem;
     letter-spacing: 0.32em;
@@ -84,12 +93,22 @@
   .display {
     @apply font-serif;
     font-weight: 400;
-    letter-spacing: -0.01em;
-    line-height: 1;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
   }
   .display em {
     font-style: italic;
     color: rgb(var(--accent));
+  }
+
+  /* Card component */
+  .card {
+    @apply rounded-2xl p-6 sm:p-8 transition-all duration-500;
+    background: rgb(var(--surface) / 0.5);
+    border: 1px solid rgb(var(--fore) / 0.06);
+  }
+  .card:hover {
+    border-color: rgb(var(--fore) / 0.12);
   }
 
   .input-underline {
@@ -123,32 +142,21 @@
 
   .reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(32px);
+    transition: opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
   }
-  .reveal-delay-1 { transition-delay: 0.15s; }
-  .reveal-delay-2 { transition-delay: 0.30s; }
-  .reveal-delay-3 { transition-delay: 0.45s; }
-  .reveal-delay-4 { transition-delay: 0.60s; }
+  .reveal-delay-1 { transition-delay: 0.2s; }
+  .reveal-delay-2 { transition-delay: 0.4s; }
+  .reveal-delay-3 { transition-delay: 0.6s; }
+  .reveal-delay-4 { transition-delay: 0.8s; }
 
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
     html { scroll-behavior: auto; }
   }
-}
-
-.grain {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  opacity: 0.035;
-  contain: strict;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  background-size: 240px 240px;
 }
