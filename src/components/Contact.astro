@@ -1,72 +1,77 @@
 ---
+import { SITE } from '../data/site';
+
 // TODO: replace YOUR_ACCESS_KEY with your Web3Forms access key
-// Get one free at https://web3forms.com (no account required, just an email)
 const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY';
-const EMAIL = 'accounts@danielhunt.dev';
 ---
-<section id="contact" class="section bg-parchment/40">
-  <div class="container-page grid md:grid-cols-2 gap-16">
-    <div>
-      <p class="eyebrow mb-4">Get in touch</p>
-      <h2 class="font-serif text-4xl sm:text-5xl tracking-tight text-espresso">
-        Let's talk about your project.
-      </h2>
-      <p class="mt-6 text-lg text-cocoa leading-relaxed">
-        Whether it's a quick audit, a months-long build, or just a sanity check
-        on an idea — drop a note and I'll reply within a couple of working days.
-      </p>
-      <a
-        href={`mailto:${EMAIL}`}
-        class="mt-8 inline-flex items-center gap-2 font-serif text-2xl text-rust hover:text-rustDark transition"
-      >
-        {EMAIL}
-        <span aria-hidden="true">→</span>
-      </a>
+<section id="contact" class="section" aria-labelledby="contact-heading">
+  <div class="container-page grid grid-cols-12 gap-6">
+    <aside class="hidden md:flex md:col-span-2 flex-col gap-3">
+      <span class="marker reveal">V</span>
+    </aside>
+
+    <div class="col-span-12 md:col-span-10 grid md:grid-cols-2 gap-16">
+      <div>
+        <span class="marker mb-4 reveal md:hidden">V</span>
+        <h2 id="contact-heading" class="display text-fore text-[clamp(2.25rem,5.5vw,4.5rem)] reveal">
+          Let's talk<br/>about <em>your project.</em>
+        </h2>
+        <p class="mt-8 text-lg text-sub leading-relaxed max-w-md reveal reveal-delay-1">
+          Whether it's a quick audit, a months-long build, or a sanity check
+          on an idea — drop a note. I reply within a couple of working days.
+        </p>
+        <a
+          href={`mailto:${SITE.email}`}
+          class="link-cinema mt-12 inline-flex items-center gap-3 font-serif text-2xl sm:text-3xl text-fore reveal reveal-delay-2"
+          aria-label={`Email ${SITE.name} at ${SITE.email}`}
+        >
+          {SITE.email}
+          <span class="text-accent" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+
+      <div>
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="border border-fore/10 bg-surface/50 p-8 sm:p-10 space-y-6 reveal reveal-delay-2"
+          aria-label="Contact form"
+        >
+          <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+          <input type="hidden" name="subject" value="New enquiry from danielhunt.dev" />
+          <input type="hidden" name="from_name" value="danielhunt.dev contact form" />
+          <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <div>
+            <label for="name" class="block text-[0.6rem] uppercase tracking-[0.3em] text-sub/50 mb-2">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required class="input-underline" />
+          </div>
+          <div>
+            <label for="email" class="block text-[0.6rem] uppercase tracking-[0.3em] text-sub/50 mb-2">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required class="input-underline" />
+          </div>
+          <div>
+            <label for="message" class="block text-[0.6rem] uppercase tracking-[0.3em] text-sub/50 mb-2">Message</label>
+            <textarea id="message" name="message" rows="4" required class="input-underline resize-none"></textarea>
+          </div>
+          <div class="flex flex-col items-center gap-4 pt-2">
+            <button type="submit" class="btn-ghost w-full sm:w-auto">Send message</button>
+            <p class="text-[0.55rem] uppercase tracking-[0.2em] text-mute/50">
+              Replies within 2 working days
+            </p>
+          </div>
+        </form>
+
+        <div class="mt-8 text-center md:hidden reveal reveal-delay-3">
+          <p class="text-sm text-mute/60 mb-2">Or email directly</p>
+          <a
+            href={`mailto:${SITE.email}`}
+            class="link-cinema font-serif text-xl text-fore"
+          >
+            {SITE.email} <span class="text-accent" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
     </div>
-
-    <form
-      action="https://api.web3forms.com/submit"
-      method="POST"
-      class="bg-cream border border-cocoa/15 rounded-2xl p-8 space-y-5 shadow-sm"
-    >
-      <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
-      <input type="hidden" name="subject" value="New enquiry from danielhunt.dev" />
-      <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
-
-      <div>
-        <label for="name" class="block text-sm font-medium text-espresso mb-2">Name</label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required
-          class="w-full rounded-lg border border-cocoa/20 bg-cream px-4 py-3 text-espresso placeholder:text-cocoa/50 focus:border-rust focus:outline-none focus:ring-1 focus:ring-rust"
-        />
-      </div>
-      <div>
-        <label for="email" class="block text-sm font-medium text-espresso mb-2">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          class="w-full rounded-lg border border-cocoa/20 bg-cream px-4 py-3 text-espresso placeholder:text-cocoa/50 focus:border-rust focus:outline-none focus:ring-1 focus:ring-rust"
-        />
-      </div>
-      <div>
-        <label for="message" class="block text-sm font-medium text-espresso mb-2">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          required
-          class="w-full rounded-lg border border-cocoa/20 bg-cream px-4 py-3 text-espresso placeholder:text-cocoa/50 focus:border-rust focus:outline-none focus:ring-1 focus:ring-rust"
-        ></textarea>
-      </div>
-      <button type="submit" class="btn-primary w-full">Send message</button>
-      <p class="text-xs text-cocoa/70 text-center">
-        Powered by Web3Forms. Your details are only used to reply to you.
-      </p>
-    </form>
   </div>
 </section>

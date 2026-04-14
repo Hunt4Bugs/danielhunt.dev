@@ -1,26 +1,40 @@
 ---
 ---
-<section id="about" class="section">
-  <div class="container-page grid md:grid-cols-3 gap-12">
-    <div>
-      <p class="eyebrow mb-4">About</p>
-      <h2 class="font-serif text-4xl sm:text-5xl tracking-tight text-espresso">
-        Hello, I'm Daniel.
-      </h2>
-    </div>
-    <div class="md:col-span-2 space-y-6 text-lg leading-relaxed text-cocoa">
-      <p>
-        I'm a software engineer focused on the practical end of AI — the part
-        where models meet messy data, real users, and uncomfortable
-        deadlines. Most of my work sits between strategy and shipping: helping
-        teams figure out <em>what</em> to build, then actually building it.
-      </p>
-      <p>
-        I care about systems that age well: clear interfaces, honest
-        evaluations, sensible defaults, and code other people can read on a
-        Monday morning. If that sounds like the kind of partner you're
-        looking for, I'd love to hear about what you're working on.
-      </p>
+<section id="about" class="section" aria-labelledby="about-heading">
+  <div class="container-page grid grid-cols-12 gap-6">
+    <aside class="hidden md:flex md:col-span-2 flex-col gap-3">
+      <span class="marker reveal">III</span>
+    </aside>
+
+    <div class="col-span-12 md:col-span-10 grid md:grid-cols-5 gap-12">
+      <div class="md:col-span-2">
+        <span class="marker mb-4 reveal md:hidden">III</span>
+        <h2 id="about-heading" class="display text-fore text-[clamp(2.25rem,5vw,4rem)] reveal">
+          Hello,<br/>I'm <em>Daniel.</em>
+        </h2>
+      </div>
+      <div class="md:col-span-3 space-y-7 text-lg sm:text-xl leading-[1.7] text-sub">
+        <p class="reveal reveal-delay-1">
+          I'm a software engineer focused on the practical end of AI — the
+          part where models meet messy data, real users, and uncomfortable
+          deadlines. Most of my work sits between strategy and shipping:
+          helping teams figure out <em class="text-fore not-italic">what</em> to build, then actually
+          building it.
+        </p>
+        <p class="reveal reveal-delay-2">
+          I work primarily in <strong class="text-fore font-medium">Python</strong>
+          (FastAPI, FastMCP) and <strong class="text-fore font-medium">TypeScript</strong>
+          (Next.js), with <strong class="text-fore font-medium">Supabase</strong>
+          for data and auth. For agent work I build autonomous agents,
+          multi-step workflows, and tool integrations that plug into the
+          systems your team already uses.
+        </p>
+        <p class="reveal reveal-delay-3">
+          I care about systems that age well: clear interfaces, honest
+          evaluations, sensible defaults, and code other people can read on a
+          Monday morning.
+        </p>
+      </div>
     </div>
   </div>
 </section>

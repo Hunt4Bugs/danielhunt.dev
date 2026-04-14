@@ -1,21 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
+  safelist: [
+    'reveal-delay-1',
+    'reveal-delay-2',
+    'reveal-delay-3',
+    'reveal-delay-4',
+  ],
   theme: {
     extend: {
       colors: {
-        // Light + Deep Autumn palette
-        cream: '#FAF6EF',
-        parchment: '#F1E9D8',
-        espresso: '#2B1D14',
-        cocoa: '#5A4434',
-        rust: '#A0432A',
-        rustDark: '#7E3320',
-        mustard: '#B8862F',
-        forest: '#2F5249',
+        ground: 'rgb(var(--ground) / <alpha-value>)',
+        surface: 'rgb(var(--surface) / <alpha-value>)',
+        fore: 'rgb(var(--fore) / <alpha-value>)',
+        sub: 'rgb(var(--sub) / <alpha-value>)',
+        mute: 'rgb(var(--mute) / <alpha-value>)',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+        'accent-deep': 'rgb(var(--accent-deep) / <alpha-value>)',
       },
       fontFamily: {
-        serif: ['Fraunces', 'Georgia', 'serif'],
+        serif: ['"EB Garamond"', 'Georgia', 'serif'],
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
     },

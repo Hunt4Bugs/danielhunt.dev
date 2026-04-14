@@ -14,7 +14,7 @@ npm run preview
 ## TODO before going live
 
 1. **Social URLs** — `src/components/Footer.astro`: replace the three `href: '#'` placeholders with your real LinkedIn / X / YouTube URLs.
-2. **Contact form key** — `src/components/Contact.astro`: replace `YOUR_ACCESS_KEY` with a free [Web3Forms](https://web3forms.com) access key (just enter `accounts@danielhunt.dev` on their site, they email you a key — no signup needed).
+2. **Contact form key** — `src/components/Contact.astro`: replace `YOUR_ACCESS_KEY` with a free [Web3Forms](https://web3forms.com) access key (just enter `contact@danielhunt.dev` on their site, they email you a key — no signup needed).
 3. **OG image** *(optional)* — drop a 1200×630 `og.png` in `public/` and add `<meta property="og:image" content="/og.png" />` in `src/layouts/Layout.astro`.
 
 ## Deployment

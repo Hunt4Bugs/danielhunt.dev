@@ -21,3 +21,8 @@ pnpm-debug.log*
 .idea/
 .DS_Store
 Thumbs.db
+
+# playwright / review screenshots
+.playwright-mcp/
+*.png
+!public/**/*.png

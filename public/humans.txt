@@ -1,0 +1,10 @@
+/* TEAM */
+  Daniel Hunt — AI Engineer & Consultant
+  Site: https://danielhunt.dev
+  Contact: contact@danielhunt.dev
+
+/* SITE */
+  Last update: 2026
+  Standards: HTML5, CSS3, JSON-LD
+  Built with: Astro, Tailwind CSS
+  Hosted on: GitHub Pages

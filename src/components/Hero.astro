@@ -1,18 +1,49 @@
 ---
+import { SITE } from '../data/site';
 ---
-<section id="top" class="container-page pt-20 pb-28">
-  <p class="eyebrow mb-6">AI Engineer · Consultant</p>
-  <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight text-espresso max-w-3xl">
-    Building thoughtful AI systems for teams that care about
-    <span class="text-rust italic">getting it right.</span>
-  </h1>
-  <p class="mt-8 text-lg text-cocoa max-w-2xl leading-relaxed">
-    I help companies design, ship, and operate AI products — from agents and
-    RAG pipelines to evaluation suites and the boring infrastructure that keeps
-    them reliable in production.
-  </p>
-  <div class="mt-10 flex flex-wrap gap-4">
-    <a href="#contact" class="btn-primary">Start a conversation</a>
-    <a href="#services" class="btn-ghost">See what I do</a>
+<section
+  id="top"
+  class="relative min-h-[92vh] flex flex-col justify-center"
+  aria-labelledby="hero-heading"
+>
+  <div class="container-page relative z-10">
+    <div class="grid grid-cols-12 gap-6 items-end">
+      <aside class="hidden md:flex md:col-span-2 flex-col gap-3 text-mute/40 reveal">
+        <span class="marker">I</span>
+        <span class="text-[0.6rem] uppercase tracking-[0.32em]">Est. MMXXVI</span>
+      </aside>
+
+      <div class="col-span-12 md:col-span-10">
+        <p class="text-[0.6rem] uppercase tracking-[0.4em] text-accent/70 mb-10 reveal">AI Engineer &middot; Consultant</p>
+
+        <h1
+          id="hero-heading"
+          class="display text-fore text-[clamp(3rem,9vw,8.5rem)] reveal reveal-delay-1"
+        >
+          Thoughtful AI<br/>
+          systems, built<br/>
+          to <em>last.</em>
+        </h1>
+
+        <p class="mt-14 max-w-xl text-lg sm:text-xl text-sub leading-relaxed reveal reveal-delay-2">
+          I'm <strong class="font-medium text-fore">{SITE.name}</strong> —
+          an independent AI engineer and consultant. I help companies design,
+          ship, and operate AI products that age gracefully in production.
+        </p>
+
+        <div class="mt-14 flex flex-col sm:flex-row items-start gap-6 reveal reveal-delay-3">
+          <a href="#contact" class="link-cinema font-serif text-2xl sm:text-3xl text-fore">
+            Start a conversation <span class="text-accent" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="#services" class="link-cinema font-serif text-2xl sm:text-3xl text-mute">
+            See the work <span class="text-accent/40" aria-hidden="true">&darr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute inset-x-0 bottom-0 z-10 flex justify-center py-8 reveal reveal-delay-4">
+    <span class="text-accent/30 text-sm" aria-hidden="true">&darr;</span>
   </div>
 </section>

@@ -1,12 +1,76 @@
 ---
+import { NAV_LINKS } from '../data/site';
 ---
-<header class="container-page py-6 flex items-center justify-between">
-  <a href="#top" class="font-serif text-xl font-semibold tracking-tight text-espresso">
-    Daniel<span class="text-rust">.</span>Hunt
-  </a>
-  <nav class="hidden sm:flex items-center gap-8 text-sm font-medium text-cocoa">
-    <a href="#services" class="hover:text-rust transition">Services</a>
-    <a href="#about" class="hover:text-rust transition">About</a>
-    <a href="#contact" class="hover:text-rust transition">Contact</a>
+<header class="sticky top-0 z-40 bg-ground/90 backdrop-blur-md border-b border-fore/5">
+  <div class="container-page py-5 flex items-center justify-between">
+    <a
+      href="#top"
+      class="font-serif text-2xl tracking-tight text-fore"
+      aria-label="Daniel Hunt — home"
+    >
+      <span class="text-fore/30">{'{'}</span><span class="text-fore mx-[0.08em]">D</span><span class="text-fore/30">{'}'}</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav aria-label="Primary" class="hidden sm:flex items-center gap-10 text-[0.6rem] uppercase tracking-[0.35em] text-sub/60 font-light">
+      {NAV_LINKS.map((link) => (
+        <a href={link.href} class="link-cinema">{link.label}</a>
+      ))}
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button
+      id="mobile-menu-btn"
+      class="sm:hidden flex items-center justify-center w-10 h-10 -mr-2 text-fore"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
+        <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+      <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
+        <path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  <nav
+    id="mobile-menu"
+    class="sm:hidden hidden border-t border-fore/5 bg-ground/95 backdrop-blur-md"
+    aria-label="Mobile"
+  >
+    <div class="container-page py-8 flex flex-col gap-6 text-[0.7rem] uppercase tracking-[0.3em] text-sub">
+      {NAV_LINKS.map((link) => (
+        <a href={link.href} class="link-cinema">{link.label}</a>
+      ))}
+    </div>
   </nav>
 </header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn')!;
+  const menu = document.getElementById('mobile-menu')!;
+  const iconOpen = document.getElementById('menu-icon-open')!;
+  const iconClose = document.getElementById('menu-icon-close')!;
+
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('hidden');
+    const expanded = !open;
+    btn.setAttribute('aria-expanded', String(expanded));
+    btn.setAttribute('aria-label', expanded ? 'Close menu' : 'Open menu');
+    iconOpen.classList.toggle('hidden', expanded);
+    iconClose.classList.toggle('hidden', !expanded);
+  });
+
+  menu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Open menu');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    });
+  });
+</script>

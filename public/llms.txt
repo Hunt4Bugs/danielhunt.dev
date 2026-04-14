@@ -1,0 +1,33 @@
+# Daniel Hunt
+
+> Independent AI engineer and consultant. I help companies design, build, and operate AI products — audits, infrastructure, agents, and custom applications.
+
+- **Name:** Daniel Hunt
+- **Role:** AI Engineer & Consultant
+- **Website:** https://danielhunt.dev
+- **Email:** contact@danielhunt.dev
+- **Based:** Works remotely with clients globally
+- **LinkedIn:** https://www.linkedin.com/in/danielhunt16/
+- **X:** https://x.com/_danielhunt
+
+## Services
+
+- **AI Audit** — Structured review of an organisation's existing AI usage covering accuracy, cost, latency, security, governance, and risk. Deliverable: a prioritised action list and an honest assessment of which AI features deliver value.
+- **AI Infrastructure** — Production-grade foundations: RAG pipelines, vector databases, model gateways, evaluation harnesses, observability, and CI/CD for AI systems.
+- **Agent & Workflow Automation** — Custom agents and Model Context Protocol (MCP) servers that integrate with tools like Slack, Notion, Linear, and internal APIs to automate repetitive work.
+- **Custom App Development** — Full-stack AI-powered applications built on FastAPI, Next.js, and Supabase. From prototype to production.
+
+## Stack
+
+Python (FastAPI, FastMCP), TypeScript (Next.js, App Router), Supabase (Postgres + Auth), Tailwind CSS, shadcn/ui. Deployment on Vercel and Render. Models from Anthropic, OpenAI, and Google.
+
+## Engagement
+
+- One-week audits to multi-month builds.
+- Free 30-minute scoping calls.
+- Typical reply time: within two working days.
+- Contact: contact@danielhunt.dev
+
+## Pages
+
+- [Home](https://danielhunt.dev/): overview, services, about, FAQ, contact form

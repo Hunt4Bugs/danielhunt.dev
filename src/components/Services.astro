@@ -1,47 +1,44 @@
 ---
-const services = [
-  {
-    title: 'AI Audit',
-    blurb:
-      'A clear-eyed review of your existing AI usage — accuracy, cost, security, and risk. You leave with a prioritised action list and an honest answer to "is this actually working?"',
-    tag: '01',
-  },
-  {
-    title: 'AI Infrastructure',
-    blurb:
-      'Production-grade foundations: RAG, vector databases, model gateways, evals, observability and CI. The unglamorous pieces that turn a demo into a dependable product.',
-    tag: '02',
-  },
-  {
-    title: 'Agent & Workflow Automation',
-    blurb:
-      'Custom agents and MCP servers that plug into your real tools — Slack, Notion, Linear, internal APIs — and quietly remove hours of repetitive work each week.',
-    tag: '03',
-  },
-  {
-    title: 'Custom App Development',
-    blurb:
-      'Full-stack AI-powered applications built on a modern, boring-by-choice stack (FastAPI, Next.js, Supabase). From first prototype to a product your team actually uses.',
-    tag: '04',
-  },
-];
+import { SERVICES } from '../data/site';
 ---
-<section id="services" class="section">
-  <div class="container-page">
-    <p class="eyebrow mb-4">What I offer</p>
-    <h2 class="text-4xl sm:text-5xl tracking-tight text-espresso max-w-2xl">
-      Four ways I tend to help.
-    </h2>
-    <div class="mt-16 grid gap-px bg-cocoa/15 sm:grid-cols-2 rounded-2xl overflow-hidden border border-cocoa/15">
-      {services.map((s) => (
-        <article class="bg-cream p-8 sm:p-10 hover:bg-parchment transition">
-          <div class="flex items-baseline justify-between mb-4">
-            <h3 class="font-serif text-2xl text-espresso">{s.title}</h3>
-            <span class="font-mono text-xs text-mustard tracking-widest">{s.tag}</span>
-          </div>
-          <p class="text-cocoa leading-relaxed">{s.blurb}</p>
-        </article>
-      ))}
+<section id="services" class="section" aria-labelledby="services-heading">
+  <div class="container-page grid grid-cols-12 gap-6">
+    <aside class="hidden md:flex md:col-span-2 flex-col gap-3">
+      <span class="marker reveal">II</span>
+    </aside>
+
+    <div class="col-span-12 md:col-span-10">
+      <span class="marker mb-4 reveal md:hidden">II</span>
+      <h2
+        id="services-heading"
+        class="display text-fore text-[clamp(2.25rem,5.5vw,4.5rem)] max-w-3xl reveal"
+      >
+        Four ways I tend <em>to help.</em>
+      </h2>
+
+      <ul class="mt-20 divide-y divide-fore/10 border-y border-fore/10 list-none p-0">
+        {SERVICES.map((s, i) => (
+          <li class={`group reveal reveal-delay-${Math.min(i + 1, 4)}`}>
+            <article
+              aria-labelledby={`svc-${s.slug}`}
+              class="grid grid-cols-12 gap-6 items-start py-10 sm:py-12 transition-colors duration-700 hover:bg-surface -mx-6 px-6 sm:-mx-10 sm:px-10"
+            >
+              <span class="col-span-2 sm:col-span-1 marker mt-1" aria-hidden="true">
+                {s.tag}
+              </span>
+              <h3
+                id={`svc-${s.slug}`}
+                class="col-span-10 sm:col-span-4 font-serif text-2xl sm:text-3xl text-fore italic transition-colors duration-700 group-hover:text-accent"
+              >
+                {s.title}
+              </h3>
+              <p class="col-span-12 sm:col-span-7 text-sub leading-relaxed text-base sm:text-lg max-w-xl">
+                {s.blurb}
+              </p>
+            </article>
+          </li>
+        ))}
+      </ul>
     </div>
   </div>
 </section>

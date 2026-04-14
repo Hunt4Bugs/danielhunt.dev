@@ -4,15 +4,21 @@ import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
 import About from '../components/About.astro';
+import Faq from '../components/Faq.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
 <Layout>
+  <a
+    href="#top"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-cream focus:text-espresso focus:px-4 focus:py-2 focus:rounded"
+  >Skip to content</a>
   <Nav />
-  <main>
+  <main id="main">
     <Hero />
     <Services />
     <About />
+    <Faq />
     <Contact />
   </main>
   <Footer />
