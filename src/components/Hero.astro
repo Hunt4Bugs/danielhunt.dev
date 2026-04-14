@@ -1,36 +1,71 @@
 ---
-import { SITE } from '../data/site';
+import { SITE, STATS } from '../data/site';
 ---
 <section
   id="top"
-  class="relative min-h-screen flex flex-col justify-center items-center text-center"
+  class="relative min-h-screen flex items-center pt-24 pb-16"
   aria-labelledby="hero-heading"
 >
-  <div class="container-page relative z-10 flex flex-col items-center">
-    <p class="text-[0.6rem] uppercase tracking-[0.4em] text-accent/70 mb-10 reveal">AI Engineer &middot; Consultant</p>
+  <div class="container-page w-full">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Text column -->
+      <div class="order-2 lg:order-1">
+        <p class="text-[0.65rem] uppercase tracking-[0.4em] text-accent mb-6 reveal">
+          AI Engineer &middot; Consultant
+        </p>
 
-    <h1
-      id="hero-heading"
-      class="display text-fore text-[clamp(3.5rem,10vw,9rem)] reveal reveal-delay-1"
-    >
-      Thoughtful AI<br/>
-      systems, built<br/>
-      to <em>last.</em>
-    </h1>
+        <h1
+          id="hero-heading"
+          class="display text-fore text-[clamp(3rem,7vw,6rem)] reveal reveal-delay-1"
+        >
+          Hello,<br/>
+          I'm <em>Daniel.</em>
+        </h1>
 
-    <p class="mt-14 max-w-xl text-lg sm:text-xl text-sub leading-relaxed reveal reveal-delay-2">
-      I'm <strong class="font-medium text-fore">{SITE.name}</strong> —
-      an independent AI engineer and consultant. I help companies design,
-      ship, and operate AI products that age gracefully in production.
-    </p>
+        <p class="mt-8 max-w-lg text-lg text-sub leading-relaxed reveal reveal-delay-2">
+          Independent AI engineer and consultant. I help companies design,
+          ship, and operate AI products that age gracefully in production.
+        </p>
 
-    <div class="mt-14 flex flex-col sm:flex-row items-center gap-6 reveal reveal-delay-3">
-      <a href="#contact" class="btn-ghost">Start a conversation</a>
-      <a href="#services" class="link-cinema text-sub text-sm uppercase tracking-[0.2em]">
-        See the work <span class="text-accent/40 ml-1" aria-hidden="true">&darr;</span>
-      </a>
+        <div class="mt-10 flex flex-wrap items-center gap-4 reveal reveal-delay-3">
+          <a href="#contact" class="btn-primary">
+            Start a conversation
+            <span class="ml-2" aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="#services" class="btn-ghost">See the work</a>
+        </div>
+
+        <!-- Stats row -->
+        <div class="mt-16 grid grid-cols-3 gap-8 reveal reveal-delay-4">
+          {STATS.map((stat) => (
+            <div>
+              <p class="text-3xl sm:text-4xl font-semibold text-fore">
+                {stat.value}
+              </p>
+              <p class="mt-1 text-xs text-sub leading-snug">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Photo column -->
+      <div class="order-1 lg:order-2 flex justify-center lg:justify-end reveal reveal-delay-2">
+        <div
+          class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[420px] rounded-full overflow-hidden"
+          style="background: rgb(var(--surface)); border: 1px solid rgb(var(--fore) / 0.08);"
+        >
+          <!-- Placeholder: replace with <img> when photo is available -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="font-serif text-6xl sm:text-7xl lg:text-8xl text-fore/10 select-none">DH</span>
+          </div>
+          <!-- Decorative ring -->
+          <div
+            class="absolute -inset-3 rounded-full pointer-events-none"
+            style="border: 1px solid rgb(var(--accent) / 0.2);"
+            aria-hidden="true"
+          ></div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ground to-transparent pointer-events-none" aria-hidden="true"></div>
 </section>

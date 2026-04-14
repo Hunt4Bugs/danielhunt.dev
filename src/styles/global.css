@@ -54,8 +54,20 @@
     @apply mx-auto max-w-7xl px-6 sm:px-10;
   }
 
+  /* Pill button — primary CTA */
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center px-8 py-3 text-sm font-medium rounded-full transition-all duration-500;
+    background: rgb(var(--fore));
+    color: rgb(var(--ground));
+  }
+  .btn-primary:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+  }
+
+  /* Ghost button — secondary CTA */
   .btn-ghost {
-    @apply relative inline-flex items-center justify-center px-10 py-3.5 text-[0.7rem] tracking-[0.15em] uppercase rounded-full transition-all duration-500;
+    @apply relative inline-flex items-center justify-center px-8 py-3 text-sm font-medium rounded-full transition-all duration-500;
     color: rgb(var(--fore));
     border: 1px solid rgb(var(--fore) / 0.2);
   }
@@ -66,11 +78,11 @@
   }
 
   .section {
-    @apply py-20 sm:py-36 lg:py-48;
+    @apply py-20 sm:py-28 lg:py-36;
   }
 
   .marker {
-    @apply font-serif block;
+    @apply block;
     color: rgb(var(--mute) / 0.5);
     font-size: 0.7rem;
     letter-spacing: 0.32em;
@@ -87,6 +99,16 @@
   .display em {
     font-style: italic;
     color: rgb(var(--accent));
+  }
+
+  /* Card component */
+  .card {
+    @apply rounded-2xl p-6 sm:p-8 transition-all duration-500;
+    background: rgb(var(--surface) / 0.5);
+    border: 1px solid rgb(var(--fore) / 0.06);
+  }
+  .card:hover {
+    border-color: rgb(var(--fore) / 0.12);
   }
 
   .input-underline {
