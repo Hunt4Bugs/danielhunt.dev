@@ -3,18 +3,18 @@ import { SITE } from '../data/site';
 
 const year = new Date().getFullYear();
 ---
-<footer class="border-t border-fore/10 mt-8" aria-labelledby="footer-heading">
+<footer class="border-t border-fore/5 mt-8" aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Site footer</h2>
-  <div class="container-page py-16 grid grid-cols-12 gap-6 items-end">
-    <div class="col-span-12 md:col-span-6">
-      <p class="font-serif text-3xl text-fore">
+  <div class="container-page py-16 flex flex-col sm:flex-row items-center justify-between gap-8">
+    <div class="text-center sm:text-left">
+      <p class="text-sm font-medium text-fore">
         {SITE.name}
       </p>
-      <p class="mt-2 text-[0.55rem] uppercase tracking-[0.3em] text-mute/50">
+      <p class="mt-1 text-[0.55rem] uppercase tracking-[0.3em] text-mute/50">
         &copy; {year} &middot; All rights reserved
       </p>
     </div>
-    <ul class="col-span-12 md:col-span-6 flex flex-wrap gap-x-8 gap-y-3 text-sm md:justify-end" aria-label="Social and contact links">
+    <ul class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm" aria-label="Social and contact links">
       <li>
         <a
           href={SITE.socials.linkedin}

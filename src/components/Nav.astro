@@ -1,18 +1,18 @@
 ---
 import { NAV_LINKS } from '../data/site';
 ---
-<header class="sticky top-0 z-40 bg-ground/90 backdrop-blur-md border-b border-fore/5">
+<header class="sticky top-0 z-40 bg-ground/80 backdrop-blur-xl">
   <div class="container-page py-5 flex items-center justify-between">
     <a
       href="#top"
-      class="font-serif text-2xl tracking-tight text-fore"
+      class="text-sm font-medium tracking-tight text-fore"
       aria-label="Daniel Hunt — home"
     >
-      <span class="text-fore/30">{'{'}</span><span class="text-fore mx-[0.08em]">D</span><span class="text-fore/30">{'}'}</span>
+      Daniel Hunt
     </a>
 
     <!-- Desktop nav -->
-    <nav aria-label="Primary" class="hidden sm:flex items-center gap-10 text-[0.6rem] uppercase tracking-[0.35em] text-sub/60 font-light">
+    <nav aria-label="Primary" class="hidden sm:flex items-center gap-10 text-[0.6rem] uppercase tracking-[0.35em] text-sub font-light">
       {NAV_LINKS.map((link) => (
         <a href={link.href} class="link-cinema">{link.label}</a>
       ))}
@@ -38,7 +38,7 @@ import { NAV_LINKS } from '../data/site';
   <!-- Mobile drawer -->
   <nav
     id="mobile-menu"
-    class="sm:hidden hidden border-t border-fore/5 bg-ground/95 backdrop-blur-md"
+    class="sm:hidden hidden bg-ground/95 backdrop-blur-xl"
     aria-label="Mobile"
   >
     <div class="container-page py-8 flex flex-col gap-6 text-[0.7rem] uppercase tracking-[0.3em] text-sub">

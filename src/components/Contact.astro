@@ -5,14 +5,9 @@ import { SITE } from '../data/site';
 const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY';
 ---
 <section id="contact" class="section" aria-labelledby="contact-heading">
-  <div class="container-page grid grid-cols-12 gap-6">
-    <aside class="hidden md:flex md:col-span-2 flex-col gap-3">
-      <span class="marker reveal">V</span>
-    </aside>
-
-    <div class="col-span-12 md:col-span-10 grid md:grid-cols-2 gap-16">
+  <div class="container-page">
+    <div class="grid md:grid-cols-2 gap-16 md:gap-20">
       <div>
-        <span class="marker mb-4 reveal md:hidden">V</span>
         <h2 id="contact-heading" class="display text-fore text-[clamp(2.25rem,5.5vw,4.5rem)] reveal">
           Let's talk<br/>about <em>your project.</em>
         </h2>
@@ -22,7 +17,7 @@ const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY';
         </p>
         <a
           href={`mailto:${SITE.email}`}
-          class="link-cinema mt-12 inline-flex items-center gap-3 font-serif text-2xl sm:text-3xl text-fore reveal reveal-delay-2"
+          class="link-cinema mt-12 inline-flex items-center gap-3 text-xl sm:text-2xl font-medium text-fore reveal reveal-delay-2"
           aria-label={`Email ${SITE.name} at ${SITE.email}`}
         >
           {SITE.email}
@@ -34,7 +29,7 @@ const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY';
         <form
           action="https://api.web3forms.com/submit"
           method="POST"
-          class="border border-fore/10 bg-surface/50 p-8 sm:p-10 space-y-6 reveal reveal-delay-2"
+          class="space-y-8 reveal reveal-delay-2"
           aria-label="Contact form"
         >
           <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
@@ -54,8 +49,8 @@ const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY';
             <label for="message" class="block text-[0.6rem] uppercase tracking-[0.3em] text-sub/50 mb-2">Message</label>
             <textarea id="message" name="message" rows="4" required class="input-underline resize-none"></textarea>
           </div>
-          <div class="flex flex-col items-center gap-4 pt-2">
-            <button type="submit" class="btn-ghost w-full sm:w-auto">Send message</button>
+          <div class="flex flex-col items-start gap-4 pt-2">
+            <button type="submit" class="btn-ghost">Send message</button>
             <p class="text-[0.55rem] uppercase tracking-[0.2em] text-mute/50">
               Replies within 2 working days
             </p>
@@ -66,7 +61,7 @@ const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY';
           <p class="text-sm text-mute/60 mb-2">Or email directly</p>
           <a
             href={`mailto:${SITE.email}`}
-            class="link-cinema font-serif text-xl text-fore"
+            class="link-cinema text-lg font-medium text-fore"
           >
             {SITE.email} <span class="text-accent" aria-hidden="true">&rarr;</span>
           </a>
