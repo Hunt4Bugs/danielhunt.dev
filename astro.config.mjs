@@ -3,7 +3,6 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://hunt4bugs.github.io',
-  base: '/danielhunt.dev',
+  site: 'https://danielhunt.dev',
   integrations: [tailwind()],
 });
