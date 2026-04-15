@@ -66,12 +66,6 @@ export const SERVICES = [
   },
 ];
 
-export const STATS = [
-  { value: '10+', label: 'Years in software engineering' },
-  { value: '50+', label: 'Projects delivered' },
-  { value: '100%', label: 'Client satisfaction' },
-] as const;
-
 export const FAQS = [
   {
     q: 'What does Daniel Hunt do?',

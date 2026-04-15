@@ -1,5 +1,5 @@
 ---
-import { SITE, STATS } from '../data/site';
+import { SITE } from '../data/site';
 ---
 <section
   id="top"
@@ -33,18 +33,6 @@ import { SITE, STATS } from '../data/site';
             <span class="ml-2" aria-hidden="true">&rarr;</span>
           </a>
           <a href="#services" class="btn-ghost">See the work</a>
-        </div>
-
-        <!-- Stats row -->
-        <div class="mt-16 grid grid-cols-3 gap-8 reveal reveal-delay-4">
-          {STATS.map((stat) => (
-            <div>
-              <p class="text-3xl sm:text-4xl font-semibold text-fore">
-                {stat.value}
-              </p>
-              <p class="mt-1 text-xs text-sub leading-snug">{stat.label}</p>
-            </div>
-          ))}
         </div>
       </div>
 
