@@ -1,5 +1,5 @@
 /* TEAM */
-  Daniel Hunt — AI Engineer & Consultant
+  Daniel Hunt — AI & Data Engineer
   Site: https://danielhunt.dev
   Contact: contact@danielhunt.dev
 

@@ -2,26 +2,25 @@
 import { FAQS } from '../data/site';
 ---
 <section id="faq" class="section" aria-labelledby="faq-heading">
-  <div class="container-page max-w-3xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 id="faq-heading" class="text-fore text-[clamp(2rem,5vw,3.5rem)] reveal">
-        Quick answers
+  <div class="container-page">
+    <div class="max-w-3xl">
+      <p class="mono-label reveal">Questions</p>
+      <h2 id="faq-heading" class="display mt-5 text-[clamp(2.4rem,6vw,4.75rem)] text-text reveal reveal-delay-1">
+        Quick answers.
       </h2>
     </div>
 
-    <div class="space-y-3">
+    <div class="mt-10 border-y border-line-strong">
       {FAQS.map((f, i) => (
-        <details class={`group card cursor-pointer reveal reveal-delay-${Math.min(i + 1, 4)}`}>
-          <summary class="flex items-start justify-between gap-6 list-none">
-            <h3 class="text-base sm:text-lg font-medium text-fore group-hover:text-accent group-open:text-accent transition-colors duration-500">
-              {f.q}
-            </h3>
-            <span
-              aria-hidden="true"
-              class="text-mute/40 text-lg leading-none mt-0.5 transition-all duration-500 group-open:rotate-45 group-open:text-accent/60 shrink-0"
-            >+</span>
+        <details class={`border-b border-line py-6 last:border-b-0 reveal reveal-delay-${Math.min(i + 1, 4)}`}>
+          <summary class="grid cursor-pointer list-none gap-4 md:grid-cols-[220px_minmax(0,1fr)]">
+            <span class="mono-label">Q{String(i + 1).padStart(2, '0')}</span>
+            <span class="pr-8 text-[1.15rem] font-light tracking-[-0.02em] text-text">{f.q}</span>
           </summary>
-          <p class="mt-4 text-sub leading-relaxed text-[0.95rem]">{f.a}</p>
+          <div class="grid gap-4 pt-4 md:grid-cols-[220px_minmax(0,1fr)]">
+            <span class="mono-label">Answer</span>
+            <p class="max-w-4xl text-base leading-7 text-muted">{f.a}</p>
+          </div>
         </details>
       ))}
     </div>

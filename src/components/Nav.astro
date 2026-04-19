@@ -1,77 +1,84 @@
 ---
-import { NAV_LINKS } from '../data/site';
+import { NAV_LINKS, SITE } from '../data/site';
 ---
-<header class="fixed top-0 inset-x-0 z-40 flex justify-center pt-5 px-6 pointer-events-none">
-  <nav
-    class="pointer-events-auto flex items-center gap-1 sm:gap-2 rounded-full px-2 py-2 sm:px-4 sm:py-2.5 backdrop-blur-xl"
-    style="background: rgb(var(--surface) / 0.7); border: 1px solid rgb(var(--fore) / 0.08); box-shadow: 0 4px 24px rgb(var(--fore) / 0.06);"
-    aria-label="Primary"
-  >
-    <a
-      href="#top"
-      class="px-3 sm:px-4 py-1.5 font-serif text-lg text-fore rounded-full transition-colors duration-300 hover:bg-fore/5"
-      aria-label="Daniel Hunt — home"
-    >
-      <span class="text-fore/30">{'{'}</span><span class="text-fore mx-[0.05em]">D</span><span class="text-fore/30">{'}'}</span>
-    </a>
-
-    <span class="w-px h-4 bg-fore/10 mx-1 hidden sm:block" aria-hidden="true"></span>
-
-    {NAV_LINKS.map((link) => (
+<header class="sticky top-0 z-40 bg-bg/95 backdrop-blur-sm">
+  <div class="container-page">
+    <div class="flex items-center justify-between border-y border-line-strong py-6">
       <a
-        href={link.href}
-        class="px-3 sm:px-4 py-1.5 text-[0.7rem] sm:text-xs text-sub font-light rounded-full transition-colors duration-300 hover:text-fore hover:bg-fore/5"
+        href="#top"
+        class="display monogram text-[1.7rem] text-text"
+        aria-label="Daniel Hunt — home"
       >
-        {link.label}
+        <span class="monogram-brace">{'{'}</span><span>D</span><span class="monogram-brace">{'}'}</span>
       </a>
-    ))}
-  </nav>
 
-  <!-- Mobile menu button -->
-  <button
-    id="mobile-menu-btn"
-    class="pointer-events-auto sm:hidden fixed top-5 right-6 flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-xl text-fore"
-    style="background: rgb(var(--surface) / 0.7); border: 1px solid rgb(var(--fore) / 0.08);"
-    aria-label="Open menu"
-    aria-expanded="false"
-    aria-controls="mobile-menu"
-  >
-    <svg id="menu-icon-open" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-      <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/>
-    </svg>
-    <svg id="menu-icon-close" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-      <path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/>
-    </svg>
-  </button>
+      <nav class="hidden items-center gap-10 text-sm text-muted md:flex" aria-label="Primary">
+        {NAV_LINKS.map((link) => (
+          <a href={link.href} class="link-cinema">
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="hidden items-center gap-3 md:flex">
+        <span class="mono-label">{SITE.location.split(',')[0]}</span>
+        <span id="la-time" class="mono-label">Loading time</span>
+      </div>
+
+      <button
+        id="mobile-menu-btn"
+        class="mono-label border border-line-strong px-3 py-2 md:hidden"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        Menu
+      </button>
+    </div>
+  </div>
 </header>
 
-<!-- Mobile drawer -->
 <nav
   id="mobile-menu"
-  class="sm:hidden fixed inset-0 z-30 hidden"
+  class="hidden border-b border-line-strong bg-bg md:hidden"
   aria-label="Mobile"
 >
-  <div class="absolute inset-0 bg-ground/95 backdrop-blur-xl"></div>
-  <div class="relative flex flex-col items-center justify-center h-full gap-8">
+  <div class="container-page flex flex-col gap-5 py-6">
     {NAV_LINKS.map((link) => (
-      <a href={link.href} class="text-2xl font-medium text-fore hover:text-accent transition-colors duration-300">{link.label}</a>
+      <a href={link.href} class="text-lg text-text">{link.label}</a>
     ))}
+    <p class="mono-label">{SITE.location}</p>
+    <p id="la-time-mobile" class="mono-label">Loading time</p>
   </div>
 </nav>
 
 <script>
   const btn = document.getElementById('mobile-menu-btn')!;
   const menu = document.getElementById('mobile-menu')!;
-  const iconOpen = document.getElementById('menu-icon-open')!;
-  const iconClose = document.getElementById('menu-icon-close')!;
+  const laTime = document.getElementById('la-time');
+  const laTimeMobile = document.getElementById('la-time-mobile');
+
+  const updateTime = () => {
+    const formatted = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Los_Angeles',
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+    }).format(new Date());
+
+    if (laTime) laTime.textContent = formatted;
+    if (laTimeMobile) laTimeMobile.textContent = formatted;
+  };
+
+  updateTime();
+  window.setInterval(updateTime, 60000);
 
   btn.addEventListener('click', () => {
-    const open = menu.classList.toggle('hidden');
-    const expanded = !open;
+    const expanded = btn.getAttribute('aria-expanded') !== 'true';
+    menu.classList.toggle('hidden', !expanded);
     btn.setAttribute('aria-expanded', String(expanded));
     btn.setAttribute('aria-label', expanded ? 'Close menu' : 'Open menu');
-    iconOpen.classList.toggle('hidden', expanded);
-    iconClose.classList.toggle('hidden', !expanded);
+    btn.textContent = expanded ? 'Close' : 'Menu';
   });
 
   menu.querySelectorAll('a').forEach((link) => {
@@ -79,8 +86,7 @@ import { NAV_LINKS } from '../data/site';
       menu.classList.add('hidden');
       btn.setAttribute('aria-expanded', 'false');
       btn.setAttribute('aria-label', 'Open menu');
-      iconOpen.classList.remove('hidden');
-      iconClose.classList.add('hidden');
+      btn.textContent = 'Menu';
     });
   });
 </script>

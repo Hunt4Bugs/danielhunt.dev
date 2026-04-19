@@ -5,61 +5,68 @@ import { SITE } from '../data/site';
 const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY';
 ---
 <section id="contact" class="section" aria-labelledby="contact-heading">
-  <div class="container-page max-w-4xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 id="contact-heading" class="display text-fore text-[clamp(2rem,5.5vw,3.5rem)] reveal">
-        Let's talk about <em>your project.</em>
-      </h2>
-      <p class="mt-4 text-sub text-lg leading-relaxed reveal reveal-delay-1">
-        Whether it's a quick audit, a months-long build, or a sanity check
-        on an idea — drop a note.
-      </p>
-    </div>
-
-    <div class="card reveal reveal-delay-2">
-      <form
-        action="https://api.web3forms.com/submit"
-        method="POST"
-        class="space-y-6"
-        aria-label="Contact form"
-      >
-        <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
-        <input type="hidden" name="subject" value="New enquiry from danielhunt.dev" />
-        <input type="hidden" name="from_name" value="danielhunt.dev contact form" />
-        <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
-
-        <div class="grid sm:grid-cols-2 gap-6">
+  <div class="container-page">
+    <div class="grid gap-12 border-y border-line-strong py-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+      <div class="reveal">
+        <p class="mono-label">Correspond</p>
+        <h2 id="contact-heading" class="display mt-5 text-[clamp(2.4rem,6vw,4.5rem)] text-text">
+          Start with the real problem.
+        </h2>
+        <p class="mt-6 max-w-xl text-lg leading-8 text-muted">
+          Audits, systems design, workflow automation, or a build that needs to move from prototype to something dependable.
+        </p>
+        <div class="mt-10 space-y-6">
           <div>
-            <label for="name" class="block text-[0.6rem] uppercase tracking-[0.3em] text-sub/50 mb-2">Name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required class="input-underline" />
+            <p class="mono-label">Email</p>
+            <a href={`mailto:${SITE.email}`} class="mt-2 inline-block text-lg text-text link-cinema">{SITE.email}</a>
           </div>
           <div>
-            <label for="email" class="block text-[0.6rem] uppercase tracking-[0.3em] text-sub/50 mb-2">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required class="input-underline" />
+            <p class="mono-label">Response time</p>
+            <p class="mt-2 text-lg text-text">Typically within two working days</p>
           </div>
         </div>
-        <div>
-          <label for="message" class="block text-[0.6rem] uppercase tracking-[0.3em] text-sub/50 mb-2">Message</label>
-          <textarea id="message" name="message" rows="4" required class="input-underline resize-none"></textarea>
-        </div>
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-          <button type="submit" class="btn-primary w-full sm:w-auto">
-            Send message
-            <span class="ml-2" aria-hidden="true">&rarr;</span>
-          </button>
-          <a
-            href={`mailto:${SITE.email}`}
-            class="link-cinema text-sm text-sub"
-            aria-label={`Email ${SITE.name} at ${SITE.email}`}
-          >
-            or email {SITE.email} directly
-          </a>
-        </div>
-      </form>
-    </div>
+      </div>
 
-    <p class="mt-6 text-center text-[0.6rem] uppercase tracking-[0.2em] text-mute/50 reveal reveal-delay-3">
-      Replies within 2 working days
-    </p>
+      <div class="reveal reveal-delay-1">
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="space-y-8"
+          aria-label="Contact form"
+        >
+          <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+          <input type="hidden" name="subject" value="New enquiry from danielhunt.dev" />
+          <input type="hidden" name="from_name" value="danielhunt.dev contact form" />
+          <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <div class="grid gap-8 sm:grid-cols-2">
+            <label class="block">
+              <span class="mono-label">Name</span>
+              <input id="name" name="name" type="text" autocomplete="name" required class="input-underline mt-3" />
+            </label>
+            <label class="block">
+              <span class="mono-label">Email</span>
+              <input id="email" name="email" type="email" autocomplete="email" required class="input-underline mt-3" />
+            </label>
+          </div>
+          <label class="block">
+            <span class="mono-label">Message</span>
+            <textarea id="message" name="message" rows="5" required class="input-underline mt-3 resize-none"></textarea>
+          </label>
+          <div class="flex flex-wrap items-center gap-4 pt-3">
+            <button type="submit" class="btn-primary">
+              Send message
+            </button>
+            <a
+              href={`mailto:${SITE.email}`}
+              class="btn-quiet"
+              aria-label={`Email ${SITE.name} at ${SITE.email}`}
+            >
+              Email directly
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </section>

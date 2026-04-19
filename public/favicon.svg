@@ -1,5 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0A0A0A"/>
-  <text x="32" y="38" text-anchor="middle" dominant-baseline="central"
-        font-family="Georgia, serif" font-weight="400" font-size="24" fill="#C4A87C">{D}</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Daniel Hunt monogram">
+  <rect width="64" height="64" rx="14" fill="#FFFFFF"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="13.5" fill="none" stroke="#E5E5E5"/>
+  <g text-anchor="middle" dominant-baseline="central" font-family="Inter, ui-sans-serif, system-ui, sans-serif">
+    <text x="23" y="34" font-size="20" font-weight="300" fill="#9B9B9B" transform="scale(0.88 0.94) translate(3.2 1.8)">{</text>
+    <text x="32" y="34" font-size="25" font-weight="300" fill="#1A1A1A">D</text>
+    <text x="41" y="34" font-size="20" font-weight="300" fill="#9B9B9B" transform="scale(0.88 0.94) translate(5.5 1.8)">}</text>
+  </g>
 </svg>

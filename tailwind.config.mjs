@@ -10,17 +10,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        ground: 'rgb(var(--ground) / <alpha-value>)',
-        surface: 'rgb(var(--surface) / <alpha-value>)',
-        fore: 'rgb(var(--fore) / <alpha-value>)',
-        sub: 'rgb(var(--sub) / <alpha-value>)',
-        mute: 'rgb(var(--mute) / <alpha-value>)',
-        accent: 'rgb(var(--accent) / <alpha-value>)',
-        'accent-deep': 'rgb(var(--accent-deep) / <alpha-value>)',
+        bg: 'rgb(var(--bg) / <alpha-value>)',
+        panel: 'rgb(var(--panel) / <alpha-value>)',
+        text: 'rgb(var(--text) / <alpha-value>)',
+        muted: 'rgb(var(--muted) / <alpha-value>)',
+        quiet: 'rgb(var(--quiet) / <alpha-value>)',
+        line: 'rgb(var(--line) / <alpha-value>)',
+        'line-strong': 'rgb(var(--line-strong) / <alpha-value>)',
       },
       fontFamily: {
-        serif: ['"EB Garamond"', 'Georgia', 'serif'],
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
     },
   },

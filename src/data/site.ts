@@ -1,5 +1,5 @@
 export const NAV_LINKS = [
-  { label: 'Services', href: '#services' },
+  { label: 'Work', href: '#services' },
   { label: 'About', href: '#about' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
@@ -7,13 +7,17 @@ export const NAV_LINKS = [
 
 export const SITE = {
   name: 'Daniel Hunt',
-  jobTitle: 'AI Engineer & Consultant',
+  jobTitle: 'AI & Data Engineer',
+  location: 'Simi Valley, California',
   url: 'https://danielhunt.dev',
   email: 'contact@danielhunt.dev',
+  ogTitle: 'Daniel Hunt — AI & Data Engineer',
   description:
-    'Daniel Hunt is an independent AI engineer and consultant offering AI audits, AI infrastructure, autonomous agents and workflow automation, and custom AI application development.',
+    'Daniel Hunt is an independent AI and data engineer offering AI audits, data and AI infrastructure, autonomous agents and workflow automation, and custom application development.',
+  ogDescription:
+    'Independent AI & data engineer. Audits, infrastructure, pipelines, agents, and custom systems designed to survive production use.',
   shortDescription:
-    'Independent AI engineer & consultant — audits, infrastructure, agents, custom apps.',
+    'Independent AI and data engineer — audits, infrastructure, agents, data systems, custom apps.',
   socials: {
     linkedin: 'https://www.linkedin.com/in/danielhunt16/',
     x: 'https://x.com/_danielhunt',
@@ -21,8 +25,12 @@ export const SITE = {
   keywords: [
     'AI consultant',
     'AI engineer',
+    'data engineer',
+    'data engineering',
     'AI audit',
     'AI infrastructure',
+    'data infrastructure',
+    'data platforms',
     'RAG',
     'LLM evaluations',
     'AI agents',
@@ -44,10 +52,10 @@ export const SERVICES = [
     tag: 'I',
   },
   {
-    title: 'AI Infrastructure',
+    title: 'AI & Data Infrastructure',
     slug: 'ai-infrastructure',
     blurb:
-      'Production-grade foundations: RAG, vector databases, model gateways, evals, observability and CI. The unglamorous pieces that turn a demo into a dependable product.',
+      'Production-grade foundations: RAG, vector databases, pipelines, warehouses, model gateways, evals, observability and CI. The unglamorous pieces that turn a demo into a dependable product.',
     tag: 'II',
   },
   {
@@ -69,7 +77,7 @@ export const SERVICES = [
 export const FAQS = [
   {
     q: 'What does Daniel Hunt do?',
-    a: 'Daniel Hunt is an independent AI engineer and consultant. He helps companies design, build, and operate AI products — including audits of existing systems, production AI infrastructure (RAG, evals, observability), autonomous agents and workflow automation, and full-stack AI applications.',
+    a: 'Daniel Hunt is an independent AI and data engineer. He helps companies design, build, and operate AI products and data systems — including audits of existing systems, production infrastructure for pipelines and models, autonomous agents and workflow automation, and full-stack applications.',
   },
   {
     q: 'How do I hire Daniel Hunt?',
@@ -81,7 +89,7 @@ export const FAQS = [
   },
   {
     q: 'Which technologies does Daniel work with?',
-    a: 'Python (FastAPI, FastMCP), TypeScript (Next.js), Supabase (Postgres + Auth), Vercel and Render for deployment, and the major model providers (Anthropic, OpenAI, Google). For agent work he builds autonomous agents, multi-step workflows, and MCP servers that integrate with tools like Slack, Notion, and Linear.',
+    a: 'Python, TypeScript, SQL, orchestration and data pipeline tooling, warehouses and Postgres systems, Supabase, Vercel and Render for deployment, and the major model providers (Anthropic, OpenAI, Google). For agent work he builds autonomous agents, multi-step workflows, and MCP servers that integrate with tools like Slack, Notion, and Linear.',
   },
   {
     q: 'Does Daniel work with startups or enterprises?',
@@ -89,6 +97,6 @@ export const FAQS = [
   },
   {
     q: 'Where is Daniel based?',
-    a: 'Daniel works remotely with clients globally. He is comfortable collaborating across time zones and is fluent in English.',
+    a: 'Daniel is based in Simi Valley, California and works remotely with clients globally. He is comfortable collaborating across time zones and is fluent in English.',
   },
 ];

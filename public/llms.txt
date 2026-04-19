@@ -1,6 +1,6 @@
 # Daniel Hunt
 
-> Independent AI engineer and consultant. I help companies design, build, and operate AI products — audits, infrastructure, agents, and custom applications.
+> Independent AI and data engineer. I help companies design, build, and operate AI products and data systems — audits, infrastructure, agents, pipelines, and custom applications.
 
 - **Name:** Daniel Hunt
 - **Role:** AI Engineer & Consultant

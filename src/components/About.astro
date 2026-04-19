@@ -1,77 +1,46 @@
 ---
 import { SITE } from '../data/site';
-
-const techStack = [
-  { name: 'Python', detail: 'FastAPI, FastMCP' },
-  { name: 'TypeScript', detail: 'Next.js' },
-  { name: 'Supabase', detail: 'Postgres + Auth' },
-  { name: 'AI/ML', detail: 'Anthropic, OpenAI' },
-];
 ---
 <section id="about" class="section" aria-labelledby="about-heading">
   <div class="container-page">
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <h2 id="about-heading" class="display text-fore text-[clamp(2rem,5vw,3.5rem)] reveal">
-        About <em>me</em>
-      </h2>
-    </div>
+    <div class="border-y border-line-strong">
+      <div class="grid gap-12 py-12 lg:grid-cols-[minmax(0,1.15fr)_320px] lg:gap-20">
+        <div class="reveal">
+          <p class="mono-label">About</p>
+          <h2 id="about-heading" class="display mt-5 text-[clamp(2.5rem,6vw,4.75rem)] text-text">
+            Building the boring parts well.
+          </h2>
+          <p class="mt-8 text-[1.45rem] font-light leading-[1.55] tracking-[-0.03em] text-text">
+            I work at the seam between product thinking and implementation: figuring out what an AI or data system should do, what it should not do, and then wiring the thing into a stack that can survive production use.
+          </p>
+          <p class="mt-6 max-w-4xl text-lg leading-8 text-muted">
+            Most projects eventually come down to clear boundaries, trustworthy pipelines, real evaluation loops, boring infrastructure choices, and interfaces that another engineer can understand without a guided tour.
+          </p>
+        </div>
 
-    <!-- Bento grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <!-- Bio card — spans 2 cols -->
-      <div class="card sm:col-span-2 reveal reveal-delay-1">
-        <p class="text-lg sm:text-xl leading-[1.7] text-sub">
-          I'm a software engineer focused on the practical end of AI — the
-          part where models meet messy data, real users, and uncomfortable
-          deadlines. Most of my work sits between strategy and shipping:
-          helping teams figure out <em class="text-fore not-italic font-medium">what</em> to build,
-          then actually building it.
-        </p>
-        <p class="mt-6 text-lg sm:text-xl leading-[1.7] text-sub">
-          I care about systems that age well: clear interfaces, honest
-          evaluations, sensible defaults, and code other people can read on a
-          Monday morning.
-        </p>
-      </div>
-
-      <!-- Photo placeholder card -->
-      <div class="card flex items-center justify-center aspect-square sm:aspect-auto reveal reveal-delay-2" style="background: rgb(var(--surface) / 0.8);">
-        <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full flex items-center justify-center" style="background: rgb(var(--fore) / 0.05); border: 1px solid rgb(var(--fore) / 0.08);">
-          <span class="font-serif text-4xl sm:text-5xl text-fore/10 select-none"><span class="text-fore/5">{'{'}</span>D<span class="text-fore/5">{'}'}</span></span>
+        <div class="reveal reveal-delay-1">
+          <div>
+            <p class="mono-label">Base</p>
+            <p class="mt-3 text-lg text-text">{SITE.location}</p>
+          </div>
         </div>
       </div>
 
-      <!-- Tech stack card -->
-      <div class="card reveal reveal-delay-2">
-        <p class="text-[0.65rem] uppercase tracking-[0.25em] text-mute/60 mb-5">Tech stack</p>
-        <div class="space-y-4">
-          {techStack.map((tech) => (
-            <div>
-              <p class="font-medium text-fore">{tech.name}</p>
-              <p class="text-sm text-sub">{tech.detail}</p>
-            </div>
-          ))}
+      <div class="grid gap-8 border-t border-line py-10 md:grid-cols-3 reveal reveal-delay-2">
+        <div>
+          <p class="mono-label">01</p>
+          <p class="mt-3 text-lg text-text">Strategy to shipping</p>
+          <p class="mt-2 text-sm leading-6 text-muted">No handoff gap between defining the work and building the system that delivers it.</p>
         </div>
-      </div>
-
-      <!-- Approach card — spans 2 cols -->
-      <div class="card sm:col-span-2 reveal reveal-delay-3">
-        <p class="text-[0.65rem] uppercase tracking-[0.25em] text-mute/60 mb-5">Approach</p>
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div class="flex items-start gap-4">
-            <span class="text-accent text-lg mt-0.5" aria-hidden="true">&#10003;</span>
-            <div>
-              <p class="font-medium text-fore">Strategy to shipping</p>
-              <p class="text-sm text-sub mt-1">I help teams figure out what to build, then actually build it. No gap between planning and execution.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <span class="text-accent text-lg mt-0.5" aria-hidden="true">&#10003;</span>
-            <div>
-              <p class="font-medium text-fore">Production-grade</p>
-              <p class="text-sm text-sub mt-1">Everything I build is designed for real workloads — with evals, observability, and sensible error handling.</p>
-            </div>
-          </div>
+        <div>
+          <p class="mono-label">02</p>
+          <p class="mt-3 text-lg text-text">Production-grade systems</p>
+          <p class="mt-2 text-sm leading-6 text-muted">Evals, observability, failure handling, and sensible defaults are part of the build, not cleanup work.</p>
+        </div>
+        <div>
+          <p class="mono-label">03</p>
+          <p class="mt-3 text-lg text-text">Clear technical writing</p>
+          <p class="mt-2 text-sm leading-6 text-muted">Architectures, tradeoffs, and deliverables are documented so teams can operate what gets shipped.</p>
         </div>
       </div>
     </div>

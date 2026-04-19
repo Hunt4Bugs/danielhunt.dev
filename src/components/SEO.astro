@@ -8,13 +8,14 @@ interface Props {
 }
 
 const {
-  title = `${SITE.name} \u2014 ${SITE.jobTitle}`,
-  description = SITE.description,
+  title = SITE.ogTitle,
+  description = SITE.ogDescription ?? SITE.description,
   ogImage = '/og.png',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, SITE.url).toString();
 const ogImageUrl = new URL(ogImage, SITE.url).toString();
+const xHandle = new URL(SITE.socials.x).pathname.replaceAll('/', '') || undefined;
 
 // --- JSON-LD ----------------------------------------------------------------
 const personSchema = {
@@ -36,7 +37,7 @@ const personSchema = {
 const businessSchema = {
   '@type': 'ProfessionalService',
   '@id': `${SITE.url}/#business`,
-  name: `${SITE.name} \u2014 AI Consulting`,
+  name: `${SITE.name} \u2014 AI & Data Engineering`,
   url: SITE.url,
   email: `mailto:${SITE.email}`,
   founder: { '@id': `${SITE.url}/#person` },
@@ -45,7 +46,7 @@ const businessSchema = {
   serviceType: SERVICES.map((s) => s.title),
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'AI Services',
+    name: 'AI & Data Engineering Services',
     itemListElement: SERVICES.map((s) => ({
       '@type': 'Offer',
       itemOffered: {
@@ -95,6 +96,8 @@ const breadcrumbSchema = {
 <meta name="author" content={SITE.name} />
 <meta name="keywords" content={SITE.keywords.join(', ')} />
 <link rel="canonical" href={canonical} />
+<meta name="application-name" content={SITE.name} />
+<meta name="apple-mobile-web-app-title" content={SITE.name} />
 
 <!-- Robots: explicit, generous -->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -106,20 +109,26 @@ const breadcrumbSchema = {
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:secure_url" content={ogImageUrl} />
+<meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:locale" content="en_GB" />
+<meta property="og:image:alt" content={`${SITE.name} business-card preview — ${SITE.jobTitle}`} />
+<meta property="og:locale" content="en_US" />
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageUrl} />
+<meta name="twitter:image:alt" content={`${SITE.name} business-card preview — ${SITE.jobTitle}`} />
+{xHandle && <meta name="twitter:site" content={`@${xHandle}`} />}
+{xHandle && <meta name="twitter:creator" content={`@${xHandle}`} />}
 
 <!-- Theme -->
-<meta name="theme-color" content="#F5F0EB" media="(prefers-color-scheme: light)" />
-<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)" />
-<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#FFFFFF" />
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="color-scheme" content="light" />
 
 <!-- JSON-LD -->
 <script type="application/ld+json" set:html={JSON.stringify({

@@ -2,351 +2,244 @@
 import Layout from '../layouts/Layout.astro';
 import { SITE } from '../data/site';
 
-const primaryColors = [
-  { name: 'Ivory', token: 'ground', hex: '#F5F0EB', usage: 'Background — the dominant surface', light: true },
-  { name: 'Charcoal', token: 'fore', hex: '#1A1A1A', usage: 'Primary text, headings, logo' },
-  { name: 'Champagne', token: 'accent', hex: '#C4A87C', usage: 'Accent — emphasis, interactive highlights' },
-  { name: 'Wine', token: 'accent-deep', hex: '#5C2E35', usage: 'Deep accent — secondary emphasis' },
-];
-
-const secondaryColors = [
-  { name: 'Stone', token: 'surface', hex: '#E8E2DA', usage: 'Elevated surface, hover backgrounds', light: true },
-  { name: 'Ash', token: 'sub', hex: '#6B6560', usage: 'Body copy, secondary text' },
-  { name: 'Pewter', token: 'mute', hex: '#6B6B6B', usage: 'Tertiary text, captions, tags' },
-];
-
-const typeScale = [
-  { label: 'Display', class: 'display text-[clamp(2.5rem,6vw,5rem)]', sample: 'Thoughtful AI systems', note: 'EB Garamond — hero headlines only' },
-  { label: 'Display Italic', class: 'display text-[clamp(2.5rem,6vw,5rem)] italic', sample: 'built to last.', note: 'Italic turns champagne accent' },
-  { label: 'Heading 2', class: 'font-sans font-semibold text-[clamp(2rem,4vw,3.5rem)]', sample: 'Four ways I tend to help.', note: 'Inter semibold — section headings' },
-  { label: 'Heading 3', class: 'font-sans text-2xl sm:text-3xl font-medium', sample: 'AI Infrastructure', note: 'Inter medium — sub-headings' },
-  { label: 'Body Large', class: 'font-sans text-lg sm:text-xl text-sub leading-relaxed', sample: 'I help companies design, ship, and operate AI products that age gracefully in production.', note: 'Inter regular' },
-  { label: 'Body', class: 'font-sans text-base text-sub leading-relaxed', sample: 'Production-grade foundations: RAG, vector databases, model gateways, evals, observability and CI.', note: 'Inter regular' },
-  { label: 'Caption', class: 'font-sans text-[0.65rem] uppercase tracking-[0.3em] text-sub/60', sample: 'AI Engineer · Consultant', note: 'Inter — wide tracking' },
+const navLinks = ['Work', 'Journal', 'About', 'Contact'];
+const journalEntries = [
+  { number: '001', date: '2026 · 04', title: 'The quiet discipline of finishing things', meta: 'Essay · Process', readTime: '8 MIN' },
+  { number: '002', date: '2026 · 03', title: 'A taxonomy of slow work', meta: 'Essay · Philosophy', readTime: '6 MIN' },
+  { number: '003', date: '2026 · 02', title: 'Shipping a GxP-compliant scheduler in six weeks', meta: 'Case Study · Product', readTime: '12 MIN' },
+  { number: '004', date: '2026 · 01', title: 'Six subagents and a relay', meta: 'Build Log · Infra', readTime: '4 MIN' },
+  { number: '005', date: '2025 · 12', title: 'Notes on outcome-based positioning', meta: 'Note · Marketing', readTime: '3 MIN' },
 ];
 ---
-<Layout title="Brand Guidelines — Daniel Hunt" description="Visual identity and brand guidelines for danielhunt.dev">
-  <!-- Header -->
-  <header class="container-page py-6 flex items-center justify-between">
-    <a href={import.meta.env.BASE_URL} class="font-serif text-lg text-fore" aria-label="Back to home">
-      <span class="text-fore/30">{'{'}</span><span class="text-fore mx-[0.05em]">D</span><span class="text-fore/30">{'}'}</span>
-    </a>
-    <a href={import.meta.env.BASE_URL} class="link-cinema text-[0.65rem] uppercase tracking-[0.3em] text-sub/70 font-light">Back to site</a>
-  </header>
 
-  <main class="container-page pb-32">
-    <!-- Title -->
-    <section class="pt-16 sm:pt-28 pb-20 sm:pb-32 border-b border-fore/10">
-      <p class="text-[0.65rem] uppercase tracking-[0.35em] text-sub/60 mb-8">Brand Guidelines</p>
-      <h1 class="display text-fore text-[clamp(3rem,8vw,7rem)]">
-        Visual<br/>Identity.
-      </h1>
-      <p class="mt-10 max-w-lg text-lg text-sub leading-relaxed">
-        A reference for maintaining consistency across all touchpoints.
-        Minimal by intent — every element earns its place.
+<Layout title="Patterns — Daniel Hunt" description="Figma-aligned patterns and brand reference for danielhunt.dev">
+  <main class="container-page pb-24 pt-12 sm:pt-16">
+    <section class="border-b border-line-strong pb-16 sm:pb-24">
+      <p class="mono-label">III — Patterns</p>
+      <h1 class="display mt-5 text-[clamp(3.5rem,8vw,7rem)] text-text">Patterns</h1>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-muted">
+        Composed layouts for the site: navigation, landing spread, journal index, work detail, and the closing footer system.
       </p>
     </section>
 
-    <!-- Logo -->
-    <section class="py-20 sm:py-28 border-b border-fore/10">
-      <div class="grid md:grid-cols-12 gap-12">
-        <div class="md:col-span-4">
-          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-sub/60 mb-4">01</p>
-          <h2 class="font-semibold text-3xl text-fore">Logo</h2>
-          <p class="mt-4 text-sub leading-relaxed">
-            The monogram uses curly braces — a nod to code — framing the
-            initial. Rendered in the serif typeface. The braces are muted;
-            the letter holds the weight.
-          </p>
-        </div>
-        <div class="md:col-span-8">
-          <div class="grid sm:grid-cols-2 gap-6">
-            <!-- Light variant -->
-            <div class="bg-ground border border-fore/10 flex flex-col items-center justify-center py-16 px-8">
-              <span class="font-serif text-6xl tracking-tight text-fore">
-                <span class="text-sub/40">{'{'}</span><span class="mx-[0.12em]">D</span><span class="text-sub/40">{'}'}</span>
-              </span>
-              <p class="mt-6 text-[0.6rem] uppercase tracking-[0.25em] text-sub/50">On light</p>
+    <section class="section border-b border-line-strong">
+      <div class="mb-8">
+        <p class="mono-label">A — Navigation</p>
+        <h2 class="mt-3 text-[2rem] font-light tracking-[-0.04em] text-text">Navigation</h2>
+      </div>
+
+      <div class="space-y-8">
+        <div>
+          <p class="mono-label mb-4">Light</p>
+          <div class="flex items-center justify-between border-y border-line-strong py-6">
+            <div class="display monogram text-[1.75rem] text-text"><span class="monogram-brace">{'{'}</span>D<span class="monogram-brace">{'}'}</span></div>
+            <div class="hidden items-center gap-10 text-sm text-muted md:flex">
+              {navLinks.map((link) => <span>{link}</span>)}
             </div>
-            <!-- Dark variant -->
-            <div class="bg-fore flex flex-col items-center justify-center py-16 px-8">
-              <span class="font-serif text-6xl tracking-tight text-ground">
-                <span class="text-ground/30">{'{'}</span><span class="mx-[0.12em]">D</span><span class="text-ground/30">{'}'}</span>
-              </span>
-              <p class="mt-6 text-[0.6rem] uppercase tracking-[0.25em] text-ground/40">On dark</p>
+            <span class="mono-label">LA · 9:42 PM</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="mono-label mb-4">Dark specimen</p>
+          <div class="bg-text px-8 py-6 text-white">
+            <div class="flex items-center justify-between">
+              <div class="display monogram text-[1.75rem]"><span class="scale-[0.82] -translate-y-[0.02em] text-white/35">{'{'}</span>D<span class="scale-[0.82] -translate-y-[0.02em] text-white/35">{'}'}</span></div>
+              <div class="hidden items-center gap-10 text-sm text-white/60 md:flex">
+                {navLinks.map((link) => <span>{link}</span>)}
+              </div>
+              <span class="font-mono text-[0.625rem] uppercase tracking-[0.22em] text-white/50">LA · 9:42 PM</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Colour Palette -->
-    <section class="py-20 sm:py-28 border-b border-fore/10">
-      <div class="grid md:grid-cols-12 gap-12">
-        <div class="md:col-span-4">
-          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-sub/60 mb-4">02</p>
-          <h2 class="font-semibold text-3xl text-fore">Colour</h2>
-          <p class="mt-4 text-sub leading-relaxed">
-            Two tiers: primary colours carry the brand identity, secondary
-            colours support readability and hierarchy. Champagne accent is
-            used sparingly for emphasis and interactive states.
-          </p>
+    <section class="section border-b border-line-strong">
+      <div class="mb-8">
+        <p class="mono-label">B — Hero</p>
+        <h2 class="mt-3 text-[2rem] font-light tracking-[-0.04em] text-text">Landing spread</h2>
+      </div>
+
+      <div class="border border-line-strong">
+        <div class="flex items-center justify-between border-b border-line px-8 py-5">
+          <div class="display monogram text-[1.5rem] text-text"><span class="monogram-brace">{'{'}</span>D<span class="monogram-brace">{'}'}</span></div>
+          <div class="hidden items-center gap-8 text-sm text-muted md:flex">
+            <span>Work</span>
+            <span>Journal</span>
+            <span>About</span>
+          </div>
         </div>
-        <div class="md:col-span-8 space-y-14">
-          <!-- Primary -->
-          <div>
-            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-5">Primary</p>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {primaryColors.map((c) => (
-                <div>
-                  <div
-                    class={`aspect-[4/3] border border-fore/10 ${c.light ? '' : 'text-ground'}`}
-                    style={`background-color: ${c.hex};`}
-                  >
-                    <div class="p-3 h-full flex flex-col justify-end">
-                      <p class={`text-[0.55rem] uppercase tracking-[0.2em] ${c.light ? 'text-fore/40' : 'text-ground/50'}`}>
-                        {c.hex}
-                      </p>
-                    </div>
-                  </div>
-                  <p class="mt-3 text-sm font-medium text-fore">{c.name}</p>
-                  <p class="text-[0.6rem] text-sub/60 mt-0.5">{c.usage}</p>
-                </div>
-              ))}
+        <div class="px-8 py-16 sm:px-14 sm:py-24">
+          <p class="mono-label">INDEX · 2024—2026</p>
+          <h3 class="display-tight mt-8 text-[clamp(3rem,10vw,7.5rem)] text-text">Work. Thought.<br />What&apos;s shipped.</h3>
+          <p class="mt-8 max-w-4xl text-[1.45rem] font-light leading-[1.45] tracking-[-0.03em] text-muted">
+            An index of software, essays, and experiments from {SITE.name}.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-3">
+            <a class="btn-primary" href="/">View selected work</a>
+            <a class="btn-quiet" href="/">Read journal</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section border-b border-line-strong">
+      <div class="mb-8">
+        <p class="mono-label">C — Journal</p>
+        <h2 class="mt-3 text-[2rem] font-light tracking-[-0.04em] text-text">Journal index</h2>
+      </div>
+
+      <div class="border-y border-line-strong">
+        <div class="flex flex-wrap items-center gap-4 border-b border-line py-6">
+          <span class="mono-label">Filter</span>
+          <span class="bg-text px-3 py-1.5 text-xs font-medium text-white">All</span>
+          <span class="px-3 py-1.5 text-xs text-muted">Essays</span>
+          <span class="px-3 py-1.5 text-xs text-muted">Case Studies</span>
+          <span class="px-3 py-1.5 text-xs text-muted">Build Logs</span>
+          <span class="px-3 py-1.5 text-xs text-muted">Notes</span>
+          <span class="ml-auto mono-label">47 entries</span>
+        </div>
+
+        {journalEntries.map((entry) => (
+          <article class="grid gap-4 border-b border-line py-7 last:border-b-0 md:grid-cols-[60px_120px_minmax(0,1fr)_80px] md:items-center md:gap-12">
+            <p class="mono-label">{entry.number}</p>
+            <p class="mono-label">{entry.date}</p>
+            <div>
+              <h3 class="text-[1.35rem] font-light tracking-[-0.03em] text-text">{entry.title}</h3>
+              <p class="mt-1 text-sm text-quiet">{entry.meta}</p>
+            </div>
+            <p class="mono-label md:text-right">{entry.readTime}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section border-b border-line-strong">
+      <div class="mb-8">
+        <p class="mono-label">D — Case Study</p>
+        <h2 class="mt-3 text-[2rem] font-light tracking-[-0.04em] text-text">Work detail template</h2>
+      </div>
+
+      <div class="border border-line-strong">
+        <div class="flex flex-wrap items-center gap-3 border-b border-line px-8 py-5">
+          <span class="mono-label">← Back</span>
+          <span class="mono-label">•</span>
+          <span class="mono-label">Work</span>
+          <span class="mono-label">•</span>
+          <span class="mono-label text-text">001 / Data Vial</span>
+        </div>
+
+        <div class="space-y-8 px-8 py-10 sm:px-14 sm:py-16">
+          <div class="flex flex-wrap items-center gap-4">
+            <span class="mono-label">001</span>
+            <span class="mono-label">•</span>
+            <span class="mono-label">Case study</span>
+            <span class="mono-label">•</span>
+            <span class="mono-label">2026 · ongoing</span>
+          </div>
+          <h3 class="display text-[clamp(3rem,7vw,5.8rem)] text-text">Data Vial</h3>
+          <p class="max-w-5xl text-[1.5rem] font-light leading-[1.45] tracking-[-0.03em] text-muted">
+            A GxP-compliant lab operations platform, designed around the work that actually happens in pharmaceutical quality labs.
+          </p>
+          <div class="grid gap-6 border-t border-line pt-8 md:grid-cols-4">
+            <div>
+              <p class="mono-label">Role</p>
+              <p class="mt-3 text-sm text-text">Solo founder, design + eng</p>
+            </div>
+            <div>
+              <p class="mono-label">Stack</p>
+              <p class="mt-3 text-sm text-text">Next.js · FastAPI · Supabase</p>
+            </div>
+            <div>
+              <p class="mono-label">Timeline</p>
+              <p class="mt-3 text-sm text-text">2025 — ongoing</p>
+            </div>
+            <div>
+              <p class="mono-label">Sector</p>
+              <p class="mt-3 text-sm text-text">Pharmaceutical QC</p>
             </div>
           </div>
+        </div>
 
-          <!-- Secondary -->
-          <div>
-            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-5">Secondary</p>
-            <div class="grid grid-cols-3 gap-4">
-              {secondaryColors.map((c) => (
-                <div>
-                  <div
-                    class={`aspect-[5/2] border border-fore/10 ${c.light ? '' : 'text-ground'}`}
-                    style={`background-color: ${c.hex};`}
-                  >
-                    <div class="p-3 h-full flex flex-col justify-end">
-                      <p class={`text-[0.55rem] uppercase tracking-[0.2em] ${c.light ? 'text-fore/40' : 'text-ground/50'}`}>
-                        {c.hex}
-                      </p>
-                    </div>
-                  </div>
-                  <p class="mt-3 text-sm font-medium text-fore">{c.name}</p>
-                  <p class="text-[0.6rem] text-sub/60 mt-0.5">{c.usage}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div class="bg-panel px-8 py-8">
+          <p class="mono-label">// HERO SHOT · 1400 × 800 · 7:4</p>
+          <div class="mt-4 h-[22rem] sm:h-[34rem]"></div>
+        </div>
 
-          <!-- Ratio guidance -->
-          <div>
-            <div class="flex items-center gap-1 h-8">
-              <div class="h-full border border-fore/10 flex-[45]" style="background-color: #F5F0EB;"></div>
-              <div class="h-full flex-[25]" style="background-color: #1A1A1A;"></div>
-              <div class="h-full flex-[12]" style="background-color: #6B6560;"></div>
-              <div class="h-full flex-[10]" style="background-color: #C4A87C;"></div>
-              <div class="h-full flex-[8]" style="background-color: #5C2E35;"></div>
-            </div>
-            <p class="mt-3 text-[0.6rem] uppercase tracking-[0.2em] text-sub/50">
-              Approximate usage ratio — ivory dominates, accent whispers
+        <div class="space-y-8 px-8 py-10 sm:px-14 sm:py-16">
+          <div class="max-w-4xl">
+            <p class="mono-label">Overview</p>
+            <p class="mt-5 text-[1.9rem] font-light leading-[1.45] tracking-[-0.03em] text-text">
+              The core product solves staff qualifications, demand planning, scheduling, and GxP compliance — replacing the manual spreadsheet and LIMS cross-referencing that most pharma labs still run on.
             </p>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Typography -->
-    <section class="py-20 sm:py-28 border-b border-fore/10">
-      <div class="grid md:grid-cols-12 gap-12">
-        <div class="md:col-span-4">
-          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-sub/60 mb-4">03</p>
-          <h2 class="font-semibold text-3xl text-fore">Typography</h2>
-          <p class="mt-4 text-sub leading-relaxed">
-            Two typefaces in a hybrid system. EB Garamond for display headlines
-            — the luxury moment that sets tone. Inter for everything else —
-            headings, body, interface, labels. Clean, confident, modern.
-          </p>
-          <div class="mt-8 space-y-6">
-            <div>
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-2">Display</p>
-              <p class="font-serif text-2xl text-fore">EB Garamond</p>
-              <p class="font-serif text-lg text-sub mt-1 italic">Hero headlines only</p>
+          <div class="grid gap-4 md:grid-cols-2">
+            <div class="bg-panel p-5">
+              <p class="mono-label">// PRODUCT SHOT · 636 × 476</p>
+              <div class="h-72 sm:h-[26rem]"></div>
             </div>
-            <div>
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-2">Everything else</p>
-              <p class="font-sans text-lg text-fore font-medium">Inter</p>
-              <p class="font-sans text-sm text-sub mt-1">Light &middot; Regular &middot; Medium &middot; Semibold</p>
+            <div class="bg-panel p-5">
+              <p class="mono-label">// DETAIL SHOT · 636 × 476</p>
+              <div class="h-72 sm:h-[26rem]"></div>
             </div>
           </div>
         </div>
-        <div class="md:col-span-8 space-y-10">
-          {typeScale.map((t) => (
-            <div class="border-b border-fore/5 pb-8">
-              <div class="flex items-baseline justify-between gap-4 mb-4">
-                <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50">{t.label}</p>
-                <p class="text-[0.55rem] text-mute/50">{t.note}</p>
-              </div>
-              <p class={`text-fore ${t.class}`}>{t.sample}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
 
-    <!-- Spacing & Layout -->
-    <section class="py-20 sm:py-28 border-b border-fore/10">
-      <div class="grid md:grid-cols-12 gap-12">
-        <div class="md:col-span-4">
-          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-sub/60 mb-4">04</p>
-          <h2 class="font-semibold text-3xl text-fore">Space</h2>
-          <p class="mt-4 text-sub leading-relaxed">
-            Generous negative space is a core brand value. Sections breathe
-            with dramatic vertical rhythm. Content is constrained to an
-            80rem (1280px) max-width container. Sections are separated by
-            spacing alone — no visible borders.
-          </p>
-        </div>
-        <div class="md:col-span-8">
-          <div class="mt-8 grid grid-cols-3 gap-6">
-            <div>
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-2">Section gap</p>
-              <p class="font-semibold text-xl text-fore">5rem — 12rem</p>
-              <p class="text-sm text-sub/60 mt-1">py-20 to py-48</p>
-            </div>
-            <div>
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-2">Container</p>
-              <p class="font-semibold text-xl text-fore">80rem</p>
-              <p class="text-sm text-sub/60 mt-1">max-w-7xl</p>
-            </div>
-            <div>
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-2">Separation</p>
-              <p class="font-semibold text-xl text-fore">Spacing</p>
-              <p class="text-sm text-sub/60 mt-1">No section borders</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Voice & Tone -->
-    <section class="py-20 sm:py-28 border-b border-fore/10">
-      <div class="grid md:grid-cols-12 gap-12">
-        <div class="md:col-span-4">
-          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-sub/60 mb-4">05</p>
-          <h2 class="font-semibold text-3xl text-fore">Voice</h2>
-          <p class="mt-4 text-sub leading-relaxed">
-            Direct, unhurried, precise. The writing matches the design —
-            nothing superfluous, nothing loud. Confidence expressed
-            through restraint.
-          </p>
-        </div>
-        <div class="md:col-span-8">
-          <div class="grid sm:grid-cols-2 gap-8">
-            <div>
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-4">We are</p>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3">
-                  <span class="text-accent mt-0.5 text-sm">&#10003;</span>
-                  <span class="text-fore">Precise over vague</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-accent mt-0.5 text-sm">&#10003;</span>
-                  <span class="text-fore">Candid over promotional</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-accent mt-0.5 text-sm">&#10003;</span>
-                  <span class="text-fore">Calm over urgent</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-accent mt-0.5 text-sm">&#10003;</span>
-                  <span class="text-fore">Considered over reactive</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-4">We avoid</p>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3">
-                  <span class="text-sub/30 mt-0.5 text-sm">&times;</span>
-                  <span class="text-sub">Buzzwords and hype</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-sub/30 mt-0.5 text-sm">&times;</span>
-                  <span class="text-sub">Exclamation marks</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-sub/30 mt-0.5 text-sm">&times;</span>
-                  <span class="text-sub">Superlatives without evidence</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-sub/30 mt-0.5 text-sm">&times;</span>
-                  <span class="text-sub">Casual abbreviations</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Components -->
-    <section class="py-20 sm:py-28">
-      <div class="grid md:grid-cols-12 gap-12">
-        <div class="md:col-span-4">
-          <p class="text-[0.65rem] uppercase tracking-[0.3em] text-sub/60 mb-4">06</p>
-          <h2 class="font-semibold text-3xl text-fore">Elements</h2>
-          <p class="mt-4 text-sub leading-relaxed">
-            Interactive components follow the same restraint — rounded pill
-            buttons with solid hover fills, subtle text link animations,
-            and clean dividers.
-          </p>
-        </div>
-        <div class="md:col-span-8 space-y-12">
-          <!-- Buttons -->
+        <div class="flex items-center justify-between border-t border-line px-8 py-10">
           <div>
-            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-6">Buttons</p>
-            <div class="flex flex-wrap items-center gap-6">
-              <button class="btn-ghost">Ghost button</button>
-              <a href="#" class="link-cinema text-lg font-medium text-fore">Text link <span class="text-accent">&rarr;</span></a>
-            </div>
+            <p class="mono-label">← Previous</p>
+            <p class="mt-2 text-xl font-light tracking-[-0.03em] text-text">000 — Index</p>
           </div>
-          <!-- Dividers -->
+          <div class="text-right">
+            <p class="mono-label">Next →</p>
+            <p class="mt-2 text-xl font-light tracking-[-0.03em] text-text">002 — Roundz</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="mb-8">
+        <p class="mono-label">E — Footer</p>
+        <h2 class="mt-3 text-[2rem] font-light tracking-[-0.04em] text-text">The close</h2>
+      </div>
+
+      <div class="border-t border-line-strong pt-10">
+        <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_180px_180px_180px]">
           <div>
-            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-6">Dividers</p>
-            <div class="space-y-6">
-              <div>
-                <div class="border-t border-fore/10"></div>
-                <p class="mt-2 text-[0.55rem] text-sub/40 uppercase tracking-widest">Content — 10% opacity</p>
-              </div>
-              <div>
-                <div class="border-t border-fore/5"></div>
-                <p class="mt-2 text-[0.55rem] text-sub/40 uppercase tracking-widest">Subtle — 5% opacity</p>
-              </div>
-            </div>
+            <div class="display monogram text-[2.4rem] text-text"><span class="monogram-brace">{'{'}</span>D<span class="monogram-brace">{'}'}</span></div>
+            <p class="mt-6 max-w-xs text-[1.2rem] font-light leading-8 text-muted">
+              {SITE.name}<br />
+              {SITE.location}
+            </p>
           </div>
-          <!-- Animation -->
-          <div>
-            <p class="text-[0.6rem] uppercase tracking-[0.2em] text-sub/50 mb-6">Motion</p>
-            <div class="space-y-3 text-sm text-sub">
-              <p><span class="font-medium text-fore">Reveal:</span> Fade + slide-up, 1.8s duration, 32px travel, cubic-bezier(0.16, 1, 0.3, 1)</p>
-              <p><span class="font-medium text-fore">Stagger:</span> 200ms increments between sequential elements</p>
-              <p><span class="font-medium text-fore">Hover:</span> 500ms color transitions, smooth and unhurried</p>
-              <p><span class="font-medium text-fore">Reduced motion:</span> All animation respects prefers-reduced-motion</p>
-            </div>
+          <div class="space-y-4">
+            <p class="mono-label">Index</p>
+            <p class="text-sm text-text">Work</p>
+            <p class="text-sm text-text">Journal</p>
+            <p class="text-sm text-text">About</p>
           </div>
+          <div class="space-y-4">
+            <p class="mono-label">Elsewhere</p>
+            <p class="text-sm text-text">LinkedIn</p>
+            <p class="text-sm text-text">X / Twitter</p>
+            <p class="text-sm text-text">Brand</p>
+          </div>
+          <div class="space-y-4">
+            <p class="mono-label">Correspond</p>
+            <p class="text-sm text-text">Email</p>
+            <p class="text-sm text-text">Inquiry form</p>
+            <p class="text-sm text-text">RSS</p>
+          </div>
+        </div>
+
+        <div class="mt-12 flex flex-col gap-3 border-t border-line py-6 md:flex-row md:items-center md:justify-between">
+          <p class="mono-value">© MMXXVI · DANIEL HUNT · ALL RIGHTS RESERVED</p>
+          <p class="mono-value">SET IN INTER · DESIGN SYSTEM V1</p>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- Footer -->
-  <footer class="border-t border-fore/5">
-    <div class="container-page py-12 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-[0.6rem] uppercase tracking-[0.25em] text-sub/50">
-        {SITE.name} &middot; Brand Guidelines &middot; {new Date().getFullYear()}
-      </p>
-      <a href={import.meta.env.BASE_URL} class="link-cinema text-[0.6rem] uppercase tracking-[0.25em] text-sub/50">Return to site</a>
-    </div>
-  </footer>
 </Layout>
