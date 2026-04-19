@@ -104,8 +104,7 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
 
       const data = new FormData(form);
       const accessKey = String(data.get('access_key') ?? '').trim();
-      const uuidPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-      if (!uuidPattern.test(accessKey)) {
+      if (!accessKey) {
         setStatus(
           `The form isn't configured yet — please email ${mailto.replace('mailto:', '')} directly.`,
           'error',
