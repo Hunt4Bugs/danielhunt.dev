@@ -1,8 +1,7 @@
 ---
 import { SITE } from '../data/site';
 
-// TODO: replace YOUR_ACCESS_KEY with your Web3Forms access key
-const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY';
+const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
 ---
 <section id="contact" class="section" aria-labelledby="contact-heading">
   <div class="container-page">
@@ -29,10 +28,12 @@ const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY';
 
       <div class="reveal reveal-delay-1">
         <form
+          id="contact-form"
           action="https://api.web3forms.com/submit"
           method="POST"
           class="space-y-8"
           aria-label="Contact form"
+          data-mailto={`mailto:${SITE.email}`}
         >
           <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
           <input type="hidden" name="subject" value="New enquiry from danielhunt.dev" />
@@ -54,7 +55,7 @@ const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY';
             <textarea id="message" name="message" rows="5" required class="input-underline mt-3 resize-none"></textarea>
           </label>
           <div class="flex flex-wrap items-center gap-4 pt-3">
-            <button type="submit" class="btn-primary">
+            <button type="submit" class="btn-primary" data-default-label="Send message">
               Send message
             </button>
             <a
@@ -65,8 +66,80 @@ const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY';
               Email directly
             </a>
           </div>
+          <p
+            id="contact-status"
+            class="text-sm text-muted"
+            role="status"
+            aria-live="polite"
+          ></p>
         </form>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('contact-status');
+  if (form && status) {
+    const submit = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const defaultLabel = submit?.dataset.defaultLabel ?? 'Send message';
+    const mailto = form.dataset.mailto ?? '';
+
+    const setStatus = (message: string, tone: 'idle' | 'success' | 'error') => {
+      status.textContent = message;
+      status.classList.remove('text-muted', 'text-emerald-700', 'text-red-700');
+      status.classList.add(
+        tone === 'success'
+          ? 'text-emerald-700'
+          : tone === 'error'
+            ? 'text-red-700'
+            : 'text-muted',
+      );
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!submit) return;
+
+      const data = new FormData(form);
+      const accessKey = String(data.get('access_key') ?? '').trim();
+      const uuidPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+      if (!uuidPattern.test(accessKey)) {
+        setStatus(
+          `The form isn't configured yet — please email ${mailto.replace('mailto:', '')} directly.`,
+          'error',
+        );
+        return;
+      }
+
+      submit.disabled = true;
+      submit.textContent = 'Sending…';
+      setStatus('Sending your message…', 'idle');
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: data,
+        });
+        const result = await response.json().catch(() => ({}));
+        if (response.ok && result.success) {
+          form.reset();
+          setStatus('Thanks — your message is on its way. I typically reply within two working days.', 'success');
+        } else {
+          const message = typeof result.message === 'string' ? result.message : 'Something went wrong.';
+          setStatus(`${message} You can also email ${mailto.replace('mailto:', '')} directly.`, 'error');
+        }
+      } catch {
+        setStatus(
+          `Network error — please try again or email ${mailto.replace('mailto:', '')} directly.`,
+          'error',
+        );
+      } finally {
+        submit.disabled = false;
+        submit.textContent = defaultLabel;
+      }
+    });
+  }
+</script>

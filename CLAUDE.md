@@ -39,4 +39,4 @@ Single-page site with one route (`src/pages/index.astro`) that composes section 
 
 ## Setup TODO
 
-- Contact form needs a Web3Forms access key in `src/components/Contact.astro` (replace `YOUR_ACCESS_KEY`).
+- Contact form reads its Web3Forms access key from the `PUBLIC_WEB3FORMS_KEY` env var. Set it locally in `.env` and as a GitHub Actions secret of the same name so it's injected at build time. Without it, the form degrades to an inline "email directly" message instead of submitting.
