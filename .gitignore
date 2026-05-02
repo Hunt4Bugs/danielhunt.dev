@@ -26,3 +26,13 @@ Thumbs.db
 .playwright-mcp/
 *.png
 !public/**/*.png
+
+# competitor audit downloaded reference videos
+docs/products/audits/competitive/**/references/*.mp4
+docs/products/audits/competitive/**/references/*.mov
+docs/products/audits/competitive/**/references/*.m4v
+docs/products/audits/competitive/**/references/*.webm
+docs/products/audits/competitive/**/references/*.mkv
+docs/products/audits/competitive/**/references/*.avi
+!docs/products/audits/competitive/**/references/.gitkeep
+!docs/products/audits/competitive/**/references/MANIFEST.md
