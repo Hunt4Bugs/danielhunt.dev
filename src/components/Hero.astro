@@ -6,15 +6,26 @@ import { SITE } from '../data/site';
   class="min-h-[calc(100vh-7rem)] border-b border-line-strong"
   aria-labelledby="hero-heading"
 >
-  <div class="container-page flex min-h-[calc(100vh-7rem)] flex-col justify-center py-20 sm:py-28">
+  <div class="container-page grid min-h-[calc(100vh-7rem)] items-center gap-10 py-12 sm:gap-12 sm:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:gap-16 lg:py-24">
     <div class="max-w-[78rem]">
-      <p class="mono-label reveal">
-        CONSULTING INDEX · 2026
-      </p>
+      <div class="reveal flex items-start justify-between gap-6">
+        <p class="mono-label pt-1">
+          CONSULTING INDEX · 2026
+        </p>
+        <img
+          src="/images/daniel-hunt-headshot.jpg"
+          alt={`Portrait of ${SITE.name}`}
+          width="120"
+          height="150"
+          decoding="async"
+          fetchpriority="high"
+          class="aspect-[4/5] w-20 border-y border-line-strong py-1 object-cover object-[50%_38%] lg:hidden"
+        />
+      </div>
 
       <h1
         id="hero-heading"
-        class="display-tight mt-8 text-[clamp(4rem,12vw,8.5rem)] text-text reveal reveal-delay-1"
+        class="display-tight mt-6 text-[clamp(4rem,12vw,8.5rem)] text-text reveal reveal-delay-1 sm:mt-8"
       >
         AI systems.<br />
         Data systems.<br />
@@ -50,5 +61,20 @@ import { SITE } from '../data/site';
         </div>
       </div>
     </div>
+
+    <figure class="reveal reveal-delay-2 mx-auto hidden w-full max-w-[23rem] border-y border-line-strong py-3 sm:max-w-[28rem] lg:ml-auto lg:block lg:max-w-[26rem]">
+      <img
+        src="/images/daniel-hunt-headshot.jpg"
+        alt={`Portrait of ${SITE.name}`}
+        width="1200"
+        height="1500"
+        decoding="async"
+        fetchpriority="high"
+        class="aspect-[4/5] w-full object-cover object-[50%_38%]"
+      />
+      <figcaption class="mt-4 text-right mono-label">
+        {SITE.name} · {SITE.jobTitle}
+      </figcaption>
+    </figure>
   </div>
 </section>
