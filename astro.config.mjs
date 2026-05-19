@@ -5,4 +5,9 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   site: 'https://danielhunt.dev',
   integrations: [tailwind()],
+  vite: {
+    ssr: {
+      external: ['@resvg/resvg-js'],
+    },
+  },
 });
