@@ -33,6 +33,69 @@ The world should feel:
 
 ---
 
+# Website Editorial Direction
+
+The website should feel like:
+- a thoughtful editorial publication
+- a clean science paper
+- a field notebook
+- a visual essay
+- a quiet archive of observations
+
+The default surface should be:
+- white
+- warm white
+- paper-toned
+- spacious
+- clear
+- readable
+- structured
+
+The site should prioritize:
+- strong titles
+- clear hierarchy
+- generous margins
+- beautiful typography
+- carefully placed media
+- captions and annotations
+- article-like pacing
+- calm reading rhythm
+
+The visual experience should feel:
+> clean enough to think, warm enough to feel human.
+
+Use the deeper brand colors as:
+- accents
+- section dividers
+- image treatments
+- typographic details
+- hover states
+- subtle contrast
+
+Do not make the website feel primarily dark, heavy, or cinematic.
+
+The cinematic quality should come from:
+- image selection
+- pacing
+- composition
+- titles
+- captions
+- editorial restraint
+
+Not from:
+- dark backgrounds everywhere
+- excessive overlays
+- dramatic gradients
+- heavy visual effects
+
+The site should balance:
+- science-paper clarity
+- editorial beauty
+- documentary warmth
+- personal observation
+
+---
+
 # Visual Identity Direction
 
 The brand visual identity combines:
