@@ -36,11 +36,33 @@ The world should feel:
 # Website Editorial Direction
 
 The website should feel like:
-- a thoughtful editorial publication
-- a clean science paper
+- an elegant editorial publication
+- a premium magazine
+- a refined newspaper
 - a field notebook
 - a visual essay
 - a quiet archive of observations
+
+Reference the feeling of:
+- The New Yorker
+- The Atlantic
+- The Wall Street Journal
+- long-form essays
+- literary magazines
+- cultural criticism
+- thoughtful reported features
+
+The goal is not to copy those publications directly.
+
+The goal is to borrow their sense of:
+- authority
+- restraint
+- polish
+- typography
+- hierarchy
+- editorial confidence
+- intelligent pacing
+- visual taste
 
 The default surface should be:
 - white
@@ -53,16 +75,21 @@ The default surface should be:
 
 The site should prioritize:
 - strong titles
+- elegant headlines
+- refined section labels
 - clear hierarchy
 - generous margins
 - beautiful typography
+- disciplined grids
 - carefully placed media
+- artful image crops
 - captions and annotations
 - article-like pacing
 - calm reading rhythm
+- whitespace that feels intentional
 
 The visual experience should feel:
-> clean enough to think, warm enough to feel human.
+> beautiful enough to feel editorial, clear enough to feel trusted, warm enough to feel human.
 
 Use the deeper brand colors as:
 - accents
@@ -73,6 +100,14 @@ Use the deeper brand colors as:
 - subtle contrast
 
 Do not make the website feel primarily dark, heavy, or cinematic.
+
+The website should avoid:
+- blog-template blandness
+- startup minimalism
+- influencer portfolio styling
+- generic creator-site layouts
+- overly academic plainness
+- cluttered news-site density
 
 The cinematic quality should come from:
 - image selection
@@ -89,7 +124,8 @@ Not from:
 - heavy visual effects
 
 The site should balance:
-- science-paper clarity
+- newspaper clarity
+- magazine elegance
 - editorial beauty
 - documentary warmth
 - personal observation
