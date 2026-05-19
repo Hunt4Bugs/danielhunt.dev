@@ -16,8 +16,8 @@ async function fetchFont(family: string, weight: number): Promise<ArrayBuffer> {
 }
 
 export const GET: APIRoute = async () => {
-  const [frauncesData, interLightData, interRegularData] = await Promise.all([
-    fetchFont('Fraunces', 700),
+  const [interBoldData, interLightData, interRegularData] = await Promise.all([
+    fetchFont('Inter', 700),
     fetchFont('Inter', 300),
     fetchFont('Inter', 400),
   ]);
@@ -77,7 +77,7 @@ export const GET: APIRoute = async () => {
                         props: {
                           style: {
                             fontSize: '88px',
-                            fontFamily: 'Fraunces',
+                            fontFamily: 'Inter',
                             fontWeight: 700,
                             color: '#111111',
                             lineHeight: 1.05,
@@ -91,7 +91,7 @@ export const GET: APIRoute = async () => {
                         props: {
                           style: {
                             fontSize: '88px',
-                            fontFamily: 'Fraunces',
+                            fontFamily: 'Inter',
                             fontWeight: 700,
                             color: '#111111',
                             lineHeight: 1.05,
@@ -142,7 +142,7 @@ export const GET: APIRoute = async () => {
       width: 1200,
       height: 630,
       fonts: [
-        { name: 'Fraunces', data: frauncesData, weight: 700, style: 'normal' },
+        { name: 'Inter', data: interBoldData, weight: 700, style: 'normal' },
         { name: 'Inter', data: interLightData, weight: 300, style: 'normal' },
         { name: 'Inter', data: interRegularData, weight: 400, style: 'normal' },
       ],
