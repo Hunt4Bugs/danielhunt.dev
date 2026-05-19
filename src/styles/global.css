@@ -60,6 +60,7 @@
     @apply font-sans font-light;
     letter-spacing: 0;
     line-height: 1.02;
+    font-variant-ligatures: no-common-ligatures;
   }
 
   .display-tight {
@@ -80,9 +81,9 @@
   }
 
   .mono-label {
-    @apply font-mono text-[0.625rem] uppercase;
+    @apply font-mono text-[0.75rem] uppercase;
     letter-spacing: 0.22em;
-    color: rgb(var(--quiet));
+    color: rgb(var(--muted));
   }
 
   .mono-value {
@@ -164,7 +165,7 @@
   }
 
   .editorial-link {
-    @apply font-mono text-[0.68rem] uppercase transition-colors duration-300;
+    @apply font-mono text-[0.8rem] uppercase transition-colors duration-300;
     color: rgb(var(--accent));
     letter-spacing: 0.24em;
   }
