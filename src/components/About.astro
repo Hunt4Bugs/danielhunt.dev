@@ -1,47 +1,16 @@
 ---
-import { SITE } from '../data/site';
 ---
-<section id="about" class="section" aria-labelledby="about-heading">
+<section id="about" class="section border-b border-line" aria-labelledby="about-heading">
   <div class="container-page">
-    <div class="border-y border-line-strong">
-      <div class="grid gap-12 py-12 lg:grid-cols-[minmax(0,1.15fr)_320px] lg:gap-20">
-        <div class="reveal">
-          <p class="mono-label">About</p>
-          <h2 id="about-heading" class="display mt-5 text-[clamp(2.5rem,6vw,4.75rem)] text-text">
-            Building the boring parts well.
-          </h2>
-          <p class="mt-8 text-[1.45rem] font-light leading-[1.55] tracking-[-0.03em] text-text">
-            I work at the seam between product thinking and implementation: figuring out what an AI or data system should do, what it should not do, and then wiring the thing into a stack that can survive production use.
-          </p>
-          <p class="mt-6 max-w-4xl text-lg leading-8 text-muted">
-            Most projects eventually come down to clear boundaries, trustworthy pipelines, real evaluation loops, boring infrastructure choices, and interfaces that another engineer can understand without a guided tour.
-          </p>
-        </div>
-
-        <div class="reveal reveal-delay-1">
-          <div>
-            <p class="mono-label">Base</p>
-            <p class="mt-3 text-lg text-text">{SITE.location}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid gap-8 border-t border-line py-10 md:grid-cols-3 reveal reveal-delay-2">
-        <div>
-          <p class="mono-label">01</p>
-          <p class="mt-3 text-lg text-text">Strategy to shipping</p>
-          <p class="mt-2 text-sm leading-6 text-muted">No handoff gap between defining the work and building the system that delivers it.</p>
-        </div>
-        <div>
-          <p class="mono-label">02</p>
-          <p class="mt-3 text-lg text-text">Production-grade systems</p>
-          <p class="mt-2 text-sm leading-6 text-muted">Evals, observability, failure handling, and sensible defaults are part of the build, not cleanup work.</p>
-        </div>
-        <div>
-          <p class="mono-label">03</p>
-          <p class="mt-3 text-lg text-text">Clear technical writing</p>
-          <p class="mt-2 text-sm leading-6 text-muted">Architectures, tradeoffs, and deliverables are documented so teams can operate what gets shipped.</p>
-        </div>
+    <div class="grid gap-8 lg:grid-cols-[12rem_minmax(0,48rem)]">
+      <p class="mono-label">About</p>
+      <div>
+        <h2 id="about-heading" class="display text-[clamp(2.2rem,5vw,4.25rem)] text-text">
+          A public search for a more human way to build, move, and pay attention.
+        </h2>
+        <p class="mt-7 text-lg leading-8 text-muted">
+          This is the home base for writing, products, ventures, and occasional consulting shaped by the same lens: movement as understanding, systems as clarity, food and culture as connection, and observation as a way back into the world.
+        </p>
       </div>
     </div>
   </div>

@@ -1,144 +1,23 @@
 ---
 import { SITE } from '../data/site';
-
-const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
 ---
-<section id="contact" class="section" aria-labelledby="contact-heading">
+<section id="contact" class="section border-b border-line" aria-labelledby="contact-heading">
   <div class="container-page">
-    <div class="grid gap-12 border-y border-line-strong py-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-      <div class="reveal">
-        <p class="mono-label">Correspond</p>
-        <h2 id="contact-heading" class="display mt-5 text-[clamp(2.4rem,6vw,4.5rem)] text-text">
-          Start with the real problem.
+    <div class="grid gap-8 lg:grid-cols-[12rem_minmax(0,48rem)]">
+      <p class="mono-label">Contact</p>
+      <div>
+        <h2 id="contact-heading" class="display text-[clamp(2.2rem,5vw,4.25rem)] text-text">
+          Send a note.
         </h2>
-        <p class="mt-6 max-w-xl text-lg leading-8 text-muted">
-          Audits, systems design, workflow automation, or a build that needs to move from prototype to something dependable.
+        <p class="mt-7 max-w-2xl text-lg leading-8 text-muted">
+          Questions, product ideas, possible collaborations, or a conversation worth having.
         </p>
-        <div class="mt-10 space-y-6">
-          <div>
-            <p class="mono-label">Email</p>
-            <a href={`mailto:${SITE.email}`} class="mt-2 inline-block text-lg text-text link-cinema">{SITE.email}</a>
-          </div>
-          <div>
-            <p class="mono-label">Response time</p>
-            <p class="mt-2 text-lg text-text">Typically within two working days</p>
-          </div>
+        <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+          <a href={`mailto:${SITE.email}`} class="editorial-link">{SITE.email}</a>
+          <a href={SITE.socials.linkedin} target="_blank" rel="noopener noreferrer me" class="editorial-link">LinkedIn</a>
+          <a href={SITE.socials.x} target="_blank" rel="noopener noreferrer me" class="editorial-link">X / Twitter</a>
         </div>
-      </div>
-
-      <div class="reveal reveal-delay-1">
-        <form
-          id="contact-form"
-          action="https://api.web3forms.com/submit"
-          method="POST"
-          class="space-y-8"
-          aria-label="Contact form"
-          data-mailto={`mailto:${SITE.email}`}
-        >
-          <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
-          <input type="hidden" name="subject" value="New enquiry from danielhunt.dev" />
-          <input type="hidden" name="from_name" value="danielhunt.dev contact form" />
-          <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
-
-          <div class="grid gap-8 sm:grid-cols-2">
-            <label class="block">
-              <span class="mono-label">Name</span>
-              <input id="name" name="name" type="text" autocomplete="name" required class="input-underline mt-3" />
-            </label>
-            <label class="block">
-              <span class="mono-label">Email</span>
-              <input id="email" name="email" type="email" autocomplete="email" required class="input-underline mt-3" />
-            </label>
-          </div>
-          <label class="block">
-            <span class="mono-label">Message</span>
-            <textarea id="message" name="message" rows="5" required class="input-underline mt-3 resize-none"></textarea>
-          </label>
-          <div class="flex flex-wrap items-center gap-4 pt-3">
-            <button type="submit" class="btn-primary" data-default-label="Send message">
-              Send message
-            </button>
-            <a
-              href={`mailto:${SITE.email}`}
-              class="btn-quiet"
-              aria-label={`Email ${SITE.name} at ${SITE.email}`}
-            >
-              Email directly
-            </a>
-          </div>
-          <p
-            id="contact-status"
-            class="text-sm text-muted"
-            role="status"
-            aria-live="polite"
-          ></p>
-        </form>
       </div>
     </div>
   </div>
 </section>
-
-<script>
-  const form = document.getElementById('contact-form') as HTMLFormElement | null;
-  const status = document.getElementById('contact-status');
-  if (form && status) {
-    const submit = form.querySelector<HTMLButtonElement>('button[type="submit"]');
-    const defaultLabel = submit?.dataset.defaultLabel ?? 'Send message';
-    const mailto = form.dataset.mailto ?? '';
-
-    const setStatus = (message: string, tone: 'idle' | 'success' | 'error') => {
-      status.textContent = message;
-      status.classList.remove('text-muted', 'text-emerald-700', 'text-red-700');
-      status.classList.add(
-        tone === 'success'
-          ? 'text-emerald-700'
-          : tone === 'error'
-            ? 'text-red-700'
-            : 'text-muted',
-      );
-    };
-
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      if (!submit) return;
-
-      const data = new FormData(form);
-      const accessKey = String(data.get('access_key') ?? '').trim();
-      if (!accessKey) {
-        setStatus(
-          `The form isn't configured yet — please email ${mailto.replace('mailto:', '')} directly.`,
-          'error',
-        );
-        return;
-      }
-
-      submit.disabled = true;
-      submit.textContent = 'Sending…';
-      setStatus('Sending your message…', 'idle');
-
-      try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { Accept: 'application/json' },
-          body: data,
-        });
-        const result = await response.json().catch(() => ({}));
-        if (response.ok && result.success) {
-          form.reset();
-          setStatus('Thanks — your message is on its way. I typically reply within two working days.', 'success');
-        } else {
-          const message = typeof result.message === 'string' ? result.message : 'Something went wrong.';
-          setStatus(`${message} You can also email ${mailto.replace('mailto:', '')} directly.`, 'error');
-        }
-      } catch {
-        setStatus(
-          `Network error — please try again or email ${mailto.replace('mailto:', '')} directly.`,
-          'error',
-        );
-      } finally {
-        submit.disabled = false;
-        submit.textContent = defaultLabel;
-      }
-    });
-  }
-</script>

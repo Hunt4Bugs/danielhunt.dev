@@ -1,54 +1,36 @@
 ---
 import { SITE } from '../data/site';
 ---
-<section
-  id="top"
-  class="min-h-[calc(100vh-7rem)] border-b border-line-strong"
-  aria-labelledby="hero-heading"
->
-  <div class="container-page flex min-h-[calc(100vh-7rem)] flex-col justify-center py-20 sm:py-28">
-    <div class="max-w-[78rem]">
-      <p class="mono-label reveal">
-        CONSULTING INDEX · 2026
-      </p>
-
-      <h1
-        id="hero-heading"
-        class="display-tight mt-8 text-[clamp(4rem,12vw,8.5rem)] text-text reveal reveal-delay-1"
-      >
-        AI systems.<br />
-        Data systems.<br />
-        What ships.
-      </h1>
-
-      <p class="lede mt-8 max-w-[62rem] text-muted reveal reveal-delay-2">
-        {SITE.name} is an independent AI and data engineer. He helps teams audit,
-        design, ship, and operate AI products and data systems that keep working once the demo glow wears off.
-      </p>
-
-      <div class="mt-10 flex flex-wrap items-center gap-3 reveal reveal-delay-3">
-        <a href="#contact" class="btn-primary">
-          Start a conversation
-        </a>
-        <a href="#services" class="btn-quiet">
-          View selected work
-        </a>
-      </div>
-
-      <div class="mt-16 grid gap-8 border-t border-line pt-8 text-sm text-muted sm:grid-cols-3 reveal reveal-delay-4">
-        <div>
-          <p class="mono-label">Role</p>
-          <p class="mt-3 text-text">Independent AI & data engineer</p>
-        </div>
-        <div>
-          <p class="mono-label">Focus</p>
-          <p class="mt-3 text-text">Audits, AI infrastructure, data engineering, agents, custom applications</p>
-        </div>
-        <div>
-          <p class="mono-label">Base</p>
-          <p class="mt-3 text-text">{SITE.location}</p>
+<section id="top" class="border-b border-line" aria-labelledby="hero-heading">
+  <div class="container-page">
+    <div class="grid min-h-[calc(100vh-5rem)] items-center gap-12 py-14 sm:py-18 lg:grid-cols-[minmax(0,0.9fr)_minmax(18rem,0.55fr)] lg:gap-20 lg:py-20">
+      <div class="max-w-3xl">
+        <p class="mono-label">{SITE.shortDescription}</p>
+        <h1
+          id="hero-heading"
+          class="display mt-6 text-[clamp(4.5rem,12vw,10rem)] text-text"
+        >
+          Daniel Hunt
+        </h1>
+        <p class="mt-8 max-w-2xl text-[1.35rem] font-light leading-[1.6] text-muted">
+          I am building and documenting a life around curiosity, useful systems, and staying human in a distracted world.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
+          <a href={`mailto:${SITE.email}`} class="editorial-link">Email</a>
+          <a href={SITE.socials.linkedin} target="_blank" rel="noopener noreferrer me" class="editorial-link">LinkedIn</a>
+          <a href={SITE.socials.x} target="_blank" rel="noopener noreferrer me" class="editorial-link">X / Twitter</a>
         </div>
       </div>
+
+      <figure>
+        <img
+          src={`${import.meta.env.BASE_URL}images/daniel-hunt-headshot.jpeg`}
+          alt="Portrait of Daniel Hunt"
+          class="aspect-[4/5] w-full max-w-[28rem] object-cover object-[50%_24%] grayscale-[8%] lg:ml-auto"
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
     </div>
   </div>
 </section>

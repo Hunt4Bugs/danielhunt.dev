@@ -5,12 +5,15 @@
 @layer base {
   :root {
     --bg: 255 255 255;
-    --panel: 245 245 245;
-    --text: 26 26 26;
-    --muted: 107 107 107;
-    --quiet: 155 155 155;
-    --line: 239 239 239;
-    --line-strong: 229 229 229;
+    --panel: 248 248 247;
+    --text: 43 31 26;
+    --muted: 93 80 73;
+    --quiet: 138 143 145;
+    --line: 232 229 225;
+    --line-strong: 214 208 200;
+    --accent: 107 31 43;
+    --terracotta: 178 94 59;
+    --olive: 90 95 61;
   }
 
   html {
@@ -18,7 +21,7 @@
   }
 
   body {
-    background-color: rgb(var(--bg));
+    background: rgb(var(--bg));
     color: rgb(var(--text));
     @apply font-sans antialiased;
     font-feature-settings: 'kern', 'liga', 'calt';
@@ -35,18 +38,18 @@
   }
 
   ::selection {
-    background: rgb(var(--text) / 0.12);
+    background: rgb(var(--accent) / 0.16);
     color: rgb(var(--text));
   }
 }
 
 @layer components {
   .container-page {
-    @apply mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14;
+    @apply mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-12;
   }
 
   .section {
-    @apply py-16 sm:py-24 lg:py-28;
+    @apply py-16 sm:py-20 lg:py-24;
   }
 
   .section-rule {
@@ -54,18 +57,20 @@
   }
 
   .display {
-    @apply font-sans font-light tracking-[-0.06em];
-    line-height: 0.96;
+    @apply font-sans font-light;
+    letter-spacing: 0;
+    line-height: 1.02;
   }
 
   .display-tight {
-    @apply font-sans font-light tracking-[-0.08em];
-    line-height: 0.9;
+    @apply font-sans font-light;
+    letter-spacing: 0;
+    line-height: 0.98;
   }
 
   .monogram {
     @apply inline-flex items-center gap-[0.04em];
-    letter-spacing: -0.08em;
+    letter-spacing: 0;
   }
 
   .monogram-brace {
@@ -75,30 +80,33 @@
   }
 
   .mono-label {
-    @apply font-mono text-[0.625rem] uppercase tracking-[0.22em];
+    @apply font-mono text-[0.625rem] uppercase;
+    letter-spacing: 0.22em;
     color: rgb(var(--quiet));
   }
 
   .mono-value {
-    @apply font-mono text-[0.625rem] uppercase tracking-[0.18em];
+    @apply font-mono text-[0.625rem] uppercase;
+    letter-spacing: 0.18em;
     color: rgb(var(--quiet));
   }
 
   .lede {
-    @apply font-sans font-light text-[clamp(1.15rem,2vw,1.7rem)] tracking-[-0.02em];
+    @apply font-sans font-light text-[clamp(1.1rem,1.8vw,1.55rem)];
+    letter-spacing: 0;
     line-height: 1.45;
   }
 
   .btn-primary {
     @apply inline-flex items-center justify-center border px-6 py-3 text-sm font-medium transition-colors duration-300;
-    background: rgb(var(--text));
-    border-color: rgb(var(--text));
+    background: rgb(var(--accent));
+    border-color: rgb(var(--accent));
     color: rgb(var(--bg));
   }
 
   .btn-primary:hover {
-    background: rgb(var(--muted));
-    border-color: rgb(var(--muted));
+    background: rgb(var(--text));
+    border-color: rgb(var(--text));
   }
 
   .btn-quiet {
@@ -108,7 +116,8 @@
   }
 
   .btn-quiet:hover {
-    border-color: rgb(var(--text));
+    border-color: rgb(var(--accent));
+    color: rgb(var(--accent));
   }
 
   .card {
@@ -126,13 +135,13 @@
   }
 
   .link-cinema:hover {
-    color: rgb(var(--muted));
+    color: rgb(var(--accent));
   }
 
   .link-cinema::after {
     content: '';
     @apply absolute left-0 -bottom-0.5 h-px w-full origin-right scale-x-0 transition-transform duration-700 ease-out;
-    background: rgb(var(--text));
+    background: rgb(var(--accent));
   }
 
   .link-cinema:hover::after {
@@ -151,7 +160,17 @@
   }
 
   .input-underline:focus {
-    border-bottom-color: rgb(var(--text));
+    border-bottom-color: rgb(var(--accent));
+  }
+
+  .editorial-link {
+    @apply font-mono text-[0.68rem] uppercase transition-colors duration-300;
+    color: rgb(var(--accent));
+    letter-spacing: 0.24em;
+  }
+
+  .editorial-link:hover {
+    color: rgb(var(--text));
   }
 
   .reveal {

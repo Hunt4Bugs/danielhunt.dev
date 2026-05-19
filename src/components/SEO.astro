@@ -1,5 +1,5 @@
 ---
-import { SITE, SERVICES, FAQS } from '../data/site';
+import { SITE } from '../data/site';
 
 interface Props {
   title?: string;
@@ -17,7 +17,6 @@ const canonical = new URL(Astro.url.pathname, SITE.url).toString();
 const ogImageUrl = new URL(ogImage, SITE.url).toString();
 const xHandle = new URL(SITE.socials.x).pathname.replaceAll('/', '') || undefined;
 
-// --- JSON-LD ----------------------------------------------------------------
 const personSchema = {
   '@type': 'Person',
   '@id': `${SITE.url}/#person`,
@@ -34,31 +33,6 @@ const personSchema = {
   knowsAbout: SITE.keywords,
 };
 
-const businessSchema = {
-  '@type': 'ProfessionalService',
-  '@id': `${SITE.url}/#business`,
-  name: `${SITE.name} \u2014 AI & Data Engineering`,
-  url: SITE.url,
-  email: `mailto:${SITE.email}`,
-  founder: { '@id': `${SITE.url}/#person` },
-  description: SITE.description,
-  areaServed: 'Worldwide',
-  serviceType: SERVICES.map((s) => s.title),
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'AI & Data Engineering Services',
-    itemListElement: SERVICES.map((s) => ({
-      '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Service',
-        name: s.title,
-        description: s.blurb,
-        provider: { '@id': `${SITE.url}/#person` },
-      },
-    })),
-  },
-};
-
 const websiteSchema = {
   '@type': 'WebSite',
   '@id': `${SITE.url}/#website`,
@@ -67,15 +41,6 @@ const websiteSchema = {
   description: SITE.description,
   publisher: { '@id': `${SITE.url}/#person` },
   inLanguage: 'en',
-};
-
-const faqSchema = {
-  '@type': 'FAQPage',
-  mainEntity: FAQS.map((f) => ({
-    '@type': 'Question',
-    name: f.q,
-    acceptedAnswer: { '@type': 'Answer', text: f.a },
-  })),
 };
 
 const breadcrumbSchema = {
@@ -90,7 +55,6 @@ const breadcrumbSchema = {
   ],
 };
 ---
-<!-- Primary -->
 <title>{title}</title>
 <meta name="description" content={description} />
 <meta name="author" content={SITE.name} />
@@ -98,11 +62,8 @@ const breadcrumbSchema = {
 <link rel="canonical" href={canonical} />
 <meta name="application-name" content={SITE.name} />
 <meta name="apple-mobile-web-app-title" content={SITE.name} />
-
-<!-- Robots: explicit, generous -->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-<!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content={SITE.name} />
 <meta property="og:title" content={title} />
@@ -113,25 +74,22 @@ const breadcrumbSchema = {
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content={`${SITE.name} business-card preview — ${SITE.jobTitle}`} />
+<meta property="og:image:alt" content={`${SITE.name} editorial preview — ${SITE.jobTitle}`} />
 <meta property="og:locale" content="en_US" />
 
-<!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageUrl} />
-<meta name="twitter:image:alt" content={`${SITE.name} business-card preview — ${SITE.jobTitle}`} />
+<meta name="twitter:image:alt" content={`${SITE.name} editorial preview — ${SITE.jobTitle}`} />
 {xHandle && <meta name="twitter:site" content={`@${xHandle}`} />}
 {xHandle && <meta name="twitter:creator" content={`@${xHandle}`} />}
 
-<!-- Theme -->
 <meta name="theme-color" content="#FFFFFF" />
 <meta name="msapplication-TileColor" content="#FFFFFF" />
 <meta name="color-scheme" content="light" />
 
-<!-- JSON-LD -->
 <script type="application/ld+json" set:html={JSON.stringify({
   '@context': 'https://schema.org',
-  '@graph': [personSchema, businessSchema, websiteSchema, faqSchema, breadcrumbSchema],
+  '@graph': [personSchema, websiteSchema, breadcrumbSchema],
 })} />

@@ -3,48 +3,19 @@ import { SITE } from '../data/site';
 
 const year = new Date().getFullYear();
 ---
-<footer class="pt-16" aria-labelledby="footer-heading">
+<footer class="py-10" aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Site footer</h2>
   <div class="container-page">
-    <div class="border-t border-line-strong pt-10">
-      <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_180px_180px_180px]">
-        <div>
-          <div class="display monogram text-[2.25rem] text-text">
-            <span class="monogram-brace">{'{'}</span><span>D</span><span class="monogram-brace">{'}'}</span>
-          </div>
-          <p class="mt-6 max-w-xs text-[1.2rem] font-light leading-8 text-muted">
-            {SITE.name}<br />
-            {SITE.location}
-          </p>
-        </div>
-
-        <div class="space-y-4">
-          <p class="mono-label">Index</p>
-          <a href="#services" class="block text-sm text-text link-cinema">Work</a>
-          <a href="#about" class="block text-sm text-text link-cinema">About</a>
-          <a href="#faq" class="block text-sm text-text link-cinema">FAQ</a>
-          <a href="#contact" class="block text-sm text-text link-cinema">Contact</a>
-        </div>
-
-        <div class="space-y-4">
-          <p class="mono-label">Elsewhere</p>
-          <a href={SITE.socials.linkedin} target="_blank" rel="noopener noreferrer me" class="block text-sm text-text link-cinema">LinkedIn</a>
-          <a href={SITE.socials.x} target="_blank" rel="noopener noreferrer me" class="block text-sm text-text link-cinema">X / Twitter</a>
-          <a href={`${import.meta.env.BASE_URL}brand`} class="block text-sm text-text link-cinema">Brand</a>
-        </div>
-
-        <div class="space-y-4">
-          <p class="mono-label">Correspond</p>
-          <a href={`mailto:${SITE.email}`} class="block text-sm text-text link-cinema">Email</a>
-          <a href="#contact" class="block text-sm text-text link-cinema">Inquiry form</a>
-          <a href={SITE.url} class="block text-sm text-text link-cinema">danielhunt.dev</a>
-        </div>
-      </div>
-
-      <div class="mt-12 border-t border-line py-6">
-        <div class="flex flex-col gap-3 text-left md:flex-row md:items-center md:justify-between">
-          <p class="mono-value">&copy; {year} · {SITE.name.toUpperCase()} · ALL RIGHTS RESERVED</p>
-          <p class="mono-value">SET IN INTER + JETBRAINS MONO · CONSULTING SYSTEM V2</p>
+    <div class="flex flex-col gap-6 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
+      <a href="#top" class="display monogram text-[1.8rem] text-text" aria-label="Daniel Hunt — home">
+        <span class="monogram-brace">{'{'}</span><span>D</span><span class="monogram-brace">{'}'}</span>
+      </a>
+      <div class="flex flex-col gap-3 text-left sm:text-right">
+        <p class="mono-value">&copy; {year} · {SITE.name.toUpperCase()}</p>
+        <div class="flex flex-wrap gap-x-5 gap-y-2 sm:justify-end">
+          <a href="#about" class="mono-value link-cinema">About</a>
+          <a href="#contact" class="mono-value link-cinema">Contact</a>
+          <a href={`${import.meta.env.BASE_URL}brand`} class="mono-value link-cinema">Brand</a>
         </div>
       </div>
     </div>
