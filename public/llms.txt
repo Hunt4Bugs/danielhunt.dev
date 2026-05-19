@@ -1,33 +1,27 @@
 # Daniel Hunt
 
-> Independent AI and data engineer. I help companies design, build, and operate AI products and data systems — audits, infrastructure, agents, pipelines, and custom applications.
+> Builder, writer, and systems observer documenting a life around movement, systems, food, culture, and staying human in a distracted world.
 
 - **Name:** Daniel Hunt
-- **Role:** AI Engineer & Consultant
+- **Role:** Builder, writer, and systems observer
 - **Website:** https://danielhunt.dev
 - **Email:** contact@danielhunt.dev
-- **Based:** Works remotely with clients globally
+- **Based:** Simi Valley, California
 - **LinkedIn:** https://www.linkedin.com/in/danielhunt16/
 - **X:** https://x.com/_danielhunt
 
-## Services
+## Focus
 
-- **AI Audit** — Structured review of an organisation's existing AI usage covering accuracy, cost, latency, security, governance, and risk. Deliverable: a prioritised action list and an honest assessment of which AI features deliver value.
-- **AI Infrastructure** — Production-grade foundations: RAG pipelines, vector databases, model gateways, evaluation harnesses, observability, and CI/CD for AI systems.
-- **Agent & Workflow Automation** — Custom agents and Model Context Protocol (MCP) servers that integrate with tools like Slack, Notion, Linear, and internal APIs to automate repetitive work.
-- **Custom App Development** — Full-stack AI-powered applications built on FastAPI, Next.js, and Supabase. From prototype to production.
+- Movement as a way to understand self, place, and discomfort.
+- Systems as tools for clarity, useful products, and better work.
+- Food, culture, and conversation as records of human connection.
+- Observation as a way to stay present in modern life.
 
-## Stack
+## Contact
 
-Python (FastAPI, FastMCP), TypeScript (Next.js, App Router), Supabase (Postgres + Auth), Tailwind CSS, shadcn/ui. Deployment on Vercel and Render. Models from Anthropic, OpenAI, and Google.
-
-## Engagement
-
-- One-week audits to multi-month builds.
-- Free 30-minute scoping calls.
-- Typical reply time: within two working days.
-- Contact: contact@danielhunt.dev
+Questions, product ideas, possible collaborations, or a conversation worth having:
+contact@danielhunt.dev
 
 ## Pages
 
-- [Home](https://danielhunt.dev/): overview, services, about, FAQ, contact form
+- [Home](https://danielhunt.dev/): minimal editorial home, about, and contact links.

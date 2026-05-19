@@ -3,16 +3,17 @@ import { NAV_LINKS, SITE } from '../data/site';
 ---
 <header class="sticky top-0 z-40 bg-bg/95 backdrop-blur-sm">
   <div class="container-page">
-    <div class="flex items-center justify-between border-y border-line-strong py-6">
+    <div class="flex items-center justify-between border-b border-line py-5">
       <a
         href="#top"
-        class="display monogram text-[1.7rem] text-text"
+        class="display monogram text-[1.65rem] text-text"
         aria-label="Daniel Hunt — home"
       >
         <span class="monogram-brace">{'{'}</span><span>D</span><span class="monogram-brace">{'}'}</span>
+        <span class="ml-5 hidden font-mono text-[0.68rem] uppercase text-text sm:inline" style="letter-spacing: 0.24em;">Daniel Hunt</span>
       </a>
 
-      <nav class="hidden items-center gap-10 text-sm text-muted md:flex" aria-label="Primary">
+      <nav class="hidden items-center gap-8 text-sm text-muted md:flex" aria-label="Primary">
         {NAV_LINKS.map((link) => (
           <a href={link.href} class="link-cinema">
             {link.label}
@@ -20,14 +21,14 @@ import { NAV_LINKS, SITE } from '../data/site';
         ))}
       </nav>
 
-      <div class="hidden items-center gap-3 md:flex">
+      <div class="hidden items-center gap-3 lg:flex">
         <span class="mono-label">{SITE.location.split(',')[0]}</span>
         <span id="la-time" class="mono-label">Loading time</span>
       </div>
 
       <button
         id="mobile-menu-btn"
-        class="mono-label border border-line-strong px-3 py-2 md:hidden"
+        class="mono-label border border-line px-3 py-2 md:hidden"
         aria-label="Open menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -40,7 +41,7 @@ import { NAV_LINKS, SITE } from '../data/site';
 
 <nav
   id="mobile-menu"
-  class="hidden border-b border-line-strong bg-bg md:hidden"
+  class="hidden border-b border-line bg-bg md:hidden"
   aria-label="Mobile"
 >
   <div class="container-page flex flex-col gap-5 py-6">
