@@ -9,13 +9,13 @@ export const SITE = {
   location: 'Simi Valley, California',
   url: 'https://danielhunt.dev',
   email: 'contact@danielhunt.dev',
-  ogTitle: 'Daniel Hunt',
+  ogTitle: 'Built in Public. Lived offline. — Daniel Hunt',
   description:
     'Daniel Hunt builds and documents a life around movement, systems, food, culture, observation, and staying human in a distracted world.',
   ogDescription:
-    'A minimal editorial home for Daniel Hunt: movement, systems, food, culture, observation, and useful ventures.',
+    'Tech, culture, and movement. Built and documented by Daniel Hunt.',
   shortDescription:
-    'Movement, systems, food, culture, and observation.',
+    'Tech, culture, and movement.',
   socials: {
     linkedin: 'https://www.linkedin.com/in/danielhunt16/',
     x: 'https://x.com/danielhunt_dev',
