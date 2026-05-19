@@ -18,7 +18,7 @@ export const SITE = {
     'Movement, systems, food, culture, and observation.',
   socials: {
     linkedin: 'https://www.linkedin.com/in/danielhunt16/',
-    x: 'https://x.com/_danielhunt',
+    x: 'https://x.com/danielhunt_dev',
   },
   keywords: [
     'Daniel Hunt',
