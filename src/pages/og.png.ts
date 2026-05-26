@@ -1,6 +1,8 @@
 import type { APIRoute } from 'astro';
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
+import fs from 'node:fs';
+import path from 'node:path';
 
 async function fetchFont(family: string, weight: number): Promise<ArrayBuffer> {
   const url = `https://fonts.googleapis.com/css2?family=${family}:wght@${weight}&display=swap`;
@@ -15,12 +17,36 @@ async function fetchFont(family: string, weight: number): Promise<ArrayBuffer> {
   return fetch(match[1]).then((r) => r.arrayBuffer());
 }
 
+// Brand tokens — mirror exact hex values from src/styles/global.css.
+// CSS var name → hex shown for each. Update both if either changes.
+const TOKEN = {
+  bg: '#FFFFFF',       // --bg (255 255 255) — primary canvas
+  text: '#111111',     // --text (17 17 17) — ink, primary text
+  muted: '#5A5A5A',    // --muted (90 90 90) — secondary text
+  quiet: '#8A8F91',    // --quiet (138 143 145) — tertiary text, captions
+  line: '#E2E2E2',     // --line (226 226 226) — hairline structural rules
+  cream: '#F3EFE8',    // --cream (243 239 232) — warm canvas, used here as overlay typography color
+  espresso: '#2B1F1A', // --espresso (43 31 26) — warm-pole structural
+  accent: '#6B1F2B',   // --accent (107 31 43) — burgundy
+};
+
+// Load the portrait as a data URI so satori can embed it at build time.
+function loadPortraitDataUri(): string {
+  const imagePath = path.join(process.cwd(), 'public', 'images', 'daniel-hunt-headshot.jpeg');
+  const buf = fs.readFileSync(imagePath);
+  return `data:image/jpeg;base64,${buf.toString('base64')}`;
+}
+
 export const GET: APIRoute = async () => {
-  const [interBoldData, interLightData, interRegularData] = await Promise.all([
-    fetchFont('Inter', 700),
+  // Fraunces for the wordmark (no ff/fl letters in "DANIEL HUNT").
+  // Inter for the tagline ("Live offline." contains fl → ligature-safe in Inter).
+  const [frauncesData, interLightData, interMediumData] = await Promise.all([
+    fetchFont('Fraunces', 500),
     fetchFont('Inter', 300),
-    fetchFont('Inter', 400),
+    fetchFont('Inter', 500),
   ]);
+
+  const portraitSrc = loadPortraitDataUri();
 
   const svg = await satori(
     {
@@ -28,111 +54,118 @@ export const GET: APIRoute = async () => {
       props: {
         style: {
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
+          position: 'relative',
           width: '1200px',
           height: '630px',
-          backgroundColor: '#FFFFFF',
-          padding: '80px',
+          backgroundColor: TOKEN.espresso,
           fontFamily: 'Inter',
         },
         children: [
-          // Top: name label
+          // Layer 1 — full-bleed portrait
           {
-            type: 'p',
+            type: 'img',
             props: {
+              src: portraitSrc,
+              width: 1200,
+              height: 630,
               style: {
-                fontSize: '16px',
-                fontFamily: 'Inter',
-                fontWeight: 400,
-                color: '#9B9B9B',
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                margin: 0,
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '1200px',
+                height: '630px',
+                objectFit: 'cover',
+                objectPosition: 'center 18%',
               },
-              children: 'Daniel Hunt',
             },
           },
-          // Center: main copy
+
+          // Layer 2 — warm espresso gradient overlay
+          // Top: barely tinted (lets the face read). Bottom: heavy espresso, ensures text legibility.
           {
             type: 'div',
             props: {
               style: {
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '1200px',
+                height: '630px',
+                display: 'flex',
+                backgroundImage:
+                  'linear-gradient(180deg, rgba(43, 31, 26, 0.08) 0%, rgba(43, 31, 26, 0.15) 40%, rgba(43, 31, 26, 0.55) 68%, rgba(43, 31, 26, 0.88) 88%, rgba(17, 17, 17, 0.96) 100%)',
+              },
+              children: [],
+            },
+          },
+
+          // Layer 3 — text overlay, anchored to bottom-left
+          {
+            type: 'div',
+            props: {
+              style: {
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '1200px',
+                height: '630px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '24px',
+                justifyContent: 'flex-end',
+                padding: '72px 88px',
               },
               children: [
+                // Wordmark — true cover-poster scale
+                {
+                  type: 'p',
+                  props: {
+                    style: {
+                      fontSize: '112px',
+                      fontFamily: 'Fraunces',
+                      fontWeight: 500,
+                      color: TOKEN.cream,
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
+                      lineHeight: 1,
+                      margin: 0,
+                    },
+                    children: 'Daniel Hunt',
+                  },
+                },
+
+                // Burgundy hairline — the single emphatic brand accent
                 {
                   type: 'div',
                   props: {
                     style: {
                       display: 'flex',
-                      flexDirection: 'column',
-                      gap: '0px',
+                      width: '72px',
+                      height: '3px',
+                      backgroundColor: TOKEN.accent,
+                      marginTop: '28px',
+                      marginBottom: '24px',
                     },
-                    children: [
-                      {
-                        type: 'p',
-                        props: {
-                          style: {
-                            fontSize: '88px',
-                            fontFamily: 'Inter',
-                            fontWeight: 700,
-                            color: '#111111',
-                            lineHeight: 1.05,
-                            margin: 0,
-                          },
-                          children: 'Built in Public.',
-                        },
-                      },
-                      {
-                        type: 'p',
-                        props: {
-                          style: {
-                            fontSize: '88px',
-                            fontFamily: 'Inter',
-                            fontWeight: 700,
-                            color: '#111111',
-                            lineHeight: 1.05,
-                            margin: 0,
-                          },
-                          children: 'Lived offline.',
-                        },
-                      },
-                    ],
+                    children: [],
                   },
                 },
+
+                // Tagline — the brand thesis, one line, restrained
                 {
                   type: 'p',
                   props: {
                     style: {
-                      fontSize: '28px',
+                      fontSize: '32px',
                       fontFamily: 'Inter',
                       fontWeight: 300,
-                      color: '#6B6B6B',
+                      color: 'rgba(243, 239, 232, 0.92)',
                       margin: 0,
-                      lineHeight: 1.4,
+                      lineHeight: 1.3,
+                      letterSpacing: '0.005em',
                     },
-                    children: 'Tech, culture, and movement.',
+                    children: 'Build in public. Live offline.',
                   },
                 },
               ],
-            },
-          },
-          // Bottom: URL
-          {
-            type: 'p',
-            props: {
-              style: {
-                fontSize: '14px',
-                fontFamily: 'Inter',
-                fontWeight: 400,
-                color: '#C4C4C4',
-                letterSpacing: '0.05em',
-                margin: 0,
-              },
-              children: 'danielhunt.dev',
             },
           },
         ],
@@ -142,9 +175,9 @@ export const GET: APIRoute = async () => {
       width: 1200,
       height: 630,
       fonts: [
-        { name: 'Inter', data: interBoldData, weight: 700, style: 'normal' },
+        { name: 'Fraunces', data: frauncesData, weight: 500, style: 'normal' },
         { name: 'Inter', data: interLightData, weight: 300, style: 'normal' },
-        { name: 'Inter', data: interRegularData, weight: 400, style: 'normal' },
+        { name: 'Inter', data: interMediumData, weight: 500, style: 'normal' },
       ],
     },
   );
