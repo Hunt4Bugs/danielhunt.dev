@@ -15,14 +15,24 @@ async function fetchFont(family: string, weight: number): Promise<ArrayBuffer> {
   return fetch(match[1]).then((r) => r.arrayBuffer());
 }
 
+// Brand tokens (kept in sync with src/styles/global.css and docs/brand/VISUAL.md)
+const TOKEN = {
+  white: '#FFFFFF',
+  ink: '#111111',
+  gray: '#6B6B6B',
+  quietGray: '#9B9B9B',
+  espresso: '#2B1F1A',
+  accent: '#6B1F2B', // burgundy
+};
+
 export const GET: APIRoute = async () => {
-  // Wordmark in Fraunces (no ff/fl letter sequences → no ligature risk).
-  // Tagline + sub-thesis + url in Inter (avoids Fraunces ligatures in body words like "offline").
+  // Fraunces for the masthead + monogram (no ff/fl letter sequences in "DANIEL HUNT" or "DH").
+  // Inter for the headline ("Live offline." contains fl) + body + URL.
   const [frauncesData, interBoldData, interLightData, interRegularData] = await Promise.all([
     fetchFont('Fraunces', 500),
     fetchFont('Inter', 700),
     fetchFont('Inter', 300),
-    fetchFont('Inter', 400),
+    fetchFont('Inter', 500),
   ]);
 
   const svg = await satori(
@@ -32,58 +42,102 @@ export const GET: APIRoute = async () => {
         style: {
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
           width: '1200px',
           height: '630px',
-          backgroundColor: '#FFFFFF',
-          padding: '80px',
+          backgroundColor: TOKEN.white,
+          padding: '72px 88px',
           fontFamily: 'Inter',
         },
         children: [
-          // Top: wordmark masthead (Fraunces, espresso for warm-pole structural)
+          // Top: DH monogram anchor (gallery-curator placement)
           {
-            type: 'p',
+            type: 'div',
             props: {
-              style: {
-                fontSize: '56px',
-                fontFamily: 'Fraunces',
-                fontWeight: 500,
-                color: '#2B1F1A',
-                letterSpacing: '0.06em',
-                textTransform: 'uppercase',
-                margin: 0,
-              },
-              children: 'Daniel Hunt',
+              style: { display: 'flex' },
+              children: [
+                {
+                  type: 'p',
+                  props: {
+                    style: {
+                      fontSize: '34px',
+                      fontFamily: 'Fraunces',
+                      fontWeight: 500,
+                      color: TOKEN.espresso,
+                      letterSpacing: '0.02em',
+                      textTransform: 'uppercase',
+                      margin: 0,
+                      lineHeight: 1,
+                    },
+                    children: 'DH',
+                  },
+                },
+              ],
             },
           },
-          // Center: tagline (Inter Bold) + sub-thesis (Inter Light)
+
+          // Middle: masthead + burgundy hairline + headline + deck
           {
             type: 'div',
             props: {
               style: {
+                flex: 1,
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '24px',
+                justifyContent: 'center',
               },
               children: [
+                // Wordmark masthead
+                {
+                  type: 'p',
+                  props: {
+                    style: {
+                      fontSize: '96px',
+                      fontFamily: 'Fraunces',
+                      fontWeight: 500,
+                      color: TOKEN.espresso,
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
+                      lineHeight: 1,
+                      margin: 0,
+                    },
+                    children: 'Daniel Hunt',
+                  },
+                },
+
+                // Burgundy hairline — the single emphatic accent
+                {
+                  type: 'div',
+                  props: {
+                    style: {
+                      display: 'flex',
+                      width: '88px',
+                      height: '3px',
+                      backgroundColor: TOKEN.accent,
+                      marginTop: '36px',
+                      marginBottom: '36px',
+                    },
+                    children: [],
+                  },
+                },
+
+                // Headline — the brand thesis, stacked to visually reinforce the Build / Offline toggle
                 {
                   type: 'div',
                   props: {
                     style: {
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '0px',
                     },
                     children: [
                       {
                         type: 'p',
                         props: {
                           style: {
-                            fontSize: '88px',
+                            fontSize: '76px',
                             fontFamily: 'Inter',
                             fontWeight: 700,
-                            color: '#111111',
-                            lineHeight: 1.05,
+                            color: TOKEN.ink,
+                            lineHeight: 1.04,
                             margin: 0,
                           },
                           children: 'Build in public.',
@@ -93,11 +147,11 @@ export const GET: APIRoute = async () => {
                         type: 'p',
                         props: {
                           style: {
-                            fontSize: '88px',
+                            fontSize: '76px',
                             fontFamily: 'Inter',
                             fontWeight: 700,
-                            color: '#111111',
-                            lineHeight: 1.05,
+                            color: TOKEN.ink,
+                            lineHeight: 1.04,
                             margin: 0,
                           },
                           children: 'Live offline.',
@@ -106,16 +160,19 @@ export const GET: APIRoute = async () => {
                     ],
                   },
                 },
+
+                // Deck — the sub-thesis
                 {
                   type: 'p',
                   props: {
                     style: {
-                      fontSize: '28px',
+                      fontSize: '26px',
                       fontFamily: 'Inter',
                       fontWeight: 300,
-                      color: '#6B6B6B',
-                      margin: 0,
+                      color: TOKEN.gray,
                       lineHeight: 1.4,
+                      marginTop: '24px',
+                      marginBottom: 0,
                     },
                     children: 'Tech, movement, and culture.',
                   },
@@ -123,20 +180,48 @@ export const GET: APIRoute = async () => {
               ],
             },
           },
-          // Bottom: URL in burgundy accent
+
+          // Bottom: URL + location as editorial metadata (mid-dot separated)
           {
-            type: 'p',
+            type: 'div',
             props: {
               style: {
-                fontSize: '16px',
-                fontFamily: 'Inter',
-                fontWeight: 500,
-                color: '#6B1F2B',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-                margin: 0,
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
               },
-              children: 'danielhunt.dev',
+              children: [
+                {
+                  type: 'p',
+                  props: {
+                    style: {
+                      fontSize: '16px',
+                      fontFamily: 'Inter',
+                      fontWeight: 500,
+                      color: TOKEN.espresso,
+                      letterSpacing: '0.24em',
+                      textTransform: 'uppercase',
+                      margin: 0,
+                    },
+                    children: 'danielhunt.dev',
+                  },
+                },
+                {
+                  type: 'p',
+                  props: {
+                    style: {
+                      fontSize: '14px',
+                      fontFamily: 'Inter',
+                      fontWeight: 500,
+                      color: TOKEN.quietGray,
+                      letterSpacing: '0.24em',
+                      textTransform: 'uppercase',
+                      margin: 0,
+                    },
+                    children: 'Simi Valley · 2026',
+                  },
+                },
+              ],
             },
           },
         ],
@@ -149,7 +234,7 @@ export const GET: APIRoute = async () => {
         { name: 'Fraunces', data: frauncesData, weight: 500, style: 'normal' },
         { name: 'Inter', data: interBoldData, weight: 700, style: 'normal' },
         { name: 'Inter', data: interLightData, weight: 300, style: 'normal' },
-        { name: 'Inter', data: interRegularData, weight: 400, style: 'normal' },
+        { name: 'Inter', data: interRegularData, weight: 500, style: 'normal' },
       ],
     },
   );
