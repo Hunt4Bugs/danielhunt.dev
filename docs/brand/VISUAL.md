@@ -115,19 +115,19 @@ Acceptable furniture:
 - Numbered or named section labels in small-caps Fraunces — `I.`, `II.`, or `I · ON BUILDING`
 - Mid-dot `·` for metadata separators — `DANIEL HUNT · SIMI VALLEY · 2026`
 - Asterism `⁂` (centered) as a stronger break when a mark is required
-- Hairline structural CSS rules (1px solid `--gray`) for UI dividers — these are *structural*, not typographic
+- Hairline structural CSS rules (1px solid `--line`) for UI dividers — these are *structural*, not typographic
 
 ### Drop caps
 
-Long-form dispatch openers begin with a Fraunces Display drop cap, roughly 3-line height, in `--espresso` (Offline mode) or `--ink` (Build mode).
+Long-form dispatch openers begin with a Fraunces Display drop cap, roughly 3-line height, in `--espresso` (Offline mode) or `--text` (Build mode).
 
 ### Byline
 
-Format: `DANIEL HUNT · [CITY] · [DATE]` in small-caps Inter, around 12px, `--gray`.
+Format: `DANIEL HUNT · [CITY] · [DATE]` in small-caps Inter, around 12px, `--quiet`.
 
 ### Captions
 
-Inter italic, 13–14px, `--gray`, hanging directly below figures. No rule line above or below. Whitespace does the work.
+Inter italic, 13–14px, `--quiet`, hanging directly below figures. No rule line above or below. Whitespace does the work.
 
 ### Pull quotes
 
