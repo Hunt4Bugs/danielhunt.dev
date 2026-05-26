@@ -16,7 +16,10 @@ async function fetchFont(family: string, weight: number): Promise<ArrayBuffer> {
 }
 
 export const GET: APIRoute = async () => {
-  const [interBoldData, interLightData, interRegularData] = await Promise.all([
+  // Wordmark in Fraunces (no ff/fl letter sequences → no ligature risk).
+  // Tagline + sub-thesis + url in Inter (avoids Fraunces ligatures in body words like "offline").
+  const [frauncesData, interBoldData, interLightData, interRegularData] = await Promise.all([
+    fetchFont('Fraunces', 500),
     fetchFont('Inter', 700),
     fetchFont('Inter', 300),
     fetchFont('Inter', 400),
@@ -37,23 +40,23 @@ export const GET: APIRoute = async () => {
           fontFamily: 'Inter',
         },
         children: [
-          // Top: name label
+          // Top: wordmark masthead (Fraunces, espresso for warm-pole structural)
           {
             type: 'p',
             props: {
               style: {
-                fontSize: '16px',
-                fontFamily: 'Inter',
-                fontWeight: 400,
-                color: '#9B9B9B',
-                letterSpacing: '0.15em',
+                fontSize: '56px',
+                fontFamily: 'Fraunces',
+                fontWeight: 500,
+                color: '#2B1F1A',
+                letterSpacing: '0.06em',
                 textTransform: 'uppercase',
                 margin: 0,
               },
               children: 'Daniel Hunt',
             },
           },
-          // Center: main copy
+          // Center: tagline (Inter Bold) + sub-thesis (Inter Light)
           {
             type: 'div',
             props: {
@@ -83,7 +86,7 @@ export const GET: APIRoute = async () => {
                             lineHeight: 1.05,
                             margin: 0,
                           },
-                          children: 'Built in Public.',
+                          children: 'Build in public.',
                         },
                       },
                       {
@@ -97,7 +100,7 @@ export const GET: APIRoute = async () => {
                             lineHeight: 1.05,
                             margin: 0,
                           },
-                          children: 'Lived offline.',
+                          children: 'Live offline.',
                         },
                       },
                     ],
@@ -114,22 +117,23 @@ export const GET: APIRoute = async () => {
                       margin: 0,
                       lineHeight: 1.4,
                     },
-                    children: 'Tech, culture, and movement.',
+                    children: 'Tech, movement, and culture.',
                   },
                 },
               ],
             },
           },
-          // Bottom: URL
+          // Bottom: URL in burgundy accent
           {
             type: 'p',
             props: {
               style: {
-                fontSize: '14px',
+                fontSize: '16px',
                 fontFamily: 'Inter',
-                fontWeight: 400,
-                color: '#C4C4C4',
-                letterSpacing: '0.05em',
+                fontWeight: 500,
+                color: '#6B1F2B',
+                letterSpacing: '0.18em',
+                textTransform: 'uppercase',
                 margin: 0,
               },
               children: 'danielhunt.dev',
@@ -142,6 +146,7 @@ export const GET: APIRoute = async () => {
       width: 1200,
       height: 630,
       fonts: [
+        { name: 'Fraunces', data: frauncesData, weight: 500, style: 'normal' },
         { name: 'Inter', data: interBoldData, weight: 700, style: 'normal' },
         { name: 'Inter', data: interLightData, weight: 300, style: 'normal' },
         { name: 'Inter', data: interRegularData, weight: 400, style: 'normal' },

@@ -4,16 +4,21 @@
 
 @layer base {
   :root {
-    --bg: 255 255 255;
-    --panel: 248 248 247;
-    --text: 43 31 26;
-    --muted: 93 80 73;
-    --quiet: 138 143 145;
-    --line: 232 229 225;
-    --line-strong: 214 208 200;
-    --accent: 107 31 43;
-    --terracotta: 178 94 59;
-    --olive: 90 95 61;
+    /* Cool pole — default / Build-mode dominant */
+    --bg: 255 255 255;          /* pure white canvas */
+    --text: 17 17 17;           /* ink — primary text */
+    --muted: 90 90 90;          /* secondary text */
+    --quiet: 138 143 145;       /* tertiary / captions */
+    --line: 226 226 226;        /* hairline structural rules */
+    --line-strong: 200 200 200; /* stronger structural rules */
+
+    /* Warm pole — situational / Offline-mode dominant */
+    --cream: 243 239 232;       /* warm canvas */
+    --espresso: 43 31 26;       /* warm structural — masthead, Offline headers */
+    --panel: 243 239 232;       /* legacy alias → cream */
+
+    /* Personality */
+    --accent: 107 31 43;        /* burgundy */
   }
 
   html {
@@ -57,38 +62,48 @@
   }
 
   .display {
-    @apply font-sans font-light;
-    letter-spacing: 0;
-    line-height: 1.02;
-    font-variant-ligatures: no-common-ligatures;
+    @apply font-serif font-normal;
+    letter-spacing: -0.005em;
+    line-height: 1.05;
+    font-variation-settings: 'opsz' 144, 'SOFT' 30;
+    font-feature-settings: 'kern' 1, 'liga' 0, 'dlig' 0, 'clig' 0, 'calt' 0;
   }
 
   .display-tight {
-    @apply font-sans font-light;
-    letter-spacing: 0;
+    @apply font-serif font-normal;
+    letter-spacing: -0.01em;
     line-height: 0.98;
+    font-variation-settings: 'opsz' 144, 'SOFT' 30;
+    font-feature-settings: 'kern' 1, 'liga' 0, 'dlig' 0, 'clig' 0, 'calt' 0;
   }
 
-  .monogram {
-    @apply inline-flex items-center gap-[0.04em];
-    letter-spacing: 0;
+  .wordmark {
+    @apply font-serif uppercase;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    font-variation-settings: 'opsz' 144, 'SOFT' 30;
   }
 
-  .monogram-brace {
-    color: rgb(var(--quiet) / 0.72);
-    transform: scale(0.82) translateY(-0.02em);
-    transform-origin: center;
+  .monogram-mark {
+    @apply font-serif uppercase;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    font-variation-settings: 'opsz' 144, 'SOFT' 30;
   }
 
   .mono-label {
-    @apply font-mono text-[0.75rem] uppercase;
+    @apply font-sans text-[0.72rem] uppercase;
     letter-spacing: 0.22em;
+    font-weight: 500;
     color: rgb(var(--muted));
   }
 
   .mono-value {
-    @apply font-mono text-[0.625rem] uppercase;
+    @apply font-sans text-[0.625rem] uppercase;
     letter-spacing: 0.18em;
+    font-weight: 500;
     color: rgb(var(--quiet));
   }
 
@@ -165,9 +180,10 @@
   }
 
   .editorial-link {
-    @apply font-mono text-[0.8rem] uppercase transition-colors duration-300;
+    @apply font-sans text-[0.8rem] uppercase transition-colors duration-300;
     color: rgb(var(--accent));
     letter-spacing: 0.24em;
+    font-weight: 500;
   }
 
   .editorial-link:hover {

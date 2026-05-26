@@ -1,606 +1,275 @@
-# VISUAL.md
-
-# {D} — Visual Identity
-
-## Core Visual Philosophy
-
-The visual identity should feel like:
-- lived-in
-- cinematic
-- grounded
-- textured
-- intentional
-- observant
-- human
-
-The visuals should communicate:
-> movement, atmosphere, curiosity, reflection, and humanity.
-
-The aesthetic should never feel:
-- overly polished
-- hyper-luxury
-- performative
-- influencer-heavy
-- sterile
-- overly corporate
-- fake cinematic
-
-The world should feel:
-- experienced
-- real
-- emotionally textured
-- quietly beautiful
-
----
-
-# Website Editorial Direction
-
-The website should feel like:
-- an elegant editorial publication
-- a premium magazine
-- a refined newspaper
-- a field notebook
-- a visual essay
-- a quiet archive of observations
-
-Reference the feeling of:
-- The New Yorker
-- The Atlantic
-- The Wall Street Journal
-- long-form essays
-- literary magazines
-- cultural criticism
-- thoughtful reported features
-
-The goal is not to copy those publications directly.
-
-The goal is to borrow their sense of:
-- authority
-- restraint
-- polish
-- typography
-- hierarchy
-- editorial confidence
-- intelligent pacing
-- visual taste
-
-The default surface should be:
-- white
-- warm white
-- paper-toned
-- spacious
-- clear
-- readable
-- structured
-
-The site should prioritize:
-- strong titles
-- elegant headlines
-- refined section labels
-- clear hierarchy
-- generous margins
-- beautiful typography
-- disciplined grids
-- carefully placed media
-- artful image crops
-- captions and annotations
-- article-like pacing
-- calm reading rhythm
-- whitespace that feels intentional
-
-The visual experience should feel:
-> beautiful enough to feel editorial, clear enough to feel trusted, warm enough to feel human.
-
-Use the deeper brand colors as:
-- accents
-- section dividers
-- image treatments
-- typographic details
-- hover states
-- subtle contrast
-
-Do not make the website feel primarily dark, heavy, or cinematic.
-
-The website should avoid:
-- blog-template blandness
-- startup minimalism
-- influencer portfolio styling
-- generic creator-site layouts
-- overly academic plainness
-- cluttered news-site density
-
-The cinematic quality should come from:
-- image selection
-- pacing
-- composition
-- titles
-- captions
-- editorial restraint
-
-Not from:
-- dark backgrounds everywhere
-- excessive overlays
-- dramatic gradients
-- heavy visual effects
-
-The site should balance:
-- newspaper clarity
-- magazine elegance
-- editorial beauty
-- documentary warmth
-- personal observation
-
----
-
-# Visual Identity Direction
-
-The brand visual identity combines:
-- deep autumn warmth
-- cinematic realism
-- urban texture
-- minimal modernism
-- grounded masculinity
-- environmental storytelling
-
-The aesthetic should feel like:
-- a late-night café conversation
-- post-training exhaustion
-- wandering through unfamiliar streets
-- airport reflections
-- quiet mornings
-- documentary stills
-- lived experiences
-
-The visuals should feel more like:
-## a memory
-than:
-## a photoshoot
-
----
-
-# Color Philosophy
-
-The palette is rooted in:
-- deep autumn tones
-- earth textures
-- neutral realism
-- understated warmth
-
-The color palette should feel:
-- mature
-- grounded
-- calm
-- intentional
-- atmospheric
-- timeless
-
-Avoid:
-- bright saturated colors
-- neon overload
-- overly cold palettes
-- excessive contrast
-- flashy luxury aesthetics
-
-The palette should resemble:
-- espresso bars
-- worn leather
-- city concrete
-- natural fibers
-- film grain
-- charcoal
-- old wood
-- late evening light
-- aged paper
-- muted earth
-
----
-
-# Primary Palette
-
-## Espresso
-Deep brown-black used as a primary grounding tone.
-
-Represents:
-- warmth
-- grounding
-- depth
-- quiet sophistication
-
-Suggested Hex:
-`#2B1F1A`
-
----
-
-## Burgundy
-The emotional accent color.
-
-Represents:
-- richness
-- humanity
-- emotion
-- subtle intensity
-
-Suggested Hex:
-`#6B1F2B`
-
-Use sparingly for:
-- accents
-- typography highlights
-- subtle UI details
-- wardrobe accents
-- environmental color balance
-
----
-
-## Terracotta
-Organic warmth and earthiness.
-
-Represents:
-- movement
-- travel
-- earth
-- humanity
-- texture
-
-Suggested Hex:
-`#B25E3B`
-
----
+# Daniel Hunt — Visual Identity
 
-## Olive
-Muted natural green.
+The visual identity is an editorial publication crossed with a scientific journal crossed with an art gallery. Three converging metaphors. Same discipline.
 
-Represents:
-- groundedness
-- balance
-- exploration
-- military/utilitarian influence
-- outdoor texture
-
-Suggested Hex:
-`#5A5F3D`
-
----
-
-## Umber
-A warm earthy brown used for depth and texture.
-
-Suggested Hex:
-`#6A4B3A`
-
----
-
-# Neutral Palette
-
-## Stone
-Soft warm neutral.
-
-Suggested Hex:
-`#D6D0C8`
-
-Represents:
-- calmness
-- simplicity
-- natural material
-
----
-
-## Ash
-Cool muted gray.
-
-Suggested Hex:
-`#8A8F91`
-
-Represents:
-- urban realism
-- modernity
-- subtle structure
-
----
-
-## Charcoal
-Primary dark neutral.
-
-Suggested Hex:
-`#2E2E2E`
-
-Used for:
-- typography
-- backgrounds
-- contrast
-- cinematic shadows
-
----
-
-## Onyx
-Near-black used for depth.
-
-Suggested Hex:
-`#111111`
-
-Should feel:
-- quiet
-- minimal
-- cinematic
-
-Not:
-- harsh
-- overly digital
-
----
-
-## Warm White
-Off-white with warmth.
-
-Suggested Hex:
-`#F3EFE8`
-
-Represents:
-- softness
-- natural light
-- paper
-- calm minimalism
-
-Avoid pure sterile white.
-
----
-
-# Texture & Material Language
-
-The visual world should include:
-- concrete
-- brushed metal
-- steam
-- ceramic
-- leather
-- wood grain
-- textured walls
-- worn gym mats
-- rain
-- fog
-- paper
-- film grain
-- reflections
-- soft shadows
-- street lights
-- warm practical lighting
-
-Avoid:
-- glossy influencer aesthetics
-- over-clean spaces
-- ultra-futuristic tech visuals
-- sterile minimalist emptiness
-
----
-
-# Lighting Direction
-
-## Preferred Lighting
-- natural light
-- golden hour
-- cloudy daylight
-- practical indoor lighting
-- tungsten warmth
-- moody nighttime lighting
-- diffused shadows
-
-The lighting should feel:
-- atmospheric
-- grounded
-- cinematic
-- emotionally present
-
-Avoid:
-- overexposed influencer lighting
-- hyper-bright studio lighting
-- artificial color-heavy RGB setups
-
----
-
-# Cinematic Feel
-
-The visual identity should resemble:
-- documentary filmmaking
-- cinematic travel films
-- reflective urban photography
-- grounded lifestyle storytelling
-
-The camera should feel:
-- observational
-- patient
-- immersive
-- human
-
-Avoid:
-- excessive transitions
-- over-editing
-- hyperactive pacing
-- empty “cinematic” montages
-
-Emotion should come from:
-- environments
-- pacing
-- framing
-- texture
-- movement
-- silence
-- human moments
-
----
-
-# Environment Direction
-
-## Preferred Environments
-- cafés
-- local restaurants
-- airports
-- train stations
-- martial arts gyms
-- streets
-- rooftops
-- small apartments
-- alleyways
-- night walks
-- convenience stores
-- bookstores
-- hotel rooms
-- recovery spaces
-- city mornings
-- rainy streets
-
-The world should feel:
-- explored
-- participated in
-- lived through
-
-Not:
-- staged for content
-
----
-
-# Wardrobe Direction
-
-Wardrobe should feel:
-- minimal
-- functional
-- textured
-- mature
-- grounded
-- timeless
-
-Preferred colors:
-- espresso
-- charcoal
-- olive
-- stone
-- ash
-- burgundy
-- umber
-- muted earth tones
-
-Preferred textures:
-- heavyweight cotton
-- wool
-- washed fabrics
-- technical fabrics
-- leather
-- canvas
-
-Avoid:
-- loud logos
-- hypebeast aesthetics
-- overly trendy fashion
-- excessive jewelry
-- flashy luxury signaling
-
-The creator should look:
-- naturally put together
-- functional
-- lived-in
-- understated
-
----
-
-# Typography Direction
-
-Typography should feel:
-- minimal
-- modern
-- intelligent
-- understated
-- timeless
-
-## Recommended Fonts
-
-### Primary Sans Serif
-- Inter
-- Suisse Intl
-- Neue Haas Grotesk
-- SF Pro
-
-### Monospace Accent
-- JetBrains Mono
-- IBM Plex Mono
-
-Use monospace fonts sparingly for:
-- systems references
-- subtitles
-- UI overlays
-- technical accents
-
-Avoid:
-- futuristic sci-fi fonts
-- aggressive masculine fonts
-- over-designed typography
-
----
-
-# Editing Direction
-
-## Color Grading
+For brand strategy, persona, and content principles, see [IDENTITY.md](IDENTITY.md).
+
+## Core visual philosophy
+
+The visuals communicate movement, atmosphere, curiosity, reflection, humanity.
+
+The aesthetic should feel:
+
+- Lived-in
+- Cinematic but restrained
+- Grounded
+- Textured
+- Intentional
+- Observant
+- Human
+
+The aesthetic should not feel:
+
+- Overly polished
+- Hyper-luxury
+- Performative
+- Influencer-coded
+- Sterile
+- Corporate
+- Fake cinematic
+
+## The gallery frame
+
+The site, dispatches, and content surfaces are framed as a publication and a gallery. Three implications.
+
+**Work is the protagonist.** The creator is the curator, not the subject. The page is the white wall; the work hangs on it.
+
+**Design recedes.** Whitespace, restraint, generous margins. The frame is quiet. The content speaks.
+
+**Captions and labels are deferential.** Small, elegant, supporting. They point to the work; they do not compete with it.
+
+## The toggle, expressed visually
+
+The brand's two halves (Build / Offline) are signaled through *atmospheric temperature*, not through different fonts or different content categories.
+
+| Mode | Tonal pole | Frame | Reads like |
+|---|---|---|---|
+| Build | Cool / clinical — white, ink, gray dominant | Field report, lab notes | A scientific journal article |
+| Offline | Warm / editorial — cream, espresso dominant | Magazine dispatch | A serious magazine feature |
+
+Same typography. Same brand mark. Same accent. The mode shifts via *proportion* of warm vs. cool.
+
+## Typography
+
+Two-font system.
+
+**Fraunces** — display, serif. Used for headlines, drop caps, brand wordmark, monogram, byline. Carries warmth, character, slight quirk. The editorial voice.
+
+**Inter** — body copy, UI, captions, utility text, lower-thirds. Neutral, clean, doesn't fight Fraunces.
+
+Use Fraunces Display for the wordmark and major headlines. Use Fraunces Text for long-form body when the editorial-magazine register is wanted. Use Inter for everything else.
+
+No third font. No monospaced terminal aesthetic in public surfaces. The `{D}` tribute lives in repo and X bio, not in the typography.
+
+## Palette
+
+### Brand palette (UI and design system)
+
+| Token | Hex | Role |
+|---|---|---|
+| `--white` | `#FFFFFF` | Primary canvas. Default for both modes. Dominant in Build mode. |
+| `--ink` | `#111111` | Primary text, structural elements. Clinical pole. |
+| `--gray` | `#8A8F91` | Dividers, secondary text, captions. |
+| `--cream` | `#F3EFE8` | Situational secondary canvas. Magazine-style content blocks, Offline-mode spreads. |
+| `--espresso` | `#2B1F1A` | Warm-pole structural element. Masthead, logo, Offline-mode headers, warmth anchor. |
+| `--accent` | `~#6B1F2B` | Burgundy. The single personality color. Logo mark, hover/focus, key markers, pull quotes. Tune precisely in design — candidates include `#7A1F2A` (cleaner) and `#5C1A24` (deeper oxblood). |
+
+### Content / mood palette (not the design system)
+
+These appear in *photography, wardrobe, environments, atmospheric description* — never as UI tokens. They are vocabulary for content production, not design tokens.
+
+- Terracotta — earth, movement, travel
+- Olive — utilitarian, outdoor, military-influenced
+- Umber — wood grain, leather, depth
+- Stone — natural fiber, calm
+- Ash — urban realism, concrete
+- Charcoal — cinematic shadow
+- Onyx — depth, night
+
+## Brand mark system
+
+| Element | Form | Where |
+|---|---|---|
+| Wordmark | `DANIEL HUNT` — all caps, Fraunces Display, intentional letter-spacing | Site masthead, video intro card, anywhere with space |
+| Monogram | `DH` — Fraunces Display, no periods, no frame, no interlocking | Avatars, watermarks, sign-offs, compact contexts |
+| `{D}` tribute | Internal codename | Repo, doc titles, source comments, X bio. Not a public brand mark. |
+
+The wordmark must be composed *masthead-style* — anchored to a corner or margin, integrated with the page. Never composed as a monument-to-the-creator with a figure standing behind the letters.
+
+The monogram is the wordmark *compressed*, not redesigned. Same family, same voice, smaller container. Recognition comes through repetition, not ornament.
+
+## Page furniture
+
+**No em-rules. Anywhere. Ever.**
+
+Acceptable furniture:
+
+- Whitespace as the primary section break
+- Numbered or named section labels in small-caps Fraunces — `I.`, `II.`, or `I · ON BUILDING`
+- Mid-dot `·` for metadata separators — `DANIEL HUNT · SIMI VALLEY · 2026`
+- Asterism `⁂` (centered) as a stronger break when a mark is required
+- Hairline structural CSS rules (1px solid `--gray`) for UI dividers — these are *structural*, not typographic
+
+### Drop caps
+
+Long-form dispatch openers begin with a Fraunces Display drop cap, roughly 3-line height, in `--espresso` (Offline mode) or `--ink` (Build mode).
+
+### Byline
+
+Format: `DANIEL HUNT · [CITY] · [DATE]` in small-caps Inter, around 12px, `--gray`.
+
+### Captions
+
+Inter italic, 13–14px, `--gray`, hanging directly below figures. No rule line above or below. Whitespace does the work.
+
+### Pull quotes
+
+Fraunces Display Italic, larger than body, indented or set off with `--accent` for the opening mark.
+
+## Imagery style
+
+The brand commits to **cinematic-high-production *technique* applied to documentary *subject matter*, with Bourdain *restraint* in post.**
+
+| Layer | Direction |
+|---|---|
+| Shoot | Intentional camera. Gimbal acceptable. Controlled framing. Color grade in post. |
+| Subject | Real moments. Real people. Real environments. No staged "lifestyle" shots. |
+| Sound | Natural sound preferred. Music used sparingly, never as wall-to-wall bed. |
+| Cuts | Edits that breathe. No rapid MTV pacing. Silences are allowed. |
+| VO and captions | Sparse. Literary. Observational. Never explanatory. |
+
+The polish is in the *craft*. Not in the *grammar*.
+
+## Color grading
+
 Focus on:
-- warm highlights
-- soft contrast
-- natural skin tones
-- deep shadows
-- muted saturation
-- filmic softness
+
+- Warm highlights
+- Soft contrast
+- Natural skin tones
+- Deep shadows
+- Muted saturation
+- Filmic softness
 
 Avoid:
-- teal/orange extremes
+
+- Teal/orange extremes
+- Pushed greens (Dalen-coded)
 - HDR over-processing
-- over-sharpening
-- fake film effects
-- heavy LUT dependency
+- Over-sharpening
+- Heavy LUT dependency
 
-The image should feel:
-- natural
-- atmospheric
-- grounded
-- emotionally honest
+The image should feel natural, atmospheric, grounded, emotionally honest.
 
----
+## Lighting
 
-# Photography & Framing
+Prefer: natural light, golden hour, cloudy daylight, practical indoor lighting, tungsten warmth, moody nighttime lighting, diffused shadows.
 
-Preferred framing:
-- environmental storytelling
-- negative space
-- candid moments
-- movement
-- reflections
-- layering
-- observational compositions
+Avoid: overexposed influencer lighting, hyper-bright studio lighting, color-heavy RGB setups.
 
-Subjects should often feel:
-- immersed in environments
-- moving through spaces
-- naturally present
+## Cinematic feel
+
+The visual identity resembles documentary filmmaking, cinematic travel films, reflective urban photography, grounded lifestyle storytelling.
+
+The camera should feel observational, patient, immersive, human.
+
+Avoid excessive transitions, over-editing, hyperactive pacing, empty "cinematic" montages.
+
+Emotion comes from environments, pacing, framing, texture, movement, silence, human moments.
+
+## Environments
+
+Preferred environments:
+
+- Cafés, local restaurants
+- Airports, train stations
+- Martial arts gyms
+- Streets, alleyways, rooftops
+- Small apartments, hotel rooms
+- Night walks, rainy streets, city mornings
+- Bookstores, convenience stores
+- Recovery spaces
+
+The world should feel explored, participated in, lived through. Not staged for content.
+
+## Wardrobe
+
+Wardrobe should feel minimal, functional, textured, mature, grounded, timeless.
+
+Preferred colors (from the content/mood palette): espresso, charcoal, olive, stone, ash, burgundy, umber, muted earth tones.
+
+Preferred textures: heavyweight cotton, wool, washed fabrics, technical fabrics, leather, canvas.
+
+Avoid: loud logos, hypebeast aesthetics, trendy fashion, excessive jewelry, luxury signaling.
+
+The creator should look naturally put together. Functional, lived-in, understated.
+
+## Photography and framing
+
+Preferred:
+
+- Environmental storytelling
+- Negative space
+- Candid moments
+- Movement
+- Reflections, layering
+- Observational compositions
+
+Subjects should feel immersed in environments, moving through spaces, naturally present.
 
 Avoid:
-- constant eye contact with camera
-- forced poses
-- exaggerated reactions
-- “main character syndrome”
 
----
+- Constant eye contact with camera
+- Forced poses
+- Exaggerated reactions
+- Main-character framing
 
-# Overall Feeling
+## Site implications
+
+The current site is a portrait-led hero with the creator as visual focal point. This directly contradicts the gallery frame and must be restructured.
+
+### Near-term (Phase B)
+
+The site stays a one-page brand surface, but the hero shifts to gallery-compliant.
+
+- Lead with wordmark `DANIEL HUNT` at masthead scale
+- Tagline `Build in public. Live offline.` directly under
+- Sub-thesis `Tech, movement, and culture.` directly under that
+- One featured-work slot: a single image, a recent dispatch headline, or a quiet status block (`Currently building Datavial · Currently in Simi Valley`)
+- Portrait demotes to the About section, smaller (~28rem max), captioned, framed
+- Contact links accessible but not the visual anchor
+- Tagline tense: present (`Build` / `Live`), not past (`Built` / `Lived`)
+
+### Future (Phase C)
+
+When content fills it, the site restructures as a publication home:
+
+- **Masthead** — wordmark + thesis
+- **Dispatches** — archive of offline cinematic shorts
+- **Field Notes** — archive of build talking-head + linked X threads
+- **Projects** — Datavial, Roundz, others, framed as field reports, not portfolio brag
+- **About** — the curator's bio, smaller, secondary
+- **Contact**
+
+## Cross-surface application
+
+| Surface | Dominant pole | Mark | Notes |
+|---|---|---|---|
+| Site (Phase B, current) | Cool with warm spreads | Wordmark hero | Gallery discipline |
+| Site (Phase C, future) | Cool with warm spreads | Wordmark masthead | Publication structure |
+| IG profile | Cool / clinical | Monogram avatar | Offline content lives here |
+| IG Reel covers | Mode-appropriate | Wordmark or monogram corner | Cinematic, restrained |
+| IG carousels | Mode-appropriate | Monogram sign-off on final slide | Editorial templating |
+| X profile | Cool / clinical, `{D}` in bio | Monogram avatar | Build journaling lives here |
+| Talking-head lower-third | Cool / clinical | Monogram + wordmark | Build retrospectives |
+| YouTube channel art | TBD when activated | TBD | Future surface |
+
+## Overall feeling
 
 The brand should visually feel like:
-> someone thoughtfully moving through the modern world trying to understand it better.
 
-The visuals should create:
-- curiosity
-- calmness
-- emotional texture
-- grounded inspiration
-- reflection
-- perspective
+> Someone thoughtfully moving through the modern world trying to understand it better — making things with his hands while keeping his eyes off the screen.
 
-Not:
-- envy
-- intimidation
-- perfection
-- hyper-performance
-- unattainable luxury
+The visuals create: curiosity, calmness, emotional texture, grounded inspiration, reflection, perspective.
+
+Not: envy, intimidation, perfection, hyper-performance, unattainable luxury.

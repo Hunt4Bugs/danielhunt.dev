@@ -1,243 +1,221 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { SITE } from '../data/site';
-
-const navLinks = ['Work', 'Journal', 'About', 'Contact'];
-const journalEntries = [
-  { number: '001', date: '2026 · 04', title: 'The quiet discipline of finishing things', meta: 'Essay · Process', readTime: '8 MIN' },
-  { number: '002', date: '2026 · 03', title: 'A taxonomy of slow work', meta: 'Essay · Philosophy', readTime: '6 MIN' },
-  { number: '003', date: '2026 · 02', title: 'Shipping a GxP-compliant scheduler in six weeks', meta: 'Case Study · Product', readTime: '12 MIN' },
-  { number: '004', date: '2026 · 01', title: 'Six subagents and a relay', meta: 'Build Log · Infra', readTime: '4 MIN' },
-  { number: '005', date: '2025 · 12', title: 'Notes on outcome-based positioning', meta: 'Note · Marketing', readTime: '3 MIN' },
-];
 ---
+<Layout
+  title="Brand — Daniel Hunt"
+  description="The brand system behind danielhunt.dev — marks, typography, palette, and the principles that govern them."
+>
+  <main class="container-page pb-24 pt-10 sm:pt-14">
+    <div class="mb-12 flex items-center justify-between border-b border-line py-5">
+      <a href={import.meta.env.BASE_URL || '/'} class="monogram-mark text-[1.5rem] text-text" aria-label="Daniel Hunt — home">DH</a>
+      <a href={import.meta.env.BASE_URL || '/'} class="editorial-link">← Home</a>
+    </div>
 
-<Layout title="Patterns — Daniel Hunt" description="Figma-aligned patterns and brand reference for danielhunt.dev">
-  <main class="container-page pb-24 pt-12 sm:pt-16">
-    <section class="border-b border-line-strong pb-16 sm:pb-24">
-      <p class="mono-label">III — Patterns</p>
-      <h1 class="display mt-5 text-[clamp(3.5rem,8vw,7rem)] text-text">Patterns</h1>
-      <p class="mt-5 max-w-3xl text-lg leading-8 text-muted">
-        Composed layouts for the site: navigation, landing spread, journal index, work detail, and the closing footer system.
+    <section class="border-b border-line pb-16 sm:pb-24">
+      <p class="mono-label">Brand &middot; System</p>
+      <h1 class="wordmark mt-6 text-[clamp(2.75rem,9vw,7rem)] text-text">Brand</h1>
+      <p class="mt-8 max-w-3xl text-lg leading-8 text-muted">
+        The system behind {SITE.name}. Marks, typography, palette, page furniture, and the principles that govern them. The source of truth lives in <code class="text-text">docs/brand/IDENTITY.md</code> and <code class="text-text">docs/brand/VISUAL.md</code>; this page renders the rules in their native form.
       </p>
     </section>
 
-    <section class="section border-b border-line-strong">
-      <div class="mb-8">
-        <p class="mono-label">A — Navigation</p>
-        <h2 class="mt-3 text-[2rem] font-light text-text">Navigation</h2>
-      </div>
-
-      <div class="space-y-8">
-        <div>
-          <p class="mono-label mb-4">Light</p>
-          <div class="flex items-center justify-between border-y border-line-strong py-6">
-            <div class="display monogram text-[1.75rem] text-text"><span class="monogram-brace">{'{'}</span>D<span class="monogram-brace">{'}'}</span></div>
-            <div class="hidden items-center gap-10 text-sm text-muted md:flex">
-              {navLinks.map((link) => <span>{link}</span>)}
-            </div>
-            <span class="mono-label">LA · 9:42 PM</span>
-          </div>
-        </div>
-
-        <div>
-          <p class="mono-label mb-4">Dark specimen</p>
-          <div class="bg-text px-8 py-6 text-white">
-            <div class="flex items-center justify-between">
-              <div class="display monogram text-[1.75rem]"><span class="scale-[0.82] -translate-y-[0.02em] text-white/35">{'{'}</span>D<span class="scale-[0.82] -translate-y-[0.02em] text-white/35">{'}'}</span></div>
-              <div class="hidden items-center gap-10 text-sm text-white/60 md:flex">
-                {navLinks.map((link) => <span>{link}</span>)}
-              </div>
-              <span class="font-mono text-[0.625rem] uppercase tracking-[0.22em] text-white/50">LA · 9:42 PM</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section border-b border-line-strong">
-      <div class="mb-8">
-        <p class="mono-label">B — Hero</p>
-        <h2 class="mt-3 text-[2rem] font-light text-text">Landing spread</h2>
-      </div>
-
-      <div class="border border-line-strong">
-        <div class="flex items-center justify-between border-b border-line px-8 py-5">
-          <div class="display monogram text-[1.5rem] text-text"><span class="monogram-brace">{'{'}</span>D<span class="monogram-brace">{'}'}</span></div>
-          <div class="hidden items-center gap-8 text-sm text-muted md:flex">
-            <span>Work</span>
-            <span>Journal</span>
-            <span>About</span>
-          </div>
-        </div>
-        <div class="px-8 py-16 sm:px-14 sm:py-24">
-          <p class="mono-label">INDEX · 2024—2026</p>
-          <h3 class="display-tight mt-8 text-[clamp(3rem,10vw,7.5rem)] text-text">Work. Thought.<br />What&apos;s shipped.</h3>
-          <p class="mt-8 max-w-4xl text-[1.45rem] font-light leading-[1.45] text-muted">
-            An index of software, essays, and experiments from {SITE.name}.
-          </p>
-          <div class="mt-10 flex flex-wrap gap-3">
-            <a class="btn-primary" href="/">View selected work</a>
-            <a class="btn-quiet" href="/">Read journal</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section border-b border-line-strong">
-      <div class="mb-8">
-        <p class="mono-label">C — Journal</p>
-        <h2 class="mt-3 text-[2rem] font-light text-text">Journal index</h2>
-      </div>
-
-      <div class="border-y border-line-strong">
-        <div class="flex flex-wrap items-center gap-4 border-b border-line py-6">
-          <span class="mono-label">Filter</span>
-          <span class="bg-text px-3 py-1.5 text-xs font-medium text-white">All</span>
-          <span class="px-3 py-1.5 text-xs text-muted">Essays</span>
-          <span class="px-3 py-1.5 text-xs text-muted">Case Studies</span>
-          <span class="px-3 py-1.5 text-xs text-muted">Build Logs</span>
-          <span class="px-3 py-1.5 text-xs text-muted">Notes</span>
-          <span class="ml-auto mono-label">47 entries</span>
-        </div>
-
-        {journalEntries.map((entry) => (
-          <article class="grid gap-4 border-b border-line py-7 last:border-b-0 md:grid-cols-[60px_120px_minmax(0,1fr)_80px] md:items-center md:gap-12">
-            <p class="mono-label">{entry.number}</p>
-            <p class="mono-label">{entry.date}</p>
-            <div>
-              <h3 class="text-[1.35rem] font-light text-text">{entry.title}</h3>
-              <p class="mt-1 text-sm text-quiet">{entry.meta}</p>
-            </div>
-            <p class="mono-label md:text-right">{entry.readTime}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section class="section border-b border-line-strong">
-      <div class="mb-8">
-        <p class="mono-label">D — Case Study</p>
-        <h2 class="mt-3 text-[2rem] font-light text-text">Work detail template</h2>
-      </div>
-
-      <div class="border border-line-strong">
-        <div class="flex flex-wrap items-center gap-3 border-b border-line px-8 py-5">
-          <span class="mono-label">← Back</span>
-          <span class="mono-label">•</span>
-          <span class="mono-label">Work</span>
-          <span class="mono-label">•</span>
-          <span class="mono-label text-text">001 / Data Vial</span>
-        </div>
-
-        <div class="space-y-8 px-8 py-10 sm:px-14 sm:py-16">
-          <div class="flex flex-wrap items-center gap-4">
-            <span class="mono-label">001</span>
-            <span class="mono-label">•</span>
-            <span class="mono-label">Case study</span>
-            <span class="mono-label">•</span>
-            <span class="mono-label">2026 · ongoing</span>
-          </div>
-          <h3 class="display text-[clamp(3rem,7vw,5.8rem)] text-text">Data Vial</h3>
-          <p class="max-w-5xl text-[1.5rem] font-light leading-[1.45] text-muted">
-            A GxP-compliant lab operations platform, designed around the work that actually happens in pharmaceutical quality labs.
-          </p>
-          <div class="grid gap-6 border-t border-line pt-8 md:grid-cols-4">
-            <div>
-              <p class="mono-label">Role</p>
-              <p class="mt-3 text-sm text-text">Solo founder, design + eng</p>
-            </div>
-            <div>
-              <p class="mono-label">Stack</p>
-              <p class="mt-3 text-sm text-text">Next.js · FastAPI · Supabase</p>
-            </div>
-            <div>
-              <p class="mono-label">Timeline</p>
-              <p class="mt-3 text-sm text-text">2025 — ongoing</p>
-            </div>
-            <div>
-              <p class="mono-label">Sector</p>
-              <p class="mt-3 text-sm text-text">Pharmaceutical QC</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-panel px-8 py-8">
-          <p class="mono-label">// HERO SHOT · 1400 × 800 · 7:4</p>
-          <div class="mt-4 h-[22rem] sm:h-[34rem]"></div>
-        </div>
-
-        <div class="space-y-8 px-8 py-10 sm:px-14 sm:py-16">
-          <div class="max-w-4xl">
-            <p class="mono-label">Overview</p>
-            <p class="mt-5 text-[1.9rem] font-light leading-[1.45] text-text">
-              The core product solves staff qualifications, demand planning, scheduling, and GxP compliance — replacing the manual spreadsheet and LIMS cross-referencing that most pharma labs still run on.
+    <section class="section border-b border-line">
+      <div class="grid gap-10 lg:grid-cols-[12rem_minmax(0,48rem)]">
+        <p class="mono-label">I &middot; Marks</p>
+        <div class="space-y-14">
+          <div>
+            <p class="mono-label mb-5">Wordmark</p>
+            <p class="wordmark text-[clamp(2.5rem,7vw,5.5rem)] text-text">Daniel Hunt</p>
+            <p class="mt-5 max-w-xl text-sm leading-7 text-muted">
+              All caps, Fraunces Display, intentional letter-spacing. Masthead-style — anchored to a margin, integrated with the page. Never composed as a monument behind a figure.
             </p>
           </div>
 
-          <div class="grid gap-4 md:grid-cols-2">
-            <div class="bg-panel p-5">
-              <p class="mono-label">// PRODUCT SHOT · 636 × 476</p>
-              <div class="h-72 sm:h-[26rem]"></div>
-            </div>
-            <div class="bg-panel p-5">
-              <p class="mono-label">// DETAIL SHOT · 636 × 476</p>
-              <div class="h-72 sm:h-[26rem]"></div>
-            </div>
+          <div>
+            <p class="mono-label mb-5">Monogram</p>
+            <p class="monogram-mark text-[clamp(2.5rem,5vw,4rem)] text-text">DH</p>
+            <p class="mt-5 max-w-xl text-sm leading-7 text-muted">
+              The wordmark compressed. Same family, smaller container. Avatars, watermarks, sign-offs, compact contexts. No periods. No frame. No interlocking.
+            </p>
+          </div>
+
+          <div>
+            <p class="mono-label mb-5">Internal codename</p>
+            <p class="font-serif text-[2rem] text-quiet" style="letter-spacing: 0.02em;">{'{D}'}</p>
+            <p class="mt-5 max-w-xl text-sm leading-7 text-muted">
+              A private tribute to the tech background that shaped the brand. Lives in the repo, doc titles, source comments, the X bio. Not a public brand mark.
+            </p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="flex items-center justify-between border-t border-line px-8 py-10">
+    <section class="section border-b border-line">
+      <div class="grid gap-10 lg:grid-cols-[12rem_minmax(0,48rem)]">
+        <p class="mono-label">II &middot; Typography</p>
+        <div class="space-y-14">
           <div>
-            <p class="mono-label">← Previous</p>
-            <p class="mt-2 text-xl font-light text-text">000 — Index</p>
+            <p class="mono-label mb-5">Fraunces &middot; Display + serif</p>
+            <p class="display text-[clamp(1.8rem,4.5vw,3.25rem)] text-text">
+              A public search for a more human way to build, move, and pay attention.
+            </p>
+            <p class="mt-5 max-w-xl text-sm leading-7 text-muted">
+              Headlines, drop caps, wordmark, monogram, bylines. Carries warmth, character, slight quirk. Ligatures are explicitly suppressed in display use to avoid aggressive ff and fl combinations.
+            </p>
           </div>
-          <div class="text-right">
-            <p class="mono-label">Next →</p>
-            <p class="mt-2 text-xl font-light text-text">002 — Roundz</p>
+
+          <div>
+            <p class="mono-label mb-5">Inter &middot; Body + UI</p>
+            <p class="max-w-2xl text-lg leading-8 text-text">
+              Body copy, UI, captions, utility text, lower-thirds. Neutral, clean, doesn't fight Fraunces. No third font. No monospaced terminal aesthetic in public surfaces.
+            </p>
+            <p class="mt-5 max-w-xl text-sm leading-7 text-muted">
+              Two fonts, total. Anything else is scope creep.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section border-b border-line">
+      <div class="grid gap-10 lg:grid-cols-[12rem_minmax(0,48rem)]">
+        <p class="mono-label">III &middot; Palette</p>
+        <div class="space-y-12">
+          <div>
+            <p class="mono-label mb-5">Cool pole &middot; Default canvas</p>
+            <div class="grid grid-cols-3 gap-4 sm:gap-6">
+              <div>
+                <div class="aspect-square border border-line" style="background: #FFFFFF;"></div>
+                <p class="mono-label mt-3">White</p>
+                <p class="mono-value mt-1">#FFFFFF</p>
+              </div>
+              <div>
+                <div class="aspect-square" style="background: #111111;"></div>
+                <p class="mono-label mt-3">Ink</p>
+                <p class="mono-value mt-1">#111111</p>
+              </div>
+              <div>
+                <div class="aspect-square" style="background: #8A8F91;"></div>
+                <p class="mono-label mt-3">Gray</p>
+                <p class="mono-value mt-1">#8A8F91</p>
+              </div>
+            </div>
+            <p class="mt-5 max-w-xl text-sm leading-7 text-muted">
+              The default canvas. Dominant in build-mode surfaces.
+            </p>
+          </div>
+
+          <div>
+            <p class="mono-label mb-5">Warm pole &middot; Situational canvas</p>
+            <div class="grid grid-cols-2 gap-4 sm:gap-6 sm:max-w-md">
+              <div>
+                <div class="aspect-square border border-line" style="background: #F3EFE8;"></div>
+                <p class="mono-label mt-3">Cream</p>
+                <p class="mono-value mt-1">#F3EFE8</p>
+              </div>
+              <div>
+                <div class="aspect-square" style="background: #2B1F1A;"></div>
+                <p class="mono-label mt-3">Espresso</p>
+                <p class="mono-value mt-1">#2B1F1A</p>
+              </div>
+            </div>
+            <p class="mt-5 max-w-xl text-sm leading-7 text-muted">
+              Dominant in offline-mode surfaces — magazine-style spreads, editorial blocks.
+            </p>
+          </div>
+
+          <div>
+            <p class="mono-label mb-5">Personality &middot; One accent</p>
+            <div class="grid grid-cols-1 gap-4 sm:max-w-[10rem]">
+              <div>
+                <div class="aspect-square" style="background: #6B1F2B;"></div>
+                <p class="mono-label mt-3">Burgundy</p>
+                <p class="mono-value mt-1">#6B1F2B</p>
+              </div>
+            </div>
+            <p class="mt-5 max-w-xl text-sm leading-7 text-muted">
+              The sole personality color. Hover states, key markers, pull quotes, link emphasis. Used sparingly — its rarity is what gives it weight.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section border-b border-line">
+      <div class="grid gap-10 lg:grid-cols-[12rem_minmax(0,48rem)]">
+        <p class="mono-label">IV &middot; Page furniture</p>
+        <div class="space-y-12">
+          <p class="display text-2xl text-text">No em-rules. Anywhere. Ever.</p>
+
+          <div>
+            <p class="mono-label mb-4">Mid-dot &middot; Metadata separator</p>
+            <p class="text-base text-text">DANIEL HUNT &middot; SIMI VALLEY &middot; 2026</p>
+          </div>
+
+          <div>
+            <p class="mono-label mb-4">Hairline &middot; Structural divider</p>
+            <div class="border-t border-line"></div>
+            <p class="mt-4 max-w-xl text-sm leading-7 text-muted">
+              1px solid. Used between major UI sections. Structural, not typographic.
+            </p>
+          </div>
+
+          <div>
+            <p class="mono-label mb-4">Numbered section &middot; Editorial heading</p>
+            <p class="display text-2xl text-text">I &middot; On building</p>
+            <p class="mt-4 max-w-xl text-sm leading-7 text-muted">
+              Roman numerals or named labels in Fraunces, paired with a mid-dot and the section title. The scientific-paper convention applied to editorial surfaces.
+            </p>
+          </div>
+
+          <div>
+            <p class="mono-label mb-4">Whitespace &middot; The primary break</p>
+            <p class="max-w-xl text-sm leading-7 text-muted">
+              The most-used divider in the system. Generous margins, room to breathe, time between sections. Whitespace does what em-rules cannot.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section border-b border-line">
+      <div class="grid gap-10 lg:grid-cols-[12rem_minmax(0,48rem)]">
+        <p class="mono-label">V &middot; Signature phrases</p>
+        <div class="space-y-10">
+          <div>
+            <p class="display text-[clamp(1.5rem,3vw,2.25rem)] text-text">Build in public. Live offline.</p>
+            <p class="mt-3 text-sm text-muted">The thesis.</p>
+          </div>
+          <div>
+            <p class="display text-[clamp(1.5rem,3vw,2.25rem)] text-text">Tech, movement, and culture.</p>
+            <p class="mt-3 text-sm text-muted">The sub-thesis.</p>
+          </div>
+          <div>
+            <p class="display text-[clamp(1.5rem,3vw,2.25rem)] text-text">Scars, not wounds.</p>
+            <p class="mt-3 text-sm text-muted">The editorial rule for the build half. Retrospective lessons, never open wounds.</p>
+          </div>
+          <div>
+            <p class="display text-[clamp(1.5rem,3vw,2.25rem)] text-text">Memory, not photoshoot.</p>
+            <p class="mt-3 text-sm text-muted">The visual rule for the offline half. Lived images, never staged ones.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="mb-8">
-        <p class="mono-label">E — Footer</p>
-        <h2 class="mt-3 text-[2rem] font-light text-text">The close</h2>
-      </div>
-
-      <div class="border-t border-line-strong pt-10">
-        <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_180px_180px_180px]">
-          <div>
-            <div class="display monogram text-[2.4rem] text-text"><span class="monogram-brace">{'{'}</span>D<span class="monogram-brace">{'}'}</span></div>
-            <p class="mt-6 max-w-xs text-[1.2rem] font-light leading-8 text-muted">
-              {SITE.name}<br />
-              {SITE.location}
-            </p>
-          </div>
-          <div class="space-y-4">
-            <p class="mono-label">Index</p>
-            <p class="text-sm text-text">Work</p>
-            <p class="text-sm text-text">Journal</p>
-            <p class="text-sm text-text">About</p>
-          </div>
-          <div class="space-y-4">
-            <p class="mono-label">Elsewhere</p>
-            <p class="text-sm text-text">LinkedIn</p>
-            <p class="text-sm text-text">X / Twitter</p>
-            <p class="text-sm text-text">Brand</p>
-          </div>
-          <div class="space-y-4">
-            <p class="mono-label">Correspond</p>
-            <p class="text-sm text-text">Email</p>
-            <p class="text-sm text-text">Inquiry form</p>
-            <p class="text-sm text-text">RSS</p>
-          </div>
-        </div>
-
-        <div class="mt-12 flex flex-col gap-3 border-t border-line py-6 md:flex-row md:items-center md:justify-between">
-          <p class="mono-value">© MMXXVI · DANIEL HUNT · ALL RIGHTS RESERVED</p>
-          <p class="mono-value">SET IN INTER · DESIGN SYSTEM V1</p>
+      <div class="grid gap-10 lg:grid-cols-[12rem_minmax(0,48rem)]">
+        <p class="mono-label">VI &middot; Tie-break</p>
+        <div>
+          <p class="display text-[clamp(2rem,4.5vw,3.25rem)] text-text">
+            Human, lived, curious wins over polished, aspirational. Always.
+          </p>
+          <p class="mt-7 max-w-xl text-base leading-7 text-muted">
+            When choices conflict — between a tighter edit and a more honest one, between a more refined composition and a more lived one, between premium signal and human texture — the answer is always the more human one.
+          </p>
+          <p class="mt-12 max-w-xl text-sm leading-7 text-muted">
+            For the full strategic and visual identity, see <code class="text-text">docs/brand/IDENTITY.md</code> and <code class="text-text">docs/brand/VISUAL.md</code> in the repository.
+          </p>
         </div>
       </div>
     </section>
