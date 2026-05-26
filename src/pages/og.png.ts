@@ -17,15 +17,16 @@ async function fetchFont(family: string, weight: number): Promise<ArrayBuffer> {
   return fetch(match[1]).then((r) => r.arrayBuffer());
 }
 
-// Brand tokens (kept in sync with src/styles/global.css and docs/brand/VISUAL.md)
+// Brand tokens — mirror exact hex values from src/styles/global.css.
+// CSS var name → hex shown for each. Update both if either changes.
 const TOKEN = {
-  white: '#FFFFFF',
-  ink: '#111111',
-  gray: '#6B6B6B',
-  quietGray: '#9B9B9B',
-  hairline: '#E2E2E2',
-  espresso: '#2B1F1A',
-  accent: '#6B1F2B', // burgundy
+  bg: '#FFFFFF',       // --bg (255 255 255) — primary canvas
+  text: '#111111',     // --text (17 17 17) — ink, primary text
+  muted: '#5A5A5A',    // --muted (90 90 90) — secondary text
+  quiet: '#8A8F91',    // --quiet (138 143 145) — tertiary text, captions
+  line: '#E2E2E2',     // --line (226 226 226) — hairline structural rules
+  espresso: '#2B1F1A', // --espresso (43 31 26) — warm-pole structural
+  accent: '#6B1F2B',   // --accent (107 31 43) — burgundy
 };
 
 // Load the portrait as a data URI so satori can embed it.
@@ -54,7 +55,7 @@ export const GET: APIRoute = async () => {
           display: 'flex',
           width: '1200px',
           height: '630px',
-          backgroundColor: TOKEN.white,
+          backgroundColor: TOKEN.bg,
           fontFamily: 'Inter',
         },
         children: [
@@ -68,7 +69,7 @@ export const GET: APIRoute = async () => {
                 width: '780px',
                 height: '630px',
                 padding: '64px 72px',
-                backgroundColor: TOKEN.white,
+                backgroundColor: TOKEN.bg,
               },
               children: [
                 // Top: DH monogram anchor
@@ -158,7 +159,7 @@ export const GET: APIRoute = async () => {
                                   fontSize: '62px',
                                   fontFamily: 'Inter',
                                   fontWeight: 700,
-                                  color: TOKEN.ink,
+                                  color: TOKEN.text,
                                   lineHeight: 1.04,
                                   margin: 0,
                                 },
@@ -172,7 +173,7 @@ export const GET: APIRoute = async () => {
                                   fontSize: '62px',
                                   fontFamily: 'Inter',
                                   fontWeight: 700,
-                                  color: TOKEN.ink,
+                                  color: TOKEN.text,
                                   lineHeight: 1.04,
                                   margin: 0,
                                 },
@@ -191,7 +192,7 @@ export const GET: APIRoute = async () => {
                             fontSize: '24px',
                             fontFamily: 'Inter',
                             fontWeight: 300,
-                            color: TOKEN.gray,
+                            color: TOKEN.muted,
                             lineHeight: 1.4,
                             marginTop: '24px',
                             marginBottom: 0,
@@ -235,7 +236,7 @@ export const GET: APIRoute = async () => {
                             fontSize: '13px',
                             fontFamily: 'Inter',
                             fontWeight: 500,
-                            color: TOKEN.quietGray,
+                            color: TOKEN.quiet,
                             letterSpacing: '0.24em',
                             textTransform: 'uppercase',
                             margin: 0,
@@ -259,7 +260,7 @@ export const GET: APIRoute = async () => {
                 width: '420px',
                 height: '630px',
                 position: 'relative',
-                borderLeft: `1px solid ${TOKEN.hairline}`,
+                borderLeft: `1px solid ${TOKEN.line}`,
               },
               children: [
                 {

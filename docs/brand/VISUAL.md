@@ -65,14 +65,19 @@ No third font. No monospaced terminal aesthetic in public surfaces. The `{D}` tr
 
 ### Brand palette (UI and design system)
 
-| Token | Hex | Role |
-|---|---|---|
-| `--white` | `#FFFFFF` | Primary canvas. Default for both modes. Dominant in Build mode. |
-| `--ink` | `#111111` | Primary text, structural elements. Clinical pole. |
-| `--gray` | `#8A8F91` | Dividers, secondary text, captions. |
-| `--cream` | `#F3EFE8` | Situational secondary canvas. Magazine-style content blocks, Offline-mode spreads. |
-| `--espresso` | `#2B1F1A` | Warm-pole structural element. Masthead, logo, Offline-mode headers, warmth anchor. |
-| `--accent` | `~#6B1F2B` | Burgundy. The single personality color. Logo mark, hover/focus, key markers, pull quotes. Tune precisely in design — candidates include `#7A1F2A` (cleaner) and `#5C1A24` (deeper oxblood). |
+The palette has two surfaces: a **brand concept layer** (the names used in this document and in design conversation) and the **CSS implementation layer** (the tokens that actually exist in [`src/styles/global.css`](../../src/styles/global.css) and are consumed by Tailwind utilities). Both must stay in sync. When a value changes, update both layers and the mirrored constant in [`src/pages/og.png.ts`](../../src/pages/og.png.ts).
+
+| Brand concept | CSS var | Hex | Role |
+|---|---|---|---|
+| White | `--bg` | `#FFFFFF` | Primary canvas. Default for both modes. Dominant in Build mode. |
+| Ink | `--text` | `#111111` | Primary text, structural elements. Clinical pole. |
+| Muted gray | `--muted` | `#5A5A5A` | Secondary text. |
+| Quiet gray | `--quiet` | `#8A8F91` | Tertiary text, captions, swatch labels. |
+| Hairline | `--line` | `#E2E2E2` | Hairline structural rules. UI dividers. |
+| Hairline strong | `--line-strong` | `#C8C8C8` | Stronger structural rules. |
+| Cream | `--cream` | `#F3EFE8` | Situational secondary canvas. Magazine-style content blocks, Offline-mode spreads. |
+| Espresso | `--espresso` | `#2B1F1A` | Warm-pole structural element. Masthead, logo, Offline-mode headers, warmth anchor. |
+| Burgundy | `--accent` | `#6B1F2B` | The single personality color. Logo mark, hover/focus, key markers, pull quotes. |
 
 ### Content / mood palette (not the design system)
 
@@ -100,7 +105,9 @@ The monogram is the wordmark *compressed*, not redesigned. Same family, same voi
 
 ## Page furniture
 
-**No em-rules. Anywhere. Ever.**
+**No em-rules as page furniture.** Em-rules (`—`) are not used as section dividers, decorative breaks, sign-offs, watermarks, or typographic flourishes anywhere on the brand's public surfaces.
+
+This rule is scoped to *page furniture* — the structural and decorative roles em-rules typically play in editorial design. It does **not** restrict the em-dash as a grammatical punctuation mark in long-form prose, where it functions as ordinary English punctuation rather than a typographic mark.
 
 Acceptable furniture:
 

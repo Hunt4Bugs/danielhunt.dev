@@ -88,21 +88,21 @@ import { SITE } from '../data/site';
               <div>
                 <div class="aspect-square border border-line" style="background: #FFFFFF;"></div>
                 <p class="mono-label mt-3">White</p>
-                <p class="mono-value mt-1">#FFFFFF</p>
+                <p class="mono-value mt-1">--bg &middot; #FFFFFF</p>
               </div>
               <div>
                 <div class="aspect-square" style="background: #111111;"></div>
                 <p class="mono-label mt-3">Ink</p>
-                <p class="mono-value mt-1">#111111</p>
+                <p class="mono-value mt-1">--text &middot; #111111</p>
               </div>
               <div>
                 <div class="aspect-square" style="background: #8A8F91;"></div>
-                <p class="mono-label mt-3">Gray</p>
-                <p class="mono-value mt-1">#8A8F91</p>
+                <p class="mono-label mt-3">Quiet gray</p>
+                <p class="mono-value mt-1">--quiet &middot; #8A8F91</p>
               </div>
             </div>
             <p class="mt-5 max-w-xl text-sm leading-7 text-muted">
-              The default canvas. Dominant in build-mode surfaces.
+              The default canvas. Dominant in build-mode surfaces. The full gray family includes <code class="text-text">--muted</code> (#5A5A5A), <code class="text-text">--quiet</code> (#8A8F91), and <code class="text-text">--line</code> (#E2E2E2) for hairlines.
             </p>
           </div>
 
@@ -112,12 +112,12 @@ import { SITE } from '../data/site';
               <div>
                 <div class="aspect-square border border-line" style="background: #F3EFE8;"></div>
                 <p class="mono-label mt-3">Cream</p>
-                <p class="mono-value mt-1">#F3EFE8</p>
+                <p class="mono-value mt-1">--cream &middot; #F3EFE8</p>
               </div>
               <div>
                 <div class="aspect-square" style="background: #2B1F1A;"></div>
                 <p class="mono-label mt-3">Espresso</p>
-                <p class="mono-value mt-1">#2B1F1A</p>
+                <p class="mono-value mt-1">--espresso &middot; #2B1F1A</p>
               </div>
             </div>
             <p class="mt-5 max-w-xl text-sm leading-7 text-muted">
@@ -131,7 +131,7 @@ import { SITE } from '../data/site';
               <div>
                 <div class="aspect-square" style="background: #6B1F2B;"></div>
                 <p class="mono-label mt-3">Burgundy</p>
-                <p class="mono-value mt-1">#6B1F2B</p>
+                <p class="mono-value mt-1">--accent &middot; #6B1F2B</p>
               </div>
             </div>
             <p class="mt-5 max-w-xl text-sm leading-7 text-muted">
@@ -146,7 +146,10 @@ import { SITE } from '../data/site';
       <div class="grid gap-10 lg:grid-cols-[12rem_minmax(0,48rem)]">
         <p class="mono-label">IV &middot; Page furniture</p>
         <div class="space-y-12">
-          <p class="display text-2xl text-text">No em-rules. Anywhere. Ever.</p>
+          <p class="display text-2xl text-text">No em-rules as page furniture.</p>
+          <p class="max-w-xl text-sm leading-7 text-muted">
+            Em-rules are not used as section dividers, decorative breaks, sign-offs, or typographic flourishes. The rule is scoped to page furniture; the em-dash remains available as ordinary English punctuation in long-form prose.
+          </p>
 
           <div>
             <p class="mono-label mb-4">Mid-dot &middot; Metadata separator</p>
