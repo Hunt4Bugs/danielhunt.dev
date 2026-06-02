@@ -49,7 +49,7 @@ Sections required, in this order:
 
 1. **Audience tiers.** Three tiers with definitions: B2 (primary, who I talk to), B1 (peer network, rare, who I talk with), A (spoken-about). For each tier, name the archetype, the current-state pain pattern, and how content addresses them.
 2. **Painful Problems v0.** 12 numbered rows. Header note must state "v0, validate against 5+ peer-founder conversations in Phase 0." Group into Pre-leave/pre-entry, Building, and Bridge/offline blocks.
-3. **Ideation Table v1.** 12 rows matching the pain list. Three columns: Painful Problem, Unique Solution (my POV), Credibility. Rows 8 to 10 marked as scout-mode credibility (currently figuring out, not authority).
+3. **Ideation Table v1.** 12 rows matching the pain list. Three columns: Painful Problem, Unique Solution (my POV), Credibility. Rows 7 to 9 (the Building pains block, after the pain list is reorganized into clean Pre-leave / Building / Bridge blocks) marked as scout-mode credibility (currently figuring out, not authority).
 4. **Credibility Bank v0.** W1, W1b (with flag: "AI skills" phrasing needs sharpening with user), W3 (origin moment, pair with S1 as the foundational story), W2 (deferred, Phase 0 capture target), S1 (paired with W3), S2 (deferred, watch-this-space gap).
 5. **Interest Bank v0.** 5 curiosities/experiments split across Buckets A and B, 3 offline items in Bucket D, 4 honest questions plus 1 explicitly-open slot, Bucket C documented as intentionally empty (revisit Month 6).
 6. **Differentiation Breakdown.** 4 rows. Tech-bro grind worship, build-in-public metrics theater, AI-rebrand hype-chasing, 20-years-pharma credentialism. Alt-A noted on the bench.

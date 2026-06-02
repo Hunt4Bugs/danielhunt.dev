@@ -82,6 +82,7 @@ Cinematic short-form production craft (DaVinci Resolve, frame-by-frame study of 
 
 6. Training and nutrition while sprinting on Datavial.
 7. Day-trip-as-practice (train to Ventura, or equivalent).
+8. IRL human connection as practice. Finding the conversation, the meal, the people in every new place. Bourdain's arrival-arc applied to relationships, not just travel.
 
 ### Genuine questions
 
@@ -408,4 +409,5 @@ Items shipped as v0 that require external signal before they should be treated a
 - **Implementation plan:** [`../plans/2026-06-01-workbook-docs-implementation.md`](../plans/2026-06-01-workbook-docs-implementation.md).
 - **Canonical homes:** [`../IDENTITY.md`](../IDENTITY.md), [`../AUDIENCE.md`](../AUDIENCE.md), [`../OPERATING.md`](../OPERATING.md), [`../VISUAL.md`](../VISUAL.md), [`../CHANGELOG.md`](../CHANGELOG.md).
 - **Source workbook PDF:** `~/Library/Mobile Documents/com~apple~CloudDocs/Archive/books/How to Start Your Personal Brand Workbook (Full).pdf`.
+- **Originating `/grill-me` session:** 2026-06-01 conversation transcript. 13 numbered grilling questions plus the output-structure decision. Source of the locked answers reproduced above.
 - **Prior brand spec:** [`2026-05-28-brand-refinement-design.md`](2026-05-28-brand-refinement-design.md). This snapshot extends, does not replace, the 2026-05-28 spec.

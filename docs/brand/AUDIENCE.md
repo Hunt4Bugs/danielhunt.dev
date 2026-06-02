@@ -117,6 +117,7 @@ Bucket organization follows the workbook's prompt set (curiosity, experiment, br
 
 6. Training and nutrition while sprinting on Datavial. Staying useful to the body during a 60-hour build week.
 7. Day-trip-as-practice. Train to Ventura, or equivalent. The act of slowing down enough to notice.
+8. IRL human connection as practice. Finding the conversation, the meal, the people in every new place. Bourdain's arrival-arc applied to relationships, not just travel.
 
 ### Genuine questions (currently trying to answer)
 
