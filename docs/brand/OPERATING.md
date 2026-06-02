@@ -47,13 +47,11 @@ When life demands it, YouTube drops to bimonthly. **Bimonthly is not a failure e
 
 Twice yearly. Thailand, plus Japan / Vietnam / etc. per the existing rotation.
 
-**Next trip:** June 23 to July 12, 2026.
-
 Each trip is treated as a batch-shoot opportunity for 3 to 4 episodes worth of YouTube footage.
 
 ## YouTube launch criteria
 
-Trigger: the trip after the June/July 2026 trip. Estimated December 2026 or January 2027.
+Launch is **readiness-gated, not date-locked.** It triggers when the conditions below are met, whatever trip that lands on.
 
 Conditions:
 
@@ -61,18 +59,18 @@ Conditions:
 2. A documented editing workflow Daniel has executed end-to-end at least twice in DaVinci Resolve.
 3. The launch episode itself is in production.
 
-If conditions are not met by the next trip, push launch to the trip after that. No penalty. The plan tolerates a slipped launch.
+If conditions are not met by a given trip, launch slips to a later one. No penalty. The plan tolerates a slipped launch.
 
-The June 2026 trip is the **production dress rehearsal**, not the launch. Heavy shooting, no launch pressure. Footage becomes Phase 0 IG Reels material and a sandbox for editing practice.
+The first batch-shoot trip doubles as the **production shakedown**: heavy shooting, no launch pressure, and the place where the editing workflow gets proven end-to-end. Its footage is intended to feed the early planned episodes (see `scripts/long_form/`), but nothing publishes until the launch criteria above are met. Build the runway first, launch later.
 
 ## Phase 1 prep hooks
 
-Pre-launch artifacts to expand when YouTube launch is roughly 60 days out. They are skeletons today, not scripts.
+Pre-launch artifacts to expand when YouTube launch is roughly 60 days out.
 
-- **First Three Videos skeleton (Lindhardt and Dalen reference-coded).** Working titles and structural shape for the first three YouTube uploads. Replaces the Ralston-workbook educator-coded version of this exercise (see Documented brand decisions below). Lives in [`specs/2026-06-01-personal-brand-workbook.md`](specs/2026-06-01-personal-brand-workbook.md) §15.
+- **First episodes (Lindhardt and Dalen reference-coded).** Working titles and structural shape for the first YouTube uploads. Replaces the Ralston-workbook educator-coded version of this exercise (see Documented brand decisions below). Skeletons live in [`specs/2026-06-01-personal-brand-workbook.md`](specs/2026-06-01-personal-brand-workbook.md) §15; the first two are drafted as full long-form scripts in [`scripts/long_form/`](scripts/long_form/).
 - **4Cs intro framework skeleton.** Call out, Credibility, Compass, Core learning fillings for the introduction video. Lives in [`specs/2026-06-01-personal-brand-workbook.md`](specs/2026-06-01-personal-brand-workbook.md) §13.
 
-Expand both at Phase 1 prep (target: November or December 2026 if YouTube launch criteria are on track).
+Expand both at Phase 1 prep, once YouTube launch criteria are on track.
 
 ## Sustainability rules
 
@@ -89,12 +87,14 @@ More editorial rules will accumulate here as content goes live and edge cases su
 
 ## Phasing
 
+Windows are relative, not date-locked. Each phase advances when its focus is met, not on a calendar.
+
 | Phase | Window | Focus |
 |---|---|---|
-| **Phase 0 prep** | May 28 to June 22, 2026 | Open X and IG posting. Practice on-camera 5 min per day. Begin learning DaVinci Resolve. Pre-trip planning. |
-| **Phase 0 dress rehearsal** | June 23 to July 12, 2026 | First trip. Heavy shooting. No launch pressure. Production sandbox. |
-| **Phase 0 main** | July 12 to roughly December 2026 | IG and X cadence sustained. Edit trip footage into Reels series. Develop production craft. LinkedIn profile current with monthly posts. |
-| **Phase 1** | December 2026 or January 2027 onward | YouTube launches with next-trip Episode 1. Monthly YouTube + weekly IG cutdowns + daily X + monthly LinkedIn. |
+| **Phase 0 prep** | Weeks leading up to the first batch-shoot trip | Open X and IG posting. Practice on-camera 5 min per day. Begin learning DaVinci Resolve. Pre-trip planning. |
+| **Phase 0 shakedown** | The first batch-shoot trip | Heavy shooting. No launch pressure. Production sandbox where the editing workflow gets proven end-to-end. |
+| **Phase 0 main** | After the first trip until launch criteria are met | IG and X cadence sustained. Edit trip footage. Develop production craft. LinkedIn profile current with monthly posts. |
+| **Phase 1** | When YouTube launch criteria are met | YouTube launches. Monthly YouTube + weekly IG cutdowns + daily X + monthly LinkedIn. |
 | **Phase 2** | When Datavial has 3 to 5 named customers worth case-studying | LinkedIn escalates to weekly active distribution. Technical articles. Case studies. |
 
 ## Learning agenda
@@ -105,10 +105,10 @@ More editorial rules will accumulate here as content goes live and edge cases su
 
 - NLE is DaVinci Resolve (license already held). Use its color grading and Fairlight audio post as craft-stretching tools, not just the timeline.
 - Study Dalen and Oscar Lindhardt frame-by-frame. Replicate one of their edits as an exercise.
-- Ship 4 IG Reels before June 23, 2026 as deliberate practice.
+- Ship 4 IG Reels before the first trip as deliberate practice.
 - Avoid the teal-green grade. Resolve's color tools make this easy to fall into and easy to avoid if conscious.
 
-Success bar: by end of Phase 0 main (December 2026), Daniel can edit a 10 to 15 minute cinematic vlog in 15 to 20 hours rather than 40+.
+Success bar: by end of Phase 0 main, Daniel can edit a 10 to 15 minute cinematic vlog in 15 to 20 hours rather than 40+.
 
 **2. Content batching and production systems.**
 
@@ -122,7 +122,7 @@ Success bar: by end of Phase 0 main, a written production manual specific to Dan
 **3. On-camera presence.**
 
 - Record self daily for 5 minutes. Do not post. Goal is comfort, not output.
-- By June 23, deliver a 90-second voiceover in one or two takes.
+- By the first trip, deliver a 90-second voiceover in one or two takes.
 
 Success bar: by end of Phase 0 main, Daniel does not flinch on camera and can deliver Bourdain-tonal voiceover on first or second take.
 
@@ -134,18 +134,18 @@ Success bar: by end of Phase 0 main, Daniel does not flinch on camera and can de
 
 **6. Editorial restraint.** Holding the brand line against off-brand-but-engagement-positive content. Weekly editorial review starting in Phase 1.
 
-## Phase 0 prep checklist (May 28 to June 22, 2026)
+## Phase 0 prep checklist
 
-Concrete, daily-level tasks for the next 4 weeks.
+Concrete, daily-level tasks for the weeks leading up to the first trip.
 
 - [ ] Open X account posting cadence (4 to 6 per week). First post by end of week 1.
 - [ ] Open Instagram account posting cadence (weekly Reel + biweekly carousel). First Reel by end of week 2.
 - [ ] LinkedIn profile review and update. First Phase 0 post by end of week 2.
 - [ ] DaVinci Resolve daily practice (30 minutes minimum). Goal: import / cut / basic color / export workflow comfortable by end of week 4.
-- [ ] On-camera daily practice (5 minutes). Record but do not post. Goal: 90-second voiceover in 1 to 2 takes by June 22.
+- [ ] On-camera daily practice (5 minutes). Record but do not post. Goal: 90-second voiceover in 1 to 2 takes before the first trip.
 - [ ] Study sessions: 2 Daniel Dalen videos and 2 Oscar Lindhardt videos studied frame-by-frame with notes. By end of week 2.
 - [ ] Frame-by-frame edit replication exercise: pick one Dalen or Lindhardt sequence and replicate its edit in Resolve. By end of week 4.
-- [ ] Trip prep: shot list for the June 23 to July 12 trip drafted. Gear check. File-organization plan for the trip footage. By June 22.
+- [ ] Trip prep: shot list for the first trip drafted (see `scripts/long_form/` capture checklists). Gear check. File-organization plan for the trip footage. Before departure.
 - [ ] Buffer rule preparation: identify what each Phase 0 main IG Reel will be sourced from (trip footage primarily, supplemented by other local footage as needed).
 
 ## Phase 0 capture targets
@@ -160,7 +160,7 @@ See [`AUDIENCE.md`](AUDIENCE.md) Credibility Bank for W2 and S2 destination cont
 
 ## Success criteria
 
-Evaluable at month 3 (end of August 2026) and month 6 (end of November 2026).
+Evaluable at month 3 and month 6, counted from the start of Phase 0 prep.
 
 ### Month 3 checkpoint
 
@@ -168,7 +168,7 @@ Evaluable at month 3 (end of August 2026) and month 6 (end of November 2026).
 - IG: 8+ standalone Reels shipped. Visible craft progression from first to most recent.
 - LinkedIn: profile current. 2 to 3 posts shipped.
 - Production: DaVinci Resolve used for at least 6 edits. On-camera 5 min/day discipline held.
-- June trip footage: organized, in editing pipeline.
+- First-trip footage: organized, in editing pipeline.
 
 ### Month 6 checkpoint
 
@@ -179,7 +179,7 @@ Evaluable at month 3 (end of August 2026) and month 6 (end of November 2026).
 - YouTube episode 1: in production. Buffer episode 2 in early edit.
 - Launch trigger conditions: trackable. Realistic estimate for Phase 1 start.
 
-If at month 6 the urgent learning items have not moved meaningfully, this operating plan needs revision rather than redoubled effort.
+If by the month 6 checkpoint the urgent learning items have not moved meaningfully, this operating plan needs revision rather than redoubled effort.
 
 ## Documented brand decisions
 
@@ -200,7 +200,7 @@ Documented to prevent re-litigation when a future framework or creator-coaching 
 
 ## Open questions and risks
 
-**Production craft risk.** Cinematic short-form has a real learning curve. The plan assumes Daniel reaches usable craft by end of Phase 0 main (December 2026). If craft lags, Phase 1 launch slips to mid-2027. Launch criteria are conditional, not date-locked.
+**Production craft risk.** Cinematic short-form has a real learning curve. The plan assumes Daniel reaches usable craft by end of Phase 0 main. If craft lags, Phase 1 launch slips. Launch criteria are conditional, not date-locked.
 
 **Sustainability risk.** Monthly YouTube + weekly IG + daily X + LinkedIn + Datavial is heavy. The fallback cadence (bimonthly YouTube) is the safety valve. The risk is that Daniel does not take it when needed and burns out instead.
 
@@ -208,4 +208,4 @@ Documented to prevent re-litigation when a future framework or creator-coaching 
 
 **Sponsorship risk.** Outcome C (sponsorships) is expected to lag the primary outcome by years. If sponsorship revenue is needed earlier, the brand may face pressure to drift toward Adrian-Per-style cinematic lifestyle, which converts faster but dilutes the Life Sciences positioning. The plan should not change to chase sponsorship revenue unless explicitly re-deciding the outcome ranking.
 
-**Trip-dependency risk.** YouTube launch is anchored to the trip after June 2026. If travel cadence slips, launch slips with it. Acceptable trade-off but tracked.
+**Trip-dependency risk.** YouTube launch is anchored to a batch-shoot trip. If travel cadence slips, launch slips with it. Acceptable trade-off but tracked.
