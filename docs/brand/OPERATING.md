@@ -65,12 +65,27 @@ If conditions are not met by the next trip, push launch to the trip after that. 
 
 The June 2026 trip is the **production dress rehearsal**, not the launch. Heavy shooting, no launch pressure. Footage becomes Phase 0 IG Reels material and a sandbox for editing practice.
 
+## Phase 1 prep hooks
+
+Pre-launch artifacts to expand when YouTube launch is roughly 60 days out. They are skeletons today, not scripts.
+
+- **First Three Videos skeleton (Lindhardt and Dalen reference-coded).** Working titles and structural shape for the first three YouTube uploads. Replaces the Ralston-workbook educator-coded version of this exercise (see Documented brand decisions below). Lives in [`specs/2026-06-01-personal-brand-workbook.md`](specs/2026-06-01-personal-brand-workbook.md) §15.
+- **4Cs intro framework skeleton.** Call out, Credibility, Compass, Core learning fillings for the introduction video. Lives in [`specs/2026-06-01-personal-brand-workbook.md`](specs/2026-06-01-personal-brand-workbook.md) §13.
+
+Expand both at Phase 1 prep (target: November or December 2026 if YouTube launch criteria are on track).
+
 ## Sustainability rules
 
 1. **Batch shooting around travel weeks.** Each trip produces 3 to 4 episodes of YouTube footage, not 1.
 2. **Two-episode buffer at all times.** Buffer of 1 is a warning signal.
 3. **Fallback cadence defined.** Bimonthly is the backup. Explicit, not failure.
 4. **Brother's help is bonus, not load-bearing.** Routine workflow does not depend on him.
+
+## Editorial rules
+
+1. **Viral handcuff preventive. The toggle controls, not the algorithm.** If a Phase 0 fitness or compliance Reel goes 10x the average, the toggle still dictates the next post, not the engagement signal. The Reel that overperformed becomes informative data, not a content commitment. Without this rule, the algorithm chooses the brand's content pillar; with it, the toggle holds.
+
+More editorial rules will accumulate here as content goes live and edge cases surface.
 
 ## Phasing
 
@@ -133,6 +148,16 @@ Concrete, daily-level tasks for the next 4 weeks.
 - [ ] Trip prep: shot list for the June 23 to July 12 trip drafted. Gear check. File-organization plan for the trip footage. By June 22.
 - [ ] Buffer rule preparation: identify what each Phase 0 main IG Reel will be sourced from (trip footage primarily, supplemented by other local footage as needed).
 
+## Phase 0 capture targets
+
+Watch-for items, not scheduled tasks. Active during Phase 0 prep and Phase 0 main. They move into the AUDIENCE.md Credibility Bank or the Wrapping Paper library as they materialize.
+
+- **W2 (Datavial shipping win).** Watch for the first time a design partner uses Datavial and reports a measurable change. That becomes a Credibility Bank entry. Capture the moment with anonymized context (company type, quarter, impact) when it happens.
+- **S2 (wrong-assumption-I-unwound scar).** Watch for the moment something is learned that wasn't known 6 months ago. Most important deferred Credibility Bank item; the most resonant scar type for audience (B2). When something fits the shape *I was wrong about X before I walked in; here is what I think now*, it is an S2 candidate.
+- **Wrapping Paper library.** Daily 5-minute capture habit. Save thumbnails, titles, hooks, and Reel formats that catch the eye, especially from Lindhardt and Dalen. Single home (Notion page or notes-app tag). Save immediately, organize later. Use the library when packaging a piece of content for publish, not for inspiration scrolling.
+
+See [`AUDIENCE.md`](AUDIENCE.md) Credibility Bank for W2 and S2 destination context.
+
 ## Success criteria
 
 Evaluable at month 3 (end of August 2026) and month 6 (end of November 2026).
@@ -155,6 +180,23 @@ Evaluable at month 3 (end of August 2026) and month 6 (end of November 2026).
 - Launch trigger conditions: trackable. Realistic estimate for Phase 1 start.
 
 If at month 6 the urgent learning items have not moved meaningfully, this operating plan needs revision rather than redoubled effort.
+
+## Documented brand decisions
+
+Rejections and contrary positions captured here so they are not re-litigated when other frameworks or advice suggests the same shape.
+
+### Ralston workbook §15 (First Three Videos) rejected as educator-coded
+
+The Ralston "How to Start Your Personal Brand" workbook §15 asks the brand to write three first videos in this shape: pick 3 to 5 key moments from your life or career, extract one lesson per moment, connect each lesson to a viewer pain. This is educator-coded structure.
+
+The brand explicitly refuses this approach. Two reasons.
+
+1. **Violates observation over preaching** (see IDENTITY.md Guiding principles). The brand does not state takeaways; it demonstrates them. The "lesson per moment" structure forces stated takeaways, which is the failure mode the principle is named against.
+2. **Contradicted by the reference set.** The structural templates the brand follows (Oscar Lindhardt and Daniel Dalen) do not use this shape. Lindhardt makes declarative announcement videos. Dalen makes cinematic arrival arcs. Neither makes lesson-extraction explainer content. Adopting Ralston §15 would put the brand into a creator-coaching shape the references explicitly reject.
+
+Replaced with a reference-coded skeleton (Lindhardt and Dalen). See [`specs/2026-06-01-personal-brand-workbook.md`](specs/2026-06-01-personal-brand-workbook.md) §15 for the full skeleton and [`specs/2026-06-01-workbook-docs-design.md`](specs/2026-06-01-workbook-docs-design.md) for the design decision.
+
+Documented to prevent re-litigation when a future framework or creator-coaching pitch suggests the same lesson-extraction shape.
 
 ## Open questions and risks
 

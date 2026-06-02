@@ -10,6 +10,36 @@ Tech, movement, and culture.
 
 A tech builder seeking human connection through movement and culture, while documenting both the building and the unplugging. The contradiction is the brand.
 
+## Brand Statement
+
+> *I believe engineers who want work that compounds into the real world should walk into life sciences, not wait for permission from the incumbents.*
+
+The brand's core conviction in one sentence. Frames who the brand is for (audience B2, see [`AUDIENCE.md`](AUDIENCE.md)), what they actually want (work that compounds into the real world), and the contrarian move (walk in, do not wait).
+
+The statement passes the dread test. It would still be true in 2030 whether the brand has 6 months of journey behind it or 6 years. *Walk into life sciences* is the verb that holds across the whole arc.
+
+## Contrarians
+
+Three layered positions the brand operates from. Each shows up across content as a recurring frame.
+
+**Brand-level contrarian.**
+
+> *Life sciences is the most underleveraged frontier in software. Software engineers do not need 20 years inside pharma to be credible founders. They need conviction.*
+
+The position the brand argues for. Auto-positions Daniel as the ambassador for (B2)'s walk in. Used in any content about why the work is pointed at life sciences in the first place.
+
+**Product-level contrarian.**
+
+> *GxP does not have to feel like GxP. Modern web-quality UX inside a regulated stack is engineerable.*
+
+The position Datavial argues for, surfaced in build-half content. Used in any content about specific UX, workflow, or technical decisions inside the regulated stack.
+
+**Bridge.**
+
+> *You can't build for scientists if you've forgotten how to be a person.*
+
+The bridge between build and offline halves. Justifies movement, presence, and IRL connection content existing inside this brand rather than as a separate lifestyle account.
+
 ## Public Referral Sentences
 
 Two sentences in industry-standard vocabulary. These are what someone says about Daniel to a third party.
@@ -57,6 +87,16 @@ Someone whose default response to being overwhelmed is to *make something* or *m
 Building and moving are not opposites. They are parallel rituals of staying human in an attention economy. One uses hands and code. The other uses hands and body. Both are ways of refusing to be dissolved by the feed.
 
 The Maker-Mover is not someone with all the answers. He is searching publicly. The brand is the search.
+
+**The Walking-In Scout.**
+
+> **Internal-only design reference.** Added 2026-06-01 from the personal brand workbook session. Companion to the Maker-Mover persona. Enforces the orientation discipline below.
+
+Orientation is forward, not backward. Not *the guy who left pharma* (backward, an exit story). The SWE walking *into* life sciences with some experience, reporting back from the path (forward, an arrival story).
+
+The model is Oscar Lindhardt: documenting the journey into a serious industry as the brand spine, with the journey itself as the credibility. Lindhardt did this with zero PE experience. The version here applies the same template with non-zero life sciences experience.
+
+Scout, not authority. Honest about being mid-journey. The audience follows because they are considering a similar move and want a non-zero-experience guide, not an expert pronouncement.
 
 ## The Toggle
 
@@ -186,6 +226,16 @@ These four phrases the brand repeats. They appear in captions, carousels, video 
 2. **Tech, movement, and culture.** — the sub-thesis
 3. **Scars, not wounds.** — the build-half rule
 4. **Memory, not photoshoot.** — the visual rule
+
+## Audience
+
+Three tiers. Only one is the audience the brand talks to. The distinction matters: conflating them would force content into either thought-leadership shape (which kills the offline half) or end-user empathy shape (which sells nothing).
+
+- **(B2) Primary.** Software engineers and SaaS or AI founders looking for a frontier where their existing skills compound into real-world impact. The person the brand addresses.
+- **(B1) Peer network.** Life sciences founders who already left. Rare. Treated as peers and future design partners. Spoken-with, not spoken-to.
+- **(A) Spoken-about.** Lab ops and scientists inside life sciences companies. Their pain is described with empathy as the reason the work matters. Not the audience the brand addresses directly.
+
+Full definitions, painful problems list, ideation table, credibility and interest banks, differentiation breakdown, and desired associations live in [`AUDIENCE.md`](AUDIENCE.md). The (B2) audience pain pattern also justifies the offline half existing inside this brand: the burnout, deferred-life, and screen-rotted attention pains are theirs, not just the brand's.
 
 ## Audience experience
 
