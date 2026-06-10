@@ -1,9 +1,7 @@
-# build output
+# dependencies (legacy builds)
+node_modules/
 dist/
 .astro/
-
-# dependencies
-node_modules/
 
 # logs
 npm-debug.log*
@@ -25,4 +23,4 @@ Thumbs.db
 # playwright / review screenshots
 .playwright-mcp/
 *.png
-!public/**/*.png
+!site/**/*.png

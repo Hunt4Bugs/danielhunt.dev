@@ -15,21 +15,24 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: withastro/action@v3
-        # By default uses npm. Pass package-manager-cache for explicit control.
-        env:
-          PUBLIC_WEB3FORMS_KEY: ${{ secrets.PUBLIC_WEB3FORMS_KEY }}
-
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v4
+
+      # The Web3Forms access key is public-by-design; it lives as a repo
+      # secret and is injected into the committed placeholder at deploy time.
+      - name: Inject Web3Forms key
+        run: sed -i "s/WEB3FORMS_KEY_PLACEHOLDER/${{ secrets.PUBLIC_WEB3FORMS_KEY }}/" site/index.html
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
       - id: deployment
         uses: actions/deploy-pages@v4
