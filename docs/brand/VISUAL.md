@@ -53,11 +53,11 @@ Same typography. Same brand mark. Same accent. The mode shifts via *proportion* 
 
 Two-font system.
 
-**Fraunces** — display, serif. Used for headlines, drop caps, brand wordmark, monogram, byline. Carries warmth, character, slight quirk. The editorial voice.
+**Instrument Serif** — display, serif. Used for headlines, drop caps, brand wordmark, monogram, byline. Sharp, contemporary editorial voice; one weight (regular + italic), which enforces restraint.
 
-**Inter** — body copy, UI, captions, utility text, lower-thirds. Neutral, clean, doesn't fight Fraunces.
+**Inter** — body copy, UI, captions, utility text, lower-thirds. Neutral, clean, doesn't fight Instrument Serif.
 
-Use Fraunces Display for the wordmark and major headlines. Use Fraunces Text for long-form body when the editorial-magazine register is wanted. Use Inter for everything else.
+Use Instrument Serif for the wordmark and major headlines — display roles only; it ships in a single weight and is not a long-form text face. Use Inter for everything else, including long-form body.
 
 No third font. No monospaced terminal aesthetic in public surfaces. The `{D}` tribute lives in repo and X bio, not in the typography.
 
@@ -65,7 +65,7 @@ No third font. No monospaced terminal aesthetic in public surfaces. The `{D}` tr
 
 ### Brand palette (UI and design system)
 
-The palette has two surfaces: a **brand concept layer** (the names used in this document and in design conversation) and the **CSS implementation layer** (the tokens that actually exist in [`src/styles/global.css`](../../src/styles/global.css) and are consumed by Tailwind utilities). Both must stay in sync. When a value changes, update both layers and the mirrored constant in [`src/pages/og.png.ts`](../../src/pages/og.png.ts).
+The palette has two surfaces: a **brand concept layer** (the names used in this document and in design conversation) and the **CSS implementation layer** (the tokens that actually exist in [`site/css/site.css`](../../site/css/site.css)). Both must stay in sync. When a value changes, update both layers and regenerate the committed `site/og.png` so the preview image reflects the new values.
 
 | Brand concept | CSS var | Hex | Role |
 |---|---|---|---|
@@ -95,8 +95,8 @@ These appear in *photography, wardrobe, environments, atmospheric description* �
 
 | Element | Form | Where |
 |---|---|---|
-| Wordmark | `DANIEL HUNT` — all caps, Fraunces Display, intentional letter-spacing | Site masthead, video intro card, anywhere with space |
-| Monogram | `DH` — Fraunces Display, no periods, no frame, no interlocking | Avatars, watermarks, sign-offs, compact contexts |
+| Wordmark | `DANIEL HUNT` — all caps, Instrument Serif, intentional letter-spacing | Site masthead, video intro card, anywhere with space |
+| Monogram | `DH` — Instrument Serif, no periods, no frame, no interlocking | Avatars, watermarks, sign-offs, compact contexts |
 | `{D}` tribute | Internal codename | Repo, doc titles, source comments, X bio. Not a public brand mark. |
 
 The wordmark must be composed *masthead-style* — anchored to a corner or margin, integrated with the page. Never composed as a monument-to-the-creator with a figure standing behind the letters.
@@ -112,14 +112,14 @@ This rule is scoped to *page furniture* — the structural and decorative roles 
 Acceptable furniture:
 
 - Whitespace as the primary section break
-- Numbered or named section labels in small-caps Fraunces — `I.`, `II.`, or `I · ON BUILDING`
+- Numbered or named section labels in small-caps Instrument Serif — `I.`, `II.`, or `I · ON BUILDING`
 - Mid-dot `·` for metadata separators — `DANIEL HUNT · SIMI VALLEY · 2026`
 - Asterism `⁂` (centered) as a stronger break when a mark is required
 - Hairline structural CSS rules (1px solid `--line`) for UI dividers — these are *structural*, not typographic
 
 ### Drop caps
 
-Long-form dispatch openers begin with a Fraunces Display drop cap, roughly 3-line height, in `--espresso` (Offline mode) or `--text` (Build mode).
+Long-form dispatch openers begin with an Instrument Serif drop cap, roughly 3-line height, in `--espresso` (Offline mode) or `--text` (Build mode).
 
 ### Byline
 
@@ -131,7 +131,7 @@ Inter italic, 13–14px, `--quiet`, hanging directly below figures. No rule line
 
 ### Pull quotes
 
-Fraunces Display Italic, larger than body, indented or set off with `--accent` for the opening mark.
+Instrument Serif Italic, larger than body, indented or set off with `--accent` for the opening mark.
 
 ## Imagery style
 
