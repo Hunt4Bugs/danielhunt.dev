@@ -1,0 +1,165 @@
+{
+  "palette": {
+    "white": { "value": "#FFFFFF", "type": "color", "description": "Pure white canvas — Build / Cool pole." },
+    "ink": { "value": "#111111", "type": "color", "description": "Ink — primary text on the cool pole." },
+    "graphite": { "value": "#5A5A5A", "type": "color", "description": "Secondary text (muted)." },
+    "silver": { "value": "#8A8F91", "type": "color", "description": "Tertiary text / captions (quiet)." },
+    "hairline": { "value": "#E2E2E2", "type": "color", "description": "Structural hairline rules (line)." },
+    "hairlineStrong": { "value": "#C8C8C8", "type": "color", "description": "Stronger structural rules (line-strong)." },
+    "cream": { "value": "#F3EFE8", "type": "color", "description": "Warm canvas — Offline pole." },
+    "espresso": { "value": "#2B1F1A", "type": "color", "description": "Warm structural — Offline mastheads / text." },
+    "burgundy": { "value": "#6B1F2B", "type": "color", "description": "Accent — constant across both poles." },
+    "mood": {
+      "terracotta": { "value": "#9C5B3F", "type": "color", "description": "Earth, movement, travel. APPROXIMATE — tune to real photography." },
+      "olive": { "value": "#5E6347", "type": "color", "description": "Utilitarian, outdoor. APPROXIMATE." },
+      "umber": { "value": "#5B4636", "type": "color", "description": "Wood grain, leather, depth. APPROXIMATE." },
+      "stone": { "value": "#B9AE9C", "type": "color", "description": "Natural fibre, calm. APPROXIMATE." },
+      "ash": { "value": "#8C8C88", "type": "color", "description": "Urban realism, concrete. APPROXIMATE." },
+      "charcoal": { "value": "#36363A", "type": "color", "description": "Cinematic shadow. APPROXIMATE." },
+      "onyx": { "value": "#1A1A1E", "type": "color", "description": "Depth, night. APPROXIMATE." }
+    }
+  },
+
+  "mode/build": {
+    "bg": { "value": "{palette.white}", "type": "color", "description": "Canvas — Build / Cool." },
+    "text": { "value": "{palette.ink}", "type": "color", "description": "Primary text — Build / Cool." },
+    "muted": { "value": "{palette.graphite}", "type": "color", "description": "Secondary text." },
+    "quiet": { "value": "{palette.silver}", "type": "color", "description": "Tertiary text / captions." },
+    "line": { "value": "{palette.hairline}", "type": "color", "description": "Hairline rules." },
+    "lineStrong": { "value": "{palette.hairlineStrong}", "type": "color", "description": "Stronger structural rules." },
+    "accent": { "value": "{palette.burgundy}", "type": "color", "description": "Burgundy accent." }
+  },
+
+  "mode/offline": {
+    "bg": { "value": "{palette.cream}", "type": "color", "description": "Canvas — Offline / Warm." },
+    "text": { "value": "{palette.espresso}", "type": "color", "description": "Primary text — Offline / Warm." },
+    "muted": { "value": "{palette.graphite}", "type": "color", "description": "Secondary text (shared neutral)." },
+    "quiet": { "value": "{palette.silver}", "type": "color", "description": "Tertiary text / captions (shared neutral)." },
+    "line": { "value": "{palette.hairline}", "type": "color", "description": "Hairline rules (shared neutral)." },
+    "lineStrong": { "value": "{palette.hairlineStrong}", "type": "color", "description": "Stronger structural rules (shared neutral)." },
+    "accent": { "value": "{palette.burgundy}", "type": "color", "description": "Burgundy accent — constant across poles." }
+  },
+
+  "type": {
+    "font": {
+      "serif": { "value": "Instrument Serif", "type": "fontFamilies", "description": "Display, marks, headlines — single weight (Regular) + Italic only." },
+      "sans": { "value": "Inter", "type": "fontFamilies", "description": "Body, UI, captions, utility." }
+    },
+    "size": {
+      "heroTitle": { "value": "136", "type": "fontSizes", "description": "Hero wordmark/title (clamp max 8.5rem)." },
+      "wordmark": { "value": "88", "type": "fontSizes", "description": "Wordmark specimen scale (5.5rem)." },
+      "monogram": { "value": "64", "type": "fontSizes", "description": "Monogram specimen scale (4rem)." },
+      "sectionHeading": { "value": "68", "type": "fontSizes", "description": "Section heading (clamp max 4.25rem)." },
+      "display": { "value": "52", "type": "fontSizes", "description": "Editorial display / tie-break (clamp max 3.25rem)." },
+      "heroThesis": { "value": "40", "type": "fontSizes", "description": "Hero thesis line (clamp max 2.5rem)." },
+      "phrase": { "value": "36", "type": "fontSizes", "description": "Signature phrase specimen (clamp max 2.25rem)." },
+      "codename": { "value": "32", "type": "fontSizes", "description": "Internal codename specimen (2rem)." },
+      "lede": { "value": "25", "type": "fontSizes", "description": "Lede / intro paragraph (clamp max 1.55rem)." },
+      "title": { "value": "24", "type": "fontSizes", "description": "Sub-title / specimen title (1.5rem)." },
+      "heroSub": { "value": "19", "type": "fontSizes", "description": "Hero sub-line (clamp max 1.2rem)." },
+      "body": { "value": "18", "type": "fontSizes", "description": "Section body (1.125rem)." },
+      "caption": { "value": "14", "type": "fontSizes", "description": "Caption (0.875rem), Inter italic." },
+      "byline": { "value": "12", "type": "fontSizes", "description": "Byline small-caps." },
+      "label": { "value": "11.5", "type": "fontSizes", "description": "Mono-label (0.72rem)." },
+      "value": { "value": "10", "type": "fontSizes", "description": "Mono-value (0.625rem)." }
+    },
+    "lineHeight": {
+      "display": { "value": "105%", "type": "lineHeights", "description": ".display line-height 1.05." },
+      "displayTight": { "value": "98%", "type": "lineHeights", "description": ".display-tight line-height 0.98." },
+      "mark": { "value": "100%", "type": "lineHeights", "description": "Wordmark / monogram line-height 1." },
+      "lede": { "value": "145%", "type": "lineHeights", "description": ".lede line-height 1.45." },
+      "body": { "value": "150%", "type": "lineHeights", "description": "Base body line-height 1.5." },
+      "bodyRelaxed": { "value": "178%", "type": "lineHeights", "description": "Section body 2rem on 1.125rem." }
+    },
+    "letterSpacing": {
+      "wordmark": { "value": "6%", "type": "letterSpacing", "description": "Wordmark tracking 0.06em." },
+      "monogram": { "value": "2%", "type": "letterSpacing", "description": "Monogram / codename tracking 0.02em." },
+      "label": { "value": "22%", "type": "letterSpacing", "description": "Mono-label tracking 0.22em." },
+      "value": { "value": "18%", "type": "letterSpacing", "description": "Mono-value tracking 0.18em." },
+      "editorialLink": { "value": "24%", "type": "letterSpacing", "description": "Editorial link tracking 0.24em." },
+      "display": { "value": "-0.5%", "type": "letterSpacing", "description": ".display tracking -0.005em." },
+      "displayTight": { "value": "-1%", "type": "letterSpacing", "description": ".display-tight tracking -0.01em." }
+    }
+  },
+
+  "space": {
+    "scale": {
+      "1": { "value": "4", "type": "spacing", "description": "mt-1 (0.25rem)." },
+      "3": { "value": "12", "type": "spacing", "description": "mt-3 (0.75rem)." },
+      "4": { "value": "16", "type": "spacing", "description": "mt-4 (1rem)." },
+      "5": { "value": "20", "type": "spacing", "description": "mt-5 (1.25rem)." },
+      "7": { "value": "28", "type": "spacing", "description": "mt-7 (1.75rem)." },
+      "8": { "value": "32", "type": "spacing", "description": "mt-8 (2rem)." },
+      "12": { "value": "48", "type": "spacing", "description": "mt-12 (3rem)." }
+    },
+    "stack": {
+      "sm": { "value": "40", "type": "spacing", "description": ".stack-sm (2.5rem)." },
+      "md": { "value": "48", "type": "spacing", "description": ".stack-md (3rem)." },
+      "lg": { "value": "56", "type": "spacing", "description": ".stack-lg (3.5rem)." }
+    },
+    "gap": {
+      "base": { "value": "32", "type": "spacing", "description": ".sidebar-grid gap (2rem)." },
+      "loose": { "value": "40", "type": "spacing", "description": ".sidebar-grid--loose gap (2.5rem)." }
+    },
+    "pad": {
+      "sm": { "value": "20", "type": "spacing", "description": "Container inline padding, mobile (1.25rem)." },
+      "base": { "value": "32", "type": "spacing", "description": "Container inline padding, sm+ (2rem)." },
+      "lg": { "value": "48", "type": "spacing", "description": "Container inline padding, lg+ (3rem)." }
+    },
+    "section": {
+      "sm": { "value": "64", "type": "spacing", "description": "Section block padding, mobile (4rem)." },
+      "base": { "value": "80", "type": "spacing", "description": "Section block padding, sm+ (5rem)." },
+      "lg": { "value": "96", "type": "spacing", "description": "Section block padding, lg+ (6rem)." }
+    },
+    "container": {
+      "max": { "value": "1480", "type": "sizing", "description": ".container-page max-width." },
+      "prose": { "value": "672", "type": "sizing", "description": "42rem narrow measure for body prose." }
+    },
+    "radius": {
+      "none": { "value": "0", "type": "borderRadius", "description": "Square corners — gallery-frame discipline. The brand uses no rounded corners." }
+    }
+  },
+
+  "$themes": [
+    {
+      "id": "build-cool",
+      "name": "Build / Cool",
+      "group": "Color mode",
+      "selectedTokenSets": {
+        "palette": "source",
+        "mode/build": "enabled",
+        "mode/offline": "disabled"
+      }
+    },
+    {
+      "id": "offline-warm",
+      "name": "Offline / Warm",
+      "group": "Color mode",
+      "selectedTokenSets": {
+        "palette": "source",
+        "mode/offline": "enabled",
+        "mode/build": "disabled"
+      }
+    },
+    {
+      "id": "foundations",
+      "name": "Foundations",
+      "group": "Foundations",
+      "selectedTokenSets": {
+        "palette": "source",
+        "type": "enabled",
+        "space": "enabled"
+      }
+    }
+  ],
+
+  "$metadata": {
+    "tokenSetOrder": [
+      "palette",
+      "mode/build",
+      "mode/offline",
+      "type",
+      "space"
+    ]
+  }
+}
