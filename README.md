@@ -1,68 +1,38 @@
 # danielhunt.dev
 
-Personal site for Daniel Hunt — built with [Astro](https://astro.build) and Tailwind CSS, deployed to GitHub Pages on the custom domain **danielhunt.dev**.
+Personal brand surface for Daniel Hunt — custom software, automation & AI for business, built in public.
+
+A single-page static site: plain HTML + handwritten CSS + vanilla JS, with [htmx](https://htmx.org) powering the contact form. No framework, no install step, no build step — the `site/` directory deploys as-is.
 
 ## Local development
 
 ```bash
-npm install
-npm run dev      # http://localhost:4321
-npm run build    # static output → ./dist
-npm run preview
+python3 -m http.server 8000 --directory site   # http://localhost:8000
+# or: npx serve site
 ```
 
-## TODO before going live
-
-1. **Social URLs** — `src/components/Footer.astro`: replace the three `href: '#'` placeholders with your real LinkedIn / X / YouTube URLs.
-2. **Contact form key** — `src/components/Contact.astro`: replace `YOUR_ACCESS_KEY` with a free [Web3Forms](https://web3forms.com) access key (just enter `contact@danielhunt.dev` on their site, they email you a key — no signup needed).
-3. **OG image** *(optional)* — drop a 1200×630 `og.png` in `public/` and add `<meta property="og:image" content="/og.png" />` in `src/layouts/Layout.astro`.
+The contact form errors gracefully in local dev (the committed HTML holds `WEB3FORMS_KEY_PLACEHOLDER`; the real key is injected at deploy time).
 
 ## Deployment
 
-Push to `main` and the GitHub Action in `.github/workflows/deploy.yml` builds with Astro and deploys to GitHub Pages. The first time:
-
-1. **Create the repo** (already done — `Hunt4Bugs/danielhunt.dev`).
-2. Push:
-   ```bash
-   git remote add origin https://github.com/Hunt4Bugs/danielhunt.dev.git
-   git push -u origin main
-   ```
-3. **Enable Pages**: GitHub repo → *Settings → Pages → Build and deployment → Source = **GitHub Actions***.
-4. **DNS**: at your domain registrar, point `danielhunt.dev` at GitHub Pages with these `A` records (apex):
-
-   ```
-   185.199.108.153
-   185.199.109.153
-   185.199.110.153
-   185.199.111.153
-   ```
-
-   And a `CNAME` record for `www`:
-   ```
-   www → hunt4bugs.github.io
-   ```
-5. The `public/CNAME` file in this repo tells GitHub Pages which custom domain to serve. Once DNS resolves, enable **Enforce HTTPS** in the Pages settings.
-
-## Stack
-
-- Astro 4 (static)
-- Tailwind CSS 3
-- `@astrojs/sitemap` for `sitemap-index.xml`
-- Hosted on GitHub Pages
+Push to `main` → `.github/workflows/deploy.yml` injects the `PUBLIC_WEB3FORMS_KEY` repo secret into `site/index.html` (the Web3Forms key is public-by-design) and uploads `site/` to GitHub Pages. The custom domain is set via `site/CNAME`.
 
 ## Brand
 
-Light + Deep Autumn palette (defined in `tailwind.config.mjs`):
+The brand's source of truth lives in the repo, not on the site:
 
-| Token        | Hex      | Use                          |
-|--------------|----------|------------------------------|
-| `cream`      | #FAF6EF  | Page background              |
-| `parchment`  | #F1E9D8  | Surface tint                 |
-| `espresso`   | #2B1D14  | Primary text / headings      |
-| `cocoa`      | #5A4434  | Body copy                    |
-| `rust`       | #A0432A  | Primary accent / CTA         |
-| `rustDark`   | #7E3320  | Hover                        |
-| `mustard`    | #B8862F  | Eyebrow / numerals           |
-| `forest`     | #2F5249  | Reserved                     |
+- [`docs/brand/IDENTITY.md`](docs/brand/IDENTITY.md) — positioning, thesis, services, content pillars, voice
+- [`docs/brand/VISUAL.md`](docs/brand/VISUAL.md) — typography, palette, marks, page furniture, imagery rules
+- [`docs/brand/AUDIENCE.md`](docs/brand/AUDIENCE.md) / [`docs/brand/OPERATING.md`](docs/brand/OPERATING.md) — who it's for and how it operates
+- [`docs/brand/specs/`](docs/brand/specs/) — dated strategy snapshots (latest: 2026-07-22)
 
-Type: Fraunces (display) + Inter (UI), via Google Fonts.
+A public rendering of the visual system is served at [danielhunt.dev/brand](https://danielhunt.dev/brand).
+
+## Stack
+
+- Plain HTML, single handwritten stylesheet (`site/css/site.css`), vanilla JS web components (`site/js/site.js`)
+- htmx 2.x, vendored at `site/js/htmx.min.js`
+- Google Fonts: Instrument Serif (display) + Inter (body/UI)
+- GitHub Pages via `actions/upload-pages-artifact`
+
+See [`CLAUDE.md`](CLAUDE.md) for the full architecture notes.

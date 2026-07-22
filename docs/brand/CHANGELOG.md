@@ -11,6 +11,38 @@ Format per entry:
 
 ---
 
+## 2026-07-22: Repositioned — custom software, automation & AI for business
+
+**Decision:** Replace the Life-Sciences-scout positioning with a services-led positioning: *I help businesses replace spreadsheets and manual work with custom software, automation, and AI — while building everything in public.* Retain **Build in public. Live offline.** as the thesis, re-grounded in the new philosophy (great systems create freedom). Rewrite `IDENTITY.md`, `AUDIENCE.md`, and `OPERATING.md` around the new strategy; snapshot the strategy verbatim at `specs/2026-07-22-personal-brand-strategy.md`; update the site (hero, new Services section, About, Contact copy, metadata) to match.
+
+**Rationale:** The 2026-07-22 personal brand strategy defines the brand around three sellable services (workflow automation, custom internal software, data & reporting), five content pillars, eleven content formats, a five-platform surface map, and a services-to-products flywheel. None of it references the Life-Sciences spine, and its commercial motion (LinkedIn attracts clients; every engagement feeds content) is a different business than the Datavial credibility-moat model. The thesis phrase survives because the strategy explicitly re-grounds it: build in public is the proof of competence, live offline is the proof of outcome.
+
+**Major decisions:**
+
+- Positioning sentence locked (above). Sub-thesis *Tech, movement, and culture.* retired from public rotation.
+- Three core services defined: workflow automation, custom internal software, data & reporting. Consulting moves from "accepted as inbound, not the focus" to the primary commercial motion, with products as the long-term evolution (flywheel: Content → Trust → Clients → Experience → Products → More Content).
+- Five content pillars: workflow automation, custom software, AI for business, build in public, systems thinking. Eleven formats catalogued in OPERATING.md.
+- Surface map expands from four platforms to five: TikTok added; LinkedIn promoted from presence-only to primary client channel.
+- Points of view codified from the strategy's opinion pieces: AI should simplify; most automations are over-engineered; documentation beats prompting; generic SaaS is not the default answer.
+- Datavial and the Life-Sciences material are no longer the brand spine and no longer appear in public positioning. Prior specs, scripts (`scripts/long_form/`), and plans remain as dated historical snapshots.
+- Publishing cadence intentionally left unset — the strategy does not define one; it gets set per-platform when publishing starts.
+- Visual identity (typography, palette, marks, page furniture, imagery rules) unchanged. `VISUAL.md` edited only where it hard-coded the old positioning; the committed `og.png` (wordmark + thesis) remains valid.
+
+**Files touched:**
+
+- `docs/brand/specs/2026-07-22-personal-brand-strategy.md` (new — verbatim strategy snapshot)
+- `docs/brand/IDENTITY.md` (rewritten)
+- `docs/brand/AUDIENCE.md` (rewritten)
+- `docs/brand/OPERATING.md` (rewritten)
+- `docs/brand/VISUAL.md` (surgical edits: site implications, cross-surface table)
+- `site/index.html`, `site/brand/index.html`, `site/js/site.js`, `site/css/site.css`, `site/llms.txt`, `site/humans.txt` (site alignment)
+- `CLAUDE.md`, `README.md` (repo docs alignment)
+- `docs/brand/CHANGELOG.md` (this entry)
+
+**Source:** `docs/brand/specs/2026-07-22-personal-brand-strategy.md`
+
+---
+
 ## 2026-06-01: Personal brand workbook synthesized into brand docs
 
 **Decision:** Synthesize the Ralston personal-brand workbook session (15 exercises) into the brand docs. Promote canonical material to `IDENTITY.md` and a new `AUDIENCE.md`. Add editorial rules and Phase 0 capture targets to `OPERATING.md`. Preserve the full workbook output as a dated snapshot at `specs/2026-06-01-personal-brand-workbook.md`.

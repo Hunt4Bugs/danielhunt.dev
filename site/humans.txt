@@ -1,10 +1,11 @@
 /* TEAM */
-  Daniel Hunt — Builder, writer, and systems observer
+  Daniel Hunt — Software engineer and consultant.
+  Custom software, automation & AI for business, built in public.
   Site: https://danielhunt.dev
   Contact: contact@danielhunt.dev
 
 /* SITE */
   Last update: 2026
   Standards: HTML5, CSS3, JSON-LD
-  Built with: Astro, Tailwind CSS
+  Built with: Plain HTML, handwritten CSS, vanilla JS, htmx
   Hosted on: GitHub Pages

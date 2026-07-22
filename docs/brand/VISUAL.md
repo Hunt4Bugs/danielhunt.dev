@@ -241,8 +241,8 @@ The site stays a one-page brand surface, but the hero shifts to gallery-complian
 
 - Lead with wordmark `DANIEL HUNT` at masthead scale
 - Tagline `Build in public. Live offline.` directly under
-- Sub-thesis `Tech, movement, and culture.` directly under that
-- One featured-work slot: a single image, a recent dispatch headline, or a quiet status block (`Currently building Datavial · Currently in Simi Valley`)
+- Positioning sentence (`I help businesses replace spreadsheets and manual work with custom software, automation, and AI.`) directly under that
+- A quiet status block (`Services · Workflow automation · Internal software · Data & reporting` / `Currently in Simi Valley`) plus a restrained services section — the featured work until public builds exist
 - Portrait demotes to the About section, smaller (~28rem max), captioned, framed
 - Contact links accessible but not the visual anchor
 - Tagline tense: present (`Build` / `Live`), not past (`Built` / `Lived`)
@@ -252,9 +252,9 @@ The site stays a one-page brand surface, but the hero shifts to gallery-complian
 When content fills it, the site restructures as a publication home:
 
 - **Masthead** — wordmark + thesis
-- **Dispatches** — archive of offline cinematic shorts
-- **Field Notes** — archive of build talking-head + linked X threads
-- **Projects** — Datavial, Roundz, others, framed as field reports, not portfolio brag
+- **Dispatches** — archive of offline / travel pieces
+- **Field Notes** — archive of build-in-public write-ups + linked threads
+- **Projects** — products and client work, framed as field reports, not portfolio brag
 - **About** — the curator's bio, smaller, secondary
 - **Contact**
 
@@ -264,11 +264,13 @@ When content fills it, the site restructures as a publication home:
 |---|---|---|---|
 | Site (Phase B, current) | Cool with warm spreads | Wordmark hero | Gallery discipline |
 | Site (Phase C, future) | Cool with warm spreads | Wordmark masthead | Publication structure |
-| IG profile | Cool / clinical | Monogram avatar | Offline content lives here |
+| LinkedIn profile | Cool / clinical | Monogram avatar | Client-facing; educational + business insight content |
+| IG profile | Warm-leaning | Monogram avatar | Travel, lifestyle, behind-the-scenes live here |
 | IG Reel covers | Mode-appropriate | Wordmark or monogram corner | Cinematic, restrained |
 | IG carousels | Mode-appropriate | Monogram sign-off on final slide | Editorial templating |
-| X profile | Cool / clinical, `{D}` in bio | Monogram avatar | Build journaling lives here |
-| Talking-head lower-third | Cool / clinical | Monogram + wordmark | Build retrospectives |
+| X profile | Cool / clinical, `{D}` in bio | Monogram avatar | Build journaling and technical discussion live here |
+| TikTok profile | Mode-appropriate | Monogram avatar | Quick demos, short education, travel |
+| Video lower-thirds | Cool / clinical | Monogram + wordmark | Tutorials, demos, deep dives |
 | YouTube channel art | TBD when activated | TBD | Future surface |
 
 ## Overall feeling

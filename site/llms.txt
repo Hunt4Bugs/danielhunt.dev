@@ -1,27 +1,31 @@
 # Daniel Hunt
 
-> Builder, writer, and systems observer documenting a life around movement, systems, food, culture, and staying human in a distracted world.
+> I help businesses replace spreadsheets and manual work with custom software, automation, and AI — while building everything in public.
 
 - **Name:** Daniel Hunt
-- **Role:** Builder, writer, and systems observer
+- **Role:** Software engineer and consultant
 - **Website:** https://danielhunt.dev
 - **Email:** contact@danielhunt.dev
 - **Based:** Simi Valley, California
 - **LinkedIn:** https://www.linkedin.com/in/danielhunt16/
 - **X:** https://x.com/danielhunt_dev
 
-## Focus
+## Services
 
-- Movement as a way to understand self, place, and discomfort.
-- Systems as tools for clarity, useful products, and better work.
-- Food, culture, and conversation as records of human connection.
-- Observation as a way to stay present in modern life.
+- **Workflow automation:** eliminate repetitive work through automation and AI — manual workflows, AI-powered document processing, approval workflows, internal AI assistants, spreadsheet automation.
+- **Custom internal software:** software tailored to a company's operations instead of generic SaaS — internal dashboards, admin portals, operations software, scheduling, inventory, customer portals.
+- **Data & reporting:** disconnected business data turned into actionable insight — executive dashboards, KPI reporting, business intelligence, ETL pipelines, reporting automation.
+
+## Philosophy
+
+Build in public. Live offline. Great systems create freedom: the process of designing software, automating workflows, and building products is shared publicly so others can learn from it, and the goal of every system is less time managing work and more time living life.
 
 ## Contact
 
-Questions, product ideas, possible collaborations, or a conversation worth having:
+A process worth automating, a spreadsheet that should be software, data you can't see into — or a conversation worth having:
 contact@danielhunt.dev
 
 ## Pages
 
-- [Home](https://danielhunt.dev/): minimal editorial home, about, and contact links.
+- [Home](https://danielhunt.dev/): positioning, services, about, and contact.
+- [Brand](https://danielhunt.dev/brand): the brand system — marks, typography, palette, and principles.

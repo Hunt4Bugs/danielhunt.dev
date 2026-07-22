@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-Personal brand surface for Daniel Hunt (danielhunt.dev) — a single-page static site that serves as credibility + contact path for the content brand. Not a content publication itself (content lives on IG, X, YouTube, eventually a newsletter).
+Personal brand surface for Daniel Hunt (danielhunt.dev) — a single-page static site that serves as credibility + contact path for the brand: custom software, automation & AI for business, built in public. Not a content publication itself (content lives on LinkedIn, YouTube, X, Instagram, and TikTok).
 
 For brand strategy, persona, voice, typography, palette, marks, and visual rules: see [`docs/brand/IDENTITY.md`](docs/brand/IDENTITY.md) and [`docs/brand/VISUAL.md`](docs/brand/VISUAL.md) — these are the source of truth. Update them before changing anything brand-shaped on the site.
 
@@ -33,7 +33,7 @@ Everything deployable lives in `site/`; everything else in the repo (docs, this 
 
 ```
 site/
-  index.html          # the one-page site: head/meta + Hero, About, Contact (+ form)
+  index.html          # the one-page site: head/meta + Hero, Services, About, Contact (+ form)
   brand/index.html    # public brand-system reference, served at /brand
   css/site.css        # single stylesheet: tokens + reset + semantic classes
   js/site.js          # web components (<site-nav>, <site-footer>), mobile menu,
@@ -62,5 +62,5 @@ site/
 
 **Brand surface phasing:**
 
-- **Phase B (current)**: one-page brand surface — wordmark masthead + tagline + sub-thesis + currently-building/currently-in status block + contact links + contact form. Portrait demoted to About section. Gallery-frame discipline (work-as-protagonist, creator-as-curator).
+- **Phase B (current)**: one-page brand surface — wordmark masthead + tagline ("Build in public. Live offline.") + positioning sentence + services/currently-in status block + Services section (three services) + About + contact links + contact form. Portrait demoted to About section. Gallery-frame discipline (work-as-protagonist, creator-as-curator).
 - **Phase C (future, when content exists)**: site restructures as a publication home with Dispatches archive, Field Notes archive, Projects section, About, Contact.

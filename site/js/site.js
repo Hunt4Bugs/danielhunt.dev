@@ -12,6 +12,7 @@ const SITE = {
 };
 
 const NAV_LINKS = [
+  { label: 'Services', href: '/#services' },
   { label: 'About', href: '/#about' },
   { label: 'Contact', href: '/#contact' },
 ];
@@ -121,6 +122,7 @@ class SiteFooter extends HTMLElement {
             <div class="site-footer__meta">
               <p class="mono-value">&copy; ${year} &middot; ${SITE.name.toUpperCase()}</p>
               <div class="site-footer__links">
+                <a href="/#services" class="mono-value link-cinema">Services</a>
                 <a href="/#about" class="mono-value link-cinema">About</a>
                 <a href="/#contact" class="mono-value link-cinema">Contact</a>
                 <a href="/brand" class="mono-value link-cinema">Brand</a>

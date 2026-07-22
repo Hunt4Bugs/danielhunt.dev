@@ -559,6 +559,40 @@ code {
   max-width: 42rem;
 }
 
+/* Services (home) — stacked editorial list, hairline-ruled */
+.services {
+  margin-top: 3rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.service {
+  border-top: 1px solid rgb(var(--line));
+  padding-top: 2rem;
+}
+
+.service__title {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: rgb(var(--text));
+}
+
+.service__desc {
+  margin-top: 0.75rem;
+  max-width: 42rem;
+  font-size: 1.0625rem;
+  line-height: 1.9;
+  color: rgb(var(--muted));
+}
+
+.service__examples {
+  margin-top: 1.25rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  color: rgb(var(--quiet));
+}
+
 .about__portrait {
   margin-top: 3.5rem;
   max-width: 28rem;
