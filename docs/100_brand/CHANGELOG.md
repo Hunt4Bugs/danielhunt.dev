@@ -29,15 +29,15 @@ Format per entry:
 
 **Files touched:**
 
-- `docs/brand/AUDIENCE.md` (new)
-- `docs/brand/IDENTITY.md` (surgical additions: Brand Statement, Contrarians, Audience, Walking-In Scout)
-- `docs/brand/OPERATING.md` (surgical additions: Editorial rules, Phase 0 capture targets, Phase 1 prep hooks, Documented brand decisions)
-- `docs/brand/specs/2026-06-01-personal-brand-workbook.md` (new)
-- `docs/brand/CHANGELOG.md` (this entry)
+- `docs/100_brand/AUDIENCE.md` (new)
+- `docs/100_brand/IDENTITY.md` (surgical additions: Brand Statement, Contrarians, Audience, Walking-In Scout)
+- `docs/100_brand/OPERATING.md` (surgical additions: Editorial rules, Phase 0 capture targets, Phase 1 prep hooks, Documented brand decisions)
+- `docs/100_brand/specs/2026-06-01-personal-brand-workbook.md` (new)
+- `docs/100_brand/CHANGELOG.md` (this entry)
 
-**Source:** `docs/brand/specs/2026-06-01-workbook-docs-design.md`
+**Source:** `docs/100_brand/specs/2026-06-01-workbook-docs-design.md`
 
-**Implementation:** `docs/brand/plans/2026-06-01-workbook-docs-implementation.md`
+**Implementation:** `docs/100_brand/plans/2026-06-01-workbook-docs-implementation.md`
 
 ---
 
@@ -47,6 +47,6 @@ Format per entry:
 
 **Rationale:** The existing IDENTITY.md captured persona and voice well but left three things under-defined: the desired outcome (read as values, not outcome), the public-facing referral sentence (no industry-standard version existed), and the operational plan (no cadence, no phasing, no learning agenda). Working through Ralston's four steps in sequence produced concrete decisions on all three: two public referral sentences in industry-standard vocabulary ("He builds Life Sciences products" / "A tech founder seeking human connection through movement, food, and culture"), a four-platform surface map with phased roles, and a learning agenda focused on cinematic short-form production craft as the urgent gap.
 
-**Source:** `docs/brand/specs/2026-05-28-brand-refinement-design.md`
+**Source:** `docs/100_brand/specs/2026-05-28-brand-refinement-design.md`
 
-**Implementation:** `docs/brand/plans/2026-05-28-brand-refinement-implementation.md`
+**Implementation:** `docs/100_brand/plans/2026-05-28-brand-refinement-implementation.md`

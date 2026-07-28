@@ -3,7 +3,7 @@
 **Date:** 2026-06-01
 **Method:** Synthesis from `/grill-me` session against Ralston's "How to Start Your Personal Brand" workbook (65 pages, 15 exercises).
 **Status:** Approved by Daniel. Pending file-by-file writing with user review checkpoints between each.
-**Companion:** workbook answer snapshot will live at `docs/brand/specs/2026-06-01-personal-brand-workbook.md` after writing.
+**Companion:** workbook answer snapshot will live at `docs/100_brand/specs/2026-06-01-personal-brand-workbook.md` after writing.
 
 ---
 
@@ -11,7 +11,7 @@
 
 Daniel has just completed a long grilling session against the Ralston personal-brand workbook. The session produced substantial new brand material: a primary audience tier never named in the existing docs, a locked Brand Statement in the Ralston "I believe" format, a forward-orientation reframe (walking *into* life sciences rather than "having left" pharma), a scout model framing, a painful problems list, an ideation table, credibility and interest banks, differentiation breakdown, desired associations, content strategy specifics, and a rejection of one workbook exercise on principle.
 
-None of this material exists yet in `docs/brand/`. The existing IDENTITY.md and OPERATING.md are strong on persona, voice, references, surfaces, cadence, and phasing, but they do not contain: the audience definition, the brand statement, the pain list, the ideation table, or the workbook-derived editorial rules.
+None of this material exists yet in `docs/100_brand/`. The existing IDENTITY.md and OPERATING.md are strong on persona, voice, references, surfaces, cadence, and phasing, but they do not contain: the audience definition, the brand statement, the pain list, the ideation table, or the workbook-derived editorial rules.
 
 Without writing it down, the new brand decisions will drift, get re-litigated, or be forgotten. Daniel needs the workbook output captured before context decays.
 
@@ -19,7 +19,7 @@ Without writing it down, the new brand decisions will drift, get re-litigated, o
 
 Capture the workbook decisions across the brand docs and a dated workbook snapshot, following the hybrid output structure locked at the end of grilling.
 
-Canonical material that should compound (audience, brand statement, scout reframe, contrarians) absorbs into IDENTITY.md as surgical additions. New audience-shaped material (audience tiers, painful problems, ideation table, credibility bank, interest bank, differentiation, associations) consolidates into a new `docs/brand/AUDIENCE.md`. Operational and editorial decisions absorb into OPERATING.md. A full dated workbook snapshot at `docs/brand/specs/2026-06-01-personal-brand-workbook.md` holds every answer in workbook order for audit and future reference. The CHANGELOG records the exercise.
+Canonical material that should compound (audience, brand statement, scout reframe, contrarians) absorbs into IDENTITY.md as surgical additions. New audience-shaped material (audience tiers, painful problems, ideation table, credibility bank, interest bank, differentiation, associations) consolidates into a new `docs/100_brand/AUDIENCE.md`. Operational and editorial decisions absorb into OPERATING.md. A full dated workbook snapshot at `docs/100_brand/specs/2026-06-01-personal-brand-workbook.md` holds every answer in workbook order for audit and future reference. The CHANGELOG records the exercise.
 
 Files are written one at a time with a user review checkpoint between each, so tone and framing issues surface early and do not cascade.
 
@@ -52,15 +52,15 @@ Files are written one at a time with a user review checkpoint between each, so t
 
 Five files, written one at a time, reviewed between each.
 
-1. **`docs/brand/AUDIENCE.md`** (new). Holds: three audience tiers (B2 primary, B1 peer network, A spoken-about) with definitions; painful problems v0 (12 rows, "validate Phase 0" header); ideation table v1 (12 rows); credibility bank v0 (W1, W1b, W3, W2 deferred, S1, S2 deferred); interest bank v0 (5 curiosities/experiments split between Buckets A and B, 3 offline items in Bucket D, 4 honest questions + 1 explicitly open, Bucket C intentionally empty); differentiation breakdown (4 rows); desired associations (2 for, 2 against). The Brand Statement and the brand-level and product-level contrarians live in IDENTITY.md, not duplicated here; AUDIENCE.md cross-references them.
+1. **`docs/100_brand/AUDIENCE.md`** (new). Holds: three audience tiers (B2 primary, B1 peer network, A spoken-about) with definitions; painful problems v0 (12 rows, "validate Phase 0" header); ideation table v1 (12 rows); credibility bank v0 (W1, W1b, W3, W2 deferred, S1, S2 deferred); interest bank v0 (5 curiosities/experiments split between Buckets A and B, 3 offline items in Bucket D, 4 honest questions + 1 explicitly open, Bucket C intentionally empty); differentiation breakdown (4 rows); desired associations (2 for, 2 against). The Brand Statement and the brand-level and product-level contrarians live in IDENTITY.md, not duplicated here; AUDIENCE.md cross-references them.
 
-2. **`docs/brand/IDENTITY.md`** (surgical update). Add a new "Audience" section after "Audience experience" naming the three tiers. Add a new "Brand Statement" section adjacent to "Thesis" containing the locked statement. Add the walking-in reframe and scout model as internal-only design references in the Persona section. Add the product-level contrarian alongside the existing brand-level material (likely in a new "Contrarians" section or appended to the Thesis section). Do not delete or restructure existing content. No em rules.
+2. **`docs/100_brand/IDENTITY.md`** (surgical update). Add a new "Audience" section after "Audience experience" naming the three tiers. Add a new "Brand Statement" section adjacent to "Thesis" containing the locked statement. Add the walking-in reframe and scout model as internal-only design references in the Persona section. Add the product-level contrarian alongside the existing brand-level material (likely in a new "Contrarians" section or appended to the Thesis section). Do not delete or restructure existing content. No em rules.
 
-3. **`docs/brand/OPERATING.md`** (surgical update). Add an "Editorial rules" section containing the viral handcuff preventive principle ("the toggle controls, not the algorithm"). Add to phasing or a new "Phase 0 capture targets" subsection: W2, S2, Wrapping Paper library as habits to watch for. Add Phase 1 prep hooks pointing to the workbook snapshot for First Three Videos skeleton and 4Cs framework expansion. Add the Ralston §15 rejection as a documented brand decision (one paragraph; link to workbook snapshot for full reasoning).
+3. **`docs/100_brand/OPERATING.md`** (surgical update). Add an "Editorial rules" section containing the viral handcuff preventive principle ("the toggle controls, not the algorithm"). Add to phasing or a new "Phase 0 capture targets" subsection: W2, S2, Wrapping Paper library as habits to watch for. Add Phase 1 prep hooks pointing to the workbook snapshot for First Three Videos skeleton and 4Cs framework expansion. Add the Ralston §15 rejection as a documented brand decision (one paragraph; link to workbook snapshot for full reasoning).
 
-4. **`docs/brand/specs/2026-06-01-personal-brand-workbook.md`** (new). Full workbook snapshot. All 15 exercises in workbook order. Each answer pointed at its canonical home (IDENTITY for brand statement and contrarians, AUDIENCE for pain list and ideation table, OPERATING for editorial rules). Deferred items marked explicitly: W2, S2, 4Cs expansion, First Three Videos expansion. Validation-needed items marked explicitly: pain list, audience B2 resonance.
+4. **`docs/100_brand/specs/2026-06-01-personal-brand-workbook.md`** (new). Full workbook snapshot. All 15 exercises in workbook order. Each answer pointed at its canonical home (IDENTITY for brand statement and contrarians, AUDIENCE for pain list and ideation table, OPERATING for editorial rules). Deferred items marked explicitly: W2, S2, 4Cs expansion, First Three Videos expansion. Validation-needed items marked explicitly: pain list, audience B2 resonance.
 
-5. **`docs/brand/CHANGELOG.md`** (append entry). Dated entry summarizing the exercise and the major decisions. One short paragraph plus a bullet list of files touched.
+5. **`docs/100_brand/CHANGELOG.md`** (append entry). Dated entry summarizing the exercise and the major decisions. One short paragraph plus a bullet list of files touched.
 
 ### Writing order (locked)
 
@@ -125,7 +125,7 @@ Review prompts per file:
 
 ### Prior art
 
-The existing spec at `docs/brand/specs/2026-05-28-brand-refinement-design.md` and plan at `docs/brand/plans/2026-05-28-brand-refinement-implementation.md` define the tone and structural discipline this project uses. The new workbook snapshot and this design spec should match.
+The existing spec at `docs/100_brand/specs/2026-05-28-brand-refinement-design.md` and plan at `docs/100_brand/plans/2026-05-28-brand-refinement-implementation.md` define the tone and structural discipline this project uses. The new workbook snapshot and this design spec should match.
 
 The existing IDENTITY.md defines the brand voice. New prose written into IDENTITY.md or AUDIENCE.md should be indistinguishable in style from the prose already there.
 
@@ -151,7 +151,7 @@ Today is 2026-06-01. Datavial is pre-design-partner. Phase 0 prep is active (May
 
 ### Issue tracker
 
-The matt-pocock PRD skill assumes an active GitHub issue tracker with a `ready-for-agent` label vocabulary. This project does not have that setup (`gh repo view` returns 0 issues, no labels visible). The project tracks decisions through dated specs in `docs/brand/specs/` and plans in `docs/brand/plans/`. This PRD is therefore stored as a spec file in that location rather than published to an issue tracker.
+The matt-pocock PRD skill assumes an active GitHub issue tracker with a `ready-for-agent` label vocabulary. This project does not have that setup (`gh repo view` returns 0 issues, no labels visible). The project tracks decisions through dated specs in `docs/100_brand/specs/` and plans in `docs/100_brand/plans/`. This PRD is therefore stored as a spec file in that location rather than published to an issue tracker.
 
 ### Companion artifacts
 

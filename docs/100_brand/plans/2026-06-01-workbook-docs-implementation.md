@@ -11,7 +11,7 @@
 
 **Tech stack:** Markdown only. No code changes. No tests in the traditional sense. Verification is visual and editorial, per the design spec's "user review checkpoint" approach.
 
-**Source spec:** `docs/brand/specs/2026-06-01-workbook-docs-design.md` (must be read in full before starting). The source spec lists every locked decision and names the canonical home for each piece of material. Read it as the source of truth until task 4 produces the workbook snapshot.
+**Source spec:** `docs/100_brand/specs/2026-06-01-workbook-docs-design.md` (must be read in full before starting). The source spec lists every locked decision and names the canonical home for each piece of material. Read it as the source of truth until task 4 produces the workbook snapshot.
 
 **Brand vocabulary discipline:** No em-rules in any brand-shaped writing (`~/.claude/projects/-Users-danielhunt-projects-danielhunt-dev/memory/feedback_no_em_rules.md`). Use commas, periods, parens, mid-dots, asterisms, colons, or numbered sections. The existing IDENTITY.md and OPERATING.md voice is the tonal target.
 
@@ -21,13 +21,13 @@
 
 | Path | Action | Purpose |
 |---|---|---|
-| `docs/brand/AUDIENCE.md` | Create | New canonical home for audience tiers, pain list, ideation table, credibility bank, interest bank, differentiation, associations |
-| `docs/brand/IDENTITY.md` | Modify | Surgical additions: audience callout, brand statement, contrarians (brand + product), walking-in reframe, scout model |
-| `docs/brand/OPERATING.md` | Modify | Surgical additions: editorial rules (viral handcuff preventive), Phase 0 capture targets, Phase 1 prep hooks, Ralston §15 rejection |
-| `docs/brand/specs/2026-06-01-personal-brand-workbook.md` | Create | Full workbook snapshot, 15 exercises in workbook order, pointers to canonical homes |
-| `docs/brand/CHANGELOG.md` | Modify (append) | One entry summarizing exercise and major decisions |
-| `docs/brand/specs/2026-06-01-workbook-docs-design.md` | Already created | This plan's source spec |
-| `docs/brand/VISUAL.md` | Untouched | Visual identity is out of scope |
+| `docs/100_brand/AUDIENCE.md` | Create | New canonical home for audience tiers, pain list, ideation table, credibility bank, interest bank, differentiation, associations |
+| `docs/100_brand/IDENTITY.md` | Modify | Surgical additions: audience callout, brand statement, contrarians (brand + product), walking-in reframe, scout model |
+| `docs/100_brand/OPERATING.md` | Modify | Surgical additions: editorial rules (viral handcuff preventive), Phase 0 capture targets, Phase 1 prep hooks, Ralston §15 rejection |
+| `docs/100_brand/specs/2026-06-01-personal-brand-workbook.md` | Create | Full workbook snapshot, 15 exercises in workbook order, pointers to canonical homes |
+| `docs/100_brand/CHANGELOG.md` | Modify (append) | One entry summarizing exercise and major decisions |
+| `docs/100_brand/specs/2026-06-01-workbook-docs-design.md` | Already created | This plan's source spec |
+| `docs/100_brand/VISUAL.md` | Untouched | Visual identity is out of scope |
 
 No new directories needed.
 
@@ -43,7 +43,7 @@ No new directories needed.
 
 ### What to build
 
-A new `docs/brand/AUDIENCE.md` file holding the workbook's audience-shaped material in a coherent structure. The file should match the voice and structural discipline of the existing IDENTITY.md (numbered or bulleted sections, observation-coded prose, no preaching). It should cross-reference IDENTITY.md for the Brand Statement and contrarians (which live there as their canonical home) and should not duplicate them.
+A new `docs/100_brand/AUDIENCE.md` file holding the workbook's audience-shaped material in a coherent structure. The file should match the voice and structural discipline of the existing IDENTITY.md (numbered or bulleted sections, observation-coded prose, no preaching). It should cross-reference IDENTITY.md for the Brand Statement and contrarians (which live there as their canonical home) and should not duplicate them.
 
 Sections required, in this order:
 
@@ -57,7 +57,7 @@ Sections required, in this order:
 
 ### Acceptance criteria
 
-- [ ] File exists at `docs/brand/AUDIENCE.md`.
+- [ ] File exists at `docs/100_brand/AUDIENCE.md`.
 - [ ] All 7 sections present in the specified order.
 - [ ] Pain list has 12 rows with the "v0, validate Phase 0" header.
 - [ ] Ideation Table has 12 rows aligned 1-to-1 with the pain list.
@@ -73,7 +73,7 @@ Sections required, in this order:
 
 ### Steps
 
-- [ ] **Step 1: Read source spec end to end.** `docs/brand/specs/2026-06-01-workbook-docs-design.md`. Pay attention to the canonical-homes table and the small flags carried forward from grilling.
+- [ ] **Step 1: Read source spec end to end.** `docs/100_brand/specs/2026-06-01-workbook-docs-design.md`. Pay attention to the canonical-homes table and the small flags carried forward from grilling.
 - [ ] **Step 2: Read existing IDENTITY.md.** Calibrate voice. Note the section structure, the use of blockquotes for principles, the "Internal-only design reference" callout pattern.
 - [ ] **Step 3: Draft AUDIENCE.md.** All 7 sections. Cross-references in place. No em-rules.
 - [ ] **Step 4: Self-review against acceptance criteria.** Fix any failure.
@@ -91,7 +91,7 @@ Sections required, in this order:
 
 ### What to build
 
-Surgical additions to `docs/brand/IDENTITY.md`. Do not delete or restructure existing content. Do not touch any section not listed below.
+Surgical additions to `docs/100_brand/IDENTITY.md`. Do not delete or restructure existing content. Do not touch any section not listed below.
 
 Additions required:
 
@@ -131,7 +131,7 @@ Additions required:
 
 ### What to build
 
-Surgical additions to `docs/brand/OPERATING.md`. Do not delete or restructure existing content. Do not touch any section not listed below.
+Surgical additions to `docs/100_brand/OPERATING.md`. Do not delete or restructure existing content. Do not touch any section not listed below.
 
 Additions required:
 
@@ -170,7 +170,7 @@ Additions required:
 
 ### What to build
 
-A new `docs/brand/specs/2026-06-01-personal-brand-workbook.md` file holding the full workbook snapshot. All 15 exercises in workbook order. Each answer points at its canonical home (IDENTITY, AUDIENCE, OPERATING) for the material that has been promoted there. Each answer includes the locked content as captured during grilling so the snapshot is self-contained for audit purposes.
+A new `docs/100_brand/specs/2026-06-01-personal-brand-workbook.md` file holding the full workbook snapshot. All 15 exercises in workbook order. Each answer points at its canonical home (IDENTITY, AUDIENCE, OPERATING) for the material that has been promoted there. Each answer includes the locked content as captured during grilling so the snapshot is self-contained for audit purposes.
 
 Structure required:
 
@@ -179,11 +179,11 @@ Structure required:
 3. **Content Strategy section** (workbook exercises 9 through 15). Same structure. §13 4Cs and §15 First Three Videos sub-sections include the full Lindhardt/Dalen-coded skeleton. §15 also includes the Ralston-format rejection rationale.
 4. **Deferred items list:** W2, S2, 4Cs expansion at Phase 1 prep, First Three Videos expansion at Phase 1 prep.
 5. **Validation-needed items list:** Pain list (validate against 5+ peer-founder conversations in Phase 0), audience B2 pain resonance.
-6. **Companion artifacts pointer:** the source-spec design doc (`docs/brand/specs/2026-06-01-workbook-docs-design.md`), the implementation plan (this file), the conversation log location.
+6. **Companion artifacts pointer:** the source-spec design doc (`docs/100_brand/specs/2026-06-01-workbook-docs-design.md`), the implementation plan (this file), the conversation log location.
 
 ### Acceptance criteria
 
-- [ ] File exists at `docs/brand/specs/2026-06-01-personal-brand-workbook.md`.
+- [ ] File exists at `docs/100_brand/specs/2026-06-01-personal-brand-workbook.md`.
 - [ ] All 15 exercises represented in workbook order.
 - [ ] Each exercise sub-section identifies its canonical home (or marks "snapshot only" if the material is not promoted).
 - [ ] Brand Statement is reproduced verbatim.
@@ -193,7 +193,7 @@ Structure required:
 - [ ] §13 sub-section contains the 4Cs skeleton.
 - [ ] Deferred items list is explicit (W2, S2, 4Cs expansion, First Three Videos expansion).
 - [ ] Validation-needed items list is explicit (pain list, B2 resonance).
-- [ ] Voice matches existing brand specs in `docs/brand/specs/`.
+- [ ] Voice matches existing brand specs in `docs/100_brand/specs/`.
 - [ ] Zero em-rules.
 - [ ] User reviews full content and approves before Task 5 starts.
 
@@ -218,13 +218,13 @@ Structure required:
 
 ### What to build
 
-Append one dated entry to `docs/brand/CHANGELOG.md` summarizing the workbook exercise and the major decisions. Match the existing CHANGELOG format (read the file first to confirm the convention).
+Append one dated entry to `docs/100_brand/CHANGELOG.md` summarizing the workbook exercise and the major decisions. Match the existing CHANGELOG format (read the file first to confirm the convention).
 
 Entry should include:
 
 1. **Date:** 2026-06-01.
 2. **Title:** Personal brand workbook (Ralston) synthesized into brand docs.
-3. **Summary paragraph:** one short paragraph describing the exercise (grilled answers to all 15 Ralston exercises against the existing `docs/brand/` material; new audience-shaped material consolidated in AUDIENCE.md; surgical additions to IDENTITY.md and OPERATING.md; full dated snapshot at `specs/2026-06-01-personal-brand-workbook.md`).
+3. **Summary paragraph:** one short paragraph describing the exercise (grilled answers to all 15 Ralston exercises against the existing `docs/100_brand/` material; new audience-shaped material consolidated in AUDIENCE.md; surgical additions to IDENTITY.md and OPERATING.md; full dated snapshot at `specs/2026-06-01-personal-brand-workbook.md`).
 4. **Major decisions bullet list:**
    - Audience (B2) added as primary: software engineers and SaaS/AI founders looking for a frontier where their work compounds into real-world impact.
    - Brand Statement locked: *I believe engineers who want work that compounds into the real world should walk into life sciences, not wait for permission from the incumbents.*

@@ -8,7 +8,7 @@
 
 ## Why this exists
 
-`docs/brand/IDENTITY.md` defines the brand's persona, voice, references, and aesthetic. It is strong on the middle layers (Maker-Mover persona, Build/Offline toggle, Bourdain ethos, Adrian Per production grammar). It is under-defined on three things:
+`docs/100_brand/IDENTITY.md` defines the brand's persona, voice, references, and aesthetic. It is strong on the middle layers (Maker-Mover persona, Build/Offline toggle, Bourdain ethos, Adrian Per production grammar). It is under-defined on three things:
 
 1. **The desired outcome.** The Mission section reads as a values statement, not a concrete picture of where the brand ends up.
 2. **The public-facing referral sentence.** What someone actually says about Daniel to a third party, in industry-standard language.
@@ -248,7 +248,7 @@ Holding the brand line against off-brand-but-engagement-positive content. Only m
 
 Three documents change or get created.
 
-### A. Edit `docs/brand/IDENTITY.md`
+### A. Edit `docs/100_brand/IDENTITY.md`
 
 1. **New section at top: Public Referral Sentences.** Holds the two sentences and the vocabulary discipline (which terms are internal-only).
 2. **Mark sections as internal-only.** Maker-Mover, Bourdain references, and "tech builder" get clear markers that they are design references, not public copy. Preserve "Build in public. Live offline." and "Tech, movement, and culture." as public taglines (the existing Signature Phrases section in IDENTITY.md already supports this).
@@ -258,7 +258,7 @@ Three documents change or get created.
 6. **Add LinkedIn to surface map.** Currently absent.
 7. **Update References table.** Elevate Dalen and Oscar Lindhardt to structural references. Preserve the "leave the teal-green grade" caveat for Dalen.
 
-### B. Create `docs/brand/OPERATING.md`
+### B. Create `docs/100_brand/OPERATING.md`
 
 New document. Holds the operational plan that is revisable in a way IDENTITY.md is not.
 
@@ -276,7 +276,7 @@ Contents:
 
 This document is the working plan. Reviewed quarterly. Edits over time are expected and healthy.
 
-### C. Create `docs/brand/CHANGELOG.md` (optional but recommended)
+### C. Create `docs/100_brand/CHANGELOG.md` (optional but recommended)
 
 Brand decision log. One entry per meaningful brand choice with date and rationale. Lets future-Daniel remember why each decision was made.
 

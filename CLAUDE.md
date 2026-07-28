@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Personal brand surface for Daniel Hunt (danielhunt.dev) — a single-page static site that serves as credibility + contact path for the content brand. Not a content publication itself (content lives on IG, X, YouTube, eventually a newsletter).
 
-For brand strategy, persona, voice, typography, palette, marks, and visual rules: see [`docs/brand/IDENTITY.md`](docs/brand/IDENTITY.md) and [`docs/brand/VISUAL.md`](docs/brand/VISUAL.md) — these are the source of truth. Update them before changing anything brand-shaped on the site.
+For brand strategy, persona, voice, typography, palette, marks, and visual rules: see [`docs/100_brand/IDENTITY.md`](docs/100_brand/IDENTITY.md) and [`docs/100_brand/VISUAL.md`](docs/100_brand/VISUAL.md) — these are the source of truth. Update them before changing anything brand-shaped on the site.
 
 ## Commands
 

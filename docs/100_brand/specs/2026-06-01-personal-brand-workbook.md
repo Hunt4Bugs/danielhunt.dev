@@ -1,7 +1,7 @@
 # Personal Brand Workbook Snapshot
 
 **Date:** 2026-06-01
-**Method:** `/grill-me` session against Ralston's *How to Start Your Personal Brand Workbook* (65 pages, 15 exercises). Synthesis paired against existing `docs/brand/` material.
+**Method:** `/grill-me` session against Ralston's *How to Start Your Personal Brand Workbook* (65 pages, 15 exercises). Synthesis paired against existing `docs/100_brand/` material.
 **Source workbook:** `~/Library/Mobile Documents/com~apple~CloudDocs/Archive/books/How to Start Your Personal Brand Workbook (Full).pdf`.
 **Status:** Approved by Daniel. Canonical homes assigned. Self-contained for audit.
 

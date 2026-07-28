@@ -2,13 +2,13 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Update the brand documentation in `docs/brand/` to reflect the Ralston-framework brand refinement spec (`docs/brand/specs/2026-05-28-brand-refinement-design.md`). Rewrite IDENTITY.md to separate public from internal vocabulary and update content/format decisions. Create OPERATING.md to hold the revisable operational plan. Create CHANGELOG.md to log brand decisions over time.
+**Goal:** Update the brand documentation in `docs/100_brand/` to reflect the Ralston-framework brand refinement spec (`docs/100_brand/specs/2026-05-28-brand-refinement-design.md`). Rewrite IDENTITY.md to separate public from internal vocabulary and update content/format decisions. Create OPERATING.md to hold the revisable operational plan. Create CHANGELOG.md to log brand decisions over time.
 
 **Architecture:** Three-document model. IDENTITY.md is the durable identity and design scaffolding (changes rarely). OPERATING.md is the revisable operational plan with cadence, phasing, and learning agenda (changes quarterly). CHANGELOG.md is the append-only decision log (one entry per meaningful brand choice).
 
 **Tech Stack:** Markdown only. No code changes. No tests in the traditional sense. Verification is visual / editorial.
 
-**Source spec:** `docs/brand/specs/2026-05-28-brand-refinement-design.md` (must be read in full before starting).
+**Source spec:** `docs/100_brand/specs/2026-05-28-brand-refinement-design.md` (must be read in full before starting).
 
 ---
 
@@ -16,19 +16,19 @@
 
 | Path | Action | Purpose |
 |---|---|---|
-| `docs/brand/IDENTITY.md` | Modify | 7 distinct edits to sections per spec Section A |
-| `docs/brand/OPERATING.md` | Create | New operational plan per spec Section B |
-| `docs/brand/CHANGELOG.md` | Create | Brand decision log per spec Section C |
-| `docs/brand/specs/2026-05-28-brand-refinement-design.md` | Already created, not yet committed | The source spec |
+| `docs/100_brand/IDENTITY.md` | Modify | 7 distinct edits to sections per spec Section A |
+| `docs/100_brand/OPERATING.md` | Create | New operational plan per spec Section B |
+| `docs/100_brand/CHANGELOG.md` | Create | Brand decision log per spec Section C |
+| `docs/100_brand/specs/2026-05-28-brand-refinement-design.md` | Already created, not yet committed | The source spec |
 
-No new directories needed (`docs/brand/`, `docs/brand/specs/`, `docs/brand/plans/` already exist).
+No new directories needed (`docs/100_brand/`, `docs/100_brand/specs/`, `docs/100_brand/plans/` already exist).
 
 ---
 
 ## Task 1: Add Public Referral Sentences section to IDENTITY.md
 
 **Files:**
-- Modify: `docs/brand/IDENTITY.md` (insert new section between the Thesis section and the Persona section, i.e. after line 11 / before line 13)
+- Modify: `docs/100_brand/IDENTITY.md` (insert new section between the Thesis section and the Persona section, i.e. after line 11 / before line 13)
 
 **Why:** IDENTITY.md currently has no top-level section establishing which sentences are for public use. Adding this section up-front establishes the vocabulary discipline before any internal-only design references appear.
 
@@ -84,7 +84,7 @@ Read the file back. Confirm the new section sits between Thesis and Persona, and
 ## Task 2: Mark the Persona section as internal-only
 
 **Files:**
-- Modify: `docs/brand/IDENTITY.md` (the existing `## The Persona` section, currently lines 13 to 21)
+- Modify: `docs/100_brand/IDENTITY.md` (the existing `## The Persona` section, currently lines 13 to 21)
 
 **Why:** The Persona section contains "Maker-Mover" which the spec marks as internal-only. Adding a banner at the top of the section makes the discipline visible at the point of reading.
 
@@ -108,7 +108,7 @@ The leading `>` should cause the banner to render as a callout. The Persona cont
 ## Task 3: Update Build half section
 
 **Files:**
-- Modify: `docs/brand/IDENTITY.md` (the existing `## Build half: what it is` section, currently lines 53 to 63)
+- Modify: `docs/100_brand/IDENTITY.md` (the existing `## Build half: what it is` section, currently lines 53 to 63)
 
 **Why:** Three changes required by the spec: (1) talking-head dispatches are retired as a standalone format and become segments within the cinematic vlog, (2) the 80/20 Life Sciences content topic mix is added, (3) LinkedIn is added to the surface list.
 
@@ -147,7 +147,7 @@ Confirm the 80/20 topic mix is named, cinematic vlog is the hero format, talking
 ## Task 4: Update Offline half section
 
 **Files:**
-- Modify: `docs/brand/IDENTITY.md` (the existing `## Offline half: what it is` section, currently lines 65 to 77)
+- Modify: `docs/100_brand/IDENTITY.md` (the existing `## Offline half: what it is` section, currently lines 65 to 77)
 
 **Why:** Three changes: (1) YouTube cinematic vlog becomes the hero (was: "future surface"), (2) IG Reels transition to cutdowns post-YouTube-launch (was: "current hero surface"), (3) production/tonal references stay but the section gets simplified since the References table holds them anyway.
 
@@ -181,7 +181,7 @@ Confirm YouTube is named as hero, IG role distinguishes Phase 0 vs Phase 1, trav
 ## Task 5: Add Surface Map section
 
 **Files:**
-- Modify: `docs/brand/IDENTITY.md` (insert new section after `## Offline half: what it is`, before `## What the brand is not`)
+- Modify: `docs/100_brand/IDENTITY.md` (insert new section after `## Offline half: what it is`, before `## What the brand is not`)
 
 **Why:** The spec calls for an explicit four-platform surface map showing role per phase. Currently IDENTITY.md has no consolidated surface table. This section makes the four-platform discipline visible at a glance and explicitly names the deferred channels.
 
@@ -220,7 +220,7 @@ Confirm all four platforms are listed with phase columns. Confirm exclusions are
 ## Task 6: Update References table
 
 **Files:**
-- Modify: `docs/brand/IDENTITY.md` (the existing `## References we borrow from` section, currently lines 97 to 104)
+- Modify: `docs/100_brand/IDENTITY.md` (the existing `## References we borrow from` section, currently lines 97 to 104)
 
 **Why:** Two changes: (1) Daniel Dalen and Oscar Lindhardt are elevated to structural references (was: Dalen as "awareness of high-craft production"), (2) reference type column is added to distinguish structural vs tonal vs production-craft.
 
@@ -252,7 +252,7 @@ Confirm Dalen and Oscar Lindhardt are both marked "Structural." Confirm the inte
 ## Task 7: Rewrite Mission section
 
 **Files:**
-- Modify: `docs/brand/IDENTITY.md` (the existing `## Mission` section, currently lines 170 to 176)
+- Modify: `docs/100_brand/IDENTITY.md` (the existing `## Mission` section, currently lines 170 to 176)
 
 **Why:** The spec's biggest critique of the current IDENTITY.md is that the Mission reads as a values statement rather than a concrete outcome statement. This task replaces it with a rewrite that anchors values to outcomes.
 
@@ -275,7 +275,7 @@ To prove that a tech founder can choose presence and depth over reach and noise.
 - **Secondary:** Content brand as serendipity engine. Sponsorships and creator collabs lag the primary by years and are accepted as inbound, not pursued.
 - **Compound:** Operator/peer network as ambient outcome, not a targeted motion.
 
-See `docs/brand/OPERATING.md` for the revisable operational plan that turns these outcomes into a phased schedule.
+See `docs/100_brand/OPERATING.md` for the revisable operational plan that turns these outcomes into a phased schedule.
 
 ```
 
@@ -288,11 +288,11 @@ Confirm the Mission now references Life Sciences explicitly. Confirm the Outcome
 ## Task 8: Commit IDENTITY.md changes
 
 **Files:**
-- Stage: `docs/brand/IDENTITY.md`
+- Stage: `docs/100_brand/IDENTITY.md`
 
 - [ ] **Step 1: Review the full diff before committing**
 
-Run: `git diff docs/brand/IDENTITY.md`
+Run: `git diff docs/100_brand/IDENTITY.md`
 
 Confirm all seven edits are present and the file flows coherently from top to bottom.
 
@@ -303,7 +303,7 @@ Ask Daniel for commit approval first (per project rule: only commit when request
 When approved, run:
 
 ```bash
-git add docs/brand/IDENTITY.md
+git add docs/100_brand/IDENTITY.md
 git commit -m "$(cat <<'EOF'
 docs(brand): refine IDENTITY per Ralston framework
 
@@ -316,7 +316,7 @@ Apply the brand refinement spec to IDENTITY.md:
 - Elevate Daniel Dalen and Oscar Lindhardt to structural references
 - Rewrite Mission section as outcome statement anchored to Life Sciences
 
-Source: docs/brand/specs/2026-05-28-brand-refinement-design.md
+Source: docs/100_brand/specs/2026-05-28-brand-refinement-design.md
 
 Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
 EOF
@@ -328,19 +328,19 @@ EOF
 ## Task 9: Create OPERATING.md
 
 **Files:**
-- Create: `docs/brand/OPERATING.md`
+- Create: `docs/100_brand/OPERATING.md`
 
 **Why:** OPERATING.md holds the revisable operational plan that IDENTITY.md should not. Cadences, phasing, learning agenda, success criteria all live here. Quarterly review point.
 
 - [ ] **Step 1: Create the file with full content**
 
-Create `docs/brand/OPERATING.md` with the following content:
+Create `docs/100_brand/OPERATING.md` with the following content:
 
 ```markdown
 # Brand Operating Plan
 
-**Source spec:** `docs/brand/specs/2026-05-28-brand-refinement-design.md`
-**Identity:** `docs/brand/IDENTITY.md`
+**Source spec:** `docs/100_brand/specs/2026-05-28-brand-refinement-design.md`
+**Identity:** `docs/100_brand/IDENTITY.md`
 **Review cadence:** quarterly
 
 This document holds the revisable operational plan. Cadences, phasing, learning agenda, and success criteria live here. Identity-level decisions (persona, voice, referral sentences, vocabulary discipline) live in IDENTITY.md and change rarely. Operating decisions in this file are expected to evolve as evidence accumulates.
@@ -518,13 +518,13 @@ Confirm: surface map present, cadence tables present, fallback cadence explicit,
 ## Task 10: Commit OPERATING.md and the spec doc
 
 **Files:**
-- Stage: `docs/brand/OPERATING.md`
-- Stage: `docs/brand/specs/2026-05-28-brand-refinement-design.md` (the spec, not yet committed)
-- Stage: `docs/brand/plans/2026-05-28-brand-refinement-implementation.md` (this plan, not yet committed)
+- Stage: `docs/100_brand/OPERATING.md`
+- Stage: `docs/100_brand/specs/2026-05-28-brand-refinement-design.md` (the spec, not yet committed)
+- Stage: `docs/100_brand/plans/2026-05-28-brand-refinement-implementation.md` (this plan, not yet committed)
 
 - [ ] **Step 1: Review what will be committed**
 
-Run: `git status` and `git diff --stat docs/brand/`
+Run: `git status` and `git diff --stat docs/100_brand/`
 
 Confirm OPERATING.md is staged for creation along with the spec and plan.
 
@@ -535,19 +535,19 @@ Ask Daniel for commit approval first.
 When approved, run:
 
 ```bash
-git add docs/brand/OPERATING.md docs/brand/specs/2026-05-28-brand-refinement-design.md docs/brand/plans/2026-05-28-brand-refinement-implementation.md
+git add docs/100_brand/OPERATING.md docs/100_brand/specs/2026-05-28-brand-refinement-design.md docs/100_brand/plans/2026-05-28-brand-refinement-implementation.md
 git commit -m "$(cat <<'EOF'
 docs(brand): add OPERATING plan, spec, and implementation plan
 
-- docs/brand/specs/2026-05-28-brand-refinement-design.md
+- docs/100_brand/specs/2026-05-28-brand-refinement-design.md
   Brand refinement design spec derived from Caleb Ralston's reverse-order
   framework (outcome -> known for -> what to do -> what to learn).
 
-- docs/brand/OPERATING.md
+- docs/100_brand/OPERATING.md
   Revisable operational plan with surface map, cadence, phasing, learning
   agenda, Phase 0 prep checklist, success criteria. Quarterly review point.
 
-- docs/brand/plans/2026-05-28-brand-refinement-implementation.md
+- docs/100_brand/plans/2026-05-28-brand-refinement-implementation.md
   Stepwise implementation plan that produced this commit and the IDENTITY
   updates.
 
@@ -561,13 +561,13 @@ EOF
 ## Task 11: Create CHANGELOG.md
 
 **Files:**
-- Create: `docs/brand/CHANGELOG.md`
+- Create: `docs/100_brand/CHANGELOG.md`
 
 **Why:** Append-only brand decision log. Lets future-Daniel remember why each meaningful brand choice was made. First entry is this spec.
 
 - [ ] **Step 1: Create the file with first entry**
 
-Create `docs/brand/CHANGELOG.md` with the following content:
+Create `docs/100_brand/CHANGELOG.md` with the following content:
 
 ```markdown
 # Brand Changelog
@@ -589,9 +589,9 @@ Format per entry:
 
 **Rationale:** The existing IDENTITY.md captured persona and voice well but left three things under-defined: the desired outcome (read as values, not outcome), the public-facing referral sentence (no industry-standard version existed), and the operational plan (no cadence, no phasing, no learning agenda). Working through Ralston's four steps in sequence produced concrete decisions on all three: two public referral sentences in industry-standard vocabulary ("He builds Life Sciences products" / "A tech founder seeking human connection through movement, food, and culture"), a four-platform surface map with phased roles, and a learning agenda focused on cinematic short-form production craft as the urgent gap.
 
-**Source:** `docs/brand/specs/2026-05-28-brand-refinement-design.md`
+**Source:** `docs/100_brand/specs/2026-05-28-brand-refinement-design.md`
 
-**Implementation:** `docs/brand/plans/2026-05-28-brand-refinement-implementation.md`
+**Implementation:** `docs/100_brand/plans/2026-05-28-brand-refinement-implementation.md`
 
 ```
 
@@ -604,7 +604,7 @@ Confirm: format-per-entry description is present, first entry is dated 2026-05-2
 ## Task 12: Commit CHANGELOG.md
 
 **Files:**
-- Stage: `docs/brand/CHANGELOG.md`
+- Stage: `docs/100_brand/CHANGELOG.md`
 
 - [ ] **Step 1: Stage and commit**
 
@@ -613,7 +613,7 @@ Ask Daniel for commit approval.
 When approved, run:
 
 ```bash
-git add docs/brand/CHANGELOG.md
+git add docs/100_brand/CHANGELOG.md
 git commit -m "$(cat <<'EOF'
 docs(brand): add brand decision changelog
 
