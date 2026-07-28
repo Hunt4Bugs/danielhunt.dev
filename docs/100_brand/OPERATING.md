@@ -1,7 +1,7 @@
 # Brand Operating Plan
 
-**Source spec:** `docs/brand/specs/2026-05-28-brand-refinement-design.md`
-**Identity:** `docs/brand/IDENTITY.md`
+**Source spec:** `docs/100_brand/specs/2026-05-28-brand-refinement-design.md`
+**Identity:** `docs/100_brand/IDENTITY.md`
 **Review cadence:** quarterly
 
 This document holds the revisable operational plan. Cadences, phasing, learning agenda, and success criteria live here. Identity-level decisions (persona, voice, referral sentences, vocabulary discipline) live in IDENTITY.md and change rarely. Operating decisions in this file are expected to evolve as evidence accumulates.

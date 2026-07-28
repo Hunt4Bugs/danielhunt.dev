@@ -180,7 +180,7 @@ Deliberately excluded:
 
 These exclusions are revisable. They prevent overload during Phase 0.
 
-For phase definitions, cadence per surface, and learning agenda, see `docs/brand/OPERATING.md`.
+For phase definitions, cadence per surface, and learning agenda, see `docs/100_brand/OPERATING.md`.
 
 ## What the brand is not
 
@@ -300,4 +300,4 @@ To prove that a tech founder can choose presence and depth over reach and noise.
 - **Secondary:** Content brand as serendipity engine. Sponsorships and creator collabs lag the primary by years and are accepted as inbound, not pursued.
 - **Compound:** Operator/peer network as ambient outcome, not a targeted motion.
 
-See `docs/brand/OPERATING.md` for the revisable operational plan that turns these outcomes into a phased schedule.
+See `docs/100_brand/OPERATING.md` for the revisable operational plan that turns these outcomes into a phased schedule.
