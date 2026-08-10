@@ -582,7 +582,75 @@ code {
 }
 
 /* ============================================================
-   10 · Contact form (htmx + Web3Forms)
+   10 · Contact card
+   ============================================================ */
+
+.contact-card {
+  display: grid;
+  min-height: calc(100vh - 5rem);
+  align-content: center;
+  padding-block: 4rem;
+}
+
+.contact-card__content {
+  max-width: 42rem;
+}
+
+.contact-card__title {
+  margin-top: 1.5rem;
+  font-size: clamp(3.25rem, 11vw, 7rem);
+  color: rgb(var(--text));
+}
+
+.contact-card__intro {
+  margin-top: 1.5rem;
+  max-width: 32rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: rgb(var(--muted));
+}
+
+.contact-card__body {
+  display: grid;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.contact-card__portrait {
+  width: min(100%, 15rem);
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 50% 24%;
+  filter: grayscale(8%);
+}
+
+.contact-card__qr {
+  width: min(100%, 17rem);
+  border: 1px solid rgb(var(--line));
+}
+
+.contact-card__actions {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+}
+
+.contact-card__note {
+  max-width: 22rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgb(var(--muted));
+}
+
+@media (min-width: 640px) {
+  .contact-card__body {
+    grid-template-columns: 15rem minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+/* ============================================================
+   11 · Contact form (htmx + Web3Forms)
    ============================================================ */
 
 .contact-form {
@@ -621,7 +689,7 @@ code {
 }
 
 /* ============================================================
-   11 · Footer (rendered by <site-footer>)
+   12 · Footer (rendered by <site-footer>)
    ============================================================ */
 
 .site-footer {
@@ -665,7 +733,7 @@ code {
 }
 
 /* ============================================================
-   12 · Brand page
+   13 · Brand page
    ============================================================ */
 
 .brand-main {
@@ -803,7 +871,7 @@ code {
 }
 
 /* ============================================================
-   13 · Spacing helpers (Tailwind scale: 1 unit = 0.25rem)
+   14 · Spacing helpers (Tailwind scale: 1 unit = 0.25rem)
    ============================================================ */
 
 .mt-1  { margin-top: 0.25rem; }
@@ -817,7 +885,7 @@ code {
 .mb-5  { margin-bottom: 1.25rem; }
 
 /* ============================================================
-   14 · Scroll reveal
+   15 · Scroll reveal
    ============================================================ */
 
 .reveal {

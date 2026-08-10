@@ -6,7 +6,7 @@ const SITE = {
   location: 'Simi Valley, California',
   email: 'contact@danielhunt.dev',
   socials: {
-    linkedin: 'https://www.linkedin.com/in/danielhunt16/',
+    linkedin: 'https://www.linkedin.com/in/danielhuntdev',
     x: 'https://x.com/danielhunt_dev',
   },
 };
