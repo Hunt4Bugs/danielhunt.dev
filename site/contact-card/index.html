@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>Save Daniel Hunt's contact</title>
+    <meta name="description" content="Save Daniel Hunt's contact details to your phone." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://danielhunt.dev/contact-card/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/css/site.css" />
+    <script src="/js/site.js" defer></script>
+  </head>
+  <body>
+    <a href="#main" class="sr-only skip-link">Skip to content</a>
+
+    <site-nav></site-nav>
+
+    <main id="main">
+      <section class="contact-card" aria-labelledby="contact-card-heading">
+        <div class="container-page">
+          <div class="contact-card__content">
+            <p class="mono-label">Contact card</p>
+            <h1 id="contact-card-heading" class="wordmark contact-card__title">Daniel Hunt</h1>
+            <p class="contact-card__intro">Scan the code to open a pre-filled contact card, then confirm Save on your phone.</p>
+
+            <div class="contact-card__body">
+              <img
+                class="contact-card__portrait"
+                src="/images/daniel-hunt-headshot.jpeg"
+                alt="Portrait of Daniel Hunt"
+                width="1586"
+                height="1982"
+              />
+              <div class="contact-card__actions">
+                <img
+                  class="contact-card__qr"
+                  src="/images/daniel-hunt-contact-qr.svg"
+                  alt="QR code for Daniel Hunt's contact card"
+                  width="296"
+                  height="296"
+                />
+                <a class="editorial-link" href="/daniel-hunt.vcf">Save contact</a>
+                <p class="contact-card__note">The card includes Daniel's email, website, LinkedIn, X, and contact photo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <site-footer></site-footer>
+  </body>
+</html>

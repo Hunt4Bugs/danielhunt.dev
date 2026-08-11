@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Hunt;Daniel;;;
+FN:Daniel Hunt
+EMAIL;TYPE=INTERNET:contact@danielhunt.dev
+URL;TYPE=WORK:https://danielhunt.dev/
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/danielhuntdev
+URL;TYPE=Twitter:https://x.com/danielhunt_dev
+PHOTO;VALUE=URI:https://danielhunt.dev/images/daniel-hunt-headshot.jpeg
+END:VCARD
