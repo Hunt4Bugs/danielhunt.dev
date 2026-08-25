@@ -6,182 +6,191 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <title>Build in public. Live offline. — Daniel Hunt</title>
-    <meta name="description" content="Tech, movement, and culture. Built and documented by Daniel Hunt." />
+    <meta name="description" content="Daniel Hunt builds Life Sciences products and documents the search for a more human way to build, move, and pay attention." />
     <meta name="author" content="Daniel Hunt" />
-    <meta name="keywords" content="Daniel Hunt, personal brand, movement, food culture, systems thinking, human connection, observational writing, ventures, products, consulting, intentional technology" />
     <link rel="canonical" href="https://danielhunt.dev/" />
-    <meta name="application-name" content="Daniel Hunt" />
-    <meta name="apple-mobile-web-app-title" content="Daniel Hunt" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Daniel Hunt" />
     <meta property="og:title" content="Build in public. Live offline. — Daniel Hunt" />
-    <meta property="og:description" content="Tech, movement, and culture. Built and documented by Daniel Hunt." />
+    <meta property="og:description" content="Tech, movement, and culture." />
     <meta property="og:url" content="https://danielhunt.dev/" />
     <meta property="og:image" content="https://danielhunt.dev/og.png" />
-    <meta property="og:image:secure_url" content="https://danielhunt.dev/og.png" />
-    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Daniel Hunt editorial preview — Builder, writer, and systems observer" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:alt" content="Daniel Hunt — Build in public. Live offline." />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Build in public. Live offline. — Daniel Hunt" />
-    <meta name="twitter:description" content="Tech, movement, and culture. Built and documented by Daniel Hunt." />
+    <meta name="twitter:description" content="Tech, movement, and culture." />
     <meta name="twitter:image" content="https://danielhunt.dev/og.png" />
-    <meta name="twitter:image:alt" content="Daniel Hunt editorial preview — Builder, writer, and systems observer" />
     <meta name="twitter:site" content="@danielhunt_dev" />
     <meta name="twitter:creator" content="@danielhunt_dev" />
 
-    <meta name="theme-color" content="#FFFFFF" />
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#0A0C10" />
+    <meta name="color-scheme" content="light dark" />
 
-    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://danielhunt.dev/#person","name":"Daniel Hunt","url":"https://danielhunt.dev","email":"mailto:contact@danielhunt.dev","jobTitle":"Builder, writer, and systems observer","description":"Daniel Hunt builds and documents a life around movement, systems, food, culture, observation, and staying human in a distracted world.","image":"https://danielhunt.dev/og.png","sameAs":["https://www.linkedin.com/in/danielhuntdev","https://x.com/danielhunt_dev"],"knowsAbout":["Daniel Hunt","personal brand","movement","food culture","systems thinking","human connection","observational writing","ventures","products","consulting","intentional technology"]},{"@type":"WebSite","@id":"https://danielhunt.dev/#website","url":"https://danielhunt.dev","name":"Daniel Hunt","description":"Daniel Hunt builds and documents a life around movement, systems, food, culture, observation, and staying human in a distracted world.","publisher":{"@id":"https://danielhunt.dev/#person"},"inLanguage":"en"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://danielhunt.dev"}]}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://danielhunt.dev/#person","name":"Daniel Hunt","url":"https://danielhunt.dev","email":"mailto:contact@danielhunt.dev","jobTitle":"Life Sciences product builder","description":"Daniel Hunt builds Life Sciences products and documents the search for a more human way to build, move, and pay attention.","sameAs":["https://www.linkedin.com/in/danielhuntdev","https://x.com/danielhunt_dev"]},{"@type":"WebSite","@id":"https://danielhunt.dev/#website","url":"https://danielhunt.dev","name":"Daniel Hunt","publisher":{"@id":"https://danielhunt.dev/#person"},"inLanguage":"en"}]}</script>
 
-    <!-- Fonts: Instrument Serif (display) + Inter (UI + body) -->
+    <link rel="preconnect" href="https://api.fontshare.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="/css/site.css" />
-
-    <!-- htmx must be allowed to POST cross-origin to Web3Forms -->
+    <link rel="stylesheet" href="/css/site.css?v=vexoo-brand-1" />
     <meta name="htmx-config" content='{"selfRequestsOnly":false}' />
     <script src="/js/htmx.min.js" defer></script>
-    <script src="/js/site.js" defer></script>
+    <script src="/js/site.js?v=vexoo-brand-1" defer></script>
   </head>
-  <body>
-    <a href="#top" class="sr-only skip-link">Skip to content</a>
+  <body class="site-vexoo">
+    <a href="#content" class="sr-only skip-link">Skip to content</a>
 
-    <site-nav></site-nav>
+    <header class="vexoo-header" aria-label="Site header">
+      <button class="vexoo-header__brand" type="button" data-home aria-label="Return home">
+        <span class="vexoo-header__home-indicator" aria-hidden="true"></span>
+        <span data-home-label>Daniel Hunt</span>
+      </button>
+      <p class="vexoo-header__role">Life Sciences founder</p>
+      <p class="vexoo-header__place"><span>Simi Valley</span> · <time id="local-time">--:--</time></p>
+      <button class="theme-switch" id="theme-switch" type="button" aria-label="Switch to light mode" aria-pressed="false">
+        <span class="theme-switch__thumb" aria-hidden="true"></span>
+      </button>
+    </header>
 
-    <main id="main">
-      <section id="top" class="hairline-b" aria-labelledby="hero-heading">
-        <div class="container-page">
-          <div class="hero">
-            <div class="hero__content">
-              <h1 id="hero-heading" class="wordmark hero__title">Daniel Hunt</h1>
+    <main id="content">
+      <section class="home-view" data-view="home" aria-labelledby="home-heading">
+        <h1 id="home-heading" class="sr-only">Daniel Hunt — Build in public. Live offline.</h1>
+        <p class="home-wordmark" id="home-wordmark" aria-hidden="true">DANIEL HUNT</p>
 
-              <p class="display hero__thesis">Build in public. Live offline.</p>
-              <p class="hero__sub">Tech, movement, and culture.</p>
+        <div class="home-grid">
+          <button class="vexoo-card vexoo-card--about" type="button" data-view-target="about" data-title="About">
+            <span class="vexoo-card__label">About</span>
+            <img class="vexoo-card__icon" src="/images/arrow-up-right.svg" alt="" />
+          </button>
 
-              <dl class="hero__status">
-                <dt class="mono-label">Currently building</dt>
-                <dd>Datavial &middot; Life Sciences SaaS</dd>
-                <dt class="mono-label">Currently in</dt>
-                <dd>Simi Valley, California</dd>
-              </dl>
+          <button class="vexoo-card vexoo-card--field" type="button" data-view-target="field" data-title="Build / Offline">
+            <span class="vexoo-card__eyebrow">Tech, movement, and culture.</span>
+            <span class="vexoo-card__label">Build in public. Live offline.</span>
+            <img class="vexoo-card__icon" src="/images/arrow-up-right.svg" alt="" />
+          </button>
 
-              <div class="actions-row hero__actions">
-                <a href="mailto:contact@danielhunt.dev" class="editorial-link">Email</a>
-                <a href="https://www.linkedin.com/in/danielhuntdev" target="_blank" rel="noopener noreferrer me" class="editorial-link">LinkedIn</a>
-                <a href="https://x.com/danielhunt_dev" target="_blank" rel="noopener noreferrer me" class="editorial-link">X / Twitter</a>
-              </div>
-            </div>
+          <button class="vexoo-card vexoo-card--contact" type="button" data-view-target="contact" data-title="Contact">
+            <span class="vexoo-card__label">Contact</span>
+            <img class="vexoo-card__icon" src="/images/arrow-up-right.svg" alt="" />
+          </button>
+
+          <figure class="vexoo-card vexoo-card--portrait" data-title="Daniel Hunt">
+            <img src="/images/daniel-hunt-headshot.jpeg" alt="Daniel Hunt" fetchpriority="high" />
+            <figcaption class="sr-only">Black-and-white portrait of Daniel Hunt.</figcaption>
+          </figure>
+
+          <figure class="vexoo-card vexoo-card--signal" data-title="Public Signal">
+            <img src="/images/profile-signal-v1.png" alt="A quiet data wave with one Acid Green active point" />
+            <figcaption class="sr-only">Public signal visualization.</figcaption>
+          </figure>
+
+          <a class="vexoo-card vexoo-card--profile" href="https://www.linkedin.com/in/danielhuntdev" target="_blank" rel="noopener noreferrer me" data-title="Profile">
+            <span class="vexoo-card__eyebrow"><span class="status-dot" aria-hidden="true"></span>Available online</span>
+            <span class="vexoo-card__label">LinkedIn</span>
+            <img class="vexoo-card__icon" src="/images/arrow-up-right.svg" alt="" />
+          </a>
+        </div>
+      </section>
+
+      <section class="detail-view" data-view="about" aria-labelledby="about-title" hidden>
+        <p class="detail-view__index">01 · About</p>
+        <h2 class="detail-view__title" id="about-title">About</h2>
+        <div class="detail-view__body detail-view__body--about">
+          <p class="detail-view__statement">I build Life Sciences products and document the search for a more human way to build, move, and pay attention.</p>
+          <div class="detail-view__copy">
+            <p>The work sits between software and the real world: regulated lab operations, systems that have to earn trust, and the people who live with their consequences.</p>
+            <p>Outside the workshop, I follow movement, food, and culture as ways back into attention and human connection. Building and moving are parallel rituals for staying human.</p>
+          </div>
+          <dl class="detail-register" aria-label="Daniel Hunt profile">
+            <div><dt>Build</dt><dd>Life Sciences products</dd></div>
+            <div><dt>Offline</dt><dd>Movement · food · culture</dd></div>
+            <div><dt>Method</dt><dd>Build · observe · report back</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="detail-view" data-view="field" aria-labelledby="field-title" hidden>
+        <p class="detail-view__index">02 · Field notes</p>
+        <h2 class="detail-view__title detail-view__title--wide" id="field-title">Build / Offline</h2>
+        <div class="detail-view__body">
+          <p class="detail-view__statement">Build in public.<br />Live offline.</p>
+          <p class="detail-view__lede">Tech, movement, and culture. One public search for work that compounds into the real world, and a life that still feels lived.</p>
+          <div class="field-grid">
+            <a class="field-link" href="https://x.com/danielhunt_dev" target="_blank" rel="noopener noreferrer me">
+              <span class="field-link__index">BUILD / 01</span>
+              <strong>Build journal</strong>
+              <span>Shipping notes, Life Sciences observations, and fragments from the workshop.</span>
+              <span class="field-link__action">Read on X</span>
+            </a>
+            <a class="field-link" href="https://www.linkedin.com/in/danielhuntdev" target="_blank" rel="noopener noreferrer me">
+              <span class="field-link__index">SIGNAL / 02</span>
+              <strong>Professional notes</strong>
+              <span>Product work, systems thinking, and the walk into Life Sciences.</span>
+              <span class="field-link__action">View LinkedIn</span>
+            </a>
           </div>
         </div>
       </section>
 
-      <section id="about" class="section hairline-b" aria-labelledby="about-heading">
-        <div class="container-page">
-          <div class="sidebar-grid">
-            <p class="mono-label">About</p>
-            <div>
-              <h2 id="about-heading" class="display section-heading">
-                A public search for a more human way to build, move, and pay attention.
-              </h2>
-              <p class="section-body">
-                This is the home base for writing, products, ventures, and occasional consulting shaped by the same lens: movement as understanding, systems as clarity, food and culture as connection, and observation as a way back into the world.
-              </p>
-
-              <figure class="about__portrait">
-                <img
-                  src="/images/daniel-hunt-headshot.jpeg"
-                  alt="Portrait of Daniel Hunt"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption class="mono-label">Daniel Hunt &middot; Simi Valley &middot; 2026</figcaption>
-              </figure>
-            </div>
+      <section class="detail-view" data-view="contact" aria-labelledby="contact-title" hidden>
+        <p class="detail-view__index">03 · Contact</p>
+        <h2 class="detail-view__title" id="contact-title">Contact</h2>
+        <div class="contact-layout">
+          <div class="contact-intro">
+            <p class="detail-view__statement">If there is a conversation worth having, send a note.</p>
+            <dl class="contact-links">
+              <div><dt>Email</dt><dd><a href="mailto:contact@danielhunt.dev">contact@danielhunt.dev</a></dd></div>
+              <div><dt>X</dt><dd><a href="https://x.com/danielhunt_dev" target="_blank" rel="noopener noreferrer me">@danielhunt_dev</a></dd></div>
+              <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/danielhuntdev" target="_blank" rel="noopener noreferrer me">danielhuntdev</a></dd></div>
+            </dl>
           </div>
-        </div>
-      </section>
 
-      <section id="contact" class="section" aria-labelledby="contact-heading">
-        <div class="container-page">
-          <div class="sidebar-grid">
-            <p class="mono-label">Contact</p>
-            <div>
-              <h2 id="contact-heading" class="display section-heading">Send a note.</h2>
-              <p class="section-body section-body--narrow">
-                Questions, product ideas, possible collaborations, or a conversation worth having.
-              </p>
+          <form
+            id="contact-form"
+            class="vexoo-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            hx-post="https://api.web3forms.com/submit"
+            hx-swap="none"
+            hx-disabled-elt="find button"
+            hx-on::config-request="event.detail.headers = { Accept: 'application/json' };"
+            hx-on::after-request="
+              const status = document.getElementById('form-status');
+              status.hidden = false;
+              if (event.detail.successful) {
+                this.reset();
+                status.textContent = 'Sent. Thank you, I read everything.';
+                status.className = 'form-status form-status--ok';
+              } else {
+                status.textContent = 'Something went wrong. Email me directly at contact@danielhunt.dev.';
+                status.className = 'form-status form-status--error';
+              }"
+          >
+            <input type="hidden" name="access_key" value="WEB3FORMS_KEY_PLACEHOLDER" />
+            <input type="hidden" name="subject" value="New message from danielhunt.dev" />
+            <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off" />
 
-              <form
-                id="contact-form"
-                class="contact-form"
-                action="https://api.web3forms.com/submit"
-                method="POST"
-                hx-post="https://api.web3forms.com/submit"
-                hx-swap="none"
-                hx-disabled-elt="find button"
-                hx-on::config-request="
-                  /* Web3Forms' CORS policy rejects htmx's HX-* headers; strip
-                     them so the POST stays a simple request. */
-                  event.detail.headers = { Accept: 'application/json' };"
-                hx-on::after-request="
-                  const status = document.getElementById('form-status');
-                  status.hidden = false;
-                  if (event.detail.successful) {
-                    this.reset();
-                    status.textContent = 'Sent. Thank you, I read everything.';
-                    status.className = 'form-status form-status--ok';
-                  } else {
-                    status.textContent = 'Something went wrong. Email me directly at contact@danielhunt.dev.';
-                    status.className = 'form-status form-status--error';
-                  }"
-              >
-                <input type="hidden" name="access_key" value="WEB3FORMS_KEY_PLACEHOLDER" />
-                <input type="hidden" name="subject" value="New message from danielhunt.dev" />
-                <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off" />
+            <label for="cf-name">Full name</label>
+            <input id="cf-name" name="name" type="text" required autocomplete="name" placeholder="Your name" />
 
-                <div class="contact-form__field">
-                  <label class="mono-label" for="cf-name">Name</label>
-                  <input class="input-underline" id="cf-name" name="name" type="text" required autocomplete="name" />
-                </div>
+            <label for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" />
 
-                <div class="contact-form__field">
-                  <label class="mono-label" for="cf-email">Email</label>
-                  <input class="input-underline" id="cf-email" name="email" type="email" required autocomplete="email" />
-                </div>
+            <label for="cf-message">What should we talk about?</label>
+            <textarea id="cf-message" name="message" rows="5" required placeholder="A little context goes a long way."></textarea>
 
-                <div class="contact-form__field">
-                  <label class="mono-label" for="cf-message">Message</label>
-                  <textarea class="input-underline" id="cf-message" name="message" rows="5" required></textarea>
-                </div>
-
-                <button type="submit" class="btn-primary contact-form__submit">Send</button>
-                <p id="form-status" class="form-status" role="status" aria-live="polite" hidden></p>
-              </form>
-
-              <div class="actions-row contact__actions">
-                <a href="mailto:contact@danielhunt.dev" class="editorial-link">contact@danielhunt.dev</a>
-                <a href="https://www.linkedin.com/in/danielhuntdev" target="_blank" rel="noopener noreferrer me" class="editorial-link">LinkedIn</a>
-                <a href="https://x.com/danielhunt_dev" target="_blank" rel="noopener noreferrer me" class="editorial-link">X / Twitter</a>
-              </div>
-            </div>
-          </div>
+            <button type="submit">Send message</button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite" hidden></p>
+          </form>
         </div>
       </section>
     </main>
-
-    <site-footer></site-footer>
   </body>
 </html>

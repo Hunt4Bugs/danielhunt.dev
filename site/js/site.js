@@ -11,7 +11,18 @@ const SITE = {
   },
 };
 
+/* A URL-scoped preview keeps light-mode QA and brand production reproducible
+   without changing the dark default or persisting a visitor preference. */
+const previewTheme = new URLSearchParams(window.location.search).get('theme');
+if (previewTheme === 'light' || previewTheme === 'dark') {
+  document.documentElement.dataset.theme = previewTheme;
+  document
+    .querySelector('meta[name="theme-color"]')
+    ?.setAttribute('content', previewTheme === 'light' ? '#F5F7FA' : '#0A0C10');
+}
+
 const NAV_LINKS = [
+  { label: 'Index', href: '/#top' },
   { label: 'About', href: '/#about' },
   { label: 'Contact', href: '/#contact' },
 ];
@@ -20,18 +31,20 @@ const NAV_LINKS = [
 
 class SiteNav extends HTMLElement {
   connectedCallback() {
+    const onHome = window.location.pathname === '/' || window.location.pathname === '/index.html';
+    const resolveHref = (href) => onHome ? href.replace('/#', '#') : href;
     const links = NAV_LINKS.map(
-      (link) => `<a href="${link.href}" class="link-cinema">${link.label}</a>`
+      (link) => `<a href="${resolveHref(link.href)}" class="link-cinema">${link.label}</a>`
     ).join('');
     const mobileLinks = NAV_LINKS.map(
-      (link) => `<a href="${link.href}" class="mobile-menu__link">${link.label}</a>`
+      (link) => `<a href="${resolveHref(link.href)}" class="mobile-menu__link">${link.label}</a>`
     ).join('');
 
     this.innerHTML = `
       <header class="site-header">
         <div class="container-page">
           <div class="site-header__bar">
-            <a href="#top" class="site-header__brand" aria-label="Daniel Hunt — home">
+            <a href="/" class="site-header__brand" aria-label="Daniel Hunt — home">
               <span class="monogram-mark site-header__monogram">DH</span>
               <span class="site-header__name">Daniel Hunt</span>
             </a>
@@ -39,8 +52,8 @@ class SiteNav extends HTMLElement {
             <nav class="site-header__nav" aria-label="Primary">${links}</nav>
 
             <div class="site-header__meta">
-              <span class="mono-label">${SITE.location.split(',')[0]}</span>
-              <span id="la-time" class="mono-label">Loading time</span>
+              <span class="status-dot" aria-hidden="true"></span>
+              <span class="mono-label">Public log / active</span>
             </div>
 
             <button
@@ -57,31 +70,13 @@ class SiteNav extends HTMLElement {
       <nav id="mobile-menu" class="mobile-menu hidden" aria-label="Mobile">
         <div class="container-page mobile-menu__inner">
           ${mobileLinks}
-          <p class="mono-label">${SITE.location}</p>
-          <p id="la-time-mobile" class="mono-label">Loading time</p>
+          <p class="mono-label"><span class="status-dot" aria-hidden="true"></span>Public log / active</p>
         </div>
       </nav>
     `;
 
     const btn = this.querySelector('#mobile-menu-btn');
     const menu = this.querySelector('#mobile-menu');
-    const laTime = this.querySelector('#la-time');
-    const laTimeMobile = this.querySelector('#la-time-mobile');
-
-    const updateTime = () => {
-      const formatted = new Intl.DateTimeFormat('en-US', {
-        timeZone: 'America/Los_Angeles',
-        hour: 'numeric',
-        minute: '2-digit',
-        hour12: true,
-      }).format(new Date());
-
-      laTime.textContent = formatted;
-      laTimeMobile.textContent = formatted;
-    };
-
-    updateTime();
-    window.setInterval(updateTime, 60000);
 
     const closeMenu = () => {
       menu.classList.add('hidden');
@@ -117,13 +112,13 @@ class SiteFooter extends HTMLElement {
         <h2 id="footer-heading" class="sr-only">Site footer</h2>
         <div class="container-page">
           <div class="site-footer__row">
-            <a href="#top" class="monogram-mark site-footer__monogram" aria-label="Daniel Hunt — home">DH</a>
+            <a href="/" class="monogram-mark site-footer__monogram" aria-label="Daniel Hunt — home">DH</a>
             <div class="site-footer__meta">
               <p class="mono-value">&copy; ${year} &middot; ${SITE.name.toUpperCase()}</p>
               <div class="site-footer__links">
                 <a href="/#about" class="mono-value link-cinema">About</a>
                 <a href="/#contact" class="mono-value link-cinema">Contact</a>
-                <a href="/brand" class="mono-value link-cinema">Brand</a>
+                <a href="/brand" class="mono-value link-cinema">design.md</a>
               </div>
             </div>
           </div>
@@ -157,4 +152,113 @@ if (!('IntersectionObserver' in window) ||
     { rootMargin: '0px 0px -15% 0px', threshold: 0.08 }
   );
   els.forEach((el) => io.observe(el));
+}
+
+/* ── Vexoo-derived home composition ────────────────────────── */
+
+if (document.body.classList.contains('site-vexoo')) {
+  const body = document.body;
+  const homeView = document.querySelector('[data-view="home"]');
+  const detailViews = [...document.querySelectorAll('.detail-view[data-view]')];
+  const viewTriggers = [...document.querySelectorAll('[data-view-target]')];
+  const homeTriggers = [...document.querySelectorAll('[data-home]')];
+  const homeLabel = document.querySelector('[data-home-label]');
+  const wordmark = document.querySelector('#home-wordmark');
+  const themeSwitch = document.querySelector('#theme-switch');
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const timeNode = document.querySelector('#local-time');
+  const defaultWordmark = 'DANIEL HUNT';
+  const validViews = new Set(detailViews.map((view) => view.dataset.view));
+  let wordmarkTimer;
+
+  const currentTheme = () => document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+
+  const syncThemeControl = () => {
+    const light = currentTheme() === 'light';
+    themeSwitch?.setAttribute('aria-pressed', String(light));
+    themeSwitch?.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
+    themeMeta?.setAttribute('content', light ? '#F5F7FA' : '#0A0C10');
+  };
+
+  const setTheme = (theme) => {
+    document.documentElement.dataset.theme = theme;
+    const url = new URL(window.location.href);
+    url.searchParams.set('theme', theme);
+    window.history.replaceState(window.history.state, '', url);
+    syncThemeControl();
+  };
+
+  themeSwitch?.addEventListener('click', () => {
+    setTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+  });
+
+  const setWordmark = (label) => {
+    if (!wordmark || wordmark.textContent === label) return;
+    window.clearTimeout(wordmarkTimer);
+    wordmark.classList.add('is-changing');
+    wordmarkTimer = window.setTimeout(() => {
+      wordmark.textContent = label;
+      wordmark.classList.remove('is-changing');
+    }, 110);
+  };
+
+  document.querySelectorAll('[data-title]').forEach((card) => {
+    card.addEventListener('pointerenter', () => setWordmark(card.dataset.title));
+    card.addEventListener('pointerleave', () => setWordmark(defaultWordmark));
+    card.addEventListener('focusin', () => setWordmark(card.dataset.title));
+    card.addEventListener('focusout', () => setWordmark(defaultWordmark));
+  });
+
+  const showView = (name, options = {}) => {
+    const detailName = validViews.has(name) ? name : null;
+    const isHome = detailName === null;
+
+    homeView.hidden = !isHome;
+    detailViews.forEach((view) => {
+      view.hidden = view.dataset.view !== detailName;
+    });
+    body.classList.toggle('detail-open', !isHome);
+    homeLabel.textContent = isHome ? 'Daniel Hunt' : 'Home';
+
+    if (options.updateHistory !== false) {
+      const url = new URL(window.location.href);
+      url.hash = isHome ? '' : detailName;
+      window.history.pushState({ view: detailName || 'home' }, '', url);
+    }
+
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    if (!isHome && options.focus !== false) {
+      const title = document.querySelector(`[data-view="${detailName}"] h2`);
+      title?.setAttribute('tabindex', '-1');
+      title?.focus({ preventScroll: true });
+    }
+  };
+
+  viewTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => showView(trigger.dataset.viewTarget));
+  });
+
+  homeTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      if (body.classList.contains('detail-open')) showView(null);
+    });
+  });
+
+  window.addEventListener('popstate', () => {
+    showView(window.location.hash.slice(1), { updateHistory: false, focus: false });
+  });
+
+  const updateLocalTime = () => {
+    if (!timeNode) return;
+    timeNode.textContent = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Los_Angeles',
+      hour: 'numeric',
+      minute: '2-digit',
+    }).format(new Date());
+  };
+
+  syncThemeControl();
+  updateLocalTime();
+  window.setInterval(updateLocalTime, 30_000);
+  showView(window.location.hash.slice(1), { updateHistory: false, focus: false });
 }

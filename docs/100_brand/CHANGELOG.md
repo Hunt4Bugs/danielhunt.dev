@@ -11,6 +11,52 @@ Format per entry:
 
 ---
 
+## 2026-08-25: Spatial profile index adopted
+
+**Decision:** Replace the prior cinematic profile stage with a Vexoo-derived, full-viewport spatial index while retaining the canonical `design.md` system and one-page architecture.
+
+**Rationale:** The index gives the brand a more immediate social-profile rhythm without duplicating the portrait or drifting into dashboard UI. One monochrome headshot carries the human layer, the profile-signal object carries the active Acid Green state, and the remaining surfaces stay neutral and navigational.
+
+**Source:** User-selected Vexoo Framer template, adapted to Daniel Hunt's canonical identity and visual rules on 2026-08-25.
+
+**Implementation:** `docs/100_brand/DESIGN.md`, `docs/100_brand/VISUAL.md`, `site/index.html`, `site/css/site.css`, `site/js/site.js`
+
+---
+
+## 2026-08-25: Cinematic social-profile stage adopted
+
+**Decision:** Use a framed social-profile composition for the Phase B homepage: one clean black-and-white portrait, one editorial identity block, and one compact Dataland signal visualization in place of a repeated portrait avatar.
+
+**Rationale:** The composition brings the cinematic scale and social immediacy of the selected references into the existing computational exhibit system without turning the site into a dashboard or duplicating the creator image. The portrait stays human and unedited; the visualization carries the expressive system language.
+
+**Source:** Product Design ideation and selected hybrid of options 2 and 1, refined on 2026-08-25.
+
+**Implementation:** `docs/100_brand/DESIGN.md`, `docs/100_brand/VISUAL.md`, `site/index.html`, `site/css/site.css`, `site/js/site.js`, `site/images/profile-signal-v1.png`
+
+---
+
+## 2026-08-24: Legacy burgundy accent removed
+
+**Decision:** Remove burgundy from the public interface and use only the topic-led `design.md` accents: Acid Green, Electric Cyan, Ultraviolet, and Signal Amber.
+
+**Rationale:** A fixed personality color conflicts with the visualization-first system, in which color conveys the subject's data or context and typography remains neutral.
+
+**Source:** Follow-up to ChatGPT conversation “AI Inspiration Reflection” (`6a8c7cbc-7088-83ea-8f96-6988a8447475`)
+
+---
+
+## 2026-08-24: Computational exhibit system added
+
+**Decision:** Extend the visual system with an archival light mode, a digital-laboratory dark mode, and visualization-first content grammar.
+
+**Rationale:** The previous system established editorial and gallery restraint but did not specify how technical work should coexist with cinematic media. The new rules make data or media the protagonist, constrain cards to functional instruments, and keep color semantic rather than decorative.
+
+**Source:** ChatGPT conversation “AI Inspiration Reflection” (`6a8c7cbc-7088-83ea-8f96-6988a8447475`)
+
+**Implementation:** `docs/100_brand/VISUAL.md`, `site/css/site.css`, `site/index.html`, `site/brand/index.html`
+
+---
+
 ## 2026-06-01: Personal brand workbook synthesized into brand docs
 
 **Decision:** Synthesize the Ralston personal-brand workbook session (15 exercises) into the brand docs. Promote canonical material to `IDENTITY.md` and a new `AUDIENCE.md`. Add editorial rules and Phase 0 capture targets to `OPERATING.md`. Preserve the full workbook output as a dated snapshot at `specs/2026-06-01-personal-brand-workbook.md`.

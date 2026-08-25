@@ -5,7 +5,7 @@ type: architecture-reference
 status: active
 owner: Daniel Hunt
 created: 2026-07-28
-updated: 2026-07-28
+updated: 2026-08-25
 facets: [brand, delivery]
 related:
   - ../100_brand/IDENTITY.md
@@ -24,7 +24,9 @@ sources:
 
 - The deployable static site is the repository-root `site/` directory.
 - `site/index.html` is the one-page public surface; `site/brand/index.html` is the public brand reference.
-- `site/css/site.css` and `site/js/site.js` contain the shared styling and browser behavior. Shared navigation and footer are rendered by web components in `site/js/site.js`.
+- The main page is a full-viewport spatial index. About, Build / Offline, and Contact are in-page states addressed by URL hashes rather than separate routes.
+- `site/css/site.css` and `site/js/site.js` contain the shared styling and browser behavior. The main page uses a fixed profile header, URL-scoped theme switch, live Simi Valley time, hover/focus wordmark states, and browser-history-aware detail navigation.
+- Shared navigation and footer web components remain available in `site/js/site.js` for auxiliary static pages.
 - GitHub Pages uploads `site/` directly through `.github/workflows/deploy.yml`.
 
 ## Canonical constraints
