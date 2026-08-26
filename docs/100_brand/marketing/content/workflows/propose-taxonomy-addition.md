@@ -9,6 +9,18 @@ updated: 2026-08-26
 
 # Propose Taxonomy Addition
 
+## Required references
+
+- [Brand ontology v1](../../../ONTOLOGY.md): existing controlled vocabularies and entity attachment points.
+- [Source records](../sources/README.md): provenance requirement.
+- [Identity](../../../identity/README.md) and [Strategy](../../../strategy/README.md): brand-fit and editorial constraints.
+
+## Taxonomy contract
+
+- **Reads:** the full canonical taxonomy list for the proposed entity.
+- **Writes:** nothing until explicit approval. After approval, the canonical ontology receives the new value, definition, usage conditions, and provenance link.
+- **Restriction:** a workflow or skill may create a proposal record, but may not treat a proposed value as selectable.
+
 ## Input
 
 A candidate Content Pattern, Purpose, Narrative Structure, Hook Type, Format, or other controlled value that is not already defined in [Brand ontology v1](../../../ONTOLOGY.md).
