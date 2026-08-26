@@ -33,15 +33,17 @@ Everything deployable lives in `site/`; everything else in the repo (docs, this 
 
 ```
 site/
-  index.html          # spatial index + in-page About and Contact states
-  services/index.html # indexed Services page with crawlable offer details
-  brand/index.html    # public brand-system reference, served at /brand
-  css/site.css        # single stylesheet: tokens + reset + semantic classes
-  js/site.js          # web components, theme + history state, LA time,
-                      #   wordmark interaction, scroll-reveal observer
-  js/htmx.min.js      # vendored htmx 2.x
-  og.png              # committed static OG image (see note below)
-  .nojekyll           # required — keeps GitHub Pages from running Jekyll
+  index.html              # spatial index + in-page About and Contact states
+  services/index.html     # indexed Services page with crawlable offer details
+  brand/index.html        # public brand-system reference, served at /brand
+  contact-card/index.html # noindex vCard save page (QR + headshot + Save contact link)
+  daniel-hunt.vcf         # static vCard fetched by the Save contact link
+  css/site.css            # single stylesheet: tokens + reset + semantic classes
+  js/site.js              # web components, theme + history state, LA time,
+                          #   wordmark interaction, scroll-reveal observer
+  js/htmx.min.js          # vendored htmx 2.x
+  og.png                  # committed static OG image (see note below)
+  .nojekyll               # required — keeps GitHub Pages from running Jekyll
   favicon.svg, CNAME, robots.txt, sitemap.xml, humans.txt, llms.txt, images/
 ```
 
@@ -52,6 +54,7 @@ site/
 - **Contact form** posts to Web3Forms via htmx (`hx-post` + `hx-swap="none"` + `hx-on::after-request` reading `event.detail.successful` to show an inline status). Two load-bearing details: the `htmx-config` meta tag sets `selfRequestsOnly:false` (htmx 2.x blocks cross-origin requests by default), and `hx-on::config-request` strips htmx's `HX-*` headers (Web3Forms' CORS preflight rejects them). The form keeps real `action`/`method` so it degrades to a native POST without JS.
 - **Web3Forms access key**: the committed HTML contains `WEB3FORMS_KEY_PLACEHOLDER`; the deploy workflow `sed`-injects the `PUBLIC_WEB3FORMS_KEY` repo secret at deploy time (the key is public-by-design). Locally the form errors gracefully ("email me directly") unless you temporarily sed in a real key.
 - **og.png is a committed static asset** (1200×630). It was generated once by the old satori + resvg pipeline, which lives in git history at `src/pages/og.png.ts` if it ever needs regenerating. `.gitignore` has a `!site/**/*.png` exception for it.
+- **`/contact-card/`** is a `noindex` utility page for in-person contact sharing: it shows the headshot and a QR code (`images/daniel-hunt-contact-qr.svg`) that resolves here, plus a "Save contact" link to `daniel-hunt.vcf`. Update the `.vcf` by hand if contact details change — it's static, not generated from the vCard's own `PHOTO` URI.
 
 **Design tokens** (in `site/css/site.css`, canonicalized in `docs/100_brand/DESIGN.md`):
 
