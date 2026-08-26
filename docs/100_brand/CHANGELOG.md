@@ -11,6 +11,18 @@ Format per entry:
 
 ---
 
+## 2026-08-26: Brand ontology and context map established
+
+**Decision:** Establish `Brand` as the root domain and document Identity, Strategy, Audience, Offers, Assets, Channels, Marketing, Analytics, and Relationships as bounded contexts. Treat Marketing as a first-class peer domain that owns Content, Campaigns, Distribution, Growth, and Funnel.
+
+**Rationale:** The existing corpus held clear material but organized several cross-cutting concepts inside identity and operating documents. The ontology preserves durable brand meaning while giving reusable content work, assets, channel delivery, and learning clear ownership without introducing a database or automation system prematurely.
+
+**Source:** User-approved Brand Ontology v1 design on 2026-08-26.
+
+**Implementation:** [Brand domain map](README.md), [Brand ontology v1](ONTOLOGY.md), and the context references under `docs/100_brand/`.
+
+---
+
 ## 2026-08-25: Services hero and offer visuals strengthened
 
 **Decision:** Replace the oversized sentence-length Services H1 with a three-part editorial title, add one labeled capability map to the hero, and pair each service with a restrained line icon.
