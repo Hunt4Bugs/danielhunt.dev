@@ -49,6 +49,31 @@ Two sentences in industry-standard vocabulary. These are what someone says about
 
 These appear in bios, captions, sponsor decks, media kits, and the site copy.
 
+## Service expression
+
+The public Services page is a technology-led invitation to collaborate. It serves a broader commercial audience than the Life Sciences editorial brand: local businesses in Simi Valley and Ventura County, larger organizations, and remote teams with a concrete sales, marketing, operations, or software problem.
+
+The service taxonomy is:
+
+- **Sales systems:** lead-response automation, qualification and routing, booking and follow-up workflows, CRM updates, and team notifications.
+- **Marketing systems:** new business websites, complete website rebuilds, landing pages, lead-capture forms, analytics, campaign attribution, and technical or on-page SEO foundations.
+- **Operations systems:** intake and approval workflows, data synchronization, operational dashboards, scheduled reporting, document generation, notifications, and repetitive administrative workflows.
+- **Custom software:** internal tools, administrative or customer portals, focused prototypes and MVPs, API integrations, and custom applications when off-the-shelf tools do not fit.
+
+These four categories are internal organization, not the public service-card names. The public Services page leads with five concrete offers that a customer can recognize without translating the word *systems*. Workflow Automation comes first because it is the broadest entry point. Lead Management combines response, qualification, routing, appointment booking, and follow-up in one offer.
+
+- **Workflow automation**
+- **Lead management**
+- **Business websites**
+- **CRM and tool integrations**
+- **Custom software builds**
+
+Each public offer uses one plain-language description of what is connected or produced. Do not lead a service card with Sales Systems, Marketing Systems, or Operations Systems.
+
+This offer connects sales, marketing, and operations through practical technology. It is not a full marketing agency. Ongoing paid-ad management, content production, AI call reception, and managed local-SEO programs are outside the current offer.
+
+Service language stays specific and evidence-backed. Do not imply guaranteed rankings, lead volume, delivery speed, revenue or ROI outcomes, an established AI-transformation practice, or quantified impact without current evidence. Public copy does not use em dashes. Use periods, commas, or colons instead.
+
 ### Vocabulary discipline
 
 Public-facing brand language splits into four layers.

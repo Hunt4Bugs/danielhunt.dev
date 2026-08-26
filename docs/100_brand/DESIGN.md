@@ -23,6 +23,7 @@ Dark mode is the default. Light mode is a supported preview or situational mode,
   --text-2: 161 167 179;          /* #A1A7B3 · Muted text */
   --accent-primary: 0 229 255;    /* #00E5FF · Electric Cyan */
   --accent-secondary: 166 255 0;  /* #A6FF00 · Acid Green */
+  --accent-secondary-ui: var(--accent-secondary);
   --accent-tertiary: 178 107 255; /* #B26BFF · Ultraviolet */
   --accent-amber: 255 176 32;     /* #FFB020 · Signal Amber */
 }
@@ -41,6 +42,8 @@ Accent colors are semantic and swappable by topic. Choose one lead accent per ar
 
 Typography remains neutral. Accent color belongs to data, state, focus, and a single meaningful word or marker. Never use a multicolor headline gradient.
 
+`--accent-secondary` remains the canonical Acid Green data color. Interface text, status, and focus use the semantic `--accent-secondary-ui` alias. It resolves to Acid Green in dark mode and a deeper daylight green in light mode so small interface elements keep accessible contrast without changing the visualization palette.
+
 ### Light mode
 
 Light mode maps the same system into daylight conditions:
@@ -52,8 +55,11 @@ Light mode maps the same system into daylight conditions:
   --surface-2: 231 235 240;
   --text-1: 10 12 16;
   --text-2: 91 98 109;
+  --accent-secondary-ui: 74 112 0; /* #4A7000 · Daylight Green */
 }
 ```
+
+Daylight Green reaches a 5.42:1 contrast ratio on the Cloud White canvas and 5.82:1 on white. Use it for light-mode text, status dots, active markers, focus outlines, and accent-filled controls. Keep `--accent-secondary` at `#A6FF00` inside visualizations and dark-mode artifacts.
 
 For review and brand production, append `?theme=light` or `?theme=dark` to a local site URL. The preview is URL-scoped and does not change the dark default or store a visitor preference.
 
@@ -114,7 +120,7 @@ Use only over photography or visualization. Maximum two overlays in one composit
 
 ### Spatial index tile
 
-The Vexoo-derived profile index uses a lighter frosted treatment than an instrument panel: a 4% dark-mode / 5% light-mode `--text-1` tint over a transparent base, a low-contrast inset edge, and backdrop blur. These calibrated values produce the same perceived 8% tint as the pure black/white reference while preserving the brand's off-neutral Ink Black and Cloud White canvases. Desktop uses 10px blur and a 32px radius; mobile uses 4px blur and `--radius-xl` (24px). Hover changes the identity wordmark rather than lifting or outlining the tile. Acid Green remains reserved for keyboard focus and active state.
+The Vexoo-derived profile index uses a lighter frosted treatment than an instrument panel: a 4% dark-mode / 5% light-mode `--text-1` tint over a transparent base, a low-contrast inset edge, and backdrop blur. These calibrated values produce the same perceived 8% tint as the pure black/white reference while preserving the brand's off-neutral Ink Black and Cloud White canvases. Desktop uses 10px blur and a 32px radius; mobile uses 4px blur and `--radius-xl` (24px). On fine-pointer hover or keyboard focus, the glass tint fades to 1% in dark mode or 1.25% in light mode while the duplicated destination label rolls vertically with a 12-degree entry and exit skew. The transition lasts 520ms with emphasized easing. The tile and arrow remain stationary. The Acid Green family remains reserved for keyboard focus and active state, using Daylight Green where the light canvas requires stronger contrast. Touch devices receive no sticky hover state.
 
 ## Components
 
@@ -124,6 +130,8 @@ The Vexoo-derived profile index uses a lighter frosted treatment than an instrum
 - **Exhibit label:** mono metadata paired with a real object, image, coordinate, date, or status.
 - **Instrument panel:** 3–6 concise key/value rows; no invented KPIs.
 - **Profile signal:** a compact identity/status instrument pairing a handle and real state with one visualization object. On portrait-led surfaces, use the visualization instead of repeating the portrait as an avatar.
+- **Service map:** one labeled conceptual diagram may connect the public offers to the business problem they address. It uses no invented metrics and one lead signal family.
+- **Service icon:** a small neutral line icon identifies each offer. Use a familiar open-source icon form, one consistent stroke weight, and the page's lead signal color.
 - **Chart container:** restrained frame, faint axes, semantic series colors, direct labels where possible.
 - **Navigation:** quiet, compact, neutral, with one semantic active marker.
 
@@ -133,6 +141,7 @@ The Vexoo-derived profile index uses a lighter frosted treatment than an instrum
 - Prefer direct labels, sparse gridlines, and one highlighted point.
 - Use cyan and violet for distinct series; green for active, correct, or improving; amber for caution or business context.
 - Use color to encode meaning, not decoration.
+- Conceptual system maps must label real relationships or available capabilities. Do not present them as measured data.
 - Do not use rainbow gradients, generic KPI walls, conventional dashboard grids, or charts without a real data source.
 
 ## Content templates
@@ -150,7 +159,7 @@ Use real documentary photography. For the website, portraits are black-and-white
 
 ## Motion
 
-Motion should clarify hierarchy: a single load reveal, a deliberate hover/focus transition, or a data-state change. Respect `prefers-reduced-motion`. Avoid ambient motion that competes with the content.
+Motion should clarify hierarchy: a single load reveal, a deliberate hover/focus transition, or a data-state change. The spatial-tile label roll uses `520ms cubic-bezier(0.22, 1, 0.36, 1)` and a 12-degree skew. Respect `prefers-reduced-motion` by removing the transition and showing a single stable label. Avoid ambient motion that competes with the content.
 
 ## Governance
 

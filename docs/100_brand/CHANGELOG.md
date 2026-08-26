@@ -11,6 +11,78 @@ Format per entry:
 
 ---
 
+## 2026-08-25: Services hero and offer visuals strengthened
+
+**Decision:** Replace the oversized sentence-length Services H1 with a three-part editorial title, add one labeled capability map to the hero, and pair each service with a restrained line icon.
+
+**Rationale:** At 1280 by 720, the previous title occupied 438 pixels and pushed the hero to 1,018 pixels. The new hierarchy reduces the title to 229 pixels and the hero to 704 pixels while explaining how the five offers connect to one business problem. One signal family keeps the additional visual detail consistent with the computational exhibit system.
+
+**Source:** User-directed Services visual and readability refinement on 2026-08-25.
+
+**Implementation:** `docs/100_brand/DESIGN.md`, `docs/100_brand/VISUAL.md`, `docs/200_site/ARCHITECTURE.md`, `site/services/index.html`, `site/css/site.css`
+
+---
+
+## 2026-08-25: Accessible daylight green established
+
+**Decision:** Keep Acid Green as the dark-mode and visualization signal, then map light-mode interface text, focus, and active state to Daylight Green `#4A7000` through `--accent-secondary-ui`.
+
+**Rationale:** Acid Green reaches only 1.16:1 contrast on the Cloud White canvas. Daylight Green reaches 5.42:1 while retaining the same semantic color family, so the light theme gains clarity without changing the brand's data palette.
+
+**Source:** User-directed light-mode contrast refinement on 2026-08-25.
+
+**Implementation:** `docs/100_brand/DESIGN.md`, `docs/100_brand/VISUAL.md`, `site/css/site.css`, `site/index.html`, `site/services/index.html`
+
+---
+
+## 2026-08-25: Workflow Automation prioritized and Lead Management consolidated
+
+**Decision:** Move Workflow Automation to the first public offer and combine Lead Response Automation with Appointment Booking and Follow-Up under Lead Management.
+
+**Rationale:** Workflow Automation is the broadest commercial entry point. Lead Management gives business owners one recognizable place for inquiry response, qualification, routing, booking, and follow-up without splitting one customer journey across two cards.
+
+**Source:** User-directed Services hierarchy refinement on 2026-08-25.
+
+**Implementation:** `docs/100_brand/IDENTITY.md`, `docs/200_site/ARCHITECTURE.md`, `site/index.html`, `site/services/index.html`, `site/css/site.css`, `site/llms.txt`
+
+---
+
+## 2026-08-25: Public Services list simplified
+
+**Decision:** Present six customer-recognizable offers instead of leading the page with Sales Systems, Marketing Systems, Operations Systems, and Custom Software categories.
+
+**Rationale:** Concrete names such as Lead Response Automation and Appointment Booking and Follow-Up reduce the translation required from a local business owner. The four-part taxonomy remains useful for internal organization, while the public page now pairs each service with one plain-language description.
+
+**Source:** User feedback and structural review of the Landon Scales Services page on 2026-08-25. The reference informed the flat service-list pattern only. Its copy, claims, out-of-scope marketing programs, and service guarantees were not adopted.
+
+**Implementation:** `docs/100_brand/IDENTITY.md`, `docs/200_site/ARCHITECTURE.md`, `site/index.html`, `site/services/index.html`, `site/css/site.css`, `site/llms.txt`
+
+---
+
+## 2026-08-25: Commercial Services route and taxonomy established
+
+**Decision:** Move Services to `/services/` and define the offer through Sales Systems, Marketing Systems, Operations Systems, and Custom Software.
+
+**Rationale:** A dedicated static route makes concrete service examples visible to visitors and crawlers without requiring a click or JavaScript. It also separates the broader commercial-services audience from the Life Sciences editorial audience while keeping one technology-led brand system.
+
+**Source:** User-approved Vexoo hover, concrete Services, and SEO landing-page plan on 2026-08-25.
+
+**Implementation:** `docs/100_brand/IDENTITY.md`, `docs/100_brand/AUDIENCE.md`, `docs/100_brand/DESIGN.md`, `docs/100_brand/VISUAL.md`, `docs/200_site/ARCHITECTURE.md`, `site/index.html`, `site/services/index.html`, `site/css/site.css`, `site/js/site.js`, `site/sitemap.xml`, `site/llms.txt`
+
+---
+
+## 2026-08-25: Services replaces the repeated thesis tile
+
+**Decision:** Move `Build in public. Live offline.` into the persistent profile header and repurpose the dominant navigation tile as Services.
+
+**Rationale:** The prior composition repeated the thesis in the header hierarchy and the largest tile without adding a new destination. Services gives the dominant tile a clear commercial purpose while keeping the offer narrow, evidence-backed, and consistent with the Life Sciences product narrative.
+
+**Source:** User-directed site refinement on 2026-08-25.
+
+**Implementation:** `docs/100_brand/IDENTITY.md`, `docs/100_brand/VISUAL.md`, `site/index.html`, `site/css/site.css`, `site/js/site.js`
+
+---
+
 ## 2026-08-25: Spatial profile index adopted
 
 **Decision:** Replace the prior cinematic profile stage with a Vexoo-derived, full-viewport spatial index while retaining the canonical `design.md` system and one-page architecture.

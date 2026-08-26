@@ -84,10 +84,11 @@ The palette has two surfaces: a **brand concept layer** (the names used in this 
 | Muted Text | `--text-2` | `#A1A7B3` | Supporting text and labels. |
 | Electric Cyan | `--accent-primary` | `#00E5FF` | Software, systems, and infrastructure. |
 | Acid Green | `--accent-secondary` | `#A6FF00` | Life sciences, data, and active state. |
+| Daylight Green | `--accent-secondary-ui` | `#4A7000` in light mode | Accessible text, focus, and active state on light surfaces. Resolves to Acid Green in dark mode. |
 | Ultraviolet | `--accent-tertiary` | `#B26BFF` | AI, models, and experimentation. |
 | Signal Amber | `--accent-amber` | `#FFB020` | Strategy, business, and caution. |
 
-Dark mode is the default digital laboratory. Light mode is a supported daylight preview with the same typography, spacing, hierarchy, components, and visualization grammar.
+Dark mode is the default digital laboratory. Light mode is a supported daylight preview with the same typography, spacing, hierarchy, components, and visualization grammar. Bright Acid Green remains the visualization color. Daylight Green replaces it only in light-mode interface text, focus, and state where contrast is functional.
 
 **Typography stays neutral. Data earns color.** Choose one signal family per artifact, based on the subject. Signal colors may mark values, paths, key points, annotations, or a single terminal word; they do not become gradients, headline fills, or decorative chrome. There is no permanent brand color beyond the neutral system.
 
@@ -277,16 +278,18 @@ The site uses one clean black-and-white portrait as the featured media object. T
 
 ### Near-term (Phase B)
 
-The site stays a one-page brand surface, expressed as a full-viewport spatial index.
+The site uses a full-viewport spatial index for the profile surface and a dedicated, indexed Services route for commercial detail.
 
 - Lead with the masthead wordmark `DANIEL HUNT`; on pointer hover or keyboard focus, it may temporarily become the active destination label
-- Use the bento composition as navigation rather than a dashboard: About, the Build / Offline thesis, Contact, one profile signal, and one direct professional path
-- Give `Build in public. Live offline.` the dominant navigational surface and place `Tech, movement, and culture.` with it
+- Use the bento composition as navigation rather than a dashboard: About, Services, Contact, one profile signal, and one direct professional path
+- Keep `Build in public. Live offline.` persistent in the profile header; use the dominant navigational tile for Services
 - Use one clean black-and-white portrait exactly once on the home screen; do not repeat it as an avatar or place interface over the face or body
 - Pair the portrait with one compact data object carrying Acid Green as the active Life Sciences / public-signal accent
 - Keep all other typography and interface surfaces neutral; the accent appears only in state, focus, and the data object
 - Preserve the same information architecture in daylight mode and on mobile, where the bento reflows into a four-row profile index
-- Keep About, Field Notes, and Contact as in-page detail states so the site remains a single static surface
+- Keep About and Contact as in-page detail states. Services links to `/services/`, where all offers and examples are server-delivered, semantic, and visible without interaction
+- Keep the Services page interface-led: neutral glass panels, no repeated portrait, and Acid Green reserved for state and focus
+- Give the Services hero one labeled connection map that starts with the business problem and routes to the five public capabilities. Pair each offer with one quiet line icon using the same signal family
 - Tagline tense stays present (`Build` / `Live`), not past (`Built` / `Lived`)
 
 ### Future (Phase C)
@@ -304,7 +307,7 @@ When content fills it, the site restructures as a publication home:
 
 | Surface | Dominant pole | Mark | Notes |
 |---|---|---|---|
-| Site (Phase B, current) | Cool with warm spreads | Wordmark hero | Gallery discipline |
+| Site (Phase B, current) | Cool with warm spreads | Wordmark hero | Spatial index plus Services route; gallery discipline |
 | Site (Phase C, future) | Cool with warm spreads | Wordmark masthead | Publication structure |
 | IG profile | Cool / clinical | Monogram avatar | Offline content lives here |
 | IG Reel covers | Mode-appropriate | Wordmark or monogram corner | Cinematic, restrained |

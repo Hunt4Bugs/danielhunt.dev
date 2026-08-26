@@ -1,4 +1,4 @@
-/* danielhunt.dev — shared chrome (web components) + page behaviors.
+/* danielhunt.dev: shared chrome (web components) + page behaviors.
    Loaded with `defer` on every page. No framework, no build step. */
 
 const SITE = {
@@ -24,6 +24,7 @@ if (previewTheme === 'light' || previewTheme === 'dark') {
 const NAV_LINKS = [
   { label: 'Index', href: '/#top' },
   { label: 'About', href: '/#about' },
+  { label: 'Services', href: '/services/' },
   { label: 'Contact', href: '/#contact' },
 ];
 
@@ -44,7 +45,7 @@ class SiteNav extends HTMLElement {
       <header class="site-header">
         <div class="container-page">
           <div class="site-header__bar">
-            <a href="/" class="site-header__brand" aria-label="Daniel Hunt — home">
+            <a href="/" class="site-header__brand" aria-label="Daniel Hunt home">
               <span class="monogram-mark site-header__monogram">DH</span>
               <span class="site-header__name">Daniel Hunt</span>
             </a>
@@ -112,11 +113,12 @@ class SiteFooter extends HTMLElement {
         <h2 id="footer-heading" class="sr-only">Site footer</h2>
         <div class="container-page">
           <div class="site-footer__row">
-            <a href="/" class="monogram-mark site-footer__monogram" aria-label="Daniel Hunt — home">DH</a>
+            <a href="/" class="monogram-mark site-footer__monogram" aria-label="Daniel Hunt home">DH</a>
             <div class="site-footer__meta">
               <p class="mono-value">&copy; ${year} &middot; ${SITE.name.toUpperCase()}</p>
               <div class="site-footer__links">
                 <a href="/#about" class="mono-value link-cinema">About</a>
+                <a href="/services/" class="mono-value link-cinema">Services</a>
                 <a href="/#contact" class="mono-value link-cinema">Contact</a>
                 <a href="/brand" class="mono-value link-cinema">design.md</a>
               </div>
@@ -186,6 +188,18 @@ if (document.body.classList.contains('site-vexoo')) {
     url.searchParams.set('theme', theme);
     window.history.replaceState(window.history.state, '', url);
     syncThemeControl();
+    syncInternalThemeLinks();
+  };
+
+  const syncInternalThemeLinks = () => {
+    document.querySelectorAll('a[href^="/"]').forEach((link) => {
+      const originalHref = link.dataset.themeHref || link.getAttribute('href');
+      if (!originalHref) return;
+      link.dataset.themeHref = originalHref;
+      const destination = new URL(originalHref, window.location.origin);
+      destination.searchParams.set('theme', currentTheme());
+      link.setAttribute('href', `${destination.pathname}${destination.search}${destination.hash}`);
+    });
   };
 
   themeSwitch?.addEventListener('click', () => {
@@ -202,50 +216,17 @@ if (document.body.classList.contains('site-vexoo')) {
     }, 110);
   };
 
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+
   document.querySelectorAll('[data-title]').forEach((card) => {
-    card.addEventListener('pointerenter', () => setWordmark(card.dataset.title));
-    card.addEventListener('pointerleave', () => setWordmark(defaultWordmark));
+    card.addEventListener('pointerenter', () => {
+      if (finePointer.matches) setWordmark(card.dataset.title);
+    });
+    card.addEventListener('pointerleave', () => {
+      if (finePointer.matches) setWordmark(defaultWordmark);
+    });
     card.addEventListener('focusin', () => setWordmark(card.dataset.title));
     card.addEventListener('focusout', () => setWordmark(defaultWordmark));
-  });
-
-  const showView = (name, options = {}) => {
-    const detailName = validViews.has(name) ? name : null;
-    const isHome = detailName === null;
-
-    homeView.hidden = !isHome;
-    detailViews.forEach((view) => {
-      view.hidden = view.dataset.view !== detailName;
-    });
-    body.classList.toggle('detail-open', !isHome);
-    homeLabel.textContent = isHome ? 'Daniel Hunt' : 'Home';
-
-    if (options.updateHistory !== false) {
-      const url = new URL(window.location.href);
-      url.hash = isHome ? '' : detailName;
-      window.history.pushState({ view: detailName || 'home' }, '', url);
-    }
-
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    if (!isHome && options.focus !== false) {
-      const title = document.querySelector(`[data-view="${detailName}"] h2`);
-      title?.setAttribute('tabindex', '-1');
-      title?.focus({ preventScroll: true });
-    }
-  };
-
-  viewTriggers.forEach((trigger) => {
-    trigger.addEventListener('click', () => showView(trigger.dataset.viewTarget));
-  });
-
-  homeTriggers.forEach((trigger) => {
-    trigger.addEventListener('click', () => {
-      if (body.classList.contains('detail-open')) showView(null);
-    });
-  });
-
-  window.addEventListener('popstate', () => {
-    showView(window.location.hash.slice(1), { updateHistory: false, focus: false });
   });
 
   const updateLocalTime = () => {
@@ -258,7 +239,66 @@ if (document.body.classList.contains('site-vexoo')) {
   };
 
   syncThemeControl();
+  syncInternalThemeLinks();
   updateLocalTime();
   window.setInterval(updateLocalTime, 30_000);
-  showView(window.location.hash.slice(1), { updateHistory: false, focus: false });
+
+  if (homeView) {
+    const redirectLegacyServices = () => {
+      if (window.location.hash !== '#services') return false;
+      const destination = new URL('/services/', window.location.origin);
+      const theme = new URLSearchParams(window.location.search).get('theme');
+      if (theme === 'light' || theme === 'dark') destination.searchParams.set('theme', theme);
+      window.location.replace(destination);
+      return true;
+    };
+
+    const showView = (name, options = {}) => {
+      const detailName = validViews.has(name) ? name : null;
+      const isHome = detailName === null;
+
+      homeView.hidden = !isHome;
+      detailViews.forEach((view) => {
+        view.hidden = view.dataset.view !== detailName;
+      });
+      body.classList.toggle('detail-open', !isHome);
+      if (homeLabel) homeLabel.textContent = isHome ? 'Daniel Hunt' : 'Home';
+
+      if (options.updateHistory !== false) {
+        const url = new URL(window.location.href);
+        url.hash = isHome ? '' : detailName;
+        window.history.pushState({ view: detailName || 'home' }, '', url);
+      }
+
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      if (!isHome && options.focus !== false) {
+        const title = document.querySelector(`[data-view="${detailName}"] h2`);
+        title?.setAttribute('tabindex', '-1');
+        title?.focus({ preventScroll: true });
+      }
+    };
+
+    viewTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        showView(trigger.dataset.viewTarget);
+      });
+    });
+
+    homeTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        if (body.classList.contains('detail-open')) showView(null);
+      });
+    });
+
+    window.addEventListener('popstate', () => {
+      if (!redirectLegacyServices()) {
+        showView(window.location.hash.slice(1), { updateHistory: false, focus: false });
+      }
+    });
+
+    if (!redirectLegacyServices()) {
+      showView(window.location.hash.slice(1), { updateHistory: false, focus: false });
+    }
+  }
 }

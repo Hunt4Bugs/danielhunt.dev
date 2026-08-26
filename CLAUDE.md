@@ -33,7 +33,8 @@ Everything deployable lives in `site/`; everything else in the repo (docs, this 
 
 ```
 site/
-  index.html          # one-page spatial index + in-page About, Field, Contact states
+  index.html          # spatial index + in-page About and Contact states
+  services/index.html # indexed Services page with crawlable offer details
   brand/index.html    # public brand-system reference, served at /brand
   css/site.css        # single stylesheet: tokens + reset + semantic classes
   js/site.js          # web components, theme + history state, LA time,
@@ -47,7 +48,7 @@ site/
 **Key facts:**
 
 - **Head metadata is statically duplicated** in each HTML page (OG, Twitter, JSON-LD) because crawlers don't run JS. Main-page identity chrome and content are static HTML; auxiliary-page shared chrome is JS-rendered through web components.
-- **`site/js/site.js`** holds shared `SITE` constants and auxiliary web components, plus the main page's URL-scoped theme, live LA time, hover/focus wordmark, hash navigation, and history behavior. Static page copy remains in HTML.
+- **`site/js/site.js`** holds shared `SITE` constants and auxiliary web components, plus the shared URL-scoped theme and live LA time. Home-only hover/focus wordmark, hash navigation, and history behavior are guarded to the spatial index. Static page copy remains in HTML.
 - **Contact form** posts to Web3Forms via htmx (`hx-post` + `hx-swap="none"` + `hx-on::after-request` reading `event.detail.successful` to show an inline status). Two load-bearing details: the `htmx-config` meta tag sets `selfRequestsOnly:false` (htmx 2.x blocks cross-origin requests by default), and `hx-on::config-request` strips htmx's `HX-*` headers (Web3Forms' CORS preflight rejects them). The form keeps real `action`/`method` so it degrades to a native POST without JS.
 - **Web3Forms access key**: the committed HTML contains `WEB3FORMS_KEY_PLACEHOLDER`; the deploy workflow `sed`-injects the `PUBLIC_WEB3FORMS_KEY` repo secret at deploy time (the key is public-by-design). Locally the form errors gracefully ("email me directly") unless you temporarily sed in a real key.
 - **og.png is a committed static asset** (1200×630). It was generated once by the old satori + resvg pipeline, which lives in git history at `src/pages/og.png.ts` if it ever needs regenerating. `.gitignore` has a `!site/**/*.png` exception for it.
@@ -62,5 +63,5 @@ site/
 
 **Brand surface phasing:**
 
-- **Phase B (current)**: one-page spatial profile index — hover/focus wordmark, Build / Offline thesis, one monochrome portrait, one profile-signal data object, in-page About / Field / Contact states, and a contact form. Gallery-frame discipline remains: the portrait appears once and the data object carries the active accent.
+- **Phase B (current)**: spatial profile index with a dedicated Services route. The home keeps the persistent `Build in public. Live offline.` header role, hover/focus wordmark, one monochrome portrait, one profile-signal data object, in-page About and Contact states, and a contact form. `/services/` is interface-led and repeats neither the portrait nor click-dependent copy. Gallery-frame discipline remains: the portrait appears once and the data object carries the active accent.
 - **Phase C (future, when content exists)**: site restructures as a publication home with Dispatches archive, Field Notes archive, Projects section, About, Contact.

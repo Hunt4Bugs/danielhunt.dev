@@ -18,6 +18,7 @@ Target: `https://vexoo.framer.website/`
 - Post-feedback glass blend: `test-artifacts/glass-blend/light-wide-hover.png`, `test-artifacts/glass-blend/dark-wide-hover.png`, `test-artifacts/glass-blend/light-mobile-hover.png`
 - Live-source material captures: `test-artifacts/vexoo-material/source-desktop-light.png`, `test-artifacts/vexoo-material/source-desktop-dark.png`, `test-artifacts/vexoo-material/source-mobile-dark.png`
 - Final material implementation: `test-artifacts/vexoo-material/local-desktop-light.png`, `test-artifacts/vexoo-material/local-desktop-dark.png`, `test-artifacts/vexoo-material/local-mobile-dark.png`
+- Services refinement: `test-artifacts/services/home-desktop-light.png`, `test-artifacts/services/detail-desktop-light.png`, `test-artifacts/services/home-mobile-light.png`, `test-artifacts/services/detail-mobile-light.png`
 
 ## Viewport and normalization
 
@@ -29,7 +30,7 @@ Target: `https://vexoo.framer.website/`
 | Final mobile material | 390 × 844 | 390 × 844 | 390 × 844 | 1× | Direct 1:1 comparison; source and implementation joined horizontally without scaling |
 | Tablet resilience | n/a | 768 × 900 | 768 × 900 | 1× | Implementation-only breakpoint check |
 
-States compared: dark home, light home, desktop card hover, mobile reflow, About, Build / Offline, Contact, and home/back navigation.
+States compared: dark home, light home, desktop card hover, mobile reflow, About, dedicated Services page, Contact, and home/back navigation.
 
 ## Full-view comparison evidence
 
@@ -40,7 +41,7 @@ States compared: dark home, light home, desktop card hover, mobile reflow, About
 
 The implementation preserves the reference's defining composition: fixed viewport, 16px outer gutter, 16px desktop / 12px mobile grid gap, 32px desktop / 24px mobile card radii, a two-row desktop bento that becomes the same four-row mobile bento, one large blurred identity wordmark, one portrait, and a two-card right rail. At 390 × 844, all six implementation card rectangles match the source positions and dimensions exactly.
 
-Intentional brand substitutions are visible but do not change the spatial system: the source portrait is replaced with Daniel's real monochrome headshot, the software-logo strip becomes the canonical profile-signal data object, Resume becomes a real LinkedIn path, and Portfolio becomes the `Build in public. Live offline.` thesis.
+Intentional brand substitutions are visible but do not change the spatial system: the source portrait is replaced with Daniel's real monochrome headshot, the software-logo strip becomes the canonical profile-signal data object, Resume becomes a real LinkedIn path, and Portfolio becomes Services. The thesis `Build in public. Live offline.` remains persistent in the profile header.
 
 ## Focused region comparison evidence
 
@@ -79,17 +80,19 @@ Focused review confirmed that the header alignment, wordmark overlap, first-row 
 
 ### Copy and content
 
-- Passed. All visible copy is grounded in `IDENTITY.md`: Life Sciences product work, `Build in public. Live offline.`, `Tech, movement, and culture.`, and the build/offline toggle.
+- Passed. All visible copy is grounded in `IDENTITY.md`: Life Sciences editorial positioning, `Build in public. Live offline.`, the separate commercial Services expression, and the build/offline toggle.
 - No invented KPIs, client claims, employment history, portfolio projects, or unavailable publication routes were introduced.
+- Public HTML contains no em-dash or en-dash characters. Service copy makes no ranking, lead-volume, speed, revenue, performance, or ROI promises.
 
 ### Interaction, responsiveness, and accessibility
 
-- Passed. About, Build / Offline, Contact, home/back, theme switching, URL-scoped theme state, hover/focus wordmark changes, external links, and browser history work.
+- Passed. About, Contact, Home-to-Services, Services-to-Contact, legacy `/#services`, home/back, theme switching, URL-scoped theme continuity, hover/focus wordmark changes, external links, and browser history work.
 - Contact inputs have programmatic labels, required validation, autocomplete values, and a real POST fallback. The external form was not submitted during QA.
 - All visible controls meet or exceed 44px target size, including the visually compact theme switch.
 - The portrait and signal have appropriate alt text; decorative arrows are empty-alt.
 - Reduced-motion rules cover card, wordmark, portrait, icon, and theme transitions.
 - Browser console errors/warnings checked after the final pass: none.
+- Home and Services were checked at 390 × 844, 768 × 900, 1280 × 720, and 1680 × 945. No horizontal overflow remains, and the home composition fits the full target viewport at each size.
 
 ## Comparison history
 
@@ -130,11 +133,66 @@ Focused review confirmed that the header alignment, wordmark overlap, first-row 
 - Rechecked desktop light, desktop dark, and 390 × 844 dark states with normalized side-by-side comparisons. No actionable P0, P1, or P2 findings remain.
 - Post-fix evidence: `test-artifacts/vexoo-material/compare-desktop-light.png` and `test-artifacts/vexoo-material/compare-mobile-dark.png`.
 
+### Iteration 6 — passed
+
+- Moved `Build in public. Live offline.` from the repeated dominant tile into the persistent profile-header role.
+- Repurposed the dominant tile and `#field` detail state as Services / `#services`, with two evidence-backed offers: Product direction and Data & software systems.
+- Verified the Services hover wordmark, detail layout, both service-card handoffs to `#contact`, browser history state, 390 × 844 reflow, header fit, and horizontal overflow.
+- Claim validation found no quantified outcomes, guaranteed results, or unsupported AI-transformation language. The canonical Service expression and site architecture were updated with the implementation.
+- No actionable P0, P1, or P2 findings remain.
+
+### Iteration 7: passed
+
+- Replaced the click-dependent Services state with the static `/services/` route. The page contains four visible offer groups, a three-step process, four visitor FAQs, and no repeated portrait.
+- Added the 520ms label roll and glass-tint fade to About, Services, Contact, and LinkedIn. Fine-pointer hover and keyboard focus reach the same state while tiles and arrows remain stationary.
+- Measured hover endpoints in the browser: 1% tint in dark mode, 1.25% in light mode, 12-degree label skew, and Acid Green keyboard focus.
+- Verified unique Services metadata, canonical URL, index/follow directives, sitemap and `llms.txt` discovery, and valid JSON-LD for Person, WebPage, OfferCatalog, and breadcrumb entities. No `LocalBusiness` or FAQ structured data is present.
+- Verified all 16 service examples exist in the server-delivered DOM and match the four structured-data offers.
+- Verified the active theme carries from Home to Services and from Services to Contact. The legacy `/#services` URL redirects to `/services/` while preserving the theme.
+- Updated `test-artifacts/services/` with the final 1280 × 720 and 390 × 844 light-mode captures.
+- JavaScript parsing, HTML parsing, JSON-LD parsing, CSS brace balance, console output, changed public-copy punctuation, and `git diff --check` passed.
+- No actionable P0, P1, or P2 findings remain.
+
+### Iteration 8: passed
+
+- Replaced the four abstract public categories with six concrete offers: Lead Response Automation, Appointment Booking and Follow-Up, Business Websites, CRM and Tool Integrations, Workflow Automation, and Custom Software Builds.
+- Reduced every offer to one recognizable title, one plain-language description, and one consistent contact action. The internal four-part taxonomy remains in `IDENTITY.md` but no longer leads the public cards.
+- Used the Landon Scales Services page only as a structural reference for a flat service list. No competitor copy, performance claims, contracts, marketing programs, or guarantees were adopted.
+- Updated the Services hero, metadata, Open Graph and Twitter descriptions, `llms.txt`, and JSON-LD to use the concrete offer vocabulary.
+- Verified all six visible names and descriptions exactly match the six structured-data offers.
+- Checked 390 × 844, 768 × 900, 1280 × 720, and 1680 × 945. Cards have no internal overflow, the hero remains within the viewport, and the catalog moves from two columns to one column on mobile.
+- Browser console, JavaScript parsing, HTML parsing, JSON-LD parsing, claim search, public punctuation search, and `git diff --check` passed.
+- No actionable P0, P1, or P2 findings remain.
+
+### Iteration 9: passed
+
+- Moved Workflow Automation from fifth to first in the visible catalog and the structured-data offer order.
+- Consolidated Lead Response Automation and Appointment Booking and Follow-Up into one Lead Management offer. Its description retains inquiry capture, email or SMS response, qualification, routing, appointment booking, follow-up, and CRM context.
+- Reduced the public catalog from six cards to five while preserving Business Websites, CRM and Tool Integrations, and Custom Software Builds.
+- Let the fifth Custom Software card span the full desktop catalog width so the odd service count ends with an intentional final row.
+- Updated the Services description metadata, hero introduction, home-tile eyebrow, `llms.txt`, brand identity, architecture record, and JSON-LD.
+- Verified the five visible names and descriptions exactly match the five structured-data offers.
+
+### Iteration 10: passed
+
+- Added the semantic `--accent-secondary-ui` token so Acid Green remains unchanged in dark mode and data visualizations while light-mode interface state uses Daylight Green `#4A7000`.
+- Measured Daylight Green at 5.42:1 against Cloud White, 5.82:1 against white, and 4.86:1 against Soft Gray.
+- Applied the accessible token to light-mode status dots, active markers, links, control fills, field borders, and solid keyboard-focus outlines.
+- Verified that dark mode still resolves the interface signal to Acid Green `#A6FF00`.
+
+### Iteration 11: passed
+
+- Replaced the sentence-length Services H1 with `Websites. Automation. Custom software.` and separated `Built around a specific business problem.` as supporting metadata.
+- Added one conceptual service map that connects Workflow, Leads, Websites, Integrations, and Custom Software to the central business problem without inventing metrics.
+- Added five consistent line icons to the service offers. All icons use the page's single semantic green family and remain decorative in the accessibility tree.
+- At 1280 × 720, reduced the title from 438px to 229px and the hero from 1,018px to 704px.
+- Checked 390 × 844, 768 × 900, 1280 × 720, and 1680 × 945 in light and dark modes. The page has no horizontal overflow, the service catalog retains its responsive columns, and the light-mode icons resolve to Daylight Green.
+
 ## Residual P3 notes
 
 - The template's Open Sauce type is intentionally replaced by the canonical brand fonts.
 - The source Framer badge and source-specific logos are intentionally omitted.
-- The source's separate detail routes are implemented as in-page states to preserve this repository's single-page static architecture.
+- About and Contact remain compact in-page states. Services intentionally uses a dedicated static route because its examples and metadata need an indexable URL.
 
 ## Implementation checklist
 
@@ -145,6 +203,9 @@ Focused review confirmed that the header alignment, wordmark overlap, first-row 
 - [x] Dark and light modes verified
 - [x] Desktop, tablet, and mobile verified
 - [x] Hover, focus, navigation, and form structure verified
+- [x] Dedicated Services route and legacy hash compatibility verified
+- [x] Server-delivered service examples and JSON-LD alignment verified
+- [x] Public copy checked for em dashes
 - [x] Source and implementation compared in combined images
 - [x] Console checked with no errors or warnings
 

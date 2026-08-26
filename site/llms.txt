@@ -14,6 +14,7 @@
 
 - Movement as a way to understand self, place, and discomfort.
 - Systems as tools for clarity, useful products, and better work.
+- Technology-led services that connect sales, marketing, and operations through websites, automation, integrations, and custom software.
 - Food, culture, and conversation as records of human connection.
 - Observation as a way to stay present in modern life.
 
@@ -24,4 +25,5 @@ contact@danielhunt.dev
 
 ## Pages
 
-- [Home](https://danielhunt.dev/): minimal editorial home, about, and contact links.
+- [Home](https://danielhunt.dev/): spatial profile index with about and contact paths.
+- [Services](https://danielhunt.dev/services/): workflow automation, lead management, appointment booking, business websites, CRM integrations, and custom software for Simi Valley, Ventura County, and remote teams.

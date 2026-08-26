@@ -1,5 +1,5 @@
 /* TEAM */
-  Daniel Hunt — Builder, writer, and systems observer
+  Daniel Hunt: Builder, writer, and systems observer
   Site: https://danielhunt.dev
   Contact: contact@danielhunt.dev
 
