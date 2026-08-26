@@ -11,6 +11,18 @@ Format per entry:
 
 ---
 
+## 2026-08-26: Short-form Script Assets and templates established
+
+**Decision:** Keep Blueprint as the reusable Topic-specific communication plan. Add Script and Script Template as Asset subtypes, and add source-derived short-form hook taxonomies, templates, and skill-reference workflows.
+
+**Rationale:** A Script is publication-oriented authored material, while a Blueprint must remain reusable across scripts, carousels, threads, and articles. The short-form method now supports reliable generation without treating unverified platform-performance claims as Brand facts.
+
+**Source:** User-provided *3 Step Formula for High Impact Short Form* PDF and user-approved implementation plan on 2026-08-26.
+
+**Implementation:** [Brand ontology v1](ONTOLOGY.md), [short-form Source](marketing/content/sources/colin-and-samir-short-form-anatomy.md), [Script Template](assets/templates/scripts/short-form-stop-hook-payoff.md), and [Content workflows](marketing/content/workflows/README.md).
+
+---
+
 ## 2026-08-26: Brand ontology and context map established
 
 **Decision:** Establish `Brand` as the root domain and document Identity, Strategy, Audience, Offers, Assets, Channels, Marketing, Analytics, and Relationships as bounded contexts. Treat Marketing as a first-class peer domain that owns Content, Campaigns, Distribution, Growth, and Funnel.

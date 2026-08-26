@@ -10,14 +10,18 @@ This context owns the Content lifecycle and its revisable operating plan. The v1
 
 Content consists of reusable Knowledge and Sources, Topics, Blueprints, Publications, Series, Workflows, and Taxonomies. Use the record directories below only when real working material exists:
 
+- [Sources](sources/README.md)
 - [Knowledge](knowledge/README.md)
 - [Topics](topics/README.md)
 - [Blueprints](blueprints/README.md)
 - [Publications](publications/README.md)
 - [Series](series/README.md)
 - [Workflows](workflows/README.md)
+- [Examples](examples/README.md)
 
 The lifecycle is Capture → Validate → Plan → Draft → Review → Produce → Publish → Measure → Learn → Reuse / Repurpose. It is not a strict one-to-one pipeline: a Topic may yield several Blueprints and Publications, while a Publication may derive from another Publication.
+
+A Blueprint may produce Script Assets for video or audio Publications. Script Assets are stored under [Assets / scripts](../../assets/scripts/); reusable Script Templates are stored under [Assets / templates](../../assets/templates/).
 
 ---
 

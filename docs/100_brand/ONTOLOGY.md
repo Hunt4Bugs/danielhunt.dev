@@ -17,7 +17,7 @@ This is a lightweight, domain-driven model for planning, creating, reusing, dist
 
 ## Bounded contexts
 
-`Brand` is the root domain. Its primary contexts are Identity, Strategy, Audience, Marketing, Offers, Assets, Channels, Relationships, and Analytics. Marketing contains Content, Campaigns, Distribution, Growth, and Funnel. Content contains Knowledge, Source, Topic, Blueprint, Publication, Series, Workflow, and Taxonomy.
+`Brand` is the root domain. Its primary contexts are Identity, Strategy, Audience, Marketing, Offers, Assets, Channels, Relationships, and Analytics. Marketing contains Content, Campaigns, Distribution, Growth, and Funnel. Content contains Knowledge, Source, Topic, Blueprint, Publication, Series, Workflow, and Taxonomy. Script and Script Template are Content Asset subtypes.
 
 ## Source migration map
 
@@ -42,7 +42,7 @@ The former paths are compatibility pointers for historical links. Plans, specifi
 | Publication | One channel-specific expression of a Topic through a Blueprint. |
 | Series | A recurring editorial grouping of related Topics and/or Publications. |
 | Workflow | A reusable lifecycle definition. A Work Item is one execution of that lifecycle for a specific subject. |
-| Asset | A reusable media, design, brand, knowledge, or template resource. |
+| Asset | A reusable media, design, brand, knowledge, script, or template resource. A Script is a versioned, publication-oriented authored asset; a Script Template is reusable fill-in-the-blank scaffolding that generates Scripts. |
 | Measurement | A dated observed metric for a Publication on a Channel. |
 | Insight | An interpretation of Measurements that creates or revises Knowledge. |
 
@@ -51,6 +51,7 @@ The former paths are compatibility pointers for historical links. Plans, specifi
 - Knowledge and Topic are many-to-many. Source and Knowledge are many-to-many.
 - A Topic has zero or many Blueprints; each Blueprint communicates one primary Topic.
 - A Blueprint has zero or many Publications; each Publication has one primary Blueprint and one Channel in v1.
+- A Blueprint has zero or many Script Assets; each Script has one primary Blueprint. A Publication may use one primary Script plus other Assets.
 - Publications and Assets are many-to-many. Repurposed outputs are separate Publications linked by `derives from`.
 - Series can group zero or many Topics and Publications. Campaign membership is optional and many-to-many.
 - A Publication has many Measurements. Measurements inform Insights; Insights create or revise Knowledge.
@@ -70,9 +71,21 @@ These are the canonical v1 starter vocabularies. They are deliberately extensibl
 | --- | --- | --- | --- |
 | Content Pattern | Blueprint | Story, Educational, List, Tutorial, Framework, Case Study, Breakdown, Comparison, Myth vs Fact, Opinion, Challenge, Journey, Experiment, Prediction, Reaction, Review, Behind the Scenes | The repeatable editorial shape. Use `Story` for storytelling and `Educational` for explanatory teaching. |
 | Content Purpose | Blueprint | Educate, Inform, Entertain, Inspire, Persuade, Build Trust, Engage, Convert | The intended audience effect. A Blueprint may identify one primary purpose and supporting purposes. |
-| Narrative Structure | Blueprint | Hook → Journey → Payoff; Problem → Solution; Before → After; Setup → Conflict → Resolution; Question → Answer; Claim → Evidence; Hook → Problem → Framework → Example → Payoff | The ordered rhetorical or story sequence inside the expression. |
+| Narrative Structure | Blueprint | Hook → Journey → Payoff; Problem → Solution; Before → After; Setup → Conflict → Resolution; Question → Answer; Claim → Evidence; Hook → Problem → Framework → Example → Payoff; Scroll Stopper + Verbal Hook → Development → Payoff | The ordered rhetorical or story sequence inside the expression. |
+| Visual Hook Type | Blueprint | Potential Energy, Kinetic Energy, General Motion, Trend Hook, God View, Novel / Unusual Visual, Emotionally Charged Imagery, Close-Up Shot, Rapid Scene Change, Bold Colors / High Contrast, Visual Symmetry / Balance, Celebrity / Face Equity, Satisfying, Cute Hook, Text Hook | The visual mechanism used to stop the scroll. |
+| Verbal Hook Type | Blueprint | Question, Personal Story, Statistic, Quotation, Fact, Shocking / Exaggeration, Description, Cliffhanger / Suspense, Humor, Dialogue, Emotion, Prediction, Motivational, Opinion, Definition | The spoken or on-screen language mechanism that establishes the audience promise or open loop. |
 
 Content Pattern answers **what kind of editorial treatment is this?** Content Purpose answers **what should it do for the audience?** Narrative Structure answers **in what order is it communicated?** These are separate classifications and may be combined freely when they make sense.
+
+For the short-form structure, the Scroll Stopper and Verbal Hook begin together; Development carries the proof, observation, story, or example; Payoff fulfills the promise. The source's 60-second timing is guidance for that template only: Scroll Stopper 0–3 seconds, Verbal Hook 0–5 seconds, Payoff in the final 5–10 seconds.
+
+### Hook usage conditions
+
+| Condition | Hook types |
+| --- | --- |
+| Evidence required | Statistic, Fact, Quotation |
+| Editorial review required | Trend Hook, Celebrity / Face Equity, Cute Hook, Shocking / Exaggeration, Motivational |
+| Always required | Truthfulness, documentary restraint, observation over preaching, and no unsupported performance claims. |
 
 ### Content and delivery taxonomies
 
@@ -88,7 +101,7 @@ Content Pattern answers **what kind of editorial treatment is this?** Content Pu
 | Taxonomy | Applied to | Values |
 | --- | --- | --- |
 | Audience Relationship | Audience Segment | Addressed, Spoken-with, Spoken-about |
-| Asset Type | Asset | Media, Design, Brand, Knowledge Asset, Template |
+| Asset Type | Asset | Media, Design, Brand, Knowledge Asset, Script, Template, Script Template |
 | Media Type | Media Asset | Image, Video, Audio, Screenshot, Recording, B-roll |
 | Metric Name | Measurement | Impressions, Views, Watch Time, Completion Rate, Likes, Comments, Saves, Shares, Clicks |
 
@@ -106,6 +119,12 @@ classDiagram
     class Measurement
     class Insight
     class Series
+    class Script {
+        <<asset subtype>>
+    }
+    class ScriptTemplate {
+        <<asset subtype>>
+    }
     class KnowledgeKind {
         <<enumeration>>
     }
@@ -119,6 +138,12 @@ classDiagram
         <<enumeration>>
     }
     class NarrativeStructure {
+        <<enumeration>>
+    }
+    class VisualHookType {
+        <<enumeration>>
+    }
+    class VerbalHookType {
         <<enumeration>>
     }
     class PublicationFormat {
@@ -138,9 +163,19 @@ classDiagram
     Blueprint ..> ContentPattern : uses
     Blueprint ..> ContentPurpose : intends
     Blueprint ..> NarrativeStructure : follows
+    Blueprint ..> VisualHookType : selects
+    Blueprint ..> VerbalHookType : selects
+    Blueprint "1" <-- "0..*" Script : produces
+    Script --|> Asset
+    ScriptTemplate --|> Asset
+    ScriptTemplate "1" <-- "0..*" Script : instantiates
+    ScriptTemplate ..> ContentPattern : supports
+    ScriptTemplate ..> NarrativeStructure : follows
+    ScriptTemplate ..> PublicationFormat : targets
     Blueprint "1" <-- "0..*" Publication : realizes
     Publication "*" --> "1" Channel : belongs to
     Publication ..> PublicationFormat : takes form
+    Script "0..1" <-- "0..*" Publication : primary script
     Publication "*" --> "*" Asset : uses
     Workflow "1" --> "*" WorkItem : defines
     WorkItem ..> WorkflowStage : current stage
