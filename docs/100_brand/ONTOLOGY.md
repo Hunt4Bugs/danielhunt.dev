@@ -58,9 +58,39 @@ The former paths are compatibility pointers for historical links. Plans, specifi
 
 ## Entities versus taxonomies
 
-Use an entity when it has a reusable identity, independent lifecycle, provenance, or relationships. Keep the following as controlled taxonomies in v1: Knowledge kind, publication format, content pattern, content purpose, narrative structure, workflow stage, Topic mode, audience relationship, asset type, and metric name.
+Use an entity when it has a reusable identity, independent lifecycle, provenance, or relationships. Use a taxonomy when a shared controlled label classifies an entity but does not require its own lifecycle. `Theme` is the single durable strategic lens. Do not introduce both Theme and Pillar in v1. A Blueprint is not a Template: Templates are Asset subtypes.
 
-`Theme` is the single durable strategic lens. Do not introduce both Theme and Pillar in v1. A Blueprint is not a Template: Templates are Asset subtypes.
+## Taxonomies
+
+These are the canonical v1 starter vocabularies. They are deliberately extensible, but additions should be made here before use so that planning and analysis retain a shared language.
+
+### Blueprint taxonomies
+
+| Taxonomy | Applied to | Values | Definition |
+| --- | --- | --- | --- |
+| Content Pattern | Blueprint | Story, Educational, List, Tutorial, Framework, Case Study, Breakdown, Comparison, Myth vs Fact, Opinion, Challenge, Journey, Experiment, Prediction, Reaction, Review, Behind the Scenes | The repeatable editorial shape. Use `Story` for storytelling and `Educational` for explanatory teaching. |
+| Content Purpose | Blueprint | Educate, Inform, Entertain, Inspire, Persuade, Build Trust, Engage, Convert | The intended audience effect. A Blueprint may identify one primary purpose and supporting purposes. |
+| Narrative Structure | Blueprint | Hook → Journey → Payoff; Problem → Solution; Before → After; Setup → Conflict → Resolution; Question → Answer; Claim → Evidence; Hook → Problem → Framework → Example → Payoff | The ordered rhetorical or story sequence inside the expression. |
+
+Content Pattern answers **what kind of editorial treatment is this?** Content Purpose answers **what should it do for the audience?** Narrative Structure answers **in what order is it communicated?** These are separate classifications and may be combined freely when they make sense.
+
+### Content and delivery taxonomies
+
+| Taxonomy | Applied to | Values | Definition |
+| --- | --- | --- | --- |
+| Knowledge Kind | Knowledge | Insight, Observation, Experience, Research, Opinion, Idea, Question, Lesson, Process, Framework, Evidence | The nature of reusable source material. `Source` remains a separate entity because it is provenance, not a kind of Knowledge. |
+| Topic Mode | Topic | Build, Offline, Bridge | The Brand toggle lens. `Bridge` connects the two modes; it is not a third brand identity. |
+| Publication Format | Publication | Text Post, Thread, Carousel, Short-form Video, Long-form Video, Article, Newsletter | The channel-neutral form of a Publication. The Channel identifies where it appears, such as Instagram, X, LinkedIn, or YouTube. |
+| Workflow Stage | Work Item | Capture, Validate, Plan, Draft, Review, Produce, Publish, Measure, Learn, Reuse / Repurpose | The current lifecycle stage of a particular work execution. |
+
+### Supporting taxonomies
+
+| Taxonomy | Applied to | Values |
+| --- | --- | --- |
+| Audience Relationship | Audience Segment | Addressed, Spoken-with, Spoken-about |
+| Asset Type | Asset | Media, Design, Brand, Knowledge Asset, Template |
+| Media Type | Media Asset | Image, Video, Audio, Screenshot, Recording, B-roll |
+| Metric Name | Measurement | Impressions, Views, Watch Time, Completion Rate, Likes, Comments, Saves, Shares, Clicks |
 
 ## Content flow
 
@@ -76,13 +106,44 @@ classDiagram
     class Measurement
     class Insight
     class Series
+    class KnowledgeKind {
+        <<enumeration>>
+    }
+    class TopicMode {
+        <<enumeration>>
+    }
+    class ContentPattern {
+        <<enumeration>>
+    }
+    class ContentPurpose {
+        <<enumeration>>
+    }
+    class NarrativeStructure {
+        <<enumeration>>
+    }
+    class PublicationFormat {
+        <<enumeration>>
+    }
+    class WorkflowStage {
+        <<enumeration>>
+    }
+    class Workflow
+    class WorkItem
 
     Source "*" --> "*" Knowledge : supports
     Knowledge "*" --> "*" Topic : informs
+    Knowledge ..> KnowledgeKind : classified by
+    Topic ..> TopicMode : classified by
     Topic "1" <-- "0..*" Blueprint : communicates
+    Blueprint ..> ContentPattern : uses
+    Blueprint ..> ContentPurpose : intends
+    Blueprint ..> NarrativeStructure : follows
     Blueprint "1" <-- "0..*" Publication : realizes
     Publication "*" --> "1" Channel : belongs to
+    Publication ..> PublicationFormat : takes form
     Publication "*" --> "*" Asset : uses
+    Workflow "1" --> "*" WorkItem : defines
+    WorkItem ..> WorkflowStage : current stage
     Publication "1" --> "*" Measurement : receives
     Measurement "*" --> "*" Insight : informs
     Insight "*" --> "*" Knowledge : creates or updates
