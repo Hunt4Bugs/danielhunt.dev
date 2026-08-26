@@ -1,4 +1,4 @@
-# danielhunt.dev — robots policy
+# danielhunt.dev: robots policy
 # Default: allow everything.
 User-agent: *
 Allow: /

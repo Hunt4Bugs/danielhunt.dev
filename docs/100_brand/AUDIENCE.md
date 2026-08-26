@@ -10,6 +10,10 @@ The Brand Statement, the brand-level contrarian, the product-level contrarian, a
 
 The brand operates across three audience tiers. Only one is the audience the brand talks *to*.
 
+### Commercial services audience
+
+The Services page has a separate acquisition job from the editorial brand. It speaks to small and local businesses in Simi Valley and Ventura County, larger organizations, and remote teams that need a website, lead automation, connected operations, or custom software. This commercial audience does not replace the primary Life Sciences editorial audience below. It is a distinct route for people with an active technology problem and a reason to contact Daniel.
+
 ### (B2) Primary. Software engineers and SaaS or AI founders looking for a frontier.
 
 The person the brand addresses. Currently shipping consumer SaaS, B2B tooling, or AI demos for things they do not particularly believe in. Disillusioned with the current attention-economy lap of tech. Curious about a domain where their existing skills (software engineering, product, distribution) compound into real-world impact rather than into another LLM wrapper.

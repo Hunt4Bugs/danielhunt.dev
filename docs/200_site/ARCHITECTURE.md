@@ -5,7 +5,7 @@ type: architecture-reference
 status: active
 owner: Daniel Hunt
 created: 2026-07-28
-updated: 2026-07-28
+updated: 2026-08-25
 facets: [brand, delivery]
 related:
   - ../100_brand/IDENTITY.md
@@ -14,6 +14,7 @@ related:
 sources:
   - ../../CLAUDE.md
   - ../../site/index.html
+  - ../../site/services/index.html
   - ../../site/css/site.css
   - ../../site/js/site.js
 ---
@@ -23,8 +24,11 @@ sources:
 ## Verified evidence
 
 - The deployable static site is the repository-root `site/` directory.
-- `site/index.html` is the one-page public surface; `site/brand/index.html` is the public brand reference.
-- `site/css/site.css` and `site/js/site.js` contain the shared styling and browser behavior. Shared navigation and footer are rendered by web components in `site/js/site.js`.
+- `site/index.html` is the spatial profile surface; `site/services/index.html` is the indexed commercial-services route; `site/brand/index.html` is the public brand reference.
+- The main page is a full-viewport spatial index. About and Contact are in-page states addressed by URL hashes. Services is a real link to `/services/`, and the legacy `/#services` hash redirects there for compatibility.
+- `site/css/site.css` and `site/js/site.js` contain the shared styling and browser behavior. Theme and live Simi Valley time initialization work across the home and Services pages. Home-only wordmark and browser-history routing are guarded to the spatial index.
+- The Services page is static semantic HTML with five concrete offers, a labeled capability map, a process, an FAQ, page-specific metadata, and aligned JSON-LD. Its hero uses a shorter readable H1, and each offer has a decorative line icon. It repeats neither the portrait nor hidden, click-dependent offer copy.
+- Shared navigation and footer web components remain available in `site/js/site.js` for auxiliary static pages.
 - GitHub Pages uploads `site/` directly through `.github/workflows/deploy.yml`.
 
 ## Canonical constraints
