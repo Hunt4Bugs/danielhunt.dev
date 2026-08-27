@@ -11,6 +11,18 @@ Format per entry:
 
 ---
 
+## 2026-08-27: Content workflow skills built
+
+**Decision:** Build seven project-local Claude Code skills (`to-knowledge`, `to-topic`, `to-blueprint`, `to-hooks`, `to-script`, `to-validate`, `to-taxonomy`) under `.claude/skills/`, one per workflow doc in `marketing/content/workflows/`, each enforcing its workflow's Taxonomy contract and dedup check for real rather than as a checklist. Add generic Knowledge, Topic, and Source record templates to close a template gap the review surfaced (Blueprint and Script already had one). Add a shared "Skill execution contract" section to `marketing/content/workflows/README.md` that six of the seven skills point to instead of restating.
+
+**Rationale:** The workflow docs already defined a rigorous content pipeline (Capture, Develop Topic, Develop Blueprint, Generate Hook Options, Generate Short-Form Script, Validate Script, Propose Taxonomy Addition), but nothing executed them. A `/grill-me` session on 2026-08-27 established that these should be project-local (not routed through the portfolio-wide `skillstack` plugin, which is unaware of this repo's ontology and its retired `docs/brand/` path convention), covering the full pipeline rather than a subset, with automated taxonomy validation and dedup checks, confirm-before-write on every record, and skills that suggest but never auto-invoke the next pipeline stage.
+
+**Source:** User-approved `/grill-me` session and implementation plan on 2026-08-27.
+
+**Implementation:** [Content workflow skills design](specs/2026-08-27-content-workflow-skills-design.md), [Content workflow skills implementation plan](plans/2026-08-27-content-workflow-skills-implementation.md), [Content workflows](marketing/content/workflows/README.md), [Knowledge Templates](assets/templates/knowledge/README.md), [Topic Templates](assets/templates/topics/README.md), [Source Templates](assets/templates/sources/README.md), and the seven `SKILL.md` files under `.claude/skills/`.
+
+---
+
 ## 2026-08-26: Short-form Script Assets and templates established
 
 **Decision:** Keep Blueprint as the reusable Topic-specific communication plan. Add Script and Script Template as Asset subtypes, and add source-derived short-form hook taxonomies, templates, and skill-reference workflows.
