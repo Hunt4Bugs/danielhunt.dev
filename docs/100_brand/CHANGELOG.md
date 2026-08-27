@@ -1,3 +1,19 @@
+---
+class: "100"
+collection: brand
+type: changelog
+status: active
+owner: Daniel Hunt
+created: 2026-05-28
+updated: 2026-08-27
+facets:
+  - governance
+related:
+  - README.md
+  - ONTOLOGY.md
+sources: []
+---
+
 # Brand Changelog
 
 Append-only log of meaningful brand decisions. One entry per choice. Newest entries at the top.
@@ -11,11 +27,23 @@ Format per entry:
 
 ---
 
+## 2026-08-27: Content operating system completed through reuse
+
+**Decision:** Formalize Workflow, persistent Work Item, Workflow Stage, Work Item State, Publication content, production dependencies, and controlled-vocabulary ownership; extend the Content lifecycle from Publication development through Measurement, Insight, and repurposing.
+
+**Rationale:** The ontology already modeled a closed learning loop, but the executable documentation stopped at Script validation and did not define concrete Work Item or downstream record contracts. The completed contracts preserve ontology-first ownership while making the lifecycle consistently operable by humans and future thin skills.
+
+**Source:** User-approved Brand Content Operating System implementation plan on 2026-08-27.
+
+**Implementation:** [Brand ontology](ONTOLOGY.md), [Content domain](marketing/content/README.md), [Content workflows](marketing/content/workflows/README.md), [Work Item contract](marketing/content/work-items/README.md), and [Analytics](analytics/README.md).
+
+---
+
 ## 2026-08-27: Content workflow skills built
 
 **Decision:** Build seven project-local Claude Code skills (`to-knowledge`, `to-topic`, `to-blueprint`, `to-hooks`, `to-script`, `to-validate`, `to-taxonomy`) under `.claude/skills/`, one per workflow doc in `marketing/content/workflows/`, each enforcing its workflow's Taxonomy contract and dedup check for real rather than as a checklist. Add generic Knowledge, Topic, and Source record templates to close a template gap the review surfaced (Blueprint and Script already had one). Add a shared "Skill execution contract" section to `marketing/content/workflows/README.md` that six of the seven skills point to instead of restating.
 
-**Rationale:** The workflow docs already defined a rigorous content pipeline (Capture, Develop Topic, Develop Blueprint, Generate Hook Options, Generate Short-Form Script, Validate Script, Propose Taxonomy Addition), but nothing executed them. A `/grill-me` session on 2026-08-27 established that these should be project-local (not routed through the portfolio-wide `skillstack` plugin, which is unaware of this repo's ontology and its retired `docs/brand/` path convention), covering the full pipeline rather than a subset, with automated taxonomy validation and dedup checks, confirm-before-write on every record, and skills that suggest but never auto-invoke the next pipeline stage.
+**Rationale:** The workflow docs already defined a rigorous content pipeline (Capture, Develop Topic, Develop Blueprint, Generate Hook Options, Generate Short-Form Script, Validate Script, Propose Taxonomy Addition), but nothing executed them. A `/grill-me` session on 2026-08-27 established that these should be project-local (not routed through the portfolio-wide `skillstack` plugin, which is unaware of this repo's ontology and its retired `docs/brand/` path convention), covering the full pipeline rather than a subset, with automated taxonomy validation and dedup checks, confirm-before-write on every record, and skills that suggest but never auto-invoke the next pipeline stage. Built against the workflow docs as they stood before the same-day "Content operating system completed through reuse" update above; a follow-up pass reconciles the seven skills against the now-current docs and the new publication and measurement workflows.
 
 **Source:** User-approved `/grill-me` session and implementation plan on 2026-08-27.
 

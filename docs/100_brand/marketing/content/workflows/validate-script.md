@@ -4,16 +4,36 @@ collection: content
 type: workflow
 status: active
 owner: Daniel Hunt
-updated: 2026-08-26
+created: 2026-08-26
+updated: 2026-08-27
+facets:
+  - operations
+related:
+  - README.md
+  - ../work-items/README.md
+sources:
+  - ../../../ONTOLOGY.md
 ---
 
 # Validate Script
+
+## Work Item contract
+
+- **Primary subject:** one Script Asset.
+- **Entry stage:** Review.
+- **Successful exit stage:** Produce.
+- **Creates:** no new domain entity.
+- **Updates:** validation evidence and outcome on the Work Item; the Script only when applying an authorized revision.
+- **Required predecessors:** a completed [Generate Short-Form Script](generate-short-form-script.md) Work Item or an equivalent existing Script.
+- **Possible next workflows:** [Develop Publication](develop-publication.md) after a pass; Generate Short-Form Script after revision gaps; [Capture Knowledge](capture-knowledge.md) when evidence is insufficient.
+- **Validation evidence:** Blueprint fidelity, intended Publication Format, evidence coverage, hook conditions, production dependencies, and editorial checks recorded in the Work Item.
+- **Failure and return paths:** return to Draft for script revision or Capture for missing evidence. Channel-specific failures are outside this workflow.
 
 ## Required references
 
 - [Brand ontology v1](../../../ONTOLOGY.md): Script relationship, Publication Format, hook taxonomies, and Hook usage conditions.
 - [Identity](../../../identity/README.md): documentary restraint, observation over preaching, and scars-not-wounds rules.
-- The Script's primary Blueprint, linked Sources, related Assets, and intended Channel.
+- The Script's primary Blueprint, linked Sources, related Assets, and intended Publication Format.
 - [Short-form Stop–Hook–Payoff Script Template](../../../assets/templates/scripts/short-form-stop-hook-payoff.md) when validating that format.
 
 ## Taxonomy contract
@@ -24,16 +44,16 @@ updated: 2026-08-26
 
 ## Input
 
-One Script Asset, its primary Blueprint, linked Sources, and the intended Publication format and Channel.
+One Script Asset, its primary Blueprint, linked Sources, and intended Publication Format. A Channel is not required.
 
 ## Checks
 
 - The opening promise is explicit and the Payoff fulfills it.
 - Facts, statistics, quotations, and outcomes have suitable Sources.
 - Chosen hook types meet their evidence or editorial-review conditions.
-- Every proposed visual or audio asset exists, is obtainable, or is explicitly marked as a planned capture.
+- Every proposed visual or audio dependency is an Existing Asset, Planned Capture, or Obtainable External Asset; none remains Unresolved.
 - The Script follows documentary restraint, observation over preaching, scars-not-wounds, and no unsupported performance claims.
 
 ## Output
 
-Mark the Script ready for production, return it for revision with specific gaps, or return it to Knowledge capture if evidence is insufficient.
+Record a pass, revision-required result, or evidence-insufficient result on the Work Item. A pass makes the Script eligible for a Publication; it does not validate any Channel-specific expression.

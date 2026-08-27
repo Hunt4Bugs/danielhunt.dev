@@ -4,7 +4,14 @@ collection: brand
 type: blueprint-template
 status: active
 owner: Daniel Hunt
-updated: 2026-08-26
+created: 2026-08-26
+updated: 2026-08-27
+facets:
+  - content
+related:
+  - ../../../marketing/content/workflows/develop-blueprint.md
+sources:
+  - ../../../marketing/content/knowledge/short-form-anatomy.md
 pattern: "[select Content Pattern]"
 format: Short-form Video
 structure: "Scroll Stopper + Verbal Hook → Development → Payoff"
@@ -16,6 +23,7 @@ Use this template to create a Topic-specific Blueprint before scripting a short-
 
 ## Brief
 
+- **Creating Work Item:** [link]
 - **Topic:** [reusable subject]
 - **Primary audience:** [Audience Segment]
 - **Primary Theme:** [Theme]
@@ -47,5 +55,5 @@ Use this template to create a Topic-specific Blueprint before scripting a short-
 
 - [ ] Promise is fulfilled in the proposed payoff.
 - [ ] All factual hooks have linked Sources.
-- [ ] Chosen hook types fit the Brand constraints and available real assets.
+- [ ] Chosen hook types fit the Brand constraints and resolvable production dependencies.
 - [ ] The idea remains specific to the Topic rather than generic creator advice.

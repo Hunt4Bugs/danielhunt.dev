@@ -4,10 +4,30 @@ collection: content
 type: workflow
 status: active
 owner: Daniel Hunt
+created: 2026-08-26
 updated: 2026-08-27
+facets:
+  - operations
+related:
+  - README.md
+  - ../work-items/README.md
+sources:
+  - ../../../ONTOLOGY.md
 ---
 
 # Capture Knowledge
+
+## Work Item contract
+
+- **Primary subject:** the raw material being evaluated.
+- **Entry stage:** Capture.
+- **Successful exit stage:** Validate.
+- **Creates:** one Knowledge record and any reusable Source records that do not already exist.
+- **Updates:** an existing materially duplicative Knowledge or Source record when appropriate.
+- **Required predecessors:** none.
+- **Possible next workflows:** [Develop Topic](develop-topic.md) after the Knowledge is usable; this workflow again after verification when material remains unknown.
+- **Validation evidence:** provenance, evidence boundary, selected Knowledge Kind, duplicate check, and output links recorded in the Work Item.
+- **Failure and return paths:** remain at Capture when origin, privacy, or verification limits prevent honest reusable synthesis.
 
 ## Required references
 
@@ -37,7 +57,7 @@ Raw material with its available context and provenance. The material may be an o
 
 ## Output
 
-One reusable Knowledge record with a Knowledge Kind, provenance, synthesis, evidence boundary, and links to supporting Sources. The workflow may also produce one or more Source records when reusable provenance does not already exist.
+One reusable Knowledge record with a Knowledge Kind, provenance, synthesis, evidence boundary, links to supporting Sources, and a link to the creating Work Item. The workflow may also produce one or more Source records when reusable provenance does not already exist.
 
 ## Stop conditions
 
