@@ -17,6 +17,7 @@ Before acting, read:
 - `docs/100_brand/marketing/content/workflows/README.md#skill-execution-contract` (taxonomy validation, dedup check, confirm-before-write, stop-condition routing, and chaining rules that apply to every step below)
 - `docs/100_brand/marketing/content/knowledge/README.md` (what a Knowledge record is for and what it must link)
 - `docs/100_brand/marketing/content/sources/README.md` (what a Source record is for and what it must not do)
+- `docs/100_brand/marketing/content/work-items/README.md` (the Work Item identifier format and its required frontmatter and body)
 - `docs/100_brand/identity/README.md` (truthfulness, evidence, privacy, and scars-not-wounds boundaries)
 
 ## Input
@@ -46,7 +47,14 @@ Write to `docs/100_brand/marketing/content/knowledge/<slug>.md` using `docs/100_
 
 When step 2 above warrants a Source record, write it first to `docs/100_brand/marketing/content/sources/<source-slug>.md` using `docs/100_brand/assets/templates/sources/source-record.md`, then link it from the Knowledge record's Source field. `<source-slug>` is a separate slug: derive it by lowercasing and hyphenating the Source record's own Title field (per the Source template's Header section), which typically names the origin or attribution, not the Knowledge subject. It commonly differs from `<slug>` above, as in the existing pair `docs/100_brand/marketing/content/knowledge/short-form-anatomy.md` (Knowledge) and `docs/100_brand/marketing/content/sources/colin-and-samir-short-form-anatomy.md` (Source).
 
-Confirm before writing, per the Skill execution contract: present the target file path(s), the chosen Knowledge Kind, and a section-by-section summary of the planned content, and wait for explicit approval.
+Also create, or on a dedup-extend update, one Work Item record under `docs/100_brand/marketing/content/work-items/`, per the Skill execution contract's point 7, `capture-knowledge.md`'s own Work Item contract, and `docs/100_brand/marketing/content/work-items/README.md`'s required frontmatter and body: `primary_subject` is the target (or, on dedup-extend, the existing) Knowledge record's path (`docs/100_brand/marketing/content/knowledge/<slug>.md`), matching the `../topics/example.md`-style file-path format `work-items/README.md` specifies, not a prose description. No required predecessors.
+
+- **Creating a new Knowledge record:** create the Work Item at entry stage Capture, and fill the Knowledge record's (and the Source record's, if one is written) "Creating Work Item" field with this Work Item's path.
+- **Dedup-extending an existing Knowledge record:** create the Work Item at entry stage Capture, and add this Work Item's path to the *new* Work Item's own `related` field, pointing at the existing Knowledge record (and Source record, if any). Leave the existing Knowledge record's (and Source record's) "Creating Work Item" field untouched. It must keep naming whichever Work Item originally created it, not the one that merely extended it.
+
+In both cases, create the Work Item at `current_stage: Capture`, then, once the Knowledge record is written and confirmed, update it to `current_stage: Validate` (the successful exit stage). Do not write `current_stage: Validate` directly on creation; the field must reflect the actual Capture-then-Validate transition on every successful run, so two otherwise-identical successful runs do not diverge on this required field.
+
+Confirm before writing, per the Skill execution contract: present the target file path(s), the chosen Knowledge Kind, and a section-by-section summary of the planned content, and wait for explicit approval. Include the Work Item's planned content in this same presentation, as one approval rather than a second round, matching the Skill execution contract's own wording.
 
 ## Stop conditions
 
@@ -57,6 +65,8 @@ Stop without creating Knowledge when:
 - Privacy or confidentiality constraints prevent safe internal capture.
 
 Preserve material as an explicitly labeled unknown when it may become usable after verification later. No upstream skill resolves any of these conditions; this is a hard stop pending better material, origin, or clearance, not a handoff to another skill.
+
+Even when this skill stops without creating Knowledge, it still creates, or leaves, a Work Item recording the block rather than producing nothing with no record of the attempt: set `work_state: Blocked` (the matching Work Item State value in `docs/100_brand/ONTOLOGY.md`) and repository `status: blocked`, and record the actual missing evidence, approval, or dependency in the Work Item's own prose fields (see `docs/100_brand/marketing/content/work-items/README.md`).
 
 ## Next step
 
@@ -73,3 +83,5 @@ When a Source record was also created, additionally check it against the Source 
 ```
 rg -n '^---$|^type: source$|^## Header|^## Origin|^## Access conditions|^## Verification limits|^## Scope|^## Validation' docs/100_brand/marketing/content/sources/<source-slug>.md
 ```
+
+The Work Item record's filename embeds today's date and a slug that cannot be predicted in advance, so no fixed `rg` command is given for it here. Spot-check its required frontmatter and body sections by hand against `docs/100_brand/marketing/content/work-items/README.md`'s spec instead.
