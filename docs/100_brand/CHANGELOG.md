@@ -27,6 +27,18 @@ Format per entry:
 
 ---
 
+## 2026-08-27: Content workflow skills reconciled with the operating system
+
+**Decision:** Update all seven content workflow skills (`to-knowledge`, `to-topic`, `to-blueprint`, `to-hooks`, `to-script`, `to-validate`, `to-taxonomy`) to match the operating-system formalization landed the same day: every skill now creates or updates a persistent Work Item record per run, `to-blueprint` and `to-hooks` share an explicit Final/Candidate/Ready-for-hook-development marker convention since a Blueprint's opening choices no longer always arrive pre-filled, `to-script` assigns the formal Production Dependency State enum per beat instead of linking to "available Assets" and drops the removed Channel field, `to-validate` cites Publication Format instead of Channel and records its verdict on the Work Item, and `to-taxonomy` now routes a candidate to whichever context actually owns it (ONTOLOGY.md, or the Theme, Audience Segment, or Channel registry), not always ONTOLOGY.md.
+
+**Rationale:** The seven skills were built and reviewed against the workflow docs as they stood before a concurrent, same-day piece of work substantially reworked those same docs (adding the Work Item contract, the registry-table ownership model, and the Production Dependency State taxonomy). Left unreconciled, the skills would have kept working but would have quietly drifted from the source of truth they claim to follow. Each skill was updated through the same implementer-plus-two-stage-review process used to build them, which caught real cross-file bugs along the way: a provenance-overwriting bug in Work Item dedup-extend handling, an unresolved predecessor-lookup edge case when an upstream record had no Work Item on file, a factually wrong claim about where Production Dependency State applies, and an internal contradiction in `to-taxonomy`'s own stated boundary with the shared contract it explicitly does not follow.
+
+**Source:** User-directed reconciliation session on 2026-08-27, following the same-day "Content operating system completed through reuse" work.
+
+**Implementation:** the seven `SKILL.md` files under `.claude/skills/`, the shared "Skill execution contract" in [Content workflows](marketing/content/workflows/README.md) (added point 7 for Work Item tracking), and the Knowledge, Topic, and Source templates under [Assets / templates](assets/templates/README.md) (added "Creating Work Item" fields for consistency with Blueprint and Script).
+
+---
+
 ## 2026-08-27: Content operating system completed through reuse
 
 **Decision:** Formalize Workflow, persistent Work Item, Workflow Stage, Work Item State, Publication content, production dependencies, and controlled-vocabulary ownership; extend the Content lifecycle from Publication development through Measurement, Insight, and repurposing.
