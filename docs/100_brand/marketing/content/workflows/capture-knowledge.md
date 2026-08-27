@@ -1,0 +1,44 @@
+---
+class: "100"
+collection: content
+type: workflow
+status: active
+owner: Daniel Hunt
+updated: 2026-08-27
+---
+
+# Capture Knowledge
+
+## Required references
+
+- [Brand ontology v1](../../../ONTOLOGY.md): Knowledge, Source, Knowledge Kind, and their relationships.
+- [Source records](../sources/README.md): provenance and verification-boundary requirements.
+- [Knowledge records](../knowledge/README.md): reusable synthesis and relationship requirements.
+- [Identity](../../../identity/README.md): truthfulness, evidence, privacy, and scars-not-wounds boundaries.
+
+## Taxonomy contract
+
+- **Reads:** Knowledge Kind and the existing Knowledge inventory.
+- **Writes:** one existing Knowledge Kind on the resulting Knowledge record.
+- **Restriction:** use only ontology-defined values. Route a missing value through [Propose Taxonomy Addition](propose-taxonomy-addition.md).
+
+## Input
+
+Raw material with its available context and provenance. The material may be an observation, experience, research finding, opinion, idea, question, lesson, process, framework, or evidence.
+
+## Procedure
+
+1. Preserve the material's origin, date or timeframe when known, access conditions, and relevant context.
+2. Create or link a Source record when the origin has value beyond this capture. For firsthand material, identify the firsthand context and its verification limits.
+3. Extract the smallest reusable synthesis without converting it into a Topic, Blueprint, claim, or publication draft.
+4. Select one Knowledge Kind and link the supporting Sources.
+5. Separate verified evidence, firsthand account, interpretation, and unknowns. Record an evidence boundary for anything that must not be stated as established fact.
+6. Check the existing Knowledge inventory and extend an existing record when the material is materially duplicative.
+
+## Output
+
+One reusable Knowledge record with a Knowledge Kind, provenance, synthesis, evidence boundary, and links to supporting Sources. The workflow may also produce one or more Source records when reusable provenance does not already exist.
+
+## Stop conditions
+
+Stop without creating Knowledge when the origin cannot be represented honestly, the material is only an unsupported claim, or privacy and confidentiality constraints prevent safe internal capture. Preserve material as an explicitly labeled unknown when it may become usable after verification.
