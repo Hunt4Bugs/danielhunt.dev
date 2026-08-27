@@ -1,0 +1,19 @@
+name: Chore / maintenance
+description: Dependency bump, cleanup, or other non-user-facing work
+title: "[Chore]: "
+labels: ["chore", "needs-triage"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What needs doing
+      description: The maintenance task.
+    validations:
+      required: true
+  - type: textarea
+    id: why-now
+    attributes:
+      label: Why now
+      description: What prompted this — a warning, a stale dependency, drift you noticed, etc.
+    validations:
+      required: false

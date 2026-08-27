@@ -1,0 +1,41 @@
+name: Bug report
+description: Something on the site is broken
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What's broken?
+      description: A clear description of the problem.
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: Page URL or path (e.g. `/services/`, `/contact-card/`)
+      placeholder: https://danielhunt.dev/...
+    validations:
+      required: true
+  - type: textarea
+    id: expected-actual
+    attributes:
+      label: Expected vs. actual
+      description: What should happen, and what happens instead.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser / device
+      placeholder: e.g. Safari 18 on iOS, Chrome 130 on desktop
+    validations:
+      required: false
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Drag and drop an image here if it helps.
+    validations:
+      required: false

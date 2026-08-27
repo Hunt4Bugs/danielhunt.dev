@@ -1,0 +1,26 @@
+name: Feature / enhancement
+description: A new page, section, or capability
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What to add
+      description: A clear description of the feature or enhancement.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: What problem this solves, or what it enables.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Rough scope
+      description: Pages/components likely affected, and anything explicitly out of scope.
+    validations:
+      required: false

@@ -1,0 +1,33 @@
+name: Content / copy change
+description: Wording, brand copy, or asset update — not a code bug
+title: "[Content]: "
+labels: ["content", "needs-triage"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: Page/section this copy or asset lives in (e.g. `/services/` offer details, homepage About state)
+    validations:
+      required: true
+  - type: textarea
+    id: before
+    attributes:
+      label: Current text/asset
+      description: Quote or describe what's there now.
+    validations:
+      required: true
+  - type: textarea
+    id: after
+    attributes:
+      label: Proposed text/asset
+      description: What it should say or show instead.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why
+      description: What's wrong with the current copy, or what prompted the change.
+    validations:
+      required: false
