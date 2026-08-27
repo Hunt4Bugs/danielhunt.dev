@@ -1,0 +1,26 @@
+name: Docs change
+description: A repo doc is stale, wrong, or missing — CONTEXT.md, an ADR, a brand doc, a skill doc
+title: "[Docs]: "
+labels: ["documentation", "needs-triage"]
+body:
+  - type: input
+    id: which
+    attributes:
+      label: Which doc
+      description: Path to the file (e.g. `docs/100_brand/identity/visual.md`, `CLAUDE.md`)
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's stale or missing
+      description: What the doc says now vs. what's actually true, or what gap you found.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed fix
+      description: What the doc should say instead, if you already know.
+    validations:
+      required: false
