@@ -4,7 +4,13 @@ collection: brand
 type: knowledge-template
 status: active
 owner: Daniel Hunt
+created: 2026-08-27
 updated: 2026-08-27
+facets:
+  - content
+related:
+  - ../../../marketing/content/workflows/capture-knowledge.md
+sources: []
 ---
 
 # Knowledge Record Template
@@ -13,6 +19,7 @@ Use this template to create a Knowledge record. Replace every bracketed field wi
 
 ## Header
 
+- **Creating Work Item:** [link]
 - **Title:** [reusable subject, not a post title]
 - **Knowledge Kind:** [one ONTOLOGY.md Knowledge Kind value]
 - **Source:** [link to a Source record, or "none" if the material needs no separate provenance record]

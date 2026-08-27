@@ -4,7 +4,13 @@ collection: brand
 type: source-template
 status: active
 owner: Daniel Hunt
+created: 2026-08-27
 updated: 2026-08-27
+facets:
+  - content
+related:
+  - ../../../marketing/content/workflows/capture-knowledge.md
+sources: []
 ---
 
 # Source Record Template
@@ -13,6 +19,7 @@ Use this template to create a Source record. Replace every bracketed field.
 
 ## Header
 
+- **Creating Work Item:** [link]
 - **Title:** [short identifying name]
 - **Origin type:** [document, dataset, recording, interview, firsthand context, or other]
 
