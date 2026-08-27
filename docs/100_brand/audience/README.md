@@ -1,3 +1,20 @@
+---
+class: "100"
+collection: brand
+type: audience
+status: active
+owner: Daniel Hunt
+created: 2026-06-01
+updated: 2026-08-27
+facets:
+  - content
+related:
+  - ../identity/README.md
+  - ../strategy/README.md
+sources:
+  - ../specs/2026-06-01-personal-brand-workbook.md
+---
+
 # Daniel Hunt — Brand Audience
 
 Companion to [Identity](../identity/README.md). Identity defines who the brand is. Audience defines who the brand is for, what they are stuck with, what content addresses, and what credibility justifies speaking on it.
@@ -9,6 +26,19 @@ The Brand Statement, the brand-level contrarian, the product-level contrarian, a
 ## Audience tiers
 
 The brand operates across three audience tiers. Only one is the audience the brand talks *to*.
+
+### Audience Segment registry
+
+These are the canonical Audience Segment values for Brand records and workflows.
+
+| Segment | Stable code | Audience Relationship | Use |
+| --- | --- | --- | --- |
+| Primary Editorial Audience | B2 | Addressed | Software engineers and SaaS or AI founders looking for a meaningful frontier. |
+| Life Sciences Founder Peers | B1 | Spoken-with | Founders already building life sciences software; peers and potential design partners. |
+| Lab Operations and Scientists | A | Spoken-about | End users whose problems give the work meaning; not the primary editorial audience. |
+| Commercial Services Audience | SERVICES | Addressed | Organizations with a concrete website, automation, integration, or custom-software need. This is separate from the editorial strategy. |
+
+Use the Segment name and stable code together when ambiguity is possible. A proposed Segment requires the governed taxonomy-addition workflow and approval before use.
 
 ### Commercial services audience
 

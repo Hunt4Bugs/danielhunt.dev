@@ -4,10 +4,30 @@ collection: content
 type: workflow
 status: active
 owner: Daniel Hunt
-updated: 2026-08-26
+created: 2026-08-26
+updated: 2026-08-27
+facets:
+  - operations
+related:
+  - README.md
+  - ../work-items/README.md
+sources:
+  - ../../../ONTOLOGY.md
 ---
 
 # Generate Short-Form Script
+
+## Work Item contract
+
+- **Primary subject:** one script-ready short-form Blueprint.
+- **Entry stage:** Draft.
+- **Successful exit stage:** Review.
+- **Creates:** one versioned Script Asset.
+- **Updates:** none unless explicitly revising an existing Script from a failed validation Work Item.
+- **Required predecessors:** a completed [Develop Blueprint](develop-blueprint.md) Work Item and, when used, [Generate Hook Options](generate-hook-options.md).
+- **Possible next workflows:** [Validate Script](validate-script.md).
+- **Validation evidence:** Blueprint fidelity, intended Publication Format, Source coverage, promise/payoff closure, production-dependency states, and Script link recorded in the Work Item.
+- **Failure and return paths:** return to Develop Blueprint when the plan must change; return to Capture when evidence is insufficient.
 
 ## Required references
 
@@ -24,7 +44,7 @@ updated: 2026-08-26
 
 ## Input
 
-One approved short-form Blueprint, the [Short-form Stop–Hook–Payoff Script Template](../../../assets/templates/scripts/short-form-stop-hook-payoff.md), linked Sources, and available Assets.
+One script-ready short-form Blueprint, the [Short-form Stop–Hook–Payoff Script Template](../../../assets/templates/scripts/short-form-stop-hook-payoff.md), linked Sources, and identified production dependencies.
 
 ## Procedure
 
@@ -32,12 +52,12 @@ One approved short-form Blueprint, the [Short-form Stop–Hook–Payoff Script T
 2. Fill the Scroll Stopper and Verbal Hook from the selected Blueprint values.
 3. Build Development from real proof, observation, story beats, or examples.
 4. Write a Payoff that directly fulfills the stated promise.
-5. Link all factual statements to Sources and every named visual/audio beat to available Assets.
+5. Link all factual statements to Sources. Assign every named visual or audio beat one Production Dependency State: Existing Asset, Planned Capture, Obtainable External Asset, or Unresolved.
 
 ## Output
 
-A Script Asset with one primary Blueprint and enough production detail for a later Publication.
+A Script Asset with one primary Blueprint, intended Publication Format, production-dependency states, a link to its creating Work Item, and enough production detail for a later Publication.
 
 ## Prohibitions
 
-Do not invent claims, evidence, footage, quotations, outcomes, personal experiences, or customer details.
+Do not invent claims, evidence, footage, quotations, outcomes, personal experiences, or customer details. `Unresolved` dependencies may be recorded for revision but cannot pass validation.

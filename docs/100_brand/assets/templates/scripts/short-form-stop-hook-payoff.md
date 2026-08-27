@@ -4,7 +4,14 @@ collection: brand
 type: script-template
 status: active
 owner: Daniel Hunt
-updated: 2026-08-26
+created: 2026-08-26
+updated: 2026-08-27
+facets:
+  - content
+related:
+  - ../../../marketing/content/workflows/generate-short-form-script.md
+sources:
+  - ../../../marketing/content/knowledge/short-form-anatomy.md
 format: Short-form Video
 structure: "Scroll Stopper + Verbal Hook → Development → Payoff"
 ---
@@ -16,9 +23,10 @@ Create a Script Asset from an approved Blueprint. Replace every bracketed field 
 ## Header
 
 - **Script title:** [publication-oriented title]
+- **Creating Work Item:** [link]
 - **Primary Blueprint:** [link]
 - **Topic:** [link]
-- **Target Channel:** [Channel]
+- **Intended Publication Format:** Short-form Video
 - **Primary visual and verbal hook types:** [taxonomy values]
 - **Source-specific timing guidance:** Scroll Stopper 0–3s; Verbal Hook 0–5s; Payoff in final 5–10s of a typical 60-second short.
 
@@ -36,9 +44,9 @@ Create a Script Asset from an approved Blueprint. Replace every bracketed field 
 
 | Beat | Visual / audio | Spoken or on-screen content | Evidence / source |
 | --- | --- | --- | --- |
-| 1 | [real asset] | [line] | [link] |
-| 2 | [real asset] | [line] | [link] |
-| 3 | [real asset] | [line] | [link] |
+| 1 | [requirement and Production Dependency State] | [line] | [link] |
+| 2 | [requirement and Production Dependency State] | [line] | [link] |
+| 3 | [requirement and Production Dependency State] | [line] | [link] |
 
 ## Payoff
 
@@ -54,5 +62,6 @@ Create a Script Asset from an approved Blueprint. Replace every bracketed field 
 
 - [ ] The payoff directly closes the opening promise.
 - [ ] Every fact, statistic, quotation, and outcome has a linked Source.
-- [ ] No unavailable footage, customer outcome, or personal experience has been invented.
+- [ ] Every production dependency is an Existing Asset, Planned Capture, or Obtainable External Asset; none is Unresolved.
+- [ ] No footage, customer outcome, or personal experience has been invented.
 - [ ] The Script avoids generic hype, performative motivation, and unsupported performance claims.

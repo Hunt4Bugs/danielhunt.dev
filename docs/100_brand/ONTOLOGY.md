@@ -4,9 +4,16 @@ collection: brand
 type: ontology
 status: active
 owner: Daniel Hunt
-updated: 2026-08-26
+created: 2026-08-26
+updated: 2026-08-27
+facets:
+  - content
+  - assets
+  - analytics
 related:
   - README.md
+sources:
+  - marketing/content/sources/colin-and-samir-short-form-anatomy.md
 ---
 
 # Brand ontology v1
@@ -17,7 +24,7 @@ This is a lightweight, domain-driven model for planning, creating, reusing, dist
 
 ## Bounded contexts
 
-`Brand` is the root domain. Its primary contexts are Identity, Strategy, Audience, Marketing, Offers, Assets, Channels, Relationships, and Analytics. Marketing contains Content, Campaigns, Distribution, Growth, and Funnel. Content contains Knowledge, Source, Topic, Blueprint, Publication, Series, Workflow, and Taxonomy. Script and Script Template are Content Asset subtypes.
+`Brand` is the root domain. Its primary contexts are Identity, Strategy, Audience, Marketing, Offers, Assets, Channels, Relationships, and Analytics. Marketing contains Content, Campaigns, Distribution, Growth, and Funnel. Content contains Knowledge, Source, Topic, Blueprint, Publication, Series, Workflow, Work Item, and Taxonomy. Script and Script Template are Content Asset subtypes.
 
 ## Source migration map
 
@@ -39,10 +46,11 @@ The former paths are compatibility pointers for historical links. Plans, specifi
 | Source | The origin that supports Knowledge, such as a document, dataset, recording, interview, or firsthand context. |
 | Topic | A reusable subject or idea being communicated. It is not a post. |
 | Blueprint | A Topic-specific communication plan: objective, audience, angle, pattern, structure, hook, CTA, proof, and constraints. |
-| Publication | One channel-specific expression of a Topic through a Blueprint. |
+| Publication | One channel-specific expression of a Topic through a Blueprint. It owns channel-specific content and durable publication facts. |
 | Series | A recurring editorial grouping of related Topics and/or Publications. |
-| Workflow | A reusable lifecycle definition. A Work Item is one execution of that lifecycle for a specific subject. |
-| Asset | A reusable media, design, brand, knowledge, script, or template resource. A Script is a versioned, publication-oriented authored asset; a Script Template is reusable fill-in-the-blank scaffolding that generates Scripts. |
+| Workflow | A reusable operation with defined entry and exit stages. |
+| Work Item | One execution of one Workflow against one primary subject. It records execution state, current stage, inputs, decisions, outputs, and validation. |
+| Asset | A reusable media, design, brand, knowledge, script, or template resource. A Script is a versioned, publication-oriented authored asset for audio or video; a Script Template is reusable fill-in-the-blank scaffolding that generates Scripts. |
 | Measurement | A dated observed metric for a Publication on a Channel. |
 | Insight | An interpretation of Measurements that creates or revises Knowledge. |
 
@@ -50,16 +58,21 @@ The former paths are compatibility pointers for historical links. Plans, specifi
 
 - Knowledge and Topic are many-to-many. Source and Knowledge are many-to-many.
 - A Topic has zero or many Blueprints; each Blueprint communicates one primary Topic.
-- A Blueprint has zero or many Publications; each Publication has one primary Blueprint and one Channel in v1.
+- A Blueprint has zero or many Publications; each Publication has one primary Blueprint and one Channel in v1. A Publication stores its channel-specific content and, after publishing, durable facts such as publication time, canonical URL, and platform identifier.
 - A Blueprint has zero or many Script Assets; each Script has one primary Blueprint. A Publication may use one primary Script plus other Assets.
 - Publications and Assets are many-to-many. Repurposed outputs are separate Publications linked by `derives from`.
 - Series can group zero or many Topics and Publications. Campaign membership is optional and many-to-many.
 - A Publication has many Measurements. Measurements inform Insights; Insights create or revise Knowledge.
-- Workflow defines many Work Items. A Work Item has one current stage and one primary subject.
+- Workflow defines many Work Items. A Work Item executes one Workflow, has one primary subject, one Work Item State, and one current Workflow Stage.
+- Workflow Stage describes where one Work Item execution is in the Content lifecycle. It is not a mutable lifecycle field on the Work Item's primary subject. Work Item State describes whether that execution is queued, in progress, blocked, completed, or cancelled.
+- `Draft` is a Workflow Stage, not an entity. Git history provides record revision history in v1. Promote a revision concept only when recurring work requires independent identity, provenance, relationships, or analysis.
+- A Script may identify an intended Publication Format, but Channel remains a Publication concern. A Script may support more than one Publication.
 
 ## Entities versus taxonomies
 
 Use an entity when it has a reusable identity, independent lifecycle, provenance, or relationships. Use a taxonomy when a shared controlled label classifies an entity but does not require its own lifecycle. `Theme` is the single durable strategic lens. Do not introduce both Theme and Pillar in v1. A Blueprint is not a Template: Templates are Asset subtypes.
+
+Controlled vocabularies remain with the context that owns their meaning. This ontology owns Content taxonomies. [Strategy](strategy/README.md) owns Theme, [Audience](audience/README.md) owns Audience Segment, and [Channels](channels/README.md) owns Channel. A governed addition updates its authoritative owner and is not selectable before approval.
 
 ## Taxonomies
 
@@ -93,8 +106,10 @@ For the short-form structure, the Scroll Stopper and Verbal Hook begin together;
 | --- | --- | --- | --- |
 | Knowledge Kind | Knowledge | Insight, Observation, Experience, Research, Opinion, Idea, Question, Lesson, Process, Framework, Evidence | The nature of reusable source material. `Source` remains a separate entity because it is provenance, not a kind of Knowledge. |
 | Topic Mode | Topic | Build, Offline, Bridge | The Brand toggle lens. `Bridge` connects the two modes; it is not a third brand identity. |
-| Publication Format | Publication | Text Post, Thread, Carousel, Short-form Video, Long-form Video, Article, Newsletter | The channel-neutral form of a Publication. The Channel identifies where it appears, such as Instagram, X, LinkedIn, or YouTube. |
+| Publication Format | Publication; intended by Script and Script Template | Text Post, Thread, Carousel, Short-form Video, Long-form Video, Article, Newsletter | The channel-neutral form of a Publication. A Script or Script Template may declare the Format it is intended to support. The Channel identifies where a Publication appears. |
 | Workflow Stage | Work Item | Capture, Validate, Plan, Draft, Review, Produce, Publish, Measure, Learn, Reuse / Repurpose | The current lifecycle stage of a particular work execution. |
+| Work Item State | Work Item | Queued, In Progress, Blocked, Completed, Cancelled | The execution state of a Work Item, independent of its Content lifecycle stage. |
+| Production Dependency State | Script beat or Publication asset requirement | Existing Asset, Planned Capture, Obtainable External Asset, Unresolved | How a required visual, audio, design, or other production dependency will be supplied. `Unresolved` cannot pass validation. |
 
 ### Supporting taxonomies
 
@@ -152,6 +167,12 @@ classDiagram
     class WorkflowStage {
         <<enumeration>>
     }
+    class WorkItemState {
+        <<enumeration>>
+    }
+    class ProductionDependencyState {
+        <<enumeration>>
+    }
     class Workflow
     class WorkItem
 
@@ -172,6 +193,7 @@ classDiagram
     ScriptTemplate ..> ContentPattern : supports
     ScriptTemplate ..> NarrativeStructure : follows
     ScriptTemplate ..> PublicationFormat : targets
+    Script ..> PublicationFormat : intends
     Blueprint "1" <-- "0..*" Publication : realizes
     Publication "*" --> "1" Channel : belongs to
     Publication ..> PublicationFormat : takes form
@@ -179,6 +201,9 @@ classDiagram
     Publication "*" --> "*" Asset : uses
     Workflow "1" --> "*" WorkItem : defines
     WorkItem ..> WorkflowStage : current stage
+    WorkItem ..> WorkItemState : execution state
+    Script ..> ProductionDependencyState : resolves beats through
+    Publication ..> ProductionDependencyState : resolves requirements through
     Publication "1" --> "*" Measurement : receives
     Measurement "*" --> "*" Insight : informs
     Insight "*" --> "*" Knowledge : creates or updates

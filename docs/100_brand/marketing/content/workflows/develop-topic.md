@@ -4,10 +4,30 @@ collection: content
 type: workflow
 status: active
 owner: Daniel Hunt
+created: 2026-08-26
 updated: 2026-08-27
+facets:
+  - operations
+related:
+  - README.md
+  - ../work-items/README.md
+sources:
+  - ../../../ONTOLOGY.md
 ---
 
 # Develop Topic
+
+## Work Item contract
+
+- **Primary subject:** the principal Knowledge record from which the Topic is developed.
+- **Entry stage:** Validate.
+- **Successful exit stage:** Plan.
+- **Creates:** one Topic record when no materially equivalent Topic exists.
+- **Updates:** an existing Topic when the proposed subject is materially duplicative.
+- **Required predecessors:** completed [Capture Knowledge](capture-knowledge.md) Work Items for the supporting Knowledge.
+- **Possible next workflows:** [Develop Blueprint](develop-blueprint.md).
+- **Validation evidence:** Topic premise, exact Theme and Audience Segment values, Topic Mode, strategic fit, evidence boundary, duplicate check, and output link recorded in the Work Item.
+- **Failure and return paths:** return to Capture when support is insufficient; complete without a Topic when the subject is off-strategy or cannot be generalized safely.
 
 ## Required references
 
@@ -21,7 +41,7 @@ updated: 2026-08-27
 
 - **Reads:** Topic Mode, the canonical Themes, Audience Segments, and the existing Topic inventory.
 - **Writes:** one existing Topic Mode, one primary Theme, and the relevant Audience Segment on the resulting Topic record.
-- **Restriction:** use only ontology-defined Topic Modes and canonical Themes. Route a missing controlled value through [Propose Taxonomy Addition](propose-taxonomy-addition.md).
+- **Restriction:** use only ontology-defined Topic Modes, Strategy-owned Themes, and Audience-owned Audience Segments. Route a missing controlled value through [Propose Taxonomy Addition](propose-taxonomy-addition.md).
 
 ## Input
 
@@ -38,7 +58,7 @@ One or more related Knowledge records with their supporting Sources and evidence
 
 ## Output
 
-One reusable Topic record with a primary Theme, Topic Mode, relevant Audience Segment, premise, strategic fit, supporting Knowledge, credibility boundary, and open questions. A ready Topic may proceed to [Develop Blueprint](develop-blueprint.md).
+One reusable Topic record with a primary Theme, Topic Mode, relevant Audience Segment name and code, premise, strategic fit, supporting Knowledge, credibility boundary, open questions, and a link to the creating Work Item. A ready Topic may proceed to [Develop Blueprint](develop-blueprint.md).
 
 ## Stop conditions
 
