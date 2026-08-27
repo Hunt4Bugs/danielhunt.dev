@@ -4,12 +4,32 @@ collection: content
 type: workflow
 status: active
 owner: Daniel Hunt
-updated: 2026-08-26
+created: 2026-08-26
+updated: 2026-08-27
+facets:
+  - operations
+related:
+  - README.md
+  - ../work-items/README.md
+sources:
+  - ../sources/colin-and-samir-short-form-anatomy.md
 ---
 
 # Generate Hook Options
 
-Apply the source-derived Quilt Method to an approved short-form Blueprint.
+Apply the source-derived Quilt Method to a short-form Blueprint that is ready for hook development.
+
+## Work Item contract
+
+- **Primary subject:** one short-form Blueprint.
+- **Entry stage:** Plan.
+- **Successful exit stage:** Draft.
+- **Creates:** no new domain entity.
+- **Updates:** candidate and final hook selections on the Blueprint.
+- **Required predecessors:** a [Develop Blueprint](develop-blueprint.md) Work Item that established the promise, angle, proof, and constraints.
+- **Possible next workflows:** [Generate Short-Form Script](generate-short-form-script.md) or [Develop Publication](develop-publication.md).
+- **Validation evidence:** considered pairs, rejection reasons, hook-condition checks, production feasibility, selected pair, and updated Blueprint link recorded in the Work Item.
+- **Failure and return paths:** return to Develop Blueprint when no truthful and feasible pair preserves the intended promise or structure.
 
 ## Required references
 
@@ -26,7 +46,7 @@ Apply the source-derived Quilt Method to an approved short-form Blueprint.
 
 ## Input
 
-One approved Blueprint with a Topic, audience promise, evidence boundary, available Assets, and any hook-type restrictions.
+One Blueprint ready for hook development with a Topic, audience promise, evidence boundary, production dependencies, and any hook-type restrictions.
 
 ## Procedure
 
@@ -38,4 +58,4 @@ One approved Blueprint with a Topic, audience promise, evidence boundary, availa
 
 ## Output
 
-One selected opening pair recorded in the Blueprint, plus discarded options and concise rejection reasons when useful for learning.
+One selected opening pair recorded in the Blueprint, plus discarded options and concise rejection reasons in the Work Item. The updated Blueprint becomes script-ready when all other validation requirements are met.

@@ -1,3 +1,24 @@
+---
+class: "100"
+collection: brand
+type: identity
+status: active
+owner: Daniel Hunt
+created: 2026-05-28
+updated: 2026-08-27
+facets:
+  - strategy
+  - audience
+  - content
+related:
+  - ../strategy/README.md
+  - ../audience/README.md
+  - ../marketing/content/README.md
+sources:
+  - ../specs/2026-05-28-brand-refinement-design.md
+  - ../specs/2026-06-01-personal-brand-workbook.md
+---
+
 # Daniel Hunt — Brand Identity
 
 Internal codename: `{D}`. Not a public-facing mark. See [visual direction](visual.md).
@@ -161,53 +182,19 @@ The travel format follows the arrival-arc — Bourdain's structure. Arrive in a 
 
 **Future verticals**: Legal Tech — same playbook, different industry. Possible expansion once Datavial has visible traction.
 
-**Content topic mix**: 80% Life Sciences specific (GxP, 21 CFR Part 11, lab ops realities, regulatory navigation, design partner stories anonymized, Datavial scars, named industry incumbents like Veeva / Benchling / Dotmatics / LabVantage, the open problems in pharma software). 20% general operator material (founder lessons, branding, systems thinking) reused without diluting the Life Sciences signal.
-
-**Format**:
-
-- **YouTube long-form cinematic vlog** — the hero artifact. Weaves Life Sciences work, travel, training, and observation into one episode. Talking-head segments are integrated into the vlog when needed, not standalone outputs.
-- **X build journaling** — real-time fragments, shipping notes, micro-observations.
-- **LinkedIn** — Phase 0 and Phase 1 presence-only (monthly posts, profile current). Phase 2 escalates to weekly distribution with case studies and technical articles once Datavial has 3 to 5 named customers.
-- **Instagram** — Reels and carousels carry build-half observation when relevant. Primarily offline-half territory.
-
 **Editorial rule**: scars, not wounds. The build half is retrospective, not confessional. Discuss healed lessons. Wounds belong in private.
 
 **Brand role for outcome**: indirect credibility moat, not GTM. Datavial sells through its own go-to-market motion (outbound, design partners, conferences, referrals). The personal brand creates name-leak into pharma networks so Daniel's name eventually comes up in industry referrals.
+
+Exact Themes and strategic weighting live in [Strategy](../strategy/README.md). Distribution roles and compatible Formats live in [Channels](../channels/README.md). Cadence and phasing live in the [Content operating plan](../marketing/content/operating-plan.md).
 
 ## Offline half: what it is
 
 **Lens**: movement, food, culture, observation, human connection.
 
-**Format**:
-
-- **YouTube long-form cinematic vlog** — the hero. Episodes weave training, travel, food, conversation, and observation. Same visual grammar as the build half, presented under unified production discipline.
-- **Instagram Reels** — Phase 0 standalone short-form practicing cinematic discipline. Phase 1 onward, cutdowns from YouTube hero episodes.
-- **Instagram Carousels** — biweekly written reflection.
-
-**Travel cadence**: twice yearly (Thailand, plus Japan / Vietnam / etc.). Each trip is treated as a batch-shoot opportunity for 3 to 4 episodes worth of YouTube footage.
-
 **Production and tonal references**: see the References table below. Internal-only — do not name in public copy.
 
-## Surface map
-
-Four platforms Daniel controls. No external dependencies (no podcasts, no trade publications, no conferences as content channels).
-
-| Platform | Phase 0 role | Phase 1 role | Phase 2 role |
-|---|---|---|---|
-| **X** | 4 to 6 posts per week. Build-journal fragments, Life Sciences observations, micro-notes. | Same. | Same. |
-| **Instagram** | Standalone weekly Reel + biweekly carousel. Practicing cinematic short-form discipline. | Reels become cutdowns from YouTube hero episodes. Carousels continue. | Same as Phase 1. |
-| **LinkedIn** | Presence-only. Profile current. 1 to 2 posts per month. | Same as Phase 0. | **Active distribution.** Weekly post tied to Datavial case studies, regulatory navigation, technical operator pieces. |
-| **YouTube** | Not launched. | Monthly cinematic vlog. Hero artifact. | Same as Phase 1. |
-
-Deliberately excluded:
-
-- Podcasts (no guest appearances, no own podcast)
-- Trade publications (Pharmaceutical Engineering, BioPharm International, etc.)
-- Conferences as content channels (deferred until Datavial GTM specifically demands)
-
-These exclusions are revisable. They prevent overload during Phase 0.
-
-For channel roles, cadence, and learning agenda, see [Marketing / Content](../marketing/content/README.md).
+The Offline half remains the same identity as the Build half, not a separate lifestyle brand. Its Channel expression, travel cadence, and production practice are owned by [Channels](../channels/README.md), the [Content operating plan](../marketing/content/operating-plan.md), and [Content production](../marketing/content/production.md).
 
 ## What the brand is not
 
@@ -256,13 +243,7 @@ These four phrases the brand repeats. They appear in captions, carousels, video 
 
 ## Audience
 
-Three tiers. Only one is the audience the brand talks to. The distinction matters: conflating them would force content into either thought-leadership shape (which kills the offline half) or end-user empathy shape (which sells nothing).
-
-- **(B2) Primary.** Software engineers and SaaS or AI founders looking for a frontier where their existing skills compound into real-world impact. The person the brand addresses.
-- **(B1) Peer network.** Life sciences founders who already left. Rare. Treated as peers and future design partners. Spoken-with, not spoken-to.
-- **(A) Spoken-about.** Lab ops and scientists inside life sciences companies. Their pain is described with empathy as the reason the work matters. Not the audience the brand addresses directly.
-
-Full definitions, painful problems list, ideation table, credibility and interest banks, differentiation breakdown, and desired associations live in [Audience](../audience/README.md). The (B2) audience pain pattern also justifies the offline half existing inside this brand: the burnout, deferred-life, and screen-rotted attention pains are theirs, not just the brand's.
+The Brand addresses one primary editorial audience, speaks with a Life Sciences founder peer network, and speaks about lab operations and scientists with empathy. Exact Segment names, stable codes, relationships, painful problems, credibility, and supporting evidence live only in [Audience](../audience/README.md). The primary audience's burnout, deferred-life, and screen-attention tensions help explain why the Offline half belongs inside this identity.
 
 ## Audience experience
 

@@ -1,3 +1,19 @@
+---
+class: "100"
+collection: brand
+type: changelog
+status: active
+owner: Daniel Hunt
+created: 2026-05-28
+updated: 2026-08-27
+facets:
+  - governance
+related:
+  - README.md
+  - ONTOLOGY.md
+sources: []
+---
+
 # Brand Changelog
 
 Append-only log of meaningful brand decisions. One entry per choice. Newest entries at the top.
@@ -8,6 +24,18 @@ Format per entry:
 - Decision (one line)
 - Rationale (1 to 3 sentences, why this choice over the alternatives)
 - Source (link to spec, PR, or conversation)
+
+---
+
+## 2026-08-27: Content operating system completed through reuse
+
+**Decision:** Formalize Workflow, persistent Work Item, Workflow Stage, Work Item State, Publication content, production dependencies, and controlled-vocabulary ownership; extend the Content lifecycle from Publication development through Measurement, Insight, and repurposing.
+
+**Rationale:** The ontology already modeled a closed learning loop, but the executable documentation stopped at Script validation and did not define concrete Work Item or downstream record contracts. The completed contracts preserve ontology-first ownership while making the lifecycle consistently operable by humans and future thin skills.
+
+**Source:** User-approved Brand Content Operating System implementation plan on 2026-08-27.
+
+**Implementation:** [Brand ontology](ONTOLOGY.md), [Content domain](marketing/content/README.md), [Content workflows](marketing/content/workflows/README.md), [Work Item contract](marketing/content/work-items/README.md), and [Analytics](analytics/README.md).
 
 ---
 
