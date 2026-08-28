@@ -8,9 +8,9 @@ created: 2026-07-28
 updated: 2026-08-25
 facets: [brand, delivery]
 related:
-  - ../100_brand/IDENTITY.md
-  - ../100_brand/VISUAL.md
-  - ../300_delivery/README.md
+  - ../10_brand/IDENTITY.md
+  - ../10_brand/VISUAL.md
+  - ../30_delivery/README.md
 sources:
   - ../../CLAUDE.md
   - ../../site/index.html
@@ -33,8 +33,8 @@ sources:
 
 ## Canonical constraints
 
-Brand-shaped site work must first follow `../100_brand/IDENTITY.md` and `../100_brand/VISUAL.md`. Keep all deployable implementation inside `site/`; this class holds its internal documentation only. There is no build step or configured test suite.
+Brand-shaped site work must first follow `../10_brand/IDENTITY.md` and `../10_brand/VISUAL.md`. Keep all deployable implementation inside `site/`; this class holds its internal documentation only. There is no build step or configured test suite.
 
 ## Open question
 
-The root README describes a retired Astro/Tailwind implementation. Its correction remains tracked as OPS-002 in `../000_system/030_operations/TRACKER.md`.
+The root README describes a retired Astro/Tailwind implementation. Its correction remains tracked as OPS-002 in `../00_system/030_operations/TRACKER.md`.

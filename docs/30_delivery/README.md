@@ -8,7 +8,7 @@ created: 2026-07-28
 updated: 2026-07-28
 facets: [site]
 related:
-  - ../200_site/ARCHITECTURE.md
+  - ../20_site/ARCHITECTURE.md
 sources:
   - ../../.github/workflows/deploy.yml
 ---

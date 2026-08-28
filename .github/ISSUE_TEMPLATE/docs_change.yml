@@ -7,7 +7,7 @@ body:
     id: which
     attributes:
       label: Which doc
-      description: Path to the file (e.g. `docs/100_brand/identity/visual.md`, `CLAUDE.md`)
+      description: Path to the file (e.g. `docs/10_brand/identity/visual.md`, `CLAUDE.md`)
     validations:
       required: true
   - type: textarea

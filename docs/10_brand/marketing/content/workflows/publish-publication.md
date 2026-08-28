@@ -33,7 +33,7 @@ sources:
 
 - The production-complete Publication and its final Assets.
 - [Channels](../../../channels/README.md): selected Channel and constraints.
-- Repository [autonomy boundaries](../../../../000_system/020_agents/AUTONOMY.md).
+- Repository [autonomy boundaries](../../../../00_system/020_agents/AUTONOMY.md).
 
 ## Procedure
 

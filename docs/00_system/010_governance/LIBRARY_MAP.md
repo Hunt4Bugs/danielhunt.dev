@@ -11,10 +11,10 @@ updated: 2026-07-28
 
 | Class | Purpose | Canonical path | Notes |
 | --- | --- | --- | --- |
-| 000 | Project operating system, governance, and records | `docs/000_system/` | Internal-only system of record. |
-| 100 | Brand foundation and strategy | `docs/100_brand/` | Authoritative brand corpus; filenames are retained. |
-| 200 | Site implementation | `docs/200_site/` | Canonical site documentation; deployable source remains in `site/`. |
-| 300 | Delivery automation | `docs/300_delivery/` | Internal delivery documentation; configuration remains in `.github/`. |
+| 000 | Project operating system, governance, and records | `docs/00_system/` | Internal-only system of record. |
+| 100 | Brand foundation and strategy | `docs/10_brand/` | Authoritative brand corpus; filenames are retained. |
+| 200 | Site implementation | `docs/20_site/` | Canonical site documentation; deployable source remains in `site/`. |
+| 300 | Delivery automation | `docs/30_delivery/` | Internal delivery documentation; configuration remains in `.github/`. |
 
 ## Class 000 collections
 
