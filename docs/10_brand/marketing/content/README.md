@@ -48,7 +48,7 @@ Workflow Stage describes where a Work Item is in this lifecycle. Workflow descri
 
 Create records only when real working material exists. Illustrative material belongs under [Examples](examples/README.md) and must be labeled so it cannot be mistaken for actual evidence, publication, or performance.
 
-Each record type's required document shape lives in [`_patterns/`](_patterns/) (`topic.md`, `blueprint.md`, `publication.md`, `work-item.md`, `knowledge.md`, `series.md`) rather than in the record type's own `README.md`, which is a routing document only.
+Each record type's required document shape lives in [`_patterns/`](_patterns/) (`topic.md`, `blueprint.md`, `publication.md`, `work-item.md`, `knowledge.md`, `series.md`, `source.md`) rather than in the record type's own `README.md`, which is a routing document only.
 
 ## Operations
 

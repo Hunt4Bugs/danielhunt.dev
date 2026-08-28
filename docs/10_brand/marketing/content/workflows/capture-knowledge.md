@@ -34,7 +34,7 @@ contract:
     - type: content.knowledge
       via_pattern: ../_patterns/knowledge.md
     - type: content.source
-      via_pattern: ../sources/README.md
+      via_pattern: ../_patterns/source.md
   updates:
     - type: content.knowledge
   validation:
