@@ -1,18 +1,49 @@
 ---
-class: "100"
+id: content.workflow.produce-publication
+kind: workflow
+domain: content
+class: "10"
 collection: content
 type: workflow
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-08-27
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - assets
 related:
   - ../publications/README.md
   - ../../../assets/README.md
+  - ../concepts.md
 sources:
   - ../../../ONTOLOGY.md
+contract:
+  subject_type: content.publication
+  entry_stage: Produce
+  exit_stage: Publish
+  requires:
+    - id: content.publication
+      state: completed
+      optional: false
+  inputs:
+    - name: production_dependencies
+      type: taxonomy(Production Dependency State)
+      required: true
+  creates:
+    - type: assets.asset
+  updates:
+    - type: content.publication
+  validation:
+    - final_asset_links_recorded
+    - capture_completion_confirmed
+    - license_restrictions_recorded
+    - output_format_checked
+    - final_blueprint_comparison_done
+  next:
+    - content.workflow.publish-publication
+  failure_paths:
+    - content.workflow.validate-publication
 ---
 
 # Produce Publication

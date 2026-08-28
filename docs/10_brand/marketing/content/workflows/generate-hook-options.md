@@ -1,18 +1,50 @@
 ---
-class: "100"
+id: content.workflow.generate-hook-options
+kind: workflow
+domain: content
+class: "10"
 collection: content
 type: workflow
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - operations
 related:
   - README.md
   - ../work-items/README.md
+  - ../concepts.md
 sources:
   - ../sources/colin-and-samir-short-form-anatomy.md
+contract:
+  subject_type: content.blueprint
+  entry_stage: Plan
+  exit_stage: Draft
+  requires:
+    - id: content.blueprint
+      state: completed
+      optional: false
+  inputs:
+    - name: blueprint
+      type: ref(content.blueprint)
+      required: true
+  creates: []
+  updates:
+    - type: content.blueprint
+  validation:
+    - pairs_considered
+    - rejection_reasons_recorded
+    - hook_conditions_checked
+    - production_feasibility_checked
+    - selected_pair_recorded
+    - blueprint_link_updated
+  next:
+    - content.workflow.generate-short-form-script
+    - content.workflow.develop-publication
+  failure_paths:
+    - content.workflow.develop-blueprint
 ---
 
 # Generate Hook Options

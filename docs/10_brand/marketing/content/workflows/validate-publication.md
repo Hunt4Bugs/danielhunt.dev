@@ -1,18 +1,56 @@
 ---
-class: "100"
+id: content.workflow.validate-publication
+kind: workflow
+domain: content
+class: "10"
 collection: content
 type: workflow
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-08-27
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - channels
 related:
   - ../publications/README.md
   - ../../../identity/README.md
+  - ../concepts.md
 sources:
   - ../../../ONTOLOGY.md
+contract:
+  subject_type: content.publication
+  entry_stage: Review
+  exit_stage: Produce
+  requires:
+    - id: content.publication
+      state: completed
+      optional: false
+    - id: content.script
+      state: validated
+      optional: true
+  inputs:
+    - name: publication
+      type: ref(content.publication)
+      required: true
+  creates: []
+  updates:
+    - type: content.work-item
+  validation:
+    - channel_format_compatible
+    - blueprint_fidelity_checked
+    - claims_sourced
+    - copy_checked
+    - privacy_checked
+    - asset_links_checked
+    - dependencies_checked
+    - derivation_checked
+    - editorial_checked
+  next:
+    - content.workflow.produce-publication
+  failure_paths:
+    - content.workflow.develop-publication
+    - content.workflow.capture-knowledge
 ---
 
 # Validate Publication

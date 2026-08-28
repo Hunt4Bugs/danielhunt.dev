@@ -1,18 +1,53 @@
 ---
-class: "100"
+id: content.workflow.capture-knowledge
+kind: workflow
+domain: content
+class: "10"
 collection: content
 type: workflow
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - operations
 related:
   - README.md
   - ../work-items/README.md
+  - ../concepts.md
 sources:
   - ../../../ONTOLOGY.md
+contract:
+  subject_type: content.knowledge   # judgment call: the raw material has no persisted concept type of its own; modeled as the Knowledge-in-formation. See report.
+  entry_stage: Capture
+  exit_stage: Validate
+  requires: []
+  inputs:
+    - name: material
+      type: text
+      required: true
+    - name: origin
+      type: text
+      required: false
+  creates:
+    - type: content.knowledge
+      via_pattern: ../_patterns/knowledge.md
+    - type: content.source
+      via_pattern: ../sources/README.md
+  updates:
+    - type: content.knowledge
+  validation:
+    - provenance_recorded
+    - evidence_boundary_stated
+    - knowledge_kind_selected
+    - duplicate_check_performed
+    - output_links_recorded
+  next:
+    - content.workflow.develop-topic
+    - content.workflow.capture-knowledge
+  failure_paths:
+    - content.workflow.capture-knowledge
 ---
 
 # Capture Knowledge

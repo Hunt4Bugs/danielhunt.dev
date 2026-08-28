@@ -1,18 +1,53 @@
 ---
-class: "100"
+id: content.workflow.record-measurements
+kind: workflow
+domain: content
+class: "10"
 collection: content
 type: workflow
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-08-27
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - analytics
 related:
   - ../../../analytics/measurements/README.md
   - ../publications/README.md
+  - ../concepts.md
 sources:
   - ../../../ONTOLOGY.md
+contract:
+  subject_type: content.publication
+  entry_stage: Measure
+  exit_stage: Learn
+  requires:
+    - id: content.publication
+      state: completed
+      optional: false
+  inputs:
+    - name: observation_window
+      type: text
+      required: true
+    - name: metric_name
+      type: taxonomy(Metric Name)
+      required: true
+  creates:
+    - type: analytics.measurement
+  updates:
+    - type: content.publication
+  validation:
+    - observation_source_recorded
+    - time_window_recorded
+    - units_recorded
+    - verification_limits_recorded
+    - records_linked_to_publication
+  next:
+    - content.workflow.derive-insight
+    - content.workflow.record-measurements
+  failure_paths:
+    - content.workflow.record-measurements
 ---
 
 # Record Measurements

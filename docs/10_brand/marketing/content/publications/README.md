@@ -1,15 +1,20 @@
 ---
-class: "100"
-collection: content
-type: record-contract
+id: content.publications.readme
+kind: note
+domain: content
 status: active
+version: 1
+class: "10"
+collection: content
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - channels
   - analytics
 related:
+  - ../concepts.md
+  - ../_patterns/publication.md
   - ../blueprints/README.md
   - ../../../channels/README.md
   - ../../../analytics/measurements/README.md
@@ -19,6 +24,15 @@ sources:
 
 # Publication records
 
-Store one channel-specific expression per record here. Each Publication records one primary Blueprint, one Channel, one Publication Format, channel-specific content, an optional primary Script, related Assets, production dependencies, any `derives from` relationship, Measurements, and the creating Work Item.
+You are in the instance directory for `content.publication`. Store one channel-specific expression
+per record here.
 
-Before real publication, leave `published_at`, `canonical_url`, and `platform_identifier` empty. After an authorized publish, record those durable facts on the Publication. Execution progress belongs to its Work Item. Git history supplies revisions in v1; a materially different channel expression or repurposed output is a separate Publication.
+- What a Publication *is* (definition, relationships, constraints, entity contract):
+  [`concepts.md`](../concepts.md#publication).
+- What a Publication document must *contain* (required sections): [`_patterns/publication.md`](../_patterns/publication.md).
+- What *creates* a Publication: the [Develop Publication](../workflows/develop-publication.md)
+  workflow; durable publication facts are recorded only by
+  [Publish Publication](../workflows/publish-publication.md).
+- Related instance directories: [Blueprints](../blueprints/README.md) (realized by a Publication),
+  [Channels](../../../channels/README.md) (Channel registry), and
+  [Measurements](../../../analytics/measurements/README.md) (attach to a published Publication).

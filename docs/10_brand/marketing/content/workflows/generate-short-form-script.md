@@ -1,18 +1,57 @@
 ---
-class: "100"
+id: content.workflow.generate-short-form-script
+kind: workflow
+domain: content
+class: "10"
 collection: content
 type: workflow
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - operations
 related:
   - README.md
   - ../work-items/README.md
+  - ../concepts.md
 sources:
   - ../../../ONTOLOGY.md
+contract:
+  subject_type: content.blueprint
+  entry_stage: Draft
+  exit_stage: Review
+  requires:
+    - id: content.blueprint
+      state: completed
+      optional: false
+    - id: content.workflow.generate-hook-options
+      state: completed
+      optional: true
+  inputs:
+    - name: blueprint
+      type: ref(content.blueprint)
+      required: true
+    - name: script_template
+      type: text
+      required: true
+  creates:
+    - type: content.script
+      via_pattern: ../../../assets/scripts/README.md
+  updates: []
+  validation:
+    - blueprint_fidelity_checked
+    - intended_format_recorded
+    - source_coverage_checked
+    - promise_payoff_closure_checked
+    - production_dependency_states_assigned
+    - script_link_recorded
+  next:
+    - content.workflow.validate-script
+  failure_paths:
+    - content.workflow.develop-blueprint
+    - content.workflow.capture-knowledge
 ---
 
 # Generate Short-Form Script

@@ -1,17 +1,23 @@
 ---
-class: "100"
+id: content.readme
+kind: note
+domain: content
+class: "10"
 collection: content
 type: domain-reference
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-05-28
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - marketing
   - assets
   - analytics
 related:
   - ../../ONTOLOGY.md
+  - domain.md
+  - concepts.md
   - operating-plan.md
   - production.md
 sources:
@@ -20,7 +26,7 @@ sources:
 
 # Content
 
-Content is the Marketing context for reusable editorial material and its lifecycle. The [Brand ontology](../../ONTOLOGY.md) owns entity meanings, relationships, and Content taxonomies. [Strategy](../../strategy/README.md) owns Themes and strategic constraints, [Audience](../../audience/README.md) owns Audience Segments, [Channels](../../channels/README.md) owns distribution destinations and compatible Formats, [Assets](../../assets/README.md) owns reusable resources, and [Analytics](../../analytics/README.md) owns Measurements, Insights, and learning feedback.
+Content is the Marketing context for reusable editorial material and its lifecycle. The [Brand ontology](../../ONTOLOGY.md) owns the cross-context entity meanings, relationships, and Content taxonomies; [`domain.md`](domain.md) states this domain's boundary and [`concepts.md`](concepts.md) is its domain-scoped, entity-contract-bearing instantiation of that ontology (definitions, relationships, and constraints cross-referenced rather than re-authored, plus the field-level entity contracts DOMAIN_PROTOCOL.md §10 requires). [Strategy](../../strategy/README.md) owns Themes and strategic constraints, [Audience](../../audience/README.md) owns Audience Segments, [Channels](../../channels/README.md) owns distribution destinations and compatible Formats, [Assets](../../assets/README.md) owns reusable resources, and [Analytics](../../analytics/README.md) owns Measurements, Insights, and learning feedback.
 
 ## Lifecycle
 
@@ -41,6 +47,8 @@ Workflow Stage describes where a Work Item is in this lifecycle. Workflow descri
 - [Script Assets](../../assets/scripts/README.md) and [Templates](../../assets/templates/README.md): authored audio/video material and reusable scaffolding.
 
 Create records only when real working material exists. Illustrative material belongs under [Examples](examples/README.md) and must be labeled so it cannot be mistaken for actual evidence, publication, or performance.
+
+Each record type's required document shape lives in [`_patterns/`](_patterns/) (`topic.md`, `blueprint.md`, `publication.md`, `work-item.md`, `knowledge.md`, `series.md`) rather than in the record type's own `README.md`, which is a routing document only.
 
 ## Operations
 

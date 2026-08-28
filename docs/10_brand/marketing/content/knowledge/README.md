@@ -1,14 +1,19 @@
 ---
-class: "100"
-collection: content
-type: record-contract
+id: content.knowledge.readme
+kind: note
+domain: content
 status: active
+version: 1
+class: "10"
+collection: content
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - analytics
 related:
+  - ../concepts.md
+  - ../_patterns/knowledge.md
   - ../sources/README.md
   - ../topics/README.md
   - ../../../analytics/insights/README.md
@@ -18,6 +23,13 @@ sources:
 
 # Knowledge records
 
-Store reusable, attributable synthesis here when it has value beyond one draft. A Knowledge record identifies its Knowledge Kind, synthesis, evidence boundary, supporting Sources, related Topics and Insights, and creating or revising Work Item.
+You are in the instance directory for `content.knowledge`. Store reusable, attributable synthesis
+here when it has value beyond one draft.
 
-Do not store raw assets here; link to the Asset instead. The Source record preserves provenance. Knowledge distinguishes verified evidence, firsthand account, interpretation, and unknowns.
+- What Knowledge *is* (definition, relationships, constraints, entity contract):
+  [`concepts.md`](../concepts.md#knowledge).
+- What a Knowledge document must *contain* (required sections): [`_patterns/knowledge.md`](../_patterns/knowledge.md).
+- What *creates* Knowledge: the [Capture Knowledge](../workflows/capture-knowledge.md) workflow;
+  it may also be created or revised by [Derive Insight](../workflows/derive-insight.md).
+- Related instance directories: [Sources](../sources/README.md) (support Knowledge),
+  [Topics](../topics/README.md) (informed by Knowledge).

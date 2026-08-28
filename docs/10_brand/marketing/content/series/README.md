@@ -1,14 +1,19 @@
 ---
-class: "100"
-collection: content
-type: record-contract
+id: content.series.readme
+kind: note
+domain: content
 status: active
+version: 1
+class: "10"
+collection: content
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - editorial
 related:
+  - ../concepts.md
+  - ../_patterns/series.md
   - ../topics/README.md
   - ../publications/README.md
 sources:
@@ -17,4 +22,10 @@ sources:
 
 # Series records
 
-Store recurring editorial containers here. Each Series records its continuing premise, inclusion boundary, related Topics, related Publications, optional Campaign references, and creating Work Item. A Series is not necessarily a Campaign and does not replace Topic or Publication identity.
+You are in the instance directory for `content.series`. Store recurring editorial containers here.
+
+- What a Series *is* (definition, relationships, constraints, entity contract):
+  [`concepts.md`](../concepts.md#series).
+- What a Series document must *contain* (required sections): [`_patterns/series.md`](../_patterns/series.md).
+- Related instance directories: [Topics](../topics/README.md) and
+  [Publications](../publications/README.md) (both may be grouped by a Series).

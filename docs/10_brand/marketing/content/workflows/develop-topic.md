@@ -1,18 +1,61 @@
 ---
-class: "100"
+id: content.workflow.develop-topic
+kind: workflow
+domain: content
+class: "10"
 collection: content
 type: workflow
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - operations
 related:
   - README.md
   - ../work-items/README.md
+  - ../concepts.md
 sources:
   - ../../../ONTOLOGY.md
+contract:
+  subject_type: content.knowledge
+  entry_stage: Validate
+  exit_stage: Plan
+  requires:
+    - id: content.knowledge
+      state: completed
+      optional: false
+  inputs:
+    - name: knowledge
+      type: ref(content.knowledge)
+      required: true
+    - name: theme
+      type: ref(strategy.theme)
+      required: true
+    - name: audience_segment
+      type: ref(audience.segment)
+      required: true
+    - name: topic_mode
+      type: taxonomy(Topic Mode)
+      required: true
+  creates:
+    - type: content.topic
+      via_pattern: ../_patterns/topic.md
+  updates:
+    - type: content.topic
+  validation:
+    - topic_premise_stated
+    - theme_and_audience_segment_selected
+    - topic_mode_selected
+    - strategic_fit_stated
+    - evidence_boundary_stated
+    - duplicate_check_performed
+    - output_link_recorded
+  next:
+    - content.workflow.develop-blueprint
+  failure_paths:
+    - content.workflow.capture-knowledge
 ---
 
 # Develop Topic

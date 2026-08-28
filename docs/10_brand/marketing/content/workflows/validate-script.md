@@ -1,18 +1,49 @@
 ---
-class: "100"
+id: content.workflow.validate-script
+kind: workflow
+domain: content
+class: "10"
 collection: content
 type: workflow
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - operations
 related:
   - README.md
   - ../work-items/README.md
+  - ../concepts.md
 sources:
   - ../../../ONTOLOGY.md
+contract:
+  subject_type: content.script
+  entry_stage: Review
+  exit_stage: Produce
+  requires:
+    - id: content.script
+      state: completed
+      optional: false
+  inputs:
+    - name: script
+      type: ref(content.script)
+      required: true
+  creates: []
+  updates:
+    - type: content.work-item
+  validation:
+    - promise_payoff_checked
+    - claims_sourced
+    - hook_conditions_checked
+    - dependencies_checked
+    - documentary_restraint_checked
+  next:
+    - content.workflow.develop-publication
+  failure_paths:
+    - content.workflow.generate-short-form-script
+    - content.workflow.capture-knowledge
 ---
 
 # Validate Script

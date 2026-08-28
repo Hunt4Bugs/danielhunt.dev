@@ -22,6 +22,8 @@ sources:
 
 This is a lightweight, domain-driven model for planning, creating, reusing, distributing, and learning from personal-brand content. It is documentation, not a database schema, RDF/OWL model, API, or implementation contract.
 
+This is the Brand-root model: it owns entity definitions, relationships, and taxonomy ownership across every Brand context. [`marketing/content/domain.md`](marketing/content/README.md) and [`marketing/content/concepts.md`](marketing/content/concepts.md) are Content's domain-scoped instantiation of it under the [Domain Documentation Protocol](../00_system/010_governance/DOMAIN_PROTOCOL.md) — they cross-reference the definitions, relationships, and constraints below rather than re-authoring them, and add the field-level entity contracts (§10) each Content concept's persisted instances require. Content is the first Brand context fully modeled under that protocol; other contexts remain lighter-weight reference material here until they receive the same treatment.
+
 ## Bounded contexts
 
 `Brand` is the root domain. Its primary contexts are Identity, Strategy, Audience, Marketing, Offers, Assets, Channels, Relationships, and Analytics. Marketing contains Content, Campaigns, Distribution, Growth, and Funnel. Content contains Knowledge, Source, Topic, Blueprint, Publication, Series, Workflow, Work Item, and Taxonomy. Script and Script Template are Content Asset subtypes.

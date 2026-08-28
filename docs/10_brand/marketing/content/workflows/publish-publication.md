@@ -1,18 +1,49 @@
 ---
-class: "100"
+id: content.workflow.publish-publication
+kind: workflow
+domain: content
+class: "10"
 collection: content
 type: workflow
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-08-27
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - channels
 related:
   - ../publications/README.md
   - ../../../channels/README.md
+  - ../concepts.md
 sources:
   - ../../../ONTOLOGY.md
+contract:
+  subject_type: content.publication
+  entry_stage: Publish
+  exit_stage: Measure
+  requires:
+    - id: content.publication
+      state: completed
+      optional: false
+  inputs:
+    - name: authorization
+      type: text
+      required: true
+  creates: []
+  updates:
+    - type: content.publication
+  validation:
+    - authorization_confirmed
+    - final_preflight_passed
+    - publication_location_verified
+    - timestamp_recorded
+    - platform_identifier_recorded
+    - publication_link_updated
+  next:
+    - content.workflow.record-measurements
+  failure_paths:
+    - content.workflow.produce-publication
 ---
 
 # Publish Publication

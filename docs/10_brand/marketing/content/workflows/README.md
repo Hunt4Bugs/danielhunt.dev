@@ -1,15 +1,19 @@
 ---
-class: "100"
-collection: content
-type: workflow-registry
+id: content.workflows.readme
+kind: note
+domain: content
 status: active
+version: 1
+class: "10"
+collection: content
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - operations
 related:
   - ../work-items/README.md
+  - ../concepts.md
   - ../../../ONTOLOGY.md
 sources:
   - ../../../ONTOLOGY.md
@@ -21,7 +25,14 @@ Store reusable Content operations here. Store executions separately as persisten
 
 These workflow references define the minimum behavior for future content-generation skills. They are not executable skills themselves.
 
-Every Workflow defines its primary subject, entry and successful exit stages, records created or updated, required predecessors, possible next workflows, validation evidence, and failure or return paths. A workflow consumes canonical definitions and may not redefine entities or silently extend controlled vocabulary.
+Every Workflow carries its operational contract in two places: a human-readable prose body
+(Purpose/Work Item contract/Required references/Taxonomy contract/Procedure/Output/exceptions) and
+a structured `contract:` YAML block in its frontmatter (`subject_type`, `entry_stage`,
+`exit_stage`, `requires`, `inputs`, `creates`, `updates`, `validation`, `next`, `failure_paths`)
+per [DOMAIN_PROTOCOL.md §11](../../../../00_system/010_governance/DOMAIN_PROTOCOL.md#11-the-workflow-contract-centerpiece).
+The two are kept consistent; the YAML block is what a future skill or lint checks mechanically. A
+workflow consumes canonical definitions from [`concepts.md`](../concepts.md) and may not redefine
+entities or silently extend controlled vocabulary.
 
 Entry and exit stages locate that Work Item execution, not a lifecycle field on the primary subject. Separate Work Items may operate at different stages against related records; predecessor and output links preserve their actual order.
 

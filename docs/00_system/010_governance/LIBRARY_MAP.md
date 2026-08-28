@@ -1,5 +1,9 @@
 ---
-class: "000"
+id: ops.library-map
+kind: note
+domain: ops
+version: 1
+class: "00"
 collection: governance
 type: library-map
 status: active
@@ -28,3 +32,5 @@ updated: 2026-07-28
 Resolve all Project OS paths through this map. Cross-domain relevance belongs in frontmatter `facets` and `related`, not by duplicating an artifact into another class.
 
 Class directories use their numeric prefix as the stable documentation placement. The former unnumbered `docs/brand/` path is retired.
+
+Class prefixes above are physical placement only — *where* a file lives. Class `00` (now `docs/00_system/`) is also the physical home of the `ops` Domain — *what* this class's own content means under the [Domain Documentation Protocol](DOMAIN_PROTOCOL.md) — modeled in [`../domain.md`](../domain.md) and [`../concepts.md`](../concepts.md).

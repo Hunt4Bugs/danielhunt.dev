@@ -1,18 +1,55 @@
 ---
-class: "100"
+id: content.workflow.derive-insight
+kind: workflow
+domain: content
+class: "10"
 collection: content
 type: workflow
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-08-27
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - analytics
 related:
   - ../../../analytics/insights/README.md
   - ../knowledge/README.md
+  - ../concepts.md
 sources:
   - ../../../ONTOLOGY.md
+contract:
+  subject_type: content.publication
+  entry_stage: Learn
+  exit_stage: Reuse / Repurpose
+  requires:
+    - id: content.publication
+      state: completed
+      optional: false
+    - id: analytics.measurement
+      state: completed
+      optional: false
+  inputs:
+    - name: measurements
+      type: ref(analytics.measurement)
+      required: true
+  creates:
+    - type: analytics.insight
+    - type: content.knowledge
+      via_pattern: ../_patterns/knowledge.md
+  updates:
+    - type: content.knowledge
+  validation:
+    - measurements_linked
+    - evidence_interpretation_separated
+    - limitations_recorded
+    - competing_explanations_considered
+    - knowledge_effect_stated
+    - output_links_recorded
+  next:
+    - content.workflow.repurpose-publication
+    - content.workflow.develop-topic
+  failure_paths: []
 ---
 
 # Derive Insight

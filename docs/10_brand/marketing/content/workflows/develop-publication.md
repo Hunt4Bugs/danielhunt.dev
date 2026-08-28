@@ -1,18 +1,62 @@
 ---
-class: "100"
+id: content.workflow.develop-publication
+kind: workflow
+domain: content
+class: "10"
 collection: content
 type: workflow
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-08-27
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - channels
 related:
   - ../publications/README.md
   - ../../../channels/README.md
+  - ../concepts.md
 sources:
   - ../../../ONTOLOGY.md
+contract:
+  subject_type: content.blueprint
+  entry_stage: Draft
+  exit_stage: Review
+  requires:
+    - id: content.blueprint
+      state: completed
+      optional: false
+    - id: content.script
+      state: validated
+      optional: true
+  inputs:
+    - name: channel
+      type: ref(channels.channel)
+      required: true
+    - name: format
+      type: taxonomy(Publication Format)
+      required: true
+    - name: content
+      type: text
+      required: true
+  creates:
+    - type: content.publication
+      via_pattern: ../_patterns/publication.md
+  updates:
+    - type: content.publication
+  validation:
+    - blueprint_linked
+    - channel_format_compatible
+    - content_recorded
+    - asset_links_recorded
+    - production_dependencies_assigned
+    - derivation_recorded_if_applicable
+    - output_link_recorded
+  next:
+    - content.workflow.validate-publication
+  failure_paths:
+    - content.workflow.develop-blueprint
+    - content.workflow.generate-short-form-script
 ---
 
 # Develop Publication

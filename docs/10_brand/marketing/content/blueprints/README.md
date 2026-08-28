@@ -1,15 +1,20 @@
 ---
-class: "100"
-collection: content
-type: record-contract
+id: content.blueprints.readme
+kind: note
+domain: content
 status: active
+version: 1
+class: "10"
+collection: content
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - strategy
   - audience
 related:
+  - ../concepts.md
+  - ../_patterns/blueprint.md
   - ../topics/README.md
   - ../publications/README.md
   - ../../../assets/scripts/README.md
@@ -19,6 +24,14 @@ sources:
 
 # Blueprint records
 
-Store Topic-specific communication plans here. Each Blueprint identifies one primary Topic plus objective, audience, angle, Content Pattern, Content Purpose, Narrative Structure, hook selections when applicable, audience promise, CTA, proof, constraints, related Scripts and Publications, and creating Work Item.
+You are in the instance directory for `content.blueprint`. Store Topic-specific communication
+plans here.
 
-A short-form Blueprint is script-ready only after required hook selection is complete. A Blueprint may produce several Script Assets and Publications. Reusable production scaffolds belong in Assets as Templates.
+- What a Blueprint *is* (definition, relationships, constraints, entity contract):
+  [`concepts.md`](../concepts.md#blueprint).
+- What a Blueprint document must *contain* (required sections): [`_patterns/blueprint.md`](../_patterns/blueprint.md).
+- What *creates* a Blueprint: the [Develop Blueprint](../workflows/develop-blueprint.md) workflow;
+  hook selection is completed by [Generate Hook Options](../workflows/generate-hook-options.md).
+- Related instance directories: [Topics](../topics/README.md) (a Blueprint communicates one
+  Topic), [Publications](../publications/README.md) (realize a Blueprint). Reusable production
+  scaffolds are Templates under [Assets](../../../assets/scripts/README.md), not Blueprints.

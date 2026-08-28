@@ -1,18 +1,60 @@
 ---
-class: "100"
+id: content.workflow.repurpose-publication
+kind: workflow
+domain: content
+class: "10"
 collection: content
 type: workflow
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-08-27
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - distribution
 related:
   - ../publications/README.md
   - ../../../analytics/insights/README.md
+  - ../concepts.md
 sources:
   - ../../../ONTOLOGY.md
+contract:
+  subject_type: content.publication
+  entry_stage: Reuse / Repurpose
+  exit_stage: Draft   # dual-path workflow; exits to Plan instead when upstream Blueprint intent must change (see Procedure)
+  requires:
+    - id: content.publication
+      state: completed
+      optional: false
+    - id: content.workflow.derive-insight
+      state: completed
+      optional: true
+  inputs:
+    - name: target_channel
+      type: ref(channels.channel)
+      required: true
+    - name: target_format
+      type: taxonomy(Publication Format)
+      required: true
+    - name: reuse_rationale
+      type: text
+      required: true
+  creates:
+    - type: content.publication
+      via_pattern: ../_patterns/publication.md
+  updates:
+    - type: content.publication
+  validation:
+    - source_publication_linked
+    - reuse_rationale_recorded
+    - promise_angle_structure_compared
+    - path_selected
+    - derivation_link_recorded
+    - output_recorded
+  next:
+    - content.workflow.validate-publication
+    - content.workflow.develop-blueprint
+  failure_paths: []
 ---
 
 # Repurpose Publication

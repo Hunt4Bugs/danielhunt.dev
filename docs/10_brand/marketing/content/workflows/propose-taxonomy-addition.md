@@ -1,18 +1,52 @@
 ---
-class: "100"
+id: content.workflow.propose-taxonomy-addition
+kind: workflow
+domain: content
+class: "10"
 collection: content
 type: workflow
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - governance
 related:
   - README.md
   - ../work-items/README.md
+  - ../concepts.md
 sources:
   - ../../../ONTOLOGY.md
+contract:
+  subject_type: content.work-item   # judgment call: the proposed value is not itself a persisted concept until approved; it exists only as a local proposal on the originating Work Item. See report.
+  entry_stage: Validate
+  exit_stage: Validate   # governance operation; does not advance the subject's Content lifecycle
+  requires: []
+  inputs:
+    - name: candidate_value
+      type: text
+      required: true
+    - name: definition
+      type: text
+      required: true
+    - name: intended_entity
+      type: text
+      required: true
+    - name: source
+      type: ref(content.source)
+      required: true
+  creates: []
+  updates: []
+  validation:
+    - owning_context_identified
+    - duplicate_and_synonym_checked
+    - definition_recorded
+    - provenance_linked
+    - usage_conditions_defined
+    - approval_obtained
+  next: []   # resumes the originating workflow after approval — not a fixed follow-on
+  failure_paths: []   # rejection or missing approval is retained in the Work Item; the candidate is never made selectable
 ---
 
 # Propose Taxonomy Addition

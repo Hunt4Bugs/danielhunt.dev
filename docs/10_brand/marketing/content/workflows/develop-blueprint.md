@@ -1,18 +1,58 @@
 ---
-class: "100"
+id: content.workflow.develop-blueprint
+kind: workflow
+domain: content
+class: "10"
 collection: content
 type: workflow
 status: active
+version: 1
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-28
 facets:
   - operations
 related:
   - README.md
   - ../work-items/README.md
+  - ../concepts.md
 sources:
   - ../../../ONTOLOGY.md
+contract:
+  subject_type: content.topic
+  entry_stage: Plan
+  exit_stage: Draft
+  requires:
+    - id: content.topic
+      state: completed
+      optional: false
+  inputs:
+    - name: topic
+      type: ref(content.topic)
+      required: true
+    - name: audience_segment
+      type: ref(audience.segment)
+      required: true
+    - name: asset_constraints
+      type: text
+      required: false
+  creates:
+    - type: content.blueprint
+      via_pattern: ../_patterns/blueprint.md
+  updates:
+    - type: content.blueprint
+  validation:
+    - taxonomy_values_canonical
+    - proof_linked
+    - promise_payoff_fit
+    - constraints_stated
+    - output_link_recorded
+  next:
+    - content.workflow.generate-hook-options
+    - content.workflow.generate-short-form-script
+    - content.workflow.develop-publication
+  failure_paths:
+    - content.workflow.capture-knowledge
 ---
 
 # Develop Blueprint
