@@ -85,7 +85,7 @@ Dark-default palette with light-mode overrides, defined as CSS custom properties
 
 8px spacing scale, 4/8/16/24px radii, 12px default glass blur.
 
-For the full context map, identity, and voice, start at [`docs/100_brand/README.md`](docs/100_brand/README.md). For implementation-level tokens, type, and components, see [`docs/100_brand/assets/design.md`](docs/100_brand/assets/design.md).
+For the full context map, identity, and voice, start at [`docs/10_brand/README.md`](docs/10_brand/README.md). For implementation-level tokens, type, and components, see [`docs/10_brand/assets/design.md`](docs/10_brand/assets/design.md).
 
 ## License
 

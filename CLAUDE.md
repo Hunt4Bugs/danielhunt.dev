@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Personal brand surface for Daniel Hunt (danielhunt.dev) — a single-page static site that serves as credibility + contact path for the content brand. Not a content publication itself (content lives on IG, X, YouTube, eventually a newsletter).
 
-For the canonical context map, see [`docs/100_brand/README.md`](docs/100_brand/README.md). For identity and voice, see [`docs/100_brand/identity/README.md`](docs/100_brand/identity/README.md); for visual art direction, [`docs/100_brand/identity/visual.md`](docs/100_brand/identity/visual.md); and for implementation tokens, type, geometry, and components, [`docs/100_brand/assets/design.md`](docs/100_brand/assets/design.md). Update the relevant source before changing anything brand-shaped on the site.
+For the canonical context map, see [`docs/10_brand/README.md`](docs/10_brand/README.md). For identity and voice, see [`docs/10_brand/identity/README.md`](docs/10_brand/identity/README.md); for visual art direction, [`docs/10_brand/identity/visual.md`](docs/10_brand/identity/visual.md); and for implementation tokens, type, geometry, and components, [`docs/10_brand/assets/design.md`](docs/10_brand/assets/design.md). Update the relevant source before changing anything brand-shaped on the site.
 
 ## Commands
 
@@ -56,7 +56,7 @@ site/
 - **og.png is a committed static asset** (1200×630). It was generated once by the old satori + resvg pipeline, which lives in git history at `src/pages/og.png.ts` if it ever needs regenerating. `.gitignore` has a `!site/**/*.png` exception for it.
 - **`/contact-card/`** is a `noindex` utility page for in-person contact sharing: it shows the headshot and a QR code (`images/daniel-hunt-contact-qr.svg`) that resolves here, plus a "Save contact" link to `daniel-hunt.vcf`. Update the `.vcf` by hand if contact details change — it's static, not generated from the vCard's own `PHOTO` URI.
 
-**Design tokens** (in `site/css/site.css`, canonicalized in `docs/100_brand/assets/design.md`):
+**Design tokens** (in `site/css/site.css`, canonicalized in `docs/10_brand/assets/design.md`):
 
 - Dark default: `--bg-0`, `--surface-1`, `--surface-2`, `--text-1`, `--text-2`
 - Semantic accents: `--accent-primary` (systems), `--accent-secondary` (life sciences/data), `--accent-tertiary` (AI/models), `--accent-amber` (strategy/caution)

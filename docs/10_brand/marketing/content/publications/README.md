@@ -1,0 +1,38 @@
+---
+id: content.publications.readme
+kind: note
+domain: content
+status: active
+version: 1
+class: "10"
+collection: content
+owner: Daniel Hunt
+created: 2026-08-26
+updated: 2026-08-28
+facets:
+  - channels
+  - analytics
+related:
+  - ../concepts.md
+  - ../_patterns/publication.md
+  - ../blueprints/README.md
+  - ../../../channels/README.md
+  - ../../../analytics/measurements/README.md
+sources:
+  - ../../../ONTOLOGY.md
+---
+
+# Publication records
+
+You are in the instance directory for `content.publication`. Store one channel-specific expression
+per record here.
+
+- What a Publication *is* (definition, relationships, constraints, entity contract):
+  [`concepts.md`](../concepts.md#publication).
+- What a Publication document must *contain* (required sections): [`_patterns/publication.md`](../_patterns/publication.md).
+- What *creates* a Publication: the [Develop Publication](../workflows/develop-publication.md)
+  workflow; durable publication facts are recorded only by
+  [Publish Publication](../workflows/publish-publication.md).
+- Related instance directories: [Blueprints](../blueprints/README.md) (realized by a Publication),
+  [Channels](../../../channels/README.md) (Channel registry), and
+  [Measurements](../../../analytics/measurements/README.md) (attach to a published Publication).
