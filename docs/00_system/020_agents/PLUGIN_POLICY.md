@@ -1,5 +1,5 @@
 ---
-class: "000"
+class: "00"
 collection: agent-guidance
 type: plugin-policy
 status: active

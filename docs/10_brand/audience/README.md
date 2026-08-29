@@ -1,14 +1,19 @@
 ---
-class: "100"
-collection: brand
+id: audience.readme
+kind: note
+domain: audience
+class: "10"
+collection: audience
 type: audience
 status: active
 owner: Daniel Hunt
 created: 2026-06-01
-updated: 2026-08-27
+updated: 2026-08-29
 facets:
   - content
 related:
+  - domain.md
+  - concepts.md
   - ../identity/README.md
   - ../strategy/README.md
 sources:
@@ -17,7 +22,7 @@ sources:
 
 # Daniel Hunt — Brand Audience
 
-Companion to [Identity](../identity/README.md). Identity defines who the brand is. Audience defines who the brand is for, what they are stuck with, what content addresses, and what credibility justifies speaking on it.
+Companion to [Identity](../identity/README.md). Identity defines who the brand is. Audience defines who the brand is for, what they are stuck with, what content addresses, and what credibility justifies speaking on it. [`domain.md`](domain.md) states this domain's boundary and [`concepts.md`](concepts.md) is its concept registry (Audience Segment), per the [Domain Documentation Protocol](../../00_system/010_governance/DOMAIN_PROTOCOL.md).
 
 This document holds the audience-shaped material produced by the 2026-06-01 personal brand workbook session. See [`specs/2026-06-01-personal-brand-workbook.md`](../specs/2026-06-01-personal-brand-workbook.md) for the full workbook snapshot and [`specs/2026-06-01-workbook-docs-design.md`](../specs/2026-06-01-workbook-docs-design.md) for the design decisions behind these answers.
 
@@ -107,7 +112,7 @@ Rows 7 through 9 are scout-mode credibility, not authority. They are framed as "
 | 8 | Can't tell which compliance burden is real vs theater. | Most is real, but selectively. Read the regs, talk to QA people, build the minimum necessary, defer the rest. Don't outsource the question. Learn enough to filter. | Currently doing this for Datavial. Scout content. |
 | 9 | Market too small or slow for venture scale. | Slow for big platform plays. Fast for sharp single-purpose tools that solve a real pain. Optimize for design partners who pay, not for VC narrative. | Operating this thesis with Datavial. TBD as a future win or scar. |
 | 10 | Phones eating attention; life feels less fun. | Putting the phone down is the practice. Movement, food, walking, training, and talking to strangers are reattachment rituals. Not fixes for a broken self. The actual texture of being alive. | Lived practice. The offline half of the brand is this work, made visible. |
-| 11 | Want to travel but waiting until I "make it." | Don't defer the life. Travel is a tool for being alive, not a reward. Build the work around travel by batching production during trips. The plan accommodates the life, not the other way around. | Twice-yearly Thailand and Asia rotation is built into [Marketing / Content](../marketing/content/README.md), with each trip batched as 3 to 4 episodes of footage. Travel is structural, not pasted on. |
+| 11 | Want to travel but waiting until I "make it." | Don't defer the life. Travel is a tool for being alive, not a reward. Build the work around travel by batching production during trips. The plan accommodates the life, not the other way around. | Twice-yearly Thailand and Asia rotation is built into [Marketing / Content](../../content/README.md), with each trip batched as 3 to 4 episodes of footage. Travel is structural, not pasted on. |
 | 12 | Burning out shipping stuff I don't care about. | Movement, presence, and IRL connection are part of the build, not opposite to it. You can't build for scientists if you have forgotten how to be a person. | The offline half of the brand IS this lived practice. Training, travel, observation. |
 
 ## Credibility Bank v0
@@ -145,7 +150,7 @@ Bucket organization follows the workbook's prompt set (curiosity, experiment, br
 
 ### Bucket C (brand-process learning)
 
-**Intentionally empty for Phase 0.** Brand-process work (DaVinci practice, on-camera comfort, frame-by-frame study of Lindhardt and Dalen) is happening per [Marketing / Content](../marketing/content/README.md), but is kept backstage as content. Risk: meta-content about learning production craft can compound or can read self-indulgent. The reference set (Dalen specifically) does not do this. Revisit at Month 6 if Phase 0 craft has progressed enough to have something honest to teach.
+**Intentionally empty for Phase 0.** Brand-process work (DaVinci practice, on-camera comfort, frame-by-frame study of Lindhardt and Dalen) is happening per [Marketing / Content](../../content/README.md), but is kept backstage as content. Risk: meta-content about learning production craft can compound or can read self-indulgent. The reference set (Dalen specifically) does not do this. Revisit at Month 6 if Phase 0 craft has progressed enough to have something honest to teach.
 
 ### Offline (Bucket D)
 
@@ -195,7 +200,7 @@ The four pair symmetrically across two axes. For #1 (life sciences frontier) pai
 ## Where the rest of the workbook material lives
 
 - **Brand Statement, brand-level contrarian, product-level contrarian, bridge sentence:** [Identity](../identity/README.md).
-- **Editorial rules and capture targets:** [Marketing / Content](../marketing/content/README.md).
+- **Editorial rules and capture targets:** [Marketing / Content](../../content/README.md).
 - **Full workbook snapshot (15 exercises in workbook order):** [`specs/2026-06-01-personal-brand-workbook.md`](../specs/2026-06-01-personal-brand-workbook.md).
 - **Design decisions for these answers:** [`specs/2026-06-01-workbook-docs-design.md`](../specs/2026-06-01-workbook-docs-design.md).
 - **Implementation plan:** [`plans/2026-06-01-workbook-docs-implementation.md`](../plans/2026-06-01-workbook-docs-implementation.md).

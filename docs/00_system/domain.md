@@ -10,6 +10,7 @@ owner: Daniel Hunt
 created: 2026-08-28
 updated: 2026-08-28
 related:
+  - README.md
   - 010_governance/LIBRARY_MAP.md
   - 010_governance/METADATA.md
   - concepts.md
@@ -110,12 +111,16 @@ Full field-level specification lives in [`concepts.md`](concepts.md).
 
 - **`protocol`** — `ops` conforms to `DOMAIN_PROTOCOL.md` and the root `_conventions/` /
   `_patterns/` it defines; `protocol` does not depend on `ops`.
-- **`content`** (`10_brand/marketing/content/`) — the first domain fully modeled under this
-  protocol. `ops.workflow.create-domain` is the general procedure that produced `content`'s
-  scaffold in spirit and is the workflow a future session runs against each remaining thin Brand
-  context.
-- **`10_brand/` (other contexts), `20_site/`, `30_delivery/`** — not modeled as protocol domains
-  yet; `ops` may record decisions about them (as Records) without owning their content.
+- **`content`** (`docs/content/`) — the first domain fully modeled under this protocol, and the
+  first to graduate out of a numbered class into its own root-level domain directory.
+  `ops.workflow.create-domain` is the general procedure that produced `content`'s scaffold in
+  spirit and is the general procedure behind every domain's scaffold since.
+- **`identity`, `strategy`, `audience`, `marketing`, `offers`, `assets`, `channels`,
+  `relationships`, `analytics`** (`docs/10_brand/*/`), **`site`** (`docs/20_site/`), and
+  **`delivery`** (`docs/30_delivery/`) — modeled as protocol domains nested inside their numbered
+  class, each with a `domain.md` and `concepts.md` per §8.1. `relationships` is `status: draft`
+  and intentionally carries no Concepts yet; `ops` may record decisions about any of these domains
+  (as Records) without owning their content.
 
 ## Examples
 

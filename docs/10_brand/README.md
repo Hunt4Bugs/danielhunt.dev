@@ -1,5 +1,5 @@
 ---
-class: "100"
+class: "10"
 collection: brand
 type: domain-map
 status: active

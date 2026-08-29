@@ -1,5 +1,5 @@
 ---
-class: "100"
+class: "10"
 collection: brand
 type: record-contract
 status: active
@@ -10,7 +10,7 @@ facets:
   - content
 related:
   - ../templates/scripts/README.md
-  - ../../marketing/content/blueprints/README.md
+  - ../../../content/blueprints/README.md
 sources:
   - ../../ONTOLOGY.md
 ---

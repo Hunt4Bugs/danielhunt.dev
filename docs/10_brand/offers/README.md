@@ -1,15 +1,22 @@
 ---
-class: "100"
-collection: brand
+id: offers.readme
+kind: note
+domain: offers
+class: "10"
+collection: offers
 type: offers
 status: active
 owner: Daniel Hunt
-updated: 2026-08-26
+created: 2026-08-26
+updated: 2026-08-29
+related:
+  - domain.md
+  - concepts.md
 ---
 
 # Offers
 
-Offers are products or services the Brand can credibly introduce or support. They are distinct from editorial Topics and from the commercial audience.
+Offers are products or services the Brand can credibly introduce or support. They are distinct from editorial Topics and from the commercial audience. [`domain.md`](domain.md) states this domain's boundary and [`concepts.md`](concepts.md) is its concept registry (Service Offer, Product Offer), per the [Domain Documentation Protocol](../../00_system/010_governance/DOMAIN_PROTOCOL.md).
 
 ## Current service offers
 

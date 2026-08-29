@@ -1,5 +1,5 @@
 ---
-class: "000"
+class: "00"
 collection: operations
 type: triage-policy
 status: active
