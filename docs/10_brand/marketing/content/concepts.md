@@ -35,10 +35,10 @@ the two ever disagree.
 Cross-domain taxonomy ownership: `ref(strategy.theme)` and `ref(audience.segment)` and
 `ref(channels.channel)` point at concepts owned by neighboring contexts (Strategy, Audience,
 Channels respectively — see [`domain.md`](domain.md)'s Related Domains). `taxonomy(...)` values
-below are the eleven Content-owned controlled vocabularies from ONTOLOGY.md's Taxonomies section:
-Content Pattern, Content Purpose, Narrative Structure, Visual Hook Type, Verbal Hook Type,
-Knowledge Kind, Topic Mode, Publication Format, Workflow Stage, Work Item State, Production
-Dependency State.
+below are the thirteen Content-owned controlled vocabularies from ONTOLOGY.md's Taxonomies
+section: Content Pattern, Content Purpose, Narrative Structure, Visual Hook Type, Verbal Hook
+Type, Knowledge Kind, Topic Mode, Publication Format, Workflow Stage, Work Item State, Production
+Dependency State, Creator Type, Creator Relationship.
 
 ## Knowledge
 **ID:** `content.knowledge`
@@ -513,6 +513,93 @@ fields:
     required: true
     cardinality: 1..*
 
+## Creator
+**ID:** `content.creator`
+
+A content-producing entity — a person, company, brand, or organization — being monitored for
+competitor, inspiration, peer, or reference intelligence. A Creator is not a general Person or
+Organization record; it exists only to support content-intelligence monitoring.
+
+### Relationships
+- controls `content.creator-channel`
+- classified by `taxonomy(Creator Type)`
+- classified by `taxonomy(Creator Relationship)`
+
+### Constraints
+- A Creator must carry at least one Creator Relationship classification.
+- `creator_type` (what the Creator is) and `relationships` (our stance toward it) must never be
+  conflated into one field.
+- Niches and notes are free text, not controlled vocabulary.
+
+### Entity contract
+entity: content.creator
+fields:
+  - name: name
+    type: text
+    required: true
+    cardinality: 1
+  - name: creator_type
+    type: taxonomy(Creator Type)
+    required: true
+    cardinality: 1
+  - name: relationships
+    type: taxonomy(Creator Relationship)
+    required: true
+    cardinality: 1..*
+  - name: niches
+    type: list
+    required: false
+    cardinality: 0..*
+  - name: notes
+    type: text
+    required: false
+    cardinality: 0..*
+  - name: creating_work_item
+    type: ref(content.work-item)
+    required: true
+    cardinality: 1
+
+## Creator Channel
+**ID:** `content.creator-channel`
+
+One specific account a Creator holds on a Channel platform type. Named "Creator Channel" rather
+than "Channel" specifically to avoid colliding with `channels.channel`, which means the platform
+type (for example, Instagram) — a different granularity than one Creator's specific account on
+that platform.
+
+### Relationships
+- belongs to `content.creator`
+- takes form `ref(channels.channel)`
+
+### Constraints
+- A Creator Channel must reference exactly one Creator and one Channel.
+- A Creator Channel must not duplicate the platform-type registry Channels already owns —
+  reference `channels.channel`, never restate it.
+
+### Entity contract
+entity: content.creator-channel
+fields:
+  - name: creator
+    type: ref(content.creator)
+    required: true
+    cardinality: 1
+  - name: channel
+    type: ref(channels.channel)
+    required: true
+    cardinality: 1
+  - name: handle
+    type: text
+    required: false
+    cardinality: 0..1
+  - name: url
+    type: url
+    required: true
+    cardinality: 1
+  - name: creating_work_item
+    type: ref(content.work-item)
+    required: true
+    cardinality: 1
+
 ## Work Item
 **ID:** `content.work-item`
 
@@ -522,7 +609,8 @@ stage, inputs, decisions, outputs, and validation.
 ### Relationships
 - executes `content.workflow.*`
 - has one primary subject: `ref(content.knowledge | content.source | content.topic |
-  content.blueprint | content.script | content.publication | content.series)`
+  content.blueprint | content.script | content.publication | content.series | content.creator |
+  content.creator-channel)`
 - creates or updates the records named in its Outputs
 
 ### Constraints
@@ -544,7 +632,7 @@ fields:
     required: true
     cardinality: 1
   - name: primary_subject
-    type: ref(content.*)   # polymorphic — one of Knowledge, Source, Topic, Blueprint, Script, Publication, Series
+    type: ref(content.*)   # polymorphic — one of Knowledge, Source, Topic, Blueprint, Script, Publication, Series, Creator, Creator Channel
     required: true
     cardinality: 1
   - name: work_state

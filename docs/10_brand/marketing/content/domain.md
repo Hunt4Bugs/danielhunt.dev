@@ -49,9 +49,12 @@ Channel a given instance uses.
   publication-oriented authored asset; a Script Template is reusable fill-in-the-blank scaffolding
   that generates Scripts).
 - Work Item: the persistent record of one execution of one Content Workflow against one subject.
+- Creator and Creator Channel: content-producing entities monitored for competitor, inspiration,
+  peer, or reference intelligence, and the specific platform accounts they hold.
 - The Content-owned controlled vocabularies: Content Pattern, Content Purpose, Narrative
   Structure, Visual Hook Type, Verbal Hook Type, Knowledge Kind, Topic Mode, Publication Format,
-  Workflow Stage, Work Item State, Production Dependency State.
+  Workflow Stage, Work Item State, Production Dependency State, Creator Type, Creator
+  Relationship.
 
 **Excludes**
 
@@ -82,6 +85,11 @@ Channel a given instance uses.
   subtype).
 - **Work Item** — one execution of one Content Workflow against one primary subject, recording
   execution state, current stage, inputs, decisions, outputs, and validation.
+- **Creator** — a content-producing entity (person, company, brand, or organization) monitored
+  for competitor, inspiration, peer, or reference intelligence; narrower than a general Person or
+  Organization record.
+- **Creator Channel** — one specific account a Creator holds on a Channel platform type; named
+  separately from Channel to avoid colliding with that platform-type registry.
 
 Full definitions, relationships, and entity contracts live in [`concepts.md`](concepts.md), which
 is this domain's scoped instantiation of the cross-context model in
@@ -102,6 +110,8 @@ is this domain's scoped instantiation of the cross-context model in
 - `Measurement` **received by** `Publication` (record contract owned by Analytics)
 - `Insight` **informed by** `Measurement`; `Insight` **creates or updates** `Knowledge`
 - `Workflow` **defines** `WorkItem`; `WorkItem` **has one primary subject**
+- `Creator` **controls** `CreatorChannel`
+- `CreatorChannel` **takes form** `channels.channel`
 
 ## Constraints
 
@@ -120,6 +130,11 @@ is this domain's scoped instantiation of the cross-context model in
 - A workflow or skill may propose a new controlled-vocabulary value but may not use it before
   approval and an update to the owning canonical context (Content itself for Content-owned
   vocabularies; Strategy, Audience, or Channels for theirs).
+- Creator is scoped to content-producing entities monitored for competitor, inspiration, peer, or
+  reference intelligence; it does not model general people, organizations, or CRM relationships,
+  which remain reserved for the Relationships context.
+- A Creator must carry at least one Creator Relationship classification; Creator Type (what it is)
+  and Creator Relationship (our stance toward it) must never be conflated into one field.
 
 ## Related Domains
 
@@ -137,6 +152,10 @@ is this domain's scoped instantiation of the cross-context model in
   Insights feed back into Content's Knowledge.
 - [Identity](../../identity/README.md) — owns brand-wide voice, evidence, and privacy boundaries
   that every Content workflow applies.
+- [Relationships](../../relationships/README.md) — remains reserved for general Person,
+  Organization, and CRM records; Content's Creator and Creator Channel are a narrower,
+  content-producing-entity-only exception scoped to competitor and inspiration monitoring, and do
+  not extend or duplicate this context.
 
 ## Examples
 
@@ -149,3 +168,8 @@ is this domain's scoped instantiation of the cross-context model in
   real Knowledge instance: reusable synthesis (pair a visual Scroll Stopper with a verbal Hook,
   carry the promise through Development, fulfill it in the Payoff) with an explicit evidence
   boundary and Source link, demonstrating the Source → Knowledge relationship end to end.
+- The [creator monitoring trace](examples/creator-monitoring-trace.md) is the seed of an
+  illustrative Creator and Creator Channel record, showing the Creator → Creator Channel
+  relationship and the Creator Channel's reference to an existing `channels.channel` value — it is
+  a simulation used to validate contracts, not asserted evidence of a real Creator or Creator
+  Channel.
