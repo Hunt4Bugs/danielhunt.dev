@@ -35,7 +35,7 @@ the two ever disagree.
 Cross-domain taxonomy ownership: `ref(strategy.theme)` and `ref(audience.segment)` and
 `ref(channels.channel)` point at concepts owned by neighboring contexts (Strategy, Audience,
 Channels respectively — see [`domain.md`](domain.md)'s Related Domains). `taxonomy(...)` values
-below are the ten Content-owned controlled vocabularies from ONTOLOGY.md's Taxonomies section:
+below are the eleven Content-owned controlled vocabularies from ONTOLOGY.md's Taxonomies section:
 Content Pattern, Content Purpose, Narrative Structure, Visual Hook Type, Verbal Hook Type,
 Knowledge Kind, Topic Mode, Publication Format, Workflow Stage, Work Item State, Production
 Dependency State.

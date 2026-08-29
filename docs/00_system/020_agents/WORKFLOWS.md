@@ -1,5 +1,5 @@
 ---
-class: "000"
+class: "00"
 collection: agent-guidance
 type: workflow-guide
 status: active
