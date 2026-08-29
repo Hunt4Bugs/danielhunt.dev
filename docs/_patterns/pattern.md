@@ -16,7 +16,7 @@ related:
 # Pattern: a domain's `_patterns/<concept>.md`
 
 This governs the files inside a *domain's own* `_patterns/` directory (e.g.
-`10_brand/marketing/content/_patterns/topic.md`) — not the meta-patterns in this directory. A
+`content/_patterns/topic.md`) — not the meta-patterns in this directory. A
 domain-level pattern is a representation convention: what does one instance document of this
 Concept actually look like (§3.5, §7).
 

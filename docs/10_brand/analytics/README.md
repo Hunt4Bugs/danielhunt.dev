@@ -1,14 +1,19 @@
 ---
-class: "100"
-collection: brand
+id: analytics.readme
+kind: note
+domain: analytics
+class: "10"
+collection: analytics
 type: analytics
 status: active
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-29
 facets:
   - content
 related:
+  - domain.md
+  - concepts.md
   - measurements/README.md
   - insights/README.md
   - measurement-plan.md
@@ -18,7 +23,7 @@ sources:
 
 # Analytics
 
-Analytics turns observed results into learning without allowing short-term engagement to replace strategy.
+Analytics turns observed results into learning without allowing short-term engagement to replace strategy. [`domain.md`](domain.md) states this domain's boundary and [`concepts.md`](concepts.md) is its concept registry (Measurement, Insight) with entity contracts, per the [Domain Documentation Protocol](../../00_system/010_governance/DOMAIN_PROTOCOL.md).
 
 ## Core concepts
 

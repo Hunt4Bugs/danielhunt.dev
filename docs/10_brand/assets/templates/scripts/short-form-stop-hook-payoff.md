@@ -1,5 +1,5 @@
 ---
-class: "100"
+class: "10"
 collection: brand
 type: script-template
 status: active
@@ -9,9 +9,9 @@ updated: 2026-08-27
 facets:
   - content
 related:
-  - ../../../marketing/content/workflows/generate-short-form-script.md
+  - ../../../../content/workflows/generate-short-form-script.md
 sources:
-  - ../../../marketing/content/knowledge/short-form-anatomy.md
+  - ../../../../content/knowledge/short-form-anatomy.md
 format: Short-form Video
 structure: "Scroll Stopper + Verbal Hook → Development → Payoff"
 ---

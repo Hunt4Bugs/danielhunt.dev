@@ -1,15 +1,21 @@
 ---
-class: "200"
+id: site.architecture
+kind: note
+domain: site
+class: "20"
 collection: implementation
 type: architecture-reference
 status: active
 owner: Daniel Hunt
 created: 2026-07-28
-updated: 2026-08-25
+updated: 2026-08-29
 facets: [brand, delivery]
 related:
-  - ../10_brand/IDENTITY.md
-  - ../10_brand/VISUAL.md
+  - README.md
+  - domain.md
+  - concepts.md
+  - ../10_brand/identity/README.md
+  - ../10_brand/identity/visual.md
   - ../30_delivery/README.md
 sources:
   - ../../CLAUDE.md
@@ -33,7 +39,7 @@ sources:
 
 ## Canonical constraints
 
-Brand-shaped site work must first follow `../10_brand/IDENTITY.md` and `../10_brand/VISUAL.md`. Keep all deployable implementation inside `site/`; this class holds its internal documentation only. There is no build step or configured test suite.
+Brand-shaped site work must first follow [Identity](../10_brand/identity/README.md) and [Visual direction](../10_brand/identity/visual.md). Keep all deployable implementation inside `site/`; this class holds its internal documentation only. There is no build step or configured test suite.
 
 ## Open question
 

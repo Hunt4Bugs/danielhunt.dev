@@ -1,5 +1,5 @@
 ---
-class: "100"
+class: "10"
 collection: analytics
 type: measurement-plan
 status: active
@@ -11,9 +11,9 @@ facets:
   - strategy
 related:
   - README.md
-  - ../marketing/content/operating-plan.md
+  - ../../content/operating-plan.md
 sources:
-  - ../marketing/content/README.md
+  - ../../content/README.md
 ---
 
 # Content measurement plan

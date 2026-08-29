@@ -1,5 +1,5 @@
 ---
-class: "100"
+class: "10"
 collection: brand
 type: changelog
 status: active
@@ -35,7 +35,7 @@ Format per entry:
 
 **Source:** User-approved Brand Content Operating System implementation plan on 2026-08-27.
 
-**Implementation:** [Brand ontology](ONTOLOGY.md), [Content domain](marketing/content/README.md), [Content workflows](marketing/content/workflows/README.md), [Work Item contract](marketing/content/work-items/README.md), and [Analytics](analytics/README.md).
+**Implementation:** [Brand ontology](ONTOLOGY.md), [Content domain](../content/README.md), [Content workflows](../content/workflows/README.md), [Work Item contract](../content/work-items/README.md), and [Analytics](analytics/README.md).
 
 ---
 
@@ -47,7 +47,7 @@ Format per entry:
 
 **Source:** User-provided *3 Step Formula for High Impact Short Form* PDF and user-approved implementation plan on 2026-08-26.
 
-**Implementation:** [Brand ontology v1](ONTOLOGY.md), [short-form Source](marketing/content/sources/colin-and-samir-short-form-anatomy.md), [Script Template](assets/templates/scripts/short-form-stop-hook-payoff.md), and [Content workflows](marketing/content/workflows/README.md).
+**Implementation:** [Brand ontology v1](ONTOLOGY.md), [short-form Source](../content/sources/colin-and-samir-short-form-anatomy.md), [Script Template](assets/templates/scripts/short-form-stop-hook-payoff.md), and [Content workflows](../content/workflows/README.md).
 
 ---
 

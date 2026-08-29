@@ -785,10 +785,17 @@ through usage.
 - **Numeric class prefixes** (current `00_system` / `10_brand`) vs semantic
   domain folders (`20-content` / `30-engineering`): reconciled in the first real
   migration (see `docs/00_system/010_governance/LIBRARY_MAP.md`) — class prefixes
-  stay as the physical top-level layout (shrunk to 2 digits to match this
-  section's own examples), and protocol Domains are modeled *within* them rather
-  than replacing them. Revisit only if a domain's natural boundary stops fitting
-  inside a single numeric class.
+  stay as the physical top-level layout, and protocol Domains are modeled
+  *within* them by default rather than replacing them. **Revisited 2026-08-28**:
+  `content` outgrew a single numeric class (enough instance directories,
+  workflows, and cross-domain references that nesting under `10_brand/marketing/`
+  added indirection without adding meaning) and migrated to a root-level domain
+  directory, `docs/content/`, as a peer of the numbered class directories rather
+  than nested in one — see `LIBRARY_MAP.md`'s "Root-level domains" section and
+  `_conventions/documentation.md` for the resulting `class`/`collection`
+  frontmatter rule (present together, or omitted together for a root-level
+  domain). This is the exception, not the default: a domain stays inside its
+  class until its own boundary stops fitting there.
 - **A single vertical slice** (entity-contract + workflow-contract-as-frontmatter
   + a generated skill) should be built and run before this is handed to any
   wider tooling.

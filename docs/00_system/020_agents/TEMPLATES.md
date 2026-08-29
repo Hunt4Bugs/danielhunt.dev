@@ -1,5 +1,5 @@
 ---
-class: "000"
+class: "00"
 collection: agent-guidance
 type: template-guide
 status: active
@@ -11,7 +11,7 @@ updated: 2026-07-28
 
 ```yaml
 ---
-class: "000"
+class: "00"
 collection: records
 type: decision | audit | setup | note
 status: draft

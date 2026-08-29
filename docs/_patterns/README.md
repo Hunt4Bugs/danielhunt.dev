@@ -23,7 +23,7 @@ related:
 These are **meta**-patterns: they describe what each *kind* of protocol document must contain,
 per [DOMAIN_PROTOCOL.md](../00_system/010_governance/DOMAIN_PROTOCOL.md) §9–§11. They apply across
 every domain. Do not confuse this with a domain's own `_patterns/` directory (e.g.
-`10_brand/marketing/content/_patterns/`), which describes the representation convention for one
+`content/_patterns/`), which describes the representation convention for one
 domain's own Concepts (what a Topic document looks like, what a Blueprint document looks like) —
 that is domain-scoped content, not protocol infrastructure.
 
