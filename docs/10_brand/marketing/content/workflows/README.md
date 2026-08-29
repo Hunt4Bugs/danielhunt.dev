@@ -38,6 +38,7 @@ Entry and exit stages locate that Work Item execution, not a lifecycle field on 
 
 - [Capture Knowledge](capture-knowledge.md)
 - [Capture Publication](capture-publication.md)
+- [Review Publication](review-publication.md)
 - [Develop Topic](develop-topic.md)
 - [Develop Blueprint](develop-blueprint.md)
 - [Generate Hook Options](generate-hook-options.md)

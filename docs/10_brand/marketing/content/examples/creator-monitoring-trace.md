@@ -13,7 +13,9 @@ related:
   - ../_patterns/creator.md
   - ../_patterns/creator-channel.md
   - ../_patterns/publication.md
+  - ../_patterns/review.md
   - ../workflows/capture-publication.md
+  - ../workflows/review-publication.md
   - ../../../channels/README.md
 sources:
   - ../../../ONTOLOGY.md
@@ -21,7 +23,7 @@ sources:
 
 # Illustrative creator monitoring trace
 
-> **Simulation only.** This trace validates the Creator, Creator Channel, and Observed Publication contracts. It does not assert a real Creator, Creator Channel, Publication, Review, or Motif. Nothing here may be promoted without the appropriate Workflow and evidence.
+> **Simulation only.** This trace validates the Creator, Creator Channel, Observed Publication, and Review contracts. It does not assert a real Creator, Creator Channel, Publication, Review, or Motif. Nothing here may be promoted without the appropriate Workflow and evidence.
 
 ## Subject
 
@@ -34,6 +36,7 @@ An illustrative competitor-and-inspiration account being onboarded into Content'
 | `WI-20260828-add-creator-acme-fictional-fitness-co` | Add Creator | Capture → Validate | Illustrative Creator `content.creator.acme-fictional-fitness-co`: Creator Type `Brand`, Creator Relationships `Competitor` and `Inspiration`. |
 | `WI-20260828-add-creator-channel-acme-fictional-fitness-co-instagram` | Add Creator Channel | Capture → Validate | Illustrative Creator Channel `content.creator-channel.acme-fictional-fitness-co-instagram` belonging to the Creator above, referencing the existing Instagram `channels.channel` value. |
 | `WI-20260828-capture-publication-acme-fictional-fitness-co-instagram` | Capture Publication | Capture → Capture | Illustrative Observed Publication `content.publication.acme-fictional-fitness-co-instagram-home-gym-carousel`: Instagram Carousel captured from the Creator Channel above, with `published_at`, `canonical_url`, and `platform_identifier` populated immediately at capture and no Blueprint linked. |
+| `WI-20260828-review-publication-acme-fictional-fitness-co-instagram-home-gym-carousel` (and `-02`) | Review Publication | Capture → Review | Two illustrative Reviews of the Publication above: `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-visual` (Visual) and `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-format` (Format), sharing one overlapping observation — the corroborating pair a later Motif can draw on. |
 
 "Add Creator" and "Add Creator Channel" above are illustrative labels for a manual registry addition, not named Workflow documents — Creator and Creator Channel instances are added directly to the registry rather than through a dedicated Workflow contract in this pass. Every later row in this table names a real `workflows/*.md` contract.
 
@@ -73,6 +76,41 @@ This table is the seed of a worked example that later slices extend — a captur
 - `platform_identifier`: acmefictionalfitnessco-home-gym-carousel (illustrative Instagram media id)
 - `creating_work_item`: `WI-20260828-capture-publication-acme-fictional-fitness-co-instagram`
 
+### Review
+
+Two illustrative Reviews of the Publication above, of different Review Types, sharing one
+genuinely overlapping observation — the corroboration a later Motif slice draws on.
+
+**Review 1 — Visual**
+
+- `id`: `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-visual`
+- `publication`: `content.publication.acme-fictional-fitness-co-instagram-home-gym-carousel`
+- `review_type`: Visual
+- `observations`:
+  - "Product isolated against a plain, uncluttered background in every slide."
+  - "Numbered callouts (1, 2, 3) mark each equipment feature on slide two."
+- `confidence`: Medium
+- `reviewed_at`: 2026-08-22
+- `creating_work_item`: `WI-20260828-review-publication-acme-fictional-fitness-co-instagram-home-gym-carousel`
+
+**Review 2 — Format**
+
+- `id`: `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-format`
+- `publication`: `content.publication.acme-fictional-fitness-co-instagram-home-gym-carousel`
+- `review_type`: Format
+- `observations`:
+  - "Product isolated against a plain, uncluttered background in every slide."
+  - "Five-slide carousel follows a consistent numbered-callout structure across slides two through
+    four."
+- `confidence`: High
+- `reviewed_at`: 2026-08-23
+- `creating_work_item`: `WI-20260828-review-publication-acme-fictional-fitness-co-instagram-home-gym-carousel-02`
+
+The first observation in each Review is identical: "Product isolated against a plain, uncluttered
+background in every slide." That corroboration — the same specific pattern independently observed
+under two different Review Types — is what a later Motif may legitimately draw on; a single Review
+alone cannot support a Motif.
+
 ## Validation scenarios
 
 - A Creator with no Creator Relationship value fails validation.
@@ -81,3 +119,6 @@ This table is the seed of a worked example that later slices extend — a captur
 - A Creator Channel without a `creator` link, or with more than one, fails validation — cardinality is exactly 1.
 - A Publication with a Creator but no Blueprint is valid (the Observed branch); a Publication with no Creator and no Blueprint fails validation.
 - A Publication with both a Creator and a Blueprint is invalid — Own and Observed are mutually exclusive branches.
+- A Publication may carry more than one Review — of the same or different Review Types — without conflict; each Review evolves independently and never mutates the Publication it reviews.
+- A Review with a vague, non-specific observation ("this is good," "strong post") fails validation — every observation must describe something specifically present in the Publication.
+- Two Reviews of the same Publication may share a genuinely overlapping observation (as in the illustrative Visual and Format Reviews above) without being merged into one record — corroboration across Reviews is what a later Motif draws on, not automatic deduplication.

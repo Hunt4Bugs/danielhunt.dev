@@ -42,8 +42,9 @@ Channel a given instance uses.
 - The Content lifecycle stages and the Workflows that move a Work Item through them.
 - Knowledge and Source: reusable, attributable synthesis and its provenance.
 - Topic and Blueprint: reusable subjects and their Topic-specific communication plans.
-- Publication: one channel-specific expression of a Blueprint, including its durable
-  publication facts once published.
+- Publication: one channel-specific expression of content, either Own (authored through a
+  Blueprint) or Observed (captured from a tracked Creator), including its durable publication
+  facts.
 - Series: recurring editorial groupings of Topics and/or Publications.
 - Script and Script Template as Content Asset subtypes (a Script is a versioned,
   publication-oriented authored asset; a Script Template is reusable fill-in-the-blank scaffolding
@@ -51,6 +52,8 @@ Channel a given instance uses.
 - Work Item: the persistent record of one execution of one Content Workflow against one subject.
 - Creator and Creator Channel: content-producing entities monitored for competitor, inspiration,
   peer, or reference intelligence, and the specific platform accounts they hold.
+- Review: structured analysis of an Observed Publication, kept separate from the Publication so
+  observations can evolve without mutating the source record.
 - The Content-owned controlled vocabularies: Content Pattern, Content Purpose, Narrative
   Structure, Visual Hook Type, Verbal Hook Type, Knowledge Kind, Topic Mode, Publication Format,
   Workflow Stage, Work Item State, Production Dependency State, Creator Type, Creator
@@ -77,7 +80,8 @@ Channel a given instance uses.
 - **Topic** — a reusable subject or idea being communicated; not a post.
 - **Blueprint** — a Topic-specific communication plan: objective, audience, angle, pattern,
   structure, hook, CTA, proof, and constraints.
-- **Publication** — one channel-specific expression of a Topic through a Blueprint; owns
+- **Publication** — one channel-specific expression of content: Own (a Topic expressed through a
+  Blueprint) or Observed (captured from a tracked Creator's Creator Channel, no Blueprint); owns
   channel-specific content and durable publication facts.
 - **Series** — a recurring editorial grouping of related Topics and/or Publications.
 - **Script** — a versioned, publication-oriented authored asset for audio or video (Asset subtype).
@@ -90,6 +94,9 @@ Channel a given instance uses.
   Organization record.
 - **Creator Channel** — one specific account a Creator holds on a Channel platform type; named
   separately from Channel to avoid colliding with that platform-type registry.
+- **Review** — structured analysis of an Observed Publication (visual, format, hook, topic,
+  narrative, or technical), kept separate from the Publication so observations can evolve
+  independently.
 
 Full definitions, relationships, and entity contracts live in [`concepts.md`](concepts.md), which
 is this domain's scoped instantiation of the cross-context model in
@@ -102,7 +109,9 @@ is this domain's scoped instantiation of the cross-context model in
 - `Blueprint` **communicates** `Topic`
 - `Script` **produced by** `Blueprint`
 - `ScriptTemplate` **instantiates** `Script`
-- `Publication` **realizes** `Blueprint`
+- `Publication` **realizes** `Blueprint` (Own Publications only)
+- `Publication` **observed from** `Creator`; `Publication` **captured via** `CreatorChannel`
+  (Observed Publications only)
 - `Publication` **belongs to** `channels.channel`
 - `Publication` **uses** `Script` and other Assets
 - `Publication` **derives from** `Publication` (repurposed expressions)
@@ -112,13 +121,15 @@ is this domain's scoped instantiation of the cross-context model in
 - `Workflow` **defines** `WorkItem`; `WorkItem` **has one primary subject**
 - `Creator` **controls** `CreatorChannel`
 - `CreatorChannel` **takes form** `channels.channel`
+- `Review` **reviews** `Publication`
 
 ## Constraints
 
 - A Topic must reference at least one supporting Knowledge.
 - A Blueprint communicates exactly one primary Topic; a Topic may have zero or many Blueprints.
-- A Publication has exactly one primary Blueprint and one Channel; a Blueprint may have zero or
-  many Publications.
+- A Publication is either Own (authored through exactly one primary Blueprint) or Observed
+  (captured from a Creator via a Creator Channel, no Blueprint) — never both; either way it has
+  exactly one Channel. A Blueprint may have zero or many Own Publications.
 - A Publication may use at most one primary Script, plus zero or more other Assets.
 - A repurposed expression is a separate Publication linked by `derives from`, never a mutation of
   the source Publication.
@@ -135,6 +146,8 @@ is this domain's scoped instantiation of the cross-context model in
   which remain reserved for the Relationships context.
 - A Creator must carry at least one Creator Relationship classification; Creator Type (what it is)
   and Creator Relationship (our stance toward it) must never be conflated into one field.
+- A Review does not mutate its source Publication; a Publication may carry multiple Reviews across
+  different Review Types (or repeated over time), each evolving independently.
 
 ## Related Domains
 

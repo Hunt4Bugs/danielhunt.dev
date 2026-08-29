@@ -35,10 +35,10 @@ the two ever disagree.
 Cross-domain taxonomy ownership: `ref(strategy.theme)` and `ref(audience.segment)` and
 `ref(channels.channel)` point at concepts owned by neighboring contexts (Strategy, Audience,
 Channels respectively — see [`domain.md`](domain.md)'s Related Domains). `taxonomy(...)` values
-below are the thirteen Content-owned controlled vocabularies from ONTOLOGY.md's Taxonomies
+below are the fifteen Content-owned controlled vocabularies from ONTOLOGY.md's Taxonomies
 section: Content Pattern, Content Purpose, Narrative Structure, Visual Hook Type, Verbal Hook
 Type, Knowledge Kind, Topic Mode, Publication Format, Workflow Stage, Work Item State, Production
-Dependency State, Creator Type, Creator Relationship.
+Dependency State, Creator Type, Creator Relationship, Review Type, Review Confidence.
 
 ## Knowledge
 **ID:** `content.knowledge`
@@ -619,6 +619,56 @@ fields:
     cardinality: 0..1
   - name: url
     type: url
+    required: true
+    cardinality: 1
+  - name: creating_work_item
+    type: ref(content.work-item)
+    required: true
+    cardinality: 1
+
+## Review
+**ID:** `content.review`
+
+Structured analysis of one Publication — observations about its visual, format, hook, topic,
+narrative, or technical characteristics — kept separate from the Publication so those observations
+can evolve without mutating the source record.
+
+### Relationships
+- reviews `content.publication`
+- classified by `taxonomy(Review Type)`
+- classified by `taxonomy(Review Confidence)`
+- may inform `content.motif` — at least two corroborating Reviews are required before a Motif can
+  draw on them (see [Motif](#motif))
+- created by `content.work-item`
+
+### Constraints
+- A Publication may carry more than one Review — different Review Types, or repeated review of the
+  same Review Type over time — without conflict.
+- Observations must be specific and evidence-based, describing something actually present in the
+  Publication; a vague judgment or bare verdict fails validation.
+- A Review does not mutate its source Publication; it is an independently evolving record.
+
+### Entity contract
+entity: content.review
+fields:
+  - name: publication
+    type: ref(content.publication)
+    required: true
+    cardinality: 1
+  - name: review_type
+    type: taxonomy(Review Type)
+    required: true
+    cardinality: 1
+  - name: observations
+    type: text
+    required: true
+    cardinality: 1..*
+  - name: confidence
+    type: taxonomy(Review Confidence)
+    required: true
+    cardinality: 1
+  - name: reviewed_at
+    type: date
     required: true
     cardinality: 1
   - name: creating_work_item
