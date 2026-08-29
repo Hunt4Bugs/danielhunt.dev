@@ -39,7 +39,7 @@ An illustrative competitor-and-inspiration account being onboarded into Content'
 | `WI-20260828-add-creator-channel-acme-fictional-fitness-co-instagram` | Add Creator Channel | Capture → Validate | Illustrative Creator Channel `content.creator-channel.acme-fictional-fitness-co-instagram` belonging to the Creator above, referencing the existing Instagram `channels.channel` value. |
 | `WI-20260828-capture-publication-acme-fictional-fitness-co-instagram` | Capture Publication | Capture → Capture | Illustrative Observed Publication `content.publication.acme-fictional-fitness-co-instagram-home-gym-carousel`: Instagram Carousel captured from the Creator Channel above, with `published_at`, `canonical_url`, and `platform_identifier` populated immediately at capture and no Blueprint linked. |
 | `WI-20260828-review-publication-acme-fictional-fitness-co-instagram-home-gym-carousel` (and `-02`) | Review Publication | Capture → Review | Two illustrative Reviews of the Publication above: `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-visual` (Visual) and `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-format` (Format), sharing one overlapping observation — the corroborating pair a later Motif can draw on. |
-| `WI-20260828-detect-motifs-plain-background-product-isolation` | Detect Motifs | Review → Learn | Illustrative Motif `content.motif.plain-background-product-isolation` (Motif Category: Visual), promoted from the two Reviews' shared observation — the corroboration the `supporting_reviews` cardinality (2..*) requires. |
+| `WI-20260828-detect-motifs-plain-background-product-isolation` | Detect Motifs | Review → Learn | Illustrative Motif `content.motif.plain-background-product-isolation` (Motif Category: Visual), promoted from the two Reviews' shared observation — the corroboration the `supporting_reviews` cardinality (2..*) requires. CREATE execution: primary subject is `anchor_review`, since the Motif has no instance to `ref` until this row produces it. |
 
 "Add Creator" and "Add Creator Channel" above are illustrative labels for a manual registry addition, not named Workflow documents — Creator and Creator Channel instances are added directly to the registry rather than through a dedicated Workflow contract in this pass. Every later row in this table names a real `workflows/*.md` contract.
 
@@ -118,6 +118,10 @@ alone cannot support a Motif.
 
 ### Motif
 
+This is a CREATE execution — no matching Motif exists yet, so the Work Item's primary subject is
+`anchor_review` (one of the two corroborating Reviews), not the Motif being created, which has no
+persisted instance to `ref` until this execution produces it.
+
 - `id`: `content.motif.plain-background-product-isolation`
 - `name`: Plain-background product isolation
 - `motif_category`: Visual
@@ -126,6 +130,8 @@ alone cannot support a Motif.
 - `supporting_reviews`:
   - `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-visual`
   - `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-format`
+- `anchor_review`: `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-visual`
+  (the Work Item's primary subject for this CREATE execution)
 - `related_knowledge`: none — this illustrative Motif has not yet been used to seed or inform a
   Knowledge record; `related_knowledge` stays empty rather than being filled speculatively, per
   [`_patterns/motif.md`](../_patterns/motif.md).

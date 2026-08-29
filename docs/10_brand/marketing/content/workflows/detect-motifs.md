@@ -22,22 +22,37 @@ related:
 sources:
   - ../../../ONTOLOGY.md
 contract:
-  subject_type: content.motif   # judgment call, matching Capture Knowledge: the Motif has no
-                                 # persisted identity until this execution creates or reinforces
-                                 # it, so it is modeled as the Motif-in-formation. A Work Item has
-                                 # exactly one primary subject; the corroborating Reviews are
-                                 # evidence, carried as a typed input, not the subject.
+  subject_type: content.review | content.motif   # polymorphic, resolved by execution mode. A
+                                                   # `ref` must link to an existing instance, and a
+                                                   # brand-new Motif has none yet — so a CREATE
+                                                   # execution anchors on `anchor_review` (one
+                                                   # existing, completed candidate Review) instead.
+                                                   # A REINFORCE execution anchors on the existing
+                                                   # `target_motif` being reinforced, since that
+                                                   # Motif already has a persisted instance. See
+                                                   # Work Item contract below.
   entry_stage: Review
   exit_stage: Learn
   requires:
     - id: content.review
       state: completed
       optional: false
+    - id: content.motif
+      state: completed
+      optional: true   # only required for a REINFORCE execution; absent when creating a new Motif
   inputs:
+    - name: anchor_review
+      type: ref(content.review)
+      required: true
+      cardinality: 1   # primary subject for a CREATE execution
     - name: candidate_reviews
       type: ref(content.review)
       required: true
-      cardinality: 2..*
+      cardinality: 2..*   # the full corroborating set, including anchor_review
+    - name: target_motif
+      type: ref(content.motif)
+      required: false
+      cardinality: 0..1   # primary subject for a REINFORCE execution; absent for CREATE
     - name: motif_category
       type: taxonomy(Motif Category)
       required: true
@@ -53,6 +68,7 @@ contract:
     - minimum_corroborating_reviews
     - motif_category_selected
     - evidence_linked
+    - subject_resolves_to_existing_instance
   next:
     - content.workflow.capture-knowledge
   failure_paths:
@@ -63,24 +79,30 @@ contract:
 
 ## Work Item contract
 
-- **Primary subject:** the Motif being detected or reinforced — a new Motif in formation, or an
-  existing Motif gaining another corroborating Review. This is the same judgment call Capture
-  Knowledge makes for material with no persisted concept of its own until the execution creates
-  it: a Work Item has exactly one primary subject, so the corroborating Reviews are carried as a
-  typed input (`candidate_reviews`), not as the subject itself.
+- **Primary subject:** depends on execution mode — a Work Item's `primary_subject` is a `ref` and
+  must link to an existing instance, so a brand-new Motif (which has no persisted record yet)
+  cannot anchor a CREATE execution the way it could for a REINFORCE one.
+  - **CREATE** (no matching Motif exists yet): `anchor_review`, one existing, completed candidate
+    Review. All corroborating Reviews still feed the Procedure via `candidate_reviews`; the anchor
+    is simply which one the Work Item is filed against.
+  - **REINFORCE** (an existing Motif gains another corroborating Review): `target_motif`, the
+    existing Motif being updated — this one genuinely already exists, so it can anchor directly.
 - **Entry stage:** Review.
 - **Successful exit stage:** Learn.
-- **Creates:** one Motif record naming the repeated observation.
+- **Creates:** one Motif record naming the repeated observation (CREATE mode).
 - **Updates:** an existing Motif when a new Review reinforces an observation already recorded,
-  rather than creating a duplicate Motif.
+  rather than creating a duplicate Motif (REINFORCE mode).
 - **Required predecessors:** at least two completed [Review Publication](review-publication.md)
   executions (`content.review`, `state: completed` in the frontmatter `requires`) whose
-  observations genuinely overlap.
+  observations genuinely overlap. A REINFORCE execution additionally requires the `target_motif`
+  it reinforces to already exist (`content.motif`, `state: completed`, optional in the frontmatter
+  `requires` since it does not apply to CREATE).
 - **Possible next workflows:** [Capture Knowledge](capture-knowledge.md), when the resulting Motif
   is well-evidenced enough to seed new, reusable Knowledge.
-- **Validation evidence:** at least two corroborating Reviews linked, one Motif Category selected,
-  and the shared observation shown to be evidence-based rather than coincidental restatement, all
-  recorded in the Work Item.
+- **Validation evidence:** the primary subject resolved to an existing instance appropriate to the
+  execution mode, at least two corroborating Reviews linked, one Motif Category selected, and the
+  shared observation shown to be evidence-based rather than coincidental restatement, all recorded
+  in the Work Item.
 - **Failure and return paths:** [Review Publication](review-publication.md) when fewer than two
   Reviews corroborate the same observation — go get more evidence rather than promoting a single
   occurrence.
@@ -106,8 +128,10 @@ contract:
 
 ## Input
 
-Two or more candidate Reviews suspected of sharing a corroborating observation, the Motif Category
-that observation belongs to, and a short, specific name for the Motif.
+Two or more candidate Reviews suspected of sharing a corroborating observation, one of them named
+as `anchor_review` (the Work Item's subject when creating a new Motif), the Motif Category that
+observation belongs to, a short, specific name for the Motif, and — only when reinforcing an
+existing Motif — `target_motif` (the Work Item's subject in that case instead).
 
 ## Procedure
 
@@ -120,9 +144,13 @@ that observation belongs to, and a short, specific name for the Motif.
    contains the observation.
 4. Assign one Motif Category describing the dimension the repeated observation belongs to (Format,
    Visual, Hook, Narrative, Topic, or Distribution).
-5. Check the existing Motif registry: if a matching Motif already exists, update it by adding the
-   new corroborating Review to `supporting_reviews` rather than creating a duplicate; otherwise
-   create a new Motif with `supporting_reviews` set to the corroborating Reviews found.
+5. Check the existing Motif registry for a matching Motif.
+   - If one exists, this is a REINFORCE execution: set `target_motif` to it, use it as the primary
+     subject, and add the new corroborating Review to its `supporting_reviews` rather than
+     creating a duplicate.
+   - If none exists, this is a CREATE execution: set `anchor_review` to one of the corroborating
+     Reviews, use it as the primary subject (the Motif does not exist yet to anchor on), and
+     create a new Motif with `supporting_reviews` set to the corroborating Reviews found.
 6. When the Motif is well-evidenced enough to seed reusable material beyond this one observation,
    hand off to [Capture Knowledge](capture-knowledge.md) and link the resulting Knowledge back via
    `related_knowledge`; otherwise leave `related_knowledge` empty rather than filling it
