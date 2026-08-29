@@ -1,22 +1,22 @@
 ---
 name: to-blueprint
-description: Use when the user wants to turn an approved Topic into a Topic-specific communication plan: objective, audience, angle, pattern, structure, hook, CTA, proof, and constraints. Also trigger on "plan this topic," "develop a blueprint," or "what's the angle for this." Writes Blueprint records under docs/10_brand/marketing/content/blueprints/.
+description: Use when the user wants to turn an approved Topic into a Topic-specific communication plan: objective, audience, angle, pattern, structure, hook, CTA, proof, and constraints. Also trigger on "plan this topic," "develop a blueprint," or "what's the angle for this." Writes Blueprint records under docs/content/blueprints/.
 ---
 
 # To Blueprint
 
 ## Overview
 
-This skill produces one Blueprint record from one Topic, its supporting Knowledge and Sources, a primary Audience Segment, and any Asset constraints, following `docs/10_brand/marketing/content/workflows/develop-blueprint.md`.
+This skill produces one Blueprint record from one Topic, its supporting Knowledge and Sources, a primary Audience Segment, and any Asset constraints, following `docs/content/workflows/develop-blueprint.md`.
 
 ## Required references
 
 Before acting, read:
 
-- `docs/10_brand/marketing/content/workflows/develop-blueprint.md` (this skill's Procedure, Input, Output, and Stop conditions)
-- `docs/10_brand/marketing/content/workflows/README.md#skill-execution-contract` (taxonomy validation, dedup check, confirm-before-write, stop-condition routing, and chaining rules that apply to every step below)
-- `docs/10_brand/marketing/content/blueprints/README.md` (what a Blueprint record is for and what it must not contain)
-- `docs/10_brand/marketing/content/work-items/README.md` and `docs/10_brand/marketing/content/_patterns/work-item.md` (the Work Item identifier format and its required frontmatter and body now live in the pattern file; the README is a short pointer to it)
+- `docs/content/workflows/develop-blueprint.md` (this skill's Procedure, Input, Output, and Stop conditions)
+- `docs/content/workflows/README.md#skill-execution-contract` (taxonomy validation, dedup check, confirm-before-write, stop-condition routing, and chaining rules that apply to every step below)
+- `docs/content/blueprints/README.md` (what a Blueprint record is for and what it must not contain)
+- `docs/content/work-items/README.md` and `docs/content/_patterns/work-item.md` (the Work Item identifier format and its required frontmatter and body now live in the pattern file; the README is a short pointer to it)
 - `docs/10_brand/strategy/README.md` (primary Themes, positioning, and editorial constraints)
 - `docs/10_brand/audience/README.md` (Audience Segments, needs, problems, and credibility boundaries)
 - `docs/10_brand/identity/README.md` (voice, privacy, scars-not-wounds, and observation-over-preaching boundaries)
@@ -45,13 +45,13 @@ Unlike `to-topic`, this skill has no keyword-search dedup check against the whol
 
 ## Output
 
-Write to `docs/10_brand/marketing/content/blueprints/<slug>.md`, using `docs/10_brand/assets/templates/blueprints/short-form-video.md` when the target format is short-form video. Derive `<slug>` by lowercasing the Blueprint's title and hyphenating.
+Write to `docs/content/blueprints/<slug>.md`, using `docs/10_brand/assets/templates/blueprints/short-form-video.md` when the target format is short-form video. Derive `<slug>` by lowercasing the Blueprint's title and hyphenating.
 
 `docs/10_brand/assets/templates/blueprints/` currently contains only the short-form-video template. If the target format is not short-form video, stop before writing and tell the user that no Blueprint template exists yet for that format, rather than improvising a Blueprint shape from the short-form-video template or from scratch.
 
 When the Procedure's create-versus-update distinction (above) resolves to continuing or refining a Blueprint already in progress, edit that existing file in place instead of creating a new one at the derived `<slug>` path.
 
-Also create, or on an update-in-place, one Work Item record under `docs/10_brand/marketing/content/work-items/`, per the Skill execution contract's point 7, `develop-blueprint.md`'s own Work Item contract, and `docs/10_brand/marketing/content/work-items/README.md`'s required frontmatter and body: `primary_subject` is the Topic's own path (`docs/10_brand/marketing/content/topics/<slug>.md`), matching the `../topics/example.md`-style file-path format `work-items/README.md` specifies, not a prose description and not the Blueprint's own path. Required predecessors are a completed Develop Topic Work Item or an existing validated Topic. Read the Topic record's own "Creating Work Item" Header field (set by `to-topic` when it created or last extended the record) to find that predecessor's path, the same lookup mechanic `to-topic` uses to find its own predecessors against the Knowledge records it links. If the Topic record's "Creating Work Item" field is still the unfilled `[link]` placeholder, record "existing validated Topic, no Work Item on file" as the predecessor in the new Work Item's Predecessors section instead of a broken link.
+Also create, or on an update-in-place, one Work Item record under `docs/content/work-items/`, per the Skill execution contract's point 7, `develop-blueprint.md`'s own Work Item contract, and `docs/content/work-items/README.md`'s required frontmatter and body: `primary_subject` is the Topic's own path (`docs/content/topics/<slug>.md`), matching the `../topics/example.md`-style file-path format `work-items/README.md` specifies, not a prose description and not the Blueprint's own path. Required predecessors are a completed Develop Topic Work Item or an existing validated Topic. Read the Topic record's own "Creating Work Item" Header field (set by `to-topic` when it created or last extended the record) to find that predecessor's path, the same lookup mechanic `to-topic` uses to find its own predecessors against the Knowledge records it links. If the Topic record's "Creating Work Item" field is still the unfilled `[link]` placeholder, record "existing validated Topic, no Work Item on file" as the predecessor in the new Work Item's Predecessors section instead of a broken link.
 
 - **Creating a genuinely new Blueprint:** create the Work Item at entry stage Plan, and fill the new Blueprint record's "Creating Work Item" field with this Work Item's path.
 - **Updating an existing in-progress Blueprint:** create the Work Item at entry stage Plan, and add this Work Item's path to the *new* Work Item's own `related` field, pointing at the existing Blueprint record. Leave the existing Blueprint record's "Creating Work Item" field untouched. It must keep naming whichever Work Item originally created it, not the one that merely continued or refined it.
@@ -64,7 +64,7 @@ Confirm before writing, per the Skill execution contract: present the target fil
 
 Stop and return to `to-knowledge` when the proof is missing, the claim cannot be supported, or the Topic does not fit the Brand's strategic constraints. `to-knowledge` would need the additional or corrected raw material as Input.
 
-Even when this skill stops and returns to `to-knowledge`, it still creates, or leaves, a Work Item recording the block rather than producing nothing with no record of the attempt: set `work_state: Blocked` (the matching Work Item State value in `docs/10_brand/ONTOLOGY.md`) and repository `status: blocked`, and record the actual missing evidence, approval, or dependency in the Work Item's own prose fields (see `docs/10_brand/marketing/content/work-items/README.md`).
+Even when this skill stops and returns to `to-knowledge`, it still creates, or leaves, a Work Item recording the block rather than producing nothing with no record of the attempt: set `work_state: Blocked` (the matching Work Item State value in `docs/10_brand/ONTOLOGY.md`) and repository `status: blocked`, and record the actual missing evidence, approval, or dependency in the Work Item's own prose fields (see `docs/content/work-items/README.md`).
 
 ## Next step
 
@@ -77,7 +77,7 @@ When this run selected a Final Visual Hook Type and Verbal Hook Type pairing out
 ## Validation
 
 ```
-rg -n '^---$|^## Brief|^## Opening choices|^## Story plan|^## Validation' docs/10_brand/marketing/content/blueprints/<slug>.md
+rg -n '^---$|^## Brief|^## Opening choices|^## Story plan|^## Validation' docs/content/blueprints/<slug>.md
 ```
 
-The Work Item record's filename embeds today's date and a slug that cannot be predicted in advance, so no fixed `rg` command is given for it here. Spot-check its required frontmatter and body sections by hand against `docs/10_brand/marketing/content/work-items/README.md`'s spec instead.
+The Work Item record's filename embeds today's date and a slug that cannot be predicted in advance, so no fixed `rg` command is given for it here. Spot-check its required frontmatter and body sections by hand against `docs/content/work-items/README.md`'s spec instead.
