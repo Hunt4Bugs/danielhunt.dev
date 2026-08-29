@@ -35,10 +35,11 @@ the two ever disagree.
 Cross-domain taxonomy ownership: `ref(strategy.theme)` and `ref(audience.segment)` and
 `ref(channels.channel)` point at concepts owned by neighboring contexts (Strategy, Audience,
 Channels respectively — see [`domain.md`](domain.md)'s Related Domains). `taxonomy(...)` values
-below are the eleven Content-owned controlled vocabularies from ONTOLOGY.md's Taxonomies section:
-Content Pattern, Content Purpose, Narrative Structure, Visual Hook Type, Verbal Hook Type,
-Knowledge Kind, Topic Mode, Publication Format, Workflow Stage, Work Item State, Production
-Dependency State.
+below are the sixteen Content-owned controlled vocabularies from ONTOLOGY.md's Taxonomies
+section: Content Pattern, Content Purpose, Narrative Structure, Visual Hook Type, Verbal Hook
+Type, Knowledge Kind, Topic Mode, Publication Format, Workflow Stage, Work Item State, Production
+Dependency State, Creator Type, Creator Relationship, Review Type, Review Confidence, Motif
+Category.
 
 ## Knowledge
 **ID:** `content.knowledge`
@@ -50,6 +51,7 @@ lesson, process, or framework.
 - supported by `content.source`
 - informs `content.topic`
 - created or revised by `analytics.insight`
+- may be informed by `content.motif`
 - created or revised by `content.work-item`
 
 ### Constraints
@@ -307,6 +309,8 @@ and, after publishing, durable publication facts.
 
 ### Relationships
 - realizes `content.blueprint`
+- observed from `content.creator` (when externally captured)
+- captured via `content.creator-channel`
 - belongs to `ref(channels.channel)`
 - takes form `taxonomy(Publication Format)`
 - uses `content.script` (primary) and other Assets
@@ -315,22 +319,46 @@ and, after publishing, durable publication facts.
 - grouped by `content.series`
 
 ### Constraints
-- A Publication has exactly one primary Blueprint and one Channel in v1.
-- A Publication may use at most one primary Script.
-- Before real publication, `published_at`, `canonical_url`, and `platform_identifier` must remain
-  empty; they are recorded only after an authorized publish.
-- Every production dependency must carry a Production Dependency State; `Unresolved` cannot pass
-  validation.
+- A Publication has exactly one Channel in v1, in both branches below — Channel identifies the
+  platform type whether the Publication is authored or observed.
+- A Publication is either **Own** (Daniel authored it; `creator` absent) or **Observed** (captured
+  from a tracked Creator; `creator` present). A Publication with neither a Blueprint nor a Creator
+  fails validation, and a Publication carrying both is invalid — the branches are mutually
+  exclusive.
 - A materially different channel expression or repurposed output is a separate Publication, never
   an edit to the source Publication.
+
+**Own** (no `creator`):
+- Exactly one primary Blueprint.
+- A Publication may use at most one primary Script.
+- Before real publication, `published_at`, `canonical_url`, and `platform_identifier` must remain
+  empty; they are recorded only after an authorized publish via Publish Publication.
+- Every production dependency must carry a Production Dependency State; `Unresolved` cannot pass
+  validation.
+
+**Observed** (has `creator`):
+- No Blueprint — an Observed Publication is captured from a Creator Channel, not planned through
+  Content's own Blueprint pipeline.
+- Must reference exactly one Creator Channel via `creator_channel`, and that Creator Channel must
+  belong to the referenced Creator.
+- `published_at`, `canonical_url`, and `platform_identifier` are populated immediately at capture
+  time via Capture Publication, not gated behind Publish Publication.
 
 ### Entity contract
 entity: content.publication
 fields:
   - name: blueprint
     type: ref(content.blueprint)
-    required: true
-    cardinality: 1
+    required: false   # required when `creator` is absent — see Constraints
+    cardinality: 0..1
+  - name: creator
+    type: ref(content.creator)
+    required: false
+    cardinality: 0..1
+  - name: creator_channel
+    type: ref(content.creator-channel)
+    required: false   # required when `creator` is present — see Constraints
+    cardinality: 0..1
   - name: channel
     type: ref(channels.channel)
     required: true
@@ -371,17 +399,17 @@ fields:
     type: date
     required: false
     cardinality: 0..1
-    writable_after: content.workflow.publish-publication
+    writable_after: content.workflow.publish-publication   # or content.workflow.capture-publication for an Observed Publication
   - name: canonical_url
     type: url
     required: false
     cardinality: 0..1
-    writable_after: content.workflow.publish-publication
+    writable_after: content.workflow.publish-publication   # or content.workflow.capture-publication for an Observed Publication
   - name: platform_identifier
     type: text
     required: false
     cardinality: 0..1
-    writable_after: content.workflow.publish-publication
+    writable_after: content.workflow.publish-publication   # or content.workflow.capture-publication for an Observed Publication
 
 ## Series
 **ID:** `content.series`
@@ -513,6 +541,200 @@ fields:
     required: true
     cardinality: 1..*
 
+## Creator
+**ID:** `content.creator`
+
+A content-producing entity — a person, company, brand, or organization — being monitored for
+competitor, inspiration, peer, or reference intelligence. A Creator is not a general Person or
+Organization record; it exists only to support content-intelligence monitoring.
+
+### Relationships
+- controls `content.creator-channel`
+- classified by `taxonomy(Creator Type)`
+- classified by `taxonomy(Creator Relationship)`
+
+### Constraints
+- A Creator must carry at least one Creator Relationship classification.
+- `creator_type` (what the Creator is) and `relationships` (our stance toward it) must never be
+  conflated into one field.
+- Niches and notes are free text, not controlled vocabulary.
+
+### Entity contract
+entity: content.creator
+fields:
+  - name: name
+    type: text
+    required: true
+    cardinality: 1
+  - name: creator_type
+    type: taxonomy(Creator Type)
+    required: true
+    cardinality: 1
+  - name: relationships
+    type: taxonomy(Creator Relationship)
+    required: true
+    cardinality: 1..*
+  - name: niches
+    type: list
+    required: false
+    cardinality: 0..*
+  - name: notes
+    type: text
+    required: false
+    cardinality: 0..*
+  - name: creating_work_item
+    type: ref(content.work-item)
+    required: true
+    cardinality: 1
+
+## Creator Channel
+**ID:** `content.creator-channel`
+
+One specific account a Creator holds on a Channel platform type. Named "Creator Channel" rather
+than "Channel" specifically to avoid colliding with `channels.channel`, which means the platform
+type (for example, Instagram) — a different granularity than one Creator's specific account on
+that platform.
+
+### Relationships
+- belongs to `content.creator`
+- takes form `ref(channels.channel)`
+
+### Constraints
+- A Creator Channel must reference exactly one Creator and one Channel.
+- A Creator Channel must not duplicate the platform-type registry Channels already owns —
+  reference `channels.channel`, never restate it.
+
+### Entity contract
+entity: content.creator-channel
+fields:
+  - name: creator
+    type: ref(content.creator)
+    required: true
+    cardinality: 1
+  - name: channel
+    type: ref(channels.channel)
+    required: true
+    cardinality: 1
+  - name: handle
+    type: text
+    required: false
+    cardinality: 0..1
+  - name: url
+    type: url
+    required: true
+    cardinality: 1
+  - name: creating_work_item
+    type: ref(content.work-item)
+    required: true
+    cardinality: 1
+
+## Review
+**ID:** `content.review`
+
+Structured analysis of one Publication — observations about its visual, format, hook, topic,
+narrative, or technical characteristics — kept separate from the Publication so those observations
+can evolve without mutating the source record.
+
+### Relationships
+- reviews `content.publication`
+- classified by `taxonomy(Review Type)`
+- classified by `taxonomy(Review Confidence)`
+- may inform `content.motif` — at least two corroborating Reviews are required before a Motif can
+  draw on them (see [Motif](#motif))
+- created by `content.work-item`
+
+### Constraints
+- A Publication may carry more than one Review — different Review Types, or repeated review of the
+  same Review Type over time — without conflict.
+- Observations must be specific and evidence-based, describing something actually present in the
+  Publication; a vague judgment or bare verdict fails validation.
+- A Review does not mutate its source Publication; it is an independently evolving record.
+
+### Entity contract
+entity: content.review
+fields:
+  - name: publication
+    type: ref(content.publication)
+    required: true
+    cardinality: 1
+  - name: review_type
+    type: taxonomy(Review Type)
+    required: true
+    cardinality: 1
+  - name: observations
+    type: text
+    required: true
+    cardinality: 1..*
+  - name: confidence
+    type: taxonomy(Review Confidence)
+    required: true
+    cardinality: 1
+  - name: reviewed_at
+    type: date
+    required: true
+    cardinality: 1
+  - name: creating_work_item
+    type: ref(content.work-item)
+    required: true
+    cardinality: 1
+
+## Motif
+**ID:** `content.motif`
+
+A reusable observation promoted from two or more corroborating Reviews — a specific, repeated
+characteristic worth naming and reusing, not a one-off impression from a single occurrence. Named
+"Motif" rather than the source brief's "Pattern": the word "Pattern" is already the documentation
+protocol's own meta-model primitive (`_patterns/*.md`, see DOMAIN_PROTOCOL.md §3.5) and an
+existing Content-owned taxonomy (Content Pattern: Story, Educational, List, Tutorial, ...), so a
+third meaning would be ambiguous; the underlying concept and its semantics are otherwise unchanged
+from the source brief.
+
+### Relationships
+- derived from `content.review` (2..*)
+- classified by `taxonomy(Motif Category)`
+- may inform `content.knowledge`
+- created or updated by `content.work-item`
+
+### Constraints
+- A Motif must not be created from a single Review occurrence — at least two corroborating Reviews
+  are required. This is enforced structurally, not just in prose: `supporting_reviews` carries
+  cardinality `2..*`.
+- A Motif must identify exactly one Motif Category.
+- A well-evidenced Motif may inform or seed a new Knowledge record, mirroring how
+  `analytics.insight` already feeds `content.knowledge` — see [Knowledge](#knowledge). This
+  Motif → Knowledge feed is an explicit design goal of the parent PRD, not an incidental
+  similarity.
+- A new corroborating Review for an already-named repeated observation updates the existing Motif
+  (adds to `supporting_reviews`) rather than creating a duplicate Motif.
+
+### Entity contract
+entity: content.motif
+fields:
+  - name: name
+    type: text
+    required: true
+    cardinality: 1
+  - name: motif_category
+    type: taxonomy(Motif Category)
+    required: true
+    cardinality: 1
+  - name: description
+    type: text
+    required: true
+    cardinality: 1
+  - name: supporting_reviews
+    type: ref(content.review)
+    required: true
+    cardinality: 2..*
+  - name: related_knowledge
+    type: ref(content.knowledge)
+    required: false
+    cardinality: 0..*
+  - name: creating_work_item
+    type: ref(content.work-item)
+    required: true
+    cardinality: 1
+
 ## Work Item
 **ID:** `content.work-item`
 
@@ -522,7 +744,8 @@ stage, inputs, decisions, outputs, and validation.
 ### Relationships
 - executes `content.workflow.*`
 - has one primary subject: `ref(content.knowledge | content.source | content.topic |
-  content.blueprint | content.script | content.publication | content.series)`
+  content.blueprint | content.script | content.publication | content.series | content.creator |
+  content.creator-channel | content.review)`
 - creates or updates the records named in its Outputs
 
 ### Constraints
@@ -544,7 +767,7 @@ fields:
     required: true
     cardinality: 1
   - name: primary_subject
-    type: ref(content.*)   # polymorphic — one of Knowledge, Source, Topic, Blueprint, Script, Publication, Series
+    type: ref(content.*)   # polymorphic — one of Knowledge, Source, Topic, Blueprint, Script, Publication, Series, Creator, Creator Channel, Review
     required: true
     cardinality: 1
   - name: work_state

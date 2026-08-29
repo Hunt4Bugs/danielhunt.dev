@@ -31,8 +31,10 @@ per record here.
   [`concepts.md`](../concepts.md#publication).
 - What a Publication document must *contain* (required sections): [`_patterns/publication.md`](../_patterns/publication.md).
 - What *creates* a Publication: the [Develop Publication](../workflows/develop-publication.md)
-  workflow; durable publication facts are recorded only by
-  [Publish Publication](../workflows/publish-publication.md).
+  workflow for an Own Publication (durable publication facts are recorded only by
+  [Publish Publication](../workflows/publish-publication.md)), or the
+  [Capture Publication](../workflows/capture-publication.md) workflow for an Observed Publication
+  (durable publication facts are recorded immediately at capture).
 - Related instance directories: [Blueprints](../blueprints/README.md) (realized by a Publication),
   [Channels](../../../channels/README.md) (Channel registry), and
   [Measurements](../../../analytics/measurements/README.md) (attach to a published Publication).

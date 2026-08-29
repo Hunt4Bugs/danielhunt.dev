@@ -26,7 +26,7 @@ This is the Brand-root model: it owns entity definitions, relationships, and tax
 
 ## Bounded contexts
 
-`Brand` is the root domain. Its primary contexts are Identity, Strategy, Audience, Marketing, Offers, Assets, Channels, Relationships, and Analytics. Marketing contains Content, Campaigns, Distribution, Growth, and Funnel. Content contains Knowledge, Source, Topic, Blueprint, Publication, Series, Workflow, Work Item, and Taxonomy. Script and Script Template are Content Asset subtypes.
+`Brand` is the root domain. Its primary contexts are Identity, Strategy, Audience, Marketing, Offers, Assets, Channels, Relationships, and Analytics. Marketing contains Content, Campaigns, Distribution, Growth, and Funnel. Content contains Knowledge, Source, Topic, Blueprint, Publication, Series, Creator, Creator Channel, Review, Motif, Workflow, Work Item, and Taxonomy. Script and Script Template are Content Asset subtypes.
 
 ## Source migration map
 
@@ -55,6 +55,10 @@ The former paths are compatibility pointers for historical links. Plans, specifi
 | Asset | A reusable media, design, brand, knowledge, script, or template resource. A Script is a versioned, publication-oriented authored asset for audio or video; a Script Template is reusable fill-in-the-blank scaffolding that generates Scripts. |
 | Measurement | A dated observed metric for a Publication on a Channel. |
 | Insight | An interpretation of Measurements that creates or revises Knowledge. |
+| Creator | A content-producing entity — a person, company, brand, or organization — being monitored for competitor, inspiration, peer, or reference intelligence. Narrower than a general Person or Organization record. |
+| Creator Channel | One specific account a Creator holds on a Channel platform type. Named separately from Channel because it is a different granularity: one Creator's specific account, not the platform type itself. |
+| Review | Structured analysis of one Publication, kept separate from the Publication so observations can evolve without mutating the source record. |
+| Motif | A reusable observation promoted from two or more corroborating Reviews. Named "Motif" rather than the source brief's "Pattern" — "Pattern" is already this protocol's own meta-model primitive (`_patterns/*.md`) and an existing Content taxonomy (Content Pattern), so a third meaning would be ambiguous; the semantics carry over unchanged under the new name. |
 
 ## Relationships
 
@@ -69,6 +73,9 @@ The former paths are compatibility pointers for historical links. Plans, specifi
 - Workflow Stage describes where one Work Item execution is in the Content lifecycle. It is not a mutable lifecycle field on the Work Item's primary subject. Work Item State describes whether that execution is queued, in progress, blocked, completed, or cancelled.
 - `Draft` is a Workflow Stage, not an entity. Git history provides record revision history in v1. Promote a revision concept only when recurring work requires independent identity, provenance, relationships, or analysis.
 - A Script may identify an intended Publication Format, but Channel remains a Publication concern. A Script may support more than one Publication.
+- A Creator controls zero or many Creator Channels; each Creator Channel belongs to exactly one Creator and takes form through exactly one `channels.channel` value. A Creator must carry at least one Creator Relationship classification, and may carry more than one at once (for example, both Competitor and Inspiration).
+- A Publication has zero or many Reviews; each Review reviews exactly one Publication. A Publication is not required to have a Review, and a Review does not mutate the Publication it reviews.
+- A Motif is derived from two or more corroborating Reviews (never one); a well-evidenced Motif may inform or seed Knowledge, mirroring how Measurements inform Insights which create or revise Knowledge. Reinforcing an existing Motif with a new corroborating Review updates that Motif rather than creating a duplicate.
 
 ## Entities versus taxonomies
 
@@ -112,6 +119,26 @@ For the short-form structure, the Scroll Stopper and Verbal Hook begin together;
 | Workflow Stage | Work Item | Capture, Validate, Plan, Draft, Review, Produce, Publish, Measure, Learn, Reuse / Repurpose | The current lifecycle stage of a particular work execution. |
 | Work Item State | Work Item | Queued, In Progress, Blocked, Completed, Cancelled | The execution state of a Work Item, independent of its Content lifecycle stage. |
 | Production Dependency State | Script beat or Publication asset requirement | Existing Asset, Planned Capture, Obtainable External Asset, Unresolved | How a required visual, audio, design, or other production dependency will be supplied. `Unresolved` cannot pass validation. |
+
+### Creator-monitoring, review, and motif taxonomies
+
+| Taxonomy | Applied to | Values | Definition |
+| --- | --- | --- | --- |
+| Creator Type | Creator | Person, Company, Brand, Organization, Other | What kind of entity the Creator is. |
+| Creator Relationship | Creator | Competitor, Inspiration, Peer, Reference | Our stance toward the Creator. Multi-valued — a Creator may hold more than one Creator Relationship simultaneously (for example, both Competitor and Inspiration). |
+| Review Type | Review | Visual, Format, Hook, Topic, Narrative, Technical | The dimension of a Publication a Review analyzes. |
+| Review Confidence | Review | Low, Medium, High | How confident the Review's observations are. |
+| Motif Category | Motif | Format, Visual, Hook, Narrative, Topic, Distribution | The dimension of the repeated, corroborated characteristic a Motif names. |
+
+Creator Type answers **what is this entity?** Creator Relationship answers **what is our stance
+toward it?** These are separate classifications and must never be conflated into one field. Review
+Type answers **what dimension of the Publication is being analyzed?** Review Confidence answers
+**how sure are we in that analysis?** — likewise two separate classifications on the same Review,
+never conflated. Motif Category answers **what dimension of the repeated observation is this?** —
+it closely mirrors Review Type's dimensions (Visual, Format, Hook, Topic, Narrative), since a
+Motif is promoted from Reviews along one of those same dimensions, but replaces Technical with
+Distribution to name repeated posting-and-reach characteristics that Review Type does not
+otherwise classify.
 
 ### Supporting taxonomies
 
@@ -215,4 +242,11 @@ classDiagram
 
 ## V1 boundary
 
-Do not model platform accounts, releases, claims, experiments, projects, people, organizations, or CRM relationships as first-class records yet. Promote them only when recurring work requires ownership, lifecycle, or analysis beyond a simple reference.
+Do not model releases, claims, experiments, projects, or general CRM relationships as first-class records yet. Promote them only when recurring work requires ownership, lifecycle, or analysis beyond a simple reference.
+
+Content's Creator and Creator Channel are a deliberate, narrow exception to the earlier
+platform-account and people/organization prohibition, introduced specifically for
+content-intelligence: competitor and inspiration monitoring. General people, organizations, and
+CRM relationships remain out of scope and reserved for the still-empty
+[Relationships](relationships/README.md) context; Creator does not extend, generalize, or
+substitute for it.

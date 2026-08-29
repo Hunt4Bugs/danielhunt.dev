@@ -37,6 +37,10 @@ entities or silently extend controlled vocabulary.
 Entry and exit stages locate that Work Item execution, not a lifecycle field on the primary subject. Separate Work Items may operate at different stages against related records; predecessor and output links preserve their actual order.
 
 - [Capture Knowledge](capture-knowledge.md)
+- [Monitor Creators](monitor-creators.md)
+- [Capture Publication](capture-publication.md)
+- [Review Publication](review-publication.md)
+- [Detect Motifs](detect-motifs.md)
 - [Develop Topic](develop-topic.md)
 - [Develop Blueprint](develop-blueprint.md)
 - [Generate Hook Options](generate-hook-options.md)
