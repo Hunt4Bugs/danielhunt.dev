@@ -21,3 +21,4 @@ Examples illustrate ontology relationships and template use. They are not Source
 
 - [Short-form trace](short-form-stop-hook-payoff.md)
 - [Full lifecycle trace](full-lifecycle-trace.md)
+- [Creator monitoring trace](creator-monitoring-trace.md)
