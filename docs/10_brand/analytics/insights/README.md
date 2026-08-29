@@ -1,5 +1,5 @@
 ---
-class: "100"
+class: "10"
 collection: analytics
 type: record-contract
 status: active
@@ -11,7 +11,7 @@ facets:
 related:
   - ../README.md
   - ../measurements/README.md
-  - ../../marketing/content/knowledge/README.md
+  - ../../../content/knowledge/README.md
 sources:
   - ../../ONTOLOGY.md
 ---

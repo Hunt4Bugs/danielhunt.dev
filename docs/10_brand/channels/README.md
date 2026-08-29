@@ -1,23 +1,28 @@
 ---
-class: "100"
-collection: brand
+id: channels.readme
+kind: note
+domain: channels
+class: "10"
+collection: channels
 type: channels
 status: active
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-29
 facets:
   - content
 related:
-  - ../marketing/content/README.md
-  - ../marketing/content/operating-plan.md
+  - domain.md
+  - concepts.md
+  - ../../content/README.md
+  - ../../content/operating-plan.md
 sources:
   - ../ONTOLOGY.md
 ---
 
 # Channels
 
-A Channel is a distribution destination, not a Publication. The registry below owns the exact Channel values and their currently planned Publication Format compatibility. Compatibility describes this Brand's operating model, not every feature a platform may offer.
+A Channel is a distribution destination, not a Publication. The registry below owns the exact Channel values and their currently planned Publication Format compatibility. Compatibility describes this Brand's operating model, not every feature a platform may offer. [`domain.md`](domain.md) states this domain's boundary and [`concepts.md`](concepts.md) is its concept registry (Channel), per the [Domain Documentation Protocol](../../00_system/010_governance/DOMAIN_PROTOCOL.md).
 
 | Channel | Status | Compatible Publication Formats | Role |
 | --- | --- | --- | --- |
@@ -27,7 +32,7 @@ A Channel is a distribution destination, not a Publication. The registry below o
 | YouTube | Planned | Short-form Video, Long-form Video | The hero cinematic vlog when launch readiness criteria are met. |
 | Newsletter | Future | Newsletter | A future owned editorial channel; not part of the current cadence. |
 
-Each Publication belongs to one Channel in v1. A workflow must reject an incompatible Channel and Publication Format pair. Cadence and readiness rules are maintained in the [Content operating plan](../marketing/content/operating-plan.md); reusable production practices live in [Content production](../marketing/content/production.md).
+Each Publication belongs to one Channel in v1. A workflow must reject an incompatible Channel and Publication Format pair. Cadence and readiness rules are maintained in the [Content operating plan](../../content/operating-plan.md); reusable production practices live in [Content production](../../content/production.md).
 
 ## Deferred destinations
 

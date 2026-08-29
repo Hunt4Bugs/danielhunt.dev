@@ -1,15 +1,20 @@
 ---
-class: "100"
-collection: brand
+id: assets.readme
+kind: note
+domain: assets
+class: "10"
+collection: assets
 type: asset-library
 status: active
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-29
 facets:
   - content
 related:
-  - ../marketing/content/README.md
+  - domain.md
+  - concepts.md
+  - ../../content/README.md
   - scripts/README.md
 sources:
   - ../ONTOLOGY.md
@@ -17,7 +22,7 @@ sources:
 
 # Assets
 
-Assets are reusable resources referenced by Content and other Brand contexts. Content does not own media, design, brand, knowledge, or template resources.
+Assets are reusable resources referenced by Content and other Brand contexts. Content does not own media, design, brand, knowledge, or template resources. [`domain.md`](domain.md) states this domain's boundary and [`concepts.md`](concepts.md) is its concept registry (Asset, Template), per the [Domain Documentation Protocol](../../00_system/010_governance/DOMAIN_PROTOCOL.md).
 
 ## Asset types
 

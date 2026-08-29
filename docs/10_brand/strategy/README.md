@@ -1,23 +1,28 @@
 ---
-class: "100"
-collection: brand
+id: strategy.readme
+kind: note
+domain: strategy
+class: "10"
+collection: strategy
 type: strategy
 status: active
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-08-29
 facets:
   - content
 related:
+  - domain.md
+  - concepts.md
   - ../identity/README.md
-  - ../marketing/content/README.md
+  - ../../content/README.md
 sources:
   - ../specs/2026-05-28-brand-refinement-design.md
 ---
 
 # Brand strategy
 
-Strategy sets direction and constraints for the Brand. It owns positioning, goals, Themes, differentiation, and the Brand Narrative. Identity supplies the enduring meaning and voice; Marketing applies strategy without redefining it.
+Strategy sets direction and constraints for the Brand. It owns positioning, goals, Themes, differentiation, and the Brand Narrative. Identity supplies the enduring meaning and voice; Marketing applies strategy without redefining it. [`domain.md`](domain.md) states this domain's boundary and [`concepts.md`](concepts.md) is its concept registry (Theme), per the [Domain Documentation Protocol](../../00_system/010_governance/DOMAIN_PROTOCOL.md).
 
 ## Positioning
 

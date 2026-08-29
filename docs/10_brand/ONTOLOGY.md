@@ -13,7 +13,7 @@ facets:
 related:
   - README.md
 sources:
-  - marketing/content/sources/colin-and-samir-short-form-anatomy.md
+  - ../content/sources/colin-and-samir-short-form-anatomy.md
 ---
 
 # Brand ontology v1
@@ -22,11 +22,11 @@ sources:
 
 This is a lightweight, domain-driven model for planning, creating, reusing, distributing, and learning from personal-brand content. It is documentation, not a database schema, RDF/OWL model, API, or implementation contract.
 
-This is the Brand-root model: it owns entity definitions, relationships, and taxonomy ownership across every Brand context. [`marketing/content/domain.md`](marketing/content/README.md) and [`marketing/content/concepts.md`](marketing/content/concepts.md) are Content's domain-scoped instantiation of it under the [Domain Documentation Protocol](../00_system/010_governance/DOMAIN_PROTOCOL.md) — they cross-reference the definitions, relationships, and constraints below rather than re-authoring them, and add the field-level entity contracts (§10) each Content concept's persisted instances require. Content is the first Brand context fully modeled under that protocol; other contexts remain lighter-weight reference material here until they receive the same treatment.
+This is the Brand-root model: it owns entity definitions, relationships, and taxonomy ownership across every Brand context. [`content/domain.md`](../content/README.md) and [`content/concepts.md`](../content/concepts.md) are Content's domain-scoped instantiation of it under the [Domain Documentation Protocol](../00_system/010_governance/DOMAIN_PROTOCOL.md) — they cross-reference the definitions, relationships, and constraints below rather than re-authoring them, and add the field-level entity contracts (§10) each Content concept's persisted instances require. Content is the first Brand context fully modeled under that protocol, and the first to graduate out of a numbered class into its own root-level domain directory (`docs/content/`, per [`LIBRARY_MAP.md`](../00_system/010_governance/LIBRARY_MAP.md)). Every other Brand context (Identity, Strategy, Audience, Marketing, Offers, Assets, Channels, Analytics) now has the same `domain.md` / `concepts.md` treatment, each nested inside this numbered class rather than graduated to root; Relationships is `status: draft` with a reserved boundary but no Concepts modeled yet.
 
 ## Bounded contexts
 
-`Brand` is the root domain. Its primary contexts are Identity, Strategy, Audience, Marketing, Offers, Assets, Channels, Relationships, and Analytics. Marketing contains Content, Campaigns, Distribution, Growth, and Funnel. Content contains Knowledge, Source, Topic, Blueprint, Publication, Series, Creator, Creator Channel, Review, Motif, Workflow, Work Item, and Taxonomy. Script and Script Template are Content Asset subtypes.
+`Brand` is the root domain. Its primary contexts are Identity, Strategy, Audience, Marketing, Offers, Assets, Channels, Relationships, and Analytics. Marketing contains Content, Campaigns, Distribution, Growth, and Funnel. Content — modeled independently at [`docs/content/`](../content/README.md) — contains Knowledge, Source, Topic, Blueprint, Publication, Series, Creator, Creator Channel, Review, Motif, Workflow, Work Item, and Taxonomy. Script and Script Template are Content Asset subtypes.
 
 ## Source migration map
 
@@ -34,7 +34,7 @@ This is the Brand-root model: it owns entity definitions, relationships, and tax
 | --- | --- | --- |
 | `IDENTITY.md` | [Identity](identity/README.md), [Strategy](strategy/README.md), [Offers](offers/README.md), [Channels](channels/README.md) | Identity remains the detailed narrative source; cross-context ownership is explicit. |
 | `AUDIENCE.md` | [Audience](audience/README.md) | Moved intact with repaired links. |
-| `OPERATING.md` | [Marketing / Content](marketing/content/README.md), [Channels](channels/README.md), [Analytics](analytics/README.md) | Content Operations remains the detailed operational source. |
+| `OPERATING.md` | [Content](../content/README.md), [Channels](channels/README.md), [Analytics](analytics/README.md) | Content Operations remains the detailed operational source. |
 | `VISUAL.md` | [Identity / visual](identity/visual.md) | Visual direction remains a supporting Identity reference. |
 | `DESIGN.md` | [Assets / design](assets/design.md) | The reusable design-system contract is an Asset reference. |
 

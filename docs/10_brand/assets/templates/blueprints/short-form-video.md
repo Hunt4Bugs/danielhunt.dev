@@ -1,5 +1,5 @@
 ---
-class: "100"
+class: "10"
 collection: brand
 type: blueprint-template
 status: active
@@ -9,9 +9,9 @@ updated: 2026-08-27
 facets:
   - content
 related:
-  - ../../../marketing/content/workflows/develop-blueprint.md
+  - ../../../../content/workflows/develop-blueprint.md
 sources:
-  - ../../../marketing/content/knowledge/short-form-anatomy.md
+  - ../../../../content/knowledge/short-form-anatomy.md
 pattern: "[select Content Pattern]"
 format: Short-form Video
 structure: "Scroll Stopper + Verbal Hook → Development → Payoff"
