@@ -7,18 +7,18 @@ description: Use when the user wants to check whether a drafted Script is ready 
 
 ## Overview
 
-This skill checks one Script Asset against its primary Blueprint, linked Sources, related Assets, and intended Publication Format, following `docs/100_brand/marketing/content/workflows/validate-script.md`. It produces one of three verdicts: (a) ready for production, (b) returned for revision, or (c) returned to knowledge capture. Per that workflow's Work Item contract, this skill now creates its own execution Work Item on every run, to record the verdict and Check-by-Check evidence; it does not otherwise create or edit a domain record, and it edits the Script itself only in the narrow case of applying an authorized revision (see Output and Next step below).
+This skill checks one Script Asset against its primary Blueprint, linked Sources, related Assets, and intended Publication Format, following `docs/10_brand/marketing/content/workflows/validate-script.md`. It produces one of three verdicts: (a) ready for production, (b) returned for revision, or (c) returned to knowledge capture. Per that workflow's Work Item contract, this skill now creates its own execution Work Item on every run, to record the verdict and Check-by-Check evidence; it does not otherwise create or edit a domain record, and it edits the Script itself only in the narrow case of applying an authorized revision (see Output and Next step below).
 
 ## Required references
 
 Before acting, read:
 
-- `docs/100_brand/marketing/content/workflows/validate-script.md` (this skill's Work Item contract, Required references, Taxonomy contract, Input, Checks, and Output)
-- `docs/100_brand/marketing/content/workflows/README.md#skill-execution-contract` (taxonomy validation and stop-condition routing that apply to every check below; step 4, "confirm before writing," now does apply, to the Work Item this skill creates on every run, even though it does not apply to the Script or Blueprint themselves outside the narrow authorized-revision case)
-- `docs/100_brand/marketing/content/work-items/README.md` (the Work Item identifier format and its required frontmatter and body)
-- `docs/100_brand/ONTOLOGY.md` (the Script relationship in "Core entities" and the class diagram; the "Content and delivery taxonomies" table for Publication Format and Production Dependency State; the "Blueprint taxonomies" table for Visual Hook Type and Verbal Hook Type; the separate "Hook usage conditions" table for evidence-required, editorial-review-required, and always-required rows)
-- `docs/100_brand/identity/README.md` (documentary restraint, observation-over-preaching, scars-not-wounds, and no-unsupported-performance-claims boundaries)
-- `docs/100_brand/assets/templates/scripts/short-form-stop-hook-payoff.md` (the Script template shape, used to confirm the Script under review actually has an opening promise, Development, and Payoff to check, and to locate the Script's own "Creating Work Item" Header field for predecessor lookup)
+- `docs/10_brand/marketing/content/workflows/validate-script.md` (this skill's Work Item contract, Required references, Taxonomy contract, Input, Checks, and Output)
+- `docs/10_brand/marketing/content/workflows/README.md#skill-execution-contract` (taxonomy validation and stop-condition routing that apply to every check below; step 4, "confirm before writing," now does apply, to the Work Item this skill creates on every run, even though it does not apply to the Script or Blueprint themselves outside the narrow authorized-revision case)
+- `docs/10_brand/marketing/content/work-items/README.md` and `docs/10_brand/marketing/content/_patterns/work-item.md` (the Work Item identifier format and its required frontmatter and body now live in the pattern file; the README is a short pointer to it)
+- `docs/10_brand/ONTOLOGY.md` (the Script relationship in "Core entities" and the class diagram; the "Content and delivery taxonomies" table for Publication Format and Production Dependency State; the "Blueprint taxonomies" table for Visual Hook Type and Verbal Hook Type; the separate "Hook usage conditions" table for evidence-required, editorial-review-required, and always-required rows)
+- `docs/10_brand/identity/README.md` (documentary restraint, observation-over-preaching, scars-not-wounds, and no-unsupported-performance-claims boundaries)
+- `docs/10_brand/assets/templates/scripts/short-form-stop-hook-payoff.md` (the Script template shape, used to confirm the Script under review actually has an opening promise, Development, and Payoff to check, and to locate the Script's own "Creating Work Item" Header field for predecessor lookup)
 
 ## Input
 
@@ -28,15 +28,15 @@ Prefer an explicit Script path when the user supplies one; otherwise identify th
 
 ## Procedure
 
-Run all 5 Checks from `docs/100_brand/marketing/content/workflows/validate-script.md`'s Checks section exactly, applying the Skill execution contract's taxonomy-validation step (step 2) wherever a Check touches a taxonomy value. Report the outcome of every Check individually; do not summarize them into a single pass/fail line. The 5 Checks are:
+Run all 5 Checks from `docs/10_brand/marketing/content/workflows/validate-script.md`'s Checks section exactly, applying the Skill execution contract's taxonomy-validation step (step 2) wherever a Check touches a taxonomy value. Report the outcome of every Check individually; do not summarize them into a single pass/fail line. The 5 Checks are:
 
 1. **Promise and Payoff.** The opening promise (Scroll Stopper + Verbal Hook) is explicit, and the Payoff fulfills it.
 2. **Source coverage.** Every fact, statistic, quotation, and outcome in the Script has a suitable linked Source.
-3. **Hook usage conditions.** The Script's chosen Visual Hook Type and Verbal Hook Type meet their evidence-required or editorial-review-required conditions from the "Hook usage conditions" table in `docs/100_brand/ONTOLOGY.md`.
-4. **Production dependency resolution.** Every proposed visual or audio dependency carries one of the Production Dependency State taxonomy's values (`docs/100_brand/ONTOLOGY.md`'s "Content and delivery taxonomies" table): Existing Asset, Planned Capture, or Obtainable External Asset; none remains Unresolved.
+3. **Hook usage conditions.** The Script's chosen Visual Hook Type and Verbal Hook Type meet their evidence-required or editorial-review-required conditions from the "Hook usage conditions" table in `docs/10_brand/ONTOLOGY.md`.
+4. **Production dependency resolution.** Every proposed visual or audio dependency carries one of the Production Dependency State taxonomy's values (`docs/10_brand/ONTOLOGY.md`'s "Content and delivery taxonomies" table): Existing Asset, Planned Capture, or Obtainable External Asset; none remains Unresolved.
 5. **Voice and restraint.** The Script follows documentary restraint, observation over preaching, and scars-not-wounds, and makes no unsupported performance claims.
 
-Per the Taxonomy contract, this skill writes no taxonomy values; it only reads the Blueprint and Script's Pattern, Purpose, Narrative Structure, Publication Format, and selected hook types. Reject outright, as part of Check 3 or Check 5, any Script that uses an undefined taxonomy value (one not present verbatim in the matching `docs/100_brand/ONTOLOGY.md` table) or that bypasses a required evidence or editorial-review condition; do not pass a Script with a known taxonomy or evidence gap on the assumption it will be caught later.
+Per the Taxonomy contract, this skill writes no taxonomy values; it only reads the Blueprint and Script's Pattern, Purpose, Narrative Structure, Publication Format, and selected hook types. Reject outright, as part of Check 3 or Check 5, any Script that uses an undefined taxonomy value (one not present verbatim in the matching `docs/10_brand/ONTOLOGY.md` table) or that bypasses a required evidence or editorial-review condition; do not pass a Script with a known taxonomy or evidence gap on the assumption it will be caught later.
 
 ## Output
 
@@ -50,7 +50,7 @@ State one of three verdicts plainly, and record that verdict, with the Check-by-
 
 ### Work Item
 
-Also create one Work Item record under `docs/100_brand/marketing/content/work-items/`, on every run regardless of verdict, per the Skill execution contract's point 7, `validate-script.md`'s own Work Item contract, and `docs/100_brand/marketing/content/work-items/README.md`'s required frontmatter and body: `primary_subject` is the Script Asset's own path, matching the `../topics/example.md`-style file-path format `work-items/README.md` specifies, not a prose description.
+Also create one Work Item record under `docs/10_brand/marketing/content/work-items/`, on every run regardless of verdict, per the Skill execution contract's point 7, `validate-script.md`'s own Work Item contract, and `docs/10_brand/marketing/content/work-items/README.md`'s required frontmatter and body: `primary_subject` is the Script Asset's own path, matching the `../topics/example.md`-style file-path format `work-items/README.md` specifies, not a prose description.
 
 Required predecessors follow the same single-tier lookup, mirroring `to-blueprint`'s single-tier lookup against its own upstream "Creating Work Item" field (this skill needs only the one Generate Short-Form Script predecessor, unlike `to-script`'s own two-tier Blueprint lookup): read the Script's own "Creating Work Item" Header field (set by `to-script` when it created the Script, and never overwritten by this skill) to find the completed Generate Short-Form Script Work Item. This predecessor is always required. If the field is still the unfilled `[link]` placeholder, record "existing Script, no Work Item on file" as that predecessor instead of a broken link, per `validate-script.md`'s own "a completed Generate Short-Form Script Work Item or an equivalent existing Script."
 
@@ -58,9 +58,9 @@ On a re-validation run, after a verdict-(b) revision-and-rerun cycle, always cre
 
 Create the Work Item at `current_stage: Review` (the entry stage). Then, depending on verdict:
 
-- **Verdict (a), pass:** once all 5 Checks are complete and confirmed, update it to `current_stage: Produce` (the successful exit stage). Do not write `current_stage: Produce` directly on creation; the field must reflect the actual Review-then-Produce transition on every successful run. Set `work_state: Completed` and `status: archived`: this Work Item's own job, running the 5 Checks and recording a verdict, is finished, so per `docs/100_brand/marketing/content/workflows/README.md` point 7 and `work-items/README.md`'s `status: archived` definition ("after completion"), it moves out of `status: active` immediately rather than being left to look still in progress.
+- **Verdict (a), pass:** once all 5 Checks are complete and confirmed, update it to `current_stage: Produce` (the successful exit stage). Do not write `current_stage: Produce` directly on creation; the field must reflect the actual Review-then-Produce transition on every successful run. Set `work_state: Completed` and `status: archived`: this Work Item's own job, running the 5 Checks and recording a verdict, is finished, so per `docs/10_brand/marketing/content/workflows/README.md` point 7 and `work-items/README.md`'s `status: archived` definition ("after completion"), it moves out of `status: active` immediately rather than being left to look still in progress.
 - **Verdict (b), revision required:** leave `current_stage: Review`; this Work Item never reaches Produce, since the Script did not pass. Set `work_state: Completed`, not `Blocked`, and `status: archived`. Reasoning: this Work Item's own execution still finished exactly what it set out to do, it ran all 5 Checks to completion and produced a full, actionable verdict; the Checks did their job even though the Script did not pass them. A revision-required outcome is a routine, expected part of the editorial loop, not a stalled or incomplete execution, so it does not fit the same `Blocked` pattern `to-knowledge`, `to-topic`, `to-blueprint`, and `to-hooks` use when their own execution could not produce a result at all. The `status: archived` follows the same completion rule as verdict (a): this Work Item's own run is done, even though the Script itself still needs revision and a fresh `to-validate` run of its own.
-- **Verdict (c), evidence insufficient:** leave `current_stage: Review`. Set `work_state: Blocked` (the matching Work Item State value in `docs/100_brand/ONTOLOGY.md`) and repository `status: blocked`, matching the pattern those same sibling skills use when the underlying evidence, approval, or dependency genuinely does not exist yet. Reasoning: unlike verdict (b), this outcome is not something a script edit alone can resolve; evidence that was never captured cannot be revised into existence, so production readiness stays genuinely blocked pending a `to-knowledge` capture this Work Item cannot itself perform, distinguishing "sent back for revision" (b) from "genuinely blocked" (c).
+- **Verdict (c), evidence insufficient:** leave `current_stage: Review`. Set `work_state: Blocked` (the matching Work Item State value in `docs/10_brand/ONTOLOGY.md`) and repository `status: blocked`, matching the pattern those same sibling skills use when the underlying evidence, approval, or dependency genuinely does not exist yet. Reasoning: unlike verdict (b), this outcome is not something a script edit alone can resolve; evidence that was never captured cannot be revised into existence, so production readiness stays genuinely blocked pending a `to-knowledge` capture this Work Item cannot itself perform, distinguishing "sent back for revision" (b) from "genuinely blocked" (c).
 
 Confirm before writing, per the Skill execution contract: present the target Work Item path, the verdict, and the Check-by-Check evidence behind it, and wait for explicit approval before creating the Work Item. When verdict (b) is applied through an authorized in-place Script revision (see Next step), present that Script edit alongside the Work Item's planned content as one approval, matching the Skill execution contract's own wording; otherwise present the Work Item's planned content on its own, since no Script or Blueprint edit occurs on this run.
 
@@ -75,10 +75,10 @@ Confirm before writing, per the Skill execution contract: present the target Wor
 
 ## Validation
 
-This skill writes a Work Item on every run, but no domain record outside the narrow verdict-(b) authorized-revision case, so there is no fixed Script or Blueprint path to validate against by default. The Work Item record's filename embeds today's date and a slug that cannot be predicted in advance, so no fixed `rg` command is given for it here. Spot-check its required frontmatter and body sections by hand against `docs/100_brand/marketing/content/work-items/README.md`'s spec instead.
+This skill writes a Work Item on every run, but no domain record outside the narrow verdict-(b) authorized-revision case, so there is no fixed Script or Blueprint path to validate against by default. The Work Item record's filename embeds today's date and a slug that cannot be predicted in advance, so no fixed `rg` command is given for it here. Spot-check its required frontmatter and body sections by hand against `docs/10_brand/marketing/content/work-items/README.md`'s spec instead.
 
 If the Script itself is edited during a verdict-(b) revision, reuse `to-script`'s validation command against it:
 
 ```
-rg -n '^---$|^## Header|^## Scroll Stopper|^## Development|^## Payoff|^## Script checks' docs/100_brand/assets/scripts/<slug>.md
+rg -n '^---$|^## Header|^## Scroll Stopper|^## Development|^## Payoff|^## Script checks' docs/10_brand/assets/scripts/<slug>.md
 ```

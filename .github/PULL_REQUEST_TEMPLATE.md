@@ -22,5 +22,5 @@
 
 ## Checklist
 
-- [ ] Updated relevant docs under `docs/100_brand/` if this changes anything brand-shaped
+- [ ] Updated relevant docs under `docs/10_brand/` if this changes anything brand-shaped
 - [ ] Ran the site locally and checked the affected page(s) if `site/` changed
