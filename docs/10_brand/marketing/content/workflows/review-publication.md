@@ -39,6 +39,12 @@ contract:
     - name: observations
       type: list of text
       required: true
+    - name: confidence
+      type: taxonomy(Review Confidence)
+      required: true
+    - name: reviewed_at
+      type: date
+      required: true
   creates:
     - type: content.review
       via_pattern: ../_patterns/review.md
@@ -46,6 +52,8 @@ contract:
   validation:
     - observations_evidence_based
     - review_type_selected
+    - confidence_assigned
+    - reviewed_at_recorded
     - publication_linked
   next:
     - content.workflow.detect-motifs
@@ -66,9 +74,9 @@ contract:
   creating Work Item (`content.publication`, `state: completed` in the frontmatter `requires`).
 - **Possible next workflows:** [Detect Motifs](detect-motifs.md) once enough corroborating Reviews
   exist; this workflow again to add another Review of the same or a different Review Type.
-- **Validation evidence:** the Publication resolved and linked, one Review Type selected, and
-  every observation shown to be specific and evidence-based rather than a bare verdict, all
-  recorded in the Work Item.
+- **Validation evidence:** the Publication resolved and linked, one Review Type selected, every
+  observation shown to be specific and evidence-based rather than a bare verdict, a Review
+  Confidence value assigned, and `reviewed_at` recorded, all recorded in the Work Item.
 - **Failure and return paths:** remain at Capture when the Publication cannot be resolved or when
   observations cannot be stated as specific, evidence-based claims.
 
@@ -91,8 +99,9 @@ contract:
 
 ## Input
 
-An existing Publication, the Review Type being applied to it, and one or more specific,
-evidence-based observations about that Publication along the chosen dimension.
+An existing Publication, the Review Type being applied to it, one or more specific,
+evidence-based observations about that Publication along the chosen dimension, a Review
+Confidence value, and the review date.
 
 ## Procedure
 

@@ -22,7 +22,11 @@ related:
 sources:
   - ../../../ONTOLOGY.md
 contract:
-  subject_type: content.review
+  subject_type: content.motif   # judgment call, matching Capture Knowledge: the Motif has no
+                                 # persisted identity until this execution creates or reinforces
+                                 # it, so it is modeled as the Motif-in-formation. A Work Item has
+                                 # exactly one primary subject; the corroborating Reviews are
+                                 # evidence, carried as a typed input, not the subject.
   entry_stage: Review
   exit_stage: Learn
   requires:
@@ -59,7 +63,11 @@ contract:
 
 ## Work Item contract
 
-- **Primary subject:** two or more Reviews sharing a corroborating observation.
+- **Primary subject:** the Motif being detected or reinforced — a new Motif in formation, or an
+  existing Motif gaining another corroborating Review. This is the same judgment call Capture
+  Knowledge makes for material with no persisted concept of its own until the execution creates
+  it: a Work Item has exactly one primary subject, so the corroborating Reviews are carried as a
+  typed input (`candidate_reviews`), not as the subject itself.
 - **Entry stage:** Review.
 - **Successful exit stage:** Learn.
 - **Creates:** one Motif record naming the repeated observation.
