@@ -14,8 +14,10 @@ related:
   - ../_patterns/creator-channel.md
   - ../_patterns/publication.md
   - ../_patterns/review.md
+  - ../_patterns/motif.md
   - ../workflows/capture-publication.md
   - ../workflows/review-publication.md
+  - ../workflows/detect-motifs.md
   - ../../../channels/README.md
 sources:
   - ../../../ONTOLOGY.md
@@ -23,7 +25,7 @@ sources:
 
 # Illustrative creator monitoring trace
 
-> **Simulation only.** This trace validates the Creator, Creator Channel, Observed Publication, and Review contracts. It does not assert a real Creator, Creator Channel, Publication, Review, or Motif. Nothing here may be promoted without the appropriate Workflow and evidence.
+> **Simulation only.** This trace validates the Creator, Creator Channel, Observed Publication, Review, and Motif contracts. It does not assert a real Creator, Creator Channel, Publication, Review, or Motif. Nothing here may be promoted without the appropriate Workflow and evidence.
 
 ## Subject
 
@@ -37,10 +39,13 @@ An illustrative competitor-and-inspiration account being onboarded into Content'
 | `WI-20260828-add-creator-channel-acme-fictional-fitness-co-instagram` | Add Creator Channel | Capture → Validate | Illustrative Creator Channel `content.creator-channel.acme-fictional-fitness-co-instagram` belonging to the Creator above, referencing the existing Instagram `channels.channel` value. |
 | `WI-20260828-capture-publication-acme-fictional-fitness-co-instagram` | Capture Publication | Capture → Capture | Illustrative Observed Publication `content.publication.acme-fictional-fitness-co-instagram-home-gym-carousel`: Instagram Carousel captured from the Creator Channel above, with `published_at`, `canonical_url`, and `platform_identifier` populated immediately at capture and no Blueprint linked. |
 | `WI-20260828-review-publication-acme-fictional-fitness-co-instagram-home-gym-carousel` (and `-02`) | Review Publication | Capture → Review | Two illustrative Reviews of the Publication above: `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-visual` (Visual) and `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-format` (Format), sharing one overlapping observation — the corroborating pair a later Motif can draw on. |
+| `WI-20260828-detect-motifs-plain-background-product-isolation` | Detect Motifs | Review → Learn | Illustrative Motif `content.motif.plain-background-product-isolation` (Motif Category: Visual), promoted from the two Reviews' shared observation — the corroboration the `supporting_reviews` cardinality (2..*) requires. |
 
 "Add Creator" and "Add Creator Channel" above are illustrative labels for a manual registry addition, not named Workflow documents — Creator and Creator Channel instances are added directly to the registry rather than through a dedicated Workflow contract in this pass. Every later row in this table names a real `workflows/*.md` contract.
 
-This table is the seed of a worked example that later slices extend — a captured Publication, its Reviews, and a derived Motif each add a row here rather than restructuring the table.
+This table traces the full illustrative pipeline this parent PRD's slices built one row at a time:
+Creator, Creator Channel, Observed Publication, two corroborating Reviews, and one Motif drawn
+from them.
 
 ## Illustrative records
 
@@ -111,6 +116,30 @@ background in every slide." That corroboration — the same specific pattern ind
 under two different Review Types — is what a later Motif may legitimately draw on; a single Review
 alone cannot support a Motif.
 
+### Motif
+
+- `id`: `content.motif.plain-background-product-isolation`
+- `name`: Plain-background product isolation
+- `motif_category`: Visual
+- `description`: The product is isolated against a plain, uncluttered background in every slide —
+  independently observed in both the Visual and Format Reviews of the Publication above.
+- `supporting_reviews`:
+  - `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-visual`
+  - `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-format`
+- `related_knowledge`: none — this illustrative Motif has not yet been used to seed or inform a
+  Knowledge record; `related_knowledge` stays empty rather than being filled speculatively, per
+  [`_patterns/motif.md`](../_patterns/motif.md).
+- `creating_work_item`: `WI-20260828-detect-motifs-plain-background-product-isolation`
+
+This trace now demonstrates the full pipeline end to end: Creator → Creator Channel → Observed
+Publication → two corroborating Reviews → one Motif. Every `ref()` above resolves to a record
+defined earlier in this same trace, and every workflow's `creates`/`next` was followed in order —
+[Review Publication](../workflows/review-publication.md)'s `next: content.workflow.detect-motifs`
+resolves to the workflow used for the row above, and [Detect Motifs](../workflows/detect-motifs.md)'s
+own `next: content.workflow.capture-knowledge` remains available for a future slice that exercises
+the Motif → Knowledge handoff, mirroring [`full-lifecycle-trace.md`](full-lifecycle-trace.md)'s
+verification style.
+
 ## Validation scenarios
 
 - A Creator with no Creator Relationship value fails validation.
@@ -122,3 +151,5 @@ alone cannot support a Motif.
 - A Publication may carry more than one Review — of the same or different Review Types — without conflict; each Review evolves independently and never mutates the Publication it reviews.
 - A Review with a vague, non-specific observation ("this is good," "strong post") fails validation — every observation must describe something specifically present in the Publication.
 - Two Reviews of the same Publication may share a genuinely overlapping observation (as in the illustrative Visual and Format Reviews above) without being merged into one record — corroboration across Reviews is what a later Motif draws on, not automatic deduplication.
+- A Motif with only one supporting Review fails validation — `supporting_reviews`' `2..*` cardinality makes the corroboration requirement structural, not a discretionary editorial judgment.
+- A new Review that repeats an existing Motif's observation updates that Motif's `supporting_reviews` rather than creating a second, duplicate Motif for the same repeated characteristic.

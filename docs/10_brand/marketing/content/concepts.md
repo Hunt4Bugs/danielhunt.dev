@@ -35,10 +35,11 @@ the two ever disagree.
 Cross-domain taxonomy ownership: `ref(strategy.theme)` and `ref(audience.segment)` and
 `ref(channels.channel)` point at concepts owned by neighboring contexts (Strategy, Audience,
 Channels respectively — see [`domain.md`](domain.md)'s Related Domains). `taxonomy(...)` values
-below are the fifteen Content-owned controlled vocabularies from ONTOLOGY.md's Taxonomies
+below are the sixteen Content-owned controlled vocabularies from ONTOLOGY.md's Taxonomies
 section: Content Pattern, Content Purpose, Narrative Structure, Visual Hook Type, Verbal Hook
 Type, Knowledge Kind, Topic Mode, Publication Format, Workflow Stage, Work Item State, Production
-Dependency State, Creator Type, Creator Relationship, Review Type, Review Confidence.
+Dependency State, Creator Type, Creator Relationship, Review Type, Review Confidence, Motif
+Category.
 
 ## Knowledge
 **ID:** `content.knowledge`
@@ -50,6 +51,7 @@ lesson, process, or framework.
 - supported by `content.source`
 - informs `content.topic`
 - created or revised by `analytics.insight`
+- may be informed by `content.motif`
 - created or revised by `content.work-item`
 
 ### Constraints
@@ -676,6 +678,63 @@ fields:
     required: true
     cardinality: 1
 
+## Motif
+**ID:** `content.motif`
+
+A reusable observation promoted from two or more corroborating Reviews — a specific, repeated
+characteristic worth naming and reusing, not a one-off impression from a single occurrence. Named
+"Motif" rather than the source brief's "Pattern": the word "Pattern" is already the documentation
+protocol's own meta-model primitive (`_patterns/*.md`, see DOMAIN_PROTOCOL.md §3.5) and an
+existing Content-owned taxonomy (Content Pattern: Story, Educational, List, Tutorial, ...), so a
+third meaning would be ambiguous; the underlying concept and its semantics are otherwise unchanged
+from the source brief.
+
+### Relationships
+- derived from `content.review` (2..*)
+- classified by `taxonomy(Motif Category)`
+- may inform `content.knowledge`
+- created or updated by `content.work-item`
+
+### Constraints
+- A Motif must not be created from a single Review occurrence — at least two corroborating Reviews
+  are required. This is enforced structurally, not just in prose: `supporting_reviews` carries
+  cardinality `2..*`.
+- A Motif must identify exactly one Motif Category.
+- A well-evidenced Motif may inform or seed a new Knowledge record, mirroring how
+  `analytics.insight` already feeds `content.knowledge` — see [Knowledge](#knowledge). This
+  Motif → Knowledge feed is an explicit design goal of the parent PRD, not an incidental
+  similarity.
+- A new corroborating Review for an already-named repeated observation updates the existing Motif
+  (adds to `supporting_reviews`) rather than creating a duplicate Motif.
+
+### Entity contract
+entity: content.motif
+fields:
+  - name: name
+    type: text
+    required: true
+    cardinality: 1
+  - name: motif_category
+    type: taxonomy(Motif Category)
+    required: true
+    cardinality: 1
+  - name: description
+    type: text
+    required: true
+    cardinality: 1
+  - name: supporting_reviews
+    type: ref(content.review)
+    required: true
+    cardinality: 2..*
+  - name: related_knowledge
+    type: ref(content.knowledge)
+    required: false
+    cardinality: 0..*
+  - name: creating_work_item
+    type: ref(content.work-item)
+    required: true
+    cardinality: 1
+
 ## Work Item
 **ID:** `content.work-item`
 
@@ -686,7 +745,7 @@ stage, inputs, decisions, outputs, and validation.
 - executes `content.workflow.*`
 - has one primary subject: `ref(content.knowledge | content.source | content.topic |
   content.blueprint | content.script | content.publication | content.series | content.creator |
-  content.creator-channel)`
+  content.creator-channel | content.review)`
 - creates or updates the records named in its Outputs
 
 ### Constraints
@@ -708,7 +767,7 @@ fields:
     required: true
     cardinality: 1
   - name: primary_subject
-    type: ref(content.*)   # polymorphic — one of Knowledge, Source, Topic, Blueprint, Script, Publication, Series, Creator, Creator Channel
+    type: ref(content.*)   # polymorphic — one of Knowledge, Source, Topic, Blueprint, Script, Publication, Series, Creator, Creator Channel, Review
     required: true
     cardinality: 1
   - name: work_state

@@ -48,13 +48,15 @@ Workflow Stage describes where a Work Item is in this lifecycle. Workflow descri
   intelligence, and the specific platform accounts they hold.
 - [Reviews](reviews/README.md): structured analysis of an Observed Publication, kept separate so
   observations can evolve without mutating the source record.
+- [Motifs](motifs/README.md): reusable observations promoted from two or more corroborating
+  Reviews, which may inform or seed Knowledge.
 - [Work Items](work-items/README.md): persistent executions of one Workflow against one subject.
 - [Measurements](../../analytics/measurements/README.md) and [Insights](../../analytics/insights/README.md): observed results and interpretations.
 - [Script Assets](../../assets/scripts/README.md) and [Templates](../../assets/templates/README.md): authored audio/video material and reusable scaffolding.
 
 Create records only when real working material exists. Illustrative material belongs under [Examples](examples/README.md) and must be labeled so it cannot be mistaken for actual evidence, publication, or performance.
 
-Each record type's required document shape lives in [`_patterns/`](_patterns/) (`topic.md`, `blueprint.md`, `publication.md`, `work-item.md`, `knowledge.md`, `series.md`, `source.md`, `creator.md`, `creator-channel.md`, `review.md`) rather than in the record type's own `README.md`, which is a routing document only.
+Each record type's required document shape lives in [`_patterns/`](_patterns/) (`topic.md`, `blueprint.md`, `publication.md`, `work-item.md`, `knowledge.md`, `series.md`, `source.md`, `creator.md`, `creator-channel.md`, `review.md`, `motif.md`) rather than in the record type's own `README.md`, which is a routing document only.
 
 ## Operations
 

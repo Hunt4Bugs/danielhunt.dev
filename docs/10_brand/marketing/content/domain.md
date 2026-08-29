@@ -54,10 +54,13 @@ Channel a given instance uses.
   peer, or reference intelligence, and the specific platform accounts they hold.
 - Review: structured analysis of an Observed Publication, kept separate from the Publication so
   observations can evolve without mutating the source record.
+- Motif: a reusable observation promoted from two or more corroborating Reviews, which may inform
+  or seed Knowledge. Named "Motif" rather than "Pattern" to avoid colliding with this protocol's
+  own `Pattern` primitive and the existing Content Pattern taxonomy.
 - The Content-owned controlled vocabularies: Content Pattern, Content Purpose, Narrative
   Structure, Visual Hook Type, Verbal Hook Type, Knowledge Kind, Topic Mode, Publication Format,
   Workflow Stage, Work Item State, Production Dependency State, Creator Type, Creator
-  Relationship.
+  Relationship, Review Type, Review Confidence, Motif Category.
 
 **Excludes**
 
@@ -97,6 +100,10 @@ Channel a given instance uses.
 - **Review** — structured analysis of an Observed Publication (visual, format, hook, topic,
   narrative, or technical), kept separate from the Publication so observations can evolve
   independently.
+- **Motif** — a reusable observation promoted from two or more corroborating Reviews; may inform
+  or seed a new Knowledge record. Named "Motif" rather than the source material's "Pattern" to
+  avoid colliding with this protocol's own `Pattern` primitive and the existing Content Pattern
+  taxonomy.
 
 Full definitions, relationships, and entity contracts live in [`concepts.md`](concepts.md), which
 is this domain's scoped instantiation of the cross-context model in
@@ -122,6 +129,7 @@ is this domain's scoped instantiation of the cross-context model in
 - `Creator` **controls** `CreatorChannel`
 - `CreatorChannel` **takes form** `channels.channel`
 - `Review` **reviews** `Publication`
+- `Motif` **derived from** `Review` (2 or more); `Motif` **may inform** `Knowledge`
 
 ## Constraints
 
@@ -148,6 +156,8 @@ is this domain's scoped instantiation of the cross-context model in
   and Creator Relationship (our stance toward it) must never be conflated into one field.
 - A Review does not mutate its source Publication; a Publication may carry multiple Reviews across
   different Review Types (or repeated over time), each evolving independently.
+- A Motif must not be created from a single Review — `supporting_reviews` requires at least two
+  corroborating Reviews before promotion.
 
 ## Related Domains
 
