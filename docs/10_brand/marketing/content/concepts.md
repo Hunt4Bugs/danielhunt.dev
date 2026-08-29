@@ -307,6 +307,8 @@ and, after publishing, durable publication facts.
 
 ### Relationships
 - realizes `content.blueprint`
+- observed from `content.creator` (when externally captured)
+- captured via `content.creator-channel`
 - belongs to `ref(channels.channel)`
 - takes form `taxonomy(Publication Format)`
 - uses `content.script` (primary) and other Assets
@@ -315,22 +317,46 @@ and, after publishing, durable publication facts.
 - grouped by `content.series`
 
 ### Constraints
-- A Publication has exactly one primary Blueprint and one Channel in v1.
-- A Publication may use at most one primary Script.
-- Before real publication, `published_at`, `canonical_url`, and `platform_identifier` must remain
-  empty; they are recorded only after an authorized publish.
-- Every production dependency must carry a Production Dependency State; `Unresolved` cannot pass
-  validation.
+- A Publication has exactly one Channel in v1, in both branches below — Channel identifies the
+  platform type whether the Publication is authored or observed.
+- A Publication is either **Own** (Daniel authored it; `creator` absent) or **Observed** (captured
+  from a tracked Creator; `creator` present). A Publication with neither a Blueprint nor a Creator
+  fails validation, and a Publication carrying both is invalid — the branches are mutually
+  exclusive.
 - A materially different channel expression or repurposed output is a separate Publication, never
   an edit to the source Publication.
+
+**Own** (no `creator`):
+- Exactly one primary Blueprint.
+- A Publication may use at most one primary Script.
+- Before real publication, `published_at`, `canonical_url`, and `platform_identifier` must remain
+  empty; they are recorded only after an authorized publish via Publish Publication.
+- Every production dependency must carry a Production Dependency State; `Unresolved` cannot pass
+  validation.
+
+**Observed** (has `creator`):
+- No Blueprint — an Observed Publication is captured from a Creator Channel, not planned through
+  Content's own Blueprint pipeline.
+- Must reference exactly one Creator Channel via `creator_channel`, and that Creator Channel must
+  belong to the referenced Creator.
+- `published_at`, `canonical_url`, and `platform_identifier` are populated immediately at capture
+  time via Capture Publication, not gated behind Publish Publication.
 
 ### Entity contract
 entity: content.publication
 fields:
   - name: blueprint
     type: ref(content.blueprint)
-    required: true
-    cardinality: 1
+    required: false   # required when `creator` is absent — see Constraints
+    cardinality: 0..1
+  - name: creator
+    type: ref(content.creator)
+    required: false
+    cardinality: 0..1
+  - name: creator_channel
+    type: ref(content.creator-channel)
+    required: false   # required when `creator` is present — see Constraints
+    cardinality: 0..1
   - name: channel
     type: ref(channels.channel)
     required: true
@@ -371,17 +397,17 @@ fields:
     type: date
     required: false
     cardinality: 0..1
-    writable_after: content.workflow.publish-publication
+    writable_after: content.workflow.publish-publication   # or content.workflow.capture-publication for an Observed Publication
   - name: canonical_url
     type: url
     required: false
     cardinality: 0..1
-    writable_after: content.workflow.publish-publication
+    writable_after: content.workflow.publish-publication   # or content.workflow.capture-publication for an Observed Publication
   - name: platform_identifier
     type: text
     required: false
     cardinality: 0..1
-    writable_after: content.workflow.publish-publication
+    writable_after: content.workflow.publish-publication   # or content.workflow.capture-publication for an Observed Publication
 
 ## Series
 **ID:** `content.series`

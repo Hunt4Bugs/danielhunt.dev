@@ -12,6 +12,8 @@ related:
   - ../concepts.md
   - ../_patterns/creator.md
   - ../_patterns/creator-channel.md
+  - ../_patterns/publication.md
+  - ../workflows/capture-publication.md
   - ../../../channels/README.md
 sources:
   - ../../../ONTOLOGY.md
@@ -19,7 +21,7 @@ sources:
 
 # Illustrative creator monitoring trace
 
-> **Simulation only.** This trace validates the Creator and Creator Channel contracts. It does not assert a real Creator, Creator Channel, Publication, Review, or Motif. Nothing here may be promoted without the appropriate Workflow and evidence.
+> **Simulation only.** This trace validates the Creator, Creator Channel, and Observed Publication contracts. It does not assert a real Creator, Creator Channel, Publication, Review, or Motif. Nothing here may be promoted without the appropriate Workflow and evidence.
 
 ## Subject
 
@@ -31,6 +33,7 @@ An illustrative competitor-and-inspiration account being onboarded into Content'
 | --- | --- | --- | --- |
 | `WI-20260828-add-creator-acme-fictional-fitness-co` | Add Creator | Capture → Validate | Illustrative Creator `content.creator.acme-fictional-fitness-co`: Creator Type `Brand`, Creator Relationships `Competitor` and `Inspiration`. |
 | `WI-20260828-add-creator-channel-acme-fictional-fitness-co-instagram` | Add Creator Channel | Capture → Validate | Illustrative Creator Channel `content.creator-channel.acme-fictional-fitness-co-instagram` belonging to the Creator above, referencing the existing Instagram `channels.channel` value. |
+| `WI-20260828-capture-publication-acme-fictional-fitness-co-instagram` | Capture Publication | Capture → Capture | Illustrative Observed Publication `content.publication.acme-fictional-fitness-co-instagram-home-gym-carousel`: Instagram Carousel captured from the Creator Channel above, with `published_at`, `canonical_url`, and `platform_identifier` populated immediately at capture and no Blueprint linked. |
 
 "Add Creator" and "Add Creator Channel" above are illustrative labels for a manual registry addition, not named Workflow documents — Creator and Creator Channel instances are added directly to the registry rather than through a dedicated Workflow contract in this pass. Every later row in this table names a real `workflows/*.md` contract.
 
@@ -57,9 +60,24 @@ This table is the seed of a worked example that later slices extend — a captur
 - `url`: https://instagram.com/acmefictionalfitnessco (illustrative, not a real destination)
 - `creating_work_item`: `WI-20260828-add-creator-channel-acme-fictional-fitness-co-instagram`
 
+### Publication
+
+- `id`: `content.publication.acme-fictional-fitness-co-instagram-home-gym-carousel`
+- `creator`: `content.creator.acme-fictional-fitness-co`
+- `creator_channel`: `content.creator-channel.acme-fictional-fitness-co-instagram`
+- `channel`: Instagram (`channels.channel`, per [Channels](../../../channels/README.md))
+- `format`: Carousel (`taxonomy(Publication Format)`)
+- `content`: Illustrative summary — a five-slide carousel positioning a compact home gym rack against small-space objections. Observed, not authored, so no Blueprint is linked.
+- `published_at`: 2026-08-20 (illustrative — already known at capture time, not gated behind Publish Publication)
+- `canonical_url`: https://instagram.com/p/acmefictionalfitnessco-home-gym-carousel (illustrative, not a real destination)
+- `platform_identifier`: acmefictionalfitnessco-home-gym-carousel (illustrative Instagram media id)
+- `creating_work_item`: `WI-20260828-capture-publication-acme-fictional-fitness-co-instagram`
+
 ## Validation scenarios
 
 - A Creator with no Creator Relationship value fails validation.
 - A Creator Channel that restates a platform type instead of referencing `channels.channel` fails validation.
 - Two Creator Relationship values on the same Creator (Competitor and Inspiration) are valid — Creator Relationship is multi-valued.
 - A Creator Channel without a `creator` link, or with more than one, fails validation — cardinality is exactly 1.
+- A Publication with a Creator but no Blueprint is valid (the Observed branch); a Publication with no Creator and no Blueprint fails validation.
+- A Publication with both a Creator and a Blueprint is invalid — Own and Observed are mutually exclusive branches.
