@@ -745,7 +745,7 @@ stage, inputs, decisions, outputs, and validation.
 - executes `content.workflow.*`
 - has one primary subject: `ref(content.knowledge | content.source | content.topic |
   content.blueprint | content.script | content.publication | content.series | content.creator |
-  content.creator-channel | content.review | content.motif)`
+  content.creator-channel | content.review)`
 - creates or updates the records named in its Outputs
 
 ### Constraints
@@ -767,7 +767,7 @@ fields:
     required: true
     cardinality: 1
   - name: primary_subject
-    type: ref(content.*)   # polymorphic — one of Knowledge, Source, Topic, Blueprint, Script, Publication, Series, Creator, Creator Channel, Review, Motif
+    type: ref(content.*)   # polymorphic — one of Knowledge, Source, Topic, Blueprint, Script, Publication, Series, Creator, Creator Channel, Review
     required: true
     cardinality: 1
   - name: work_state
