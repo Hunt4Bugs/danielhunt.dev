@@ -42,10 +42,10 @@ Content should redefine per Publication.
 ### Excludes
 
 - The Publication record itself, and Publication Format as a taxonomy — owned by
-  [Content](../../content/README.md); Channels owns *which* Formats a Channel accepts, not the
+  [Content](../../40_content/README.md); Channels owns *which* Formats a Channel accepts, not the
   Format taxonomy's definition.
 - Cadence, phasing, and launch gates — owned by the
-  [Content operating plan](../../content/operating-plan.md).
+  [Content operating plan](../../40_content/operating-plan.md).
 - Creator Channel (one Creator's specific account on a Channel platform type) — owned by Content
   (`content.creator-channel`), which references `channels.channel` for the platform type rather
   than restating it.
@@ -67,7 +67,7 @@ Content should redefine per Publication.
 ## Constraints
 
 - A Publication has exactly one Channel in v1, whether Own or Observed (enforced on the
-  `content.publication` entity contract in [`content/concepts.md`](../../content/concepts.md);
+  `content.publication` entity contract in [`content/concepts.md`](../../40_content/concepts.md);
   this domain owns the Channel values and their Format compatibility).
 - A workflow must reject a Channel/Format pair that isn't listed as compatible in the registry.
 - Adding a Channel, or changing its status or compatible Formats, is a governed, explicit Channels
@@ -75,7 +75,7 @@ Content should redefine per Publication.
 
 ## Related Domains
 
-- **[Content](../../content/README.md)** (`docs/content/`) — the primary consumer:
+- **[Content](../../40_content/README.md)** (`docs/40_content/`) — the primary consumer:
   `content.publication` and `content.creator-channel` carry `ref(channels.channel)`.
 - **[Marketing](../marketing/README.md)** — publishes through Channels without owning the
   registry.

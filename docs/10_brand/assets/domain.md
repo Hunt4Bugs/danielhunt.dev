@@ -28,7 +28,7 @@ Assets owns reusable media, design, brand, and knowledge resources, plus the reu
 fill-in-the-blank Templates that scaffold Content records. It exists as its own domain so Content
 does not have to own general production resources it merely consumes — Content owns only the two
 Asset subtypes tightly bound to its own Blueprint → Script pipeline (Script and Script Template),
-which stay defined in [`content/concepts.md`](../../content/concepts.md) even though their
+which stay defined in [`content/concepts.md`](../../40_content/concepts.md) even though their
 instances are physically hosted here.
 
 ## Scope
@@ -45,7 +45,7 @@ instances are physically hosted here.
 ### Excludes
 
 - **Script** (`content.script`) and **Script Template** (`content.script-template`) as *concepts*
-  — defined and contracted by [Content](../../content/README.md) because they are tightly coupled
+  — defined and contracted by [Content](../../40_content/README.md) because they are tightly coupled
   to its Blueprint pipeline. Assets hosts their instances (`scripts/`, `templates/scripts/`) and
   owns the Asset Type / Template taxonomy values that name them, but does not redefine their
   entity contracts.
@@ -53,7 +53,7 @@ instances are physically hosted here.
   [Identity / visual](../identity/visual.md); this domain owns only the implementation contract
   that direction compiles into.
 - Publication Format as a taxonomy, and which Formats a Channel accepts — owned by
-  [Content](../../content/README.md) and [Channels](../channels/README.md) respectively; a Script
+  [Content](../../40_content/README.md) and [Channels](../channels/README.md) respectively; a Script
   or Script Template may *intend* a Format without redefining it.
 
 ## Model
@@ -84,7 +84,7 @@ Full definitions, relationships, and entity contracts live in [`concepts.md`](co
 
 ## Related Domains
 
-- **[Content](../../content/README.md)** (`docs/content/`) — the primary consumer:
+- **[Content](../../40_content/README.md)** (`docs/40_content/`) — the primary consumer:
   `content.publication.related_assets` carries `ref(assets.asset)`; Content owns Script and Script
   Template as concepts while Assets hosts their instances.
 - **[Identity](../identity/README.md)** — owns visual direction and voice that

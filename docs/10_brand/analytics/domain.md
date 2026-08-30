@@ -39,7 +39,7 @@ evidence standard, and interpretation rules distinct from the Publication they o
 
 ### Excludes
 
-- The Publication being measured — owned by [Content](../../content/README.md); Analytics
+- The Publication being measured — owned by [Content](../../40_content/README.md); Analytics
   attaches Measurements to a Publication without redefining it.
 - Knowledge itself — owned by Content (`content.knowledge`); an Insight may create or revise it,
   but does not own its record.
@@ -74,7 +74,7 @@ Full definitions, relationships, and entity contracts live in [`concepts.md`](co
 
 ## Related Domains
 
-- **[Content](../../content/README.md)** (`docs/content/`) — the primary producer and consumer:
+- **[Content](../../40_content/README.md)** (`docs/40_content/`) — the primary producer and consumer:
   `content.publication.measurements` carries `ref(analytics.measurement)`, and
   `content.knowledge.related_insights` carries `ref(analytics.insight)`. Content's
   `content.workflow.record-measurements` and `content.workflow.derive-insight` create instances of

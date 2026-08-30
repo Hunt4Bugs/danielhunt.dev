@@ -111,10 +111,10 @@ Full field-level specification lives in [`concepts.md`](concepts.md).
 
 - **`protocol`** — `ops` conforms to `DOMAIN_PROTOCOL.md` and the root `_conventions/` /
   `_patterns/` it defines; `protocol` does not depend on `ops`.
-- **`content`** (`docs/content/`) — the first domain fully modeled under this protocol, and the
-  first to graduate out of a numbered class into its own root-level domain directory.
-  `ops.workflow.create-domain` is the general procedure that produced `content`'s scaffold in
-  spirit and is the general procedure behind every domain's scaffold since.
+- **`content`** (`docs/40_content/`) — the first domain fully modeled under this protocol; briefly
+  a root-level domain, now its own numbered class. `ops.workflow.create-domain` is the general
+  procedure that produced `content`'s scaffold in spirit and is the general procedure behind every
+  domain's scaffold since.
 - **`identity`, `strategy`, `audience`, `marketing`, `offers`, `assets`, `channels`,
   `relationships`, `analytics`** (`docs/10_brand/*/`), **`site`** (`docs/20_site/`), and
   **`delivery`** (`docs/30_delivery/`) — modeled as protocol domains nested inside their numbered

@@ -38,6 +38,6 @@ because a name is mentioned more than once — see DOMAIN_PROTOCOL.md §15 ("Sta
 invent dozens of concepts") and §18's V1-boundary discipline.
 
 `content.creator` and `content.creator-channel` are a separate, already-modeled exception owned by
-[Content](../../content/README.md) for content-intelligence monitoring; they do not extend into
+[Content](../../40_content/README.md) for content-intelligence monitoring; they do not extend into
 this domain and this domain's eventual Person/Organization concepts will not retroactively absorb
 them.

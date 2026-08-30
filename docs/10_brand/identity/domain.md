@@ -54,7 +54,7 @@ brand's own meaning.
   [Audience](../audience/README.md), which the audience-facing parts of Identity (Brand
   Statement, contrarians) write toward.
 - Topic, Blueprint, and Publication content itself — owned by
-  [Content](../../content/README.md), which reads Identity's voice and principles as an input but
+  [Content](../../40_content/README.md), which reads Identity's voice and principles as an input but
   does not redefine them.
 - Implementation tokens, typography, geometry, and components — owned by
   [`assets/design.md`](../assets/design.md); Identity's [`visual.md`](visual.md) owns the
@@ -95,7 +95,7 @@ Full definitions and relationships live in [`concepts.md`](concepts.md).
   redefine it.
 - **[Audience](../audience/README.md)** — the Brand Statement and contrarians write downstream to
   this domain's segments.
-- **[Content](../../content/README.md)** (`docs/content/`) — reads Identity's voice and
+- **[Content](../../40_content/README.md)** (`docs/40_content/`) — reads Identity's voice and
   principles when producing Topics and Blueprints.
 - **[Assets](../assets/README.md)** — `design.md` implements the tokens Identity's
   [`visual.md`](visual.md) directs.

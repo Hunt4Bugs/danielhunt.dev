@@ -7,18 +7,18 @@ description: Use when the user wants to turn an approved short-form Blueprint (w
 
 ## Overview
 
-This skill produces one Script Asset from one approved Blueprint (including its selected hooks, whether finalized directly by `to-blueprint` or via `to-hooks`), that Blueprint's linked Sources, and identified production dependencies, following `docs/content/workflows/generate-short-form-script.md`.
+This skill produces one Script Asset from one approved Blueprint (including its selected hooks, whether finalized directly by `to-blueprint` or via `to-hooks`), that Blueprint's linked Sources, and identified production dependencies, following `docs/40_content/workflows/generate-short-form-script.md`.
 
 ## Required references
 
 Before acting, read:
 
-- `docs/content/workflows/generate-short-form-script.md` (this skill's Procedure, Input, Output, Taxonomy contract, and Prohibitions)
-- `docs/content/workflows/README.md#skill-execution-contract` (taxonomy validation, confirm-before-write, stop-condition routing, and chaining rules that apply to every step below)
+- `docs/40_content/workflows/generate-short-form-script.md` (this skill's Procedure, Input, Output, Taxonomy contract, and Prohibitions)
+- `docs/40_content/workflows/README.md#skill-execution-contract` (taxonomy validation, confirm-before-write, stop-condition routing, and chaining rules that apply to every step below)
 - `docs/10_brand/assets/templates/scripts/short-form-stop-hook-payoff.md` (the only Script template that currently exists; see Output below)
 - `docs/10_brand/identity/README.md` (voice, privacy, scars-not-wounds, and observation-over-preaching boundaries)
 - `docs/10_brand/assets/README.md` (what an Asset and a Script Template are, how a Script relates to its primary Blueprint, and the "Production dependencies" section's criteria for choosing among the four Production Dependency State values)
-- `docs/content/work-items/README.md` and `docs/content/_patterns/work-item.md` (the Work Item identifier format and its required frontmatter and body now live in the pattern file; the README is a short pointer to it)
+- `docs/40_content/work-items/README.md` and `docs/40_content/_patterns/work-item.md` (the Work Item identifier format and its required frontmatter and body now live in the pattern file; the README is a short pointer to it)
 - `.claude/skills/to-blueprint/SKILL.md` (defines the Final / Candidate / Ready-for-hook-development convention this skill's Input relies on to tell a settled Blueprint from an unsettled one)
 
 ## Input
@@ -39,7 +39,7 @@ Write to `docs/10_brand/assets/scripts/<slug>.md`, using `docs/10_brand/assets/t
 
 The template's **Intended Publication Format** field is a fixed constant for this template, `Short-form Video`, not a value asked of the user or copied from the Blueprint (the Blueprint carries no Channel field, and this template has no Channel field either, fixed or otherwise). Write it verbatim; do not ask for a Channel and do not invent one.
 
-Also create one Work Item record under `docs/content/work-items/`, per the Skill execution contract's point 7, `generate-short-form-script.md`'s own Work Item contract, and `docs/content/work-items/README.md`'s required frontmatter and body: `primary_subject` is the source Blueprint's own path (`docs/content/blueprints/<slug>.md`), matching the `../topics/example.md`-style file-path format `work-items/README.md` specifies, not a prose description.
+Also create one Work Item record under `docs/40_content/work-items/`, per the Skill execution contract's point 7, `generate-short-form-script.md`'s own Work Item contract, and `docs/40_content/work-items/README.md`'s required frontmatter and body: `primary_subject` is the source Blueprint's own path (`docs/40_content/blueprints/<slug>.md`), matching the `../topics/example.md`-style file-path format `work-items/README.md` specifies, not a prose description.
 
 Required predecessors follow a two-tier lookup, mirroring the mechanic `to-hooks` uses against the same Blueprint's Header field:
 
@@ -70,4 +70,4 @@ Stop and route back to `to-blueprint` when the Blueprint's selected Pattern, Str
 rg -n '^---$|^## Header|^## Scroll Stopper|^## Development|^## Payoff|^## Script checks' docs/10_brand/assets/scripts/<slug>.md
 ```
 
-The Work Item record's filename embeds today's date and a slug that cannot be predicted in advance, so no fixed `rg` command is given for it here. Spot-check its required frontmatter and body sections by hand against `docs/content/work-items/README.md`'s spec instead.
+The Work Item record's filename embeds today's date and a slug that cannot be predicted in advance, so no fixed `rg` command is given for it here. Spot-check its required frontmatter and body sections by hand against `docs/40_content/work-items/README.md`'s spec instead.

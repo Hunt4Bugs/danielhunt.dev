@@ -20,7 +20,7 @@ sources:
 
 Canonical concept registry for the `assets` domain (see [`domain.md`](domain.md)). Script
 (`content.script`) and Script Template (`content.script-template`) are Asset subtypes but are
-defined in [`content/concepts.md`](../../content/concepts.md), not here — see
+defined in [`content/concepts.md`](../../40_content/concepts.md), not here — see
 [`domain.md`](domain.md)'s Excludes.
 
 ## Asset
