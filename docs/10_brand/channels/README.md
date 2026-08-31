@@ -14,8 +14,8 @@ facets:
 related:
   - domain.md
   - concepts.md
-  - ../../content/README.md
-  - ../../content/operating-plan.md
+  - ../../40_content/README.md
+  - ../../40_content/operating-plan.md
 sources:
   - ../ONTOLOGY.md
 ---
@@ -32,7 +32,7 @@ A Channel is a distribution destination, not a Publication. The registry below o
 | YouTube | Planned | Short-form Video, Long-form Video | The hero cinematic vlog when launch readiness criteria are met. |
 | Newsletter | Future | Newsletter | A future owned editorial channel; not part of the current cadence. |
 
-Each Publication belongs to one Channel in v1. A workflow must reject an incompatible Channel and Publication Format pair. Cadence and readiness rules are maintained in the [Content operating plan](../../content/operating-plan.md); reusable production practices live in [Content production](../../content/production.md).
+Each Publication belongs to one Channel in v1. A workflow must reject an incompatible Channel and Publication Format pair. Cadence and readiness rules are maintained in the [Content operating plan](../../40_content/operating-plan.md); reusable production practices live in [Content production](../../40_content/production.md).
 
 ## Deferred destinations
 

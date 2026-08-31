@@ -35,7 +35,7 @@ uses one name for this idea (see [`ONTOLOGY.md`](../ONTOLOGY.md) §"Entities ver
 - Adding a Theme is a governed operation (§13.3) — a workflow or skill may propose one but may not
   select it before an explicit update to the registry below.
 - Every Topic must resolve to exactly one primary Theme (enforced on the `content.topic` entity
-  contract in [`content/concepts.md`](../../content/concepts.md), not repeated here).
+  contract in [`content/concepts.md`](../../40_content/concepts.md), not repeated here).
 
 ### Persistence
 

@@ -27,6 +27,18 @@ Format per entry:
 
 ---
 
+## 2026-08-27: Content workflow skills reconciled with the operating system
+
+**Decision:** Update all seven content workflow skills (`to-knowledge`, `to-topic`, `to-blueprint`, `to-hooks`, `to-script`, `to-validate`, `to-taxonomy`) to match the operating-system formalization landed the same day: every skill now creates or updates a persistent Work Item record per run, `to-blueprint` and `to-hooks` share an explicit Final/Candidate/Ready-for-hook-development marker convention since a Blueprint's opening choices no longer always arrive pre-filled, `to-script` assigns the formal Production Dependency State enum per beat instead of linking to "available Assets" and drops the removed Channel field, `to-validate` cites Publication Format instead of Channel and records its verdict on the Work Item, and `to-taxonomy` now routes a candidate to whichever context actually owns it (ONTOLOGY.md, or the Theme, Audience Segment, or Channel registry), not always ONTOLOGY.md.
+
+**Rationale:** The seven skills were built and reviewed against the workflow docs as they stood before a concurrent, same-day piece of work substantially reworked those same docs (adding the Work Item contract, the registry-table ownership model, and the Production Dependency State taxonomy). Left unreconciled, the skills would have kept working but would have quietly drifted from the source of truth they claim to follow. Each skill was updated through the same implementer-plus-two-stage-review process used to build them, which caught real cross-file bugs along the way: a provenance-overwriting bug in Work Item dedup-extend handling, an unresolved predecessor-lookup edge case when an upstream record had no Work Item on file, a factually wrong claim about where Production Dependency State applies, and an internal contradiction in `to-taxonomy`'s own stated boundary with the shared contract it explicitly does not follow.
+
+**Source:** User-directed reconciliation session on 2026-08-27, following the same-day "Content operating system completed through reuse" work.
+
+**Implementation:** the seven `SKILL.md` files under `.claude/skills/`, the shared "Skill execution contract" in [Content workflows](../40_content/workflows/README.md) (added point 7 for Work Item tracking), and the Knowledge, Topic, and Source templates under [Assets / templates](assets/templates/README.md) (added "Creating Work Item" fields for consistency with Blueprint and Script).
+
+---
+
 ## 2026-08-27: Content operating system completed through reuse
 
 **Decision:** Formalize Workflow, persistent Work Item, Workflow Stage, Work Item State, Publication content, production dependencies, and controlled-vocabulary ownership; extend the Content lifecycle from Publication development through Measurement, Insight, and repurposing.
@@ -35,7 +47,19 @@ Format per entry:
 
 **Source:** User-approved Brand Content Operating System implementation plan on 2026-08-27.
 
-**Implementation:** [Brand ontology](ONTOLOGY.md), [Content domain](../content/README.md), [Content workflows](../content/workflows/README.md), [Work Item contract](../content/work-items/README.md), and [Analytics](analytics/README.md).
+**Implementation:** [Brand ontology](ONTOLOGY.md), [Content domain](../40_content/README.md), [Content workflows](../40_content/workflows/README.md), [Work Item contract](../40_content/work-items/README.md), and [Analytics](analytics/README.md).
+
+---
+
+## 2026-08-27: Content workflow skills built
+
+**Decision:** Build seven project-local Claude Code skills (`to-knowledge`, `to-topic`, `to-blueprint`, `to-hooks`, `to-script`, `to-validate`, `to-taxonomy`) under `.claude/skills/`, one per workflow doc in `marketing/content/workflows/`, each enforcing its workflow's Taxonomy contract and dedup check for real rather than as a checklist. Add generic Knowledge, Topic, and Source record templates to close a template gap the review surfaced (Blueprint and Script already had one). Add a shared "Skill execution contract" section to `marketing/content/workflows/README.md` that six of the seven skills point to instead of restating.
+
+**Rationale:** The workflow docs already defined a rigorous content pipeline (Capture, Develop Topic, Develop Blueprint, Generate Hook Options, Generate Short-Form Script, Validate Script, Propose Taxonomy Addition), but nothing executed them. A `/grill-me` session on 2026-08-27 established that these should be project-local (not routed through the portfolio-wide `skillstack` plugin, which is unaware of this repo's ontology and its retired `docs/brand/` path convention), covering the full pipeline rather than a subset, with automated taxonomy validation and dedup checks, confirm-before-write on every record, and skills that suggest but never auto-invoke the next pipeline stage. Built against the workflow docs as they stood before the same-day "Content operating system completed through reuse" update above; a follow-up pass reconciles the seven skills against the now-current docs and the new publication and measurement workflows.
+
+**Source:** User-approved `/grill-me` session and implementation plan on 2026-08-27.
+
+**Implementation:** [Content workflow skills design](specs/2026-08-27-content-workflow-skills-design.md), [Content workflow skills implementation plan](plans/2026-08-27-content-workflow-skills-implementation.md), [Content workflows](../40_content/workflows/README.md), [Knowledge Templates](assets/templates/knowledge/README.md), [Topic Templates](assets/templates/topics/README.md), [Source Templates](assets/templates/sources/README.md), and the seven `SKILL.md` files under `.claude/skills/`.
 
 ---
 
@@ -47,7 +71,7 @@ Format per entry:
 
 **Source:** User-provided *3 Step Formula for High Impact Short Form* PDF and user-approved implementation plan on 2026-08-26.
 
-**Implementation:** [Brand ontology v1](ONTOLOGY.md), [short-form Source](../content/sources/colin-and-samir-short-form-anatomy.md), [Script Template](assets/templates/scripts/short-form-stop-hook-payoff.md), and [Content workflows](../content/workflows/README.md).
+**Implementation:** [Brand ontology v1](ONTOLOGY.md), [short-form Source](../40_content/sources/colin-and-samir-short-form-anatomy.md), [Script Template](assets/templates/scripts/short-form-stop-hook-payoff.md), and [Content workflows](../40_content/workflows/README.md).
 
 ---
 

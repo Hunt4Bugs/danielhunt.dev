@@ -13,7 +13,7 @@ related:
   - ../concepts.md
   - ../_patterns/measurement.md
   - ../insights/README.md
-  - ../../../content/publications/README.md
+  - ../../../40_content/publications/README.md
 sources:
   - ../../ONTOLOGY.md
 ---

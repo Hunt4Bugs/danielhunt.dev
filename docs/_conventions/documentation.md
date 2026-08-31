@@ -6,7 +6,7 @@ status: active
 version: 1
 owner: Daniel Hunt
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-08-29
 related:
   - README.md
   - identifiers.md
@@ -30,9 +30,9 @@ kind: domain | concept-registry | pattern | workflow | decision | note | protoco
 domain: <domain-id>                # e.g. content, ops, protocol
 status: draft | active | blocked | superseded | archived
 version: 1
-class: "00" | "10" | "20" | "30"    # physical placement — see LIBRARY_MAP.md; omit for a
-                                     # root-level domain (docs/<domain>/) — there is no class
-collection: <collection-name>       # physical placement within the class; omit alongside class
+class: "00" | "10" | "20" | "30" | "40"  # physical placement — see LIBRARY_MAP.md; omit for a
+                                          # root-level domain (docs/<domain>/) — there is no class
+collection: <collection-name>            # physical placement within the class; omit alongside class
 ```
 
 Plus, when relevant: `owner`, `created`, `updated`, `facets`, `related`, `sources`.
@@ -48,10 +48,10 @@ They are independent. `id`/`kind`/`domain`/`status`/`version` are required on an
 or materially revised from this point forward. `class`/`collection` are required together for any
 document physically placed inside a numbered class directory, and omitted together for a
 root-level domain (`docs/<domain>/`, a peer of the numbered class directories rather than nested
-in one — see `LIBRARY_MAP.md`'s "Root-level domains" section). A document's `class` does not need
-to match its `domain` when both are present — one numbered class directory can host more than one
-Domain — but a Domain that has migrated out to root, like `content` (`docs/content/`), carries
-neither field rather than a stale one.
+in one — see `LIBRARY_MAP.md`'s "Root-level domains" section, currently unused). A document's
+`class` does not need to match its `domain` when both are present — one numbered class directory
+can host more than one Domain, as with `content` (class `40`, `docs/40_content/`) — but a Domain
+that migrates out to root would carry neither field rather than a stale one.
 
 ## `kind` values
 

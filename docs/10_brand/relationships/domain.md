@@ -12,7 +12,7 @@ updated: 2026-08-29
 related:
   - README.md
   - concepts.md
-  - ../../content/domain.md
+  - ../../40_content/domain.md
 sources:
   - ../ONTOLOGY.md
 ---
@@ -24,7 +24,7 @@ sources:
 Relationships is a reserved Brand context for people, organizations, roles, and interactions that
 later need reusable operational records — collaborators, design partners, customers, sources, and
 peers. It exists as its own domain boundary now, with `status: draft`, specifically so
-[Content](../../content/README.md)'s narrower Creator/Creator Channel exception (see Relationships
+[Content](../../40_content/README.md)'s narrower Creator/Creator Channel exception (see Relationships
 below) has an explicit home to be promoted into rather than silently expanding.
 
 ## Scope
@@ -38,7 +38,7 @@ below) has an explicit home to be promoted into rather than silently expanding.
 
 - Content's **Creator** and **Creator Channel** (`content.creator`, `content.creator-channel`) —
   a deliberate, narrow exception for content-intelligence (competitor and inspiration monitoring),
-  owned by [Content](../../content/README.md). Creator does not extend, generalize, or substitute
+  owned by [Content](../../40_content/README.md). Creator does not extend, generalize, or substitute
   for this domain, and this domain does not absorb Creator.
 - General people, organizations, and CRM relationships — explicitly out of v1 scope per
   [`ONTOLOGY.md`](../ONTOLOGY.md)'s V1 boundary, until promoted here.
@@ -64,7 +64,7 @@ criteria.
 
 ## Related Domains
 
-- **[Content](../../content/README.md)** (`docs/content/`) — owns the narrow Creator /
+- **[Content](../../40_content/README.md)** (`docs/40_content/`) — owns the narrow Creator /
   Creator Channel exception this domain does not absorb.
 
 ## Examples

@@ -9,9 +9,9 @@ updated: 2026-08-27
 facets:
   - content
 related:
-  - ../../../../content/workflows/develop-blueprint.md
+  - ../../../../40_content/workflows/develop-blueprint.md
 sources:
-  - ../../../../content/knowledge/short-form-anatomy.md
+  - ../../../../40_content/knowledge/short-form-anatomy.md
 pattern: "[select Content Pattern]"
 format: Short-form Video
 structure: "Scroll Stopper + Verbal Hook → Development → Payoff"

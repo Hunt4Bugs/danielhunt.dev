@@ -14,7 +14,7 @@ facets:
 related:
   - README.md
   - concepts.md
-  - ../../content/README.md
+  - ../../40_content/README.md
 sources:
   - ../ONTOLOGY.md
 ---
@@ -40,8 +40,8 @@ scope — most of that scope is deliberately unmodeled today.
 ### Excludes
 
 - Content itself (Knowledge, Topic, Blueprint, Publication, and the rest of the reusable editorial
-  lifecycle) — modeled independently at [`docs/content/`](../../content/README.md), the first
-  Brand context to graduate into a root-level domain.
+  lifecycle) — modeled independently at [`docs/40_content/`](../../40_content/README.md), its own
+  numbered class rather than nested inside this one.
 - Identity, audience truth, and offer definitions — owned by
   [Identity](../identity/README.md), [Audience](../audience/README.md), and
   [Offers](../offers/README.md) respectively; Marketing applies them without owning them.
@@ -82,7 +82,7 @@ the current credibility-moat strategy.
 
 ## Related Domains
 
-- **[Content](../../content/README.md)** (`docs/content/`) — the primary consumer:
+- **[Content](../../40_content/README.md)** (`docs/40_content/`) — the primary consumer:
   `content.series.campaign_refs` carries `ref(marketing.campaign)`.
 - **[Strategy](../strategy/README.md)**, **[Assets](../assets/README.md)**,
   **[Channels](../channels/README.md)**, **[Analytics](../analytics/README.md)** — Marketing

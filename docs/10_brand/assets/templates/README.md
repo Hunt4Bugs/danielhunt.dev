@@ -13,5 +13,8 @@ Templates are reusable Assets. They are fill-in-the-blank scaffolding, not conte
 
 - [Blueprint Templates](blueprints/README.md) scaffold reusable planning decisions.
 - [Script Templates](scripts/README.md) scaffold authored video or audio Scripts from an approved Blueprint.
+- [Knowledge Templates](knowledge/README.md) scaffold reusable Knowledge records.
+- [Topic Templates](topics/README.md) scaffold reusable Topic records.
+- [Source Templates](sources/README.md) scaffold reusable Source records.
 
 Each template names its supported Content Pattern, Narrative Structure, and Publication Format. A skill must use the template's required checks before producing a record or Script Asset.

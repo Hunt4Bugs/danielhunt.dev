@@ -795,7 +795,10 @@ through usage.
   `_conventions/documentation.md` for the resulting `class`/`collection`
   frontmatter rule (present together, or omitted together for a root-level
   domain). This is the exception, not the default: a domain stays inside its
-  class until its own boundary stops fitting there.
+  class until its own boundary stops fitting there. **Revisited 2026-08-29**:
+  `content` was subsequently numbered as class `40` (`docs/40_content/`),
+  consistent with every other Domain, retiring its brief root-level placement.
+  The root-level mechanism itself remains available; no Domain currently uses it.
 - **A single vertical slice** (entity-contract + workflow-contract-as-frontmatter
   + a generated skill) should be built and run before this is handed to any
   wider tooling.

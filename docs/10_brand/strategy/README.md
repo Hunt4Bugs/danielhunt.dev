@@ -15,7 +15,7 @@ related:
   - domain.md
   - concepts.md
   - ../identity/README.md
-  - ../../content/README.md
+  - ../../40_content/README.md
 sources:
   - ../specs/2026-05-28-brand-refinement-design.md
 ---

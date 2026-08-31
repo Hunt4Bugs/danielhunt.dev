@@ -46,7 +46,7 @@ it. It exists as its own domain, distinct from Identity, because it owns audienc
   from — owned by [Identity](../identity/README.md).
 - Themes and strategic weighting — owned by [Strategy](../strategy/README.md).
 - Topic, Blueprint, and Publication content itself — owned by
-  [Content](../../content/README.md), which reads Audience Segment as an input but does not
+  [Content](../../40_content/README.md), which reads Audience Segment as an input but does not
   redefine it.
 
 ## Model
@@ -65,7 +65,7 @@ it. It exists as its own domain, distinct from Identity, because it owns audienc
 
 - A Topic and a Blueprint must each reference exactly one Audience Segment (enforced on the
   `content.topic` and `content.blueprint` entity contracts in
-  [`content/concepts.md`](../../content/concepts.md); this domain owns the Segment values
+  [`content/concepts.md`](../../40_content/concepts.md); this domain owns the Segment values
   themselves).
 - A proposed Segment requires the governed taxonomy-addition workflow and approval before use.
 - The commercial services audience (Services page) is a distinct acquisition route from the
@@ -77,7 +77,7 @@ it. It exists as its own domain, distinct from Identity, because it owns audienc
   writes downstream from.
 - **[Strategy](../strategy/README.md)** — Themes and weighting are set with these Segments in
   mind, but do not redefine them.
-- **[Content](../../content/README.md)** (`docs/content/`) — the primary consumer:
+- **[Content](../../40_content/README.md)** (`docs/40_content/`) — the primary consumer:
   `content.topic` and `content.blueprint` carry `ref(audience.segment)`.
 
 ## Examples

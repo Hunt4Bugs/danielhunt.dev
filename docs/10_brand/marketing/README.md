@@ -20,7 +20,7 @@ Marketing is a first-class Brand domain. It owns the coordinated activity throug
 
 ## Scope
 
-- **Content:** reusable editorial material and its lifecycle. See [Content](../../content/README.md).
+- **Content:** reusable editorial material and its lifecycle. See [Content](../../40_content/README.md).
 - **Campaigns:** optional, time-bounded coordination around a goal. Do not use Campaigns for ordinary recurring publishing.
 - **Distribution:** how Publications move through Channels and are repurposed.
 - **Growth:** future experiments and learning loops. Keep lightweight until recurring experimentation is active.

@@ -18,7 +18,7 @@ related:
   - concepts.md
   - ../strategy/README.md
   - ../audience/README.md
-  - ../../content/README.md
+  - ../../40_content/README.md
 sources:
   - ../specs/2026-05-28-brand-refinement-design.md
   - ../specs/2026-06-01-personal-brand-workbook.md
@@ -191,7 +191,7 @@ The travel format follows the arrival-arc — Bourdain's structure. Arrive in a 
 
 **Brand role for outcome**: indirect credibility moat, not GTM. Datavial sells through its own go-to-market motion (outbound, design partners, conferences, referrals). The personal brand creates name-leak into pharma networks so Daniel's name eventually comes up in industry referrals.
 
-Exact Themes and strategic weighting live in [Strategy](../strategy/README.md). Distribution roles and compatible Formats live in [Channels](../channels/README.md). Cadence and phasing live in the [Content operating plan](../../content/operating-plan.md).
+Exact Themes and strategic weighting live in [Strategy](../strategy/README.md). Distribution roles and compatible Formats live in [Channels](../channels/README.md). Cadence and phasing live in the [Content operating plan](../../40_content/operating-plan.md).
 
 ## Offline half: what it is
 
@@ -199,7 +199,7 @@ Exact Themes and strategic weighting live in [Strategy](../strategy/README.md). 
 
 **Production and tonal references**: see the References table below. Internal-only — do not name in public copy.
 
-The Offline half remains the same identity as the Build half, not a separate lifestyle brand. Its Channel expression, travel cadence, and production practice are owned by [Channels](../channels/README.md), the [Content operating plan](../../content/operating-plan.md), and [Content production](../../content/production.md).
+The Offline half remains the same identity as the Build half, not a separate lifestyle brand. Its Channel expression, travel cadence, and production practice are owned by [Channels](../channels/README.md), the [Content operating plan](../../40_content/operating-plan.md), and [Content production](../../40_content/production.md).
 
 ## What the brand is not
 
@@ -313,4 +313,4 @@ To prove that a tech founder can choose presence and depth over reach and noise.
 - **Secondary:** Content brand as serendipity engine. Sponsorships and creator collabs lag the primary by years and are accepted as inbound, not pursued.
 - **Compound:** Operator/peer network as ambient outcome, not a targeted motion.
 
-See [Marketing / Content](../../content/README.md) for the revisable operational plan that turns these outcomes into a phased schedule.
+See [Marketing / Content](../../40_content/README.md) for the revisable operational plan that turns these outcomes into a phased schedule.

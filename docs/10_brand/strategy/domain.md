@@ -15,7 +15,7 @@ related:
   - README.md
   - concepts.md
   - ../identity/README.md
-  - ../../content/domain.md
+  - ../../40_content/domain.md
 sources:
   - ../ONTOLOGY.md
   - ../specs/2026-05-28-brand-refinement-design.md
@@ -44,7 +44,7 @@ enduring meaning and voice (who the brand permanently is).
 - Enduring meaning, voice, persona, and public language — owned by [Identity](../identity/README.md).
 - Audience truth (who the brand is for, painful problems, credibility) — owned by
   [Audience](../audience/README.md).
-- Topic, Blueprint, and Publication content itself — owned by [Content](../../content/README.md),
+- Topic, Blueprint, and Publication content itself — owned by [Content](../../40_content/README.md),
   which reads Theme as an input but does not redefine it.
 - Distribution mechanics and Channel/Format compatibility — owned by
   [Channels](../channels/README.md).
@@ -65,7 +65,7 @@ enduring meaning and voice (who the brand permanently is).
 ## Constraints
 
 - A Topic must state exactly one primary Theme (constraint lives structurally on
-  `content.topic` in [`content/concepts.md`](../../content/concepts.md); Strategy owns the Theme
+  `content.topic` in [`content/concepts.md`](../../40_content/concepts.md); Strategy owns the Theme
   values themselves).
 - Use `Theme`, not `Pillar` — do not introduce a second, competing strategic-lens concept.
 - A proposed Theme requires the governed taxonomy-addition workflow and approval before use; a
@@ -79,7 +79,7 @@ enduring meaning and voice (who the brand permanently is).
   operates within; Strategy does not redefine it.
 - **[Audience](../audience/README.md)** — Strategy's Themes and weighting are set with Audience
   Segments in mind, but Audience owns segment truth.
-- **[Content](../../content/README.md)** (`docs/content/`) — the primary consumer: `content.topic`
+- **[Content](../../40_content/README.md)** (`docs/40_content/`) — the primary consumer: `content.topic`
   carries `ref(strategy.theme)` and every Topic must resolve to exactly one Theme.
 - **[Channels](../channels/README.md)** and **[Marketing](../marketing/README.md)** — apply
   Strategy's direction to distribution and coordinated activity without owning Theme.

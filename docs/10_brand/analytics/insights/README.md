@@ -11,7 +11,7 @@ facets:
 related:
   - ../README.md
   - ../measurements/README.md
-  - ../../../content/knowledge/README.md
+  - ../../../40_content/knowledge/README.md
 sources:
   - ../../ONTOLOGY.md
 ---

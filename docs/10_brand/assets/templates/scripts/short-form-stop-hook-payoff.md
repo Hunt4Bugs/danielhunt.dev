@@ -9,9 +9,9 @@ updated: 2026-08-27
 facets:
   - content
 related:
-  - ../../../../content/workflows/generate-short-form-script.md
+  - ../../../../40_content/workflows/generate-short-form-script.md
 sources:
-  - ../../../../content/knowledge/short-form-anatomy.md
+  - ../../../../40_content/knowledge/short-form-anatomy.md
 format: Short-form Video
 structure: "Scroll Stopper + Verbal Hook → Development → Payoff"
 ---
