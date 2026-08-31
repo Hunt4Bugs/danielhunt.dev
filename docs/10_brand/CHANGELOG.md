@@ -35,7 +35,7 @@ Format per entry:
 
 **Source:** User-directed reconciliation session on 2026-08-27, following the same-day "Content operating system completed through reuse" work.
 
-**Implementation:** the seven `SKILL.md` files under `.claude/skills/`, the shared "Skill execution contract" in [Content workflows](marketing/content/workflows/README.md) (added point 7 for Work Item tracking), and the Knowledge, Topic, and Source templates under [Assets / templates](assets/templates/README.md) (added "Creating Work Item" fields for consistency with Blueprint and Script).
+**Implementation:** the seven `SKILL.md` files under `.claude/skills/`, the shared "Skill execution contract" in [Content workflows](../40_content/workflows/README.md) (added point 7 for Work Item tracking), and the Knowledge, Topic, and Source templates under [Assets / templates](assets/templates/README.md) (added "Creating Work Item" fields for consistency with Blueprint and Script).
 
 ---
 
@@ -59,7 +59,7 @@ Format per entry:
 
 **Source:** User-approved `/grill-me` session and implementation plan on 2026-08-27.
 
-**Implementation:** [Content workflow skills design](specs/2026-08-27-content-workflow-skills-design.md), [Content workflow skills implementation plan](plans/2026-08-27-content-workflow-skills-implementation.md), [Content workflows](marketing/content/workflows/README.md), [Knowledge Templates](assets/templates/knowledge/README.md), [Topic Templates](assets/templates/topics/README.md), [Source Templates](assets/templates/sources/README.md), and the seven `SKILL.md` files under `.claude/skills/`.
+**Implementation:** [Content workflow skills design](specs/2026-08-27-content-workflow-skills-design.md), [Content workflow skills implementation plan](plans/2026-08-27-content-workflow-skills-implementation.md), [Content workflows](../40_content/workflows/README.md), [Knowledge Templates](assets/templates/knowledge/README.md), [Topic Templates](assets/templates/topics/README.md), [Source Templates](assets/templates/sources/README.md), and the seven `SKILL.md` files under `.claude/skills/`.
 
 ---
 

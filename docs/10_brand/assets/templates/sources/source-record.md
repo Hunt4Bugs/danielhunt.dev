@@ -1,15 +1,20 @@
 ---
-class: "100"
-collection: brand
+id: assets.template.source
+kind: pattern
+domain: assets
+pattern_for: content.source
+version: 1
+class: "10"
+collection: assets
 type: source-template
 status: active
 owner: Daniel Hunt
 created: 2026-08-27
-updated: 2026-08-27
+updated: 2026-08-31
 facets:
   - content
 related:
-  - ../../../marketing/content/workflows/capture-knowledge.md
+  - ../../../../40_content/workflows/capture-knowledge.md
 sources: []
 ---
 

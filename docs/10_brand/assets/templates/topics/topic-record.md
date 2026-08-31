@@ -1,15 +1,20 @@
 ---
-class: "100"
-collection: brand
+id: assets.template.topic
+kind: pattern
+domain: assets
+pattern_for: content.topic
+version: 1
+class: "10"
+collection: assets
 type: topic-template
 status: active
 owner: Daniel Hunt
 created: 2026-08-27
-updated: 2026-08-27
+updated: 2026-08-31
 facets:
   - content
 related:
-  - ../../../marketing/content/workflows/develop-topic.md
+  - ../../../../40_content/workflows/develop-topic.md
 sources: []
 ---
 
