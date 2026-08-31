@@ -14,7 +14,7 @@ facets:
 related:
   - README.md
   - concepts.md
-  - ../../content/README.md
+  - ../../40_content/README.md
 sources:
   - ../ONTOLOGY.md
   - design.md

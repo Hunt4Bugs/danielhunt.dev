@@ -13,7 +13,7 @@ facets:
 related:
   - README.md
 sources:
-  - ../content/sources/colin-and-samir-short-form-anatomy.md
+  - ../40_content/sources/colin-and-samir-short-form-anatomy.md
 ---
 
 # Brand ontology v1

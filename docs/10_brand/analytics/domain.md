@@ -15,7 +15,7 @@ related:
   - README.md
   - concepts.md
   - measurement-plan.md
-  - ../../content/README.md
+  - ../../40_content/README.md
 sources:
   - ../ONTOLOGY.md
 ---

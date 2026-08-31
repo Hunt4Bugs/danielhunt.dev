@@ -14,8 +14,8 @@ facets:
 related:
   - domain.md
   - concepts.md
-  - ../../content/README.md
-  - ../../content/operating-plan.md
+  - ../../40_content/README.md
+  - ../../40_content/operating-plan.md
 sources:
   - ../ONTOLOGY.md
 ---

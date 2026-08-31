@@ -12,7 +12,7 @@ updated: 2026-08-29
 related:
   - README.md
   - concepts.md
-  - ../../content/domain.md
+  - ../../40_content/domain.md
 sources:
   - ../ONTOLOGY.md
 ---

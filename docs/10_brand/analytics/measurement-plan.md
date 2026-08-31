@@ -11,9 +11,9 @@ facets:
   - strategy
 related:
   - README.md
-  - ../../content/operating-plan.md
+  - ../../40_content/operating-plan.md
 sources:
-  - ../../content/README.md
+  - ../../40_content/README.md
 ---
 
 # Content measurement plan

@@ -18,7 +18,7 @@ related:
   - concepts.md
   - ../strategy/README.md
   - ../audience/README.md
-  - ../../content/README.md
+  - ../../40_content/README.md
 sources:
   - ../specs/2026-05-28-brand-refinement-design.md
   - ../specs/2026-06-01-personal-brand-workbook.md

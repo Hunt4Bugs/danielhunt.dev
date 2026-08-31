@@ -10,7 +10,7 @@ facets:
   - content
 related:
   - ../templates/scripts/README.md
-  - ../../../content/blueprints/README.md
+  - ../../../40_content/blueprints/README.md
 sources:
   - ../../ONTOLOGY.md
 ---
