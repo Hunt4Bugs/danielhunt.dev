@@ -27,6 +27,18 @@ Format per entry:
 
 ---
 
+## 2026-09-03: Content flow diagram updated for Creator, Creator Channel, Review, and Motif
+
+**Decision:** Extend `ONTOLOGY.md`'s "Content flow" `classDiagram` to include Creator, Creator Channel, Review, and Motif alongside their five taxonomies (Creator Type, Creator Relationship, Review Type, Review Confidence, Motif Category), plus the `controls`, `takes form`, `observed from`, `captured via`, `reviews`, `derived from`, and `may inform` relationships already stated in prose and in `40_content/concepts.md`.
+
+**Rationale:** Creator, Creator Channel, Review, and Motif were added to the Bounded contexts list, `40_content/domain.md`, and `40_content/concepts.md` on 2026-08-28, but the diagram itself was never updated to match, leaving the only visual model of the domain silently out of date with its own text.
+
+**Source:** User-directed request to generate a Mermaid domain model for the Content domain on 2026-09-03.
+
+**Implementation:** [Brand ontology](ONTOLOGY.md) `Content flow` diagram.
+
+---
+
 ## 2026-08-27: Content workflow skills reconciled with the operating system
 
 **Decision:** Update all seven content workflow skills (`to-knowledge`, `to-topic`, `to-blueprint`, `to-hooks`, `to-script`, `to-validate`, `to-taxonomy`) to match the operating-system formalization landed the same day: every skill now creates or updates a persistent Work Item record per run, `to-blueprint` and `to-hooks` share an explicit Final/Candidate/Ready-for-hook-development marker convention since a Blueprint's opening choices no longer always arrive pre-filled, `to-script` assigns the formal Production Dependency State enum per beat instead of linking to "available Assets" and drops the removed Channel field, `to-validate` cites Publication Format instead of Channel and records its verdict on the Work Item, and `to-taxonomy` now routes a candidate to whichever context actually owns it (ONTOLOGY.md, or the Theme, Audience Segment, or Channel registry), not always ONTOLOGY.md.

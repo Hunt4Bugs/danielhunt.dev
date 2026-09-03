@@ -5,7 +5,7 @@ type: ontology
 status: active
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-09-03
 facets:
   - content
   - assets
@@ -204,6 +204,25 @@ classDiagram
     }
     class Workflow
     class WorkItem
+    class Creator
+    class CreatorChannel
+    class Review
+    class Motif
+    class CreatorType {
+        <<enumeration>>
+    }
+    class CreatorRelationship {
+        <<enumeration>>
+    }
+    class ReviewType {
+        <<enumeration>>
+    }
+    class ReviewConfidence {
+        <<enumeration>>
+    }
+    class MotifCategory {
+        <<enumeration>>
+    }
 
     Source "*" --> "*" Knowledge : supports
     Knowledge "*" --> "*" Topic : informs
@@ -223,11 +242,12 @@ classDiagram
     ScriptTemplate ..> NarrativeStructure : follows
     ScriptTemplate ..> PublicationFormat : targets
     Script ..> PublicationFormat : intends
-    Blueprint "1" <-- "0..*" Publication : realizes
+    Blueprint "1" <-- "0..*" Publication : realizes (Own)
     Publication "*" --> "1" Channel : belongs to
     Publication ..> PublicationFormat : takes form
     Script "0..1" <-- "0..*" Publication : primary script
     Publication "*" --> "*" Asset : uses
+    Publication "1" <-- "0..*" Publication : derives from
     Workflow "1" --> "*" WorkItem : defines
     WorkItem ..> WorkflowStage : current stage
     WorkItem ..> WorkItemState : execution state
@@ -238,6 +258,18 @@ classDiagram
     Insight "*" --> "*" Knowledge : creates or updates
     Series "*" --> "*" Topic : groups
     Series "*" --> "*" Publication : groups
+    Creator "1" --> "*" CreatorChannel : controls
+    Creator ..> CreatorType : classified by
+    Creator ..> CreatorRelationship : classified by
+    CreatorChannel ..> Channel : takes form
+    Creator "1" <-- "0..*" Publication : observed from (Observed)
+    CreatorChannel "1" <-- "0..*" Publication : captured via (Observed)
+    Publication "1" <-- "0..*" Review : reviews
+    Review ..> ReviewType : classified by
+    Review ..> ReviewConfidence : classified by
+    Motif "1" --> "2..*" Review : derived from
+    Motif ..> MotifCategory : classified by
+    Motif "*" --> "*" Knowledge : may inform
 ```
 
 ## V1 boundary
