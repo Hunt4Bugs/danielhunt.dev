@@ -36,7 +36,8 @@ What a `content.creator` instance document (stored under `creators/`) must conta
 5. **Notes** — free-text observations (optional).
 6. **Creator Channels** — links to this Creator's `content.creator-channel` records (may be empty
    at creation).
-7. **Creating Work Item** — link to the Work Item that created this record.
+7. **Registration Provenance** — link to the Work Item that created this record when one exists;
+   otherwise identify the manual addition date and the source evidence.
 
 ## Notes
 
@@ -45,3 +46,6 @@ conflated into one field — keep them as separate sections. Niches and notes ar
 controlled vocabulary. A Creator is not a general Person or Organization record; it exists only to
 support content-intelligence monitoring (see `concepts.md` and [`10_brand/ONTOLOGY.md`](../../10_brand/ONTOLOGY.md)'s
 V1 boundary).
+
+Direct manual registry additions are permitted. They must preserve their source evidence and
+explicitly state that no creation workflow exists, rather than inventing a Work Item reference.

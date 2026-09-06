@@ -33,10 +33,14 @@ contract this pattern instantiates.
    [Channels](../../10_brand/channels/README.md) registry; do not restate what the platform is).
 3. **Handle** — the account handle or username on that platform, when known (optional).
 4. **URL** — the canonical URL for this account.
-5. **Creating Work Item** — link to the Work Item that created this record.
+5. **Registration Provenance** — link to the Work Item that created this record when one exists;
+   otherwise identify the manual addition date and the source evidence.
 
 ## Notes
 
 "Creator Channel" is named to avoid colliding with `channels.channel`, which means the platform
 type (for example, Instagram) — a different granularity than one Creator's specific account on
 that platform. Do not duplicate the platform-type registry Channels already owns.
+
+Direct manual registry additions are permitted. They must preserve their source evidence and
+explicitly state that no creation workflow exists, rather than inventing a Work Item reference.

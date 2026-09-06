@@ -584,8 +584,8 @@ fields:
     cardinality: 0..*
   - name: creating_work_item
     type: ref(content.work-item)
-    required: true
-    cardinality: 1
+    required: false
+    cardinality: 0..1
 
 ## Creator Channel
 **ID:** `content.creator-channel`
@@ -625,8 +625,8 @@ fields:
     cardinality: 1
   - name: creating_work_item
     type: ref(content.work-item)
-    required: true
-    cardinality: 1
+    required: false
+    cardinality: 0..1
 
 ## Review
 **ID:** `content.review`
