@@ -3,37 +3,35 @@ id: content
 kind: domain
 domain: content
 status: active
-version: 1
+version: 3
 class: "40"
 collection: content
 owner: Daniel Hunt
 created: 2026-08-28
-updated: 2026-08-28
-facets:
-  - marketing
-  - assets
-  - analytics
+updated: 2026-09-07
 related:
   - README.md
   - concepts.md
-  - ../10_brand/ONTOLOGY.md
+  - ../00_system/010_governance/ONTOLOGY.md
 sources:
-  - ../10_brand/ONTOLOGY.md
+  - ../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Content domain
 
 ## Purpose
 
-Content is the Marketing context for reusable editorial material and its lifecycle: capturing
-reusable Knowledge, developing it into communicable Topics, planning channel-agnostic Blueprints,
-and expressing those Blueprints as channel-specific Publications, then measuring and learning from
-what was published. It exists as its own domain — rather than folding into Strategy, Audience, or
-Channels — because it owns a distinct lifecycle (Capture → Validate → Plan → Draft → Review →
-Produce → Publish → Measure → Learn → Reuse/Repurpose) and a distinct set of concepts (Knowledge,
-Source, Topic, Blueprint, Publication, Series, Script, Script Template, Work Item) that recur
-across every piece of brand communication, independent of which Theme, Audience Segment, or
-Channel a given instance uses.
+Content is the whole personal-brand corpus: reusable editorial material and its lifecycle, plus
+the positioning, audience, offers, assets, and measurement material that used to live in separate
+domains under `docs/10_brand/`. It owns a distinct lifecycle (Capture → Validate → Plan → Draft →
+Review → Produce → Publish → Measure → Learn → Reuse/Repurpose) and a distinct set of concepts
+(Knowledge, Source, Topic, Blueprint, Publication, Series, Script, Script Template, Work Item)
+that recur across every piece of brand communication, independent of which Theme, Audience
+Segment, or Channel a given instance uses. Strategy, Audience, Offers, Analytics, and Assets were
+retired as standalone domains (2026-09-07): their real content — the Theme and Audience Segment
+registries, the credibility bank, the public service-offer descriptions, the measurement plan, and
+the design/visual/script/template material — was folded in here rather than deleted, following the
+same pattern Channels and Identity used earlier.
 
 ## Scope
 
@@ -50,29 +48,41 @@ Channel a given instance uses.
   publication-oriented authored asset; a Script Template is reusable fill-in-the-blank scaffolding
   that generates Scripts).
 - Work Item: the persistent record of one execution of one Content Workflow against one subject.
-- Creator and Creator Channel: content-producing entities monitored for competitor, inspiration,
-  peer, or reference intelligence, and the specific platform accounts they hold.
+- Channel: a distribution destination and its compatible Publication Formats ([`channels.md`](channels.md)).
+- Creator and Creator Channel: identity-bearing entities Daniel records and relates to — himself,
+  external creators monitored for competitor, inspiration, peer, or reference intelligence, or a
+  general person or organization worth tracking — and the specific platform accounts they hold.
+  Daniel Hunt's own narrative identity (Brand Statement, Persona, voice/evidence/privacy
+  boundaries) is held as the `Self` Creator record; every Content workflow applies it.
 - Review: structured analysis of an Observed Publication, kept separate from the Publication so
   observations can evolve without mutating the source record.
 - Motif: a reusable observation promoted from two or more corroborating Reviews, which may inform
   or seed Knowledge. Named "Motif" rather than "Pattern" to avoid colliding with this protocol's
   own `Pattern` primitive and the existing Content Pattern taxonomy.
+- Theme: the single durable strategic lens a Topic aligns to ([`themes.md`](themes.md)).
+- Audience Segment: who Content addresses, speaks with, or speaks about ([`audience.md`](audience.md)),
+  plus the Painful Problems, Ideation Table, Credibility Bank, Interest Bank, Differentiation
+  Breakdown, and Desired Associations that operationalize each Segment.
+- Service Offer and Product Offer: the products or services the Brand can credibly introduce or
+  support ([`offers.md`](offers.md)).
+- Asset and Template: general reusable media, design, brand, and knowledge resources, plus
+  fill-in-the-blank Template scaffolding — including the reusable visual and implementation
+  contract ([`design.md`](design.md)) and visual direction ([`visual.md`](visual.md)).
+- Measurement and Insight: dated observed metrics and their interpretations, plus the observation
+  windows, operating success criteria, and interpretation rules that govern them
+  ([`measurement-plan.md`](measurement-plan.md)).
 - The Content-owned controlled vocabularies: Content Pattern, Content Purpose, Narrative
   Structure, Visual Hook Type, Verbal Hook Type, Knowledge Kind, Topic Mode, Publication Format,
   Workflow Stage, Work Item State, Production Dependency State, Creator Type, Creator
-  Relationship, Review Type, Review Confidence, Motif Category.
+  Relationship, Review Type, Review Confidence, Motif Category, Theme, Audience Segment, Asset
+  Type, Media Type, Metric Name.
 
 **Excludes**
 
-- Theme, the strategic lens a Topic aligns to — owned by [Strategy](../10_brand/strategy/README.md).
-- Audience Segment, who a Topic or Publication addresses — owned by [Audience](../10_brand/audience/README.md).
-- Channel and channel-Format compatibility — owned by [Channels](../10_brand/channels/README.md).
-- General (non-Script/Script-Template) reusable resources — owned by [Assets](../10_brand/assets/README.md).
-- Measurement and Insight record contracts and interpretation rules, and the observation-window
-  policy — owned by [Analytics](../10_brand/analytics/README.md); Content only produces the Publication
-  that Measurements attach to and consumes Insights as an input to Knowledge.
-- Voice, evidence, and privacy boundaries as brand-wide rules — owned by [Identity](../10_brand/identity/README.md);
-  Content applies them but does not redefine them.
+- Nothing Brand-shaped remains outside Content. `docs/00_system/` (governance, including the
+  Brand-root [`ONTOLOGY.md`](../00_system/010_governance/ONTOLOGY.md)), `docs/20_site/` (the
+  deployable site implementation), and `docs/30_delivery/` (how the site reaches production) are
+  the only other classes, and none of them originate brand meaning, positioning, or content.
 
 ## Model
 
@@ -92,9 +102,10 @@ Channel a given instance uses.
   subtype).
 - **Work Item** — one execution of one Content Workflow against one primary subject, recording
   execution state, current stage, inputs, decisions, outputs, and validation.
-- **Creator** — a content-producing entity (person, company, brand, or organization) monitored
-  for competitor, inspiration, peer, or reference intelligence; narrower than a general Person or
-  Organization record.
+- **Channel** — a distribution destination (platform type) and its compatible Publication Formats.
+- **Creator** — an identity-bearing entity: Daniel Hunt himself, an external creator (person,
+  company, brand, or organization) monitored for competitor, inspiration, peer, or reference
+  intelligence, or a general person or organization worth recording.
 - **Creator Channel** — one specific account a Creator holds on a Channel platform type; named
   separately from Channel to avoid colliding with that platform-type registry.
 - **Review** — structured analysis of an Observed Publication (visual, format, hook, topic,
@@ -104,37 +115,50 @@ Channel a given instance uses.
   or seed a new Knowledge record. Named "Motif" rather than the source material's "Pattern" to
   avoid colliding with this protocol's own `Pattern` primitive and the existing Content Pattern
   taxonomy.
+- **Theme** — the single durable strategic lens a Topic aligns to.
+- **Audience Segment** — a named group the brand addresses, speaks with, or speaks about, carrying
+  a stable code and an Audience Relationship.
+- **Service Offer** — a public-facing service the commercial Services page can credibly present.
+- **Product Offer** — a Brand-adjacent product direction, recorded at its actual maturity.
+- **Asset** — a reusable media, design, brand, or knowledge resource.
+- **Template** — reusable fill-in-the-blank scaffolding that is not itself a content record.
+- **Measurement** — a dated observed metric for one Publication on one Channel.
+- **Insight** — an interpretation of one or more Measurements.
 
 Full definitions, relationships, and entity contracts live in [`concepts.md`](concepts.md), which
 is this domain's scoped instantiation of the cross-context model in
-[`10_brand/ONTOLOGY.md`](../10_brand/ONTOLOGY.md).
+[`ONTOLOGY.md`](../00_system/010_governance/ONTOLOGY.md).
 
 ## Relationships
 
 - `Source` **supports** `Knowledge`
 - `Knowledge` **informs** `Topic`
-- `Blueprint` **communicates** `Topic`
+- `Topic` **aligned to** `Theme`; `Topic` **addressed by** `Audience Segment`
+- `Blueprint` **communicates** `Topic`; `Blueprint` **addressed by** `Audience Segment`
 - `Script` **produced by** `Blueprint`
 - `ScriptTemplate` **instantiates** `Script`
 - `Publication` **realizes** `Blueprint` (Own Publications only)
 - `Publication` **observed from** `Creator`; `Publication` **captured via** `CreatorChannel`
   (Observed Publications only)
-- `Publication` **belongs to** `channels.channel`
+- `Publication` **belongs to** `content.channel`
 - `Publication` **uses** `Script` and other Assets
 - `Publication` **derives from** `Publication` (repurposed expressions)
 - `Series` **groups** `Topic` and `Publication`
-- `Measurement` **received by** `Publication` (record contract owned by Analytics)
+- `Measurement` **received by** `Publication`
 - `Insight` **informed by** `Measurement`; `Insight` **creates or updates** `Knowledge`
 - `Workflow` **defines** `WorkItem`; `WorkItem` **has one primary subject**
 - `Creator` **controls** `CreatorChannel`
-- `CreatorChannel` **takes form** `channels.channel`
+- `CreatorChannel` **takes form** `content.channel`
 - `Review` **reviews** `Publication`
 - `Motif` **derived from** `Review` (2 or more); `Motif` **may inform** `Knowledge`
+- `Service Offer` **is classified by** the internal service taxonomy (Sales Systems, Marketing
+  Systems, Operations Systems, Custom Software); **presented to** `Audience Segment` (`SERVICES`).
 
 ## Constraints
 
 - A Topic must reference at least one supporting Knowledge.
 - A Blueprint communicates exactly one primary Topic; a Topic may have zero or many Blueprints.
+- A Topic and a Blueprint must each reference exactly one Theme and one Audience Segment.
 - A Publication is either Own (authored through exactly one primary Blueprint) or Observed
   (captured from a Creator via a Creator Channel, no Blueprint) — never both; either way it has
   exactly one Channel. A Blueprint may have zero or many Own Publications.
@@ -147,38 +171,39 @@ is this domain's scoped instantiation of the cross-context model in
   recurring work requires an independent revision concept.
 - A Script may identify an intended Publication Format, but Channel remains a Publication concern.
 - A workflow or skill may propose a new controlled-vocabulary value but may not use it before
-  approval and an update to the owning canonical context (Content itself for Content-owned
-  vocabularies; Strategy, Audience, or Channels for theirs).
-- Creator is scoped to content-producing entities monitored for competitor, inspiration, peer, or
-  reference intelligence; it does not model general people, organizations, or CRM relationships,
-  which remain reserved for the Relationships context.
+  approval and an update to the owning registry — this domain owns all of them now (see
+  [`concepts.md`](concepts.md) for each concept's specific registry file).
+- Creator covers Daniel Hunt himself (`Self`), external creators monitored for competitor,
+  inspiration, peer, or reference intelligence, and general people or organizations worth
+  recording. It is not a full CRM system — do not model releases, claims, deal pipelines, or
+  interaction logs on it.
 - A Creator must carry at least one Creator Relationship classification; Creator Type (what it is)
   and Creator Relationship (our stance toward it) must never be conflated into one field.
 - A Review does not mutate its source Publication; a Publication may carry multiple Reviews across
   different Review Types (or repeated over time), each evolving independently.
 - A Motif must not be created from a single Review — `supporting_reviews` requires at least two
   corroborating Reviews before promotion.
+- Public language for a Service Offer uses the concrete public name, never the internal
+  service-taxonomy category name.
+- A Product Offer and a Service Offer are not interchangeable; the personal brand is not a
+  Product Offer's sales motion and describes a Product Offer only at its actual maturity.
+- A Measurement is evidence, not an explanation or strategic instruction; simulated values are
+  permitted only in explicitly illustrative examples, never in the Measurement record collection.
+- An Insight must separate observed Measurement values from explanations, and must record
+  limitations and plausible competing explanations.
+- Do not infer causation from one Publication, and do not compare unlike Formats, Channels, or
+  observation windows as though equivalent.
+- An overperforming subject does not override Daniel Hunt's identity, Themes, or strategic
+  priorities without an explicit decision recorded in [`themes.md`](themes.md).
 
 ## Related Domains
 
-- [Strategy](../10_brand/strategy/README.md) — owns Theme; Content reads Theme when planning Topics and
-  Blueprints but never defines or extends it.
-- [Audience](../10_brand/audience/README.md) — owns Audience Segment; Content reads it for Topic and
-  Blueprint targeting.
-- [Channels](../10_brand/channels/README.md) — owns Channel and Channel/Format compatibility; Content
-  reads it when developing and validating Publications.
-- [Assets](../10_brand/assets/README.md) — owns general reusable resources; Content owns the Script and
-  Script Template subtypes specifically (`10_brand/assets/scripts/`,
-  `10_brand/assets/templates/`).
-- [Analytics](../10_brand/analytics/README.md) — owns Measurement and Insight record contracts and
-  interpretation rules; Content's Publications are the subject Measurements attach to, and
-  Insights feed back into Content's Knowledge.
-- [Identity](../10_brand/identity/README.md) — owns brand-wide voice, evidence, and privacy boundaries
-  that every Content workflow applies.
-- [Relationships](../10_brand/relationships/README.md) — remains reserved for general Person,
-  Organization, and CRM records; Content's Creator and Creator Channel are a narrower,
-  content-producing-entity-only exception scoped to competitor and inspiration monitoring, and do
-  not extend or duplicate this context.
+- **[`00_system`](../00_system/README.md)** — hosts the Brand-root [`ONTOLOGY.md`](../00_system/010_governance/ONTOLOGY.md)
+  and dated evidence in `090_records/`; Content instantiates that model but does not own the
+  protocol itself.
+- **[`20_site`](../20_site/README.md)** — the deployable static surface; it implements, and must
+  not originate, the voice, visual direction, and design tokens Content and Daniel Hunt's Creator
+  record own.
 
 ## Examples
 
@@ -193,6 +218,11 @@ is this domain's scoped instantiation of the cross-context model in
   boundary and Source link, demonstrating the Source → Knowledge relationship end to end.
 - The [creator monitoring trace](examples/creator-monitoring-trace.md) is the seed of an
   illustrative Creator and Creator Channel record, showing the Creator → Creator Channel
-  relationship and the Creator Channel's reference to an existing `channels.channel` value — it is
+  relationship and the Creator Channel's reference to an existing `content.channel` value — it is
   a simulation used to validate contracts, not asserted evidence of a real Creator or Creator
   Channel.
+- `Systems and Observation` (Theme, active): the default primary Theme for technical instruction.
+- `Primary Editorial Audience` (Audience Segment, code `B2`, Addressed, active): working data and
+  software engineers across industries — the segment the brand talks *to*.
+- `Workflow automation` (Service Offer, active): the broadest entry point among the five public
+  offers.

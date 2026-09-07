@@ -18,7 +18,7 @@ Before acting, read:
 - `docs/40_content/knowledge/README.md` (what a Knowledge record is for and what it must link)
 - `docs/40_content/sources/README.md` (what a Source record is for and what it must not do)
 - `docs/40_content/work-items/README.md` and `docs/40_content/_patterns/work-item.md` (the Work Item identifier format and its required frontmatter and body now live in the pattern file; the README is a short pointer to it)
-- `docs/10_brand/identity/README.md` (truthfulness, evidence, privacy, and scars-not-wounds boundaries)
+- `docs/40_content/creators/daniel-hunt.md` (truthfulness, evidence, privacy, and scars-not-wounds boundaries)
 
 ## Input
 
@@ -43,9 +43,9 @@ Follow `docs/40_content/workflows/capture-knowledge.md`'s Procedure exactly, app
 
 ## Output
 
-Write to `docs/40_content/knowledge/<slug>.md` using `docs/10_brand/assets/templates/knowledge/knowledge-record.md`. Derive `<slug>` by lowercasing the Knowledge record's title and hyphenating.
+Write to `docs/40_content/knowledge/<slug>.md` using `docs/40_content/templates/knowledge/knowledge-record.md`. Derive `<slug>` by lowercasing the Knowledge record's title and hyphenating.
 
-When step 2 above warrants a Source record, write it first to `docs/40_content/sources/<source-slug>.md` using `docs/10_brand/assets/templates/sources/source-record.md`, then link it from the Knowledge record's Source field. `<source-slug>` is a separate slug: derive it by lowercasing and hyphenating the Source record's own Title field (per the Source template's Header section), which typically names the origin or attribution, not the Knowledge subject. It commonly differs from `<slug>` above, as in the existing pair `docs/40_content/knowledge/short-form-anatomy.md` (Knowledge) and `docs/40_content/sources/colin-and-samir-short-form-anatomy.md` (Source).
+When step 2 above warrants a Source record, write it first to `docs/40_content/sources/<source-slug>.md` using `docs/40_content/templates/sources/source-record.md`, then link it from the Knowledge record's Source field. `<source-slug>` is a separate slug: derive it by lowercasing and hyphenating the Source record's own Title field (per the Source template's Header section), which typically names the origin or attribution, not the Knowledge subject. It commonly differs from `<slug>` above, as in the existing pair `docs/40_content/knowledge/short-form-anatomy.md` (Knowledge) and `docs/40_content/sources/colin-and-samir-short-form-anatomy.md` (Source).
 
 Also create, or on a dedup-extend update, one Work Item record under `docs/40_content/work-items/`, per the Skill execution contract's point 7, `capture-knowledge.md`'s own Work Item contract, and `docs/40_content/work-items/README.md`'s required frontmatter and body: `primary_subject` is the target (or, on dedup-extend, the existing) Knowledge record's path (`docs/40_content/knowledge/<slug>.md`), matching the `../topics/example.md`-style file-path format `work-items/README.md` specifies, not a prose description. No required predecessors.
 
@@ -66,7 +66,7 @@ Stop without creating Knowledge when:
 
 Preserve material as an explicitly labeled unknown when it may become usable after verification later. No upstream skill resolves any of these conditions; this is a hard stop pending better material, origin, or clearance, not a handoff to another skill.
 
-Even when this skill stops without creating Knowledge, it still creates, or leaves, a Work Item recording the block rather than producing nothing with no record of the attempt: set `work_state: Blocked` (the matching Work Item State value in `docs/10_brand/ONTOLOGY.md`) and repository `status: blocked`, and record the actual missing evidence, approval, or dependency in the Work Item's own prose fields (see `docs/40_content/work-items/README.md`).
+Even when this skill stops without creating Knowledge, it still creates, or leaves, a Work Item recording the block rather than producing nothing with no record of the attempt: set `work_state: Blocked` (the matching Work Item State value in `docs/00_system/010_governance/ONTOLOGY.md`) and repository `status: blocked`, and record the actual missing evidence, approval, or dependency in the Work Item's own prose fields (see `docs/40_content/work-items/README.md`).
 
 ## Next step
 

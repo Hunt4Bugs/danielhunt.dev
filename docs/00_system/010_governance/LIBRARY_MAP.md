@@ -2,51 +2,37 @@
 id: ops.library-map
 kind: note
 domain: ops
-version: 1
+version: 4
 class: "00"
 collection: governance
 type: library-map
 status: active
 owner: Daniel Hunt
-updated: 2026-08-29
+updated: 2026-09-07
 ---
 
 # Library map
 
 | Class | Purpose | Canonical path | Notes |
 | --- | --- | --- | --- |
-| 00 | Project operating system, governance, and records | `docs/00_system/` | Internal-only system of record. |
-| 10 | Brand foundation and strategy | `docs/10_brand/` | Authoritative brand corpus; filenames are retained. |
+| 00 | Project operating system, governance, and records | `docs/00_system/` | Internal-only system of record; also holds the Brand-root `ONTOLOGY.md` and dated Brand evidence. |
 | 20 | Site implementation | `docs/20_site/` | Canonical site documentation; deployable source remains in `site/`. |
 | 30 | Delivery automation | `docs/30_delivery/` | Internal delivery documentation; configuration remains in `.github/`. |
-| 40 | Content lifecycle | `docs/40_content/` | Reusable editorial material and its lifecycle for the Marketing context. |
+| 40 | Content lifecycle | `docs/40_content/` | The whole personal-brand corpus: reusable editorial material and its lifecycle, plus Themes, Audience, Offers, Assets, and Measurements/Insights, all folded in here after their standalone domains were retired (2026-09-07). |
+
+Class `10` (formerly `docs/10_brand/`) is retired. Its five remaining domains — Strategy,
+Audience, Offers, Assets, Analytics — were folded into `content` on 2026-09-07, joining Identity,
+Marketing, Channels, and Relationships, which were retired the same week. Nothing Brand-shaped
+lives outside `docs/40_content/` now except this file's own governance layer.
 
 ## Class 00 collections
 
 | Collection | Path | Holds |
 | --- | --- | --- |
-| Governance | `010_governance/` | Map, metadata rules, policies. |
+| Governance | `010_governance/` | Map, metadata rules, policies, and the Brand-root [`ONTOLOGY.md`](ONTOLOGY.md). |
 | Agent guidance | `020_agents/` | Autonomy, workflows, validation, nested guidance. |
 | Operations | `030_operations/` | Tracker and triage queue. |
-| Records | `090_records/` | Dated decisions, audits, and setup outputs. |
-
-## Class 10 collections
-
-Each is its own modeled protocol Domain (`README.md`, `domain.md`, `concepts.md`, per
-[`DOMAIN_PROTOCOL.md`](DOMAIN_PROTOCOL.md) §8.1), physically nested under `docs/10_brand/`.
-
-| Collection | Domain | Path | Holds |
-| --- | --- | --- | --- |
-| `brand` | — (root-level Brand corpus material, not itself a modeled Domain) | `docs/10_brand/` | `README.md`, `ONTOLOGY.md`, compatibility pointers, `specs/`, `plans/`, `CHANGELOG.md`. |
-| `identity` | `identity` | `identity/` | Enduring meaning, voice, principles, public language. |
-| `strategy` | `strategy` | `strategy/` | Positioning, goals, Theme registry, strategic weighting. |
-| `audience` | `audience` | `audience/` | Audience Segment registry, painful problems, credibility. |
-| `marketing` | `marketing` | `marketing/` | Campaign, and the unmodeled Distribution/Growth/Funnel scope. |
-| `offers` | `offers` | `offers/` | Service Offer and Product Offer registries. |
-| `assets` | `assets` | `assets/` | Asset and Template registries; hosts Content's Script instances. |
-| `channels` | `channels` | `channels/` | Channel registry and Format compatibility. |
-| `relationships` | `relationships` | `relationships/` | Reserved (`status: draft`); no Concepts modeled yet. |
-| `analytics` | `analytics` | `analytics/` | Measurement and Insight registries, with `_patterns/`. |
+| Records | `090_records/` | Dated decisions, audits, and setup outputs, including the Brand [changelog](../090_records/brand-changelog.md) and its `specs/`/`plans/`. |
 
 ## Class 20 collections
 
@@ -71,7 +57,7 @@ rest of `docs/`.
 
 | Collection | Domain | Path | Holds |
 | --- | --- | --- | --- |
-| `content` | `content` | `docs/40_content/` | Knowledge, Topic, Blueprint, Publication, Series, Source, Work Item, Creator, Creator Channel, Motif, and Review registries; `workflows/`, `_patterns/`, `examples/`. |
+| `content` | `content` | `docs/40_content/` | Knowledge, Topic, Blueprint, Publication, Series, Source, Work Item, Channel, Creator, Creator Channel, Theme, Audience Segment, Service Offer, Product Offer, Asset, Template, Measurement, Insight, Motif, and Review registries; `workflows/`, `_patterns/`, `examples/`. |
 
 Resolve all Project OS paths through this map. Cross-domain relevance belongs in frontmatter `facets` and `related`, not by duplicating an artifact into another class.
 
@@ -84,7 +70,7 @@ Class prefixes above are physical placement only — *where* a file lives. Class
 A protocol Domain does not have to sit inside a numbered class. When one outgrows a single class
 — enough instance directories, workflows, and cross-references that the numeric nesting only adds
 indirection — it may graduate to its own directory directly under `docs/`, as a peer of
-`00_system/`, `10_brand/`, `20_site/`, and `30_delivery/` rather than nested inside one of them.
+`00_system/`, `20_site/`, and `30_delivery/` rather than nested inside one of them.
 
 No Domain currently uses this placement. `content` briefly graduated to root-level `docs/content/`
 and has since been numbered as class `40` (`docs/40_content/`, see [Class 40
@@ -102,13 +88,11 @@ so those two frontmatter keys are omitted rather than carried forward stale (see
 This file owns two controlled vocabularies (`ops` §13.3 — extend only by governed edit here, never
 silently from a workflow or skill):
 
-- **Library Map Class** — `00`, `10`, `20`, `30`, `40`, per the table above.
+- **Library Map Class** — `00`, `20`, `30`, `40`, per the table above. `10` is retired.
 - **Library Map Collection** — the collection names listed in each class's collections table
-  above (e.g. `governance`, `agent-guidance`, `operations`, `records` for class `00`; `brand`,
-  `identity`, `strategy`, `audience`, `marketing`, `offers`, `assets`, `channels`,
-  `relationships`, `analytics` for class `10`; `implementation` for class `20`; `delivery` for
-  class `30`; `content` for class `40`). A root-level domain (see above) has no collection — it
-  isn't nested in a class.
+  above (e.g. `governance`, `agent-guidance`, `operations`, `records` for class `00`;
+  `implementation` for class `20`; `delivery` for class `30`; `content` for class `40`). A
+  root-level domain (see above) has no collection — it isn't nested in a class.
 
 `ops.workflow.create-domain` and `ops.workflow.maintain-record` read both as `taxonomy(...)`-typed
 inputs; neither may extend either vocabulary without a governed edit to this file.

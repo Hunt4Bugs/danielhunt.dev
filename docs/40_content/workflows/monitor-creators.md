@@ -22,7 +22,7 @@ related:
   - ../publications/README.md
   - ../examples/creator-monitoring-trace.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.creator
   entry_stage: Capture
@@ -68,14 +68,14 @@ contract:
 
 ## Required references
 
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): Creator, Creator Channel, Publication, Creator
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): Creator, Creator Channel, Publication, Creator
   Relationship, and their relationships.
 - [Creator records](../creators/README.md): the registry this workflow selects from.
 - [Creator Channel records](../creator-channels/README.md): resolved per selected Creator.
 - [Publication records](../publications/README.md): checked to identify what is already captured.
 - [Capture Publication](capture-publication.md): the workflow this one hands unseen Publications
   off to.
-- [Identity](../../10_brand/identity/README.md): truthfulness and evidence boundaries — this workflow
+- [Daniel Hunt](../creators/daniel-hunt.md): truthfulness and evidence boundaries — this workflow
   only identifies what a Creator has published; it does not itself characterize or judge it.
 
 ## Taxonomy contract

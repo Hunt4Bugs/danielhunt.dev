@@ -20,7 +20,7 @@ related:
   - ../creator-channels/README.md
   - ../publications/README.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.creator-channel   # the Creator Channel being observed; the Publication is what this workflow creates
   entry_stage: Capture
@@ -75,12 +75,12 @@ contract:
 
 ## Required references
 
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): Publication, Creator, Creator Channel, Publication
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): Publication, Creator, Creator Channel, Publication
   Format, and their relationships.
 - [Creator Channel records](../creator-channels/README.md): the subject this workflow observes.
 - [Publication records](../publications/README.md): the Observed Publication this workflow
   produces.
-- [Identity](../../10_brand/identity/README.md): truthfulness and evidence boundaries — an Observed
+- [Daniel Hunt](../creators/daniel-hunt.md): truthfulness and evidence boundaries — an Observed
   Publication records what a Creator published, not Daniel's own claim.
 
 ## Taxonomy contract

@@ -20,7 +20,7 @@ related:
   - ../publications/README.md
   - ../reviews/README.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.publication
   entry_stage: Capture
@@ -82,11 +82,11 @@ contract:
 
 ## Required references
 
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): Review, Publication, Review Type, Review Confidence,
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): Review, Publication, Review Type, Review Confidence,
   and their relationships.
 - [Publication records](../publications/README.md): the subject this workflow reviews.
 - [Review records](../reviews/README.md): the Review this workflow produces.
-- [Identity](../../10_brand/identity/README.md): truthfulness and evidence boundaries — a Review records
+- [Daniel Hunt](../creators/daniel-hunt.md): truthfulness and evidence boundaries — a Review records
   what is actually present in a Publication, not a vague impression of it.
 
 ## Taxonomy contract

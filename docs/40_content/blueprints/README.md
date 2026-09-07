@@ -17,9 +17,9 @@ related:
   - ../_patterns/blueprint.md
   - ../topics/README.md
   - ../publications/README.md
-  - ../../10_brand/assets/scripts/README.md
+  - ../scripts/README.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Blueprint records
@@ -34,4 +34,4 @@ plans here.
   hook selection is completed by [Generate Hook Options](../workflows/generate-hook-options.md).
 - Related instance directories: [Topics](../topics/README.md) (a Blueprint communicates one
   Topic), [Publications](../publications/README.md) (realize a Blueprint). Reusable production
-  scaffolds are Templates under [Assets](../../10_brand/assets/scripts/README.md), not Blueprints.
+  scaffolds are [Templates](../templates/README.md), not Blueprints.

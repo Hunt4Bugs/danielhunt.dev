@@ -14,10 +14,10 @@ facets:
   - assets
 related:
   - ../publications/README.md
-  - ../../10_brand/assets/README.md
+  - ../concepts.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.publication
   entry_stage: Produce
@@ -31,7 +31,7 @@ contract:
       type: taxonomy(Production Dependency State)
       required: true
   creates:
-    - type: assets.asset
+    - type: content.asset
   updates:
     - type: content.publication
   validation:
@@ -63,8 +63,8 @@ contract:
 ## Required references
 
 - The validated Publication and its validation Work Item.
-- [Assets](../../10_brand/assets/README.md): Asset types and production-dependency rules.
-- [Identity](../../10_brand/identity/README.md) and [visual direction](../../10_brand/identity/visual.md).
+- [Assets](../concepts.md#asset): Asset types and production-dependency rules.
+- [Daniel Hunt](../creators/daniel-hunt.md) and [visual direction](../visual.md).
 
 ## Procedure
 

@@ -14,9 +14,9 @@ facets:
 related:
   - ../work-items/README.md
   - ../concepts.md
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Workflows
@@ -60,7 +60,7 @@ Entry and exit stages locate that Work Item execution, not a lifecycle field on 
 This section defines the common execution contract for the Claude Code skills in `.claude/skills/` that run these workflows: `to-knowledge`, `to-topic`, `to-blueprint`, `to-hooks`, `to-script`, and `to-validate`. `to-taxonomy` is the exception these route to when a controlled value is missing, not a follower of this contract. Each skill's own `SKILL.md` links here instead of restating the mechanics below.
 
 1. **Resolve references.** Before acting, read every file listed in the target workflow doc's "Required references" section. Do not proceed from memory of a prior run; re-read on every invocation.
-2. **Validate the taxonomy contract.** For every value the workflow doc's Taxonomy contract lists under "Writes," confirm it appears verbatim in its owning registry: the matching table of [Brand ontology v1](../../10_brand/ONTOLOGY.md) for Knowledge Kind, Topic Mode, Content Pattern, Content Purpose, Narrative Structure, Visual Hook Type, Verbal Hook Type, or Publication Format; the Theme registry in [Strategy](../../10_brand/strategy/README.md) for Theme; the Audience Segment registry in [Audience](../../10_brand/audience/README.md) for Audience Segment; or the Channel registry in [Channels](../../10_brand/channels/README.md) for Channel. Read the owning registry at run time; never hardcode a copy of its values elsewhere, since `to-taxonomy` can extend the ones it governs. If a needed value is not in its owning registry, stop and name `to-taxonomy` as the next step. Never approximate, rename, or silently invent a value.
+2. **Validate the taxonomy contract.** For every value the workflow doc's Taxonomy contract lists under "Writes," confirm it appears verbatim in its owning registry: the matching table of [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md) for Knowledge Kind, Topic Mode, Content Pattern, Content Purpose, Narrative Structure, Visual Hook Type, Verbal Hook Type, or Publication Format; the Theme registry in [Themes](../themes.md) for Theme; the Audience Segment registry in [Audience](../audience.md) for Audience Segment; or the Channel registry in [Channels](../channels.md) for Channel. Read the owning registry at run time; never hardcode a copy of its values elsewhere, since `to-taxonomy` can extend the ones it governs. If a needed value is not in its owning registry, stop and name `to-taxonomy` as the next step. Never approximate, rename, or silently invent a value.
 3. **Check for duplicates.** Before creating a new record, search the target collection directory (for example `rg -il '<keyword>' ../knowledge/` from within `workflows/`) for an existing record covering materially the same subject. When the workflow doc's Procedure calls for extending an existing record on duplication (currently specified in `capture-knowledge.md` step 6 and `develop-topic.md` step 2 only), extend that record instead of creating a near-duplicate.
 4. **Confirm before writing.** Present the target file path, every chosen taxonomy value, and a section-by-section summary of the planned content. Wait for explicit approval before creating or editing the file. Silence or an unrelated reply is not approval. This gate covers a domain record and a Work Item recording a successful outcome. It does not gate a Work Item that only records a stop or block (point 7 below): no domain record is being written in that case, so recording why the run halted is the safe default action itself, not a change that needs separate approval.
 5. **Honor stop conditions.** When a workflow doc's "Stop conditions" trigger, halt immediately. State which condition triggered and which workflow (and its skill, if one exists yet) resolves it. Never proceed past a stated stop condition.

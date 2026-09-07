@@ -17,7 +17,7 @@ related:
   - ../work-items/README.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.knowledge
   entry_stage: Validate
@@ -31,10 +31,10 @@ contract:
       type: ref(content.knowledge)
       required: true
     - name: theme
-      type: ref(strategy.theme)
+      type: ref(content.theme)
       required: true
     - name: audience_segment
-      type: ref(audience.segment)
+      type: ref(content.audience-segment)
       required: true
     - name: topic_mode
       type: taxonomy(Topic Mode)
@@ -74,11 +74,11 @@ contract:
 
 ## Required references
 
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): Topic, Topic Mode, Knowledge relationships, and the boundary between Topic, Blueprint, and Publication.
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): Topic, Topic Mode, Knowledge relationships, and the boundary between Topic, Blueprint, and Publication.
 - [Topic records](../topics/README.md): reusable-subject and relationship requirements.
-- [Strategy](../../10_brand/strategy/README.md): primary Themes, positioning, and editorial constraints.
-- [Audience](../../10_brand/audience/README.md): Audience Segments, needs, problems, and credibility boundaries.
-- [Identity](../../10_brand/identity/README.md): voice, privacy, scars-not-wounds, and observation-over-preaching boundaries.
+- [Themes](../themes.md): primary Themes, positioning, and editorial constraints.
+- [Audience](../audience.md): Audience Segments, needs, problems, and credibility boundaries.
+- [Daniel Hunt](../creators/daniel-hunt.md): voice, privacy, scars-not-wounds, and observation-over-preaching boundaries.
 
 ## Taxonomy contract
 

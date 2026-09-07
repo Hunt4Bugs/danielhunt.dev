@@ -17,7 +17,7 @@ related:
   - ../topics/README.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Pattern: Topic

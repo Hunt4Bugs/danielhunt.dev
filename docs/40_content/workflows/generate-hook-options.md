@@ -65,10 +65,10 @@ Apply the source-derived Quilt Method to a short-form Blueprint that is ready fo
 
 ## Required references
 
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): Visual Hook Type, Verbal Hook Type, and Hook usage conditions.
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): Visual Hook Type, Verbal Hook Type, and Hook usage conditions.
 - [Short-form anatomy Source](../sources/colin-and-samir-short-form-anatomy.md): attributed origin of the hook catalog and Quilt Method.
 - [Short-form anatomy Knowledge](../knowledge/short-form-anatomy.md): reusable method and timing boundary.
-- [Identity](../../10_brand/identity/README.md) and [Strategy](../../10_brand/strategy/README.md): documentary and editorial constraints.
+- [Daniel Hunt](../creators/daniel-hunt.md) and [Themes](../themes.md): documentary and editorial constraints.
 
 ## Taxonomy contract
 
@@ -85,7 +85,7 @@ One Blueprint ready for hook development with a Topic, audience promise, evidenc
 1. Generate at least three Visual Hook Type and Verbal Hook Type pairings.
 2. Write one first-frame description and one concise open-loop line for each pairing.
 3. Reject options that require invented footage, unsupported facts, customer outcomes, celebrity likeness, or off-brand trend participation.
-4. Apply the hook usage conditions in [Brand ontology v1](../../10_brand/ONTOLOGY.md).
+4. Apply the hook usage conditions in [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md).
 5. Select the strongest remaining pairing based on truthfulness, Brand fit, and production feasibility.
 
 ## Output

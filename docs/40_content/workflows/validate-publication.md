@@ -14,10 +14,10 @@ facets:
   - channels
 related:
   - ../publications/README.md
-  - ../../10_brand/identity/README.md
+  - ../creators/daniel-hunt.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.publication
   entry_stage: Review
@@ -69,9 +69,9 @@ contract:
 
 ## Required references
 
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): Publication, Format, Production Dependency State, and evidence conditions.
-- [Channels](../../10_brand/channels/README.md): Channel registry and compatibility.
-- [Identity](../../10_brand/identity/README.md), [Strategy](../../10_brand/strategy/README.md), and the Publication's Blueprint and Sources.
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): Publication, Format, Production Dependency State, and evidence conditions.
+- [Channels](../channels.md): Channel registry and compatibility.
+- [Daniel Hunt](../creators/daniel-hunt.md), [Themes](../themes.md), and the Publication's Blueprint and Sources.
 
 ## Checks
 

@@ -16,9 +16,9 @@ related:
   - ../_patterns/knowledge.md
   - ../sources/README.md
   - ../topics/README.md
-  - ../../10_brand/analytics/insights/README.md
+  - ../insights/README.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Knowledge records

@@ -15,9 +15,9 @@ related:
   - ../concepts.md
   - ../_patterns/work-item.md
   - ../workflows/README.md
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Work Item records

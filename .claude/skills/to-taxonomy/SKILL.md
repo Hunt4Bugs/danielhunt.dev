@@ -1,18 +1,18 @@
 ---
 name: to-taxonomy
-description: Use when a candidate Content Pattern, Content Purpose, Narrative Structure, Hook Type, Publication Format, Knowledge Kind, Topic Mode, Theme, Audience Segment, Channel, or other controlled taxonomy value is needed but is not already defined in its owning canonical context. Also trigger when another skill's Stop condition names this skill, or on "add a new [taxonomy value] to the ontology," "propose a taxonomy addition." Edits docs/10_brand/ONTOLOGY.md, or the Theme, Audience Segment, or Channel registry that actually owns the candidate, after explicit approval; never adds a value silently.
+description: Use when a candidate Content Pattern, Content Purpose, Narrative Structure, Hook Type, Publication Format, Knowledge Kind, Topic Mode, Theme, Audience Segment, Channel, or other controlled taxonomy value is needed but is not already defined in its owning canonical context. Also trigger when another skill's Stop condition names this skill, or on "add a new [taxonomy value] to the ontology," "propose a taxonomy addition." Edits docs/00_system/010_governance/ONTOLOGY.md, or the Theme, Audience Segment, or Channel registry that actually owns the candidate, after explicit approval; never adds a value silently.
 ---
 
 # To Taxonomy
 
 ## Overview
 
-This skill turns a candidate controlled value that does not fit any existing entry in its owning canonical context into either an approved update to that context or a rejected, non-canonical proposal, following `docs/40_content/workflows/propose-taxonomy-addition.md`. The owning canonical context is `docs/10_brand/ONTOLOGY.md` for most taxonomies, but the Theme, Audience Segment, or Channel registry for those three specifically (see Output below).
+This skill turns a candidate controlled value that does not fit any existing entry in its owning canonical context into either an approved update to that context or a rejected, non-canonical proposal, following `docs/40_content/workflows/propose-taxonomy-addition.md`. The owning canonical context is `docs/00_system/010_governance/ONTOLOGY.md` for most taxonomies, but the Theme, Audience Segment, or Channel registry for those three specifically (see Output below).
 
 Two things make this skill different from every other skill in `.claude/skills/`:
 
-1. **It edits the owning canonical context directly, not always `docs/10_brand/ONTOLOGY.md`.** `to-knowledge`, `to-topic`, `to-blueprint`, `to-hooks`, `to-script`, and `to-validate` each write or edit their own Content record under `docs/40_content/`. This skill does not write a Content record at all: on approval, its entire Output is an edit to whichever context actually owns the candidate's meaning. Per `docs/10_brand/ONTOLOGY.md`'s "Entities versus taxonomies" section: "Controlled vocabularies remain with the context that owns their meaning. This ontology owns Content taxonomies. Strategy owns Theme, Audience owns Audience Segment, and Channels owns Channel." For a Knowledge Kind, Topic Mode, Content Pattern, Content Purpose, Narrative Structure, Visual Hook Type, Verbal Hook Type, Publication Format, or any other genuinely new taxonomy category not owned by one of those three registries, the edit target is `docs/10_brand/ONTOLOGY.md`. For a Theme, the edit target is the Theme registry in `docs/10_brand/strategy/README.md`. For an Audience Segment, it is the Audience Segment registry in `docs/10_brand/audience/README.md`. For a Channel, it is the Channel registry in `docs/10_brand/channels/README.md`. Do not default to `ONTOLOGY.md` for a Theme, Audience Segment, or Channel candidate; that is no longer the owning context for those three.
-2. **Approval is a hard gate, not a default.** No candidate value is ever added to its owning canonical context, whether `docs/10_brand/ONTOLOGY.md` or one of the three registries, without an explicit, affirmative approval captured in the current conversation. This holds even when the case for the new value looks obviously correct, even when the requesting skill's Stop condition made the need self-evident, and even when a Source or internal example is already linked. Absent that approval, the correct Output is no edit at all, per `docs/40_content/workflows/propose-taxonomy-addition.md`'s Output: "Skills must not silently add canonical values."
+1. **It edits the owning canonical context directly, not always `docs/00_system/010_governance/ONTOLOGY.md`.** `to-knowledge`, `to-topic`, `to-blueprint`, `to-hooks`, `to-script`, and `to-validate` each write or edit their own Content record under `docs/40_content/`. This skill does not write a Content record at all: on approval, its entire Output is an edit to whichever context actually owns the candidate's meaning. Per `docs/00_system/010_governance/ONTOLOGY.md`'s "Entities versus taxonomies" section: "Controlled vocabularies remain with the context that owns their meaning. This ontology owns the taxonomy definitions below; Content owns Theme, Audience Segment, and Channel, alongside every other Content-owned vocabulary." Theme, Audience Segment, and Channel each still get their own registry file (see below) rather than living as rows in `ONTOLOGY.md` itself. For a Knowledge Kind, Topic Mode, Content Pattern, Content Purpose, Narrative Structure, Visual Hook Type, Verbal Hook Type, Publication Format, or any other genuinely new taxonomy category not owned by one of those three registries, the edit target is `docs/00_system/010_governance/ONTOLOGY.md`. For a Theme, the edit target is the Theme registry in `docs/40_content/themes.md`. For an Audience Segment, it is the Audience Segment registry in `docs/40_content/audience.md`. For a Channel, it is the Channel registry in `docs/40_content/channels.md`. Do not default to `ONTOLOGY.md` for a Theme, Audience Segment, or Channel candidate; that is no longer the owning context for those three.
+2. **Approval is a hard gate, not a default.** No candidate value is ever added to its owning canonical context, whether `docs/00_system/010_governance/ONTOLOGY.md` or one of the three registries, without an explicit, affirmative approval captured in the current conversation. This holds even when the case for the new value looks obviously correct, even when the requesting skill's Stop condition made the need self-evident, and even when a Source or internal example is already linked. Absent that approval, the correct Output is no edit at all, per `docs/40_content/workflows/propose-taxonomy-addition.md`'s Output: "Skills must not silently add canonical values."
 
 This skill is the escape hatch named in `docs/40_content/workflows/README.md`'s Skill execution contract, step 2: "If a needed value is not in the table, stop and name `to-taxonomy` as the next step." It is also the one skill that contract explicitly carves out as an exception: "`to-taxonomy` is the exception these route to when a controlled value is missing, not a follower of this contract." Every other skill validates the taxonomy contract, checks for duplicates, confirms before writing, honors stop conditions, and suggests (without chaining) the next skill, all per that shared contract. This skill does not inherit any of that; what makes it self-contained instead is its own four-step Procedure (below), together with Output's four-way routing logic and the rules and rationale carried in the Work Item tracking section.
 
@@ -21,13 +21,13 @@ This skill is the escape hatch named in `docs/40_content/workflows/README.md`'s 
 Before acting, read:
 
 - `docs/40_content/workflows/propose-taxonomy-addition.md` (this skill's Work Item contract, Procedure, Input, and Output)
-- `docs/10_brand/ONTOLOGY.md` (the full canonical taxonomy list and exact table structure to edit for every entity except Theme, Audience Segment, and Channel; also its "Entities versus taxonomies" section, which states which context owns each vocabulary)
-- `docs/10_brand/strategy/README.md`, `docs/10_brand/audience/README.md`, and `docs/10_brand/channels/README.md` (owner-specific registries when the candidate is a Theme, Audience Segment, or Channel; `docs/10_brand/strategy/README.md` also carries positioning and editorial constraints the new value must respect regardless of entity type)
+- `docs/00_system/010_governance/ONTOLOGY.md` (the full canonical taxonomy list and exact table structure to edit for every entity except Theme, Audience Segment, and Channel; also its "Entities versus taxonomies" section, which states which context owns each vocabulary)
+- `docs/40_content/themes.md`, `docs/40_content/audience.md`, and `docs/40_content/channels.md` (owner-specific registries when the candidate is a Theme, Audience Segment, or Channel; `docs/40_content/themes.md` also carries positioning and editorial constraints the new value must respect regardless of entity type)
 - `docs/40_content/work-items/README.md` and `docs/40_content/_patterns/work-item.md` (the Work Item identifier format and its required frontmatter and body now live in the pattern file; the README is a short pointer to it)
 - `docs/40_content/sources/README.md` (what a Source record is, for the provenance-link requirement)
-- `docs/10_brand/identity/README.md` (voice, evidence, and brand-fit boundaries the new value must respect)
+- `docs/40_content/creators/daniel-hunt.md` (voice, evidence, and brand-fit boundaries the new value must respect)
 
-Do not proceed from memory of a prior run; re-read `docs/10_brand/ONTOLOGY.md` at run time, since its tables may have changed since the last time this skill ran.
+Do not proceed from memory of a prior run; re-read `docs/00_system/010_governance/ONTOLOGY.md` at run time, since its tables may have changed since the last time this skill ran.
 
 Note: unlike the other six skills, this skill does not also read or link `docs/40_content/workflows/README.md#skill-execution-contract`. That contract explicitly names this skill as its exception, so citing it here as a doc this skill "follows" would misstate the relationship. Read the contract section only to understand how upstream skills describe handing off to this one, not as a procedure this skill itself executes.
 
@@ -36,7 +36,7 @@ Note: unlike the other six skills, this skill does not also read or link `docs/4
 Gather all of the following before proceeding. If any item is missing, ask for it; do not guess or infer a definition on the requester's behalf.
 
 - **The candidate value's name.**
-- **The entity it attaches to.** Either Knowledge, Topic, Blueprint, Publication, Script, or Work Item, matched against the "Applied to" column of the relevant table in `docs/10_brand/ONTOLOGY.md` (for example, a Hook Type attaches to Blueprint; a Knowledge Kind attaches to Knowledge, matching that workflow doc's own Input line: "a candidate Content Pattern, Purpose, Narrative Structure, Hook Type, Format, or other controlled value"). Note that Script has no "Applied to" value that is literally just "Script": it appears only inside the Publication Format row's compound value, "Publication; intended by Script and Script Template." Match on that compound value when the candidate's entity is Script. Or, when the candidate is itself a Theme, an Audience Segment, or a Channel, say so directly: these three have no "Applied to" column of their own since they are not `ONTOLOGY.md` rows at all, and the registry that owns them (`docs/10_brand/strategy/README.md`, `docs/10_brand/audience/README.md`, or `docs/10_brand/channels/README.md`) determines the Output target, per Overview above.
+- **The entity it attaches to.** Either Knowledge, Topic, Blueprint, Publication, Script, or Work Item, matched against the "Applied to" column of the relevant table in `docs/00_system/010_governance/ONTOLOGY.md` (for example, a Hook Type attaches to Blueprint; a Knowledge Kind attaches to Knowledge, matching that workflow doc's own Input line: "a candidate Content Pattern, Purpose, Narrative Structure, Hook Type, Format, or other controlled value"). Note that Script has no "Applied to" value that is literally just "Script": it appears only inside the Publication Format row's compound value, "Publication; intended by Script and Script Template." Match on that compound value when the candidate's entity is Script. Or, when the candidate is itself a Theme, an Audience Segment, or a Channel, say so directly: these three have no "Applied to" column of their own since they are not `ONTOLOGY.md` rows at all, and the registry that owns them (`docs/40_content/themes.md`, `docs/40_content/audience.md`, or `docs/40_content/channels.md`) determines the Output target, per Overview above.
 - **A definition** of what the value means and when it applies.
 - **Why none of the existing values fit**: which existing values in that taxonomy's row (or registry) were considered and rejected, and why.
 - **For an Audience Segment candidate only, a proposed Stable code.** A short code in the shape of the existing `B2`, `B1`, `A`, and `SERVICES` codes in the Audience Segment registry's "Stable code" column. Nothing else in this workflow supplies this value; gather it explicitly from the requester rather than inferring one from the Segment name.
@@ -50,23 +50,23 @@ Follow `docs/40_content/workflows/propose-taxonomy-addition.md`'s Procedure exac
 
 1. **Record the proposal.** State the proposed name, definition, intended entity, and why existing values do not fit, using the Input gathered above.
 2. **Link provenance.** Link at least one Source record from `docs/40_content/sources/` or a verified internal example (an existing Knowledge, Topic, Blueprint, or Publication record) that supports the proposed value. A proposal with no linked Source or verified example is incomplete; do not proceed to approval without one.
-3. **Define usage conditions.** State any evidence requirements or editorial-review requirements the value carries, following the existing pattern in `docs/10_brand/ONTOLOGY.md`'s "Hook usage conditions" table (for example, values built on a statistic or quotation carry an evidence requirement; values touching trends, public figures, or exaggeration carry an editorial-review requirement). Not every value needs a usage condition; state explicitly when none applies.
+3. **Define usage conditions.** State any evidence requirements or editorial-review requirements the value carries, following the existing pattern in `docs/00_system/010_governance/ONTOLOGY.md`'s "Hook usage conditions" table (for example, values built on a statistic or quotation carry an evidence requirement; values touching trends, public figures, or exaggeration carry an editorial-review requirement). Not every value needs a usage condition; state explicitly when none applies.
 4. **Obtain explicit approval before adding the value to its owning canonical context.** Present the full proposal (name, entity, definition, rejected-alternatives reasoning, provenance link, usage conditions, and the exact edit described in Output below) and wait for an explicit, affirmative approval in the current conversation. Silence or an unrelated reply is not approval. Do not proceed to Output without it.
 
 ## Output
 
 Before any table-editing mechanics apply, the first step is determining which of four targets the candidate belongs to, using the entity gathered in Input:
 
-- **Theme** → the Theme registry table in `docs/10_brand/strategy/README.md`.
-- **Audience Segment** → the Audience Segment registry table in `docs/10_brand/audience/README.md`.
-- **Channel** → the Channel registry table in `docs/10_brand/channels/README.md`.
-- **Everything else** (Knowledge Kind, Topic Mode, Content Pattern, Content Purpose, Narrative Structure, Visual Hook Type, Verbal Hook Type, Publication Format, or any genuinely new taxonomy category that is not one of the three registries above) → the matching taxonomy table in `docs/10_brand/ONTOLOGY.md`.
+- **Theme** → the Theme registry table in `docs/40_content/themes.md`.
+- **Audience Segment** → the Audience Segment registry table in `docs/40_content/audience.md`.
+- **Channel** → the Channel registry table in `docs/40_content/channels.md`.
+- **Everything else** (Knowledge Kind, Topic Mode, Content Pattern, Content Purpose, Narrative Structure, Visual Hook Type, Verbal Hook Type, Publication Format, or any genuinely new taxonomy category that is not one of the three registries above) → the matching taxonomy table in `docs/00_system/010_governance/ONTOLOGY.md`.
 
-This follows `docs/10_brand/ONTOLOGY.md`'s own "Entities versus taxonomies" section directly. Do not default to `ONTOLOGY.md` for a Theme, Audience Segment, or Channel candidate; that is no longer the owning context for those three.
+This follows `docs/00_system/010_governance/ONTOLOGY.md`'s own "Entities versus taxonomies" section directly. Do not default to `ONTOLOGY.md` for a Theme, Audience Segment, or Channel candidate; that is no longer the owning context for those three.
 
 **On approval:** edit the target file identified above. No other file changes beyond the Work Item record (see Work Item tracking below).
 
-### Target: `docs/10_brand/ONTOLOGY.md`
+### Target: `docs/00_system/010_governance/ONTOLOGY.md`
 
 First, locate the correct table and row within `ONTOLOGY.md`:
 
@@ -83,7 +83,7 @@ Then edit within the existing row-and-column structure without disturbing other 
 
 Preserve the file's existing minimal single-space pipe formatting (`| cell | cell |`); these tables are not padded to visually align columns, so do not introduce column padding that the rest of the table lacks.
 
-### Target: Theme registry (`docs/10_brand/strategy/README.md`)
+### Target: Theme registry (`docs/40_content/themes.md`)
 
 The Theme registry table has two columns, `| Theme | Meaning |`. Append one new row at the bottom of the table's existing five rows, in this shape:
 
@@ -91,21 +91,21 @@ The Theme registry table has two columns, `| Theme | Meaning |`. Append one new 
 
 There is no separate Definition column and no usage-conditions table for Themes; the Meaning cell carries the full definition on its own. Do not reorder or renumber the existing rows, and preserve the table's existing minimal single-space pipe formatting, matching `ONTOLOGY.md`'s own convention (no column padding).
 
-### Target: Audience Segment registry (`docs/10_brand/audience/README.md`)
+### Target: Audience Segment registry (`docs/40_content/audience.md`)
 
 The Audience Segment registry table has four columns, `| Segment | Stable code | Audience Relationship | Use |`. Append one new row at the bottom of the table's existing four rows, in this shape:
 
 `| <Segment name> | <Stable code gathered in Input> | <Addressed, Spoken-with, or Spoken-about> | <one-sentence use> |`
 
-The Audience Relationship value must be one of the three values already defined in `docs/10_brand/ONTOLOGY.md`'s "Supporting taxonomies" table (`Audience Relationship | Audience Segment | Addressed, Spoken-with, Spoken-about`); do not invent a fourth relationship value here, and confirm the chosen one with the approver as part of the proposal in Procedure step 1. The Stable code is the short code gathered in Input (matching the shape of the existing `B2`, `B1`, `A`, `SERVICES` codes); nothing else in this workflow supplies it. Do not reorder or renumber the existing rows, and preserve the same minimal pipe formatting.
+The Audience Relationship value must be one of the three values already defined in `docs/00_system/010_governance/ONTOLOGY.md`'s "Supporting taxonomies" table (`Audience Relationship | Audience Segment | Addressed, Spoken-with, Spoken-about`); do not invent a fourth relationship value here, and confirm the chosen one with the approver as part of the proposal in Procedure step 1. The Stable code is the short code gathered in Input (matching the shape of the existing `B2`, `B1`, `A`, `SERVICES` codes); nothing else in this workflow supplies it. Do not reorder or renumber the existing rows, and preserve the same minimal pipe formatting.
 
-### Target: Channel registry (`docs/10_brand/channels/README.md`)
+### Target: Channel registry (`docs/40_content/channels.md`)
 
 The Channel registry table has four columns, `| Channel | Status | Compatible Publication Formats | Role |`. Append one new row at the bottom of the table's existing five rows, in this shape:
 
 `| <Channel name> | <Status> | <Compatible Publication Formats> | <one-sentence role> |`
 
-Compatible Publication Formats must use real Publication Format values from `docs/10_brand/ONTOLOGY.md`'s "Content and delivery taxonomies" table (Text Post, Thread, Carousel, Short-form Video, Long-form Video, Article, Newsletter); do not invent a Format that is not already in that list, since a genuinely new Format would itself need to go through the `ONTOLOGY.md` target above first, before it could be cited here. For a Channel supporting more than one Format, list them comma-separated in the same cell, matching X's and Instagram's existing rows (e.g. `Text Post, Thread`). Status is presumably one of `Active`, `Planned`, or `Future`, per the existing table's own rows, but this is inferred from those rows rather than a formally defined enum documented elsewhere in `ONTOLOGY.md` or the registry docs; present it to the approver as inferred, not as an asserted governed taxonomy, and flag if a genuinely new Status value seems needed. Do not reorder or renumber the existing rows, and preserve the same minimal pipe formatting.
+Compatible Publication Formats must use real Publication Format values from `docs/00_system/010_governance/ONTOLOGY.md`'s "Content and delivery taxonomies" table (Text Post, Thread, Carousel, Short-form Video, Long-form Video, Article, Newsletter); do not invent a Format that is not already in that list, since a genuinely new Format would itself need to go through the `ONTOLOGY.md` target above first, before it could be cited here. For a Channel supporting more than one Format, list them comma-separated in the same cell, matching X's and Instagram's existing rows (e.g. `Text Post, Thread`). Status is presumably one of `Active`, `Planned`, or `Future`, per the existing table's own rows, but this is inferred from those rows rather than a formally defined enum documented elsewhere in `ONTOLOGY.md` or the registry docs; present it to the approver as inferred, not as an asserted governed taxonomy, and flag if a genuinely new Status value seems needed. Do not reorder or renumber the existing rows, and preserve the same minimal pipe formatting.
 
 ### On rejection
 
@@ -138,38 +138,38 @@ Confirm before writing, per Procedure step 4 above (which already establishes th
 
 Approval is a hard gate, not a default: this skill has no stop condition of its own beyond "no approval yet." If the Procedure reaches step 4 and explicit approval is not given in the current conversation, whether because it is refused, deferred, or simply never addressed, the correct outcome is no edit to the target file identified in Output, whichever of the four it was. Do not add the value "provisionally," "for now," or on the assumption that approval is likely; there is no silent or partial addition.
 
-Even when this skill stops here, it still creates or updates the Work Item recording the block rather than producing nothing with no record of the attempt: set `work_state: Blocked` (the matching Work Item State value in `docs/10_brand/ONTOLOGY.md`) and repository `status: blocked`, matching the pattern the sibling skills use when the underlying evidence, approval, or dependency genuinely does not exist yet, and record the actual missing approval in the Work Item's own prose fields, per `docs/40_content/work-items/README.md` and the Work Item tracking subsection above. The underlying block was never resolved, so the Work Item stays `Blocked`, not `Completed`.
+Even when this skill stops here, it still creates or updates the Work Item recording the block rather than producing nothing with no record of the attempt: set `work_state: Blocked` (the matching Work Item State value in `docs/00_system/010_governance/ONTOLOGY.md`) and repository `status: blocked`, matching the pattern the sibling skills use when the underlying evidence, approval, or dependency genuinely does not exist yet, and record the actual missing approval in the Work Item's own prose fields, per `docs/40_content/work-items/README.md` and the Work Item tracking subsection above. The underlying block was never resolved, so the Work Item stays `Blocked`, not `Completed`.
 
 ## Next step
 
-Hand off back to whichever skill and run were captured in Input as originally blocked, per this Work Item's "Possible next workflows" (resume the originating workflow after approval, otherwise use an existing value or end the originating execution). Name that skill explicitly (for example "`to-blueprint`, resume the Blueprint draft for `docs/40_content/topics/<slug>.md`") and confirm the new value now appears in its target file (`docs/10_brand/ONTOLOGY.md`, or the Theme, Audience Segment, or Channel registry, whichever Output used) before that skill re-validates its taxonomy contract and continues. If no specific blocked skill/run was captured at Input, say so plainly rather than inventing one.
+Hand off back to whichever skill and run were captured in Input as originally blocked, per this Work Item's "Possible next workflows" (resume the originating workflow after approval, otherwise use an existing value or end the originating execution). Name that skill explicitly (for example "`to-blueprint`, resume the Blueprint draft for `docs/40_content/topics/<slug>.md`") and confirm the new value now appears in its target file (`docs/00_system/010_governance/ONTOLOGY.md`, or the Theme, Audience Segment, or Channel registry, whichever Output used) before that skill re-validates its taxonomy contract and continues. If no specific blocked skill/run was captured at Input, say so plainly rather than inventing one.
 
 ## Validation
 
-For a value added to `docs/10_brand/ONTOLOGY.md`:
+For a value added to `docs/00_system/010_governance/ONTOLOGY.md`:
 
 ```
-rg -n '^\| <Taxonomy name> \|.*<new value>' docs/10_brand/ONTOLOGY.md
+rg -n '^\| <Taxonomy name> \|.*<new value>' docs/00_system/010_governance/ONTOLOGY.md
 ```
 
-Anchor on the literal markdown row prefix for the specific taxonomy (for example `| Content Pattern |`), not a bare search for `<new value>`: an unanchored match can be satisfied by an unrelated Definition clause, a mermaid diagram class name, or a substring of an existing word, none of which confirm the edit landed in the right row. This should match nothing before approval, and should match the new entry, in the correct taxonomy's row, after approval. If a usage condition was also added, separately confirm it with `rg -n '^\| <Condition> \|.*<new value>' docs/10_brand/ONTOLOGY.md` against the "Hook usage conditions" table.
+Anchor on the literal markdown row prefix for the specific taxonomy (for example `| Content Pattern |`), not a bare search for `<new value>`: an unanchored match can be satisfied by an unrelated Definition clause, a mermaid diagram class name, or a substring of an existing word, none of which confirm the edit landed in the right row. This should match nothing before approval, and should match the new entry, in the correct taxonomy's row, after approval. If a usage condition was also added, separately confirm it with `rg -n '^\| <Condition> \|.*<new value>' docs/00_system/010_governance/ONTOLOGY.md` against the "Hook usage conditions" table.
 
 For a Theme added to the Theme registry:
 
 ```
-rg -n '^\| <Theme name> \|' docs/10_brand/strategy/README.md
+rg -n '^\| <Theme name> \|' docs/40_content/themes.md
 ```
 
 For an Audience Segment added to the Audience Segment registry:
 
 ```
-rg -n '^\| <Segment name> \|' docs/10_brand/audience/README.md
+rg -n '^\| <Segment name> \|' docs/40_content/audience.md
 ```
 
 For a Channel added to the Channel registry:
 
 ```
-rg -n '^\| <Channel name> \|' docs/10_brand/channels/README.md
+rg -n '^\| <Channel name> \|' docs/40_content/channels.md
 ```
 
 Anchor all three registry checks on the literal row prefix (the candidate's own name as the first cell), the same reasoning as the `ONTOLOGY.md` check above: each registry's Meaning, Use, or Role cell is free text and could otherwise produce a false-positive match unrelated to the actual row. Each of these three should match nothing before approval, and should match exactly the new row after approval.

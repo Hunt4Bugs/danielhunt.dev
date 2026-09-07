@@ -1,6 +1,6 @@
 ---
 name: to-script
-description: Use when the user wants to turn an approved short-form Blueprint (with its selected hooks) into a full Script Asset: shotlist, voiceover, and production cues. Also trigger on "write the script," "draft the shotlist," or "turn this blueprint into a script." Writes Script Assets under docs/10_brand/assets/scripts/.
+description: Use when the user wants to turn an approved short-form Blueprint (with its selected hooks) into a full Script Asset: shotlist, voiceover, and production cues. Also trigger on "write the script," "draft the shotlist," or "turn this blueprint into a script." Writes Script Assets under docs/40_content/scripts/.
 ---
 
 # To Script
@@ -15,9 +15,9 @@ Before acting, read:
 
 - `docs/40_content/workflows/generate-short-form-script.md` (this skill's Procedure, Input, Output, Taxonomy contract, and Prohibitions)
 - `docs/40_content/workflows/README.md#skill-execution-contract` (taxonomy validation, confirm-before-write, stop-condition routing, and chaining rules that apply to every step below)
-- `docs/10_brand/assets/templates/scripts/short-form-stop-hook-payoff.md` (the only Script template that currently exists; see Output below)
-- `docs/10_brand/identity/README.md` (voice, privacy, scars-not-wounds, and observation-over-preaching boundaries)
-- `docs/10_brand/assets/README.md` (what an Asset and a Script Template are, how a Script relates to its primary Blueprint, and the "Production dependencies" section's criteria for choosing among the four Production Dependency State values)
+- `docs/40_content/templates/scripts/short-form-stop-hook-payoff.md` (the only Script template that currently exists; see Output below)
+- `docs/40_content/creators/daniel-hunt.md` (voice, privacy, scars-not-wounds, and observation-over-preaching boundaries)
+- `docs/40_content/concepts.md#asset` (what an Asset and a Script Template are, how a Script relates to its primary Blueprint, and the "Production dependencies" section's criteria for choosing among the four Production Dependency State values)
 - `docs/40_content/work-items/README.md` and `docs/40_content/_patterns/work-item.md` (the Work Item identifier format and its required frontmatter and body now live in the pattern file; the README is a short pointer to it)
 - `.claude/skills/to-blueprint/SKILL.md` (defines the Final / Candidate / Ready-for-hook-development convention this skill's Input relies on to tell a settled Blueprint from an unsettled one)
 
@@ -29,13 +29,13 @@ Prefer an explicit Blueprint path when the user supplies one; otherwise identify
 
 ## Procedure
 
-Follow `generate-short-form-script.md`'s Procedure exactly, applying the Skill execution contract at each new-record decision point. Its step 2 (fill the Scroll Stopper and Verbal Hook from the selected Blueprint values) pulls directly from the Blueprint's now-final `## Opening choices` fields; it does not regenerate or re-select a hook. Its step 5 (link all factual statements to Sources, and assign every named visual or audio beat one Production Dependency State: Existing Asset, Planned Capture, Obtainable External Asset, or Unresolved) is a hard requirement for every row of the Development table, not an optional polish pass; do not leave a beat or a claim unlinked, or a beat without an assigned state, and move on. Per `docs/10_brand/ONTOLOGY.md`'s "Content and delivery taxonomies" table, Production Dependency State is scoped to "Script beat or Publication asset requirement," so this is the correct place in the pipeline for this taxonomy to apply, unlike at the Blueprint stage. Choose among the four values per `docs/10_brand/assets/README.md`'s "Production dependencies" section: an Existing Asset beat links to that Asset's own record; a Planned Capture beat states the required capture; an Obtainable External Asset beat records the intended source and its licensing or access constraint; and Unresolved is reserved for a beat whose supply is genuinely undecided (see Stop conditions below on why an Unresolved beat can never be presented as production-ready).
+Follow `generate-short-form-script.md`'s Procedure exactly, applying the Skill execution contract at each new-record decision point. Its step 2 (fill the Scroll Stopper and Verbal Hook from the selected Blueprint values) pulls directly from the Blueprint's now-final `## Opening choices` fields; it does not regenerate or re-select a hook. Its step 5 (link all factual statements to Sources, and assign every named visual or audio beat one Production Dependency State: Existing Asset, Planned Capture, Obtainable External Asset, or Unresolved) is a hard requirement for every row of the Development table, not an optional polish pass; do not leave a beat or a claim unlinked, or a beat without an assigned state, and move on. Per `docs/00_system/010_governance/ONTOLOGY.md`'s "Content and delivery taxonomies" table, Production Dependency State is scoped to "Script beat or Publication asset requirement," so this is the correct place in the pipeline for this taxonomy to apply, unlike at the Blueprint stage. Choose among the four values per `docs/40_content/concepts.md#asset`'s "Production dependencies" section: an Existing Asset beat links to that Asset's own record; a Planned Capture beat states the required capture; an Obtainable External Asset beat records the intended source and its licensing or access constraint; and Unresolved is reserved for a beat whose supply is genuinely undecided (see Stop conditions below on why an Unresolved beat can never be presented as production-ready).
 
 Per the Taxonomy contract, this skill writes no new taxonomy values: it reads Publication Format, Narrative Structure, Visual Hook Type, and Verbal Hook Type, and the Script repeats the Blueprint's already-selected values verbatim for traceability. The Blueprint's selected Pattern and Purpose also inform how the Development and Payoff sections are drafted, even though neither is restated in the Script's Header. A Script may not change a Blueprint's Pattern, Structure, or hook types. If, at any point while drafting, the Blueprint's selected plan turns out not to actually support a workable script (the Purpose the Development beats can't fulfill, a Structure the available proof can't carry, or a hook that no longer fits once the beats are drafted), stop drafting immediately. Do not edit the Blueprint's Pattern, Structure, or hook type fields to make the script fit, and do not quietly draft around the mismatch. Route back to `to-blueprint` instead, per Stop conditions below.
 
 ## Output
 
-Write to `docs/10_brand/assets/scripts/<slug>.md`, using `docs/10_brand/assets/templates/scripts/short-form-stop-hook-payoff.md`. Derive `<slug>` by lowercasing the Script's title and hyphenating, matching the naming pattern already used at `docs/10_brand/assets/scripts/the-bet.md`. Every run of this skill produces a new Script file; it does not edit an existing Script or the source Blueprint.
+Write to `docs/40_content/scripts/<slug>.md`, using `docs/40_content/templates/scripts/short-form-stop-hook-payoff.md`. Derive `<slug>` by lowercasing the Script's title and hyphenating, matching the naming pattern already used at `docs/40_content/scripts/the-bet.md`. Every run of this skill produces a new Script file; it does not edit an existing Script or the source Blueprint.
 
 The template's **Intended Publication Format** field is a fixed constant for this template, `Short-form Video`, not a value asked of the user or copied from the Blueprint (the Blueprint carries no Channel field, and this template has no Channel field either, fixed or otherwise). Write it verbatim; do not ask for a Channel and do not invent one.
 
@@ -67,7 +67,7 @@ Stop and route back to `to-blueprint` when the Blueprint's selected Pattern, Str
 ## Validation
 
 ```
-rg -n '^---$|^## Header|^## Scroll Stopper|^## Development|^## Payoff|^## Script checks' docs/10_brand/assets/scripts/<slug>.md
+rg -n '^---$|^## Header|^## Scroll Stopper|^## Development|^## Payoff|^## Script checks' docs/40_content/scripts/<slug>.md
 ```
 
 The Work Item record's filename embeds today's date and a slug that cannot be predicted in advance, so no fixed `rg` command is given for it here. Spot-check its required frontmatter and body sections by hand against `docs/40_content/work-items/README.md`'s spec instead.

@@ -17,7 +17,7 @@ related:
   - ../work-items/README.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.topic
   entry_stage: Plan
@@ -31,7 +31,7 @@ contract:
       type: ref(content.topic)
       required: true
     - name: audience_segment
-      type: ref(audience.segment)
+      type: ref(content.audience-segment)
       required: true
     - name: asset_constraints
       type: text
@@ -71,11 +71,11 @@ contract:
 
 ## Required references
 
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): Content Pattern, Content Purpose, Narrative Structure, Topic Mode, and hook taxonomies.
-- [Strategy](../../10_brand/strategy/README.md): Themes, positioning, and editorial constraints.
-- [Audience](../../10_brand/audience/README.md): primary Audience Segment and relevant needs or problems.
-- [Identity](../../10_brand/identity/README.md): voice and evidence boundaries.
-- For short-form video, the [Short-form video Blueprint Template](../../10_brand/assets/templates/blueprints/short-form-video.md).
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): Content Pattern, Content Purpose, Narrative Structure, Topic Mode, and hook taxonomies.
+- [Themes](../themes.md): Themes, positioning, and editorial constraints.
+- [Audience](../audience.md): primary Audience Segment and relevant needs or problems.
+- [Daniel Hunt](../creators/daniel-hunt.md): voice and evidence boundaries.
+- For short-form video, the [Short-form video Blueprint Template](../templates/blueprints/short-form-video.md).
 
 ## Taxonomy contract
 

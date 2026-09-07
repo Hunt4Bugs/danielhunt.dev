@@ -14,10 +14,10 @@ facets:
   - channels
 related:
   - ../publications/README.md
-  - ../../10_brand/channels/README.md
+  - ../channels.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.publication
   entry_stage: Publish
@@ -63,7 +63,7 @@ contract:
 ## Required references
 
 - The production-complete Publication and its final Assets.
-- [Channels](../../10_brand/channels/README.md): selected Channel and constraints.
+- [Channels](../channels.md): selected Channel and constraints.
 - Repository [autonomy boundaries](../../00_system/020_agents/AUTONOMY.md).
 
 ## Procedure

@@ -17,10 +17,10 @@ Before acting, read:
 - `docs/40_content/workflows/README.md#skill-execution-contract` (taxonomy validation, dedup check, confirm-before-write, stop-condition routing, and chaining rules that apply to every step below)
 - `docs/40_content/blueprints/README.md` (what a Blueprint record is for and what it must not contain)
 - `docs/40_content/work-items/README.md` and `docs/40_content/_patterns/work-item.md` (the Work Item identifier format and its required frontmatter and body now live in the pattern file; the README is a short pointer to it)
-- `docs/10_brand/strategy/README.md` (primary Themes, positioning, and editorial constraints)
-- `docs/10_brand/audience/README.md` (Audience Segments, needs, problems, and credibility boundaries)
-- `docs/10_brand/identity/README.md` (voice, privacy, scars-not-wounds, and observation-over-preaching boundaries)
-- For short-form video specifically, `docs/10_brand/assets/templates/blueprints/short-form-video.md` (the only Blueprint template that currently exists; see Output below)
+- `docs/40_content/themes.md` (primary Themes, positioning, and editorial constraints)
+- `docs/40_content/audience.md` (Audience Segments, needs, problems, and credibility boundaries)
+- `docs/40_content/creators/daniel-hunt.md` (voice, privacy, scars-not-wounds, and observation-over-preaching boundaries)
+- For short-form video specifically, `docs/40_content/templates/blueprints/short-form-video.md` (the only Blueprint template that currently exists; see Output below)
 
 ## Input
 
@@ -32,22 +32,22 @@ Prefer an explicit Topic link when the user supplies one; otherwise identify the
 
 Follow `develop-blueprint.md`'s Procedure exactly, applying the Skill execution contract at each taxonomy-value decision point:
 
-- Step 1 (select the primary Theme and Topic Mode) validates Theme against the "Theme registry" table in `docs/10_brand/strategy/README.md`, and Topic Mode against the "Content and delivery taxonomies" table in `docs/10_brand/ONTOLOGY.md`. The primary Audience Segment is read from the Topic record, not re-selected here: the Topic already validated it against the "Audience Segment registry" table in `docs/10_brand/audience/README.md` when `to-topic` created or extended it.
-- Step 2 (select one Content Pattern, one primary Content Purpose, and one Narrative Structure) validates each against the "Blueprint taxonomies" table in `docs/10_brand/ONTOLOGY.md`.
-- Step 4 (for short-form video, either select the final Visual Hook Type and Verbal Hook Type or mark them ready for Generate Hook Options) validates any selected hook types against the same "Blueprint taxonomies" table in `docs/10_brand/ONTOLOGY.md`. Three outcomes are possible here, and each must be written so it is distinguishable from the other two on disk, using this convention:
+- Step 1 (select the primary Theme and Topic Mode) validates Theme against the "Theme registry" table in `docs/40_content/themes.md`, and Topic Mode against the "Content and delivery taxonomies" table in `docs/00_system/010_governance/ONTOLOGY.md`. The primary Audience Segment is read from the Topic record, not re-selected here: the Topic already validated it against the "Audience Segment registry" table in `docs/40_content/audience.md` when `to-topic` created or extended it.
+- Step 2 (select one Content Pattern, one primary Content Purpose, and one Narrative Structure) validates each against the "Blueprint taxonomies" table in `docs/00_system/010_governance/ONTOLOGY.md`.
+- Step 4 (for short-form video, either select the final Visual Hook Type and Verbal Hook Type or mark them ready for Generate Hook Options) validates any selected hook types against the same "Blueprint taxonomies" table in `docs/00_system/010_governance/ONTOLOGY.md`. Three outcomes are possible here, and each must be written so it is distinguishable from the other two on disk, using this convention:
   - **Final**: the pairing is settled and no further hook development is expected. Fill the Visual Hook Type and Verbal Hook Type fields (and the rest of Opening choices) with real values, with no additional marker.
   - **Candidate**: the pairing is clear-cut enough to select now, but `to-hooks` (see Next step) is still welcome to revisit it, though not obligated to override it. Fill the fields with real values, and append the literal suffix ` (candidate, pending to-hooks review)` directly after the Verbal Hook Type field's value, so the state is greppable and cannot be mistaken for a Final pairing.
   - **Ready for hook development**: the pairing is not clear-cut. Leave all six Opening choices fields exactly as the template's own bracket placeholders, unfilled, rather than inventing a placeholder pairing. This state is trivially detectable later since the fields still contain literal `[` and `]` characters.
 
   Per `develop-blueprint.md`, a short-form Blueprint is not script-ready until this hook selection is actually complete: Final only, not Candidate or Ready for hook development.
 
-Unlike `to-topic`, this skill has no keyword-search dedup check against the whole Blueprint collection: `develop-blueprint.md`'s Procedure has no step that scans the existing Blueprint inventory for a materially duplicative subject, and per `docs/10_brand/ONTOLOGY.md`'s relationships section, "A Topic has zero or many Blueprints"; several genuinely distinct Blueprints for the same Topic remain normal. Instead, `develop-blueprint.md`'s Work Item contract narrows the create-versus-update choice to a different question, one specific to a single record already in motion rather than a search across the collection: is this run continuing or refining a Blueprint already in progress, or starting a new communication plan? Create a new Blueprint file for any new or materially different communication plan, even when other Blueprints already exist for the same Topic. Update an existing Blueprint file in place only when this run is continuing or refining a Blueprint already in progress, and its Topic, promise, angle, and structural intent are unchanged from what is already on disk. Do not conflate this with `to-topic`'s dedup-and-extend check: that check asks whether an existing record already covers the same subject and triggers on discovering a pre-existing similar one; this check asks whether the current run is a resumption of one specific record it (or a prior run) already started, and triggers on continuing that same plan.
+Unlike `to-topic`, this skill has no keyword-search dedup check against the whole Blueprint collection: `develop-blueprint.md`'s Procedure has no step that scans the existing Blueprint inventory for a materially duplicative subject, and per `docs/00_system/010_governance/ONTOLOGY.md`'s relationships section, "A Topic has zero or many Blueprints"; several genuinely distinct Blueprints for the same Topic remain normal. Instead, `develop-blueprint.md`'s Work Item contract narrows the create-versus-update choice to a different question, one specific to a single record already in motion rather than a search across the collection: is this run continuing or refining a Blueprint already in progress, or starting a new communication plan? Create a new Blueprint file for any new or materially different communication plan, even when other Blueprints already exist for the same Topic. Update an existing Blueprint file in place only when this run is continuing or refining a Blueprint already in progress, and its Topic, promise, angle, and structural intent are unchanged from what is already on disk. Do not conflate this with `to-topic`'s dedup-and-extend check: that check asks whether an existing record already covers the same subject and triggers on discovering a pre-existing similar one; this check asks whether the current run is a resumption of one specific record it (or a prior run) already started, and triggers on continuing that same plan.
 
 ## Output
 
-Write to `docs/40_content/blueprints/<slug>.md`, using `docs/10_brand/assets/templates/blueprints/short-form-video.md` when the target format is short-form video. Derive `<slug>` by lowercasing the Blueprint's title and hyphenating.
+Write to `docs/40_content/blueprints/<slug>.md`, using `docs/40_content/templates/blueprints/short-form-video.md` when the target format is short-form video. Derive `<slug>` by lowercasing the Blueprint's title and hyphenating.
 
-`docs/10_brand/assets/templates/blueprints/` currently contains only the short-form-video template. If the target format is not short-form video, stop before writing and tell the user that no Blueprint template exists yet for that format, rather than improvising a Blueprint shape from the short-form-video template or from scratch.
+`docs/40_content/templates/blueprints/` currently contains only the short-form-video template. If the target format is not short-form video, stop before writing and tell the user that no Blueprint template exists yet for that format, rather than improvising a Blueprint shape from the short-form-video template or from scratch.
 
 When the Procedure's create-versus-update distinction (above) resolves to continuing or refining a Blueprint already in progress, edit that existing file in place instead of creating a new one at the derived `<slug>` path.
 
@@ -64,7 +64,7 @@ Confirm before writing, per the Skill execution contract: present the target fil
 
 Stop and return to `to-knowledge` when the proof is missing, the claim cannot be supported, or the Topic does not fit the Brand's strategic constraints. `to-knowledge` would need the additional or corrected raw material as Input.
 
-Even when this skill stops and returns to `to-knowledge`, it still creates, or leaves, a Work Item recording the block rather than producing nothing with no record of the attempt: set `work_state: Blocked` (the matching Work Item State value in `docs/10_brand/ONTOLOGY.md`) and repository `status: blocked`, and record the actual missing evidence, approval, or dependency in the Work Item's own prose fields (see `docs/40_content/work-items/README.md`).
+Even when this skill stops and returns to `to-knowledge`, it still creates, or leaves, a Work Item recording the block rather than producing nothing with no record of the attempt: set `work_state: Blocked` (the matching Work Item State value in `docs/00_system/010_governance/ONTOLOGY.md`) and repository `status: blocked`, and record the actual missing evidence, approval, or dependency in the Work Item's own prose fields (see `docs/40_content/work-items/README.md`).
 
 ## Next step
 

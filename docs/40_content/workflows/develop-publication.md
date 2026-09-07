@@ -14,10 +14,10 @@ facets:
   - channels
 related:
   - ../publications/README.md
-  - ../../10_brand/channels/README.md
+  - ../channels.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.blueprint
   entry_stage: Draft
@@ -31,7 +31,7 @@ contract:
       optional: true
   inputs:
     - name: channel
-      type: ref(channels.channel)
+      type: ref(content.channel)
       required: true
     - name: format
       type: taxonomy(Publication Format)
@@ -75,9 +75,9 @@ contract:
 
 ## Required references
 
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): Publication, Publication Format, derivation, and Asset relationships.
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): Publication, Publication Format, derivation, and Asset relationships.
 - [Publication records](../publications/README.md): record contract.
-- [Channels](../../10_brand/channels/README.md): Channel registry and compatible Formats.
+- [Channels](../channels.md): Channel registry and compatible Formats.
 - The primary Blueprint, supporting Sources, related Assets, and any validated primary Script.
 
 ## Taxonomy contract

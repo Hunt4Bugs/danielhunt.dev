@@ -14,8 +14,8 @@ related:
   - README.md
   - domain.md
   - concepts.md
-  - ../10_brand/identity/README.md
-  - ../10_brand/identity/visual.md
+  - ../40_content/creators/daniel-hunt.md
+  - ../40_content/visual.md
   - ../30_delivery/README.md
 sources:
   - ../../CLAUDE.md
@@ -39,7 +39,7 @@ sources:
 
 ## Canonical constraints
 
-Brand-shaped site work must first follow [Identity](../10_brand/identity/README.md) and [Visual direction](../10_brand/identity/visual.md). Keep all deployable implementation inside `site/`; this class holds its internal documentation only. There is no build step or configured test suite.
+Brand-shaped site work must first follow [Daniel Hunt](../40_content/creators/daniel-hunt.md) and [Visual direction](../40_content/visual.md). Keep all deployable implementation inside `site/`; this class holds its internal documentation only. There is no build step or configured test suite.
 
 ## Open question
 

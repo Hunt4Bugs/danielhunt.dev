@@ -18,7 +18,7 @@ related:
   - ../knowledge/README.md
   - ../blueprints/README.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Topic records

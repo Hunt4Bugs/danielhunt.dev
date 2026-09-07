@@ -17,7 +17,7 @@ related:
   - ../work-items/README.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.script
   entry_stage: Review
@@ -62,10 +62,10 @@ contract:
 
 ## Required references
 
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): Script relationship, Publication Format, hook taxonomies, and Hook usage conditions.
-- [Identity](../../10_brand/identity/README.md): documentary restraint, observation over preaching, and scars-not-wounds rules.
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): Script relationship, Publication Format, hook taxonomies, and Hook usage conditions.
+- [Daniel Hunt](../creators/daniel-hunt.md): documentary restraint, observation over preaching, and scars-not-wounds rules.
 - The Script's primary Blueprint, linked Sources, related Assets, and intended Publication Format.
-- [Short-form Stop–Hook–Payoff Script Template](../../10_brand/assets/templates/scripts/short-form-stop-hook-payoff.md) when validating that format.
+- [Short-form Stop–Hook–Payoff Script Template](../templates/scripts/short-form-stop-hook-payoff.md) when validating that format.
 
 ## Taxonomy contract
 

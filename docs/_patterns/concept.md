@@ -60,5 +60,5 @@ fields:
   vocabulary owned by exactly one context (§10, §13.3). Don't invent either inline.
 - If a domain's model is authored at a higher level (e.g. a brand-root ontology spanning several
   contexts), the domain-scoped `concepts.md` cross-references that source rather than re-deriving
-  it — see `content/concepts.md`'s relationship to `10_brand/ONTOLOGY.md` once
-  it exists.
+  it — see `content/concepts.md`'s relationship to
+  [`00_system/010_governance/ONTOLOGY.md`](../00_system/010_governance/ONTOLOGY.md).
