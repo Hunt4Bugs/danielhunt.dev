@@ -75,7 +75,7 @@ Travel may provide footage opportunistically; no trip, destination, footage quot
 
 ## Phasing
 
-- **Current preparation:** review the [LinkedIn copy draft](../10_brand/assets/linkedin-profile-draft.md), establish evidence for initial technical lessons, and prepare compatible Publications through the existing workflows.
+- **Current preparation:** establish evidence for initial technical lessons and prepare compatible Publications through the existing workflows.
 - **Current operating rhythm:** two weekly LinkedIn posts with a monthly review. Other channels remain optional.
 - **Future expansion:** add another production commitment only through an explicit operating-plan revision based on capacity and audience value.
 
@@ -83,7 +83,6 @@ This supersedes the former Phase 0/1/2 cross-channel schedule. There is no custo
 
 ## Current operating checklist
 
-- [ ] Review the prepared LinkedIn profile copy; apply changes only through a separately authorized public action.
 - [ ] Prepare Tuesday's worked lesson from attributable experience and an inspectable example.
 - [ ] Prepare Thursday's shorter observation or tradeoff.
 - [ ] Verify the behavior claimed by a demonstration and identify its limits.

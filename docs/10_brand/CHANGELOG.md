@@ -38,7 +38,7 @@ Format per entry:
 
 ## 2026-09-06: Career facts and exploratory product maturity corrected
 
-**Decision:** State current Amgen employment and exploratory Datavial status. Expand the credibility bank with attributed professional experience, retain uncertain metrics as unverified, and prepare the [LinkedIn profile copy](assets/linkedin-profile-draft.md) locally.
+**Decision:** State current Amgen employment and exploratory Datavial status. Expand the credibility bank with attributed professional experience, retain uncertain metrics as unverified, and update the LinkedIn profile directly.
 
 **Rationale:** The user confirmed that departure/founder assumptions in the earlier workbook were not the current situation. The profile supports concrete engineering work but does not independently verify impact metrics, customer results, or autonomous refactoring. Historical plans and scripts remain intact and must be revalidated before reuse.
 

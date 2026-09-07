@@ -16,14 +16,13 @@ facets:
 related:
   - ../strategy/README.md
   - ../audience/README.md
-  - ../assets/linkedin-profile-draft.md
   - ../../40_content/operating-plan.md
 sources: []
 ---
 
 # Technical authority alignment: implementation record
 
-The user explicitly approved implementation of this plan on 2026-09-06. These are three repository-local implementation units using the required fields and title conventions of the [Docs change](../../../.github/ISSUE_TEMPLATE/docs_change.yml) and [Content / copy change](../../../.github/ISSUE_TEMPLATE/content_change.yml) templates. They are not GitHub issues. Local implementation completion is recorded below; LinkedIn draft status remains `draft` until separately reviewed and published.
+The user explicitly approved implementation of this plan on 2026-09-06. These are three repository-local implementation units using the required fields and title conventions of the [Docs change](../../../.github/ISSUE_TEMPLATE/docs_change.yml) and [Content / copy change](../../../.github/ISSUE_TEMPLATE/content_change.yml) templates. They are not GitHub issues. Local implementation completion is recorded below; Daniel applied the LinkedIn profile changes directly, so no profile draft is kept in the repository.
 
 ## Evidence and confirmed decisions
 
@@ -57,7 +56,7 @@ Four newer posts displayed 360, 9,388, 1,113, and 669 impressions respectively f
 
 ## Unit 2 — [Content]: Make LinkedIn demonstrate the expertise promised by the headline
 
-**Where:** LinkedIn About, Experience, Featured, banner, Skills, Services, and Projects; prepared in the [local profile draft](../assets/linkedin-profile-draft.md).
+**Where:** LinkedIn About, Experience, Featured, banner, Skills, Services, and Projects.
 
 **Current text/asset:** headline updated by the user; About abstract and overstating autonomous refactoring; Experience has concrete work; Featured proof missing from the inspected profile; historical project dates show Present.
 
@@ -69,9 +68,9 @@ Four newer posts displayed 360, 9,388, 1,113, and 669 impressions respectively f
 
 **Acceptance criteria:** copy is ready for local review and pasting; claims map to sources; uncertain dates and unsupported metrics are explicit. No finished banner or nonexistent demonstration is implied.
 
-**Verification:** compare the draft with observed experience and approved wording; check named offers and design tokens.
+**Verification:** compare the copy with observed experience and approved wording; check named offers and design tokens.
 
-**Implementation:** completed locally as a draft. No LinkedIn fields, posts, or external assets were changed.
+**Implementation:** Daniel updated the LinkedIn profile directly. The prepared copy was not retained in the repository.
 
 ## Unit 3 — [Docs]: Replace the deferred LinkedIn plan with a sustainable teaching schedule
 
@@ -96,7 +95,7 @@ Completed local checks on 2026-09-06:
 - Parsed YAML metadata for all 19 changed/new documentation files; required fields, status values, mapped collections, normalized identifiers, and relative source/related paths passed.
 - Checked 315 affected Markdown links, including incoming references to edited documents and heading anchors; no broken links found.
 - Compared Theme rows, Audience Segment names/codes/relationships, and Channel names/status/Format compatibility with the starting revision; these contracts are unchanged.
-- Confirmed the revised About is 840 characters, retains the approved text, and omits autonomous-refactoring and unsupported quantitative claims. Experience bullets and services were reviewed against the observed profile and canonical offer definitions.
+- Reviewed the revised About, Experience bullets, and services against the observed profile, approved wording, and canonical offer definitions; the copy omits autonomous-refactoring and unsupported quantitative claims.
 - Verified Tuesday/Thursday cadence and all three retained YouTube readiness gates. Consistency searches found historical references and explicit corrections, not active contradictory quotas or career claims. A post-review pass replaced the remaining credibility-moat and strategic-weighting references in the Offers concept registry, the Offers, Strategy, Identity, Audience, and Analytics domain summaries, and the library map.
 - Confirmed historical plans/specifications/scripts and all site files are unchanged. Changes are restricted to documentation and the implementation guide.
 - `git diff --check` passed. No application tests were needed for documentation-only changes.
