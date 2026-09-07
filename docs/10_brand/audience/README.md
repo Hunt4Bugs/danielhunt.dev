@@ -83,6 +83,7 @@ These are editorial hypotheses grounded in the work described below, not validat
 | Data modeling | Compare models for a pipeline, API, and analytics consumer. | W1; explain the intended consumer and tradeoff. |
 | Framework complexity | Show what a decorator abstracts and what must remain visible. | W1c; no unsupported speed or productivity claim. |
 | Legacy modernization | Establish context and behavior checks before AI-assisted changes. | W1b; distinguish the observed work from a newly proposed demonstration. |
+| AI-generated code review | Explain how to read, test, and verify AI-suggested code before trusting it. | W1b; a reviewed AI suggestion is not the same claim as an autonomous AI change. |
 | Trustworthy extraction | Explain entity extraction, evaluation, and ground-truth limitations. | W5 and W6; old NLP experience is not proof of current LLM product performance. |
 | Domain learning | Explain scientific workflows and state open questions. | W1 / W3; regulatory interpretation, procurement, and product-market fit remain exploratory. |
 | Sharing lessons | Use an attributable lesson and a clearly labeled synthetic example when needed. | Evidence discipline below; do not invent an incident. |
@@ -90,7 +91,7 @@ These are editorial hypotheses grounded in the work described below, not validat
 
 ## Credibility Bank
 
-**Evidence status:** The implementation-session record links the [observed LinkedIn profile and user confirmations](../plans/2026-09-06-technical-authority-alignment.md#evidence-and-confirmed-decisions). LinkedIn role descriptions are self-reported professional experience, not independently measured project outcomes. Daniel confirmed current Amgen employment and exploratory Datavial status on 2026-09-06.
+**Evidence status:** The implementation-session record links the [observed LinkedIn profile and user confirmations](../plans/2026-09-06-technical-authority-alignment.md#evidence-and-confirmed-decisions). LinkedIn role descriptions are self-reported professional experience, not independently measured project outcomes. See [Identity's current professional context](../identity/README.md#current-professional-context) for Daniel's employment and Datavial status.
 
 ### Wins
 

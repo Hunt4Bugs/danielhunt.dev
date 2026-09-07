@@ -2,13 +2,13 @@
 id: ops.library-map
 kind: note
 domain: ops
-version: 1
+version: 2
 class: "00"
 collection: governance
 type: library-map
 status: active
 owner: Daniel Hunt
-updated: 2026-08-29
+updated: 2026-09-06
 ---
 
 # Library map

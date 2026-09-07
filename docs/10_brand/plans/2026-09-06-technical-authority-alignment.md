@@ -92,7 +92,7 @@ Four newer posts displayed 360, 9,388, 1,113, and 669 impressions respectively f
 
 Completed local checks on 2026-09-06:
 
-- Parsed YAML metadata for all 19 changed/new documentation files; required fields, status values, mapped collections, normalized identifiers, and relative source/related paths passed.
+- Parsed YAML metadata for all 22 changed/new documentation files; required fields, status values, mapped collections, normalized identifiers, and relative source/related paths passed.
 - Checked 315 affected Markdown links, including incoming references to edited documents and heading anchors; no broken links found.
 - Compared Theme rows, Audience Segment names/codes/relationships, and Channel names/status/Format compatibility with the starting revision; these contracts are unchanged.
 - Reviewed the revised About, Experience bullets, and services against the observed profile, approved wording, and canonical offer definitions; the copy omits autonomous-refactoring and unsupported quantitative claims.

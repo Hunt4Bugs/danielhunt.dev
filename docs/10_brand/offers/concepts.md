@@ -3,12 +3,12 @@ id: offers.concepts
 kind: concept-registry
 domain: offers
 status: active
-version: 1
+version: 2
 class: "10"
 collection: offers
 owner: Daniel Hunt
 created: 2026-08-29
-updated: 2026-08-29
+updated: 2026-09-06
 related:
   - README.md
   - domain.md

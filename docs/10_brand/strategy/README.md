@@ -28,7 +28,7 @@ Strategy sets direction and constraints for the Brand. It owns positioning, goal
 
 ## Positioning
 
-Daniel is an experienced engineer teaching reliable data systems, data modeling, and AI-assisted modernization. The work addresses engineers across industries, drawing distinctive examples from life sciences, marketing infrastructure, and legal analytics. Daniel remains employed at Amgen and explores Datavial alongside that work. Build in public. Live offline. remains the broader personal identity.
+Daniel is an experienced engineer teaching reliable data systems, data modeling, and AI-assisted modernization. The work addresses engineers across industries, drawing distinctive examples from life sciences, marketing infrastructure, and legal analytics. [Identity](../identity/README.md#current-professional-context) owns Daniel's current employment and Datavial status. Build in public. Live offline. remains the broader personal identity.
 
 ## Goals and themes
 

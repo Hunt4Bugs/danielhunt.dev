@@ -3,12 +3,12 @@ id: analytics
 kind: domain
 domain: analytics
 status: active
-version: 1
+version: 2
 class: "10"
 collection: analytics
 owner: Daniel Hunt
 created: 2026-08-29
-updated: 2026-08-29
+updated: 2026-09-06
 facets:
   - content
 related:
