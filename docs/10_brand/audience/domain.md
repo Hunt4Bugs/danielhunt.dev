@@ -3,12 +3,12 @@ id: audience
 kind: domain
 domain: audience
 status: active
-version: 1
+version: 2
 class: "10"
 collection: audience
 owner: Daniel Hunt
 created: 2026-08-29
-updated: 2026-08-29
+updated: 2026-09-06
 facets:
   - content
 related:
@@ -17,6 +17,7 @@ related:
   - ../identity/README.md
   - ../strategy/README.md
 sources:
+  - ../plans/2026-09-06-technical-authority-alignment.md
   - ../specs/2026-06-01-personal-brand-workbook.md
 ---
 
@@ -69,7 +70,7 @@ it. It exists as its own domain, distinct from Identity, because it owns audienc
   themselves).
 - A proposed Segment requires the governed taxonomy-addition workflow and approval before use.
 - The commercial services audience (Services page) is a distinct acquisition route from the
-  primary Life Sciences editorial audience and must not be conflated with it.
+  primary technical editorial audience and must not be conflated with it.
 
 ## Related Domains
 
@@ -82,8 +83,8 @@ it. It exists as its own domain, distinct from Identity, because it owns audienc
 
 ## Examples
 
-- `Primary Editorial Audience` (Audience Segment, code `B2`, Addressed, active): software
-  engineers and SaaS/AI founders looking for a meaningful frontier — the segment the brand talks
+- `Primary Editorial Audience` (Audience Segment, code `B2`, Addressed, active): working data and software
+  engineers across industries seeking reliability, clear models, maintainability, and practical AI workflows — the segment the brand talks
   *to*.
 - `Lab Operations and Scientists` (Audience Segment, code `A`, Spoken-about, active): the end
   users content describes with empathy but does not address directly.

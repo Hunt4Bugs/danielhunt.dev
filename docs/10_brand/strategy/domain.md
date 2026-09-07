@@ -3,12 +3,12 @@ id: strategy
 kind: domain
 domain: strategy
 status: active
-version: 1
+version: 2
 class: "10"
 collection: strategy
 owner: Daniel Hunt
 created: 2026-08-29
-updated: 2026-08-29
+updated: 2026-09-06
 facets:
   - content
 related:
@@ -17,6 +17,7 @@ related:
   - ../identity/README.md
   - ../../40_content/domain.md
 sources:
+  - ../plans/2026-09-06-technical-authority-alignment.md
   - ../ONTOLOGY.md
   - ../specs/2026-05-28-brand-refinement-design.md
 ---
@@ -36,8 +37,8 @@ enduring meaning and voice (who the brand permanently is).
 
 - The positioning statement and goals.
 - The **Theme** registry — the canonical set of durable strategic lenses a Topic aligns to.
-- Strategic content weighting (the Life-Sciences-vs-general-operator-material guardrail) and the
-  constraints that keep it a planning guardrail rather than a per-item quota.
+- Strategic priorities for transferable technical teaching, domain depth, and evidence-backed
+  examples without a fixed industry percentage.
 
 ### Excludes
 
@@ -70,8 +71,8 @@ enduring meaning and voice (who the brand permanently is).
 - Use `Theme`, not `Pillar` — do not introduce a second, competing strategic-lens concept.
 - A proposed Theme requires the governed taxonomy-addition workflow and approval before use; a
   workflow or skill may propose one but may not select it before that approval.
-- Strategic content weighting is a planning guardrail, not a quota enforced on every batch or
-  period.
+- Strategic priorities guide selection without an industry quota; use a domain context when
+  it improves the engineering explanation.
 
 ## Related Domains
 
@@ -86,5 +87,6 @@ enduring meaning and voice (who the brand permanently is).
 
 ## Examples
 
-- `Life Sciences Frontier` (Theme, active): the primary Theme most Build-half Topics align to.
+- `Systems and Observation` (Theme, active): the default primary Theme for technical instruction.
+- `Life Sciences Frontier` (Theme, active): domain-specific scientific workflow and software lessons.
 - `Movement and Culture` (Theme, active): the Theme Offline-half Topics typically align to.

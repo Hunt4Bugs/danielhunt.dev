@@ -1,18 +1,23 @@
 ---
+id: assets.note.script-index
+kind: note
+domain: assets
 class: "10"
-collection: brand
+collection: assets
 type: record-contract
 status: active
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-09-06
 facets:
   - content
 related:
   - ../templates/scripts/README.md
   - ../../../40_content/blueprints/README.md
 sources:
+  - ../../plans/2026-09-06-technical-authority-alignment.md
   - ../../ONTOLOGY.md
+version: 1
 ---
 
 # Script Assets
@@ -20,3 +25,7 @@ sources:
 Scripts are versioned, publication-oriented authored Assets for audio or video. Each Script records one primary Blueprint, intended Publication Format, source links, production beats, Production Dependency State for every named visual or audio requirement, validation Work Item, and related Publications.
 
 A Script may be used by more than one Publication and does not own Channel. Reusable fill-in-the-blank scaffolding belongs in [Script Templates](../templates/scripts/README.md), not here. Existing historical Scripts are updated to this contract only when materially revised.
+
+## Historical scripts: revalidate before reuse
+
+The existing [episode 1](long_form/ep01-starting-a-life-sciences-software-company.md), [episode 2](long_form/ep02-am-i-qualified.md), and [The Bet](the-bet.md) are preserved historical drafts, not current career evidence or ready-to-publish material. Their departure, founder, product-maturity, audience, or production assumptions must be checked against [current Identity](../../identity/README.md), [Audience](../../audience/README.md), and the [operating plan](../../../40_content/operating-plan.md) before reuse. Daniel remains employed at Amgen; Datavial is exploratory. No historical script imposes a current filming commitment.

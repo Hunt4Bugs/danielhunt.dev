@@ -8,7 +8,7 @@ type: identity
 status: active
 owner: Daniel Hunt
 created: 2026-05-28
-updated: 2026-08-29
+updated: 2026-09-06
 facets:
   - strategy
   - audience
@@ -20,8 +20,10 @@ related:
   - ../audience/README.md
   - ../../40_content/README.md
 sources:
+  - ../plans/2026-09-06-technical-authority-alignment.md
   - ../specs/2026-05-28-brand-refinement-design.md
   - ../specs/2026-06-01-personal-brand-workbook.md
+version: 1
 ---
 
 # Daniel Hunt — Brand Identity
@@ -38,48 +40,46 @@ Tech, movement, and culture.
 
 A tech builder seeking human connection through movement and culture, while documenting both the building and the unplugging. The contradiction is the brand.
 
+## Current professional context
+
+Daniel is a Senior Data Engineer currently employed at Amgen, with prior experience at Realtor.com, Gavelytics, and HRL Laboratories. Datavial is an exploratory life-sciences product. It is not evidence of having left employment, established product traction, or a current primary income stream. The [Audience credibility bank](../audience/README.md#credibility-bank) distinguishes self-reported professional experience from independently measured results.
+
 ## Brand Statement
 
-> *I believe engineers who want work that compounds into the real world should walk into life sciences, not wait for permission from the incumbents.*
+> *I believe engineers build better systems when they understand how those systems fail, make their tradeoffs explicit, and test whether improvements work.*
 
-The brand's core conviction in one sentence. Frames who the brand is for (audience B2, see [Audience](../audience/README.md)), what they actually want (work that compounds into the real world), and the contrarian move (walk in, do not wait).
-
-The statement passes the dread test. It would still be true in 2030 whether the brand has 6 months of journey behind it or 6 years. *Walk into life sciences* is the verb that holds across the whole arc.
+The conviction supports practical technical teaching across industries. Life sciences, marketing infrastructure, and legal analytics provide distinctive context. The broader identity remains Build in public. Live offline.
 
 ## Contrarians
 
-Three layered positions the brand operates from. Each shows up across content as a recurring frame.
-
 **Brand-level contrarian.**
 
-> *Life sciences is the most underleveraged frontier in software. Software engineers do not need 20 years inside pharma to be credible founders. They need conviction.*
+> *Engineering judgment matters more than adding another tool. Make the failure understandable before making the system more complicated.*
 
-The position the brand argues for. Auto-positions Daniel as the ambassador for (B2)'s walk in. Used in any content about why the work is pointed at life sciences in the first place.
+This is an editorial position to demonstrate through examples, not a universal claim that simpler systems always win.
 
 **Product-level contrarian.**
 
-> *GxP does not have to feel like GxP. Modern web-quality UX inside a regulated stack is engineerable.*
+> *Modern, usable software belongs in life sciences too.*
 
-The position Datavial argues for, surfaced in build-half content. Used in any content about specific UX, workflow, or technical decisions inside the regulated stack.
+Datavial explores this belief. Regulated-product usability is an area of investigation, not proof of compliance, adoption, or commercial success.
 
 **Bridge.**
 
-> *You can't build for scientists if you've forgotten how to be a person.*
+> *Building useful systems should leave room for being a person.*
 
-The bridge between build and offline halves. Justifies movement, presence, and IRL connection content existing inside this brand rather than as a separate lifestyle account.
+Movement, food, culture, and human connection belong to the same identity as technical work. They do not need to become productivity advice or accompany every technical lesson.
 
 ## Public Referral Sentences
 
-Two sentences in industry-standard vocabulary. These are what someone says about Daniel to a third party.
+- **Build half:** *He builds reliable data systems and explains how they work.*
+- **Offline half:** *A software engineer seeking human connection through movement, food, and culture.*
 
-- **Build half:** *He builds Life Sciences products.*
-- **Offline half:** *A tech founder seeking human connection through movement, food, and culture.*
-
-These appear in bios, captions, sponsor decks, media kits, and the site copy.
+These guide future bios and captions. Existing public surfaces require their own review and publication action; updating this document does not update the website or LinkedIn.
 
 ## Service expression
 
-The public Services page is a technology-led invitation to collaborate. It serves a broader commercial audience than the Life Sciences editorial brand: local businesses in Simi Valley and Ventura County, larger organizations, and remote teams with a concrete sales, marketing, operations, or software problem.
+The public Services page is a technology-led invitation to collaborate. It serves a broader commercial audience than the technical editorial brand: local businesses in Simi Valley and Ventura County, larger organizations, and remote teams with a concrete sales, marketing, operations, or software problem.
 
 The service taxonomy is:
 
@@ -113,8 +113,8 @@ Public-facing brand language splits into four layers.
 
 **Public referral sentences (descriptive, used in bios and third-party references):**
 
-- *He builds Life Sciences products.* (Build half)
-- *A tech founder seeking human connection through movement, food, and culture.* (Offline half)
+- *He builds reliable data systems and explains how they work.* (Build half)
+- *A software engineer seeking human connection through movement, food, and culture.* (Offline half)
 
 **Editorial discipline phrases (primarily internal rules, occasional public surface):**
 
@@ -124,7 +124,7 @@ Public-facing brand language splits into four layers.
 **Internal-only design references (do not appear in public copy):**
 
 - *Maker-Mover*
-- *Tech builder* (use *tech founder* or *software engineer* in public)
+- *Tech builder* (use *data engineer* or *software engineer* in public)
 - Direct named comparisons to *Bourdain*, *Adrian Per*, *Kirx Diaz*, *Daniel Dalen*, *Oscar Lindhardt*
 
 The internal-only references remain below as design scaffolding that explains why the brand looks and sounds the way it does. They are not what the brand says about itself in public.
@@ -141,15 +141,11 @@ Building and moving are not opposites. They are parallel rituals of staying huma
 
 The Maker-Mover is not someone with all the answers. He is searching publicly. The brand is the search.
 
-**The Walking-In Scout.**
+**Confidence follows evidence.**
 
-> **Internal-only design reference.** Added 2026-06-01 from the personal brand workbook session. Companion to the Maker-Mover persona. Enforces the orientation discipline below.
+Teach established engineering experience confidently; identify experiments and unresolved questions explicitly. Professional experience in pipelines, modeling, developer tooling, and AI-assisted modernization supports concrete technical teaching. Demonstrations show what was tested and where the approach applies.
 
-Orientation is forward, not backward. Not *the guy who left pharma* (backward, an exit story). The SWE walking *into* life sciences with some experience, reporting back from the path (forward, an arrival story).
-
-The model is Oscar Lindhardt: documenting the journey into a serious industry as the brand spine, with the journey itself as the credibility. Lindhardt did this with zero PE experience. The version here applies the same template with non-zero life sciences experience.
-
-Scout, not authority. Honest about being mid-journey. The audience follows because they are considering a similar move and want a non-zero-experience guide, not an expert pronouncement.
+The historical Walking-In Scout persona is retained in the dated workbook as context, not as the active posture for all technical content. Exploratory framing remains appropriate for Datavial, procurement, product-market fit, and regulatory interpretation. Being curious does not require understating existing engineering experience.
 
 ## The Toggle
 
@@ -183,15 +179,15 @@ The travel format follows the arrival-arc — Bourdain's structure. Arrive in a 
 
 ## Build half: what it is
 
-**Flagship artifact**: Datavial — a Life Sciences SaaS for pharma lab operations. The build half's load-bearing project. The work is real, the domain is regulated, the credibility is earned.
+**Work:** reliable pipelines, data models, maintainable software, and practical AI-assisted modernization. Lessons draw on professional experience across life sciences, marketing infrastructure, and legal analytics, with clearly labeled synthetic examples when demonstrating a pattern.
 
-**Future verticals**: Legal Tech — same playbook, different industry. Possible expansion once Datavial has visible traction.
+**Exploration:** Datavial, an exploratory life-sciences product alongside employment. There is no assumed customer, revenue, compliance, or launch milestone. Earlier legal analytics work is existing experience, not a promised future expansion.
 
-**Editorial rule**: scars, not wounds. The build half is retrospective, not confessional. Discuss healed lessons. Wounds belong in private.
+**Editorial rule:** scars, not wounds. Retrospective lessons can be taught with confidence; ongoing experiments state their uncertainty. Do not fabricate a failure, a result, or a customer to complete a story.
 
-**Brand role for outcome**: indirect credibility moat, not GTM. Datavial sells through its own go-to-market motion (outbound, design partners, conferences, referrals). The personal brand creates name-leak into pharma networks so Daniel's name eventually comes up in industry referrals.
+**Brand role:** earn technical reputation through useful teaching and visible reasoning. Product and service opportunities are secondary to this editorial purpose.
 
-Exact Themes and strategic weighting live in [Strategy](../strategy/README.md). Distribution roles and compatible Formats live in [Channels](../channels/README.md). Cadence and phasing live in the [Content operating plan](../../40_content/operating-plan.md).
+Exact Themes and priorities live in [Strategy](../strategy/README.md). Distribution roles and compatible Formats live in [Channels](../channels/README.md). Cadence and phasing live in the [Content operating plan](../../40_content/operating-plan.md).
 
 ## Offline half: what it is
 
@@ -214,6 +210,7 @@ The Offline half remains the same identity as the Build half, not a separate lif
 
 ## What the brand is
 
+- Practical technical teaching grounded in engineering experience
 - Observational lifestyle storytelling
 - Human-centered exploration through movement and culture
 - A tech builder's quiet refusal of attention-economy defaults
@@ -262,7 +259,7 @@ The audience should leave thinking:
 
 ## Content lens
 
-Every piece of content should explore at least one of:
+Offline material can explore questions such as:
 
 - What does this reveal about people?
 - What does this reveal about modern life?
@@ -273,10 +270,12 @@ Every piece of content should explore at least one of:
 - What does this environment reveal?
 - How do people stay connected and alive in the modern world?
 
-The build half adds:
+Build material should answer at least one of:
 
-- What system is operating here?
-- What scar from making things does this lesson come from?
+- How does this system work or fail?
+- What decision or tradeoff does the reader now understand?
+- How was the behavior or improvement verified?
+- What evidence supports the lesson, and where does it stop applying?
 
 ## Guiding principles
 
@@ -295,22 +294,20 @@ Prioritize:
 
 ## Brand role
 
-The site is a credibility surface and a contact path — not a content publication. Content lives on IG, X, YouTube, and eventually a newsletter if one is added. The site frames the work; the surfaces carry the work.
+The site is a credibility surface and a contact path — not a content publication. LinkedIn is the priority technical teaching channel. X and Instagram are optional expressions; YouTube and a newsletter remain future possibilities. The site frames the work; the surfaces carry the work.
 
 Partnerships, sponsorships, and consulting are accepted as inbound. They are not the focus. The audience comes first; commercial engagement follows from credibility, not from pursuit.
 
 ## Mission
 
-Build credible, durable products in Life Sciences and adjacent regulated industries. Document modern life through movement, food, culture, systems, conversation, and observation. Compound a credibility moat over years so the name eventually carries the work.
+Build reliable data systems and help engineers understand their failures, tradeoffs, and improvements. Share engineering judgment earned across industries while keeping room for movement, food, culture, and human connection.
 
-The build half exists to ship real products and earn the credibility moat. The offline half exists to stay curious, present, and human. Neither dominates the other.
-
-To prove that a tech founder can choose presence and depth over reach and noise.
+The build half earns technical trust through useful explanations and evidence. The offline half preserves presence and curiosity. Channel priority does not require every part of the identity to become a publishing obligation.
 
 ### Outcome anchors
 
-- **Primary:** Datavial and future Life Sciences products as the primary income stream. Possible expansion to Legal Tech.
-- **Secondary:** Content brand as serendipity engine. Sponsorships and creator collabs lag the primary by years and are accepted as inbound, not pursued.
-- **Compound:** Operator/peer network as ambient outcome, not a targeted motion.
+- **Primary:** technical reputation among working engineers, earned through practical teaching and demonstrated judgment.
+- **Secondary:** peer relationships and professional opportunities arising from that reputation. Services remain a separate, secondary commercial route.
+- **Exploratory:** Datavial and future product ideas, described at their actual maturity. They are not assumed income streams or proof of founder outcomes.
 
-See [Marketing / Content](../../40_content/README.md) for the revisable operational plan that turns these outcomes into a phased schedule.
+See [Marketing / Content](../../40_content/README.md) for the revisable operating plan.

@@ -8,7 +8,7 @@ type: channels
 status: active
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-29
+updated: 2026-09-06
 facets:
   - content
 related:
@@ -17,7 +17,9 @@ related:
   - ../../40_content/README.md
   - ../../40_content/operating-plan.md
 sources:
+  - ../plans/2026-09-06-technical-authority-alignment.md
   - ../ONTOLOGY.md
+version: 1
 ---
 
 # Channels
@@ -26,10 +28,10 @@ A Channel is a distribution destination, not a Publication. The registry below o
 
 | Channel | Status | Compatible Publication Formats | Role |
 | --- | --- | --- | --- |
-| X | Active | Text Post, Thread | Build-journal fragments, shipping notes, and micro-observations. |
-| Instagram | Active | Carousel, Short-form Video | Reels and carousels; primarily Offline territory while carrying relevant build observation. |
-| LinkedIn | Active | Text Post, Carousel, Article | Presence initially; later case studies and technical operator material. |
-| YouTube | Planned | Short-form Video, Long-form Video | The hero cinematic vlog when launch readiness criteria are met. |
+| X | Active | Text Post, Thread | Optional reuse, build-journal fragments, and personal observations; no posting quota. |
+| Instagram | Active | Carousel, Short-form Video | Optional reuse or personal expression through movement, food, culture, and relevant build observations. |
+| LinkedIn | Active | Text Post, Carousel, Article | Priority technical teaching channel: worked lessons and shorter engineering observations. Customer evidence is required only for customer case studies. |
+| YouTube | Planned | Short-form Video, Long-form Video | Future cinematic storytelling if readiness gates and capacity support a separately chosen launch; no active production obligation. |
 | Newsletter | Future | Newsletter | A future owned editorial channel; not part of the current cadence. |
 
 Each Publication belongs to one Channel in v1. A workflow must reject an incompatible Channel and Publication Format pair. Cadence and readiness rules are maintained in the [Content operating plan](../../40_content/operating-plan.md); reusable production practices live in [Content production](../../40_content/production.md).

@@ -8,7 +8,7 @@ type: strategy
 status: active
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-29
+updated: 2026-09-06
 facets:
   - content
 related:
@@ -17,7 +17,9 @@ related:
   - ../identity/README.md
   - ../../40_content/README.md
 sources:
+  - ../plans/2026-09-06-technical-authority-alignment.md
   - ../specs/2026-05-28-brand-refinement-design.md
+version: 1
 ---
 
 # Brand strategy
@@ -26,11 +28,11 @@ Strategy sets direction and constraints for the Brand. It owns positioning, goal
 
 ## Positioning
 
-The core conviction is that engineers seeking work that compounds in the real world should walk into life sciences. The product point of view is that modern web-quality UX inside a regulated stack is engineerable. The bridge is that serious work requires staying human.
+Daniel is an experienced engineer teaching reliable data systems, data modeling, and AI-assisted modernization. The work addresses engineers across industries, drawing distinctive examples from life sciences, marketing infrastructure, and legal analytics. Daniel remains employed at Amgen and explores Datavial alongside that work. Build in public. Live offline. remains the broader personal identity.
 
 ## Goals and themes
 
-Primary outcomes are credible, durable Life Sciences products and an indirect credibility moat. Content is a serendipity engine, not direct GTM.
+The primary goal is technical reputation: useful teaching, peer recognition, and opportunities earned through demonstrated engineering judgment. Consulting and Datavial credibility are secondary possibilities, not the editorial objective. LinkedIn is the priority channel; other channel commitments are owned by the operating plan.
 
 ### Theme registry
 
@@ -48,10 +50,17 @@ Use `Theme`, not `Pillar`. A Topic may carry several Themes but must identify on
 
 ## Strategic content weighting
 
-Build material remains 80% Life Sciences specific and 20% general operator material. Life Sciences material includes GxP, 21 CFR Part 11, lab-operations realities, regulatory navigation, anonymized design-partner stories, Datavial scars, named industry incumbents, and open problems in pharma software. General operator material includes founder lessons, branding, and systems thinking. The weighting is a planning guardrail, not a quota for every batch or period. General material may be reused when it supports the positioning without diluting the Life Sciences signal.
+Prioritize transferable lessons in pipeline reliability, data modeling, maintainability, and AI-assisted modernization. Use specific industry contexts when they improve the explanation. There is no fixed life-sciences percentage or replacement numeric quota.
+
+- **Systems and Observation:** the default primary Theme for technical instruction, failure analysis, modeling, and verification.
+- **Lived Build in Public:** experiments, changed assumptions, and exploratory Datavial decisions.
+- **Life Sciences Frontier:** domain-specific software and scientific workflow lessons.
+- **Serious Work, Human Plot** and **Movement and Culture:** preserve the offline identity and thoughtful personal expression.
+
+These are applications of existing Themes, not new taxonomy values. Technical value, evidence, and a recognizable problem determine selection; broad topical reach alone does not.
 
 ## Constraints
 
-Build material remains Life Sciences-weighted. The Build/Offline toggle is one identity expressed through different subject matter, not two content categories. Prefer curiosity over certainty, observation over preaching, scars over wounds, and depth over trends.
+The Build/Offline toggle remains one identity. Teach established experience confidently, label experiments, and distinguish professional claims from verified outcomes. Avoid tool hype, unsupported regulatory pronouncements, fabricated customer stories, or unsupported impact metrics. A worked example does not need a customer case study or a travel narrative.
 
 Measurements and Insights may inform later work, but they do not automatically change Themes, positioning, or this weighting. A strategic change requires an explicit decision in Strategy.

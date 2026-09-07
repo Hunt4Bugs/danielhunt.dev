@@ -3,12 +3,12 @@ id: channels
 kind: domain
 domain: channels
 status: active
-version: 1
+version: 2
 class: "10"
 collection: channels
 owner: Daniel Hunt
 created: 2026-08-29
-updated: 2026-08-29
+updated: 2026-09-06
 facets:
   - content
 related:
@@ -16,6 +16,7 @@ related:
   - concepts.md
   - ../../40_content/README.md
 sources:
+  - ../plans/2026-09-06-technical-authority-alignment.md
   - ../ONTOLOGY.md
 ---
 
@@ -84,6 +85,6 @@ Content should redefine per Publication.
 
 ## Examples
 
-- `X` (Channel, Active): Text Post, Thread — build-journal fragments and shipping notes.
-- `YouTube` (Channel, Planned): Short-form Video, Long-form Video — the hero cinematic vlog once
-  launch readiness criteria are met.
+- `X` (Channel, Active): Text Post, Thread — optional reuse, build-journal fragments, and personal notes.
+- `YouTube` (Channel, Planned): Short-form Video, Long-form Video — future cinematic storytelling after
+  readiness gates and an explicit capacity/launch decision; no active production obligation.

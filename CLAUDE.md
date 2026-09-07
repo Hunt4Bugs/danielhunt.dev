@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-Personal brand surface for Daniel Hunt (danielhunt.dev) — a single-page static site that serves as credibility + contact path for the content brand. Not a content publication itself (content lives on IG, X, YouTube, eventually a newsletter).
+Personal brand surface for Daniel Hunt (danielhunt.dev) — a single-page static site that serves as credibility + contact path for the content brand. Not a content publication itself. LinkedIn is the priority technical teaching channel; X and Instagram are optional, while YouTube and a newsletter remain future possibilities. The current site may still express earlier brand copy; this guide does not imply that the public surface has already been aligned with the revised strategy.
 
 For the canonical context map, see [`docs/10_brand/README.md`](docs/10_brand/README.md). For identity and voice, see [`docs/10_brand/identity/README.md`](docs/10_brand/identity/README.md); for visual art direction, [`docs/10_brand/identity/visual.md`](docs/10_brand/identity/visual.md); and for implementation tokens, type, geometry, and components, [`docs/10_brand/assets/design.md`](docs/10_brand/assets/design.md). Update the relevant source before changing anything brand-shaped on the site.
 

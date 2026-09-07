@@ -8,7 +8,7 @@ type: asset-library
 status: active
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-29
+updated: 2026-09-06
 facets:
   - content
 related:
@@ -17,7 +17,9 @@ related:
   - ../../40_content/README.md
   - scripts/README.md
 sources:
+  - ../plans/2026-09-06-technical-authority-alignment.md
   - ../ONTOLOGY.md
+version: 1
 ---
 
 # Assets
@@ -34,6 +36,10 @@ Assets are reusable resources referenced by Content and other Brand contexts. Co
 - Templates: post, carousel, video, prompt, Blueprint, and Script templates.
 
 A Template is an Asset subtype. A Blueprint is not a Template: it is a Topic-specific communication plan. A Script is an authored Asset produced from one primary Blueprint. A Script Template is a reusable fill-in-the-blank Asset for generating Scripts. The reusable visual and implementation contract lives in [design.md](design.md); visual direction lives in [Identity / visual](../identity/visual.md). Reusable scripts live in [scripts](scripts/) and templates live in [templates](templates/).
+
+## Prepared profile copy
+
+The [LinkedIn profile draft](linkedin-profile-draft.md) holds locally prepared About and Experience copy, Featured guidance, banner brief, skill ordering, service descriptions, and unresolved project dates. It is a draft asset, not a published profile or an authored Content Publication.
 
 ## Production dependencies
 

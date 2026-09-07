@@ -8,7 +8,7 @@ type: audience
 status: active
 owner: Daniel Hunt
 created: 2026-06-01
-updated: 2026-08-29
+updated: 2026-09-06
 facets:
   - content
 related:
@@ -17,190 +17,136 @@ related:
   - ../identity/README.md
   - ../strategy/README.md
 sources:
+  - ../plans/2026-09-06-technical-authority-alignment.md
   - ../specs/2026-06-01-personal-brand-workbook.md
+version: 1
 ---
 
 # Daniel Hunt — Brand Audience
 
-Companion to [Identity](../identity/README.md). Identity defines who the brand is. Audience defines who the brand is for, what they are stuck with, what content addresses, and what credibility justifies speaking on it. [`domain.md`](domain.md) states this domain's boundary and [`concepts.md`](concepts.md) is its concept registry (Audience Segment), per the [Domain Documentation Protocol](../../00_system/010_governance/DOMAIN_PROTOCOL.md).
+[Identity](../identity/README.md) owns voice and meaning; [Strategy](../strategy/README.md) owns positioning and Themes. This document owns audience definitions, problems, credibility, and the evidence boundaries for teaching.
 
-This document holds the audience-shaped material produced by the 2026-06-01 personal brand workbook session. See [`specs/2026-06-01-personal-brand-workbook.md`](../specs/2026-06-01-personal-brand-workbook.md) for the full workbook snapshot and [`specs/2026-06-01-workbook-docs-design.md`](../specs/2026-06-01-workbook-docs-design.md) for the design decisions behind these answers.
-
-The Brand Statement, the brand-level contrarian, the product-level contrarian, and the bridge sentence all live in [Identity](../identity/README.md). They are the touchstones this document writes downstream from.
+The September 2026 direction supersedes the audience assumptions in the dated June workbook. Historical snapshots remain evidence of earlier planning, not current career facts.
 
 ## Audience tiers
 
-The brand operates across three audience tiers. Only one is the audience the brand talks *to*.
-
 ### Audience Segment registry
-
-These are the canonical Audience Segment values for Brand records and workflows.
 
 | Segment | Stable code | Audience Relationship | Use |
 | --- | --- | --- | --- |
-| Primary Editorial Audience | B2 | Addressed | Software engineers and SaaS or AI founders looking for a meaningful frontier. |
-| Life Sciences Founder Peers | B1 | Spoken-with | Founders already building life sciences software; peers and potential design partners. |
-| Lab Operations and Scientists | A | Spoken-about | End users whose problems give the work meaning; not the primary editorial audience. |
-| Commercial Services Audience | SERVICES | Addressed | Organizations with a concrete website, automation, integration, or custom-software need. This is separate from the editorial strategy. |
+| Primary Editorial Audience | B2 | Addressed | Working data and software engineers across industries seeking reliability, better modeling, maintainability, and practical AI workflows. |
+| Life Sciences Founder Peers | B1 | Spoken-with | Founders building life-sciences software; domain peers whose experience can inform exploration. |
+| Lab Operations and Scientists | A | Spoken-about | End users whose workflows provide concrete context and whose needs should be represented accurately. |
+| Commercial Services Audience | SERVICES | Addressed | Organizations with a concrete website, automation, integration, or custom-software need; a separate commercial route. |
 
-Use the Segment name and stable code together when ambiguity is possible. A proposed Segment requires the governed taxonomy-addition workflow and approval before use.
+Names, codes, and relationships are preserved. A proposed new Segment still requires the governed taxonomy-addition workflow.
+
+### (B2) Primary. Working data and software engineers
+
+Engineers building, operating, or improving real systems. They want to understand failures, choose useful abstractions, model data clearly, and apply AI without losing the ability to verify behavior. Their domain may be life sciences, marketing, legal analytics, or another industry.
+
+Content should help them make a better engineering decision. Prior life-sciences knowledge, founder ambitions, and plans to leave employment are not prerequisites. Industry examples provide depth while explaining vocabulary and constraints unfamiliar to other engineers.
+
+### (B1) Life Sciences Founder Peers
+
+A domain peer network, not Daniel's claimed employment status or the default reader of every technical lesson. Conversations can inform Datavial exploration without implying design-partner agreements or customers.
+
+### (A) Lab Operations and Scientists
+
+Describe scientific workflows with empathy and evidence. Do not assume that all lab professionals have the same purchasing authority, software needs, or content habits. Their role here is domain context; it does not make every post an end-user sales message.
 
 ### Commercial services audience
 
-The Services page has a separate acquisition job from the editorial brand. It speaks to small and local businesses in Simi Valley and Ventura County, larger organizations, and remote teams that need a website, lead automation, connected operations, or custom software. This commercial audience does not replace the primary Life Sciences editorial audience below. It is a distinct route for people with an active technology problem and a reason to contact Daniel.
+The Services route addresses local businesses in Simi Valley and Ventura County, larger organizations, and remote teams with active technology needs. The five offers remain defined in [Offers](../offers/README.md). Client acquisition is secondary to the primary technical-reputation goal.
 
-### (B2) Primary. Software engineers and SaaS or AI founders looking for a frontier.
+## Painful Problems v1
 
-The person the brand addresses. Currently shipping consumer SaaS, B2B tooling, or AI demos for things they do not particularly believe in. Disillusioned with the current attention-economy lap of tech. Curious about a domain where their existing skills (software engineering, product, distribution) compound into real-world impact rather than into another LLM wrapper.
+These are editorial hypotheses grounded in the work described below, not validated audience research. Refine them through substantive reader exchanges and the [measurement plan](../analytics/measurement-plan.md).
 
-They are not life sciences experts. They may not know what GxP stands for. They suspect the door into life sciences is locked but they have not actually tried it. The content's job is to show the door is more open than they think and to model what walking in looks like from inside the journey.
-
-This is also the audience whose burnout pattern (long hours, screen-rotted attention, deferred-life thinking) maps onto the brand's offline half. They want both meaningful work and a way of living that is not screen-coded. The offline half is for them too, not a separate identity pasted on.
-
-### (B1) Peer network. Life sciences founders who already left.
-
-Rare. Existing peers building life sciences software, mostly post-leave from big pharma or biotech. The brand does not address them directly because there are too few of them to anchor a content strategy on. They are treated as peers and future design partners. Spoken-with, not spoken-to.
-
-### (A) Spoken-about. Lab ops and scientists inside life sciences companies.
-
-The end users of the incumbent software (Veeva, Benchling, Dotmatics, LabVantage, and adjacent). Their pain is described with empathy in content as the reason the work matters. They are not the audience the brand addresses. They are who the work is for. The distinction matters: lab ops do not buy software, do not hold budget, and rarely follow personal brands. Conflating them with (B2) would force the content into either thought-leadership-LinkedIn shape (kills the offline half) or end-user empathy shape (sells nothing for Datavial).
-
-## Painful Problems v0
-
-> **v0.** Drawn from Daniel's pre-leave memory plus the (B2) archetype. Validate against at least five peer-founder conversations during Phase 0 before treating any of these as load-bearing for content strategy.
-
-Twelve problems in (B2)'s voice. "I" statements, exactly as a member of the audience would say them. Grouped into three blocks.
-
-### Pre-leave / pre-entry pains
-
-1. "I am shipping consumer SaaS or AI demos for things I do not believe in."
-2. "I am watching my employer waste years on bad software and I can't fix it from inside."
-3. "I have no biotech credibility. Am I even allowed to enter that world?"
-4. "I don't know if regulated or GxP software is actually buildable as a startup, or if the moat is unbreakable."
-5. "Every founder story I read is SF tech-bro, consumer, or AI. No one who looks like me is going into life sciences."
-6. "I would lose my domain credibility and career trajectory by leaving, and I don't know if it's worth it."
-
-### Building pains
-
-7. "I can build the software. Selling into pharma procurement is opaque."
-8. "I can't tell which compliance or validation burden is real and which is theater."
-9. "I am scared this market is too small, too slow, or too political to be venture scale."
-
-### Bridge / offline pains
-
-These three are the structural reason the brand has an offline half. They justify movement, presence, and connection as part of the build, not opposite to it. If these pains are not real for (B2), the offline half loses its content-strategy backing.
-
-10. "I am in great places with great people and everyone is still on their phones, including me. Life feels less fun than it used to."
-11. "I want to travel and live somewhere new but I'm waiting until I 'make it' first."
-12. "I am burning out shipping stuff I don't care about, and I don't know if meaningful work is possible without losing the rest of my life."
+1. My pipeline succeeds, but I cannot tell whether its output is correct.
+2. Retries and backfills produce duplicates, gaps, or more manual repair.
+3. Our models make every new analytics or application requirement harder.
+4. Our framework removes boilerplate but hides behavior developers need to debug.
+5. Legacy code is poorly documented, and nobody knows which behavior must survive a refactor.
+6. AI produces plausible code, but I need a reliable way to review and verify it.
+7. Extracting structured data from documents is easier than evaluating whether it is trustworthy.
+8. I want to understand another industry's workflows without pretending to be a domain expert.
+9. I want to share useful engineering lessons without exposing private work or exaggerating outcomes.
+10. I want meaningful technical work without deferring movement, relationships, and life outside the screen.
 
 ## Ideation Table v1
 
-For each painful problem, the brand's POV on how to address it and the credibility that justifies speaking on it. This table is the content backlog: a source of post, video, and essay ideas, not a publishing schedule.
+| Problem | Teaching approach | Supporting experience / boundary |
+| --- | --- | --- |
+| Correctness and silent failures | Explain validation, anomaly detection, and the limits of a successful job status. | W4; demonstrate with synthetic input and expected output. |
+| Retries and backfills | Work through recovery behavior and show how to test repeated execution. | W4; an illustrative example is not an employer architecture disclosure. |
+| Data modeling | Compare models for a pipeline, API, and analytics consumer. | W1; explain the intended consumer and tradeoff. |
+| Framework complexity | Show what a decorator abstracts and what must remain visible. | W1c; no unsupported speed or productivity claim. |
+| Legacy modernization | Establish context and behavior checks before AI-assisted changes. | W1b; distinguish the observed work from a newly proposed demonstration. |
+| Trustworthy extraction | Explain entity extraction, evaluation, and ground-truth limitations. | W5 and W6; old NLP experience is not proof of current LLM product performance. |
+| Domain learning | Explain scientific workflows and state open questions. | W1 / W3; regulatory interpretation, procurement, and product-market fit remain exploratory. |
+| Sharing lessons | Use an attributable lesson and a clearly labeled synthetic example when needed. | Evidence discipline below; do not invent an incident. |
+| Remaining human | Share a specific personal observation without prescribing universal life advice. | Firsthand personal experience; no performance or health promises. |
 
-Rows 7 through 9 are scout-mode credibility, not authority. They are framed as "here is what I am currently figuring out" rather than "here is the answer."
+## Credibility Bank
 
-| # | Painful Problem | Unique Solution (POV) | Credibility |
-|---|---|---|---|
-| 1 | Shipping things I don't believe in. | Walk into a frontier where the work compounds into the real world. Life sciences is the most underleveraged option right now. | Did this. Left big tech to build Datavial in life sciences. |
-| 2 | Watching my employer waste years and can't fix it from inside. | The inside path is structurally constrained by politics, deadlines, and budget. The fix comes from leaving and rebuilding scientist-first. | W3 origin moment. Watched it happen inside pharma. Datavial is the rebuild. |
-| 3 | No biotech credibility. Am I even allowed in? | Credentials are not the gate. Conviction and visible learning are. The scout walks in. The journey is the credibility. | Scout mode literally describes Phase 0. Documenting the walk in real time. |
-| 4 | Is regulated software buildable as a startup? | It is buildable. The moat is procurement and inertia, not technology. Modern web-quality UX inside a regulated stack is engineerable. (This is the product-level contrarian.) | Building it currently. Datavial is the proof artifact in progress. |
-| 5 | Every founder story is SF tech-bro, consumer, or AI. | Be the founder you wished existed. The space is under-influenced. That is opportunity, not absence. | The brand itself answers this pain. Walking in as that founder. |
-| 6 | Would lose domain credibility by leaving. | Domain credibility doesn't dissolve when you leave. It compounds when you apply it. The "trajectory" you would lose was inside someone else's plan anyway. | Did this. Left to apply credibility to a self-directed build. |
-| 7 | Selling into pharma procurement is opaque. | Procurement is a different skill from building. Bring an operator-buyer or run design-partner-first. Don't try to learn procurement. Build with people who already speak it. | Currently learning this for Datavial. Scout content, not authority. |
-| 8 | Can't tell which compliance burden is real vs theater. | Most is real, but selectively. Read the regs, talk to QA people, build the minimum necessary, defer the rest. Don't outsource the question. Learn enough to filter. | Currently doing this for Datavial. Scout content. |
-| 9 | Market too small or slow for venture scale. | Slow for big platform plays. Fast for sharp single-purpose tools that solve a real pain. Optimize for design partners who pay, not for VC narrative. | Operating this thesis with Datavial. TBD as a future win or scar. |
-| 10 | Phones eating attention; life feels less fun. | Putting the phone down is the practice. Movement, food, walking, training, and talking to strangers are reattachment rituals. Not fixes for a broken self. The actual texture of being alive. | Lived practice. The offline half of the brand is this work, made visible. |
-| 11 | Want to travel but waiting until I "make it." | Don't defer the life. Travel is a tool for being alive, not a reward. Build the work around travel by batching production during trips. The plan accommodates the life, not the other way around. | Twice-yearly Thailand and Asia rotation is built into [Marketing / Content](../../40_content/README.md), with each trip batched as 3 to 4 episodes of footage. Travel is structural, not pasted on. |
-| 12 | Burning out shipping stuff I don't care about. | Movement, presence, and IRL connection are part of the build, not opposite to it. You can't build for scientists if you have forgotten how to be a person. | The offline half of the brand IS this lived practice. Training, travel, observation. |
-
-## Credibility Bank v0
-
-Building trust means showing the work, not announcing it. For a scout-coded brand, credibility is built differently than for an authority brand: not "I am an expert in X," but "I have walked these steps and survived these specific decisions."
+**Evidence status:** The implementation-session record links the [observed LinkedIn profile and user confirmations](../plans/2026-09-06-technical-authority-alignment.md#evidence-and-confirmed-decisions). LinkedIn role descriptions are self-reported professional experience, not independently measured project outcomes. Daniel confirmed current Amgen employment and exploratory Datavial status on 2026-09-06.
 
 ### Wins
 
-- **W1.** Refactored data models and data pipelines inside a pharma R&D context. Team's time-to-data shortened. Proves the build-side capability that pairs with S1.
-- **W1b.** Organized the team's initial AI work-product. *(Phrasing flag: "AI skills" reads buzzy. Sharpen with user before publishing. Was the actual work internal LLM tooling? A prompt library? Use-case prioritization? Replace this entry with a concrete noun when the user clarifies.)*
-- **W3 (origin moment).** Saw inside pharma that custom software could be done better, but was structurally constrained by politics, deadlines, and budget. This was the seed for Datavial. **W3 and S1 below are two angles on the same insight. Together they are the brand's foundational story.** When the YouTube introduction video lands at Phase 1, this is the beat it leads with.
-- **W2.** *Deferred.* Datavial shipping win. **Phase 0 capture target.** Watch for it: the first time a design partner uses Datavial and reports a measurable change becomes W2. Until then, the build-half credibility leans on W1 + W3.
+Stable W1/W1b/W2/W3 identifiers are retained for existing references. New identifiers extend the bank without rewriting historical provenance.
+
+- **W1. Amgen modeling and pipelines.** Profile describes data modeling for legacy and new features of a Node.js API serving internal analytics dashboards. Earlier workbook material reports refactoring pharma R&D data models and pipelines and shorter time-to-data; that improvement remains unquantified and unverified.
+- **W1b. Amgen documentation and modernization.** Automated documentation across systems to support developer onboarding and AI-assisted coding/troubleshooting; used AI tools to document, refactor, and optimize a large legacy Oracle package. This replaces the vague historical phrase “AI skills.” It does not establish autonomous self-refactoring.
+- **W1c. Amgen developer tooling.** Designed a Python decorator framework aligned with Databricks environment, catalog, and database naming structures to simplify pipeline development and maintenance. No measured productivity result is available.
+- **W2. Datavial outcome.** Deferred. Datavial is exploratory; no customer result, revenue, compliance status, or product-market fit is established. Capture a verified outcome if one occurs. Technical publishing does not depend on W2.
+- **W3. Life-sciences observation.** Earlier workbook material reports fragmented data and constraints on internal software work as motivation to explore Datavial. Treat this as attributed firsthand recollection, not evidence of having left employment or of industry-wide conditions.
+- **W4. Realtor.com production data systems.** Built marketing pipelines with Python, Airflow, and Snowflake; validation/anomaly detection using SQL and dbt; recovery and backfill mechanisms; and observability using InfluxDB and Grafana. The profile's “99% reliability” and “billions of impressions” are not supported by definitions, scope, or measurement records here and are omitted from revised public copy.
+- **W5. Gavelytics legal analytics.** Built NLP/ML pipelines to extract entities and outcomes from legal text using Keras, Word2Vec, and SciPy; delivered judge/case analytics with Pandas and NumPy. This is prior professional work, not merely a possible future vertical.
+- **W6. HRL Laboratories engineering.** Implemented and compared computer-vision saliency methods; built a video annotation tool incorporating translation/rotation detection; performed CAN-bus message analysis and security testing with Python tooling. Claimed annotation-speed benefits remain unmeasured here.
 
 ### Scars
 
-- **S1.** Data is fragmented and poorly structured. Integration pipelines are overkill. Teams waste enormous time on data plumbing instead of science. **Paired with W3 as the foundational brand story.** S1 is the problem; W3 is the moment of seeing it from inside; Datavial is the response.
-- **S2.** *Deferred.* A wrong assumption I unwound by leaving or by being early at Datavial. **Most important deferred item.** For (B2) audience resonance, this scar type ("I was wrong about Y before I walked in; here is what I think now") gives them permission to be wrong on their own walk. Watch for it across the next 12 months. Every time something is learned that wasn't known 6 months ago, ask: "is this an S2 candidate?"
+- **S1. Fragmented data and excess integration work.** A firsthand observation in the earlier workbook. Use a concrete example or qualify the scope; do not turn it into a universal claim about pharma.
+- **S2. Changed assumption.** Deferred until a specific, attributable example exists. It may arise from engineering work or Datavial exploration. Do not invent a failure to fill a narrative slot.
 
-## Interest Bank v0
+### Evidence discipline
 
-The engine for a scout brand. Authority brands stack credibility; scout brands stack current, active, visible curiosity. The Interest Bank gives permission to publish before full credibility is earned, because the value is not conclusions but the visible search.
+Teach established experience confidently and state the limits of applicability. Label proposed designs, synthetic examples, experiments, personal recollections, and measured outcomes distinctly. A self-reported career bullet supports attribution; it does not independently prove its impact. Quantified results require a metric definition, timeframe, scope, and supporting evidence. Customer stories require verified facts and publication authorization.
 
-Bucket organization follows the workbook's prompt set (curiosity, experiment, brand-process, offline) plus the genuine-questions list.
+## Interest Bank v1
 
-### Curiosities (Bucket A: life sciences domain learning)
+These are candidate investigations, not claims of completed experiments or existing artifacts:
 
-1. Learning to produce a GxP-compliant product end-to-end.
-2. Lab ops data domains (bioassay methods, demand, planning, and related) and the data models they imply.
+- Safe recovery and backfill demonstrations using synthetic records.
+- Models serving both operational APIs and analytics consumers.
+- Developer-friendly abstractions that preserve inspectable execution behavior.
+- Context preparation and behavior verification for AI-assisted legacy refactoring.
+- Evaluation of structured extraction from heterogeneous documents.
+- Datavial's scientific workflow and data-container ideas, at exploratory maturity.
+- Movement, food, culture, and relationships alongside employed engineering work.
 
-### Experiments (Buckets A and B: things actively trying to make work)
-
-3. Running usable validation cycles on a regulated B2B product as a solo founder, when buyers are gated behind procurement.
-4. Branding Datavial for "regulated-buyer-serious without going corporate-bland." Making the brand legible to life sciences buyers while scalable across subdomains.
-5. Modeling Vials as data containers across heterogeneous lab-data domains.
-
-### Bucket C (brand-process learning)
-
-**Intentionally empty for Phase 0.** Brand-process work (DaVinci practice, on-camera comfort, frame-by-frame study of Lindhardt and Dalen) is happening per [Marketing / Content](../../40_content/README.md), but is kept backstage as content. Risk: meta-content about learning production craft can compound or can read self-indulgent. The reference set (Dalen specifically) does not do this. Revisit at Month 6 if Phase 0 craft has progressed enough to have something honest to teach.
-
-### Offline (Bucket D)
-
-6. Training and nutrition while sprinting on Datavial. Staying useful to the body during a 60-hour build week.
-7. Day-trip-as-practice. Train to Ventura, or equivalent. The act of slowing down enough to notice.
-8. IRL human connection as practice. Finding the conversation, the meal, the people in every new place. Bourdain's arrival-arc applied to relationships, not just travel.
-
-### Genuine questions (currently trying to answer)
-
-1. How do I run user feedback / validation cycles on a regulated B2B product when buyers are gated behind procurement?
-2. Can Datavial's brand look serious enough for regulated buyers without going corporate-bland?
-3. How do I cleanly model Vials as data containers across heterogeneous lab-data domains?
-4. Can I lose weight and avoid burnout while sprinting on Datavial, or does that have to wait for the sprint to end?
-5. *Open.* Captured as it emerges; not back-filled. Honest scout mode requires not fabricating a fifth.
+Procurement, regulatory interpretation, and product-market fit remain open learning areas. Production-craft learning is optional and stays backstage unless it yields a useful, evidence-backed lesson.
 
 ## Differentiation Breakdown
 
-Four things common in (B2)'s adjacent creator and operator space that the brand explicitly disagrees with, paired with the brand approach.
-
-Each row connects to a contrarian or principle in [Identity](../identity/README.md). Each row would force a hard no on a specific tempting decision the brand might otherwise drift toward.
-
-| # | Dimension | Industry default I disagree with | My brand approach |
-|---|---|---|---|
-| 1 | Posture | Tech-bro grind worship. Building means 80-hour weeks, dead bodies, "I'll sleep when I ship." | Presence, body, and movement as part of the build, not the cost of it. You can't build for scientists if you have forgotten how to be a person. |
-| 2 | Strategy | "Build in public" as metrics theater. Daily MRR screenshots, ARR ladders, vanity dashboards. | Build in public as scout reports. What I am walking through, learning, getting wrong. Scars, not wounds. Not numbers. |
-| 3 | Domain | AI-rebrand everything; chase the current hype cycle. | Walk deliberately into a durably valuable, under-influenced domain (life sciences). Boring and serious beats trendy and loud. |
-| 4 | Credentials | "You need 20 years inside pharma to be a credible founder." | Conviction plus visible learning beats credentials. The scout walks in. The journey itself is the proof. |
-
-**On the bench (not in ship list):** Polished or luxury creator aesthetic versus memory-not-photoshoot. Already covered by the visual rule in [visual direction](../identity/visual.md) and the aesthetic tie-break in Identity. Swap into the table only if the polish-aesthetic tension becomes a recurring decision-pressure point.
+| Dimension | Brand approach |
+| --- | --- |
+| Engineering judgment | Explain the problem, alternatives, tradeoff, and verification rather than recommend tools by popularity. |
+| Evidence | Make examples inspectable and label their limits; confidence follows demonstrated experience. |
+| Domain depth | Use life sciences, marketing infrastructure, and legal analytics to make transferable lessons specific. |
+| AI | Teach concrete AI-assisted documentation and modernization workflows while retaining human review and behavior checks. |
+| Human life | Preserve presence and curiosity without turning overwork into a credential. |
 
 ## Desired Associations
 
-Four positions, two for and two against. These are guardrails that shape what the brand says yes and no to over time. The test: would the association force a hard no on something otherwise tempting?
+- Reliable data systems, clear models, and maintainable engineering.
+- Practical AI-assisted modernization with explicit verification.
+- Industry depth that helps engineers across domains learn.
+- Build in public. Live offline. as a lived philosophy compatible with technical authority.
 
-### I'm for
+Avoid unsupported certainty, generic hype, invented outcomes, and claims that professional learning requires leaving a job.
 
-1. **Walking into life sciences as a frontier for software.** Filter says yes to: scout-coded content, Datavial work, life sciences observation. Filter says no to: generic SaaS founder content, even when generic posts would perform better.
-2. **Building serious work without losing the human plot.** Filter says yes to: presence, movement, food, IRL connection content alongside the build. Filter says no to: hustle, grind, or dead-body content, even when sleep-deprivation posts perform.
+## Historical context
 
-### I'm against
-
-3. **Hustle and grind as the default builder posture.** Filter cuts: 80-hour-week brag content, productivity-stack worship, sleep-as-weakness rhetoric. The aggressive complement to "for #2."
-4. **AI-rebranding and hype-cycle riding.** Filter cuts: future temptation to repackage Datavial as "AI-first" for marketing, pivoting content to whatever is trending, doing LinkedIn AI-thought-leadership posturing.
-
-The four pair symmetrically across two axes. For #1 (life sciences frontier) pairs with against #4 (no chasing hype): both about *where the work is pointed*. For #2 (human plot intact) pairs with against #3 (no hustle culture): both about *how the work is done*. That symmetry makes the brand legible as two axes (where, how), each defined by a yes and a no.
-
-## Where the rest of the workbook material lives
-
-- **Brand Statement, brand-level contrarian, product-level contrarian, bridge sentence:** [Identity](../identity/README.md).
-- **Editorial rules and capture targets:** [Marketing / Content](../../40_content/README.md).
-- **Full workbook snapshot (15 exercises in workbook order):** [`specs/2026-06-01-personal-brand-workbook.md`](../specs/2026-06-01-personal-brand-workbook.md).
-- **Design decisions for these answers:** [`specs/2026-06-01-workbook-docs-design.md`](../specs/2026-06-01-workbook-docs-design.md).
-- **Implementation plan:** [`plans/2026-06-01-workbook-docs-implementation.md`](../plans/2026-06-01-workbook-docs-implementation.md).
+The [June workbook](../specs/2026-06-01-personal-brand-workbook.md) and its [design rationale](../specs/2026-06-01-workbook-docs-design.md) preserve earlier assumptions. Current audience direction and career facts are stated above; do not reuse the historical departure narrative as fact.

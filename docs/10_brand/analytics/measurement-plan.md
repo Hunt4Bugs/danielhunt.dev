@@ -1,11 +1,14 @@
 ---
+id: analytics.note.measurement-plan
+kind: note
+domain: analytics
 class: "10"
 collection: analytics
 type: measurement-plan
 status: active
 owner: Daniel Hunt
 created: 2026-08-27
-updated: 2026-08-27
+updated: 2026-09-06
 facets:
   - content
   - strategy
@@ -13,48 +16,57 @@ related:
   - README.md
   - ../../40_content/operating-plan.md
 sources:
+  - ../plans/2026-09-06-technical-authority-alignment.md
   - ../../40_content/README.md
+version: 1
 ---
 
 # Content measurement plan
 
-This plan owns observation windows, operating success criteria, and interpretation rules for Brand Content. It does not replace Strategy.
+This plan owns observation windows, operating success criteria, and interpretation rules. It measures the technical-reputation direction set by [Strategy](../strategy/README.md), not a promised follower-growth trajectory.
 
 ## Publication observation windows
 
 Use cumulative observations at approximately 24 hours, 7 days, and 30 days after publication when the Channel exposes the metric. Record the actual period start, period end, and observation time rather than assuming the target window was exact.
 
-Compare Publications only when Metric Name, unit, Format, Channel, and observation window are meaningfully compatible. Missing platform data remains unknown; do not enter zero unless zero is the observed value.
+Compare Publications only when Metric Name, unit, Format, Channel, and observation window are meaningfully compatible. Missing platform data remains unknown; do not enter zero unless zero is observed. Historical posts with different ages are not comparable experiments merely because their lifetime totals are visible.
 
-## Operating reviews
+## Monthly operating review
 
-- Review production and cadence monthly during Phase 0.
-- Review the operating plan and audience direction at months 3 and 6 from the beginning of Phase 0 prep.
-- Review the Content context quarterly after the initial six-month period.
+Start the review clock when regular LinkedIn publishing begins, not on the documentation-change date. The [operating plan](../../40_content/operating-plan.md) owns the Tuesday/Thursday commitment.
+
+Review:
+
+- **Consistency:** completed versus planned slots, with skipped slots and reasons. Two weekly slots are a schedule commitment, not evidence that publication occurred.
+- **Preparation effort:** time spent researching, preparing examples, verifying behavior, and editing; identify whether the cadence is sustainable.
+- **Substantive technical exchange:** questions about implementation, alternatives, corrections, examples of use, and follow-up discussion. Preserve examples or links rather than equating all comments with technical value.
+- **Relevant audience:** available follower/viewer information suggesting working data or software engineers across industries. Do not infer professional relevance from unavailable data or require life-sciences affiliation.
+- **Opportunities:** attributed invitations, collaboration inquiries, or professional opportunities when an actual connection to the content is known. Otherwise mark attribution unknown.
+- **Topic learning:** which reliability, modeling, modernization, or domain-specific explanations generated useful exchange and which need clearer framing.
+
+Use existing Measurement and Insight contracts for platform metrics and interpretations. Qualitative observations remain explicitly labeled; do not invent new controlled Metric Names or fabricate conversion attribution. X, Instagram, and future video are optional and receive no minimum-output or daily-practice scorecard.
 
 ## Month 3 criteria
 
-- X: at least 50 Publications, with a recognizable Life Sciences-weighted voice and topic mix.
-- Instagram: at least 8 standalone Reels with visible craft progression.
-- LinkedIn: current profile and 2 to 3 Publications.
-- Production: DaVinci Resolve used for at least 6 edits and private on-camera practice substantially maintained.
-- First-trip footage: organized and in the editing pipeline.
+- Review the twice-weekly LinkedIn schedule against actual published work and preparation effort.
+- Check whether the profile and the body of posts consistently communicate reliable data systems, modeling, and practical AI-assisted modernization.
+- Assess which subjects generate useful technical questions, corrections, or application by relevant engineers using compatible observation windows.
+- Identify evidence gaps and decide whether the operating practice needs adjustment. No follower-count or reach outcome is promised.
 
 ## Month 6 criteria
 
-- X: at least 100 Publications with engagement interpreted as evidence rather than vanity.
-- Instagram: at least 20 standalone Reels with visible movement toward the reference craft.
-- LinkedIn: at least 5 Publications and an audience trending toward Life Sciences-adjacent viewers.
-- Production manual: drafted and exercised.
-- YouTube episode 1: in production, with episode 2 in early edit.
-- YouTube launch gates: explicitly trackable with a realistic Phase 1 estimate.
+- Repeat the cadence and sustainability review across the longer period.
+- Assess whether useful explanations form a recognizable body of work and whether readers return with deeper technical questions or opportunities.
+- Compare topic/Format patterns only where observations are sufficiently comparable; label small samples and alternative explanations.
+- Review whether optional channel expansion has a concrete audience benefit and fits capacity. YouTube readiness remains optional and does not determine success of LinkedIn teaching.
 
-If the urgent learning agenda has not moved meaningfully by month 6, revise the operating plan rather than merely increasing effort.
+After month six, retain monthly operating reviews and quarterly strategic reviews. An explicit Strategy decision is required to change direction.
 
 ## Interpretation rules
 
 - Separate observed Measurement values from explanations.
 - Record limitations and plausible competing explanations in every Insight.
-- Do not infer causation from one Publication.
+- Do not infer causation from one Publication or assume that a broadly topical AI post validates an enduring technical niche.
 - Do not compare unlike Formats, Channels, or observation windows as though they were equivalent.
-- Do not let an overperforming subject override the Build/Offline toggle, Theme registry, or strategic weighting without an explicit Strategy decision.
+- Do not let an overperforming subject automatically override Identity, Themes, or strategic priorities.
+- If learning is limited, examine example quality, clarity, audience fit, and production effort before increasing volume.

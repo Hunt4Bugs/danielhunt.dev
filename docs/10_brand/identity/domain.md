@@ -3,12 +3,12 @@ id: identity
 kind: domain
 domain: identity
 status: active
-version: 1
+version: 2
 class: "10"
 collection: identity
 owner: Daniel Hunt
 created: 2026-08-29
-updated: 2026-08-29
+updated: 2026-09-06
 facets:
   - strategy
   - audience
@@ -20,6 +20,7 @@ related:
   - ../strategy/README.md
   - ../audience/README.md
 sources:
+  - ../plans/2026-09-06-technical-authority-alignment.md
   - ../specs/2026-05-28-brand-refinement-design.md
   - ../specs/2026-06-01-personal-brand-workbook.md
 ---
@@ -39,7 +40,7 @@ brand's own meaning.
 ### Includes
 
 - The Brand Statement, Thesis, contrarians, bridge sentence, and public referral sentences.
-- The Persona set (Maker-Mover, Walking-In Scout) and the Toggle (Build half / Offline half) as
+- The active Maker-Mover Persona and the Toggle (Build half / Offline half) as
   the brand's structural spine.
 - Signature phrases and the References the brand's design borrows from (internal-only; never
   named in public copy).
@@ -102,7 +103,8 @@ Full definitions and relationships live in [`concepts.md`](concepts.md).
 
 ## Examples
 
-- `Bridge` (Contrarian, active): "You can't build for scientists if you've forgotten how to be a
-  person." — justifies Offline-half content existing inside this brand.
-- `Walking-In Scout` (Persona, internal-only): the orientation discipline behind Build-half
-  content being forward-looking rather than an exit story.
+- `Bridge` (Contrarian, active): "Building useful systems should leave room for being a person."
+  — justifies Offline-half expression alongside technical teaching.
+- `Maker-Mover` (Persona, internal-only): building and movement as parallel practices. The
+  historical Walking-In Scout reference remains in dated planning; current confidence follows
+  evidence and varies by subject, as defined in [Identity](README.md#the-persona).

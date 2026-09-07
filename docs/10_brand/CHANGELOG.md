@@ -1,11 +1,15 @@
 ---
+id: strategy.note.brand-changelog
+kind: note
+domain: strategy
+version: 1
 class: "10"
 collection: brand
 type: changelog
 status: active
 owner: Daniel Hunt
 created: 2026-05-28
-updated: 2026-08-27
+updated: 2026-09-06
 facets:
   - governance
 related:
@@ -26,6 +30,30 @@ Format per entry:
 - Source (link to spec, PR, or conversation)
 
 ---
+
+## 2026-09-06: Technical reputation becomes the primary brand goal
+
+**Decision:** Address working data and software engineers across industries with practical teaching on reliable data systems, data modeling, and AI-assisted modernization. Remove the fixed life-sciences quota and apply existing Themes according to the lesson. Preserve Build in public. Live offline.
+
+**Rationale:** The signed-in LinkedIn review surfaced concrete experience across Amgen, Realtor.com, Gavelytics, and HRL that the earlier founder/scout strategy understated. The user confirmed technical reputation and broad engineering readership as the priority. Confidence now follows subject-specific evidence rather than a blanket scout posture.
+
+**Source:** [Approved implementation and evidence record](plans/2026-09-06-technical-authority-alignment.md).
+
+## 2026-09-06: Career facts and exploratory product maturity corrected
+
+**Decision:** State current Amgen employment and exploratory Datavial status. Expand the credibility bank with attributed professional experience, retain uncertain metrics as unverified, and prepare the [LinkedIn profile copy](assets/linkedin-profile-draft.md) locally.
+
+**Rationale:** The user confirmed that departure/founder assumptions in the earlier workbook were not the current situation. The profile supports concrete engineering work but does not independently verify impact metrics, customer results, or autonomous refactoring. Historical plans and scripts remain intact and must be revalidated before reuse.
+
+**Source:** [User confirmations and observed profile](plans/2026-09-06-technical-authority-alignment.md#evidence-and-confirmed-decisions).
+
+## 2026-09-06: LinkedIn becomes the active teaching channel
+
+**Decision:** Adopt Tuesday worked lessons and Thursday shorter observations. Make X and Instagram optional and YouTube future-facing, preserving its readiness gates without an active production obligation. Remove customer-count gates for technical publishing and revise monthly, month-three, and month-six reviews around effort and useful technical exchange.
+
+**Rationale:** The user chose LinkedIn first and two posts weekly. Technical demonstrations can be useful before Datavial has customers, while customer case studies still require verified evidence. Measurement retains comparable 24-hour, 7-day, and 30-day windows without growth guarantees.
+
+**Source:** [Approved operating changes](plans/2026-09-06-technical-authority-alignment.md#unit-3--docs-replace-the-deferred-linkedin-plan-with-a-sustainable-teaching-schedule).
 
 ## 2026-08-27: Content workflow skills reconciled with the operating system
 

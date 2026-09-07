@@ -3,17 +3,18 @@ id: offers
 kind: domain
 domain: offers
 status: active
-version: 1
+version: 2
 class: "10"
 collection: offers
 owner: Daniel Hunt
 created: 2026-08-29
-updated: 2026-08-29
+updated: 2026-09-06
 related:
   - README.md
   - concepts.md
   - ../identity/README.md
 sources:
+  - ../plans/2026-09-06-technical-authority-alignment.md
   - ../specs/2026-05-28-brand-refinement-design.md
 ---
 
@@ -22,8 +23,8 @@ sources:
 ## Purpose
 
 Offers owns the products or services the Brand can credibly introduce or support. It exists as its
-own domain, distinct from Identity and Marketing, because an Offer is a concrete
-product-or-service commitment — what can actually be delivered — not brand meaning or coordinated
+own domain, distinct from Identity and Marketing, because an Offer describes a service or product and its actual maturity. Current service commitments must
+be distinguished from exploratory product directions; neither is brand meaning or coordinated
 promotional activity.
 
 ## Scope
@@ -33,7 +34,7 @@ promotional activity.
 - **Service Offer** — a public-facing service the commercial Services page can credibly present
   (Workflow automation, Lead management, Business websites, CRM and tool integrations, Custom
   software builds).
-- **Product Offer** — a Brand-adjacent product, currently Datavial.
+- **Product Offer** — a Brand-adjacent product direction, currently exploratory Datavial.
 - The internal service taxonomy (Sales Systems, Marketing Systems, Operations Systems, Custom
   Software) that groups Service Offers for internal organization, distinct from the public offer
   names.
@@ -83,5 +84,5 @@ Full definitions and relationships live in [`concepts.md`](concepts.md).
 
 - `Workflow automation` (Service Offer, active, Sales Systems / Operations Systems grouping): the
   broadest entry point among the five public offers.
-- `Datavial` (Product Offer, active): the flagship Life Sciences product; the personal brand is an
-  indirect credibility moat for it, not its GTM motion.
+- `Datavial` (Product Offer, exploratory maturity): a life-sciences product exploration alongside
+  employment. Registry inclusion does not imply commercial availability, customers, or revenue.

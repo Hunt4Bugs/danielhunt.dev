@@ -1,9 +1,14 @@
 ---
+id: content.note.operating-plan
+kind: note
+domain: content
+class: "40"
+collection: content
 type: operating-plan
 status: active
 owner: Daniel Hunt
 created: 2026-08-27
-updated: 2026-08-27
+updated: 2026-09-06
 facets:
   - channels
   - strategy
@@ -13,88 +18,86 @@ related:
   - production.md
   - ../10_brand/channels/README.md
 sources:
+  - ../10_brand/plans/2026-09-06-technical-authority-alignment.md
   - ../10_brand/specs/2026-05-28-brand-refinement-design.md
   - ../10_brand/specs/2026-06-01-personal-brand-workbook.md
+version: 1
 ---
 
 # Content operating plan
 
-This document owns current cadence, phasing, launch gates, sustainability rules, editorial operating rules, and capture targets. Entity semantics remain in the [Brand ontology](../10_brand/ONTOLOGY.md), strategic direction in [Strategy](../10_brand/strategy/README.md), Channel compatibility in [Channels](../10_brand/channels/README.md), and production practice in [Content production](production.md).
+This document owns current cadence, phasing, launch gates, sustainability, and editorial operating rules. Entity semantics live in the [Brand ontology](../10_brand/ONTOLOGY.md), direction in [Strategy](../10_brand/strategy/README.md), Channel compatibility in [Channels](../10_brand/channels/README.md), and reusable practices in [Content production](production.md).
 
 ## Surface plan
 
-| Channel | Phase 0 | Phase 1 | Phase 2 |
-| --- | --- | --- | --- |
-| X | 4 to 6 posts per week: build-journal fragments, Life Sciences observations, and micro-notes. | Same. | Same. |
-| Instagram | Weekly standalone Reel and biweekly carousel. | Weekly Reel cutdowns from YouTube plus biweekly carousels. | Same as Phase 1. |
-| LinkedIn | Profile current and 1 to 2 posts per month. | Same as Phase 0. | Weekly case studies, regulatory navigation, and technical operator material. |
-| YouTube | Not launched. | Monthly cinematic vlog. | Same as Phase 1. |
+| Channel | Current commitment | Role |
+| --- | --- | --- |
+| LinkedIn | Two posts weekly: Tuesday and Thursday. | Priority channel for practical technical teaching and engineering reputation. |
+| X | Optional reuse or standalone expression; no posting quota. | Short engineering observations, useful fragments, and personal notes. |
+| Instagram | Optional reuse or personal expression; no Reel or carousel quota. | Movement, food, culture, and relevant build observations. |
+| YouTube | Future possibility; no active production or publishing obligation. | Cinematic storytelling if launch readiness and available capacity support it. |
+| Newsletter | Future; no current commitment. | Possible owned editorial channel. |
 
-YouTube is the eventual hero artifact. Talking-head material may appear within the cinematic vlog but is not a standalone recurring format. X carries fragments, Instagram carries Reels and carousels, and LinkedIn remains presence-led until Phase 2.
+Tuesday is one worked technical lesson. Thursday is one shorter engineering observation or tradeoff. The default publishing days use Daniel's America/Los_Angeles timezone; no exact posting hour or automation is prescribed. This is an editorial schedule, not authorization to publish or create a scheduled task.
 
-When life demands it, YouTube drops to bimonthly. Bimonthly is the defined fallback, not a failure event.
+Start with pipeline reliability, data modeling, and AI-assisted modernization. Examples can draw from life sciences, marketing infrastructure, and legal analytics. Technical publishing does not depend on Datavial customers, a product launch, travel, or cinematic production readiness.
 
-## Travel and launch gates
+## Weekly production and editorial rule
 
-Travel is planned twice yearly, with Thailand plus Japan, Vietnam, or another destination in the existing rotation. Each trip is a batch-shoot opportunity for three to four episodes.
+- Select one concrete problem and attributable evidence for Tuesday. Explain the problem, example, decision, tradeoff, and verification.
+- Select a narrower observation or alternative for Thursday. It may reuse Tuesday's investigation but must add a distinct useful point.
+- Prefer Text Post; use a Carousel or Article when the explanation benefits from that compatible Format. No additional format or channel is required.
+- Mark synthetic data and proposed designs explicitly. Distinguish demonstrated results, professional recollection, and open experiments.
+- Teach established engineering experience confidently. Procurement, regulatory interpretation, product-market fit, and Datavial outcomes require their own evidence.
+- Customer case studies require verified customer facts and publication authorization. General engineering lessons and synthetic demonstrations do not require a customer milestone.
 
-YouTube launches only when all conditions are true:
+The Build/Offline identity and Strategy guide selection; short-term performance does not automatically redirect the brand. Offline life remains valuable without having to become a weekly content deliverable.
+
+## Sustainability rules
+
+1. Give the two LinkedIn posts priority over optional channel work.
+2. Batch investigation and reuse examples where it improves quality; do not create extra channel obligations through repurposing.
+3. Track preparation effort and review it monthly. If the schedule is unsustainable, propose an explicit operating-plan revision rather than silently accumulating extra commitments.
+4. Do not publish an unsupported claim or a weak artifact solely to fill a slot. Record a missed slot and the reason at review; it creates no catch-up quota.
+5. Production cannot depend on Daniel's brother or unconfirmed external help.
+
+## Future YouTube readiness
+
+YouTube remains optional. Before choosing to launch, retain all three existing readiness gates:
 
 1. Two finished episodes are in reserve.
 2. Daniel has executed one documented editing workflow end to end at least twice in DaVinci Resolve.
 3. The launch episode is in production.
 
-The first batch-shoot trip is a production shakedown with no launch pressure. If the gates are not met, launch moves to a later trip without penalty.
+Meeting the gates does not automatically start a cadence. Revisit capacity and explicitly update this plan before committing to a launch schedule. If a future monthly schedule is adopted, the previous every-two-month fallback can be considered at that decision. Neither is a current obligation.
 
-## Sustainability rules
-
-1. Batch shooting around travel weeks produces material for three to four episodes.
-2. Maintain a two-episode buffer; one episode is a warning signal.
-3. Use the bimonthly YouTube fallback when required.
-4. Daniel's brother may help, but routine production cannot depend on him.
-
-## Editorial operating rule
-
-The Build/Offline toggle and Strategy control the next Publication, not short-term performance. An item that performs far above average is evidence for Analytics, not an automatic commitment to repeat its subject or abandon the strategic weighting.
+Travel may provide footage opportunistically; no trip, destination, footage quota, or launch date is required by this plan. Existing historical scripts must be revalidated against current career facts before reuse; see the [Script Assets index](../10_brand/assets/scripts/README.md).
 
 ## Phasing
 
-Phases advance when their gates are met, not on fixed dates.
+- **Current preparation:** review the [LinkedIn copy draft](../10_brand/assets/linkedin-profile-draft.md), establish evidence for initial technical lessons, and prepare compatible Publications through the existing workflows.
+- **Current operating rhythm:** two weekly LinkedIn posts with a monthly review. Other channels remain optional.
+- **Future expansion:** add another production commitment only through an explicit operating-plan revision based on capacity and audience value.
 
-| Phase | Focus |
-| --- | --- |
-| Phase 0 prep | Begin X and Instagram cadence, keep LinkedIn current, and prepare production for the first trip. |
-| Phase 0 shakedown | Shoot heavily on the first trip and prove the production workflow without launch pressure. |
-| Phase 0 main | Sustain X and Instagram, edit trip footage, and meet YouTube launch gates. |
-| Phase 1 | Launch monthly YouTube, weekly Instagram cutdowns, continuing X, and monthly LinkedIn. |
-| Phase 2 | When Datavial has three to five named customers worth case-studying, move LinkedIn to weekly active distribution. |
+This supersedes the former Phase 0/1/2 cross-channel schedule. There is no customer-count gate for technical LinkedIn publishing. Historical phase references in dated plans do not impose current obligations.
 
-## Phase 0 operating checklist
+## Current operating checklist
 
-- [ ] Begin X at 4 to 6 posts per week.
-- [ ] Begin Instagram with one weekly Reel and one biweekly carousel.
-- [ ] Review the LinkedIn profile and begin the Phase 0 monthly cadence.
-- [ ] Identify the source material for each Phase 0 main Instagram Reel.
-- [ ] Complete the linked [production preparation checklist](production.md#phase-0-production-checklist).
+- [ ] Review the prepared LinkedIn profile copy; apply changes only through a separately authorized public action.
+- [ ] Prepare Tuesday's worked lesson from attributable experience and an inspectable example.
+- [ ] Prepare Thursday's shorter observation or tradeoff.
+- [ ] Verify the behavior claimed by a demonstration and identify its limits.
+- [ ] Review production effort and substantive audience exchange monthly using the [measurement plan](../10_brand/analytics/measurement-plan.md).
 
 ## Capture targets
 
-- **W2, Datavial shipping win:** capture the first verified design-partner result with anonymized company type, timeframe, and impact. Do not promote an expected result into evidence.
-- **S2, wrong assumption unwound:** watch for a genuine changed belief that can be discussed as a healed scar rather than an active wound.
-- **Wrapping Paper library:** save useful thumbnails, titles, hooks, and Reel formats immediately. Treat these as Sources or working references, not approved Brand vocabulary or performance claims.
+- **Technical evidence:** capture reusable models, failure explanations, test results, and changed assumptions with appropriate source attribution. Do not imply that a synthetic demonstration is an employer's implementation.
+- **W2, Datavial outcome:** deferred until an actual verified outcome exists; no expected customer result is promoted into evidence.
+- **S2, changed assumption:** capture a specific, attributable engineering or exploratory lesson when it occurs; do not fabricate a scar.
+- **Reference material:** save useful examples as Sources or working references, not approved vocabulary or evidence of performance.
 
-W2 and S2 ultimately belong in the [Audience credibility bank](../10_brand/audience/README.md). Reusable reference material follows the Content Source and Knowledge workflows.
+W2 and S2 remain owned by the [Audience credibility bank](../10_brand/audience/README.md#credibility-bank). Reusable editorial material follows the existing Source and Knowledge workflows.
 
-## Phase 1 preparation
+## Risks and review
 
-When launch readiness is roughly 60 days away, expand the first-episode reference-coded skeletons and the 4Cs introduction framework from the [workbook snapshot](../10_brand/specs/2026-06-01-personal-brand-workbook.md). Existing long-form Script Assets remain under [Assets / scripts](../10_brand/assets/scripts/long_form/).
-
-## Risks
-
-- **Production craft:** if the required craft or editing speed is not ready, Phase 1 moves rather than lowering the launch gates.
-- **Sustainability:** use the fallback cadence before overload becomes a brand-quit event.
-- **Audience fit:** review the Life Sciences audience direction using the Analytics plan, without allowing engagement alone to redefine Strategy.
-- **Sponsorship:** do not move toward a generic lifestyle strategy merely to accelerate sponsorship revenue.
-- **Trip dependency:** a delayed trip may delay YouTube launch; this is an accepted operating constraint.
-
-Historical rationale, including the rejected educator-coded first-video structure, remains in the dated [workbook documentation design](../10_brand/specs/2026-06-01-workbook-docs-design.md) and workbook snapshot rather than in this active operating plan.
+Review effort, clarity, and relevant technical exchange monthly. Distinguish low output caused by production effort from low response caused by an unclear subject; neither explanation is established by a single post. Keep growth expectations provisional. The [measurement plan](../10_brand/analytics/measurement-plan.md) owns comparable observation windows and month-three/month-six reviews.

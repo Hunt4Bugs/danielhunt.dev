@@ -8,10 +8,13 @@ type: offers
 status: active
 owner: Daniel Hunt
 created: 2026-08-26
-updated: 2026-08-29
+updated: 2026-09-06
 related:
   - domain.md
   - concepts.md
+version: 1
+sources:
+  - ../plans/2026-09-06-technical-authority-alignment.md
 ---
 
 # Offers
@@ -30,4 +33,6 @@ The internal service taxonomy remains Sales Systems, Marketing Systems, Operatio
 
 ## Product offers
 
-Datavial is the flagship Life Sciences product. It is not interchangeable with the commercial service offers. Marketing may reference an Offer where relevant, but the personal brand remains an indirect credibility moat rather than Datavial's direct GTM motion.
+Datavial is an exploratory life-sciences product alongside Daniel's employment at Amgen. It is recorded here as an exploratory product direction, not an available product commitment or evidence of customers, revenue, compliance, or product-market fit. It is not a current primary income stream.
+
+The five service offers remain the current commercial route, secondary to the editorial goal of technical reputation. Product exploration is not interchangeable with those services. Marketing may reference Datavial at its actual maturity; the personal brand is not an established product-sales motion.
