@@ -20,7 +20,7 @@ related:
   - ../motifs/README.md
   - ../knowledge/README.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.review   # always anchor_review, one existing, completed candidate Review
                                    # — used uniformly for both execution modes, since a brand-new
@@ -107,13 +107,13 @@ contract:
 
 ## Required references
 
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): Motif, Review, Motif Category, and their
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): Motif, Review, Motif Category, and their
   relationships.
 - [Review records](../reviews/README.md): the corroborating evidence this workflow draws on.
 - [Motif records](../motifs/README.md): the record this workflow produces or reinforces.
 - [Knowledge records](../knowledge/README.md): the possible downstream effect of a well-evidenced
   Motif.
-- [Identity](../../10_brand/identity/README.md): truthfulness and evidence boundaries — a Motif names
+- [Daniel Hunt](../creators/daniel-hunt.md): truthfulness and evidence boundaries — a Motif names
   something genuinely repeated and independently observed, not a pattern imposed on unrelated
   observations.
 

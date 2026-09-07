@@ -16,17 +16,17 @@ facets:
 related:
   - README.md
   - production.md
-  - ../10_brand/channels/README.md
+  - channels.md
 sources:
-  - ../10_brand/plans/2026-09-06-technical-authority-alignment.md
-  - ../10_brand/specs/2026-05-28-brand-refinement-design.md
-  - ../10_brand/specs/2026-06-01-personal-brand-workbook.md
+  - ../00_system/090_records/plans/2026-09-06-technical-authority-alignment.md
+  - ../00_system/090_records/specs/2026-05-28-brand-refinement-design.md
+  - ../00_system/090_records/specs/2026-06-01-personal-brand-workbook.md
 version: 1
 ---
 
 # Content operating plan
 
-This document owns current cadence, phasing, launch gates, sustainability, and editorial operating rules. Entity semantics live in the [Brand ontology](../10_brand/ONTOLOGY.md), direction in [Strategy](../10_brand/strategy/README.md), Channel compatibility in [Channels](../10_brand/channels/README.md), and reusable practices in [Content production](production.md).
+This document owns current cadence, phasing, launch gates, sustainability, and editorial operating rules. Entity semantics live in the [Brand ontology](../00_system/010_governance/ONTOLOGY.md), direction in [Themes](themes.md), Channel compatibility in [Channels](channels.md), and reusable practices in [Content production](production.md).
 
 ## Surface plan
 
@@ -71,7 +71,7 @@ YouTube remains optional. Before choosing to launch, retain all three existing r
 
 Meeting the gates does not automatically start a cadence. Revisit capacity and explicitly update this plan before committing to a launch schedule. If a future monthly schedule is adopted, the previous every-two-month fallback can be considered at that decision. Neither is a current obligation.
 
-Travel may provide footage opportunistically; no trip, destination, footage quota, or launch date is required by this plan. Existing historical scripts must be revalidated against current career facts before reuse; see the [Script Assets index](../10_brand/assets/scripts/README.md).
+Travel may provide footage opportunistically; no trip, destination, footage quota, or launch date is required by this plan. Existing historical scripts must be revalidated against current career facts before reuse; see the [Script Assets index](scripts/README.md).
 
 ## Phasing
 
@@ -86,7 +86,7 @@ This supersedes the former Phase 0/1/2 cross-channel schedule. There is no custo
 - [ ] Prepare Tuesday's worked lesson from attributable experience and an inspectable example.
 - [ ] Prepare Thursday's shorter observation or tradeoff.
 - [ ] Verify the behavior claimed by a demonstration and identify its limits.
-- [ ] Review production effort and substantive audience exchange monthly using the [measurement plan](../10_brand/analytics/measurement-plan.md).
+- [ ] Review production effort and substantive audience exchange monthly using the [measurement plan](measurement-plan.md).
 
 ## Capture targets
 
@@ -95,8 +95,8 @@ This supersedes the former Phase 0/1/2 cross-channel schedule. There is no custo
 - **S2, changed assumption:** capture a specific, attributable engineering or exploratory lesson when it occurs; do not fabricate a scar.
 - **Reference material:** save useful examples as Sources or working references, not approved vocabulary or evidence of performance.
 
-W2 and S2 remain owned by the [Audience credibility bank](../10_brand/audience/README.md#credibility-bank). Reusable editorial material follows the existing Source and Knowledge workflows.
+W2 and S2 remain owned by the [Audience credibility bank](audience.md#credibility-bank). Reusable editorial material follows the existing Source and Knowledge workflows.
 
 ## Risks and review
 
-Review effort, clarity, and relevant technical exchange monthly. Distinguish low output caused by production effort from low response caused by an unclear subject; neither explanation is established by a single post. Keep growth expectations provisional. The [measurement plan](../10_brand/analytics/measurement-plan.md) owns comparable observation windows and month-three/month-six reviews.
+Review effort, clarity, and relevant technical exchange monthly. Distinguish low output caused by production effort from low response caused by an unclear subject; neither explanation is established by a single post. Keep growth expectations provisional. The [measurement plan](measurement-plan.md) owns comparable observation windows and month-three/month-six reviews.

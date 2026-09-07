@@ -16,9 +16,9 @@ related:
   - ../workflows/capture-publication.md
   - ../workflows/review-publication.md
   - ../workflows/detect-motifs.md
-  - ../../10_brand/channels/README.md
+  - ../channels.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Illustrative creator monitoring trace
@@ -34,7 +34,7 @@ An illustrative competitor-and-inspiration account being onboarded into Content'
 | Illustrative Work Item | Workflow | Stage transition | Output |
 | --- | --- | --- | --- |
 | `WI-20260828-add-creator-acme-fictional-fitness-co` | Add Creator | Capture → Validate | Illustrative Creator `content.creator.acme-fictional-fitness-co`: Creator Type `Brand`, Creator Relationships `Competitor` and `Inspiration`. |
-| `WI-20260828-add-creator-channel-acme-fictional-fitness-co-instagram` | Add Creator Channel | Capture → Validate | Illustrative Creator Channel `content.creator-channel.acme-fictional-fitness-co-instagram` belonging to the Creator above, referencing the existing Instagram `channels.channel` value. |
+| `WI-20260828-add-creator-channel-acme-fictional-fitness-co-instagram` | Add Creator Channel | Capture → Validate | Illustrative Creator Channel `content.creator-channel.acme-fictional-fitness-co-instagram` belonging to the Creator above, referencing the existing Instagram `content.channel` value. |
 | `WI-20260828-capture-publication-acme-fictional-fitness-co-instagram` | Capture Publication | Capture → Capture | Illustrative Observed Publication `content.publication.acme-fictional-fitness-co-instagram-home-gym-carousel`: Instagram Carousel captured from the Creator Channel above, with `published_at`, `canonical_url`, and `platform_identifier` populated immediately at capture and no Blueprint linked. |
 | `WI-20260828-review-publication-acme-fictional-fitness-co-instagram-home-gym-carousel` (and `-02`) | Review Publication | Capture → Review | Two illustrative Reviews of the Publication above: `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-visual` (Visual) and `content.review.acme-fictional-fitness-co-instagram-home-gym-carousel-format` (Format), sharing one overlapping observation — the corroborating pair a later Motif can draw on. |
 | `WI-20260828-detect-motifs-plain-background-product-isolation` | Detect Motifs | Review → Learn | Illustrative Motif `content.motif.plain-background-product-isolation` (Motif Category: Visual), promoted from the two Reviews' shared observation — the corroboration the `supporting_reviews` cardinality (2..*) requires. CREATE execution: primary subject is `anchor_review`, since the Motif has no instance to `ref` until this row produces it. |
@@ -61,7 +61,7 @@ from them.
 
 - `id`: `content.creator-channel.acme-fictional-fitness-co-instagram`
 - `creator`: `content.creator.acme-fictional-fitness-co`
-- `channel`: Instagram (`channels.channel`, per [Channels](../../10_brand/channels/README.md))
+- `channel`: Instagram (`content.channel`, per [Channels](../channels.md))
 - `handle`: @acmefictionalfitnessco
 - `url`: https://instagram.com/acmefictionalfitnessco (illustrative, not a real destination)
 - `creating_work_item`: `WI-20260828-add-creator-channel-acme-fictional-fitness-co-instagram`
@@ -71,7 +71,7 @@ from them.
 - `id`: `content.publication.acme-fictional-fitness-co-instagram-home-gym-carousel`
 - `creator`: `content.creator.acme-fictional-fitness-co`
 - `creator_channel`: `content.creator-channel.acme-fictional-fitness-co-instagram`
-- `channel`: Instagram (`channels.channel`, per [Channels](../../10_brand/channels/README.md))
+- `channel`: Instagram (`content.channel`, per [Channels](../channels.md))
 - `format`: Carousel (`taxonomy(Publication Format)`)
 - `content`: Illustrative summary — a five-slide carousel positioning a compact home gym rack against small-space objections. Observed, not authored, so no Blueprint is linked.
 - `published_at`: 2026-08-20 (illustrative — already known at capture time, not gated behind Publish Publication)
@@ -147,7 +147,7 @@ verification style.
 ## Validation scenarios
 
 - A Creator with no Creator Relationship value fails validation.
-- A Creator Channel that restates a platform type instead of referencing `channels.channel` fails validation.
+- A Creator Channel that restates a platform type instead of referencing `content.channel` fails validation.
 - Two Creator Relationship values on the same Creator (Competitor and Inspiration) are valid — Creator Relationship is multi-valued.
 - A Creator Channel without a `creator` link, or with more than one, fails validation — cardinality is exactly 1.
 - A Publication with a Creator but no Blueprint is valid (the Observed branch); a Publication with no Creator and no Blueprint fails validation.

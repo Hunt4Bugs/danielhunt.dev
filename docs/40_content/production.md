@@ -15,17 +15,17 @@ facets:
 related:
   - README.md
   - operating-plan.md
-  - ../10_brand/assets/README.md
+  - concepts.md
 sources:
-  - ../10_brand/plans/2026-09-06-technical-authority-alignment.md
-  - ../10_brand/specs/2026-05-28-brand-refinement-design.md
-  - ../10_brand/specs/2026-06-01-personal-brand-workbook.md
+  - ../00_system/090_records/plans/2026-09-06-technical-authority-alignment.md
+  - ../00_system/090_records/specs/2026-05-28-brand-refinement-design.md
+  - ../00_system/090_records/specs/2026-06-01-personal-brand-workbook.md
 version: 1
 ---
 
 # Content production
 
-This document owns reusable production practice, craft development, and preparation checklists. The [Content operating plan](operating-plan.md) owns cadence and launch gates. Asset semantics live in [Assets](../10_brand/assets/README.md).
+This document owns reusable production practice, craft development, and preparation checklists. The [Content operating plan](operating-plan.md) owns cadence and launch gates. Asset semantics live in [Assets](concepts.md#asset).
 
 ## Current technical production practice
 

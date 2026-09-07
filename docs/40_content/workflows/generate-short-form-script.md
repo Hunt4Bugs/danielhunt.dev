@@ -17,7 +17,7 @@ related:
   - ../work-items/README.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.blueprint
   entry_stage: Draft
@@ -70,10 +70,10 @@ contract:
 
 ## Required references
 
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): Script Asset relationship, Narrative Structure, hook usage conditions, and Publication Format.
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): Script Asset relationship, Narrative Structure, hook usage conditions, and Publication Format.
 - The approved Blueprint, including its selected Pattern, Purpose, Structure, hook types, proof, and constraints.
-- [Short-form Stop–Hook–Payoff Script Template](../../10_brand/assets/templates/scripts/short-form-stop-hook-payoff.md).
-- [Identity](../../10_brand/identity/README.md) and [Assets](../../10_brand/assets/README.md): editorial constraints and available Asset rules.
+- [Short-form Stop–Hook–Payoff Script Template](../templates/scripts/short-form-stop-hook-payoff.md).
+- [Daniel Hunt](../creators/daniel-hunt.md) and [Assets](../concepts.md#asset): editorial constraints and available Asset rules.
 
 ## Taxonomy contract
 
@@ -83,7 +83,7 @@ contract:
 
 ## Input
 
-One script-ready short-form Blueprint, the [Short-form Stop–Hook–Payoff Script Template](../../10_brand/assets/templates/scripts/short-form-stop-hook-payoff.md), linked Sources, and identified production dependencies.
+One script-ready short-form Blueprint, the [Short-form Stop–Hook–Payoff Script Template](../templates/scripts/short-form-stop-hook-payoff.md), linked Sources, and identified production dependencies.
 
 ## Procedure
 

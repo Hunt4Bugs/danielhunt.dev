@@ -13,11 +13,11 @@ updated: 2026-08-28
 facets:
   - analytics
 related:
-  - ../../10_brand/analytics/insights/README.md
+  - ../insights/README.md
   - ../knowledge/README.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.publication
   entry_stage: Learn
@@ -26,16 +26,16 @@ contract:
     - id: content.publication
       state: completed
       optional: false
-    - id: analytics.measurement
+    - id: content.measurement
       state: completed
       optional: false
   inputs:
     - name: measurements
-      type: ref(analytics.measurement)
+      type: ref(content.measurement)
       required: true
   creates:
-    - type: analytics.insight
-      via_pattern: ../../10_brand/analytics/_patterns/insight.md
+    - type: content.insight
+      via_pattern: ../_patterns/insight.md
     - type: content.knowledge
       via_pattern: ../_patterns/knowledge.md
   updates:
@@ -69,11 +69,11 @@ contract:
 
 ## Required references
 
-- [Insight records](../../10_brand/analytics/insights/README.md) and [Analytics](../../10_brand/analytics/README.md).
-- [Insight pattern](../../10_brand/analytics/_patterns/insight.md): the required document shape
+- [Insight records](../insights/README.md) and the [measurement plan](../measurement-plan.md).
+- [Insight pattern](../_patterns/insight.md): the required document shape
   this workflow's `creates` block produces.
 - The Publication, its Blueprint, Measurements, and related Knowledge.
-- [Strategy](../../10_brand/strategy/README.md): analytics does not automatically replace strategic constraints.
+- [Themes](../themes.md): analytics does not automatically replace strategic constraints.
 
 ## Procedure
 

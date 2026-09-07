@@ -16,10 +16,10 @@ related:
   - ../concepts.md
   - ../_patterns/publication.md
   - ../blueprints/README.md
-  - ../../10_brand/channels/README.md
-  - ../../10_brand/analytics/measurements/README.md
+  - ../channels.md
+  - ../measurements/README.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Publication records
@@ -36,5 +36,5 @@ per record here.
   [Capture Publication](../workflows/capture-publication.md) workflow for an Observed Publication
   (durable publication facts are recorded immediately at capture).
 - Related instance directories: [Blueprints](../blueprints/README.md) (realized by a Publication),
-  [Channels](../../10_brand/channels/README.md) (Channel registry), and
-  [Measurements](../../10_brand/analytics/measurements/README.md) (attach to a published Publication).
+  [Channels](../channels.md) (Channel registry), and
+  [Measurements](../measurements/README.md) (attach to a published Publication).

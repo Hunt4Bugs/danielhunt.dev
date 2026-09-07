@@ -58,7 +58,7 @@ repository *produces*; `ops` describes how the repository *runs itself*.
 - The root `docs/_conventions/` and `docs/_patterns/` meta-infrastructure. These apply across
   every domain in the repository; they are not `ops`-owned content even though `ops` (like every
   other domain) must conform to them.
-- Brand, site, and delivery substantive content (`10_brand/`, `20_site/`, `30_delivery/`) — each
+- Brand, site, and delivery substantive content (`40_content/`, `20_site/`, `30_delivery/`) — each
   is its own domain or class, out of scope here even where an `ops` record references it.
 
 ## Model
@@ -112,15 +112,16 @@ Full field-level specification lives in [`concepts.md`](concepts.md).
 - **`protocol`** — `ops` conforms to `DOMAIN_PROTOCOL.md` and the root `_conventions/` /
   `_patterns/` it defines; `protocol` does not depend on `ops`.
 - **`content`** (`docs/40_content/`) — the first domain fully modeled under this protocol; briefly
-  a root-level domain, now its own numbered class. `ops.workflow.create-domain` is the general
-  procedure that produced `content`'s scaffold in spirit and is the general procedure behind every
-  domain's scaffold since.
-- **`identity`, `strategy`, `audience`, `marketing`, `offers`, `assets`, `channels`,
-  `relationships`, `analytics`** (`docs/10_brand/*/`), **`site`** (`docs/20_site/`), and
-  **`delivery`** (`docs/30_delivery/`) — modeled as protocol domains nested inside their numbered
-  class, each with a `domain.md` and `concepts.md` per §8.1. `relationships` is `status: draft`
-  and intentionally carries no Concepts yet; `ops` may record decisions about any of these domains
-  (as Records) without owning their content.
+  a root-level domain, now its own numbered class, and now the whole personal-brand corpus.
+  `identity`, `strategy`, `audience`, `marketing`, `offers`, `assets`, `channels`, and
+  `relationships` were retired as standalone domains (2026-09-07); their real content was folded
+  into `content` rather than deleted (see `content/domain.md`'s Purpose), and Marketing's unused
+  Campaign/Distribution/Growth/Funnel scope was dropped outright. `ops.workflow.create-domain` is
+  the general procedure that produced `content`'s scaffold in spirit and is the general procedure
+  behind every domain's scaffold since.
+- **`site`** (`docs/20_site/`) and **`delivery`** (`docs/30_delivery/`) — modeled as protocol
+  domains nested inside their numbered class, each with a `domain.md` and `concepts.md` per §8.1.
+  `ops` may record decisions about either domain (as Records) without owning their content.
 
 ## Examples
 

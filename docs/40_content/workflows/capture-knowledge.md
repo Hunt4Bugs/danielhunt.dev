@@ -17,7 +17,7 @@ related:
   - ../work-items/README.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.knowledge   # judgment call: the raw material has no persisted concept type of its own; modeled as the Knowledge-in-formation. See report.
   entry_stage: Capture
@@ -66,10 +66,10 @@ contract:
 
 ## Required references
 
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): Knowledge, Source, Knowledge Kind, and their relationships.
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): Knowledge, Source, Knowledge Kind, and their relationships.
 - [Source records](../sources/README.md): provenance and verification-boundary requirements.
 - [Knowledge records](../knowledge/README.md): reusable synthesis and relationship requirements.
-- [Identity](../../10_brand/identity/README.md): truthfulness, evidence, privacy, and scars-not-wounds boundaries.
+- [Daniel Hunt](../creators/daniel-hunt.md): truthfulness, evidence, privacy, and scars-not-wounds boundaries.
 
 ## Taxonomy contract
 

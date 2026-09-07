@@ -32,10 +32,9 @@ Most other material lives under a numbered class directory, per
 | Class | Path | Holds |
 | --- | --- | --- |
 | 00 | [`00_system/`](00_system/README.md) | This repository's own project-operations domain (`ops`): governance, agent guidance, tracker, triage, dated records — and hosts the protocol document itself. |
-| 10 | [`10_brand/`](10_brand/README.md) | The personal-brand corpus. Nine bounded Brand contexts are modeled as protocol domains here — [Identity](10_brand/identity/README.md), [Strategy](10_brand/strategy/README.md), [Audience](10_brand/audience/README.md), [Marketing](10_brand/marketing/README.md), [Offers](10_brand/offers/README.md), [Assets](10_brand/assets/README.md), [Channels](10_brand/channels/README.md), [Relationships](10_brand/relationships/README.md) (reserved, `status: draft`), and [Analytics](10_brand/analytics/README.md) — plus root-level Brand corpus material (`README.md`, `ONTOLOGY.md`, specs, plans) that isn't itself a Domain. |
 | 20 | [`20_site/`](20_site/README.md) | The `site` domain: the deployable static surface in `site/`, modeled as Page and Component concepts. |
 | 30 | [`30_delivery/`](30_delivery/README.md) | The `delivery` domain: how `site`'s pages reach production, modeled as a Pipeline concept. |
-| 40 | [`40_content/`](40_content/README.md) | The `content` domain: reusable editorial material and its lifecycle for the Marketing context, modeled as Knowledge, Topic, Blueprint, Publication, Series, Source, Work Item, Creator, Creator Channel, Motif, and Review concepts. |
+| 40 | [`40_content/`](40_content/README.md) | The `content` domain: the whole personal-brand corpus — reusable editorial material and its lifecycle, plus Themes, Audience, Offers, Assets (design/visual/scripts/templates), and Measurements/Insights, all folded in after `10_brand/`'s standalone domains were retired (2026-09-07). Modeled as Knowledge, Topic, Blueprint, Publication, Series, Source, Work Item, Channel, Creator, Creator Channel, Theme, Audience Segment, Service Offer, Product Offer, Asset, Template, Measurement, Insight, Motif, and Review concepts. Includes Daniel Hunt's own identity, held as a Creator record. |
 
 Numeric class prefixes are the physical placement scheme (where a file lives); Domains are the
 protocol's modeling scheme (what a file means). A class directory may contain zero, one, or more

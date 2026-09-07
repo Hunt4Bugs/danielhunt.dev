@@ -16,7 +16,7 @@ related:
   - ../motifs/README.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Pattern: Motif
@@ -42,5 +42,5 @@ What a `content.motif` instance document (stored under `motifs/`) must contain. 
 A Motif is not itself an observation — it is what two or more independently recorded Review
 observations have in common. A new corroborating Review for an already-named Motif updates that
 Motif (extends `supporting_reviews`) rather than creating a duplicate. A well-evidenced Motif may
-inform or seed a new Knowledge record, the same way `analytics.insight` already feeds
+inform or seed a new Knowledge record, the same way `content.insight` already feeds
 `content.knowledge`; when a Motif has not yet been used that way, `related_knowledge` stays empty.

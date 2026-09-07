@@ -16,7 +16,7 @@ related:
   - ../_patterns/source.md
   - ../knowledge/README.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Source records

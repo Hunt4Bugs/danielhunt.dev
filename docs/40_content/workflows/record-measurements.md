@@ -13,11 +13,11 @@ updated: 2026-08-28
 facets:
   - analytics
 related:
-  - ../../10_brand/analytics/measurements/README.md
+  - ../measurements/README.md
   - ../publications/README.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.publication
   entry_stage: Measure
@@ -34,8 +34,8 @@ contract:
       type: taxonomy(Metric Name)
       required: true
   creates:
-    - type: analytics.measurement
-      via_pattern: ../../10_brand/analytics/_patterns/measurement.md
+    - type: content.measurement
+      via_pattern: ../_patterns/measurement.md
   updates:
     - type: content.publication
   validation:
@@ -67,11 +67,11 @@ contract:
 
 ## Required references
 
-- [Measurement records](../../10_brand/analytics/measurements/README.md): record contract.
-- [Measurement pattern](../../10_brand/analytics/_patterns/measurement.md): the required document
+- [Measurement records](../measurements/README.md): record contract.
+- [Measurement pattern](../_patterns/measurement.md): the required document
   shape this workflow's `creates` block produces.
-- [Analytics](../../10_brand/analytics/README.md): interpretation boundary and evaluation windows.
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): Metric Name taxonomy.
+- [Measurement plan](../measurement-plan.md): interpretation boundary and evaluation windows.
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): Metric Name taxonomy.
 
 ## Procedure
 

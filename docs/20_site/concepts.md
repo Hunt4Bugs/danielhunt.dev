@@ -44,7 +44,7 @@ metadata.
   in-page About/Contact states directly in static HTML; auxiliary pages render shared chrome
   through `site.component` web components instead of duplicating markup.
 - A Page's brand-shaped copy and layout decisions must follow
-  [Identity](../10_brand/identity/README.md) and [`visual.md`](../10_brand/identity/visual.md).
+  [Daniel Hunt](../40_content/creators/daniel-hunt.md) and [`visual.md`](../40_content/visual.md).
 
 ### Current instances
 

@@ -9,11 +9,9 @@ collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
-facets:
-  - marketing
 related:
   - ../creators/ali-abdaal.md
-  - ../../10_brand/channels/README.md
+  - ../channels.md
   - ../concepts.md
 sources:
   - ../sources/personal-brand-topics-conversation-2026-08-30.md
@@ -27,7 +25,7 @@ sources:
 
 ## Channel
 
-[Instagram](../../10_brand/channels/README.md)
+[Instagram](../channels.md)
 
 ## Handle
 

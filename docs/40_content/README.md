@@ -4,29 +4,28 @@ kind: note
 domain: content
 type: domain-reference
 status: active
-version: 1
+version: 2
 class: "40"
 collection: content
 owner: Daniel Hunt
 created: 2026-05-28
-updated: 2026-08-28
-facets:
-  - marketing
-  - assets
-  - analytics
+updated: 2026-09-07
 related:
-  - ../10_brand/ONTOLOGY.md
+  - ../00_system/010_governance/ONTOLOGY.md
   - domain.md
   - concepts.md
+  - themes.md
+  - audience.md
+  - offers.md
   - operating-plan.md
   - production.md
 sources:
-  - ../10_brand/specs/2026-05-28-brand-refinement-design.md
+  - ../00_system/090_records/specs/2026-05-28-brand-refinement-design.md
 ---
 
 # Content
 
-Content is the Marketing context for reusable editorial material and its lifecycle. The [Brand ontology](../10_brand/ONTOLOGY.md) owns the cross-context entity meanings, relationships, and Content taxonomies; [`domain.md`](domain.md) states this domain's boundary and [`concepts.md`](concepts.md) is its domain-scoped, entity-contract-bearing instantiation of that ontology (definitions, relationships, and constraints cross-referenced rather than re-authored, plus the field-level entity contracts DOMAIN_PROTOCOL.md §10 requires). [Strategy](../10_brand/strategy/README.md) owns Themes and strategic constraints, [Audience](../10_brand/audience/README.md) owns Audience Segments, [Channels](../10_brand/channels/README.md) owns distribution destinations and compatible Formats, [Assets](../10_brand/assets/README.md) owns reusable resources, and [Analytics](../10_brand/analytics/README.md) owns Measurements, Insights, and learning feedback.
+Content is the whole personal-brand corpus. The [Brand ontology](../00_system/010_governance/ONTOLOGY.md) owns the cross-context entity meanings and relationships; [`domain.md`](domain.md) states this domain's boundary and [`concepts.md`](concepts.md) is its entity-contract-bearing concept registry (definitions, relationships, and constraints cross-referenced rather than re-authored, plus the field-level entity contracts DOMAIN_PROTOCOL.md §10 requires). Content owns everything Brand-shaped: [Themes](themes.md) and strategic constraints, [Audience](audience.md) Segments and credibility, [Offers](offers.md), distribution destinations and compatible Formats ([Channels](channels.md)), reusable [design](design.md) and [visual](visual.md) resources, and [Measurements and Insights](measurement-plan.md) — plus Creator/Creator Channel, including Daniel Hunt's own identity, held as a Creator record.
 
 ## Lifecycle
 
@@ -51,8 +50,8 @@ Workflow Stage describes where a Work Item is in this lifecycle. Workflow descri
 - [Motifs](motifs/README.md): reusable observations promoted from two or more corroborating
   Reviews, which may inform or seed Knowledge.
 - [Work Items](work-items/README.md): persistent executions of one Workflow against one subject.
-- [Measurements](../10_brand/analytics/measurements/README.md) and [Insights](../10_brand/analytics/insights/README.md): observed results and interpretations.
-- [Script Assets](../10_brand/assets/scripts/README.md) and [Templates](../10_brand/assets/templates/README.md): authored audio/video material and reusable scaffolding.
+- [Measurements](measurements/README.md) and [Insights](insights/README.md): observed results and interpretations.
+- [Script Assets](scripts/README.md) and [Templates](templates/README.md): authored audio/video material and reusable scaffolding.
 
 Create records only when real working material exists. Illustrative material belongs under [Examples](examples/README.md) and must be labeled so it cannot be mistaken for actual evidence, publication, or performance.
 
@@ -63,7 +62,7 @@ Each record type's required document shape lives in [`_patterns/`](_patterns/) (
 - [Workflows](workflows/README.md) define reusable operations, contracts, transitions, and failure paths.
 - [Content operating plan](operating-plan.md) owns cadence, phasing, launch gates, sustainability, editorial operating rules, and capture targets.
 - [Content production](production.md) owns production practice, craft development, and production checklists.
-- [Content measurement plan](../10_brand/analytics/measurement-plan.md) owns observation windows, success criteria, and interpretation rules.
+- [Content measurement plan](measurement-plan.md) owns observation windows, success criteria, and interpretation rules.
 
 Workflows consume canonical definitions rather than redefining them. A workflow or future skill may propose new controlled vocabulary, but it may not use that value before approval and an update to the owning canonical context.
 

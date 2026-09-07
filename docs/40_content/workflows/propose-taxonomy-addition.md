@@ -17,7 +17,7 @@ related:
   - ../work-items/README.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.work-item   # judgment call: the proposed value is not itself a persisted concept until approved; it exists only as a local proposal on the originating Work Item. See report.
   entry_stage: Validate
@@ -65,10 +65,10 @@ contract:
 
 ## Required references
 
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): existing Content vocabularies, entity attachment points, and vocabulary ownership rule.
-- [Strategy](../../10_brand/strategy/README.md), [Audience](../../10_brand/audience/README.md), and [Channels](../../10_brand/channels/README.md): owner-specific registries when the candidate is a Theme, Audience Segment, or Channel.
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): existing Content vocabularies, entity attachment points, and vocabulary ownership rule.
+- [Themes](../themes.md), [Audience](../audience.md), and [Channels](../channels.md): owner-specific registries when the candidate is a Theme, Audience Segment, or Channel.
 - [Source records](../sources/README.md): provenance requirement.
-- [Identity](../../10_brand/identity/README.md) and [Strategy](../../10_brand/strategy/README.md): brand-fit and editorial constraints.
+- [Daniel Hunt](../creators/daniel-hunt.md) and [Themes](../themes.md): brand-fit and editorial constraints.
 
 ## Taxonomy contract
 
@@ -78,7 +78,7 @@ contract:
 
 ## Input
 
-A candidate Content Pattern, Purpose, Narrative Structure, Hook Type, Format, or other controlled value that is not already defined in [Brand ontology v1](../../10_brand/ONTOLOGY.md).
+A candidate Content Pattern, Purpose, Narrative Structure, Hook Type, Format, or other controlled value that is not already defined in [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md).
 
 ## Procedure
 

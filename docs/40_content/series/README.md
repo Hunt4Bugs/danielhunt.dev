@@ -17,7 +17,7 @@ related:
   - ../topics/README.md
   - ../publications/README.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Series records

@@ -33,12 +33,13 @@ not redefine an entity or silently extend a controlled vocabulary.
   any internal task: classify the work, do it, and leave an accurate Tracker Item and (where
   warranted) Record behind.
 - [Create Domain](create-domain.md) — the root-level procedure for standing up a new
-  protocol-conformant domain from a name and an intent. This is the workflow that produced
-  `content`'s scaffold and, in the same pass, every other Brand context (Identity, Strategy,
-  Audience, Marketing, Offers, Assets, Channels, Analytics), plus `site` and `delivery`.
-  Relationships remains `status: draft` with a reserved boundary and no Concepts modeled yet —
-  run this workflow against it once recurring work justifies promotion (see
-  [`relationships/concepts.md`](../../10_brand/relationships/concepts.md)'s promotion criteria).
+  protocol-conformant domain from a name and an intent. This is the workflow that originally
+  produced `content`'s scaffold and, in the same pass, every other Brand context then modeled
+  (Identity, Strategy, Audience, Marketing, Offers, Assets, Channels, Relationships, Analytics).
+  Identity, Marketing, Channels, and Relationships were later retired — their scope was absorbed
+  into Content's Creator entity (identity, and Channels' registry) or dropped outright (Marketing's
+  unused Campaign/Distribution/Growth/Funnel scope); the current Brand contexts are Strategy,
+  Audience, Offers, Assets, Analytics, and Content.
 
 [Maintain Record](maintain-record.md) is the everyday loop; [Create Domain](create-domain.md) is
 what you reach for when a Maintain Record task concludes that the subject deserves its own

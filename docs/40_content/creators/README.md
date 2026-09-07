@@ -9,14 +9,12 @@ collection: content
 owner: Daniel Hunt
 created: 2026-08-28
 updated: 2026-08-28
-facets:
-  - marketing
 related:
   - ../concepts.md
   - ../_patterns/creator.md
   - ../creator-channels/README.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Creator records

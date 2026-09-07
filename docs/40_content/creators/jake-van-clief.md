@@ -10,7 +10,6 @@ owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
 facets:
-  - marketing
   - strategy
 related:
   - README.md

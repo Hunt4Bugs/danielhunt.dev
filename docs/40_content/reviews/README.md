@@ -16,7 +16,7 @@ related:
   - ../_patterns/review.md
   - ../publications/README.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Review records

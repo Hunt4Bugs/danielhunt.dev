@@ -14,10 +14,10 @@ facets:
   - distribution
 related:
   - ../publications/README.md
-  - ../../10_brand/analytics/insights/README.md
+  - ../insights/README.md
   - ../concepts.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 contract:
   subject_type: content.publication
   entry_stage: Reuse / Repurpose
@@ -31,7 +31,7 @@ contract:
       optional: true
   inputs:
     - name: target_channel
-      type: ref(channels.channel)
+      type: ref(content.channel)
       required: true
     - name: target_format
       type: taxonomy(Publication Format)
@@ -73,9 +73,9 @@ contract:
 
 ## Required references
 
-- [Brand ontology v1](../../10_brand/ONTOLOGY.md): Publication derivation and Blueprint relationships.
+- [Brand ontology v1](../../00_system/010_governance/ONTOLOGY.md): Publication derivation and Blueprint relationships.
 - The source Publication, Blueprint, Assets, Measurements, and relevant Insights.
-- [Channels](../../10_brand/channels/README.md): target Channel and compatible Formats.
+- [Channels](../channels.md): target Channel and compatible Formats.
 
 ## Procedure
 

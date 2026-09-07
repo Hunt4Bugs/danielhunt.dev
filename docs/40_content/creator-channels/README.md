@@ -9,22 +9,20 @@ collection: content
 owner: Daniel Hunt
 created: 2026-08-28
 updated: 2026-08-28
-facets:
-  - marketing
 related:
   - ../concepts.md
   - ../_patterns/creator-channel.md
   - ../creators/README.md
-  - ../../10_brand/channels/README.md
+  - ../channels.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Creator Channel records
 
 You are in the instance directory for `content.creator-channel`. Store one specific account a
 Creator holds on a Channel platform type here. A Creator Channel is not the platform type itself —
-that registry belongs to [Channels](../../10_brand/channels/README.md).
+that registry belongs to [Channels](../channels.md).
 
 - What a Creator Channel *is* (definition, relationships, constraints, entity contract):
   [`concepts.md`](../concepts.md#creator-channel).

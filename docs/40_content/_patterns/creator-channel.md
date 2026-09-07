@@ -10,14 +10,12 @@ collection: content
 owner: Daniel Hunt
 created: 2026-08-28
 updated: 2026-08-28
-facets:
-  - marketing
 related:
   - ../creator-channels/README.md
   - ../concepts.md
-  - ../../10_brand/channels/README.md
+  - ../channels.md
 sources:
-  - ../../10_brand/ONTOLOGY.md
+  - ../../00_system/010_governance/ONTOLOGY.md
 ---
 
 # Pattern: Creator Channel
@@ -29,8 +27,8 @@ contract this pattern instantiates.
 ## Required body sections
 
 1. **Creator** — link to the owning `content.creator` record.
-2. **Channel** — the `channels.channel` platform type this account is on (reference the existing
-   [Channels](../../10_brand/channels/README.md) registry; do not restate what the platform is).
+2. **Channel** — the `content.channel` platform type this account is on (reference the existing
+   [Channels](../channels.md) registry; do not restate what the platform is).
 3. **Handle** — the account handle or username on that platform, when known (optional).
 4. **URL** — the canonical URL for this account.
 5. **Registration Provenance** — link to the Work Item that created this record when one exists;
@@ -38,7 +36,7 @@ contract this pattern instantiates.
 
 ## Notes
 
-"Creator Channel" is named to avoid colliding with `channels.channel`, which means the platform
+"Creator Channel" is named to avoid colliding with `content.channel`, which means the platform
 type (for example, Instagram) — a different granularity than one Creator's specific account on
 that platform. Do not duplicate the platform-type registry Channels already owns.
 
