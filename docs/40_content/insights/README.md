@@ -13,6 +13,7 @@ related:
   - ../concepts.md
   - ../measurements/README.md
   - ../knowledge/README.md
+  - ../measurement-plan.md
 sources:
   - ../../00_system/010_governance/ONTOLOGY.md
 ---

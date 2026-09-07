@@ -1,6 +1,6 @@
 # Repository guidance
 
-This repository is a static personal-brand site. Treat [`CLAUDE.md`](CLAUDE.md) as the implementation guide and the [Brand domain map](docs/10_brand/README.md) as the source-of-truth index for brand-shaped changes. Identity and visual direction remain required context for public brand work.
+This repository is a static personal-brand site. Treat [`CLAUDE.md`](CLAUDE.md) as the implementation guide and the [Library map](docs/00_system/010_governance/LIBRARY_MAP.md) as the source-of-truth index for brand-shaped changes; brand content now lives entirely under [`docs/40_content/`](docs/40_content/README.md). Identity ([`creators/daniel-hunt.md`](docs/40_content/creators/daniel-hunt.md)) and visual direction ([`visual.md`](docs/40_content/visual.md)) remain required context for public brand work.
 
 For Project OS work, start with [`docs/00_system/010_governance/LIBRARY_MAP.md`](docs/00_system/010_governance/LIBRARY_MAP.md), then read the nearest nested `AGENTS.md`. Keep operational records local, reversible, and in the mapped class. Do not publish, deploy, change repository settings, or contact anyone without explicit approval.
 

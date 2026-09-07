@@ -844,6 +844,9 @@ A public-facing service the commercial Services page can credibly present.
 - Public copy uses the concrete public offer name, never the internal service-taxonomy category
   name.
 - Each Service Offer uses one plain-language description of what is connected or produced.
+- Offers owns *what* is offered; Daniel Hunt's [Creator record](creators/daniel-hunt.md) (Service
+  expression section) owns *how it is said* — the public-facing service language and copy rules a
+  Service Offer's description must follow.
 
 ### Persistence
 

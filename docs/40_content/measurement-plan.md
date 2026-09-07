@@ -14,6 +14,8 @@ facets:
 related:
   - README.md
   - operating-plan.md
+  - measurements/README.md
+  - insights/README.md
 sources:
   - ../00_system/090_records/plans/2026-09-06-technical-authority-alignment.md
 version: 1

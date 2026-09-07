@@ -14,6 +14,7 @@ related:
   - ../_patterns/measurement.md
   - ../insights/README.md
   - ../publications/README.md
+  - ../measurement-plan.md
 sources:
   - ../../00_system/010_governance/ONTOLOGY.md
 ---
