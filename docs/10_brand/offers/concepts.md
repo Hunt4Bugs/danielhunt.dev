@@ -43,16 +43,16 @@ documents — domain-defined persistence (§14). No entity contract is defined p
 ## Product Offer
 **ID:** `offers.product-offer`
 
-A Brand-adjacent product the personal brand indirectly supports as a credibility moat, not a
-direct go-to-market motion.
+A Brand-adjacent product direction, recorded at its actual maturity. The personal brand may
+reference it but is not its go-to-market motion.
 
 ### Relationships
 - may be referenced by `marketing.campaign` where relevant
 
 ### Constraints
 - Not interchangeable with a Service Offer.
-- The personal brand remains an indirect credibility moat for a Product Offer, not its GTM
-  motion.
+- The personal brand is not a Product Offer's sales motion; registry inclusion does not imply
+  commercial availability, customers, or revenue.
 
 ### Persistence
 

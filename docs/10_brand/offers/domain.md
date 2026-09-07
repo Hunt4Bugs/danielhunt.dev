@@ -68,8 +68,8 @@ Full definitions and relationships live in [`concepts.md`](concepts.md).
 
 - Public language for a Service Offer uses the concrete public name, never the internal
   service-taxonomy category name (do not lead a service card with "Sales Systems").
-- A Product Offer and a Service Offer are not interchangeable; the personal brand remains an
-  indirect credibility moat rather than a Product Offer's direct GTM motion.
+- A Product Offer and a Service Offer are not interchangeable; the personal brand is not a
+  Product Offer's sales motion and describes a Product Offer only at its actual maturity.
 
 ## Related Domains
 

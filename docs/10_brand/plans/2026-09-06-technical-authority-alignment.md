@@ -1,7 +1,4 @@
 ---
-id: strategy.note.technical-authority-alignment-2026-09-06
-kind: note
-domain: strategy
 status: active
 version: 1
 class: "10"
@@ -100,7 +97,7 @@ Completed local checks on 2026-09-06:
 - Checked 315 affected Markdown links, including incoming references to edited documents and heading anchors; no broken links found.
 - Compared Theme rows, Audience Segment names/codes/relationships, and Channel names/status/Format compatibility with the starting revision; these contracts are unchanged.
 - Confirmed the revised About is 840 characters, retains the approved text, and omits autonomous-refactoring and unsupported quantitative claims. Experience bullets and services were reviewed against the observed profile and canonical offer definitions.
-- Verified Tuesday/Thursday cadence and all three retained YouTube readiness gates. Consistency searches found historical references and explicit corrections, not active contradictory quotas or career claims.
+- Verified Tuesday/Thursday cadence and all three retained YouTube readiness gates. Consistency searches found historical references and explicit corrections, not active contradictory quotas or career claims. A post-review pass replaced the remaining credibility-moat and strategic-weighting references in the Offers concept registry, the Offers, Strategy, Identity, Audience, and Analytics domain summaries, and the library map.
 - Confirmed historical plans/specifications/scripts and all site files are unchanged. Changes are restricted to documentation and the implementation guide.
 - `git diff --check` passed. No application tests were needed for documentation-only changes.
 

@@ -63,4 +63,4 @@ These are applications of existing Themes, not new taxonomy values. Technical va
 
 The Build/Offline toggle remains one identity. Teach established experience confidently, label experiments, and distinguish professional claims from verified outcomes. Avoid tool hype, unsupported regulatory pronouncements, fabricated customer stories, or unsupported impact metrics. A worked example does not need a customer case study or a travel narrative.
 
-Measurements and Insights may inform later work, but they do not automatically change Themes, positioning, or this weighting. A strategic change requires an explicit decision in Strategy.
+Measurements and Insights may inform later work, but they do not automatically change Themes, positioning, or these priorities. A strategic change requires an explicit decision in Strategy.

@@ -1,7 +1,4 @@
 ---
-id: strategy.note.brand-changelog
-kind: note
-domain: strategy
 version: 1
 class: "10"
 collection: brand

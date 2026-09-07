@@ -39,7 +39,7 @@ Each is its own modeled protocol Domain (`README.md`, `domain.md`, `concepts.md`
 | --- | --- | --- | --- |
 | `brand` | — (root-level Brand corpus material, not itself a modeled Domain) | `docs/10_brand/` | `README.md`, `ONTOLOGY.md`, compatibility pointers, `specs/`, `plans/`, `CHANGELOG.md`. |
 | `identity` | `identity` | `identity/` | Enduring meaning, voice, principles, public language. |
-| `strategy` | `strategy` | `strategy/` | Positioning, goals, Theme registry, strategic weighting. |
+| `strategy` | `strategy` | `strategy/` | Positioning, goals, Theme registry, strategic priorities. |
 | `audience` | `audience` | `audience/` | Audience Segment registry, painful problems, credibility. |
 | `marketing` | `marketing` | `marketing/` | Campaign, and the unmodeled Distribution/Growth/Funnel scope. |
 | `offers` | `offers` | `offers/` | Service Offer and Product Offer registries. |

@@ -48,7 +48,7 @@ brand's own meaning.
 
 ### Excludes
 
-- Positioning, goals, Themes, and strategic weighting — owned by
+- Positioning, goals, Themes, and strategic priorities — owned by
   [Strategy](../strategy/README.md), which Identity supplies enduring meaning to but does not
   operate.
 - Audience segments, painful problems, and credibility — owned by

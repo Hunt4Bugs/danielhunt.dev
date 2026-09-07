@@ -27,7 +27,7 @@ sources:
 ## Purpose
 
 Strategy sets direction and constraints for the Brand: positioning, goals, Themes, differentiation,
-and the strategic weighting that governs what Content produces. It exists as its own domain,
+and the strategic priorities that guide what Content produces. It exists as its own domain,
 distinct from Identity, because it owns operating decisions (what to prioritize now) rather than
 enduring meaning and voice (who the brand permanently is).
 

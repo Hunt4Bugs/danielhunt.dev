@@ -45,7 +45,7 @@ it. It exists as its own domain, distinct from Identity, because it owns audienc
 
 - The Brand Statement, contrarians, and bridge sentence the audience material writes downstream
   from — owned by [Identity](../identity/README.md).
-- Themes and strategic weighting — owned by [Strategy](../strategy/README.md).
+- Themes and strategic priorities — owned by [Strategy](../strategy/README.md).
 - Topic, Blueprint, and Publication content itself — owned by
   [Content](../../40_content/README.md), which reads Audience Segment as an input but does not
   redefine it.

@@ -69,8 +69,8 @@ Full definitions, relationships, and entity contracts live in [`concepts.md`](co
   limitations and plausible competing explanations.
 - Do not infer causation from one Publication, and do not compare unlike Formats, Channels, or
   observation windows as though equivalent.
-- An overperforming subject does not override the Build/Offline toggle, Theme registry, or
-  strategic weighting without an explicit Strategy decision.
+- An overperforming subject does not override Identity, the Theme registry, or strategic
+  priorities without an explicit Strategy decision.
 
 ## Related Domains
 
