@@ -24,3 +24,8 @@ Thumbs.db
 .playwright-mcp/
 *.png
 !site/**/*.png
+
+# python
+.venv/
+__pycache__/
+*.pyc

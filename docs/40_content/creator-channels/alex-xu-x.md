@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.alex-xu-x
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Alex Xu / ByteByteGo on X
+creator: ../creators/alex-xu.md
+channel: X
+handle: '@bytebytego'
+url: https://x.com/bytebytego
 related:
   - ../creators/alex-xu.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Alex Xu / ByteByteGo on X
-
-## Creator
-
-[Alex Xu / ByteByteGo](../creators/alex-xu.md)
-
-## Channel
-
-[X](../channels.md)
-
-## Handle
-
-@bytebytego
-
-## URL
-
-https://x.com/bytebytego
 
 ## Registration Provenance
 

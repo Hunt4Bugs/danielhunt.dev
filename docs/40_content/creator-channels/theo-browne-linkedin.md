@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.theo-browne-linkedin
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Theo Browne / t3.gg on LinkedIn
+creator: ../creators/theo-browne.md
+channel: LinkedIn
+handle: t3gg
+url: https://www.linkedin.com/in/t3gg
 related:
   - ../creators/theo-browne.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Theo Browne / t3.gg on LinkedIn
-
-## Creator
-
-[Theo Browne / t3.gg](../creators/theo-browne.md)
-
-## Channel
-
-[LinkedIn](../channels.md)
-
-## Handle
-
-t3gg
-
-## URL
-
-https://www.linkedin.com/in/t3gg
 
 ## Registration Provenance
 

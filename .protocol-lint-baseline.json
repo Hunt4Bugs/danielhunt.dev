@@ -1,0 +1,95 @@
+{
+  "note": "Findings already known when a wave landed. This file shrinks every wave and is deleted when the conformance sweep completes. It is a burndown, not an ignore list: nothing is added to it without a wave that will remove it.",
+  "suppressed": [
+    {
+      "file": "docs/40_content/workflows/capture-knowledge.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/capture-publication.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/derive-insight.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/detect-motifs.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/develop-blueprint.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/develop-publication.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/develop-topic.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/generate-hook-options.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/generate-short-form-script.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/monitor-creators.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/produce-publication.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/propose-taxonomy-addition.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/publish-publication.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/record-measurements.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/repurpose-publication.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/review-publication.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/validate-publication.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    },
+    {
+      "file": "docs/40_content/workflows/validate-script.md",
+      "check": "structure",
+      "message": "not an instance of `protocol.workflow`"
+    }
+  ]
+}

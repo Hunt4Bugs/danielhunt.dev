@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.jake-van-clief-instagram
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Jake Van Clief / Lost & Lucky on Instagram
+creator: ../creators/jake-van-clief.md
+channel: Instagram
+handle: '@lostandlucky'
+url: https://instagram.com/lostandlucky
 related:
   - ../creators/jake-van-clief.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Jake Van Clief / Lost & Lucky on Instagram
-
-## Creator
-
-[Jake Van Clief / Lost & Lucky](../creators/jake-van-clief.md)
-
-## Channel
-
-[Instagram](../channels.md)
-
-## Handle
-
-@lostandlucky
-
-## URL
-
-https://instagram.com/lostandlucky
 
 ## Registration Provenance
 

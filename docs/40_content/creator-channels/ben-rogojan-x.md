@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.ben-rogojan-x
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Ben Rogojan / Seattle Data Guy on X
+creator: ../creators/ben-rogojan.md
+channel: X
+handle: '@SeattleDataGuy'
+url: https://x.com/SeattleDataGuy
 related:
   - ../creators/ben-rogojan.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Ben Rogojan / Seattle Data Guy on X
-
-## Creator
-
-[Ben Rogojan / Seattle Data Guy](../creators/ben-rogojan.md)
-
-## Channel
-
-[X](../channels.md)
-
-## Handle
-
-@SeattleDataGuy
-
-## URL
-
-https://x.com/SeattleDataGuy
 
 ## Registration Provenance
 

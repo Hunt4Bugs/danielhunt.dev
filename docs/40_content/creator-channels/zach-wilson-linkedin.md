@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.zach-wilson-linkedin
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Zach Wilson / Data with Zach on LinkedIn
+creator: ../creators/zach-wilson.md
+channel: LinkedIn
+handle: eczachly
+url: https://www.linkedin.com/in/eczachly/
 related:
   - ../creators/zach-wilson.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Zach Wilson / Data with Zach on LinkedIn
-
-## Creator
-
-[Zach Wilson / Data with Zach](../creators/zach-wilson.md)
-
-## Channel
-
-[LinkedIn](../channels.md)
-
-## Handle
-
-eczachly
-
-## URL
-
-https://www.linkedin.com/in/eczachly/
 
 ## Registration Provenance
 

@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.tina-huang-instagram
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Tina Huang on Instagram
+creator: ../creators/tina-huang.md
+channel: Instagram
+handle: '@hellotinah'
+url: https://www.instagram.com/hellotinah/
 related:
   - ../creators/tina-huang.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Tina Huang on Instagram
-
-## Creator
-
-[Tina Huang](../creators/tina-huang.md)
-
-## Channel
-
-[Instagram](../channels.md)
-
-## Handle
-
-@hellotinah
-
-## URL
-
-https://www.instagram.com/hellotinah/
 
 ## Registration Provenance
 

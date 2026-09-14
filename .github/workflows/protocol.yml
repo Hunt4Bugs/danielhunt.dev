@@ -1,0 +1,27 @@
+name: Protocol
+
+# Deliberately separate from deploy.yml: changing the deploy pipeline is a delivery.pipeline
+# change requiring explicit authorization, and validation should not be coupled to Pages
+# credentials or to main-only triggers.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  protocol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Install
+        run: uv sync --frozen
+      - name: Tests
+        run: uv run pytest -q
+      - name: Lint the domain model
+        run: uv run dh --text lint --baseline .protocol-lint-baseline.json --strict

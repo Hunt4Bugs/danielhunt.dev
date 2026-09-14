@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.chip-huyen-x
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Chip Huyen on X
+creator: ../creators/chip-huyen.md
+channel: X
+handle: '@chipro'
+url: https://x.com/chipro
 related:
   - ../creators/chip-huyen.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Chip Huyen on X
-
-## Creator
-
-[Chip Huyen](../creators/chip-huyen.md)
-
-## Channel
-
-[X](../channels.md)
-
-## Handle
-
-@chipro
-
-## URL
-
-https://x.com/chipro
 
 ## Registration Provenance
 

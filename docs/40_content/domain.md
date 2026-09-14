@@ -1,14 +1,15 @@
 ---
 id: content
-kind: domain
+rdf:type: protocol.domain
+rdfs:label: Content
+root: 40_content
+stage_vocabulary: Workflow Stage
 domain: content
 status: active
-version: 3
-class: "40"
-collection: content
+version: 4
 owner: Daniel Hunt
 created: 2026-08-28
-updated: 2026-09-07
+updated: 2026-09-14
 related:
   - README.md
   - concepts.md

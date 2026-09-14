@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.theo-browne-x
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Theo Browne / t3.gg on X
+creator: ../creators/theo-browne.md
+channel: X
+handle: '@theo'
+url: https://x.com/theo
 related:
   - ../creators/theo-browne.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Theo Browne / t3.gg on X
-
-## Creator
-
-[Theo Browne / t3.gg](../creators/theo-browne.md)
-
-## Channel
-
-[X](../channels.md)
-
-## Handle
-
-@theo
-
-## URL
-
-https://x.com/theo
 
 ## Registration Provenance
 

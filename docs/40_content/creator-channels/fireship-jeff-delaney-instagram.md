@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.fireship-jeff-delaney-instagram
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Fireship / Jeff Delaney on Instagram
+creator: ../creators/fireship-jeff-delaney.md
+channel: Instagram
+handle: '@fireship_dev'
+url: https://instagram.com/fireship_dev
 related:
   - ../creators/fireship-jeff-delaney.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Fireship / Jeff Delaney on Instagram
-
-## Creator
-
-[Fireship / Jeff Delaney](../creators/fireship-jeff-delaney.md)
-
-## Channel
-
-[Instagram](../channels.md)
-
-## Handle
-
-@fireship_dev
-
-## URL
-
-https://instagram.com/fireship_dev
 
 ## Registration Provenance
 

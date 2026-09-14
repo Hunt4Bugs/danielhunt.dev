@@ -1,14 +1,17 @@
 ---
 id: content.creator.fireship-jeff-delaney
-kind: note
+rdf:type: content.creator
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Fireship / Jeff Delaney
+creator_type: Brand
+creator_relationships:
+  - Inspiration
+  - Reference
 facets:
   - strategy
 related:
@@ -20,14 +23,6 @@ sources:
 ---
 
 # Fireship / Jeff Delaney
-
-## Creator Type
-
-Brand
-
-## Relationships
-
-Inspiration, Reference
 
 ## Niches
 

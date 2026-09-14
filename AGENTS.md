@@ -2,6 +2,8 @@
 
 This repository is a static personal-brand site. Treat [`CLAUDE.md`](CLAUDE.md) as the implementation guide and the [Library map](docs/00_system/010_governance/LIBRARY_MAP.md) as the source-of-truth index for brand-shaped changes; brand content now lives entirely under [`docs/40_content/`](docs/40_content/README.md). Identity ([`creators/daniel-hunt.md`](docs/40_content/creators/daniel-hunt.md)) and visual direction ([`visual.md`](docs/40_content/visual.md)) remain required context for public brand work.
 
+For domain-model work, start with [`docs/ROUTER.md`](docs/ROUTER.md) — it routes *meaning* (which domain owns a subject), while the Library map routes *physical placement*. Operate on modelled records through `uv run dh`, never by hand; see [`docs/_protocol/PROTOCOL.md`](docs/_protocol/PROTOCOL.md).
+
 For Project OS work, start with [`docs/00_system/010_governance/LIBRARY_MAP.md`](docs/00_system/010_governance/LIBRARY_MAP.md), then read the nearest nested `AGENTS.md`. Keep operational records local, reversible, and in the mapped class. Do not publish, deploy, change repository settings, or contact anyone without explicit approval.
 
 When planning a body of work, decompose it into issue-sized units and structure each unit with the closest matching form under [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE/): bug report, feature/enhancement, content/copy change, docs change, or chore/maintenance. Preserve the selected template's title convention and required fields, then add acceptance criteria, dependencies, and verification when the template does not provide them. Planning with an issue template does not authorize creating the issue on GitHub; external issue creation still requires explicit approval.

@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.jake-van-clief-x
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Jake Van Clief / Lost & Lucky on X
+creator: ../creators/jake-van-clief.md
+channel: X
+handle: '@VanCliefMedia'
+url: https://x.com/VanCliefMedia
 related:
   - ../creators/jake-van-clief.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Jake Van Clief / Lost & Lucky on X
-
-## Creator
-
-[Jake Van Clief / Lost & Lucky](../creators/jake-van-clief.md)
-
-## Channel
-
-[X](../channels.md)
-
-## Handle
-
-@VanCliefMedia
-
-## URL
-
-https://x.com/VanCliefMedia
 
 ## Registration Provenance
 

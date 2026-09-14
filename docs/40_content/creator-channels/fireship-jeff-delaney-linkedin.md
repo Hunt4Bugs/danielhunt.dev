@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.fireship-jeff-delaney-linkedin
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Fireship / Jeff Delaney on LinkedIn
+creator: ../creators/fireship-jeff-delaney.md
+channel: LinkedIn
+handle: Fireship
+url: https://www.linkedin.com/company/fireshipio
 related:
   - ../creators/fireship-jeff-delaney.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Fireship / Jeff Delaney on LinkedIn
-
-## Creator
-
-[Fireship / Jeff Delaney](../creators/fireship-jeff-delaney.md)
-
-## Channel
-
-[LinkedIn](../channels.md)
-
-## Handle
-
-Fireship
-
-## URL
-
-https://www.linkedin.com/company/fireshipio
 
 ## Registration Provenance
 

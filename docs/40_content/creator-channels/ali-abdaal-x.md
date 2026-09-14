@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.ali-abdaal-x
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Ali Abdaal on X
+creator: ../creators/ali-abdaal.md
+channel: X
+handle: '@aliabdaal'
+url: https://x.com/aliabdaal
 related:
   - ../creators/ali-abdaal.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Ali Abdaal on X
-
-## Creator
-
-[Ali Abdaal](../creators/ali-abdaal.md)
-
-## Channel
-
-[X](../channels.md)
-
-## Handle
-
-@aliabdaal
-
-## URL
-
-https://x.com/aliabdaal
 
 ## Registration Provenance
 

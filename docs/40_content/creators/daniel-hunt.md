@@ -1,14 +1,16 @@
 ---
 id: content.creator.daniel-hunt
-kind: note
+rdf:type: content.creator
 domain: content
 status: active
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-09-06
 updated: 2026-09-06
+name: Daniel Hunt
+creator_type: Person
+creator_relationships:
+  - Self
 related:
   - README.md
   - ../creator-channels/README.md
@@ -24,17 +26,13 @@ sources:
 
 # Daniel Hunt
 
-## Creator Type
-
-Person
-
-## Relationships
-
-Self
-
 ## Niches
 
-Data engineering, data modeling, AI-assisted modernization, life sciences, movement and culture.
+- Data engineering
+- data modeling
+- AI-assisted modernization
+- life sciences
+- movement and culture
 
 ## Notes
 

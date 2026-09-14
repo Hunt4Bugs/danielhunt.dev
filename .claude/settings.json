@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv sync --frozen 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.matt-pocock-youtube
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Matt Pocock on YouTube
+creator: ../creators/matt-pocock.md
+channel: YouTube
+handle: '@mattpocockuk'
+url: https://www.youtube.com/@mattpocockuk
 related:
   - ../creators/matt-pocock.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Matt Pocock on YouTube
-
-## Creator
-
-[Matt Pocock](../creators/matt-pocock.md)
-
-## Channel
-
-[YouTube](../channels.md)
-
-## Handle
-
-@mattpocockuk
-
-## URL
-
-https://www.youtube.com/@mattpocockuk
 
 ## Registration Provenance
 

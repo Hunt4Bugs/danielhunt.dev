@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.ben-rogojan-linkedin
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Ben Rogojan / Seattle Data Guy on LinkedIn
+creator: ../creators/ben-rogojan.md
+channel: LinkedIn
+handle: benjaminrogojan
+url: https://www.linkedin.com/in/benjaminrogojan/
 related:
   - ../creators/ben-rogojan.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Ben Rogojan / Seattle Data Guy on LinkedIn
-
-## Creator
-
-[Ben Rogojan / Seattle Data Guy](../creators/ben-rogojan.md)
-
-## Channel
-
-[LinkedIn](../channels.md)
-
-## Handle
-
-benjaminrogojan
-
-## URL
-
-https://www.linkedin.com/in/benjaminrogojan/
 
 ## Registration Provenance
 

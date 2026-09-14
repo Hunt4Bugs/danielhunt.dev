@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.tina-huang-youtube
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Tina Huang on YouTube
+creator: ../creators/tina-huang.md
+channel: YouTube
+handle: '@TinaHuang1'
+url: https://www.youtube.com/@TinaHuang1
 related:
   - ../creators/tina-huang.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Tina Huang on YouTube
-
-## Creator
-
-[Tina Huang](../creators/tina-huang.md)
-
-## Channel
-
-[YouTube](../channels.md)
-
-## Handle
-
-@TinaHuang1
-
-## URL
-
-https://www.youtube.com/@TinaHuang1
 
 ## Registration Provenance
 
