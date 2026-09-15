@@ -351,3 +351,92 @@ def test_cli_list_filters_by_field(example_repo, capsys):
 
 def test_cli_unknown_instance_exits_not_found(example_repo):
     assert main(["--root", str(example_repo), "get", "example.gadget.nope"]) == 3
+
+
+# -- validation gaps reported on PR #40 --------------------------------------------
+# Each of these three passed lint before the fix, letting an invalid record through the
+# conformance gate. They are regression tests, not hypotheticals.
+
+
+def test_single_valued_property_reports_extra_values(example_repo):
+    """A two-value list in a maxCount:1 property must fail, not be silently truncated.
+
+    read() projects a single-valued property to a scalar, so counting the projection would
+    report 1 and hide the violation. The count must come from what the file authored.
+    """
+    path = example_repo / "docs/example/gadgets/alpha.md"
+    path.write_text(path.read_text().replace("grade: Fine", "grade:\n  - Fine\n  - Poor"))
+    errors = _first_error(example_repo, "cardinality")
+    assert errors and "at most 1, found 2" in errors[0].message
+
+
+def test_read_authored_preserves_what_the_file_wrote(example_repo):
+    """The projection stays lossy on purpose; the authored values stay available beside it."""
+    path = example_repo / "docs/example/gadgets/alpha.md"
+    path.write_text(path.read_text().replace("grade: Fine", "grade:\n  - Fine\n  - Poor"))
+    model = Model.load(str(example_repo))
+    instance = model.instance("example.gadget.alpha")
+    spec = model.contract_for(instance).get("grade")
+    assert spec.read(instance.document) == "Fine"
+    assert spec.read_authored(instance.document) == ["Fine", "Poor"]
+
+
+def test_missing_scheme_is_reported_for_a_controlled_property(example_repo):
+    """A controlled property whose scheme does not exist would otherwise accept any value.
+
+    The membership check silently has nothing to check against, so the absent scheme has to be
+    caught where it is declared.
+    """
+    concept = example_repo / "docs/example/concepts/gadget.md"
+    concept.write_text(
+        concept.read_text().replace(
+            "skos:inScheme: example.taxonomy.gadget-grade",
+            "skos:inScheme: example.taxonomy.does-not-exist",
+        )
+    )
+    instance = example_repo / "docs/example/gadgets/alpha.md"
+    instance.write_text(instance.read_text().replace("grade: Fine", "grade: CompletelyMadeUp"))
+    errors = _first_error(example_repo, "ranges")
+    assert errors and "does-not-exist" in errors[0].message
+
+
+def _add_maker_property(example_repo, value):
+    """Give Gadget a reference property ranging over Gadget, and point it at `value`."""
+    concept = example_repo / "docs/example/concepts/gadget.md"
+    concept.write_text(
+        concept.read_text().replace(
+            "  - id: tags",
+            "  - id: maker\n"
+            "    rdf:type: owl:ObjectProperty\n"
+            "    rdfs:label: Maker\n"
+            "    rdfs:range: example.gadget\n"
+            "    sh:maxCount: 1\n"
+            "    store: frontmatter\n"
+            "  - id: tags",
+        )
+    )
+    instance = example_repo / "docs/example/gadgets/alpha.md"
+    instance.write_text(instance.read_text().replace("grade: Fine", f"grade: Fine\nmaker: {value}"))
+
+
+def test_reference_to_the_wrong_concept_is_an_error(example_repo):
+    """Existence is not type-checking: the target must be an instance of the declared range."""
+    _add_maker_property(example_repo, "../taxonomies/gadget-grade.md")
+    errors = _first_error(example_repo, "ranges")
+    assert errors and "is a `protocol.taxonomy`" in errors[0].message
+
+
+def test_reference_to_the_right_concept_passes(example_repo):
+    """The type check must not reject a correct reference."""
+    _add_maker_property(example_repo, "beta.md")
+    assert not _first_error(example_repo, "ranges")
+
+
+def test_reference_to_an_untyped_file_is_distinguished_from_a_missing_one(example_repo):
+    """A not-yet-conformed target is a different finding from a dangling one."""
+    (example_repo / "docs/example/loose.md").write_text("no front matter here\n")
+    _add_maker_property(example_repo, "../loose.md")
+    findings = Linter(Model.load(str(example_repo))).run()
+    messages = [f.message for f in findings if f.check == "ranges"]
+    assert any("not a typed record" in m for m in messages), messages
+    assert not any("does not resolve" in m for m in messages), messages

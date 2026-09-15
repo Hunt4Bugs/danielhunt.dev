@@ -120,23 +120,28 @@ class PropertySpec:
     # -- values --------------------------------------------------------------
 
     def read(self, document):
-        """Return this property's value(s) from a document, normalized to the declared shape."""
+        """Return this property's value(s), projected to the declared shape.
+
+        A single-valued property projects to a scalar, which is what callers want — but the
+        projection is lossy when the file authored more values than the contract allows. Use
+        `read_authored` to see what was actually written; validation must count that, not this.
+        """
+        values = self.read_authored(document)
+        if self.is_multivalued:
+            return values
+        return values[0] if values else None
+
+    def read_authored(self, document):
+        """Return the values as authored, always a list, with nothing dropped."""
         if self.store == STORE_FRONTMATTER:
             value = document.front_matter.get(self.key)
-            return self._normalize(value)
-        if self.format == FORMAT_LIST:
+        elif self.format == FORMAT_LIST:
             return document.section_bullets(self.section)
-        value = document.section_prose(self.section)
-        return self._normalize(value)
-
-    def _normalize(self, value):
+        else:
+            value = document.section_prose(self.section)
         if value is None:
-            return [] if self.is_multivalued else None
-        if self.is_multivalued:
-            return list(value) if isinstance(value, list) else [value]
-        if isinstance(value, list):
-            return value[0] if value else None
-        return value
+            return []
+        return list(value) if isinstance(value, list) else [value]
 
     def write(self, document, value):
         values = value if isinstance(value, list) else ([] if value is None else [value])

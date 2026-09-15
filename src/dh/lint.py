@@ -25,6 +25,9 @@ ADVISORY = "advisory"
 
 STRICT_STATUS = "active"
 
+# Distinguishes "the path exists but carries no readable type" from "nothing is there".
+UNTYPED = object()
+
 # Markdown links in a body, excluding images and absolute/external targets.
 LINK_RE = re.compile(r"(?<!\!)\[[^\]]*\]\(([^)]+)\)")
 # Inline code spans and fenced blocks. Link syntax inside them is not a link, so stripping them
@@ -319,6 +322,18 @@ class Linter:
                 target = spec.range
                 if not isinstance(target, str):
                     continue
+                # Checked for every range, prefixed or not. A controlled property whose scheme
+                # does not exist would otherwise accept any value at all: the membership check
+                # silently has nothing to check against.
+                if spec.is_controlled and spec.in_scheme not in self.model.taxonomies:
+                    self.report(
+                        "ranges",
+                        ERROR,
+                        f"`{spec.id}` is in scheme `{spec.in_scheme}`, which does not exist",
+                        file=path,
+                        hint="its values cannot be validated until the scheme is declared",
+                    )
+
                 if types.is_prefixed(target):
                     prefix = types.prefix_of(target)
                     if prefix not in self.model.prefixes:
@@ -333,42 +348,73 @@ class Linter:
                         f"`{spec.id}` ranges over `{target}`, which is not a concept",
                         file=path,
                     )
-                if spec.in_scheme and spec.in_scheme not in self.model.taxonomies:
-                    self.report(
-                        "ranges",
-                        ERROR,
-                        f"`{spec.id}` is in scheme `{spec.in_scheme}`, which does not exist",
-                        file=path,
-                    )
 
-        # Instance-level: a reference value must resolve to a file or a known instance.
+        # Instance-level: a reference must resolve, AND what it resolves to must be an instance
+        # of the declared range. Existence alone is not type-checking -- without the second half,
+        # a property ranging over one concept happily points at a file of another.
         for instance in self.model.instances.values():
             contract = self.model.contract_for(instance)
             if not contract:
                 continue
             path = self.model.rel(instance.document.path)
-            directory = os.path.dirname(instance.document.path)
             for spec in contract.properties:
                 if not spec.is_object_property or spec.is_controlled or spec.is_derived:
                     continue
-                values = spec.read(instance.document)
-                for value in values if isinstance(values, list) else [values]:
+                for value in spec.read_authored(instance.document):
                     if not value:
                         continue
                     match = LINK_RE.search(str(value))
                     target = match.group(1) if match else str(value)
-                    if target in self.model.instances:
-                        continue
-                    resolved = os.path.normpath(
-                        os.path.join(directory, target.split("#", 1)[0])
-                    )
-                    if not os.path.exists(resolved):
-                        self.report(
-                            "ranges",
-                            self.severity_for(instance.document),
-                            f"`{spec.id}` references `{target}`, which does not resolve",
-                            file=path,
-                        )
+                    self._check_reference(instance, spec, target, path)
+
+
+    def _check_reference(self, instance, spec, target, path):
+        """Resolve one reference value and verify its type against the property's range."""
+        found = self.resolve_reference(instance, target)
+        if found is None:
+            self.report(
+                "ranges",
+                self.severity_for(instance.document),
+                f"`{spec.id}` references `{target}`, which does not resolve",
+                file=path,
+            )
+            return
+        if found is UNTYPED:
+            # The path exists but carries no type we can read -- a file not yet conformed.
+            # Reportable, but not the same defect as pointing at the wrong kind of thing.
+            self.report(
+                "ranges",
+                self.severity_for(instance.document),
+                f"`{spec.id}` references `{target}`, which is not a typed record",
+                file=path,
+                hint="it cannot be checked against the declared range until it is conformed",
+            )
+            return
+        if found.concept_id != spec.range:
+            self.report(
+                "ranges",
+                ERROR,
+                f"`{spec.id}` ranges over `{spec.range}` but `{target}` is a "
+                f"`{found.concept_id}`",
+                file=path,
+            )
+
+    def resolve_reference(self, instance, target):
+        """An instance id or a relative path -> the Instance it names.
+
+        Returns None when nothing is there, and UNTYPED when a file exists but is not a loaded
+        instance. The two are different findings, so they stay distinguishable here.
+        """
+        if target in self.model.instances:
+            return self.model.instances[target]
+        directory = os.path.dirname(instance.document.path)
+        resolved = os.path.normpath(os.path.join(directory, target.split("#", 1)[0]))
+        if not os.path.exists(resolved):
+            return None
+        for candidate in self.model.instances.values():
+            if os.path.abspath(candidate.document.path) == os.path.abspath(resolved):
+                return candidate
+        return UNTYPED
 
     # -- 7. taxonomy values ----------------------------------------------------
 
@@ -383,11 +429,11 @@ class Linter:
                     continue
                 scheme = self.model.taxonomies.get(spec.in_scheme)
                 if not scheme:
+                    # The missing scheme is reported once, against the concept that declares it
+                    # (check_ranges). Repeating it per instance would bury that one finding.
                     continue
                 allowed = set(scheme.labels)
-                values = spec.read(instance.document)
-                values = values if isinstance(values, list) else ([values] if values else [])
-                for value in values:
+                for value in spec.read_authored(instance.document):
                     if value not in allowed:
                         self.report(
                             "taxonomy-values",
@@ -424,8 +470,10 @@ class Linter:
                         )
 
             for spec in contract.properties:
-                values = spec.read(document)
-                count = len(values) if isinstance(values, list) else (0 if values is None else 1)
+                # Count what the file authored, not what read() projects to. A single-valued
+                # property projects a two-element list down to a scalar, so counting the
+                # projection would report 1 and hide the very violation being checked.
+                count = len(spec.read_authored(document))
                 if spec.min_count and count < spec.min_count:
                     self.report(
                         "cardinality",
