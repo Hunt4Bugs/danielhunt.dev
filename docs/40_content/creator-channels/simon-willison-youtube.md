@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.simon-willison-youtube
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Simon Willison on YouTube
+creator: ../creators/simon-willison.md
+channel: YouTube
+handle: '@swillison'
+url: https://www.youtube.com/@swillison
 related:
   - ../creators/simon-willison.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Simon Willison on YouTube
-
-## Creator
-
-[Simon Willison](../creators/simon-willison.md)
-
-## Channel
-
-[YouTube](../channels.md)
-
-## Handle
-
-@swillison
-
-## URL
-
-https://www.youtube.com/@swillison
 
 ## Registration Provenance
 

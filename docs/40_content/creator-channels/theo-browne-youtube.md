@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.theo-browne-youtube
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Theo Browne / t3.gg on YouTube
+creator: ../creators/theo-browne.md
+channel: YouTube
+handle: '@t3dotgg'
+url: https://youtube.com/@t3dotgg
 related:
   - ../creators/theo-browne.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Theo Browne / t3.gg on YouTube
-
-## Creator
-
-[Theo Browne / t3.gg](../creators/theo-browne.md)
-
-## Channel
-
-[YouTube](../channels.md)
-
-## Handle
-
-@t3dotgg
-
-## URL
-
-https://youtube.com/@t3dotgg
 
 ## Registration Provenance
 

@@ -1,14 +1,17 @@
 ---
 id: content.creator.ben-rogojan
-kind: note
+rdf:type: content.creator
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Ben Rogojan / Seattle Data Guy
+creator_type: Person
+creator_relationships:
+  - Competitor
+  - Reference
 facets:
   - strategy
 related:
@@ -20,14 +23,6 @@ sources:
 ---
 
 # Ben Rogojan / Seattle Data Guy
-
-## Creator Type
-
-Person
-
-## Relationships
-
-Competitor, Reference
 
 ## Niches
 

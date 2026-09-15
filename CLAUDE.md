@@ -10,14 +10,27 @@ For the canonical context map, see [`docs/00_system/010_governance/LIBRARY_MAP.m
 
 ## Commands
 
-There is no install step, no build step, and no framework. The deployable site is the `site/` directory, served as-is.
+**The site** has no install step, no build step, and no framework. The deployable site is the `site/` directory, served as-is.
 
 ```bash
 python3 -m http.server 8000 --directory site   # dev server at http://localhost:8000
 # or: npx serve site
 ```
 
-There are no tests or linting configured.
+**The domain model** is operated through `dh`, a uv-managed Python package in `src/dh/`. `uv run` resolves the environment from `pyproject.toml` + `uv.lock` on first use, so there is nothing to install by hand.
+
+```bash
+uv run dh domains                                   # which domains exist, and where
+uv run dh get content.creator                       # a concept's contract
+uv run dh list content.creator --where creator_relationships=Inspiration
+uv run dh taxonomy values "Creator Relationship"
+uv run dh lint --baseline .protocol-lint-baseline.json --strict
+uv run pytest -q
+```
+
+`uv run dh …` is the canonical form everywhere — skills, workflows, CI. Never hand-edit a modelled record; the engine writes it, and lint checks it.
+
+`pyproject.toml`, `uv.lock`, `src/` and `tests/` are repository infrastructure and are **not** deployed — only `site/` is uploaded to Pages.
 
 ## Stack
 

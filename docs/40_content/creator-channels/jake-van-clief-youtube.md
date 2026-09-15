@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.jake-van-clief-youtube
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Jake Van Clief / Lost & Lucky on YouTube
+creator: ../creators/jake-van-clief.md
+channel: YouTube
+handle: '@JEVanClief'
+url: https://youtube.com/@JEVanClief
 related:
   - ../creators/jake-van-clief.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Jake Van Clief / Lost & Lucky on YouTube
-
-## Creator
-
-[Jake Van Clief / Lost & Lucky](../creators/jake-van-clief.md)
-
-## Channel
-
-[YouTube](../channels.md)
-
-## Handle
-
-@JEVanClief
-
-## URL
-
-https://youtube.com/@JEVanClief
 
 ## Registration Provenance
 

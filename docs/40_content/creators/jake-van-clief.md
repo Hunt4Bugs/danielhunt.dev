@@ -1,14 +1,17 @@
 ---
 id: content.creator.jake-van-clief
-kind: note
+rdf:type: content.creator
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Jake Van Clief / Lost & Lucky
+creator_type: Person
+creator_relationships:
+  - Competitor
+  - Inspiration
 facets:
   - strategy
 related:
@@ -20,14 +23,6 @@ sources:
 ---
 
 # Jake Van Clief / Lost & Lucky
-
-## Creator Type
-
-Person
-
-## Relationships
-
-Competitor, Inspiration
 
 ## Niches
 

@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.alex-xu-linkedin-alex-xu
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Alex Xu / ByteByteGo on LinkedIn (alex xu)
+creator: ../creators/alex-xu.md
+channel: LinkedIn
+handle: alexxubyte
+url: https://www.linkedin.com/in/alexxubyte/
 related:
   - ../creators/alex-xu.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Alex Xu / ByteByteGo on LinkedIn (alex xu)
-
-## Creator
-
-[Alex Xu / ByteByteGo](../creators/alex-xu.md)
-
-## Channel
-
-[LinkedIn](../channels.md)
-
-## Handle
-
-alexxubyte
-
-## URL
-
-https://www.linkedin.com/in/alexxubyte/
 
 ## Registration Provenance
 

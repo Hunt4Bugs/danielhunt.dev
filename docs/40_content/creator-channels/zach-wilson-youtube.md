@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.zach-wilson-youtube
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Zach Wilson / Data with Zach on YouTube
+creator: ../creators/zach-wilson.md
+channel: YouTube
+handle: '@eczachly_'
+url: https://youtube.com/@eczachly_
 related:
   - ../creators/zach-wilson.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Zach Wilson / Data with Zach on YouTube
-
-## Creator
-
-[Zach Wilson / Data with Zach](../creators/zach-wilson.md)
-
-## Channel
-
-[YouTube](../channels.md)
-
-## Handle
-
-@eczachly_
-
-## URL
-
-https://youtube.com/@eczachly_
 
 ## Registration Provenance
 

@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.fireship-jeff-delaney-youtube
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Fireship / Jeff Delaney on YouTube
+creator: ../creators/fireship-jeff-delaney.md
+channel: YouTube
+handle: '@Fireship'
+url: https://www.youtube.com/@Fireship
 related:
   - ../creators/fireship-jeff-delaney.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Fireship / Jeff Delaney on YouTube
-
-## Creator
-
-[Fireship / Jeff Delaney](../creators/fireship-jeff-delaney.md)
-
-## Channel
-
-[YouTube](../channels.md)
-
-## Handle
-
-@Fireship
-
-## URL
-
-https://www.youtube.com/@Fireship
 
 ## Registration Provenance
 

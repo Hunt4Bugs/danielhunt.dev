@@ -1,14 +1,17 @@
 ---
 id: content.creator.chip-huyen
-kind: note
+rdf:type: content.creator
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Chip Huyen
+creator_type: Person
+creator_relationships:
+  - Inspiration
+  - Reference
 facets:
   - strategy
 related:
@@ -20,14 +23,6 @@ sources:
 ---
 
 # Chip Huyen
-
-## Creator Type
-
-Person
-
-## Relationships
-
-Inspiration, Reference
 
 ## Niches
 

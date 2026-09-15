@@ -1,14 +1,17 @@
 ---
 id: content.creator.zach-wilson
-kind: note
+rdf:type: content.creator
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Zach Wilson / Data with Zach
+creator_type: Person
+creator_relationships:
+  - Competitor
+  - Inspiration
 facets:
   - strategy
 related:
@@ -20,14 +23,6 @@ sources:
 ---
 
 # Zach Wilson / Data with Zach
-
-## Creator Type
-
-Person
-
-## Relationships
-
-Competitor, Inspiration
 
 ## Niches
 

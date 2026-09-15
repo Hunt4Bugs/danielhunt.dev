@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.fireship-jeff-delaney-x
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Fireship / Jeff Delaney on X
+creator: ../creators/fireship-jeff-delaney.md
+channel: X
+handle: '@fireship_dev'
+url: https://x.com/fireship_dev
 related:
   - ../creators/fireship-jeff-delaney.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Fireship / Jeff Delaney on X
-
-## Creator
-
-[Fireship / Jeff Delaney](../creators/fireship-jeff-delaney.md)
-
-## Channel
-
-[X](../channels.md)
-
-## Handle
-
-@fireship_dev
-
-## URL
-
-https://x.com/fireship_dev
 
 ## Registration Provenance
 

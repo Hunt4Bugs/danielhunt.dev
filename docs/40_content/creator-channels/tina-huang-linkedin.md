@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.tina-huang-linkedin
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Tina Huang on LinkedIn
+creator: ../creators/tina-huang.md
+channel: LinkedIn
+handle: tinahuang1
+url: https://www.linkedin.com/in/tinahuang1/
 related:
   - ../creators/tina-huang.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Tina Huang on LinkedIn
-
-## Creator
-
-[Tina Huang](../creators/tina-huang.md)
-
-## Channel
-
-[LinkedIn](../channels.md)
-
-## Handle
-
-tinahuang1
-
-## URL
-
-https://www.linkedin.com/in/tinahuang1/
 
 ## Registration Provenance
 

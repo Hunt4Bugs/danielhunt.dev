@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.matt-pocock-x
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Matt Pocock on X
+creator: ../creators/matt-pocock.md
+channel: X
+handle: '@mattpocockuk'
+url: https://x.com/mattpocockuk
 related:
   - ../creators/matt-pocock.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Matt Pocock on X
-
-## Creator
-
-[Matt Pocock](../creators/matt-pocock.md)
-
-## Channel
-
-[X](../channels.md)
-
-## Handle
-
-@mattpocockuk
-
-## URL
-
-https://x.com/mattpocockuk
 
 ## Registration Provenance
 

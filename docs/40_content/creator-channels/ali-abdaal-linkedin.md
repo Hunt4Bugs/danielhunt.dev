@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.ali-abdaal-linkedin
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Ali Abdaal on LinkedIn
+creator: ../creators/ali-abdaal.md
+channel: LinkedIn
+handle: ali-abdaal
+url: https://www.linkedin.com/in/ali-abdaal/
 related:
   - ../creators/ali-abdaal.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Ali Abdaal on LinkedIn
-
-## Creator
-
-[Ali Abdaal](../creators/ali-abdaal.md)
-
-## Channel
-
-[LinkedIn](../channels.md)
-
-## Handle
-
-ali-abdaal
-
-## URL
-
-https://www.linkedin.com/in/ali-abdaal/
 
 ## Registration Provenance
 

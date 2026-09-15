@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.ben-rogojan-youtube
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Ben Rogojan / Seattle Data Guy on YouTube
+creator: ../creators/ben-rogojan.md
+channel: YouTube
+handle: '@SeattleDataGuy'
+url: https://www.youtube.com/@SeattleDataGuy
 related:
   - ../creators/ben-rogojan.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Ben Rogojan / Seattle Data Guy on YouTube
-
-## Creator
-
-[Ben Rogojan / Seattle Data Guy](../creators/ben-rogojan.md)
-
-## Channel
-
-[YouTube](../channels.md)
-
-## Handle
-
-@SeattleDataGuy
-
-## URL
-
-https://www.youtube.com/@SeattleDataGuy
 
 ## Registration Provenance
 

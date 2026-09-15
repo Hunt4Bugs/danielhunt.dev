@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.ali-abdaal-youtube
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Ali Abdaal on YouTube
+creator: ../creators/ali-abdaal.md
+channel: YouTube
+handle: '@aliabdaal'
+url: https://www.youtube.com/aliabdaal
 related:
   - ../creators/ali-abdaal.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Ali Abdaal on YouTube
-
-## Creator
-
-[Ali Abdaal](../creators/ali-abdaal.md)
-
-## Channel
-
-[YouTube](../channels.md)
-
-## Handle
-
-@aliabdaal
-
-## URL
-
-https://www.youtube.com/aliabdaal
 
 ## Registration Provenance
 

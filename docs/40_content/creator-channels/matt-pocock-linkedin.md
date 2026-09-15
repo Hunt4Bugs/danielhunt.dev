@@ -1,14 +1,17 @@
 ---
 id: content.creator-channel.matt-pocock-linkedin
-kind: note
+rdf:type: content.creator-channel
 domain: content
 status: draft
 version: 1
-class: "40"
-collection: content
 owner: Daniel Hunt
 created: 2026-08-30
 updated: 2026-08-30
+name: Matt Pocock on LinkedIn
+creator: ../creators/matt-pocock.md
+channel: LinkedIn
+handle: mattpocockuk
+url: https://www.linkedin.com/in/mattpocockuk/
 related:
   - ../creators/matt-pocock.md
   - ../channels.md
@@ -18,22 +21,6 @@ sources:
 ---
 
 # Matt Pocock on LinkedIn
-
-## Creator
-
-[Matt Pocock](../creators/matt-pocock.md)
-
-## Channel
-
-[LinkedIn](../channels.md)
-
-## Handle
-
-mattpocockuk
-
-## URL
-
-https://www.linkedin.com/in/mattpocockuk/
 
 ## Registration Provenance
 
